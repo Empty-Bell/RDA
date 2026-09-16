@@ -1,0 +1,72 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35162843284",
+  "code_commit": "763392ac613df3b4b1b694893d9438980d376e5d",
+  "jobs": [
+    {
+      "id": 105017272167,
+      "name": "recon (range)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272381,
+      "name": "recon (dryer)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272419,
+      "name": "recon (washer)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272420,
+      "name": "recon (hood)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272450,
+      "name": "recon (tv)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272500,
+      "name": "recon (dishwasher)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272501,
+      "name": "recon (chromebook)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272518,
+      "name": "recon (computer)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272541,
+      "name": "recon (tablet)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272577,
+      "name": "recon (refrigerator)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272684,
+      "name": "recon (monitor)",
+      "conclusion": "failure"
+    },
+    {
+      "id": 105017272863,
+      "name": "recon (cooktop)",
+      "conclusion": "failure"
+    }
+  ],
+  "interpretation": "Implementation/test failure: text-order-only dishwasher annual selection and duplicate-number expectation failed. PowerShell command sequence continued into commit after local test failure. Corrected tests preserve unresolved reading-order candidates; subsequent mutation commands explicitly check test exit status. No Samsung access or document absence inferred.",
+  "local_failed_tests": [
+    "test_bilingual_comparator_values_are_not_automatically_annual",
+    "test_observed_annual_numbers_have_caption_context"
+  ],
+  "corrected_run": 35162912783
+}

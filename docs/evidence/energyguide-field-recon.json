@@ -1,0 +1,1022 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35163198471",
+  "code_commit": "9f577eeb38b95cb49e49be6d1f453a1b8709ff82",
+  "status": "PASS",
+  "hosted_tests": 154,
+  "source_jobs": 12,
+  "product_groups": 11,
+  "scope": "five observed labels: raw text and geometry candidate extraction",
+  "annual_value_selection": "NOT_EVALUATED",
+  "identity_matching": "NOT_EVALUATED",
+  "compliance": "NOT_EVALUATED",
+  "phase_gate": "NOT_EVALUATED",
+  "jobs": [
+    {
+      "id": 105018377503,
+      "name": "recon (washer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377624,
+      "name": "recon (tv)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377636,
+      "name": "recon (range)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377649,
+      "name": "recon (computer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377654,
+      "name": "recon (dishwasher)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377658,
+      "name": "recon (chromebook)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377659,
+      "name": "recon (cooktop)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377662,
+      "name": "recon (dryer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377726,
+      "name": "recon (refrigerator)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377734,
+      "name": "recon (monitor)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377754,
+      "name": "recon (tablet)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105018377815,
+      "name": "recon (hood)",
+      "conclusion": "success"
+    }
+  ],
+  "sources": {
+    "refrigerator": {
+      "artifact": {
+        "id": 10473129377,
+        "name": "source-recon-refrigerator-35163198471-1",
+        "expires_at": "2026-09-30T23:39:55Z"
+      },
+      "artifact_zip_sha256": "7e42a44ac4d4cadfef7d77f234f408fbd827b4556236cee0c35bd307887572a9",
+      "captured_at": "2026-09-16T23:39:21.444021+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/refrigerators/all-refrigerators/",
+            "api_total": 41
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 41,
+            "exact_skus": 75,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 14,
+                "expected_groups": 41
+              },
+              {
+                "round": 1,
+                "groups": 41,
+                "expected_groups": 41
+              }
+            ],
+            "rendered_representative_link_count": 29,
+            "rendered_tile_count": 41,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "RF29DB9900QDAA",
+            "url": "https://www.samsung.com/us/refrigerators/french-door/bespoke-4-door-flex-refrigerator-29-cu-ft-with-family-hub-32-and-ai-vision-in-stainless-steel-sku-rf29db9900qdaa/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "energyguide_field_observation",
+          "status": "PASS",
+          "details": {
+            "numeric_kwh_candidates": 1,
+            "annual_caption_layout_candidates": 1,
+            "annual_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "RF29DB9900QDAA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "OBSERVED_RAW_FIELDS",
+            "rendered_candidates": 1,
+            "attributed_badges": 1,
+            "nested_claim_fields": 1,
+            "structured_probe_status": "BOUNDED_PROJECTION_COMPLETE",
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_refrigerator_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "p5st-her9",
+            "column_count": 32,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "labels": {
+        "refrigerator": {
+          "provenance": {
+            "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/rf29db9900qdaa/energyguide/us-energyguide-rf29db9900qdaa-550480754.pdf",
+            "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/rf29db9900qdaa/energyguide/us-energyguide-rf29db9900qdaa-550480754.pdf",
+            "http_status": 200,
+            "content_type": "application/pdf",
+            "size_bytes": 92496,
+            "sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+            "extraction_engine": "RapidOCR",
+            "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+            "ocr_scale": 2,
+            "pdf_page_count": 1,
+            "ocr_pages": [
+              0
+            ],
+            "field_parser_contract": "CANDIDATE_EXTRACTION_ONLY"
+          },
+          "field_candidates": {
+            "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+            "extraction_engine": "RapidOCR",
+            "energy_candidates_raw": [
+              {
+                "value_raw": "700",
+                "unit_raw": "kWh",
+                "role": "ANNUAL_CAPTION_CONTEXT",
+                "line_start": 21,
+                "line_end": 22,
+                "matched_text": "700 kWh",
+                "unit_association": "ADJACENT_LINE_PAIR",
+                "context_raw": [
+                  "$84",
+                  "$124",
+                  "All models",
+                  "700",
+                  "kWh",
+                  "Estimated Yearly Electricity Use",
+                  "Your cost will depend on your utility rates and use.",
+                  "Both cost ranges based on models of similar size capacity.",
+                  "Models with similar features have automatic defrost, bottom-mounted"
+                ]
+              }
+            ],
+            "model_candidates_raw": [
+              {
+                "value_raw": "RF29DB9900**",
+                "line": 6,
+                "context_raw": "Model RF29DB9900**",
+                "wildcard_count_status": "NOT_EVALUATED"
+              }
+            ],
+            "capacity_candidates_raw": [
+              {
+                "value_raw": "Capacity: 28.6 Cubic Feet",
+                "line": 8
+              },
+              {
+                "value_raw": "Both cost ranges based on models of similar size capacity.",
+                "line": 25
+              }
+            ],
+            "standalone_numeric_candidates_raw": [
+              {
+                "value_raw": "700",
+                "line": 21
+              }
+            ],
+            "annual_caption_lines_raw": [
+              {
+                "text_raw": "Estimated Yearly Electricity Use",
+                "line": 23
+              }
+            ],
+            "annual_value_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED",
+            "wildcard_correction": "NOT_APPLIED",
+            "compliance": "NOT_EVALUATED"
+          },
+          "layout_candidates": {
+            "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+            "annual_layout_candidates": [
+              {
+                "page": 0,
+                "caption_detection": 23,
+                "caption_raw": "Estimated Yearly Electricity Use",
+                "proposals_raw": [
+                  {
+                    "value_raw": "700",
+                    "number_detection": 21,
+                    "unit_detection": 22,
+                    "distance_pdf_points": 36.0
+                  }
+                ],
+                "nearest_proposal_raw": {
+                  "value_raw": "700",
+                  "number_detection": 21,
+                  "unit_detection": 22,
+                  "distance_pdf_points": 36.0
+                }
+              }
+            ],
+            "field_selection": "NOT_EVALUATED",
+            "method": "caption overlap, nearby unit, nearest vertical distance; candidate only"
+          }
+        }
+      }
+    },
+    "dishwasher": {
+      "artifact": {
+        "id": 10472814752,
+        "name": "source-recon-dishwasher-35163198471-1",
+        "expires_at": "2026-09-30T23:39:56Z"
+      },
+      "artifact_zip_sha256": "4012dceed67b0f458eb1bb94c4643a57290e9a1616af02933f11d682edf62604",
+      "captured_at": "2026-09-16T23:39:24.548492+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/dishwashers/all-dishwashers/",
+            "api_total": 9
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 9,
+            "exact_skus": 21,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 9,
+                "expected_groups": 9
+              }
+            ],
+            "rendered_representative_link_count": 6,
+            "rendered_tile_count": 9,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "DW90F89P0USRAA",
+            "url": "https://www.samsung.com/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "energyguide_field_observation",
+          "status": "PASS",
+          "details": {
+            "numeric_kwh_candidates": 3,
+            "annual_caption_layout_candidates": 1,
+            "annual_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "DW90F89P0USRAA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "OBSERVED_RAW_FIELDS",
+            "rendered_candidates": 1,
+            "attributed_badges": 1,
+            "nested_claim_fields": 1,
+            "structured_probe_status": "BOUNDED_PROJECTION_COMPLETE",
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_dishwasher_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "q8py-6w3f",
+            "column_count": 29,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "labels": {
+        "dishwasher": {
+          "provenance": {
+            "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89p0usraa/energyguide/us-energyguide-dw90f89p0usraa-554563789.pdf",
+            "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89p0usraa/energyguide/us-energyguide-dw90f89p0usraa-554563789.pdf",
+            "http_status": 200,
+            "content_type": "application/pdf",
+            "size_bytes": 982370,
+            "sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+            "extraction_engine": "RapidOCR",
+            "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+            "ocr_scale": 2,
+            "pdf_page_count": 1,
+            "ocr_pages": [
+              0
+            ],
+            "field_parser_contract": "CANDIDATE_EXTRACTION_ONLY"
+          },
+          "field_candidates": {
+            "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+            "extraction_engine": "RapidOCR",
+            "energy_candidates_raw": [
+              {
+                "value_raw": "225",
+                "unit_raw": "kWh",
+                "role": "UNCLASSIFIED",
+                "line_start": 11,
+                "line_end": 14,
+                "matched_text": "225 kWh",
+                "unit_association": "NEARBY_ORDER_CANDIDATE",
+                "context_raw": [
+                  "Samsung",
+                  "Energy consumption / Consommation énergétique",
+                  "Estimated Yearly Energy Cost",
+                  "225",
+                  "(when used with an elēctric water heater)",
+                  "$32",
+                  "kWh",
+                  "per year/ par année",
+                  "This model / Ce modèle",
+                  "$21",
+                  "$41"
+                ]
+              },
+              {
+                "value_raw": "200",
+                "unit_raw": "kWh",
+                "role": "REFERENCE_CONTEXT",
+                "line_start": 19,
+                "line_end": 19,
+                "matched_text": "200 kWh",
+                "unit_association": "SAME_TEXT_SPAN",
+                "context_raw": [
+                  "This model / Ce modèle",
+                  "$21",
+                  "$41",
+                  "200 kWh",
+                  "307 kWh ",
+                  "Cost Range of Similar Models",
+                  "Uses least energy/",
+                  "Uses most energy /"
+                ]
+              },
+              {
+                "value_raw": "307",
+                "unit_raw": "kWh",
+                "role": "REFERENCE_CONTEXT",
+                "line_start": 20,
+                "line_end": 20,
+                "matched_text": "307 kWh",
+                "unit_association": "SAME_TEXT_SPAN",
+                "context_raw": [
+                  "$21",
+                  "$41",
+                  "200 kWh",
+                  "307 kWh ",
+                  "Cost Range of Similar Models",
+                  "Uses least energy/",
+                  "Uses most energy /",
+                  "Consomme le moins"
+                ]
+              }
+            ],
+            "model_candidates_raw": [
+              {
+                "value_raw": "DW90F8**0***",
+                "line": 7,
+                "context_raw": "Models DW90F8**0***",
+                "wildcard_count_status": "NOT_EVALUATED"
+              },
+              {
+                "value_raw": "DW90F8**0***",
+                "line": 38,
+                "context_raw": "DW90F8**0***",
+                "wildcard_count_status": "NOT_EVALUATED"
+              },
+              {
+                "value_raw": "DD68-00152Q-00",
+                "line": 46,
+                "context_raw": "DD68-00152Q-00",
+                "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+              },
+              {
+                "value_raw": "DD68-00152Q-00",
+                "line": 49,
+                "context_raw": "DD68-00152Q-00",
+                "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+              }
+            ],
+            "capacity_candidates_raw": [
+              {
+                "value_raw": "Capacity: Standard",
+                "line": 5
+              },
+              {
+                "value_raw": "● Cost range based only on standard capacity models.",
+                "line": 52
+              }
+            ],
+            "standalone_numeric_candidates_raw": [
+              {
+                "value_raw": "225",
+                "line": 11
+              },
+              {
+                "value_raw": "225",
+                "line": 28
+              }
+            ],
+            "annual_caption_lines_raw": [
+              {
+                "text_raw": "Estimated Yearly Electricity Use",
+                "line": 40
+              }
+            ],
+            "annual_value_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED",
+            "wildcard_correction": "NOT_APPLIED",
+            "compliance": "NOT_EVALUATED"
+          },
+          "layout_candidates": {
+            "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+            "annual_layout_candidates": [
+              {
+                "page": 0,
+                "caption_detection": 40,
+                "caption_raw": "Estimated Yearly Electricity Use",
+                "proposals_raw": [
+                  {
+                    "value_raw": "225",
+                    "number_detection": 28,
+                    "unit_detection": 36,
+                    "distance_pdf_points": 27.9140625
+                  }
+                ],
+                "nearest_proposal_raw": {
+                  "value_raw": "225",
+                  "number_detection": 28,
+                  "unit_detection": 36,
+                  "distance_pdf_points": 27.9140625
+                }
+              }
+            ],
+            "field_selection": "NOT_EVALUATED",
+            "method": "caption overlap, nearby unit, nearest vertical distance; candidate only"
+          }
+        }
+      }
+    },
+    "washer": {
+      "artifact": {
+        "id": 10473678007,
+        "name": "source-recon-washer-35163198471-1",
+        "expires_at": "2026-09-30T23:40:10Z"
+      },
+      "artifact_zip_sha256": "54c80fb7e761091c7da8896132bdbd58b5de44a2cf94aceb61e087538b04c0c2",
+      "captured_at": "2026-09-16T23:39:20.866353+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/laundry/washers/",
+            "api_total": 18
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 18,
+            "exact_skus": 37,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 14,
+                "expected_groups": 18
+              },
+              {
+                "round": 1,
+                "groups": 18,
+                "expected_groups": 18
+              }
+            ],
+            "rendered_representative_link_count": 14,
+            "rendered_tile_count": 18,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WD90F53AVBUS",
+            "url": "https://www.samsung.com/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "energyguide_field_observation",
+          "status": "PASS",
+          "details": {
+            "numeric_kwh_candidates": 1,
+            "annual_caption_layout_candidates": 1,
+            "annual_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WD90F53AVBUS",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "OBSERVED_RAW_FIELDS",
+            "rendered_candidates": 1,
+            "attributed_badges": 1,
+            "nested_claim_fields": 1,
+            "structured_probe_status": "BOUNDED_PROJECTION_COMPLETE",
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "standalone_washer_pdp_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WF90F53ADSA5",
+            "url": "https://www.samsung.com/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-dark-steel-sku-wf90f53adsa5/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "epa_washer_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "bghd-e2wd",
+            "column_count": 38,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "labels": {
+        "washer": {
+          "provenance": {
+            "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avbus/energyguide/us-energyguide-wd90f53avbus-550443963.pdf",
+            "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avbus/energyguide/us-energyguide-wd90f53avbus-550443963.pdf",
+            "http_status": 200,
+            "content_type": "application/pdf",
+            "size_bytes": 974330,
+            "sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+            "extraction_engine": "RapidOCR",
+            "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+            "ocr_scale": 2,
+            "pdf_page_count": 1,
+            "ocr_pages": [
+              0
+            ],
+            "field_parser_contract": "CANDIDATE_EXTRACTION_ONLY"
+          },
+          "field_candidates": {
+            "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+            "extraction_engine": "RapidOCR",
+            "energy_candidates_raw": [
+              {
+                "value_raw": "103",
+                "unit_raw": "kWh",
+                "role": "ANNUAL_CAPTION_CONTEXT",
+                "line_start": 17,
+                "line_end": 18,
+                "matched_text": "103 kWh",
+                "unit_association": "ADJACENT_LINE_PAIR",
+                "context_raw": [
+                  "Cost Range of Similar Models",
+                  "$48",
+                  "$11",
+                  "103",
+                  "kWh",
+                  "Estimated Yearly Energy Cost",
+                  "Estimated Yearly Electricity Use",
+                  "(when used with a natural gas water heater)",
+                  "Your cost will depend on your utility rates and use."
+                ]
+              }
+            ],
+            "model_candidates_raw": [
+              {
+                "value_raw": "WD90F53AV*",
+                "line": 6,
+                "context_raw": "Models WD90F53AV*",
+                "wildcard_count_status": "NOT_EVALUATED"
+              },
+              {
+                "value_raw": "DC68-04592A-00",
+                "line": 29,
+                "context_raw": "DC68-04592A-00",
+                "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+              }
+            ],
+            "capacity_candidates_raw": [
+              {
+                "value_raw": "Capacity Class: Standard",
+                "line": 5
+              },
+              {
+                "value_raw": "Capacity (tub volume): 5.3 cubic feet",
+                "line": 7
+              },
+              {
+                "value_raw": "Cost range based only on standard capacity models.",
+                "line": 23
+              }
+            ],
+            "standalone_numeric_candidates_raw": [
+              {
+                "value_raw": "103",
+                "line": 17
+              }
+            ],
+            "annual_caption_lines_raw": [
+              {
+                "text_raw": "Estimated Yearly Electricity Use",
+                "line": 20
+              }
+            ],
+            "annual_value_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED",
+            "wildcard_correction": "NOT_APPLIED",
+            "compliance": "NOT_EVALUATED"
+          },
+          "layout_candidates": {
+            "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+            "annual_layout_candidates": [
+              {
+                "page": 0,
+                "caption_detection": 20,
+                "caption_raw": "Estimated Yearly Electricity Use",
+                "proposals_raw": [
+                  {
+                    "value_raw": "103",
+                    "number_detection": 17,
+                    "unit_detection": 18,
+                    "distance_pdf_points": 31.0
+                  }
+                ],
+                "nearest_proposal_raw": {
+                  "value_raw": "103",
+                  "number_detection": 17,
+                  "unit_detection": 18,
+                  "distance_pdf_points": 31.0
+                }
+              }
+            ],
+            "field_selection": "NOT_EVALUATED",
+            "method": "caption overlap, nearby unit, nearest vertical distance; candidate only"
+          }
+        },
+        "washer-standalone": {
+          "provenance": {
+            "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wf90f53adsa5/energyguide/us-energyguide-wf90f53adsa5-554563643.pdf",
+            "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wf90f53adsa5/energyguide/us-energyguide-wf90f53adsa5-554563643.pdf",
+            "http_status": 200,
+            "content_type": "application/pdf",
+            "size_bytes": 620278,
+            "sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+            "extraction_engine": "RapidOCR",
+            "fallback_reason": "MISSING_ENERGY_VALUE_IN_EMBEDDED_TEXT",
+            "ocr_scale": 2,
+            "pdf_page_count": 1,
+            "ocr_pages": [
+              0
+            ],
+            "field_parser_contract": "CANDIDATE_EXTRACTION_ONLY"
+          },
+          "field_candidates": {
+            "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+            "extraction_engine": "RapidOCR",
+            "energy_candidates_raw": [
+              {
+                "value_raw": "103",
+                "unit_raw": "kWh",
+                "role": "ANNUAL_CAPTION_CONTEXT",
+                "line_start": 16,
+                "line_end": 18,
+                "matched_text": "103 kWh",
+                "unit_association": "NEARBY_ORDER_CANDIDATE",
+                "context_raw": [
+                  "$4",
+                  "Cost Range of Similar Models",
+                  "$48",
+                  "103",
+                  "$11",
+                  "kWh",
+                  "Estimated Yearly Energy Cost",
+                  "Estimated Yearly Electricity Use",
+                  "(when used with a natural gas water heater)",
+                  "● Your cost will depend on your utility rates and use."
+                ]
+              }
+            ],
+            "model_candidates_raw": [
+              {
+                "value_raw": "WF90F53*D*",
+                "line": 6,
+                "context_raw": "Models WF90F53*D*",
+                "wildcard_count_status": "NOT_EVALUATED"
+              },
+              {
+                "value_raw": "DC68-04096U-00",
+                "line": 29,
+                "context_raw": "DC68-04096U-00",
+                "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+              }
+            ],
+            "capacity_candidates_raw": [
+              {
+                "value_raw": "Capacity Class: Standard",
+                "line": 5
+              },
+              {
+                "value_raw": "Capacity (tub volume): 5.3 cubic feet",
+                "line": 7
+              },
+              {
+                "value_raw": "• Cost range based only on standard capacity models.",
+                "line": 23
+              }
+            ],
+            "standalone_numeric_candidates_raw": [
+              {
+                "value_raw": "103",
+                "line": 16
+              }
+            ],
+            "annual_caption_lines_raw": [
+              {
+                "text_raw": "Estimated Yearly Electricity Use",
+                "line": 20
+              }
+            ],
+            "annual_value_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED",
+            "wildcard_correction": "NOT_APPLIED",
+            "compliance": "NOT_EVALUATED"
+          },
+          "layout_candidates": {
+            "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+            "annual_layout_candidates": [
+              {
+                "page": 0,
+                "caption_detection": 20,
+                "caption_raw": "Estimated Yearly Electricity Use",
+                "proposals_raw": [
+                  {
+                    "value_raw": "103",
+                    "number_detection": 16,
+                    "unit_detection": 18,
+                    "distance_pdf_points": 31.75
+                  }
+                ],
+                "nearest_proposal_raw": {
+                  "value_raw": "103",
+                  "number_detection": 16,
+                  "unit_detection": 18,
+                  "distance_pdf_points": 31.75
+                }
+              }
+            ],
+            "field_selection": "NOT_EVALUATED",
+            "method": "caption overlap, nearby unit, nearest vertical distance; candidate only"
+          }
+        }
+      }
+    },
+    "tv": {
+      "artifact": {
+        "id": 10474036494,
+        "name": "source-recon-tv-35163198471-1",
+        "expires_at": "2026-09-30T23:40:04Z"
+      },
+      "artifact_zip_sha256": "fe10c1d70aa55899e6456aaf7d51dd0434f6ed3c5f0f7260f474738057b64d2b",
+      "captured_at": "2026-09-16T23:39:32.703695+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/tvs/all-tvs/",
+            "api_total": 41
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 41,
+            "exact_skus": 167,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 21,
+                "expected_groups": 41
+              },
+              {
+                "round": 1,
+                "groups": 41,
+                "expected_groups": 41
+              }
+            ],
+            "rendered_representative_link_count": 41,
+            "rendered_tile_count": 41,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "MRN75R95HAFXZA",
+            "url": "https://www.samsung.com/us/tvs/micro-rgb/75-inch-micro-rgb-4k-tv-r95h-sku-mrn75r95hafxza/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "energyguide_field_observation",
+          "status": "PASS",
+          "details": {
+            "numeric_kwh_candidates": 1,
+            "annual_caption_layout_candidates": 1,
+            "annual_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "MRN75R95HAFXZA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "OBSERVED_RAW_FIELDS",
+            "rendered_candidates": 0,
+            "attributed_badges": 0,
+            "nested_claim_fields": 1,
+            "structured_probe_status": "BOUNDED_PROJECTION_COMPLETE",
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_tv_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "pd96-rr3d",
+            "column_count": 35,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "labels": {
+        "tv": {
+          "provenance": {
+            "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn75r95hafxza/energyguide/us-energyguide-mrn75r95hafxza-551652054.pdf",
+            "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn75r95hafxza/energyguide/us-energyguide-mrn75r95hafxza-551652054.pdf",
+            "http_status": 200,
+            "content_type": "application/pdf",
+            "size_bytes": 67874,
+            "sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+            "extraction_engine": "RapidOCR",
+            "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+            "ocr_scale": 2,
+            "pdf_page_count": 1,
+            "ocr_pages": [
+              0
+            ],
+            "field_parser_contract": "CANDIDATE_EXTRACTION_ONLY"
+          },
+          "field_candidates": {
+            "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+            "extraction_engine": "RapidOCR",
+            "energy_candidates_raw": [
+              {
+                "value_raw": "390",
+                "unit_raw": "kWh",
+                "role": "ANNUAL_CAPTION_CONTEXT",
+                "line_start": 18,
+                "line_end": 18,
+                "matched_text": "390kWh",
+                "unit_association": "SAME_TEXT_SPAN",
+                "context_raw": [
+                  "• Based on 16 cents per kWh",
+                  "and 5 hours use per day",
+                  "• Estimated yearly electricity",
+                  "use of this model: 390kWh",
+                  "• Your cost depends on",
+                  "your utility rates and use.",
+                  "Visit ftc.gov/energy"
+                ]
+              }
+            ],
+            "model_candidates_raw": [
+              {
+                "value_raw": "MRN75R95HAF",
+                "line": 6,
+                "context_raw": "MRN75R95HAF",
+                "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+              }
+            ],
+            "capacity_candidates_raw": [],
+            "standalone_numeric_candidates_raw": [],
+            "annual_caption_lines_raw": [
+              {
+                "text_raw": "• Estimated yearly electricity",
+                "line": 17
+              }
+            ],
+            "annual_value_selection": "NOT_EVALUATED",
+            "identity_matching": "NOT_EVALUATED",
+            "wildcard_correction": "NOT_APPLIED",
+            "compliance": "NOT_EVALUATED"
+          },
+          "layout_candidates": {
+            "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+            "annual_layout_candidates": [
+              {
+                "page": 0,
+                "caption_detection": 17,
+                "caption_raw": "• Estimated yearly electricity",
+                "proposals_raw": [
+                  {
+                    "value_raw": "390",
+                    "number_detection": 18,
+                    "unit_detection": 18,
+                    "distance_pdf_points": 13.5
+                  }
+                ],
+                "nearest_proposal_raw": {
+                  "value_raw": "390",
+                  "number_detection": 18,
+                  "unit_detection": 18,
+                  "distance_pdf_points": 13.5
+                }
+              }
+            ],
+            "field_selection": "NOT_EVALUATED",
+            "method": "caption overlap, nearby unit, nearest vertical distance; candidate only"
+          }
+        }
+      }
+    }
+  }
+}

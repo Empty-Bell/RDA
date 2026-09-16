@@ -166,6 +166,10 @@ Bounded primary badge attribution and nested product-field discovery are now
 hosted-verified; see CLAIM_ATTRIBUTION_SOURCE_CONTRACT.md. Unsupported surfaces
 and unobserved flag interfaces remain unknown.
 
+Bounded EnergyGuide text/coordinate candidates are hosted-verified for five labels;
+see ENERGYGUIDE_FIELD_SOURCE_CONTRACT.md. Original hashes, first-page OCR provenance
+and mixed-panel proposals remain separate from canonical selection and SKU matching.
+
 Remaining: unsupported badge/flag surfaces and exhaustive variant coverage;
 normalized PDP title/commerce mapping; full PDF field-quality parser and low-resolution/wildcard
 regression corpus; stable hosted-source access; EPA matching/currency semantics.

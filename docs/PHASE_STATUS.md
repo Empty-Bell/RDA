@@ -149,7 +149,17 @@ See CLAIM_ATTRIBUTION_SOURCE_CONTRACT.md and claim-attribution-recon.json.
 Unobserved flags and unsupported surfaces stay NOT_EVALUATED; no EPA/consistency
 rule or normalized commerce mapping was introduced.
 
-Next bounded task: EnergyGuide field-quality/source parser contract.
+EnergyGuide raw field/coordinate reconnaissance PASS: run 35163198471, commit
+9f577eeb38b95cb49e49be6d1f453a1b8709ff82. All 12 source jobs succeeded with 154
+tests. Five observed label fixtures retain original PDF hashes, independent embedded
+text/OCR detections, PDF-space coordinates and numeric/caption proposals. US
+dishwasher 225 is geometrically separated from Canadian 200/307 reference values;
+text-order uncertainty remains preserved. No canonical field selection, wildcard
+correction, label/SKU matching or compliance decision was introduced. Initial failing
+mixed-order tests and corrected runs remain in the failure history. See
+ENERGYGUIDE_FIELD_SOURCE_CONTRACT.md and energyguide-field-recon.json.
+
+Next bounded task: actual low-resolution EnergyGuide and wildcard ROI regression evidence.
 All family discovery is complete; common claim/quality/runtime acceptance remains.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
@@ -158,6 +168,6 @@ Follow-ups before locking runtime: freeze transitive Python dependencies and OCR
 replace older Node20 Actions pins with verified current releases (runner currently upgrades
 them to Node24; first run succeeded with warnings). No downgrade flag should be enabled.
 
-Token handoff: use Sol medium for the next exploratory PDF field-quality contract only; Terra medium
+Token handoff: use Sol medium for the next exploratory low-resolution/wildcard ROI contract only; Terra medium
 for repeated adapters after the contract is fixed. Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.

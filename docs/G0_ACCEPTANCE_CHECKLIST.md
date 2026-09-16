@@ -16,7 +16,11 @@ Bounded raw claim/identity reconnaissance passed in run 35160456564 (126 tests,
 12 source legs); see PUBLIC_CLAIM_IDENTITY_CONTRACT.md. Bounded primary PDP logo
 attribution and exact inline product-flag extraction passed in run 35162114501 (143 tests,
 12 source legs); see CLAIM_ATTRIBUTION_SOURCE_CONTRACT.md. Unsupported surfaces
-and unobserved flags remain unknown. Next: EnergyGuide field-quality/source parser.
+and unobserved flags remain unknown. Bounded EnergyGuide field/coordinate
+reconnaissance passed in run 35163198471 (154 tests, 12 source legs, five label
+fixtures); see ENERGYGUIDE_FIELD_SOURCE_CONTRACT.md and energyguide-field-recon.json.
+Extraction health is separate from canonical annual selection and identity matching.
+Next: actual low-resolution and wildcard ROI regression evidence.
 Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate
