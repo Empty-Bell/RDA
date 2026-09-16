@@ -1,5 +1,6 @@
-import copy
 import unittest
+import json
+from pathlib import Path
 from scripts.claim_recon import project_nested_claim_fields, claim_facts
 
 class ClaimAttributionContract(unittest.TestCase):
@@ -49,6 +50,12 @@ class ClaimAttributionContract(unittest.TestCase):
         self.snapshot['structured_probes']=[probe]
         self.assertEqual(self.facts()['pdp_nested_energy_star_fields_raw'],[])
 
+    def test_unidentified_related_product_does_not_inherit_current_sku(self):
+        probe=project_nested_claim_fields({'modelCode':'SKU','relatedModels':[{'energyStarFlg':'Y'}]})
+        self.snapshot['structured_probes']=[probe]
+        self.assertEqual(probe['fields'][0]['identifiers_raw'],[])
+        self.assertEqual(self.facts()['pdp_nested_energy_star_fields_raw'],[])
+
     def test_unbound_or_conflicting_identifiers_cannot_supply_current_flag(self):
         probe=project_nested_claim_fields({'energyStarFlg':'Y','data':{'sku':'OTHER','modelCode':'SKU','energyStarFlg':'Y'}})
         self.snapshot['structured_probes']=[probe]
@@ -68,3 +75,19 @@ class ClaimAttributionContract(unittest.TestCase):
         self.assertTrue(probe['truncated'])
         self.snapshot['structured_probes']=[probe]
         self.assertEqual(self.facts()['structured_probe_status'],'BOUNDED_PROJECTION_TRUNCATED')
+
+    def test_hosted_gallery_and_configurator_surfaces(self):
+        root=Path(__file__).parent/'fixtures'/'claim-attribution'
+        for family in ('refrigerator','tablet'):
+            fixture=json.loads((root/(family+'.json')).read_text(encoding='utf-8'))
+            result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
+            self.assertEqual(result['rendered_attributed_badges_raw'],fixture['expected_badges'])
+            self.assertEqual(result['rendered_claim_attribution'],'OBSERVED_CURRENT_PRODUCT_SURFACE')
+            self.assertEqual(result['structured_probe_status'],fixture['expected_probe_status'])
+
+    def test_truncated_trade_in_probe_does_not_establish_flag_absence(self):
+        path=Path(__file__).parent/'fixtures'/'claim-attribution'/'tablet.json'
+        fixture=json.loads(path.read_text(encoding='utf-8'))
+        result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
+        self.assertEqual(result['structured_probe_status'],'BOUNDED_PROJECTION_TRUNCATED')
+        self.assertEqual(result['pdp_structured_claim_status'],'NOT_EVALUATED')

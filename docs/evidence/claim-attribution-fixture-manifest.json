@@ -1,0 +1,12 @@
+[
+  {
+    "file": "tests/fixtures/claim-attribution/tablet.json",
+    "sha256": "be7d395b3d14961f96df6ca41e914c9b56fa39e644cc1999d0c50ec03b34982f",
+    "source_run_id": 35161180701
+  },
+  {
+    "file": "tests/fixtures/claim-attribution/refrigerator.json",
+    "sha256": "bf1aa902810773ed87ad95ea69ef806bde8519619bdc32bb0f54095d3dc909d2",
+    "source_run_id": 35161180701
+  }
+]

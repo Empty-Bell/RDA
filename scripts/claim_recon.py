@@ -32,7 +32,8 @@ def project_nested_claim_fields(payload):
                                    'identity_basis': 'nearest explicit product identifier; unbound is not target',
                                    'name': key, 'value': value})
                 if isinstance(value, (dict, list)):
-                    visit(value, child_path, current, depth + 1)
+                    child_identity = [] if re.search(r'related|recommend|accessor|variant|bundle|alternative', key, re.I) else current
+                    visit(value, child_path, child_identity, depth + 1)
     visit(payload, '$', [], 0)
     return {'fields': fields, 'truncated': truncated,
             'root_sections': [key for key in payload if not private.search(key)] if isinstance(payload, dict) else ['ARRAY' if isinstance(payload, list) else 'SCALAR']}

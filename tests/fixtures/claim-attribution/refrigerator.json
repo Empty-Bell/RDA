@@ -1,0 +1,275 @@
+{
+  "snapshot": {
+    "target_sku": "RF29DB9900QDAA",
+    "final_url": "https://www.samsung.com/us/refrigerators/french-door/bespoke-4-door-flex-refrigerator-29-cu-ft-with-family-hub-32-and-ai-vision-in-stainless-steel-sku-rf29db9900qdaa/",
+    "headings": [
+      "Bespoke AI 4-Door Flex™Family Hub™ 32\" | AI Vision & Auto Open Door | 29 cu.ft."
+    ],
+    "product_jsonld": [
+      {
+        "sku": "RF29DB9900QDAA",
+        "mpn": null,
+        "name": "Bespoke AI 4-Door Flex™ Family Hub™ 32\" AI Vision & Auto Open Door | 29 cu.ft.",
+        "availability": [
+          "https://schema.org/InStock"
+        ],
+        "additionalProperty": []
+      }
+    ],
+    "jsonld_parse_errors": 0,
+    "energy_candidates": [
+      {
+        "tag": "IMG",
+        "text": "",
+        "alt": null,
+        "label": null,
+        "ancestors": [
+          {
+            "tag": "IMG",
+            "cls": "EnergyStar_energyStar__nkHUr"
+          },
+          {
+            "tag": "DIV",
+            "cls": "EnergyStar_toolTipContainer___Lc6W"
+          },
+          {
+            "tag": "DIV",
+            "cls": "Gallery_energyStarContainer__jOl_2"
+          },
+          {
+            "tag": "DIV",
+            "cls": "Gallery_outerContainer__TUF3_"
+          },
+          {
+            "tag": "DIV",
+            "cls": "MainContent_left__ugZZo"
+          }
+        ],
+        "product_surface": "CURRENT_GALLERY",
+        "surface_count": 1,
+        "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+      }
+    ],
+    "observation_scope": "current mounted DOM; visible page candidates are not attributed to target SKU",
+    "structured_records": [
+      {
+        "section": "Specs",
+        "modelCode": "RF23DB990012AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "RF23DB9900QDAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "RF29DB990012AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "RF29DB9900QDAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "RF23DB990012AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "RF23DB9900QDAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "RF29DB990012AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "RF29DB9900QDAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "RF23DB990012AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=580109&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "RF23DB9900QDAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=580109&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "RF29DB990012AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=580109&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "RF29DB9900QDAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=580109&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      }
+    ],
+    "structured_probes": [
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "resultCode",
+          "resultMessage",
+          "siteCode",
+          "componentList"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Footer&store_type=B2C&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "statusCode",
+          "statusMessage",
+          "resultData",
+          "metaData"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=GNB&store_type=B2C&version=v5",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "Offer",
+          "ExchangeDevices"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Offer%2CExchangeDevices&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "ARRAY"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=InformationOverlay&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "ARRAY"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=InformationOverlay&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "data"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/ecom-data?group_id=580109&component=catalog%2Cinventory%2Cpricing%2CpaymentOptions&site_id=0&store_type=B2C&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "promotions",
+          "skuPromotionsMapping"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Promotions&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=EppHeader&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "Specs",
+          "Support",
+          "RelatedModels"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=AddOnData&store_type=B2C&group_id=580109&version=v2",
+        "status": 200
+      },
+      {
+        "fields": [],
+        "truncated": false,
+        "root_sections": [
+          "ARRAY"
+        ],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=580109&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      }
+    ],
+    "structured_errors": []
+  },
+  "listing": {
+    "modelCode": "RF29DB9900QDAA",
+    "modelName": "RF29DB9900QD",
+    "energyStarFlg": "Y",
+    "ecomFlag": "Y",
+    "stockFlag": "Y"
+  },
+  "specs": {
+    "exact_sku": "RF29DB9900QDAA",
+    "energy_star_spec_claim_raw": [
+      {
+        "group": "Key Features",
+        "name": "ENERGY STAR® Certified",
+        "value": "Yes"
+      }
+    ]
+  },
+  "expected_badges": [
+    {
+      "exact_sku": "RF29DB9900QDAA",
+      "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$",
+      "product_surface": "CURRENT_GALLERY",
+      "identity_basis": "unique observed primary product surface; sole exact Product JSON-LD; existing PDP identity gate"
+    }
+  ],
+  "expected_probe_status": "BOUNDED_PROJECTION_COMPLETE"
+}

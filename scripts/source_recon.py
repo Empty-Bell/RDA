@@ -131,8 +131,10 @@ def main():
         def observe(response):
             url = response.url
             parsed_claim_url = urlsplit(url)
+            claim_data_types = set(parse_qs(parsed_claim_url.query).get('data_type', [''])[0].split(','))
+            non_product_claim_types = {'Footer', 'GNB', 'Offer', 'ExchangeDevices', 'Promotions', 'PricingPromotion', 'EppHeader'}
             if parsed_claim_url.hostname == 'www.samsung.com' and parsed_claim_url.path in (
-                    '/us/gapi/v1/bridge/cacheable/bridge-data', '/us/gapi/v1/bridge/cacheable/ecom-data'):
+                    '/us/gapi/v1/bridge/cacheable/bridge-data', '/us/gapi/v1/bridge/cacheable/ecom-data') and not claim_data_types & non_product_claim_types:
                 try:
                     if response.status >= 400:
                         raise ValueError('Public product endpoint HTTP error')
@@ -351,14 +353,26 @@ def main():
                     'modelCode': target, 'version': 'v2'})
                 spec_response = context.request.get(spec_url, timeout=30000)
                 assert spec_response.status == 200, 'Computer Specs request failed'
-                projected = project_computer_specs(spec_response.json())
+                raw_specs = spec_response.json()
+                structured_claim_probes.append({**project_nested_claim_fields(raw_specs),
+                                                'source_url': safe_url(spec_url), 'status': spec_response.status})
+                projected = project_computer_specs(raw_specs)
                 index = len(pdp_json)
                 fixture_name = f'fixtures/pdp-{index}.json'
                 digest = save(fixture_name, projected)
                 pdp_json.append({'url': safe_url(spec_url), 'method': 'GET', 'status': spec_response.status,
                                  'fixture': fixture_name, 'fixture_sha256': digest,
                                  'sampling_source': 'observed Specs pattern; current ecom-data group and selected SKU'})
+            inline_scripts = page.locator('script#__NEXT_DATA__').all_text_contents()
+            for inline in inline_scripts:
+                try:
+                    structured_claim_probes.append({**project_nested_claim_fields(json.loads(inline)),
+                        'source_url': safe_url(page.url), 'source_kind': 'public inline NEXT_DATA', 'status': response.status})
+                except Exception as exc:
+                    structured_claim_errors.append({'source_url': safe_url(page.url), 'source_kind': 'public inline NEXT_DATA',
+                                                    'error_type': type(exc).__name__})
             snapshot = {'target_sku': target, 'final_url': safe_url(page.url), **page.evaluate(DOM_SNAPSHOT),
+                        'inline_product_script_count': len(inline_scripts),
                         'structured_records': list(structured_claim_records),
                         'structured_probes': list(structured_claim_probes),
                         'structured_errors': list(structured_claim_errors)}
