@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['scripts/source_recon.py', 'scripts/source_contract.py', 'scripts/claim_recon.py', 'scripts/browser_runtime.py', 'tests/**', '.github/workflows/source-recon.yml']
+    paths: ['scripts/source_recon.py', 'scripts/source_contract.py', 'scripts/claim_recon.py', 'scripts/energyguide_fields.py', 'scripts/browser_runtime.py', 'tests/**', '.github/workflows/source-recon.yml']
 permissions:
   contents: read
 concurrency:

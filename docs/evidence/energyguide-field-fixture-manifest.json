@@ -1,0 +1,27 @@
+[
+  {
+    "file": "tests/fixtures/energyguide-fields/refrigerator.json",
+    "sha256": "d54553ac8b579974e841792de04a8cd3e6ec1cd96eeb0b50abf7674a34762fec",
+    "source_run_id": 35162114501
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/dishwasher.json",
+    "sha256": "fb8fdc9211fbdf5e85176435fe6d464b3a15706a5729540dcdca3ac770eafbdc",
+    "source_run_id": 35162114501
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/washer.json",
+    "sha256": "5c079d4b86540194342a5f0f9589b3fc3dbed5fb04e4913e45e3b9e98f734dd0",
+    "source_run_id": 35162114501
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/washer-standalone.json",
+    "sha256": "9c15af56ae535e4625f5ad263d606b9f45ae8b8cea93c80eca7ec5c86ef21c06",
+    "source_run_id": 35162114501
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/tv.json",
+    "sha256": "0e59288ad815822c9a778083d7f6f9cc3e2267019e7b4d9b3343158b98d12f79",
+    "source_run_id": 35162114501
+  }
+]

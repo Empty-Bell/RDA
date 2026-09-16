@@ -14,6 +14,7 @@ from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason
 from browser_runtime import desktop_context
 from claim_recon import project_claim_records, project_nested_claim_fields, project_inline_product_claims, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
+from energyguide_fields import label_candidates
 
 OUT = Path('runtime/source-recon')
 FAMILIES = {
@@ -415,6 +416,11 @@ def main():
             extracted = '\n'.join(p.get_text() for p in parsed)
             (OUT / 'energyguide-original.pdf').write_bytes(raw)
             ocr_texts = []
+            ocr_spans = []
+            embedded_spans = [{'page':i,'bbox':list(block[:4]),'text':block[4],'engine':'PyMuPDF'}
+                              for i,pdf_page in enumerate(parsed) for block in pdf_page.get_text('blocks') if block[6] == 0]
+            save('fixtures/energyguide-embedded-spans.json', embedded_spans)
+            parsed[0].get_pixmap(matrix=pymupdf.Matrix(2, 2)).save(OUT / 'energyguide-page-1-2x.png')
             fallback_reason = None
             engine_name = 'PyMuPDF'
             if energyguide_ocr_reason(extracted):
@@ -427,6 +433,10 @@ def main():
                                           'EngineConfig.onnxruntime.inter_op_num_threads': 1})
                 result = engine(str(OUT / 'energyguide-ocr-2x.png'))
                 ocr_texts = list(result.txts or [])
+                ocr_spans = [{'page':0,'text':text,'bbox':[[float(x)/2,float(y)/2] for x,y in box],
+                              'confidence':float(score),'engine':'RapidOCR'}
+                             for text,box,score in zip(result.txts, result.boxes, result.scores)]
+                save('fixtures/energyguide-ocr-spans.json', ocr_spans)
                 assert ocr_texts, 'EnergyGuide image-only OCR failed'
                 engine_name = 'RapidOCR'
             save('energyguide-observation.json', {'requested_url': document['url'], 'final_url': safe_url(pdf.url),
@@ -435,7 +445,12 @@ def main():
                                                  'embedded_text': extracted, 'extraction_engine': engine_name,
                                                  'fallback_reason': fallback_reason, 'ocr_raw_texts': ocr_texts,
                                                  'ocr_scale': 2 if ocr_texts else None,
-                                                 'field_parser_contract': 'NOT_EVALUATED'})
+                                                 'pdf_page_count': len(parsed), 'ocr_pages': [0] if ocr_texts else [],
+                                                 'field_parser_contract': 'CANDIDATE_EXTRACTION_ONLY'})
+            evidence_text = '\n'.join(ocr_texts) if ocr_texts else extracted
+            candidates = label_candidates(evidence_text, engine_name, hashlib.sha256(raw).hexdigest())
+            save('energyguide-field-candidates.json', candidates)
+            assert candidates['energy_candidates_raw'], 'No numeric kWh candidates; field extraction unavailable'
             return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
                     'energyguide_link_count': len(documents), 'energyguide_pdf_valid': True}
 
