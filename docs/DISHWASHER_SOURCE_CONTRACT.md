@@ -1,6 +1,7 @@
 # Dishwasher source reconnaissance
 
-Status: RUNNING. Phase 0 only; certification matching and compliance NOT_EVALUATED.
+Status: bounded live source reconnaissance PASS (run 35103320640).
+Phase 0 remains RUNNING; certification matching and compliance NOT_EVALUATED.
 
 Discovery references:
 - Samsung official listing: https://www.samsung.com/us/dishwashers/all-dishwashers/
@@ -23,8 +24,8 @@ Schema checks preserve numeric strings and verify brand/model/unique ID, annual
 energy, markets and certified-date columns. Sample availability does not define a
 current certification or support any Samsung model match.
 
-Acceptance evidence and sanitized fixture regression tests will be recorded after
-the live hosted observations complete. Full Phase 0 remains RUNNING.
+Sanitized fixtures and regression tests are versioned in tests/fixtures/dishwasher
+and tests/test_dishwasher_contract.py. Full Phase 0 remains RUNNING.
 
 ## Observed Samsung contracts, first hosted run
 
@@ -66,3 +67,23 @@ Dishwasher additionally exposes capacity_maximum_number_of_place_settings and
 water_use_gallons_cycle. Unit/period are different; water is per cycle, energy per year.
 These are observed metadata contracts; certification currency, Samsung matching,
 withdrawal status and pagination over the complete EPA population remain unverified.
+
+Metadata: https://data.energystar.gov/api/views/q8py-6w3f.json
+Sample: https://data.energystar.gov/resource/q8py-6w3f.json?$limit=3
+Observed rowsUpdatedAt: 1789564310; sample AEG F8242FI energy `234`, water `3.00`,
+place settings `15`, markets `United States, Canada`. This is a schema sample;
+it is not an EPA candidate lookup for the Samsung PDP.
+
+Successful live run 35103320640 artifact 10449725058 (1329938 bytes), ZIP SHA256
+`cdcd8366a559ef32f6650d3bb8df421a776208e56013a804e762cd6b0213ba68`.
+Original PDF and OCR render expire on 2026-09-30; compact source observations and
+manual region check are in docs/evidence/dishwasher-source-recon.json.
+Fixture hashes and source run IDs: docs/evidence/dishwasher-fixture-manifest.json.
+
+Next: Clothes Washer bounded source reconnaissance. Use the existing Sol medium
+exploration guidance; use Terra medium after contracts are fixed. Runtime uses no LLM.
+
+Final 28-test hosted dishwasher validation PASS:
+https://github.com/Empty-Bell/RDA/actions/runs/35103625881
+commit 629e3a6a21baa1a39f03e4bd61d0435640b30189, job 104819058726.
+All four live source checks and artifact upload passed on cold hosted Ubuntu.

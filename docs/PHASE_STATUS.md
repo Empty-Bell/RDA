@@ -1,6 +1,6 @@
 # Phase status
 
-Phase 0: RUNNING — bounded refrigerator source reconnaissance PASSED on hosted Ubuntu.
+Phase 0: RUNNING — bounded refrigerator and dishwasher source reconnaissance PASSED on hosted Ubuntu.
 Phases 1–7: NOT_STARTED.
 
 Desktop User-Agent validation (commit 434f5af6b99d83e99306e3b51b61344a61f4b896):
@@ -35,9 +35,17 @@ Refrigerator source evidence:
 - Artifact 10448527895, SHA256 35bd70c32cc77e398f507a3701bbc2d7c6cfbdc43449eef19eb552fa46c27d2c
 - Partial 403 run 35101447985 preserved as access-health evidence, not missing product/certification
 
-Next bounded task: repeat source-contract reconnaissance for Dishwasher using the
-existing workflow/collector; discover endpoint/category/dataset from actual page/catalog.
-Other 10 families and remaining refrigerator claim/quality semantics are not complete.
+Dishwasher bounded source checks passed in run 35103320640 (commit ac7d3a8).
+9 API groups = 9 rendered cards; 21 exact SKUs; sample DW90F89P0USRAA PDP/PDF
+and q8py-6w3f EPA schema/sample verified. Fixture tests expanded from 20 to 28.
+Final 28-test hosted dishwasher validation: run 35103625881, job 104819058726,
+commit 629e3a6a21baa1a39f03e4bd61d0435640b30189 — success.
+Mixed US/Canada PDF requires US-region OCR selection before automatic field parsing.
+See DISHWASHER_SOURCE_CONTRACT.md and docs/evidence/dishwasher-source-recon.json.
+
+Next bounded task: repeat source-contract reconnaissance for Clothes Washer using
+the family-configured workflow/collector; discover category/dataset from actual sources.
+Other 9 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;

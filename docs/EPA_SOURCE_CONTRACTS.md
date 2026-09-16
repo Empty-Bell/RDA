@@ -1,9 +1,14 @@
-# EPA source contracts — refrigerator dataset identified; other families UNKNOWN
+# EPA source contracts — refrigerator and dishwasher datasets identified
 
 Catalog reachability does not establish a certification match.
 Each of 11 families requires dataset ID/endpoint, brand/model/UPC, energy unit,
 market/certification status, current snapshot definition, timestamp/hash and fixtures.
 Pagination failure or schema drift must never become NO_CURRENT_EPA_CANDIDATE.
+
+Dishwasher q8py-6w3f live metadata and three sample rows passed in hosted run
+35103320640. See [DISHWASHER_SOURCE_CONTRACT.md](DISHWASHER_SOURCE_CONTRACT.md).
+Observed energy/date fields are annual_energy_use_kwh_year and date_certified;
+do not substitute refrigerator field names. The other 9 families remain UNKNOWN.
 
 ## Refrigerator v0.1
 

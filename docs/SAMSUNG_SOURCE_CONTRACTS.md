@@ -1,7 +1,8 @@
-# Samsung source contracts — refrigerator recon v0.1
+# Samsung source contracts — refrigerator and dishwasher reconnaissance
 
-Observed on GitHub-hosted Ubuntu 24.04 x64, 2026-09-16. Refrigerator only;
-other 10 product groups remain UNKNOWN. No compliance semantics implemented.
+Observed on GitHub-hosted Ubuntu 24.04 x64, 2026-09-16. Refrigerator contracts below;
+Dishwasher contracts: [DISHWASHER_SOURCE_CONTRACT.md](DISHWASHER_SOURCE_CONTRACT.md).
+Other 9 product groups remain UNKNOWN. No compliance semantics implemented.
 
 ## PLP / pf_search
 
