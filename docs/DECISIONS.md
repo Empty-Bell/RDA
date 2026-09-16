@@ -2,6 +2,13 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+Range reconnaissance: Samsung sales population includes gas/electric variants but
+EPA m6gi-ng33 is residential electric cooking and includes both Cooktop and Range
+product types (D09). Gas/dual-fuel applicability must not be inferred from dataset
+nonmembership. Total annual energy and oven/cooking-top low-power component energy
+are distinct measurements (D01). Oven Capacity 6.3 cu. ft. is a PDP source fact,
+not an independent appliance-label identity gate in this EPA-only reconnaissance.
+
 TV reconnaissance: Typical/Max/Stand-by power W and annual label/EPA energy kWh
 must remain distinct (D01). Sample label assumes 5 hours/day and 16 cents/kWh;
 PDP Typical 208 W cannot be treated as label 390 yearly kWh. OCR reading order puts

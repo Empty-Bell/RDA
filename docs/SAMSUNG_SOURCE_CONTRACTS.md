@@ -4,7 +4,8 @@ Observed on GitHub-hosted Ubuntu 24.04 x64, 2026-09-16. Refrigerator contracts b
 Dishwasher contracts: [DISHWASHER_SOURCE_CONTRACT.md](DISHWASHER_SOURCE_CONTRACT.md).
 Washer contracts: [WASHER_SOURCE_CONTRACT.md](WASHER_SOURCE_CONTRACT.md).
 TV contracts: [TV_SOURCE_CONTRACT.md](TV_SOURCE_CONTRACT.md).
-Other 7 product groups remain UNKNOWN. No compliance semantics implemented.
+Range contracts: [RANGE_SOURCE_CONTRACT.md](RANGE_SOURCE_CONTRACT.md).
+Other 6 product groups remain UNKNOWN. No compliance semantics implemented.
 
 ## PLP / pf_search
 

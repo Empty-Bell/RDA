@@ -24,6 +24,13 @@ field substitutes for annual kWh; missing UPC in individual rows does not establ
 a missing certification. See [TV_SOURCE_CONTRACT.md](TV_SOURCE_CONTRACT.md).
 Other 7 families remain UNKNOWN. No Samsung model certification lookup performed.
 
+Range m6gi-ng33 (Residential Electric Cooking Products) schema/sample passed in
+run 35106676958. Shared Cooktop/Range product_type, total annual energy and oven/
+cooking-top low-power component energy are preserved independently. Commercial
+electric cooktops nt9t-yxu3 must not substitute. Gas/dual-fuel applicability remains
+open. See [RANGE_SOURCE_CONTRACT.md](RANGE_SOURCE_CONTRACT.md).
+Other 6 families remain UNKNOWN; certification matching NOT_EVALUATED.
+
 ## Refrigerator v0.1
 
 Dataset `p5st-her9`, `ENERGY STAR Certified Residential Refrigerators`, identified

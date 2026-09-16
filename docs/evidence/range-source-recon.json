@@ -1,0 +1,703 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35106676958",
+  "job_id": 104829597830,
+  "artifact_id": 10449978862,
+  "artifact_size_bytes": 17875,
+  "artifact_zip_sha256": "89bf7159439c9d82f82603d878848d8ac08994cd5c95ac21d3cd192efd51310e",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T14:10:49.031267+00:00",
+    "run_id": "35106676958",
+    "attempt": "1",
+    "git_sha": "7ca2c669b7c194da59451d32fcbc87fd4a3d1dd8",
+    "scope": "range source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "14",
+          "category_code": "08080000",
+          "taxonomy_code": "08080200",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "f8d0384eacc7ebeda577beb25b4a27bd4eb6037613c77016dd60aab0db0e9d82",
+        "page_count": 14
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "14",
+          "requestCount": "16",
+          "category_code": "08080000",
+          "taxonomy_code": "08080200",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-1.json",
+        "fixture_sha256": "828ac38a51b7eb24f6705bbae00ebda75127e2e2a593468a380ea001c72c9a0a",
+        "page_count": 5
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/cooking-appliances/ranges/",
+          "api_total": 19
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 19,
+          "exact_skus": 58,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 14,
+              "expected_groups": 19
+            },
+            {
+              "round": 1,
+              "groups": 19,
+              "expected_groups": 19
+            }
+          ],
+          "rendered_representative_link_count": 14,
+          "rendered_tile_count": 19,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "NSE80H63XRAA",
+          "url": "https://www.samsung.com/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63xraa/",
+          "json_endpoints": 1,
+          "energyguide_metadata_count": 0,
+          "energyguide_probe": "OUT_OF_RECON_SCOPE",
+          "certification_matching": "NOT_EVALUATED"
+        }
+      },
+      {
+        "name": "epa_range_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "m6gi-ng33",
+          "column_count": 40,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "pdp_facts": {
+    "exact_sku": "NSE80H63XRAA",
+    "spec_fields_raw": [
+      {
+        "group": "Key Features",
+        "name": "Wi-Fi Connectivity",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Self Clean",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Large Oven Capacity",
+        "value": "6.3 cu. ft."
+      },
+      {
+        "group": "Key Features",
+        "name": "Voice-Enabled",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Control Type",
+        "value": "Touch + Precision Knobs"
+      },
+      {
+        "group": "Key Features",
+        "name": "Oven Cleaning Type",
+        "value": "Steam & Self Clean"
+      },
+      {
+        "group": "Key Features",
+        "name": "ADA Compliant",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Storage Drawer",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "SmartThings",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Self and Steam Clean",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Precision Knobs",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Glass Touch Controls",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "ENERGY STAR® Certified",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Air Sous Vide",
+        "value": "Yes"
+      },
+      {
+        "group": "Design",
+        "name": "Color",
+        "value": "Fingerprint Resistant Stainless Steel"
+      },
+      {
+        "group": "Design",
+        "name": "Fuel Type",
+        "value": "Electric"
+      },
+      {
+        "group": "Design",
+        "name": "Cavity Type",
+        "value": "Single"
+      },
+      {
+        "group": "Design",
+        "name": "Controls for Oven",
+        "value": "Touch"
+      },
+      {
+        "group": "Design",
+        "name": "Controls for Cooktop",
+        "value": "Precision Knobs"
+      },
+      {
+        "group": "Design",
+        "name": "Display Color",
+        "value": "White"
+      },
+      {
+        "group": "Design",
+        "name": "BESPOKE",
+        "value": "Yes"
+      },
+      {
+        "group": "Design",
+        "name": "Configuration",
+        "value": "Slide-In"
+      },
+      {
+        "group": "Capacity",
+        "name": "Oven Capacity",
+        "value": "6.3 cu. ft."
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Height (decimal)",
+        "value": "36-36.75 (Adjustable)"
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Width (decimal)",
+        "value": "29.94"
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Depth (decimal)",
+        "value": "28.38"
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Product Dimensions (W x H x D)",
+        "value": "29 15/16\" W x 36\"- 36 3/4\" (Adjustable) H x 28 3/8\" D"
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Oven Dimensions",
+        "value": "24 13/16\" W x 22 7/16\" H x 19 3/4\" D"
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Product Weight",
+        "value": "158.7 lbs"
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Shipping Weight",
+        "value": "180.6 lbs"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Total Number of Elements",
+        "value": "5"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Element - Left Front",
+        "value": "6\"/9\" 3,000W"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Element - Left Rear",
+        "value": "6\" 1,200W"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Element - Right Front",
+        "value": "9\"/12\" 3,000W"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Element - Right Rear",
+        "value": "6\" 1,200W"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Hot Surface Indicator Light",
+        "value": "Yes"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Element - Center Rear",
+        "value": "6\" Warming Zone (100W)"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Cooktop Type",
+        "value": "Electric"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Total Number of Elements",
+        "value": "5"
+      },
+      {
+        "group": "Oven",
+        "name": "Convection Bake",
+        "value": "Yes"
+      },
+      {
+        "group": "Oven",
+        "name": "Bake",
+        "value": "Yes"
+      },
+      {
+        "group": "Oven",
+        "name": "Proofing",
+        "value": "Yes"
+      },
+      {
+        "group": "Oven",
+        "name": "Convection Roast",
+        "value": "Yes"
+      },
+      {
+        "group": "Oven",
+        "name": "Variable Broil",
+        "value": "Yes"
+      },
+      {
+        "group": "Oven",
+        "name": "Total Number of Racks",
+        "value": "2"
+      },
+      {
+        "group": "Oven",
+        "name": "Keep Warm",
+        "value": "Yes"
+      },
+      {
+        "group": "Oven",
+        "name": "Number of Rack Positions",
+        "value": "7"
+      },
+      {
+        "group": "Oven",
+        "name": "Convection",
+        "value": "True Convection"
+      },
+      {
+        "group": "Oven",
+        "name": "Air Fry",
+        "value": "Yes"
+      },
+      {
+        "group": "Included Accessories",
+        "name": "Air Fry Tray",
+        "value": "Yes"
+      },
+      {
+        "group": "Included Accessories",
+        "name": "Filler Kit (For Slide In Range)",
+        "value": "Yes"
+      },
+      {
+        "group": "Included Accessories",
+        "name": "Anti-Tip Bracket",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Drawer Type",
+        "value": "Storage"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Hidden Bake Element",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Kitchen Timer",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Delay Start",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Child Safety Lock",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Auto Oven Light",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Interior Lights (qty)",
+        "value": "Incandescent 40W (1)"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Power/Ratings",
+        "value": "240V/60Hz/40A"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Steam & Self Clean",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Sabbath Mode",
+        "value": "Yes"
+      },
+      {
+        "group": "Warranty",
+        "name": "1 Year Parts and Labor",
+        "value": "Yes"
+      },
+      {
+        "group": "Electrical Specifications",
+        "name": "plug",
+        "value": "3 or 4 prong plug"
+      },
+      {
+        "group": "Electrical Specifications",
+        "name": "Outlet",
+        "value": "220/240 volt"
+      }
+    ],
+    "energy_consumption_raw": [],
+    "capacity_raw": [],
+    "screen_size_raw": [],
+    "power_consumption_raw": [],
+    "fuel_type_raw": [
+      {
+        "group": "Design",
+        "name": "Fuel Type",
+        "value": "Electric"
+      }
+    ],
+    "cooktop_type_raw": [
+      {
+        "group": "Cooktop",
+        "name": "Cooktop Type",
+        "value": "Electric"
+      }
+    ],
+    "oven_capacity_raw": [
+      {
+        "group": "Capacity",
+        "name": "Oven Capacity",
+        "value": "6.3 cu. ft."
+      }
+    ],
+    "energy_star_spec_claim_raw": [
+      {
+        "group": "Key Features",
+        "name": "ENERGY STAR® Certified",
+        "value": "Yes"
+      }
+    ],
+    "energy_star_structured_claim": null,
+    "energyguide_documents": []
+  },
+  "epa": {
+    "dataset_id": "m6gi-ng33",
+    "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+    "rows_updated_at": 1789564327,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "type": "text"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_name",
+        "name": "Model Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "product_type",
+        "name": "Product Type",
+        "type": "text"
+      },
+      {
+        "field": "installation_type",
+        "name": "Installation Type",
+        "type": "text"
+      },
+      {
+        "field": "cooking_top_technology",
+        "name": "Cooking Top Technology",
+        "type": "text"
+      },
+      {
+        "field": "width_inches",
+        "name": "Width (inches)",
+        "type": "number"
+      },
+      {
+        "field": "height_inches",
+        "name": "Height (inches)",
+        "type": "number"
+      },
+      {
+        "field": "depth_inches",
+        "name": "Depth (inches)",
+        "type": "number"
+      },
+      {
+        "field": "number_of_cooking_zones",
+        "name": "Number of Cooking Zones",
+        "type": "number"
+      },
+      {
+        "field": "control_type",
+        "name": "Control Type",
+        "type": "text"
+      },
+      {
+        "field": "voltage_volts",
+        "name": "Voltage (volts)",
+        "type": "text"
+      },
+      {
+        "field": "amperage_amps",
+        "name": "Amperage (amps)",
+        "type": "text"
+      },
+      {
+        "field": "specialty_zones",
+        "name": "Specialty Zones",
+        "type": "text"
+      },
+      {
+        "field": "smart_capabilities",
+        "name": "Smart Capabilities",
+        "type": "text"
+      },
+      {
+        "field": "additional_product_features",
+        "name": "Additional Product Features",
+        "type": "text"
+      },
+      {
+        "field": "annual_energy_consumption_kwh_yr",
+        "name": "Annual Energy Consumption (kWh/year)",
+        "type": "number"
+      },
+      {
+        "field": "low_power_mode_energy_consumption_oven_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Oven Component (kWh/year)",
+        "type": "number"
+      },
+      {
+        "field": "low_power_mode_energy_consumption_cooking_top_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Cooking Top (kWh/year)",
+        "type": "number"
+      },
+      {
+        "field": "average_cooking_zone_time_minutes",
+        "name": "Average Cooking Zone Time (minutes)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_1_size_inches",
+        "name": "Cooking Zone #1 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_2_size_inches",
+        "name": "Cooking Zone #2 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_3_size_inches",
+        "name": "Cooking Zone #3 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_4_size_inches",
+        "name": "Cooking Zone #4 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_5_size_inches",
+        "name": "Cooking Zone #5 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_6_size_inches",
+        "name": "Cooking Zone #6 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_1_wattage_watts",
+        "name": "Cooking Zone #1 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_2_wattage_watts",
+        "name": "Cooking Zone #2 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_3_wattage_watts",
+        "name": "Cooking Zone #3 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_4_wattage_watts",
+        "name": "Cooking Zone #4 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_5_wattage_watts",
+        "name": "Cooking Zone #5 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_6_wattage_watts",
+        "name": "Cooking Zone #6 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available On Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_certified",
+        "name": " Date Certified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "certification_matching": "NOT_EVALUATED",
+  "energyguide_probe": "OUT_OF_RECON_SCOPE"
+}

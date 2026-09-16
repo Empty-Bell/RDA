@@ -60,8 +60,16 @@ PDP/PDF and pd96-rr3d EPA schema/sample verified. Preserve power W versus annual
 kWh and product $62 versus cost range $32–$155; identity suffix matching is open.
 See TV_SOURCE_CONTRACT.md and docs/evidence/tv-source-recon.json.
 
-Next bounded task: Range EPA-focused source-contract reconnaissance.
-Other 7 families and remaining claim/quality semantics are not complete.
+Range EPA-focused reconnaissance PASS: run 35106676958, range job 104829597830.
+54 tests and four source checks passed; 19 API groups = 19 rendered tile groups,
+All five family jobs in the final run concluded success (commit 7ca2c669b7c194da59451d32fcbc87fd4a3d1dd8).
+58 exact SKUs; sample NSE80H63XRAA Specs/Support and m6gi-ng33 schema/sample verified.
+Fuel/product-type applicability and Samsung certification matching remain open.
+EnergyGuide PDF probe is OUT_OF_RECON_SCOPE under the master plan's EPA-only scope.
+See RANGE_SOURCE_CONTRACT.md and docs/evidence/range-source-recon.json.
+
+Next bounded task: Cooktop EPA-focused source-contract reconnaissance.
+Other 6 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;

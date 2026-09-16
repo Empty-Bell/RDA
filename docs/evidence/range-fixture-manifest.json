@@ -1,0 +1,27 @@
+[
+  {
+    "file": "tests/fixtures/range/bridge-specs-support.json",
+    "sha256": "1548c044e32e35a65f317846962f165eb7b90d187ddb23a94ecded1107a6bcb4",
+    "source_run_id": 35106401657
+  },
+  {
+    "file": "tests/fixtures/range/epa-metadata.projected.json",
+    "sha256": "18742b751d81ab2050ef470c06a8b521944f253ca3255bc19cb74ea24ba75487",
+    "source_run_id": 35106401657
+  },
+  {
+    "file": "tests/fixtures/range/epa-sample.projected.json",
+    "sha256": "f2367ef2362da3389304d30e26bac6d731ba337be698e9dc68e2d19587bdf263",
+    "source_run_id": 35106401657
+  },
+  {
+    "file": "tests/fixtures/range/pf-page-0.json",
+    "sha256": "f8d0384eacc7ebeda577beb25b4a27bd4eb6037613c77016dd60aab0db0e9d82",
+    "source_run_id": 35106401657
+  },
+  {
+    "file": "tests/fixtures/range/pf-page-1.json",
+    "sha256": "828ac38a51b7eb24f6705bbae00ebda75127e2e2a593468a380ea001c72c9a0a",
+    "source_run_id": 35106401657
+  }
+]
