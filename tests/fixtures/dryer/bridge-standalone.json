@@ -1,0 +1,1836 @@
+{
+  "Specs": [
+    {
+      "modelCode": "DV90F53AESA3",
+      "fullSpecs": [
+        {
+          "groupName": "Drying Capacity",
+          "specList": [
+            {
+              "name": "Drying Capacity (cu.ft)",
+              "value": "7.6 cu.ft"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Body color",
+              "value": "Dark Steel"
+            },
+            {
+              "name": "Door",
+              "value": "Black Deco+Glass"
+            },
+            {
+              "name": "Panel Display",
+              "value": "7\" LCD Display"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Cycle time (min)",
+              "value": "75 min"
+            },
+            {
+              "name": "Energy Star Certification",
+              "value": "Yes"
+            },
+            {
+              "name": "DOE Energy Factor",
+              "value": "3.93 lb/kWh"
+            },
+            {
+              "name": "Ampere",
+              "value": "30 A"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "AI Home",
+              "value": "Yes"
+            },
+            {
+              "name": "Interior Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Care",
+              "value": "No"
+            },
+            {
+              "name": "Reversible Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Drying Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Dual Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Filter Check Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "Mixed Load Bell / Damp Alert",
+              "value": "Yes"
+            },
+            {
+              "name": "My Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Exhaust (Electric/Gas)",
+              "value": "4 ways"
+            },
+            {
+              "name": "Vent Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Wrinkle Prevent",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Drying Level",
+              "value": "5 EA"
+            },
+            {
+              "name": "Number of Temp. Level",
+              "value": "5 EA"
+            },
+            {
+              "name": "Number of Time Level",
+              "value": "9 EA"
+            },
+            {
+              "name": "MultiControl™",
+              "value": "Yes"
+            },
+            {
+              "name": "Sensor Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Cycles",
+          "specList": [
+            {
+              "name": "Number of Cycle",
+              "value": "20"
+            },
+            {
+              "name": "Number of Option",
+              "value": "7"
+            },
+            {
+              "name": "Cycle List",
+              "value": "Steam Refresh, Wrinkle Away, Steam Sanitize+, AI OptiDry+, Super Speed, Eco Normal, Normal, Heavy Duty, Towels, Perm Press, Activewear, Bedding, Delicates, Wool, Shirts, Denim(Jeans), Time Dry, Air Fluff, Small Load, Rack Dry"
+            },
+            {
+              "name": "Option List",
+              "value": "Dryness, Dry time, Drying Temp, Damp Alert, Wrinkle Prevent, Eco Dry, AntiStatic"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Net Dimension (WxHxD)",
+              "value": "686 x 984 x 798 inch"
+            },
+            {
+              "name": "Net Weight",
+              "value": "55 lb"
+            },
+            {
+              "name": "Gross Dimension (WxHxD)",
+              "value": "746 x 1090 x 880 inch"
+            },
+            {
+              "name": "Gross Weight",
+              "value": "59 lb"
+            },
+            {
+              "name": "Voltage/Frequency",
+              "value": "240 V / 60 Hz"
+            },
+            {
+              "name": "Drum Material",
+              "value": "Stainless Steel"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart",
+          "specList": [
+            {
+              "name": "WiFi Embedded",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub",
+              "value": "No"
+            }
+          ]
+        },
+        {
+          "groupName": "App Connectivity",
+          "specList": [
+            {
+              "name": "SmartThings App Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "38.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "31.4375"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DV90F53AEYA3",
+      "fullSpecs": [
+        {
+          "groupName": "Drying Capacity",
+          "specList": [
+            {
+              "name": "Drying Capacity (cu.ft)",
+              "value": "7.6 cu.ft"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Body color",
+              "value": "Ivory (Greige)"
+            },
+            {
+              "name": "Door",
+              "value": "Black Deco+Glass"
+            },
+            {
+              "name": "Panel Display",
+              "value": "7\" LCD Display"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Cycle time (min)",
+              "value": "75 min"
+            },
+            {
+              "name": "Energy Star Certification",
+              "value": "Yes"
+            },
+            {
+              "name": "DOE Energy Factor",
+              "value": "3.93 lb/kWh"
+            },
+            {
+              "name": "Ampere",
+              "value": "30 A"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "AI Home",
+              "value": "Yes"
+            },
+            {
+              "name": "Interior Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Care",
+              "value": "No"
+            },
+            {
+              "name": "Reversible Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Drying Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Dual Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Filter Check Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "Mixed Load Bell / Damp Alert",
+              "value": "Yes"
+            },
+            {
+              "name": "My Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Exhaust (Electric/Gas)",
+              "value": "4 ways"
+            },
+            {
+              "name": "Vent Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Wrinkle Prevent",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Drying Level",
+              "value": "5 EA"
+            },
+            {
+              "name": "Number of Temp. Level",
+              "value": "5 EA"
+            },
+            {
+              "name": "Number of Time Level",
+              "value": "9 EA"
+            },
+            {
+              "name": "MultiControl™",
+              "value": "Yes"
+            },
+            {
+              "name": "Sensor Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Cycles",
+          "specList": [
+            {
+              "name": "Number of Cycle",
+              "value": "20"
+            },
+            {
+              "name": "Number of Option",
+              "value": "7"
+            },
+            {
+              "name": "Cycle List",
+              "value": "Steam Refresh, Wrinkle Away, Steam Sanitize+, AI OptiDry+, Super Speed, Eco Normal, Normal, Heavy Duty, Towels, Perm Press, Activewear, Bedding, Delicates, Wool, Shirts, Denim(Jeans), Time Dry, Air Fluff, Small Load, Rack Dry"
+            },
+            {
+              "name": "Option List",
+              "value": "Dryness, Dry time, Drying Temp, Damp Alert, Wrinkle Prevent, Eco Dry, AntiStatic"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Net Dimension (WxHxD)",
+              "value": "686 x 984 x 798 inch"
+            },
+            {
+              "name": "Net Weight",
+              "value": "55 lb"
+            },
+            {
+              "name": "Gross Dimension (WxHxD)",
+              "value": "746 x 1090 x 880 inch"
+            },
+            {
+              "name": "Gross Weight",
+              "value": "59 lb"
+            },
+            {
+              "name": "Voltage/Frequency",
+              "value": "240 V / 60 Hz"
+            },
+            {
+              "name": "Drum Material",
+              "value": "Stainless Steel"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart",
+          "specList": [
+            {
+              "name": "WiFi Embedded",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub",
+              "value": "No"
+            }
+          ]
+        },
+        {
+          "groupName": "App Connectivity",
+          "specList": [
+            {
+              "name": "SmartThings App Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "38.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "31.4375"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DV90F53AGSA3",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Dark Steel"
+            },
+            {
+              "name": "Display Type",
+              "value": "LCD"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Ampere",
+              "value": "30 Amps"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "AI Pattern",
+              "value": "Yes"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Dryer Options",
+              "value": "25"
+            },
+            {
+              "name": "Number of Preset Drying Cycles",
+              "value": "20"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            },
+            {
+              "name": "Wrinkle Away",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Dryer Type",
+              "value": "Vented"
+            },
+            {
+              "name": "Cycle Time (AHAM 8lbs)",
+              "value": "39"
+            },
+            {
+              "name": "Dryer Capacity (cu. ft.)",
+              "value": "7.6"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27 x 38.7 x 31.4"
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29.4 x 42.9 x 34.6"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Voice Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Sensor Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Voltage / Frequency",
+              "value": "120 V / 60 Hz"
+            },
+            {
+              "name": "kWh/Cycle",
+              "value": "215"
+            },
+            {
+              "name": "Stackable",
+              "value": "Yes"
+            },
+            {
+              "name": "Pedestal",
+              "value": "WE602NS/US"
+            },
+            {
+              "name": "ENERGY STAR® Most Efficient",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Bespoke AI",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Setting Options",
+              "value": "5"
+            },
+            {
+              "name": "Towels Dry Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Level of End of Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "yes"
+            },
+            {
+              "name": "AI OptiDry+",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Normal Dry Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Interior Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Care",
+              "value": "Yes"
+            },
+            {
+              "name": "Reversible Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Damp Alert",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Drying Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Sensor",
+              "value": "yes"
+            },
+            {
+              "name": "MultiControl™",
+              "value": "Yes"
+            },
+            {
+              "name": "Sensor Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cycles",
+          "specList": [
+            {
+              "name": "AI Optimal Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Bedding",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Denim",
+              "value": "Yes"
+            },
+            {
+              "name": "Shirts",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Fluff",
+              "value": "Yes"
+            },
+            {
+              "name": "More Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Less Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Sanitize+",
+              "value": "Yes"
+            },
+            {
+              "name": "Perm Press (permanent press)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Levels",
+          "specList": [
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Cycles",
+          "specList": [
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Drum Material",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "121"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "130"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "38.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "31.4375"
+            }
+          ]
+        },
+        {
+          "groupName": "Drying Cycles",
+          "specList": [
+            {
+              "name": "Downloaded",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Steam Drying Cycles",
+          "specList": [
+            {
+              "name": "Wrinkle Away",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Sanitize+",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dry Levels",
+          "specList": [
+            {
+              "name": "More Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Less Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Damp Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Very Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Drying Options",
+          "specList": [
+            {
+              "name": "Adjust Time (Up)",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjust Time (Down)",
+              "value": "Yes"
+            },
+            {
+              "name": "Damp Alert",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "Yes"
+            },
+            {
+              "name": "Languages",
+              "value": "Yes"
+            },
+            {
+              "name": "My Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "AntiStatic",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Pattern",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "groupName": "Power Type",
+          "specList": [
+            {
+              "name": "Dryer Type",
+              "value": "Vented"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "120 V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "kWh/Cycle",
+              "value": "215"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Pedestal",
+              "value": "WE602NS/US"
+            },
+            {
+              "name": "Matching Washer",
+              "value": "WF90F53ADSA5"
+            },
+            {
+              "name": "MultiControl™ Kit",
+              "value": "SKK-RWG"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor Drying Cycles",
+          "specList": [
+            {
+              "name": "Eco Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Shirts",
+              "value": "Yes"
+            },
+            {
+              "name": "Denim",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Towels",
+              "value": "Yes"
+            },
+            {
+              "name": "Perm Press (permanent press)",
+              "value": "Yes"
+            },
+            {
+              "name": "Bedding",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Activewear",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Manual Drying Cycles",
+          "specList": [
+            {
+              "name": "Air Fluff",
+              "value": "Yes"
+            },
+            {
+              "name": "Wrinkle Release",
+              "value": "Yes"
+            },
+            {
+              "name": "Small Load",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Electrical Ratings",
+          "specList": [
+            {
+              "name": "Cycle Time (AHAM 8lbs)",
+              "value": "39"
+            },
+            {
+              "name": "DOE Energy Factor (lb/kWh)",
+              "value": "3.48"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Dryer Capacity (cu. ft.)",
+              "value": "7.6"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27 x 38.7 x 31.4"
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29.4 x 42.9 x 34.6"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "38.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "31.4375"
+            },
+            {
+              "name": "Drum Capacity",
+              "value": "7.6"
+            },
+            {
+              "name": "Counter Depth",
+              "value": "31.4"
+            },
+            {
+              "name": "Width",
+              "value": "27"
+            },
+            {
+              "name": "Width",
+              "value": "27"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "121"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "130"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Sound Levels",
+          "specList": [
+            {
+              "name": "On",
+              "value": "Yes"
+            },
+            {
+              "name": "Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Drying Technology",
+          "specList": [
+            {
+              "name": "Sensor Drying",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "7.6"
+            },
+            {
+              "name": "Stackable",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Normal Dry Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "MultiControl™",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Optimal Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "AI OptiDry+",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Languages",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Gas"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DV90F53AGYA3",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Ivory"
+            },
+            {
+              "name": "Display Type",
+              "value": "LCD"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Ampere",
+              "value": "30 Amps"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "AI Pattern",
+              "value": "Yes"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Dryer Options",
+              "value": "25"
+            },
+            {
+              "name": "Number of Preset Drying Cycles",
+              "value": "20"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "Extra Low"
+            },
+            {
+              "name": "Wrinkle Away",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Dryer Type",
+              "value": "Vented"
+            },
+            {
+              "name": "Cycle Time (AHAM 8lbs)",
+              "value": "39"
+            },
+            {
+              "name": "Dryer Capacity (cu. ft.)",
+              "value": "7.6"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27 x 38.7 x 31.4"
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29.4 x 42.9 x 34.6"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "38.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "31.4375"
+            },
+            {
+              "name": "Voice Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Sensor Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Voltage / Frequency",
+              "value": "120 V / 60 Hz"
+            },
+            {
+              "name": "Stackable",
+              "value": "Yes"
+            },
+            {
+              "name": "Pedestal",
+              "value": "WE602NY/US"
+            },
+            {
+              "name": "ENERGY STAR® Most Efficient",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Bespoke AI",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Setting Options",
+              "value": "5"
+            },
+            {
+              "name": "Towels Dry Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Level of End of Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "yes"
+            },
+            {
+              "name": "AI OptiDry+",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Normal Dry Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Interior Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Care",
+              "value": "Yes"
+            },
+            {
+              "name": "Reversible Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Damp Alert",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Drying Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Mixed Load Bell (Damp Alert)",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Sensor",
+              "value": "yes"
+            },
+            {
+              "name": "MultiControl™",
+              "value": "Yes"
+            },
+            {
+              "name": "Sensor Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cycles",
+          "specList": [
+            {
+              "name": "AI Optimal Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Bedding",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Denim",
+              "value": "Yes"
+            },
+            {
+              "name": "Shirts",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Fluff",
+              "value": "Yes"
+            },
+            {
+              "name": "More Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Less Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Sanitize+",
+              "value": "Yes"
+            },
+            {
+              "name": "Perm Press (permanent press)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Levels",
+          "specList": [
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Cycles",
+          "specList": [
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Downloaded",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Fluff",
+              "value": "Yes"
+            },
+            {
+              "name": "Shirts",
+              "value": "Yes"
+            },
+            {
+              "name": "Denim",
+              "value": "Yes"
+            },
+            {
+              "name": "Wrinkle Away",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Optimal Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Sanitize+",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Drum Material",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "121"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "130"
+            }
+          ]
+        },
+        {
+          "groupName": "Drying Cycles",
+          "specList": [
+            {
+              "name": "Downloaded",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Steam Drying Cycles",
+          "specList": [
+            {
+              "name": "Steam",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dry Levels",
+          "specList": [
+            {
+              "name": "More Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Damp Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Very Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Drying Options",
+          "specList": [
+            {
+              "name": "Adjust Time (Up)",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjust Time (Down)",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "Yes"
+            },
+            {
+              "name": "Languages",
+              "value": "Yes"
+            },
+            {
+              "name": "My Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "AntiStatic",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "120 V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "Liter/Cycle",
+              "value": "215"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Matching Washer",
+              "value": "WF90F53ADYA5"
+            },
+            {
+              "name": "MultiControl™ Kit",
+              "value": "SKK-RWG"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor Drying Cycles",
+          "specList": [
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Towels",
+              "value": "Yes"
+            },
+            {
+              "name": "Perm Press (permanent press)",
+              "value": "Yes"
+            },
+            {
+              "name": "Bedding",
+              "value": "Yes"
+            },
+            {
+              "name": "Activewear",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Manual Drying Cycles",
+          "specList": [
+            {
+              "name": "Wrinkle Release",
+              "value": "Yes"
+            },
+            {
+              "name": "Small Load",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Electrical Ratings",
+          "specList": [
+            {
+              "name": "DOE Energy Factor (lb/kWh)",
+              "value": "3.48"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27 x 38.7 x 31.4"
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29.4 x 42.9 x 34.6"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "38.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "31.4375"
+            },
+            {
+              "name": "Drum Capacity",
+              "value": "7.6"
+            },
+            {
+              "name": "Counter Depth",
+              "value": "31.4"
+            },
+            {
+              "name": "Width",
+              "value": "27"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Sound Levels",
+          "specList": [
+            {
+              "name": "On",
+              "value": "Yes"
+            },
+            {
+              "name": "Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "7.6"
+            },
+            {
+              "name": "SmartThings",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight & Dimensions",
+          "specList": [
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "130"
+            },
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "121"
+            },
+            {
+              "name": "Drum Material",
+              "value": "Stainless Steel"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Languages",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Gas"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "DV90F53AESA3",
+      "supports": []
+    },
+    {
+      "modelCode": "DV90F53AEYA3",
+      "supports": []
+    },
+    {
+      "modelCode": "DV90F53AGSA3",
+      "supports": []
+    },
+    {
+      "modelCode": "DV90F53AGYA3",
+      "supports": []
+    }
+  ]
+}

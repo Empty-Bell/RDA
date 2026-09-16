@@ -83,7 +83,7 @@ def pdp_facts(data, target, family='refrigerator'):
         'tv': (None, None),  # sample PDP has power/screen fields, no annual energy/capacity
         'range': (None, None),  # discover cooking-specific spec names from raw pairs
         'cooktop': (None, None),  # same dataset does not imply identical PDP specs
-        'dryer': (None, None),  # map only observed dryer-specific spec names
+        'dryer': (None, 'Drying Capacity (cu.ft)'),  # observed standalone name, not combo washer capacity
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')
@@ -112,7 +112,7 @@ def pdp_facts(data, target, family='refrigerator'):
             'fuel_type_raw': [x for x in fields if x['name'] == 'Fuel Type'],
             'cooktop_type_raw': [x for x in fields if x['name'] == 'Cooktop Type'],
             'oven_capacity_raw': [x for x in fields if x['name'] == 'Oven Capacity'],
-            'energy_star_spec_claim_raw': [x for x in fields if 'ENERGY STAR' in (x['name'] or '')],
+            'energy_star_spec_claim_raw': [x for x in fields if re.search(r'energy\s*star', x['name'] or '', re.I)],
             'energy_star_structured_claim': None,
             'energyguide_documents': [{k: x.get(k) for k in ('name', 'type', 'url')} for x in documents]}
 

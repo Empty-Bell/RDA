@@ -49,3 +49,12 @@ class DryerContract(unittest.TestCase):
 
     def test_washer_dataset_cannot_substitute(self):
         with self.assertRaises(ValueError): epa_contract(self.metadata,self.rows,dataset='bghd-e2wd')
+
+    def test_observed_mixed_case_certification_name_is_preserved(self):
+        source=json.loads((ROOT/'bridge-standalone.json').read_text(encoding='utf-8'))
+        facts=pdp_facts(source,'DV90F53AESA3',family='dryer')
+        self.assertEqual(facts['energy_star_spec_claim_raw'][0]['name'],'Energy Star Certification')
+        self.assertEqual(facts['energy_star_spec_claim_raw'][0]['value'],'Yes')
+        self.assertEqual(facts['capacity_raw'][0]['value'],'7.6 cu.ft')
+        self.assertEqual(facts['energy_consumption_raw'],[])
+        self.assertIsNone(facts['energy_star_structured_claim'])
