@@ -104,12 +104,15 @@ def main():
 
     def browser_sources():
         from playwright.sync_api import sync_playwright
+        from browser_runtime import desktop_context
         observations = []
         captures = []
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
-            context = browser.new_context(locale='en-US')
+            context, identity = desktop_context(browser)
+            report['browser_identity'] = identity
             page = context.new_page()
+            assert page.evaluate('navigator.userAgent') == identity['user_agent']
 
             def observe(response):
                 url = response.url

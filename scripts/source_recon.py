@@ -11,6 +11,7 @@ from urllib.parse import urljoin
 
 from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract
+from browser_runtime import desktop_context
 
 OUT = Path('runtime/source-recon')
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
@@ -75,8 +76,10 @@ def main():
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context(locale='en-US')
+        context, identity = desktop_context(browser)
+        report['browser_identity'] = identity
         page = context.new_page()
+        assert page.evaluate('navigator.userAgent') == identity['user_agent']
 
         def observe(response):
             url = response.url
@@ -89,12 +92,14 @@ def main():
                     digest = save(name, projected)
                     row = {'url': safe_url(url), 'method': response.request.method,
                            'status': response.status, 'request_body': payload,
+                           'request_user_agent': response.request.headers.get('user-agent'),
                            'fixture': name, 'fixture_sha256': digest,
                            'page_count': len(projected['searchResults'])}
                     report['observations'].append(row)
                     captured_pf.append((data, response.request, payload))
                 except Exception as exc:
                     report['observations'].append({'url': safe_url(url), 'status': response.status,
+                                                   'request_user_agent': response.request.headers.get('user-agent'),
                                                    'error_type': type(exc).__name__})
             elif '/bridge-data?' in url and 'data_type=Specs' in url:
                 try:
@@ -125,6 +130,8 @@ def main():
                     page.wait_for_timeout(3000 * (2 ** attempt))
             assert response and response.status < 400, 'PLP HTTP access failed'
             assert captured_pf, 'pf_search response was not captured'
+            assert all(x.get('request_user_agent') == identity['user_agent']
+                       for x in report['observations'] if 'fixture' in x), 'pf_search UA differs from desktop context'
             text = page.locator('body').inner_text()
             save('plp-dom.json', {'result_text': re.findall(r'.{0,30}\b\d+\s+Results\b.{0,30}', text, re.I),
                                   'buttons': page.get_by_role('button').all_text_contents()[:60]})
