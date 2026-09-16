@@ -8,7 +8,7 @@ import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract, energyguide_ocr_reason
@@ -120,8 +120,9 @@ def main():
         def observe(response):
             url = response.url
             if family == 'computer' and response.request.resource_type in ('xhr', 'fetch'):
-                if re.search(r'samsung\.com/.*(?:spec|product|bridge)', url, re.I) and not re.search(r'chat|analytics|license', url, re.I):
-                    computer_spec_endpoints.append({'url': safe_url(url), 'status': response.status})
+                parsed_url = urlsplit(url)
+                if parsed_url.hostname == 'www.samsung.com' and not re.search(r'chat|analytics|license|account|auth', parsed_url.path, re.I):
+                    computer_spec_endpoints.append({'path': parsed_url.path, 'status': response.status})
             if 'pf_search' in url:
                 try:
                     data = response.json()
@@ -269,8 +270,17 @@ def main():
             if family == 'computer':
                 # Buy configurator mounts selected SKU and lazy Specs after hydration.
                 # Retain the same rendered exact-SKU gate; URL alone is insufficient.
-                page.wait_for_function('(sku) => document.body.innerText.toLowerCase().includes(sku.toLowerCase())',
-                                       arg=target, timeout=30000)
+                try:
+                    page.wait_for_function('(sku) => document.body.innerText.toLowerCase().includes(sku.toLowerCase())',
+                                           arg=target, timeout=30000)
+                finally:
+                    save('computer-spec-endpoints.json', computer_spec_endpoints)
+                    save('computer-configurator-observation.json', {
+                        'target_sku': target, 'final_url': safe_url(page.url),
+                        'rendered_target_present': target.lower() in page.locator('body').inner_text().lower(),
+                        'selected_controls': page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
+                            '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
+                        'buttons': page.get_by_role('button').all_text_contents()[:30]})
                 specs_button = page.get_by_role('button', name='Specs', exact=True)
                 if specs_button.count() and specs_button.first.is_visible():
                     specs_button.first.click(timeout=10000)
