@@ -81,6 +81,7 @@ def pdp_facts(data, target):
             fields.append({'group': group.get('groupName'), 'name': item.get('name'), 'value': item.get('value')})
     documents = [x for x in support[0]['supports'] if re.fullmatch(r'energy\s*guide', x.get('name', ''), re.I)]
     return {'exact_sku': target,
+            'spec_fields_raw': fields,
             'energy_consumption_raw': [x for x in fields if x['name'] == 'Energy Consumption'],
             'capacity_raw': [x for x in fields if x['name'] == 'Total Capacity (cu. ft.)'],
             'energy_star_spec_claim_raw': [x for x in fields if 'ENERGY STAR' in (x['name'] or '')],
@@ -102,12 +103,12 @@ def pf_population(pages):
     return {'total_groups': total, 'unique_exact_skus': len({r['exact_sku'] for r in records}), 'records': records}
 
 
-def epa_contract(metadata, rows):
+def epa_contract(metadata, rows, dataset='p5st-her9'):
     required = {'pd_id', 'brand_name', 'model_number', 'upc', 'annual_energy_use_kwh_yr',
                 'markets', 'date_qualified'}
     fields = {c.get('fieldName') for c in metadata.get('columns', [])}
-    if metadata.get('id') != 'p5st-her9' or not required <= fields:
-        raise ValueError('EPA refrigerator dataset identity or required columns drifted')
+    if dataset not in {'p5st-her9', 'q8py-6w3f'} or metadata.get('id') != dataset or not required <= fields:
+        raise ValueError('EPA dataset identity or required columns drifted')
     if not isinstance(rows, list) or not rows:
         raise ValueError('EPA sample response unavailable/empty; no absence conclusion')
     for row in rows:

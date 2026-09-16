@@ -1,4 +1,4 @@
-name: Phase 0 refrigerator source contracts
+name: Phase 0 product source contracts
 on:
   workflow_dispatch:
   push:
@@ -15,6 +15,10 @@ jobs:
     timeout-minutes: 20
     env:
       PYTHONUNBUFFERED: '1'
+    strategy:
+      fail-fast: false
+      matrix:
+        family: [refrigerator, dishwasher]
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -26,15 +30,15 @@ jobs:
         run: |
           mkdir -p runtime
           bash scripts/bootstrap.sh
-      - name: Observe refrigerator source contracts
+      - name: Observe source contracts
         run: |
           python -m unittest discover -s tests -v
-          python scripts/source_recon.py
+          python scripts/source_recon.py --family ${{ matrix.family }}
       - name: Preserve observations
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: source-recon-${{ github.run_id }}-${{ github.run_attempt }}
+          name: source-recon-${{ matrix.family }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: runtime/
           retention-days: 14
           if-no-files-found: error

@@ -1,4 +1,5 @@
-"""Bounded refrigerator source reconnaissance; no compliance rules."""
+"""Bounded product-family source reconnaissance; no compliance rules."""
+import argparse
 import copy
 import hashlib
 import json
@@ -14,6 +15,12 @@ from source_contract import pf_page, pf_population, pdp_facts, project_bridge, e
 from browser_runtime import desktop_context
 
 OUT = Path('runtime/source-recon')
+FAMILIES = {
+    'refrigerator': {'plp': 'https://www.samsung.com/us/home-appliances/refrigerators/all-refrigerators/',
+                     'dataset': 'p5st-her9', 'dataset_name': 'ENERGY STAR Certified Residential Refrigerators'},
+    'dishwasher': {'plp': 'https://www.samsung.com/us/dishwashers/all-dishwashers/',
+                   'dataset': 'q8py-6w3f', 'dataset_name': 'ENERGY STAR Certified Residential Dishwashers'},
+}
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
 
@@ -57,11 +64,17 @@ def profile(data, prefix='', depth=0):
 
 
 def main():
+    global OUT
+    args = argparse.ArgumentParser()
+    args.add_argument('--family', choices=FAMILIES, default='refrigerator')
+    family = args.parse_args().family
+    config = FAMILIES[family]
+    OUT = Path('runtime/source-recon') / family
     from playwright.sync_api import sync_playwright
     OUT.mkdir(parents=True, exist_ok=True)
     report = {'captured_at': datetime.now(timezone.utc).isoformat(),
               'run_id': os.getenv('GITHUB_RUN_ID'), 'attempt': os.getenv('GITHUB_RUN_ATTEMPT'),
-              'git_sha': os.getenv('GITHUB_SHA'), 'scope': 'Refrigerator source contracts only',
+              'git_sha': os.getenv('GITHUB_SHA'), 'scope': f'{family} source contracts only',
               'status': 'RUNNING', 'phase_gate': 'NOT_EVALUATED', 'observations': [], 'checks': []}
     captured_pf = []
     pdp_json = []
@@ -120,7 +133,7 @@ def main():
         page.on('response', observe)
 
         def plp():
-            url = 'https://www.samsung.com/us/home-appliances/refrigerators/all-refrigerators/'
+            url = config['plp']
             for attempt in range(3):
                 response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
                 page.wait_for_timeout(8000)
@@ -216,7 +229,8 @@ def main():
                 sampling_source = 'current pf_search response'
             else:
                 # Historical fixture is a diagnostic sample only, never current population.
-                fixture = Path('tests/fixtures/refrigerator/pf-page-0.json')
+                fixture = Path('tests/fixtures') / family / 'pf-page-0.json'
+                assert fixture.exists(), 'No live population or prior family fixture; cannot guess PDP'
                 product = json.loads(fixture.read_text(encoding='utf-8'))['searchResults'][0]
                 sampling_source = 'previous hosted fixture; independent source diagnosis, not population'
             target = product['modelCode']
@@ -277,26 +291,32 @@ def main():
         check('pdp_identity_and_documents', pdp)
 
         def epa():
-            dataset = 'p5st-her9'  # observed in official ENERGY STAR catalog, initial hosted artifact
+            dataset = config['dataset']  # discovered from official catalog; live identity checked below
             base = 'https://data.energystar.gov'
             metadata_response = context.request.get(f'{base}/api/views/{dataset}.json', timeout=30000)
             assert metadata_response.status == 200, 'EPA dataset metadata unavailable'
             metadata = metadata_response.json()
-            save('fixtures/epa-metadata.json', metadata)
+            assert metadata.get('name') == config['dataset_name'], 'EPA certified dataset name drifted'
+            # Public data schema only; omit publisher/contact/account metadata.
+            projected_metadata = {k: metadata.get(k) for k in ('id', 'name', 'rowsUpdatedAt')}
+            projected_metadata['columns'] = [{k: c.get(k) for k in ('fieldName', 'name', 'dataTypeName')}
+                                             for c in metadata.get('columns', [])
+                                             if not c.get('fieldName', '').startswith(':')]
+            save('fixtures/epa-metadata.json', projected_metadata)
             columns = [{'field': c.get('fieldName'), 'name': c.get('name'), 'type': c.get('dataTypeName')}
                        for c in metadata.get('columns', []) if not c.get('fieldName', '').startswith(':')]
             sample_response = context.request.get(f'{base}/resource/{dataset}.json?$limit=3', timeout=30000)
             assert sample_response.status == 200, 'EPA dataset sample unavailable'
             sample = sample_response.json()
             assert isinstance(sample, list) and sample, 'EPA sample empty'
-            epa_contract(metadata, sample)
+            epa_contract(metadata, sample, dataset=dataset)
             save('fixtures/epa-sample.json', sample)
             save('epa-observation.json', {'dataset_id': dataset, 'name': metadata.get('name'),
                                           'rows_updated_at': metadata.get('rowsUpdatedAt'), 'columns': columns,
                                           'sample_rows': len(sample), 'certification_matching': 'NOT_EVALUATED'})
             return {'dataset_id': dataset, 'column_count': len(columns), 'sample_rows': len(sample)}
 
-        check('epa_refrigerator_dataset_contract', epa)
+        check(f'epa_{family}_dataset_contract', epa)
         browser.close()
 
     report['status'] = 'FAIL' if any(x['status'] == 'FAIL' for x in report['checks']) else 'PASS'
