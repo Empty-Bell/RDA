@@ -20,6 +20,8 @@ FAMILIES = {
                      'dataset': 'p5st-her9', 'dataset_name': 'ENERGY STAR Certified Residential Refrigerators'},
     'dishwasher': {'plp': 'https://www.samsung.com/us/dishwashers/all-dishwashers/',
                    'dataset': 'q8py-6w3f', 'dataset_name': 'ENERGY STAR Certified Residential Dishwashers'},
+    'washer': {'plp': 'https://www.samsung.com/us/laundry/washers/',
+               'dataset': 'bghd-e2wd', 'dataset_name': 'ENERGY STAR Certified Residential Clothes Washers'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')

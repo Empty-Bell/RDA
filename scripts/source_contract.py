@@ -68,6 +68,7 @@ def pdp_facts(data, target, family='refrigerator'):
     names = {
         'refrigerator': ('Energy Consumption', 'Total Capacity (cu. ft.)'),
         'dishwasher': ('Energy Usage (kWh/year)', 'Place Setting'),
+        'washer': (None, None),  # discover names from live raw spec pairs, never guess
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')
@@ -115,12 +116,15 @@ def epa_contract(metadata, rows, dataset='p5st-her9'):
         'p5st-her9': {'annual_energy_use_kwh_yr', 'date_qualified'},
         'q8py-6w3f': {'annual_energy_use_kwh_year', 'date_certified',
                       'capacity_maximum_number_of_place_settings', 'water_use_gallons_cycle'},
+        'bghd-e2wd': {'annual_energy_use_kwh_year', 'date_qualified',
+                      'integrated_modified_energy_factor_imef', 'integrated_water_factor_iwf',
+                      'annual_water_use_gallons_year'},
     }
     if dataset not in columns:
         raise ValueError('Unknown EPA dataset contract')
     required = {'pd_id', 'brand_name', 'model_number', 'upc', 'markets'} | columns[dataset]
     fields = {c.get('fieldName') for c in metadata.get('columns', [])}
-    if dataset not in {'p5st-her9', 'q8py-6w3f'} or metadata.get('id') != dataset or not required <= fields:
+    if metadata.get('id') != dataset or not required <= fields:
         raise ValueError('EPA dataset identity or required columns drifted')
     if not isinstance(rows, list) or not rows:
         raise ValueError('EPA sample response unavailable/empty; no absence conclusion')
