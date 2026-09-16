@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 
 from runner_probe import safe_url, sanitize
-from source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract
+from source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract, energyguide_ocr_reason
 from browser_runtime import desktop_context
 
 OUT = Path('runtime/source-recon')
@@ -271,11 +271,11 @@ def main():
             ocr_texts = []
             fallback_reason = None
             engine_name = 'PyMuPDF'
-            if len(extracted.strip()) < 20:
+            if energyguide_ocr_reason(extracted):
                 import cv2
                 from rapidocr import RapidOCR
                 cv2.setNumThreads(1)
-                fallback_reason = 'EMPTY_EMBEDDED_TEXT' if not extracted.strip() else 'SHORT_EMBEDDED_TEXT'
+                fallback_reason = energyguide_ocr_reason(extracted)
                 parsed[0].get_pixmap(matrix=pymupdf.Matrix(2, 2)).save(OUT / 'energyguide-ocr-2x.png')
                 engine = RapidOCR(params={'EngineConfig.onnxruntime.intra_op_num_threads': 1,
                                           'EngineConfig.onnxruntime.inter_op_num_threads': 1})

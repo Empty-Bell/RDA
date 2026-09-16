@@ -3,6 +3,17 @@ import re
 from urllib.parse import urljoin, urlsplit
 
 
+def energyguide_ocr_reason(text):
+    """Recon extraction health only; does not choose a label field or assess compliance."""
+    if not text.strip():
+        return 'EMPTY_EMBEDDED_TEXT'
+    if len(text.strip()) < 20:
+        return 'SHORT_EMBEDDED_TEXT'
+    if not re.search(r'\d+(?:[.,]\d+)?\s*kWh\b', text, re.I):
+        return 'MISSING_ENERGY_VALUE_IN_EMBEDDED_TEXT'
+    return None
+
+
 def project_bridge(data):
     """Explicit product-only allowlist; never retain chat/analytics/RelatedModels."""
     if not isinstance(data, dict) or not isinstance(data.get('Specs'), list) or not isinstance(data.get('Support'), list):

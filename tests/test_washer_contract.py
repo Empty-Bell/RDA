@@ -2,7 +2,7 @@
 import json
 import unittest
 from pathlib import Path
-from scripts.source_contract import pf_population, pdp_facts, epa_contract
+from scripts.source_contract import pf_population, pdp_facts, epa_contract, energyguide_ocr_reason
 
 ROOT = Path(__file__).parent / 'fixtures' / 'washer'
 
@@ -54,3 +54,21 @@ class WasherContract(unittest.TestCase):
     def test_empty_epa_sample_is_error(self):
         with self.assertRaises(ValueError):
             epa_contract(self.metadata, [], dataset='bghd-e2wd')
+
+    def test_standalone_missing_pdp_energy_stays_unknown(self):
+        source = json.loads((ROOT / 'bridge-standalone.json').read_text(encoding='utf-8'))
+        facts = pdp_facts(source, 'WF90F53ADSA5', family='washer')
+        self.assertEqual(facts['energy_consumption_raw'], [])
+        self.assertEqual(facts['capacity_raw'][0]['value'], '5.3')
+        self.assertEqual(len(facts['energy_star_spec_claim_raw']), 2)  # Certified and Most Efficient distinct raw claims
+        self.assertIn('wf90f53adsa5', facts['energyguide_documents'][0]['url'])
+
+    def test_long_partial_embedded_text_requires_ocr(self):
+        observed = json.loads((ROOT / 'partial-text-energyguide.json').read_text(encoding='utf-8'))
+        self.assertGreater(len(observed['embedded_text']), 500)
+        self.assertEqual(energyguide_ocr_reason(observed['embedded_text']),
+                         'MISSING_ENERGY_VALUE_IN_EMBEDDED_TEXT')
+
+    def test_fallback_health_does_not_choose_energy_value(self):
+        self.assertEqual(energyguide_ocr_reason(' \n'), 'EMPTY_EMBEDDED_TEXT')
+        self.assertIsNone(energyguide_ocr_reason('Models TEST*; 225 kWh; 307 kWh similar models range'))

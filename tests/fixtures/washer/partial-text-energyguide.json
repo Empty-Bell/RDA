@@ -1,0 +1,14 @@
+{
+  "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wf90f53adsa5/energyguide/us-energyguide-wf90f53adsa5-554563643.pdf",
+  "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wf90f53adsa5/energyguide/us-energyguide-wf90f53adsa5-554563643.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "size_bytes": 620278,
+  "sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+  "embedded_text": "U.S. Government \nFederal law prohibits removal of this label before consumer purchase. \nClothes Washer \nCapacity Class: Standard \nSamsung \nModels WF90F53*D* \nCapacity (tub volume): 5.3 cubic feet \nCompare ONLY to other labels with yellow numbers. \nLabels with yellow numbers are based on the same test procedures. \n• Your cost will depend on your utility rates and use.\n• Cost range based only on standard capacity models.\n• Estimated energy cost based on six wash loads a week and a national average\nelectricity cost of 14 cents per kWh and natural gas cost of $1.21 per therm.\nftc.gov/energy \nDC68-04096U-OO \n",
+  "extraction_engine": "PyMuPDF",
+  "fallback_reason": null,
+  "ocr_raw_texts": [],
+  "ocr_scale": null,
+  "field_parser_contract": "NOT_EVALUATED"
+}
