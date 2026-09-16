@@ -119,6 +119,13 @@ Run 35101447985 returned pf_search HTTP 403 despite earlier/later access success
 This is a hosted source-access health event, not missing product/document evidence.
 The collector now bounds page retries to three attempts; stable hosted access is not established.
 
+Desktop-UA mitigation: scripts/browser_runtime.py preserves actual Linux Chromium
+OS/version, replaces HeadlessChrome with Chrome, and fixes en-US desktop viewport.
+Source run 35102481369 and runtime run 35102481276 passed after this change.
+The source run verifies navigator UA and actual pf_search request UA agree.
+Record native/effective UA in artifacts; do not claim the historical 403 root cause
+or permanent resolution from these two successful runs.
+
 Contract regression tests: tests/test_source_contract.py (20 tests in total with probe guards).
 Final hosted validation: https://github.com/Empty-Bell/RDA/actions/runs/35101976503,
 commit 4c0193c06f921af4b38b8d895d78a953a838ff0e, attempt 1, job 104813390799.

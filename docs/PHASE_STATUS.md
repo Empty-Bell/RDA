@@ -3,6 +3,14 @@
 Phase 0: RUNNING — bounded refrigerator source reconnaissance PASSED on hosted Ubuntu.
 Phases 1–7: NOT_STARTED.
 
+Desktop User-Agent validation (commit 434f5af6b99d83e99306e3b51b61344a61f4b896):
+- Source recon https://github.com/Empty-Bell/RDA/actions/runs/35102481369 — success
+- Runtime probe https://github.com/Empty-Bell/RDA/actions/runs/35102481276 — success
+- Installed Chromium OS/version retained; HeadlessChrome token replaced by Chrome.
+- navigator.userAgent and observed pf_search request UA checked against configured UA.
+- 20 contract/guardrail tests and live source checks passed on hosted runners.
+- This is post-change success, not evidence that UA caused the earlier 403 or permanently resolved it.
+
 Hosted evidence:
 - Run: https://github.com/Empty-Bell/RDA/actions/runs/35100312790 (success)
 - Commit: 8b786bac4ea15afa5b2a892815e6cbc80644d58a; attempt 1
