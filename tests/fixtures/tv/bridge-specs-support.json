@@ -1,0 +1,5901 @@
+{
+  "Specs": [
+    {
+      "modelCode": "MRN100R85HFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "100\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "99.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "144 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR+"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 144 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling"
+            },
+            {
+              "name": "Supersize Picture Enhancer",
+              "value": "Yes"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS Lite"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 2ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "30 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "4ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 144 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Simple Chamfer"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "3 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Titan Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Metal Linear"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Titan Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "460 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "251 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "94.30 x 56.70 x 9.10 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "87.80 x 52.40 x 16.40 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "87.80 x 50.20 x 2.30 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "67.80 x 16.40 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "600 x 400 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "181.0 lbs"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "136.1 lbs"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "132.9 lbs"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Dongle Support"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "3-Pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN115MR95FXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "MICRO RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "115\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "114.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "4K (3,840 x 2,160)"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "120Hz (Up to 144Hz)"
+            },
+            {
+              "name": "Anti Reflection",
+              "value": "Glare Free"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR+"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (ADAPTIVE/ GAMING)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering Pro"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate UHD Dimming Pro"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 144 Hz"
+            },
+            {
+              "name": "Film Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized/AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling Pro"
+            },
+            {
+              "name": "AI Motion Enhancer",
+              "value": "AI Motion Enhancer Pro"
+            },
+            {
+              "name": "Supersize Picture Enhancer",
+              "value": "Yes"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS+"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "70W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "4.2.2CH"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Yes (Active Voice Amplifier Pro)"
+            },
+            {
+              "name": "Bluetooth Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Yes (Adaptive Sound Pro)"
+            },
+            {
+              "name": "360 Audio",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "TV to Mobile, Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On, Tap View"
+            },
+            {
+              "name": "Multi-View",
+              "value": "upto 2 videos"
+            },
+            {
+              "name": "Buds Auto Switch",
+              "value": "Yes"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Daily Board",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Workout Tracker",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi Control",
+              "value": "Yes"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes (US only)"
+            },
+            {
+              "name": "Click to Search",
+              "value": "Yes (US only)"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (US, CA, KR, BR, UK, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "ATSC/ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            },
+            {
+              "name": "DTV Sound System",
+              "value": "Dolby"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 5)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 144 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1/1(Common Use for Terrestrial)/0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Metal SuperSlim"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "4 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "RGB CARBON SILVER"
+            },
+            {
+              "name": "Stand Type",
+              "value": "METAL LINEAR ROUND"
+            },
+            {
+              "name": "Stand Color",
+              "value": "RGB CARBON SILVER"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "ConnectShare™",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            },
+            {
+              "name": "MBR Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "US English, Mexico Spanish, Canada French, Finnish, German, Greek, Hungarian, Italian, Norwegian, Polish, Portugal Portuguese, Romanian, Slovak, Swedish, Czech, Danish, Dutch, Korean"
+            },
+            {
+              "name": "Low Vision Support",
+              "value": "Audio Subtitles, Relumino, Magnification, Audio Description, Zoom Menu and Text, High Contrast, SeeColors, Color Inversion, Grayscale, Auto Picture Off"
+            },
+            {
+              "name": "Hearing Impaired Support",
+              "value": "Closed Caption (Subtitle), Multi-output Audio, Caption Position, Sign Language Zoom, Separate Closed Caption, Sign Language Guide, Auto Caption Position"
+            },
+            {
+              "name": "Motor Impaired Support",
+              "value": "Slow Button Repeat, Remote Control App. for All"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "800 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "410 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "108.9 x 65.0 x 9.8 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "101.2 x 60.4 x 18.4 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "101.2 x 58.2 x 1.4 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "80.4 x 18.4 in"
+            },
+            {
+              "name": "Stand (Minimum) (WxD)",
+              "value": "27.0 x 18.4 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "1000 x 600 mm"
+            },
+            {
+              "name": "Screw Size",
+              "value": "M8"
+            },
+            {
+              "name": "Screw Depth",
+              "value": "16-18"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "308.7 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "199.6 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "194.0 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2560E(US), TM2360E(CA)"
+            },
+            {
+              "name": "Remote Controller Code No",
+              "value": "BN59-01480A"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Built-in"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "3-pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN55R85HAFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "55\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "54.6\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "144 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR+"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 144 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS Lite"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 2ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "30 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "2ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 144 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Monolith Edge"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "3 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Titan Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Round Feet"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "210 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "145 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "53.23 x 31.81 x 5.00 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "48.19 x 29.29 x 8.58 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "48.19 x 27.87 x 2.05 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "40.73 x 8.58 in"
+            },
+            {
+              "name": "Stand (Minimum) (WxD)",
+              "value": "9.84 x 8.58 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "300 x 200 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "43.21 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "32.85 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "32.19 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Studio Stand Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Full Motion Slim Wall Mount Support (Y22)",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Dongle Support"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "2-Pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN65R85HAFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "65\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "64.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "144 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR+"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 144 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS Lite"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 2ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "30 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "2ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 144 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Monolith Edge"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "3 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Titan Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Round Feet"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "215 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "134 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "62.13 x 36.73 x 5.59 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "56.81 x 34.14 x 10.11 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "56.81 x 32.72 x 2.05 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "47.62 x 10.11 in"
+            },
+            {
+              "name": "Stand (Minimum) (WxD)",
+              "value": "11.82 x 10.11 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "400 x 300 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "56.44 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "42.99 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "42.11 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Studio Stand Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Full Motion Slim Wall Mount Support (Y22)",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Dongle Support"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "2-Pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN65R95HAFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "9"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "65\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "64.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "165 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            },
+            {
+              "name": "Anti Reflection",
+              "value": "Glare Free"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine Pro"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR Pro"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering Pro"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming Pro"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 165 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling Pro"
+            },
+            {
+              "name": "AI Motion Enhancer",
+              "value": "AI Motion Enhancer Pro"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS+"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 5.1ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "70 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "4.2.2ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "(US) ATSC 3.0 (Canada) ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            },
+            {
+              "name": "Data Broadcasting",
+              "value": "(US) ATSC 3.0 Interactive Content"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 165 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "One Connect Box",
+              "value": "Wireless One Connect Ready"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Infinity Air"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "4 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Infinity Air Stand"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Space Graphite"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "275 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "171 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "62.80 x 38.58 x 7.52 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "56.58 x 35.04 x 11.89 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "56.58 x 32.52 x 1.17 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "14.00 x 11.89 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "400 x 300 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "70.55 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "52.47 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "49.38 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Studio Stand Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Full Motion Slim Wall Mount Support (Y22)",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Built-in"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "2-Pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN75R85HAFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "75\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "74.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "144 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR+"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 144 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS Lite"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 2ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "30 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "2ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 144 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Monolith Edge"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "3 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Titan Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Round Feet"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "265 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "162 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "72.05 x 42.32 x 6.46 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "65.61 x 39.13 x 12.59 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "65.61 x 37.71 x 2.06 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "55.24 x 12.59 in"
+            },
+            {
+              "name": "Stand (Minimum) (WxD)",
+              "value": "13.41 x 12.59 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "400 x 300 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "75.62 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "57.10 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "56.00 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Full Motion Slim Wall Mount Support (Y22)",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Dongle Support"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "2-Pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN75R95HAFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "9"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "75\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "74.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "165 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            },
+            {
+              "name": "Anti Reflection",
+              "value": "Glare Free"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine Pro"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR Pro"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering Pro"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming Pro"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 165 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling Pro"
+            },
+            {
+              "name": "AI Motion Enhancer",
+              "value": "AI Motion Enhancer Pro"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS+"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 5.1ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "70 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "4.2.2ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "(US) ATSC 3.0 (Canada) ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            },
+            {
+              "name": "Data Broadcasting",
+              "value": "(US) ATSC 3.0 Interactive Content"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 165 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "One Connect Box",
+              "value": "Wireless One Connect Ready"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Infinity Air"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "4 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Infinity Air Stand"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Space Graphite"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "370 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "208 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "71.50 x 44.76 x 7.80 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "65.31 x 40.13 x 13.74 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "65.31 x 37.48 x 1.17 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "14.00 x 13.74 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "400 x 400 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "99.43 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "70.11 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "66.36 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Full Motion Slim Wall Mount Support (Y22)",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Built-in"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "2-Pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN85R85HAFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "85\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "84.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "144 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR+"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 144 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling"
+            },
+            {
+              "name": "Supersize Picture Enhancer",
+              "value": "Yes"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS Lite"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 2ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "30 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "2ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 144 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Monolith Edge"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "3 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Titan Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Round Feet"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "330 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "206 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "81.10 x 47.24 x 7.01 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "74.36 x 44.21 x 14.53 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "74.36 x 42.65 x 2.07 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "63.98 x 14.53 in"
+            },
+            {
+              "name": "Stand (Minimum) (WxD)",
+              "value": "14.20 x 14.53 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "600 x 400 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "101.85 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "76.50 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "74.96 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Full Motion Slim Wall Mount Support (Y22)",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Dongle Support"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "2-Pin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN85R95HAFXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Product Type",
+          "specList": [
+            {
+              "name": "Product Type",
+              "value": "Micro RGB"
+            }
+          ]
+        },
+        {
+          "groupName": "Series",
+          "specList": [
+            {
+              "name": "Series",
+              "value": "9"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size",
+              "value": "85\""
+            },
+            {
+              "name": "Real Inch",
+              "value": "84.5\""
+            },
+            {
+              "name": "Resolution",
+              "value": "3840 x 2160"
+            },
+            {
+              "name": "Refresh Rate",
+              "value": "165 Hz (VRR Support)"
+            },
+            {
+              "name": "DLG",
+              "value": "240 Hz"
+            },
+            {
+              "name": "Anti Reflection",
+              "value": "Glare Free"
+            }
+          ]
+        },
+        {
+          "groupName": "Video",
+          "specList": [
+            {
+              "name": "Picture Engine",
+              "value": "Micro RGB AI Engine Pro"
+            },
+            {
+              "name": "HDR (High Dynamic Range)",
+              "value": "Micro RGB HDR Pro"
+            },
+            {
+              "name": "HDR 10+",
+              "value": "Yes (Adaptive / Gaming / Advanced)"
+            },
+            {
+              "name": "AI HDR Remastering",
+              "value": "Auto HDR Remastering Pro"
+            },
+            {
+              "name": "Contrast",
+              "value": "Micro RGB Technology"
+            },
+            {
+              "name": "Color",
+              "value": "Micro RGB Precision Color 100"
+            },
+            {
+              "name": "Viewing Angle",
+              "value": "Wide Viewing Angle"
+            },
+            {
+              "name": "Micro Dimming",
+              "value": "Ultimate Micro Dimming Pro"
+            },
+            {
+              "name": "Contrast Enhancer",
+              "value": "Real Depth Enhancer"
+            },
+            {
+              "name": "Motion Technology",
+              "value": "Motion Xcelerator 165 Hz"
+            },
+            {
+              "name": "AI Picture",
+              "value": "AI Optimized / AI Customization"
+            },
+            {
+              "name": "Picture Upscale",
+              "value": "4K AI Upscaling Pro"
+            },
+            {
+              "name": "AI Motion Enhancer",
+              "value": "AI Motion Enhancer Pro"
+            },
+            {
+              "name": "Supersize Picture Enhancer",
+              "value": "Yes"
+            },
+            {
+              "name": "HDR Brightness Optimizer",
+              "value": "Yes"
+            },
+            {
+              "name": "Color Booster",
+              "value": "Micro RGB Color Booster Pro"
+            },
+            {
+              "name": "Filmmaker Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "EyeComfort Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Dolby Atmos",
+              "value": "Yes"
+            },
+            {
+              "name": "Object Tracking Sound",
+              "value": "OTS+"
+            },
+            {
+              "name": "Dolby Decoder",
+              "value": "MS12 5.1ch"
+            },
+            {
+              "name": "Q-Symphony",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Output (RMS)",
+              "value": "70 W"
+            },
+            {
+              "name": "Speaker Type",
+              "value": "4.2.2ch"
+            },
+            {
+              "name": "Active Voice Amplifier",
+              "value": "Active Voice Amplifier Pro"
+            },
+            {
+              "name": "Adaptive Sound",
+              "value": "Adaptive Sound Pro"
+            },
+            {
+              "name": "AI Sound Controller",
+              "value": "AI Sound Controller Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Service",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Tizen™ Smart TV"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Far-Field Voice Interaction",
+              "value": "Yes"
+            },
+            {
+              "name": "Built-in Voice Assistant",
+              "value": "Alexa"
+            },
+            {
+              "name": "Works with AI Speaker",
+              "value": "Alexa, Google Assistant"
+            },
+            {
+              "name": "Samsung TV Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Web Browser",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Health",
+              "value": "Yes"
+            },
+            {
+              "name": "Universal Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart Feature",
+          "specList": [
+            {
+              "name": "Multi Device Experience",
+              "value": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On"
+            },
+            {
+              "name": "Multi-View",
+              "value": "up to 2 Videos"
+            },
+            {
+              "name": "Apple AirPlay",
+              "value": "Yes"
+            },
+            {
+              "name": "Now brief",
+              "value": "Voice / User Detection"
+            },
+            {
+              "name": "Storage Share",
+              "value": "Yes"
+            },
+            {
+              "name": "Live Translate",
+              "value": "Yes"
+            },
+            {
+              "name": "Generative Wallpaper",
+              "value": "Yes"
+            },
+            {
+              "name": "Vision AI Companion",
+              "value": "Yes (US, CA)"
+            },
+            {
+              "name": "Karaoke Mic",
+              "value": "Yes"
+            },
+            {
+              "name": "Google Cast",
+              "value": "Yes"
+            },
+            {
+              "name": "Soccer Mode",
+              "value": "AI Soccer / Football Mode Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Game Feature",
+          "specList": [
+            {
+              "name": "Auto Game Mode (ALLM)",
+              "value": "Yes"
+            },
+            {
+              "name": "Game Motion Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "VRR",
+              "value": "Yes"
+            },
+            {
+              "name": "Dynamic Black EQ",
+              "value": "Yes"
+            },
+            {
+              "name": "Surround Sound",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Ultra Wide Game View",
+              "value": "Yes"
+            },
+            {
+              "name": "Game bar",
+              "value": "Yes"
+            },
+            {
+              "name": "Mini Map Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Hue Sync",
+              "value": "Yes"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium Pro"
+            },
+            {
+              "name": "HGiG",
+              "value": "Yes"
+            },
+            {
+              "name": "Gaming Hub",
+              "value": "Yes (KR, US, CA, BR, GB, FR, DE, IT, ES, MX, AU)"
+            },
+            {
+              "name": "AI Auto Game Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Gaming Optimizer",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Tuner/Broadcasting",
+          "specList": [
+            {
+              "name": "Digital Broadcasting",
+              "value": "(US) ATSC 3.0 (Canada) ATSC / ClearQAM"
+            },
+            {
+              "name": "Analog Tuner",
+              "value": "Yes"
+            },
+            {
+              "name": "Data Broadcasting",
+              "value": "(US) ATSC 3.0 Interactive Content"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Yes (Wi-Fi 6E)"
+            },
+            {
+              "name": "Bluetooth",
+              "value": "Yes (5.3)"
+            },
+            {
+              "name": "HDMI",
+              "value": "4"
+            },
+            {
+              "name": "HDMI Maximum Input Rate",
+              "value": "4K 165 Hz (for HDMI 1/2/3/4)"
+            },
+            {
+              "name": "HDMI Audio Return Channel",
+              "value": "eARC"
+            },
+            {
+              "name": "One Connect Box",
+              "value": "Wireless One Connect Ready"
+            },
+            {
+              "name": "Anynet+ (HDMI-CEC)",
+              "value": "Yes"
+            },
+            {
+              "name": "USB",
+              "value": "2 x USB-A"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1"
+            },
+            {
+              "name": "Digital Audio Out (Optical)",
+              "value": "1"
+            },
+            {
+              "name": "RF In (Terrestrial / Cable input / Satellite Input)",
+              "value": "1 / 1(Common Use for Terrestrial) / 0"
+            },
+            {
+              "name": "Ex-Link ( RS-232C )",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Design",
+              "value": "Infinity Air"
+            },
+            {
+              "name": "Bezel Type",
+              "value": "4 Bezel-less"
+            },
+            {
+              "name": "Front Color",
+              "value": "Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "Infinity Air Stand"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Space Graphite"
+            }
+          ]
+        },
+        {
+          "groupName": "Additional Feature",
+          "specList": [
+            {
+              "name": "Art Store",
+              "value": "Yes"
+            },
+            {
+              "name": "Embeded POP",
+              "value": "Yes"
+            },
+            {
+              "name": "EPG",
+              "value": "Yes"
+            },
+            {
+              "name": "IP Control",
+              "value": "Yes"
+            },
+            {
+              "name": "OSD Language",
+              "value": "English, Spanish, French"
+            },
+            {
+              "name": "V-Chip",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessibility",
+          "specList": [
+            {
+              "name": "Voice Guide",
+              "value": "Czech (Czech Republic),Danish (Denmark),Dutch (Netherlands),English (US),Finnish (Finland),French (Canada),German (Germany),Greek (Greece),Hungarian (Hungary),Italian (Italy),Korean (Korea),Norwegian (Norway),Polish (Poland).Portuguese (Portugal),Romanian (Romania),Slovak (Slovakia),Spanish (Mexico),Swedish (Sweden)"
+            },
+            {
+              "name": "Audio Description",
+              "value": "Yes"
+            },
+            {
+              "name": "High Contrast",
+              "value": "Yes"
+            },
+            {
+              "name": "Zoom Menu and Text",
+              "value": "Yes"
+            },
+            {
+              "name": "SeeColors",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors Inversion",
+              "value": "Yes"
+            },
+            {
+              "name": "Grayscale",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Picture Off",
+              "value": "Yes"
+            },
+            {
+              "name": "Magnification",
+              "value": "Yes"
+            },
+            {
+              "name": "Relumino",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Subtitles",
+              "value": "Yes"
+            },
+            {
+              "name": "Audio Phone Number",
+              "value": "Yes"
+            },
+            {
+              "name": "Closed Caption (Subtitle)",
+              "value": "Yes"
+            },
+            {
+              "name": "Multi-output Audio",
+              "value": "Yes"
+            },
+            {
+              "name": "Sign Language Zoom",
+              "value": "Yes"
+            },
+            {
+              "name": "Caption Position",
+              "value": "Yes"
+            },
+            {
+              "name": "Separate Closed Caption",
+              "value": "Yes"
+            },
+            {
+              "name": "Slow Button Repeat",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn TV Remote",
+              "value": "Yes"
+            },
+            {
+              "name": "Learn Menu Screen",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility Shortcuts Edit",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Menu Sort",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power & Eco Solution",
+          "specList": [
+            {
+              "name": "Power Consumption (Max)",
+              "value": "420 W"
+            },
+            {
+              "name": "Power Supply",
+              "value": "AC110-120V~ 50/60 Hz"
+            },
+            {
+              "name": "Power Consumption (Stand-by)",
+              "value": "0.5 W"
+            },
+            {
+              "name": "Power Consumption (Typical)",
+              "value": "265 W"
+            },
+            {
+              "name": "Eco Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Saving",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Power Off",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Package Size (WxHxD)",
+              "value": "80.47 x 47.24 x 8.86 in"
+            },
+            {
+              "name": "Set Size with Stand (WxHxD)",
+              "value": "74.04 x 45.20 x 15.49 in"
+            },
+            {
+              "name": "Set Size without Stand (WxHxD)",
+              "value": "74.04 x 42.40 x 1.18 in"
+            },
+            {
+              "name": "Stand (Basic) (WxD)",
+              "value": "14.79 x 15.49 in"
+            },
+            {
+              "name": "VESA Spec",
+              "value": "600 x 400 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Shipping Weight",
+              "value": "111.55 lb"
+            },
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "88.18 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "83.56 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Remote Controller Model",
+              "value": "TM2660H"
+            },
+            {
+              "name": "Battery Chemistry (for Remote Control)",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Slim Fit Wall-mount Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Full Motion Slim Wall Mount Support (Y22)",
+              "value": "Yes"
+            },
+            {
+              "name": "SlimFit Cam Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Zigbee / Thread Module",
+              "value": "Built-in"
+            },
+            {
+              "name": "User Manual",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Cable Connector Type",
+              "value": "2-Pin"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "MRN100R85HFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn100r85hfxza/energyguide/us-energyguide-mrn100r85hfxza-553896213.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN115MR95FXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn115mr95fxza/energyguide/us-energyguide-mrn115mr95fxza-549743894.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN55R85HAFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn55r85hafxza/energyguide/us-energyguide-mrn55r85hafxza-551648294.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN65R85HAFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn65r85hafxza/energyguide/us-energyguide-mrn65r85hafxza-551648323.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN65R95HAFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn65r95hafxza/energyguide/us-energyguide-mrn65r95hafxza-551616741.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN75R85HAFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn75r85hafxza/energyguide/us-energyguide-mrn75r85hafxza-551648356.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN75R95HAFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn75r95hafxza/energyguide/us-energyguide-mrn75r95hafxza-551652054.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN85R85HAFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn85r85hafxza/energyguide/us-energyguide-mrn85r85hafxza-551648380.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "MRN85R95HAFXZA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn85r95hafxza/energyguide/us-energyguide-mrn85r95hafxza-551652079.pdf"
+        }
+      ]
+    }
+  ]
+}

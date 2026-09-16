@@ -1,0 +1,182 @@
+{
+  "id": "pd96-rr3d",
+  "name": "ENERGY STAR Certified Televisions",
+  "rowsUpdatedAt": 1789565099,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "energy_star_partner",
+      "name": "ENERGY STAR Partner",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_name",
+      "name": "Model Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "product_type",
+      "name": "Product Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "application",
+      "name": "Application",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "display_type",
+      "name": "Display Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "backlight_technology_type",
+      "name": "Backlight Technology Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "diagonal_viewable_screen_size_inches",
+      "name": "Diagonal Viewable Screen Size (in.)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "screen_area_square_inches",
+      "name": "Screen Area (sq. in.)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "native_horizontal_resolution_pixels",
+      "name": "Native Horizontal Resolution (pixels)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "native_vertical_resolution_pixels",
+      "name": "Native Vertical Resolution (pixels)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "resolution_format",
+      "name": "Resolution Format",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "high_contrast_ratio_hcr_display",
+      "name": "High Contrast Ratio (HCR) Display",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "physical_data_ports_available",
+      "name": "Physical Data Ports Available",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "ethernet_supported",
+      "name": "Ethernet Supported",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "low_power_wireless_technologies_supported",
+      "name": "Low Power Wireless Technologies Supported",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "features",
+      "name": "Features",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "automatic_brightness_control",
+      "name": "Automatic Brightness Control",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "is_automatic_brightness_control_enabled_by_default_when_television_is_shipped",
+      "name": "Is Automatic Brightness Control Enabled by Default in the Default SDR Preset Picture Setting When Television is Shipped?",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "power_consumption_in_on_mode_watts",
+      "name": "Average On Mode Power Consumption for Certification (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "maximum_on_mode_power_for_certification_watts",
+      "name": "Maximum Average On Mode Power for Certification (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "reported_on_mode_power_per_the_federal_test_procedure_watts",
+      "name": "Reported On Mode Power (per the Federal Test Procedure) (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "reported_annual_energy_consumption_kwh",
+      "name": "Reported Annual Energy Consumption (kWh)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "measured_standby_mode_power_w",
+      "name": "Measured Standby Mode Power (Watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "power_consumption_in_standby_mode_when_network_not_connected_watts",
+      "name": "Power Consumption in Standby Mode when Not Connected to a Network (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "power_consumption_in_standby_mode_when_network_connected_watts",
+      "name": "Power Consumption in Standby Mode when Connected to a Network (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "reported_standby_active_low_mode_power_watts",
+      "name": "Reported Standby-Active, Low Mode Power (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available On Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_qualified",
+      "name": "Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "CB Model Identifier",
+      "dataTypeName": "text"
+    }
+  ]
+}

@@ -80,7 +80,7 @@ def pdp_facts(data, target, family='refrigerator'):
         'refrigerator': ('Energy Consumption', 'Total Capacity (cu. ft.)'),
         'dishwasher': ('Energy Usage (kWh/year)', 'Place Setting'),
         'washer': ('Energy Guide Label', 'Total Capacity (cu. ft.)'),
-        'tv': (None, None),  # retain raw pairs until actual PDP names are observed
+        'tv': (None, None),  # sample PDP has power/screen fields, no annual energy/capacity
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')
@@ -102,8 +102,10 @@ def pdp_facts(data, target, family='refrigerator'):
     documents = [x for x in support[0]['supports'] if re.fullmatch(r'energy\s*guide', x.get('name', ''), re.I)]
     return {'exact_sku': target,
             'spec_fields_raw': fields,
-            'energy_consumption_raw': [x for x in fields if x['name'] == energy_name],
-            'capacity_raw': [x for x in fields if x['name'] == capacity_name],
+            'energy_consumption_raw': [x for x in fields if energy_name is not None and x['name'] == energy_name],
+            'capacity_raw': [x for x in fields if capacity_name is not None and x['name'] == capacity_name],
+            'screen_size_raw': [x for x in fields if x['name'] == 'Screen Size'],
+            'power_consumption_raw': [x for x in fields if (x['name'] or '').startswith('Power Consumption (')],
             'energy_star_spec_claim_raw': [x for x in fields if 'ENERGY STAR' in (x['name'] or '')],
             'energy_star_structured_claim': None,
             'energyguide_documents': [{k: x.get(k) for k in ('name', 'type', 'url')} for x in documents]}

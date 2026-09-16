@@ -1,0 +1,2708 @@
+{
+  "searchTotalCount": 41,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "QN83S90FAEXZA",
+      "modelName": "QN83S90FAE",
+      "id": "QN83S90FAEXZA",
+      "group_id": "FMY_ID_542537",
+      "pdpURL": "/us/tvs/oled-tv/83-class-oled-tvs90f-sku-qn83s90faexza",
+      "consumerUrl": "/us/tvs/oled-tv/83-class-oled-tvs90f-sku-qn83s90faexza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "41",
+        "pickYn": "N",
+        "representativeModel": "QN77S90FAFXZA",
+        "familyName": "OLED S90F 4K Vision AI Smart TV 2025",
+        "id": "542537",
+        "marketingName": "OLED S90F 4K Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "83\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN83S90FAEXZA",
+          "modelName": "QN83S90FAE",
+          "id": "QN83S90FAEXZA",
+          "group_id": "FMY_ID_542537",
+          "pdpURL": "/us/tvs/oled-tv/83-class-oled-tvs90f-sku-qn83s90faexza",
+          "consumerUrl": "/us/tvs/oled-tv/83-class-oled-tvs90f-sku-qn83s90faexza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "QN77S90FAFXZA",
+            "familyName": "OLED S90F 4K Vision AI Smart TV 2025",
+            "id": "542537",
+            "marketingName": "OLED S90F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "83\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65S90FAFXZA",
+          "modelName": "QN65S90FAF",
+          "id": "QN65S90FAFXZA",
+          "group_id": "FMY_ID_542537",
+          "pdpURL": "/us/tvs/oled-tv/65-class-oled-tvs90f-sku-qn65s90fafxza",
+          "consumerUrl": "/us/tvs/oled-tv/65-class-oled-tvs90f-sku-qn65s90fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "QN77S90FAFXZA",
+            "familyName": "OLED S90F 4K Vision AI Smart TV 2025",
+            "id": "542537",
+            "marketingName": "OLED S90F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN77S90FAFXZA",
+          "modelName": "QN77S90FAF",
+          "id": "QN77S90FAFXZA",
+          "group_id": "FMY_ID_542537",
+          "pdpURL": "/us/tvs/oled-tv/77-class-oled-tvs90f-sku-qn77s90fafxza",
+          "consumerUrl": "/us/tvs/oled-tv/77-class-oled-tvs90f-sku-qn77s90fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "QN77S90FAFXZA",
+            "familyName": "OLED S90F 4K Vision AI Smart TV 2025",
+            "id": "542537",
+            "marketingName": "OLED S90F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "77\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN42S90FAEXZA",
+          "modelName": "QN42S90FAE",
+          "id": "QN42S90FAEXZA",
+          "group_id": "FMY_ID_542537",
+          "pdpURL": "/us/tvs/oled-tv/42-class-oled-tvs90f-sku-qn42s90faexza",
+          "consumerUrl": "/us/tvs/oled-tv/42-class-oled-tvs90f-sku-qn42s90faexza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "QN77S90FAFXZA",
+            "familyName": "OLED S90F 4K Vision AI Smart TV 2025",
+            "id": "542537",
+            "marketingName": "OLED S90F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "42\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55S90FAFXZA",
+          "modelName": "QN55S90FAF",
+          "id": "QN55S90FAFXZA",
+          "group_id": "FMY_ID_542537",
+          "pdpURL": "/us/tvs/oled-tv/55-class-oled-tvs90f-sku-qn55s90fafxza",
+          "consumerUrl": "/us/tvs/oled-tv/55-class-oled-tvs90f-sku-qn55s90fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "QN77S90FAFXZA",
+            "familyName": "OLED S90F 4K Vision AI Smart TV 2025",
+            "id": "542537",
+            "marketingName": "OLED S90F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN48S90FAEXZA",
+          "modelName": "QN48S90FAE",
+          "id": "QN48S90FAEXZA",
+          "group_id": "FMY_ID_542537",
+          "pdpURL": "/us/tvs/oled-tv/48-class-oled-tvs90f-sku-qn48s90faexza",
+          "consumerUrl": "/us/tvs/oled-tv/48-class-oled-tvs90f-sku-qn48s90faexza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "QN77S90FAFXZA",
+            "familyName": "OLED S90F 4K Vision AI Smart TV 2025",
+            "id": "542537",
+            "marketingName": "OLED S90F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "48\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN115QN90FFXZA",
+      "modelName": "QN115QN90FF",
+      "id": "QN115QN90FFXZA",
+      "group_id": "MULTI_GROUP_ID_582403",
+      "pdpURL": "/us/tvs/neo-qled/115-class-neo-qled-4k-tv-qn90f-sku-qn115qn90ffxza",
+      "consumerUrl": "/us/tvs/neo-qled/115-class-neo-qled-4k-tv-qn90f-sku-qn115qn90ffxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "40",
+        "pickYn": "N",
+        "representativeModel": "QN85QN90FAFXZA",
+        "taxonomyId": "04010000",
+        "isPrimary": "Y",
+        "familyName": "Neo QLED 4K QN90F",
+        "id": "582403"
+      },
+      "chips": [
+        {
+          "fmyChipName": "115\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN115QN90FFXZA",
+          "modelName": "QN115QN90FF",
+          "id": "QN115QN90FFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/115-class-neo-qled-4k-tv-qn90f-sku-qn115qn90ffxza",
+          "consumerUrl": "/us/tvs/neo-qled/115-class-neo-qled-4k-tv-qn90f-sku-qn115qn90ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "115\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN43QN90FAFXZA",
+          "modelName": "QN43QN90FAF",
+          "id": "QN43QN90FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/43-class-neo-qled-4k-tv-qn90f-sku-qn43qn90fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/43-class-neo-qled-4k-tv-qn90f-sku-qn43qn90fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN85QN90FAFXZA",
+          "modelName": "QN85QN90FAF",
+          "id": "QN85QN90FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn90f-sku-qn85qn90fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn90f-sku-qn85qn90fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN98QN90FAFXZA",
+          "modelName": "QN98QN90FAF",
+          "id": "QN98QN90FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/98-class-neo-qled-4k-tv-qn90f-sku-qn98qn90fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/98-class-neo-qled-4k-tv-qn90f-sku-qn98qn90fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "98\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65QN90FAFXZA",
+          "modelName": "QN65QN90FAF",
+          "id": "QN65QN90FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/65-class-neo-qled-4k-tv-qn90f-sku-qn65qn90fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/65-class-neo-qled-4k-tv-qn90f-sku-qn65qn90fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55QN90FAFXZA",
+          "modelName": "QN55QN90FAF",
+          "id": "QN55QN90FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/55-class-neo-qled-4k-tv-qn90f-sku-qn55qn90fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/55-class-neo-qled-4k-tv-qn90f-sku-qn55qn90fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN50QN90FAFXZA",
+          "modelName": "QN50QN90FAF",
+          "id": "QN50QN90FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/50-class-neo-qled-4k-tv-qn90f-sku-qn50qn90fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/50-class-neo-qled-4k-tv-qn90f-sku-qn50qn90fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "50\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN75QN90FAFXZA",
+          "modelName": "QN75QN90FAF",
+          "id": "QN75QN90FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582403",
+          "pdpURL": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn90f-sku-qn75qn90fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn90f-sku-qn75qn90fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "QN85QN90FAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "Neo QLED 4K QN90F",
+            "id": "582403"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN85QN70FAFXZA",
+      "modelName": "QN85QN70FAF",
+      "id": "QN85QN70FAFXZA",
+      "group_id": "FMY_ID_545124",
+      "pdpURL": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn70f-sku-qn85qn70fafxza",
+      "consumerUrl": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn70f-sku-qn85qn70fafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "36",
+        "pickYn": "N",
+        "representativeModel": "QN55QN70FAFXZA",
+        "familyName": "size Neo QLED QN70F 4K Samsung Vision AI Smart TV 2025",
+        "id": "545124",
+        "marketingName": "Neo QLED QN70F 4K Samsung Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "85\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN85QN70FAFXZA",
+          "modelName": "QN85QN70FAF",
+          "id": "QN85QN70FAFXZA",
+          "group_id": "FMY_ID_545124",
+          "pdpURL": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn70f-sku-qn85qn70fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn70f-sku-qn85qn70fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "36",
+            "pickYn": "N",
+            "representativeModel": "QN55QN70FAFXZA",
+            "familyName": "size Neo QLED QN70F 4K Samsung Vision AI Smart TV 2025",
+            "id": "545124",
+            "marketingName": "Neo QLED QN70F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN75QN70FAFXZA",
+          "modelName": "QN75QN70FAF",
+          "id": "QN75QN70FAFXZA",
+          "group_id": "FMY_ID_545124",
+          "pdpURL": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn70f-sku-qn75qn70fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn70f-sku-qn75qn70fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "36",
+            "pickYn": "N",
+            "representativeModel": "QN55QN70FAFXZA",
+            "familyName": "size Neo QLED QN70F 4K Samsung Vision AI Smart TV 2025",
+            "id": "545124",
+            "marketingName": "Neo QLED QN70F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55QN70FAFXZA",
+          "modelName": "QN55QN70FAF",
+          "id": "QN55QN70FAFXZA",
+          "group_id": "FMY_ID_545124",
+          "pdpURL": "/us/tvs/neo-qled/55-class-neo-qled-4k-tv-qn70f-sku-qn55qn70fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/55-class-neo-qled-4k-tv-qn70f-sku-qn55qn70fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "36",
+            "pickYn": "N",
+            "representativeModel": "QN55QN70FAFXZA",
+            "familyName": "size Neo QLED QN70F 4K Samsung Vision AI Smart TV 2025",
+            "id": "545124",
+            "marketingName": "Neo QLED QN70F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65QN70FAFXZA",
+          "modelName": "QN65QN70FAF",
+          "id": "QN65QN70FAFXZA",
+          "group_id": "FMY_ID_545124",
+          "pdpURL": "/us/tvs/neo-qled/65-class-neo-qled-4k-tv-qn70f-sku-qn65qn70fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/65-class-neo-qled-4k-tv-qn70f-sku-qn65qn70fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "36",
+            "pickYn": "N",
+            "representativeModel": "QN55QN70FAFXZA",
+            "familyName": "size Neo QLED QN70F 4K Samsung Vision AI Smart TV 2025",
+            "id": "545124",
+            "marketingName": "Neo QLED QN70F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN55Q8FAAFXZA",
+      "modelName": "QN55Q8FAAF",
+      "id": "QN55Q8FAAFXZA",
+      "group_id": "FMY_ID_547182",
+      "pdpURL": "/us/tvs/qled-tv/55-inch-qled-q8f-4k-tv-sku-qn55q8faafxza",
+      "consumerUrl": "/us/tvs/qled-tv/55-inch-qled-q8f-4k-tv-sku-qn55q8faafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "33",
+        "pickYn": "N",
+        "representativeModel": "QN75Q8FAAFXZA",
+        "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+        "id": "547182",
+        "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "55\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN55Q8FAAFXZA",
+          "modelName": "QN55Q8FAAF",
+          "id": "QN55Q8FAAFXZA",
+          "group_id": "FMY_ID_547182",
+          "pdpURL": "/us/tvs/qled-tv/55-inch-qled-q8f-4k-tv-sku-qn55q8faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/55-inch-qled-q8f-4k-tv-sku-qn55q8faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "QN75Q8FAAFXZA",
+            "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+            "id": "547182",
+            "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN43Q8FAAFXZA",
+          "modelName": "QN43Q8FAAF",
+          "id": "QN43Q8FAAFXZA",
+          "group_id": "FMY_ID_547182",
+          "pdpURL": "/us/tvs/qled-tv/43-inch-qled-q8f-4k-tv-sku-qn43q8faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/43-inch-qled-q8f-4k-tv-sku-qn43q8faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "QN75Q8FAAFXZA",
+            "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+            "id": "547182",
+            "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN50Q8FAAFXZA",
+          "modelName": "QN50Q8FAAF",
+          "id": "QN50Q8FAAFXZA",
+          "group_id": "FMY_ID_547182",
+          "pdpURL": "/us/tvs/qled-tv/50-inch-qled-q8f-4k-tv-sku-qn50q8faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/50-inch-qled-q8f-4k-tv-sku-qn50q8faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "QN75Q8FAAFXZA",
+            "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+            "id": "547182",
+            "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "50\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN32Q8FAAFXZA",
+          "modelName": "QN32Q8FAAF",
+          "id": "QN32Q8FAAFXZA",
+          "group_id": "FMY_ID_547182",
+          "pdpURL": "/us/tvs/qled-tv/32-inch-qled-q8f-4k-tv-sku-qn32q8faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/32-inch-qled-q8f-4k-tv-sku-qn32q8faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "QN75Q8FAAFXZA",
+            "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+            "id": "547182",
+            "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65Q8FAAFXZA",
+          "modelName": "QN65Q8FAAF",
+          "id": "QN65Q8FAAFXZA",
+          "group_id": "FMY_ID_547182",
+          "pdpURL": "/us/tvs/qled-tv/65-inch-qled-q8f-4k-tv-sku-qn65q8faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/65-inch-qled-q8f-4k-tv-sku-qn65q8faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "QN75Q8FAAFXZA",
+            "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+            "id": "547182",
+            "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN75Q8FAAFXZA",
+          "modelName": "QN75Q8FAAF",
+          "id": "QN75Q8FAAFXZA",
+          "group_id": "FMY_ID_547182",
+          "pdpURL": "/us/tvs/qled-tv/75-inch-qled-q8f-4k-tv-sku-qn75q8faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/75-inch-qled-q8f-4k-tv-sku-qn75q8faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "QN75Q8FAAFXZA",
+            "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+            "id": "547182",
+            "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN85Q8FAAFXZA",
+          "modelName": "QN85Q8FAAF",
+          "id": "QN85Q8FAAFXZA",
+          "group_id": "FMY_ID_547182",
+          "pdpURL": "/us/tvs/qled-tv/85-inch-qled-q8f-4k-tv-sku-qn85q8faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/85-inch-qled-q8f-4k-tv-sku-qn85q8faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "QN75Q8FAAFXZA",
+            "familyName": "inch QLED Q8F 4K Samsung Vision AI Smart TV 2025",
+            "id": "547182",
+            "marketingName": "{inch}\" QLED Q8F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN65LS03FAFXZA",
+      "modelName": "QN65LS03FAF",
+      "id": "QN65LS03FAFXZA",
+      "group_id": "MULTI_GROUP_ID_582428",
+      "pdpURL": "/us/lifestyle-tvs/the-frame/65-inch-the-frame-qled-4k-tv-ls03fa-sku-qn65ls03fafxza",
+      "consumerUrl": "/us/lifestyle-tvs/the-frame/65-inch-the-frame-qled-4k-tv-ls03fa-sku-qn65ls03fafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "9",
+        "pickYn": "Y",
+        "representativeModel": "QN65LS03FAFXZA",
+        "taxonomyId": "04020000",
+        "isPrimary": "Y",
+        "familyName": "The Frame LS03FA QLED 4K ",
+        "id": "582428"
+      },
+      "chips": [
+        {
+          "fmyChipName": "65\"",
+          "fmyChipType": "Size"
+        },
+        {
+          "fmyChipName": "The Frame",
+          "fmyChipType": "Model"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN65LS03FAFXZA",
+          "modelName": "QN65LS03FAF",
+          "id": "QN65LS03FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582428",
+          "pdpURL": "/us/lifestyle-tvs/the-frame/65-inch-the-frame-qled-4k-tv-ls03fa-sku-qn65ls03fafxza",
+          "consumerUrl": "/us/lifestyle-tvs/the-frame/65-inch-the-frame-qled-4k-tv-ls03fa-sku-qn65ls03fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "Y",
+            "representativeModel": "QN65LS03FAFXZA",
+            "taxonomyId": "04020000",
+            "isPrimary": "Y",
+            "familyName": "The Frame LS03FA QLED 4K ",
+            "id": "582428"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            },
+            {
+              "fmyChipName": "The Frame",
+              "fmyChipType": "Model"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN43LS03FAFXZA",
+          "modelName": "QN43LS03FAF",
+          "id": "QN43LS03FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582428",
+          "pdpURL": "/us/lifestyle-tvs/the-frame/43-inch-the-frame-qled-4k-tv-ls03fa-sku-qn43ls03fafxza",
+          "consumerUrl": "/us/lifestyle-tvs/the-frame/43-inch-the-frame-qled-4k-tv-ls03fa-sku-qn43ls03fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "Y",
+            "representativeModel": "QN65LS03FAFXZA",
+            "taxonomyId": "04020000",
+            "isPrimary": "Y",
+            "familyName": "The Frame LS03FA QLED 4K ",
+            "id": "582428"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            },
+            {
+              "fmyChipName": "The Frame",
+              "fmyChipType": "Model"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN50LS03FAFXZA",
+          "modelName": "QN50LS03FAF",
+          "id": "QN50LS03FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582428",
+          "pdpURL": "/us/lifestyle-tvs/the-frame/50-inch-the-frame-qled-4k-tv-ls03fa-sku-qn50ls03fafxza",
+          "consumerUrl": "/us/lifestyle-tvs/the-frame/50-inch-the-frame-qled-4k-tv-ls03fa-sku-qn50ls03fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "Y",
+            "representativeModel": "QN65LS03FAFXZA",
+            "taxonomyId": "04020000",
+            "isPrimary": "Y",
+            "familyName": "The Frame LS03FA QLED 4K ",
+            "id": "582428"
+          },
+          "chips": [
+            {
+              "fmyChipName": "50\"",
+              "fmyChipType": "Size"
+            },
+            {
+              "fmyChipName": "The Frame",
+              "fmyChipType": "Model"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55LS03FAFXZA",
+          "modelName": "QN55LS03FAF",
+          "id": "QN55LS03FAFXZA",
+          "group_id": "MULTI_GROUP_ID_582428",
+          "pdpURL": "/us/lifestyle-tvs/the-frame/55-inch-the-frame-qled-4k-tv-ls03fa-sku-qn55ls03fafxza",
+          "consumerUrl": "/us/lifestyle-tvs/the-frame/55-inch-the-frame-qled-4k-tv-ls03fa-sku-qn55ls03fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "Y",
+            "representativeModel": "QN65LS03FAFXZA",
+            "taxonomyId": "04020000",
+            "isPrimary": "Y",
+            "familyName": "The Frame LS03FA QLED 4K ",
+            "id": "582428"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            },
+            {
+              "fmyChipName": "The Frame",
+              "fmyChipType": "Model"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN98Q7FAAFXZA",
+      "modelName": "QN98Q7FAAF",
+      "id": "QN98Q7FAAFXZA",
+      "group_id": "MULTI_GROUP_ID_582408",
+      "pdpURL": "/us/tvs/qled-tv/98-class-qled-tv-q7f-sku-qn98q7faafxza",
+      "consumerUrl": "/us/tvs/qled-tv/98-class-qled-tv-q7f-sku-qn98q7faafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "31",
+        "pickYn": "N",
+        "representativeModel": "QN98Q7FAAFXZA",
+        "taxonomyId": "04010000",
+        "isPrimary": "Y",
+        "familyName": "QLED Q7F",
+        "id": "582408"
+      },
+      "chips": [
+        {
+          "fmyChipName": "98\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN98Q7FAAFXZA",
+          "modelName": "QN98Q7FAAF",
+          "id": "QN98Q7FAAFXZA",
+          "group_id": "MULTI_GROUP_ID_582408",
+          "pdpURL": "/us/tvs/qled-tv/98-class-qled-tv-q7f-sku-qn98q7faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/98-class-qled-tv-q7f-sku-qn98q7faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "QN98Q7FAAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "QLED Q7F",
+            "id": "582408"
+          },
+          "chips": [
+            {
+              "fmyChipName": "98\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN50Q7FAAFXZA",
+          "modelName": "QN50Q7FAAF",
+          "id": "QN50Q7FAAFXZA",
+          "group_id": "MULTI_GROUP_ID_582408",
+          "pdpURL": "/us/tvs/qled-tv/50-class-qled-tv-q7f-sku-qn50q7faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/50-class-qled-tv-q7f-sku-qn50q7faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "QN98Q7FAAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "QLED Q7F",
+            "id": "582408"
+          },
+          "chips": [
+            {
+              "fmyChipName": "50\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65Q7FAAFXZA",
+          "modelName": "QN65Q7FAAF",
+          "id": "QN65Q7FAAFXZA",
+          "group_id": "MULTI_GROUP_ID_582408",
+          "pdpURL": "/us/tvs/qled-tv/65-class-qled-tv-q7f-sku-qn65q7faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/65-class-qled-tv-q7f-sku-qn65q7faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "QN98Q7FAAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "QLED Q7F",
+            "id": "582408"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN75Q7FAAFXZA",
+          "modelName": "QN75Q7FAAF",
+          "id": "QN75Q7FAAFXZA",
+          "group_id": "MULTI_GROUP_ID_582408",
+          "pdpURL": "/us/tvs/qled-tv/75-class-qled-tv-q7f-sku-qn75q7faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/75-class-qled-tv-q7f-sku-qn75q7faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "QN98Q7FAAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "QLED Q7F",
+            "id": "582408"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN85Q7FAAFXZA",
+          "modelName": "QN85Q7FAAF",
+          "id": "QN85Q7FAAFXZA",
+          "group_id": "MULTI_GROUP_ID_582408",
+          "pdpURL": "/us/tvs/qled-tv/85-class-qled-tv-q7f-sku-qn85q7faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/85-class-qled-tv-q7f-sku-qn85q7faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "QN98Q7FAAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "QLED Q7F",
+            "id": "582408"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55Q7FAAFXZA",
+          "modelName": "QN55Q7FAAF",
+          "id": "QN55Q7FAAFXZA",
+          "group_id": "MULTI_GROUP_ID_582408",
+          "pdpURL": "/us/tvs/qled-tv/55-class-qled-tv-q7f-sku-qn55q7faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/55-class-qled-tv-q7f-sku-qn55q7faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "QN98Q7FAAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "QLED Q7F",
+            "id": "582408"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN43Q7FAAFXZA",
+          "modelName": "QN43Q7FAAF",
+          "id": "QN43Q7FAAFXZA",
+          "group_id": "MULTI_GROUP_ID_582408",
+          "pdpURL": "/us/tvs/qled-tv/43-class-qled-tv-q7f-sku-qn43q7faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/43-class-qled-tv-q7f-sku-qn43q7faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "QN98Q7FAAFXZA",
+            "taxonomyId": "04010000",
+            "isPrimary": "Y",
+            "familyName": "QLED Q7F",
+            "id": "582408"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "UN65U8000FFXZA",
+      "modelName": "UN65U8000FF",
+      "id": "UN65U8000FFXZA",
+      "group_id": "FMY_ID_544731",
+      "pdpURL": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un65u8000ffxza",
+      "consumerUrl": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un65u8000ffxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "28",
+        "pickYn": "N",
+        "representativeModel": "UN43U8000FFXZA",
+        "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+        "id": "544731",
+        "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "65\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "UN65U8000FFXZA",
+          "modelName": "UN65U8000FF",
+          "id": "UN65U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un65u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un65u8000ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN55U8000FFXZA",
+          "modelName": "UN55U8000FF",
+          "id": "UN55U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/55-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un55u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/55-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un55u8000ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN43U8000FFXZA",
+          "modelName": "UN43U8000FF",
+          "id": "UN43U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/43-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un43u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/43-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un43u8000ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN85U8000FFXZA",
+          "modelName": "UN85U8000FF",
+          "id": "UN85U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/85-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un85u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/85-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un85u8000ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN50U8000FFXZA",
+          "modelName": "UN50U8000FF",
+          "id": "UN50U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/50-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un50u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/50-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un50u8000ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "50\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN58U8000FFXZA",
+          "modelName": "UN58U8000FF",
+          "id": "UN58U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/58-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un58u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/58-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un58u8000ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": []
+        },
+        {
+          "modelCode": "UN75U8000FFXZA",
+          "modelName": "UN75U8000FF",
+          "id": "UN75U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/75-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un75u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/75-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un75u8000ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN70U8000FFXZA",
+          "modelName": "UN70U8000FF",
+          "id": "UN70U8000FFXZA",
+          "group_id": "FMY_ID_544731",
+          "pdpURL": "/us/tvs/uhd-4k-tv/70-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un70u8000ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/70-inch-class-crystal-uhd-u8000f-4k-smart-tv-sku-un70u8000ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "28",
+            "pickYn": "N",
+            "representativeModel": "UN43U8000FFXZA",
+            "familyName": "size Crystal UHD U8000F 4K Smart TV 2025",
+            "id": "544731",
+            "marketingName": "{size}\" Crystal UHD U8000F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "70\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "UN32F6000FFXZA",
+      "modelName": "UN32F6000FF",
+      "id": "UN32F6000FFXZA",
+      "group_id": "FMY_ID_548966",
+      "pdpURL": "/us/tvs/full-hd-tv/32-inch-fhd-f6000f-smart-tv-sku-un32f6000ffxza",
+      "consumerUrl": "/us/tvs/full-hd-tv/32-inch-fhd-f6000f-smart-tv-sku-un32f6000ffxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "6",
+        "pickYn": "N",
+        "representativeModel": "UN32F6000FFXZA",
+        "familyName": "Size Full HD F6000 Smart TV 2025",
+        "id": "548966",
+        "marketingName": "{Size}\" Full HD F6000 Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "UN32F6000FFXZA",
+          "modelName": "UN32F6000FF",
+          "id": "UN32F6000FFXZA",
+          "group_id": "FMY_ID_548966",
+          "pdpURL": "/us/tvs/full-hd-tv/32-inch-fhd-f6000f-smart-tv-sku-un32f6000ffxza",
+          "consumerUrl": "/us/tvs/full-hd-tv/32-inch-fhd-f6000f-smart-tv-sku-un32f6000ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "UN32F6000FFXZA",
+            "familyName": "Size Full HD F6000 Smart TV 2025",
+            "id": "548966",
+            "marketingName": "{Size}\" Full HD F6000 Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN40F6000FFXZA",
+          "modelName": "UN40F6000FF",
+          "id": "UN40F6000FFXZA",
+          "group_id": "FMY_ID_548966",
+          "pdpURL": "/us/tvs/full-hd-tv/40-inch-fhd-f6000f-smart-tv-sku-un40f6000ffxza",
+          "consumerUrl": "/us/tvs/full-hd-tv/40-inch-fhd-f6000f-smart-tv-sku-un40f6000ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "UN32F6000FFXZA",
+            "familyName": "Size Full HD F6000 Smart TV 2025",
+            "id": "548966",
+            "marketingName": "{Size}\" Full HD F6000 Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "40\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "UN32H5000FFXZA",
+      "modelName": "UN32H5000FF",
+      "id": "UN32H5000FFXZA",
+      "group_id": "FMY_ID_546133",
+      "pdpURL": "/us/tvs/hd-tv/32-class-hd-tv-h5000f-sku-un32h5000ffxza",
+      "consumerUrl": "/us/tvs/hd-tv/32-class-hd-tv-h5000f-sku-un32h5000ffxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "5",
+        "pickYn": "N",
+        "representativeModel": "UN32H5000FFXZA",
+        "familyName": "Size HD H5000 Smart TV 2025",
+        "id": "546133",
+        "marketingName": "HD H5000 Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "UN32H5000FFXZA",
+          "modelName": "UN32H5000FF",
+          "id": "UN32H5000FFXZA",
+          "group_id": "FMY_ID_546133",
+          "pdpURL": "/us/tvs/hd-tv/32-class-hd-tv-h5000f-sku-un32h5000ffxza",
+          "consumerUrl": "/us/tvs/hd-tv/32-class-hd-tv-h5000f-sku-un32h5000ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "5",
+            "pickYn": "N",
+            "representativeModel": "UN32H5000FFXZA",
+            "familyName": "Size HD H5000 Smart TV 2025",
+            "id": "546133",
+            "marketingName": "HD H5000 Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN83S85FAEXZA",
+      "modelName": "QN83S85FAE",
+      "id": "QN83S85FAEXZA",
+      "group_id": "FMY_ID_543690",
+      "pdpURL": "/us/tvs/oled-tv/83-class-oled-tvs85f-sku-qn83s85faexza",
+      "consumerUrl": "/us/tvs/oled-tv/83-class-oled-tvs85f-sku-qn83s85faexza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "39",
+        "pickYn": "N",
+        "representativeModel": "QN77S85FAEXZA",
+        "familyName": "size OLED S85F 4K Samsung Vision AI Smart TV 2025",
+        "id": "543690",
+        "marketingName": "{size}\" OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "83\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN83S85FAEXZA",
+          "modelName": "QN83S85FAE",
+          "id": "QN83S85FAEXZA",
+          "group_id": "FMY_ID_543690",
+          "pdpURL": "/us/tvs/oled-tv/83-class-oled-tvs85f-sku-qn83s85faexza",
+          "consumerUrl": "/us/tvs/oled-tv/83-class-oled-tvs85f-sku-qn83s85faexza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "39",
+            "pickYn": "N",
+            "representativeModel": "QN77S85FAEXZA",
+            "familyName": "size OLED S85F 4K Samsung Vision AI Smart TV 2025",
+            "id": "543690",
+            "marketingName": "{size}\" OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "83\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65S85FAFXZA",
+          "modelName": "QN65S85FAF",
+          "id": "QN65S85FAFXZA",
+          "group_id": "FMY_ID_543690",
+          "pdpURL": "/us/tvs/oled-tv/65-class-oled-tvs85f-sku-qn65s85fafxza",
+          "consumerUrl": "/us/tvs/oled-tv/65-class-oled-tvs85f-sku-qn65s85fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "39",
+            "pickYn": "N",
+            "representativeModel": "QN77S85FAEXZA",
+            "familyName": "size OLED S85F 4K Samsung Vision AI Smart TV 2025",
+            "id": "543690",
+            "marketingName": "{size}\" OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN77S85FAEXZA",
+          "modelName": "QN77S85FAE",
+          "id": "QN77S85FAEXZA",
+          "group_id": "FMY_ID_543690",
+          "pdpURL": "/us/tvs/oled-tv/77-class-oled-tvs85f-sku-qn77s85faexza",
+          "consumerUrl": "/us/tvs/oled-tv/77-class-oled-tvs85f-sku-qn77s85faexza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "39",
+            "pickYn": "N",
+            "representativeModel": "QN77S85FAEXZA",
+            "familyName": "size OLED S85F 4K Samsung Vision AI Smart TV 2025",
+            "id": "543690",
+            "marketingName": "{size}\" OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "77\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55S85FAFXZA",
+          "modelName": "QN55S85FAF",
+          "id": "QN55S85FAFXZA",
+          "group_id": "FMY_ID_543690",
+          "pdpURL": "/us/tvs/oled-tv/55-class-oled-tvs85f-sku-qn55s85fafxza",
+          "consumerUrl": "/us/tvs/oled-tv/55-class-oled-tvs85f-sku-qn55s85fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "39",
+            "pickYn": "N",
+            "representativeModel": "QN77S85FAEXZA",
+            "familyName": "size OLED S85F 4K Samsung Vision AI Smart TV 2025",
+            "id": "543690",
+            "marketingName": "{size}\" OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN77S84FAEXZA",
+      "modelName": "QN77S84FAE",
+      "id": "QN77S84FAEXZA",
+      "group_id": "FMY_ID_559630",
+      "pdpURL": "/us/tvs/oled-tv/77-inch-class-oled-tvs-s84f-sku-qn77s84faexza",
+      "consumerUrl": "/us/tvs/oled-tv/77-inch-class-oled-tvs-s84f-sku-qn77s84faexza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "38",
+        "pickYn": "N",
+        "representativeModel": "QN77S84FAEXZA",
+        "familyName": "OLED S85F 4K Samsung Vision AI Smart TV 2025",
+        "id": "559630",
+        "marketingName": "OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "77\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN77S84FAEXZA",
+          "modelName": "QN77S84FAE",
+          "id": "QN77S84FAEXZA",
+          "group_id": "FMY_ID_559630",
+          "pdpURL": "/us/tvs/oled-tv/77-inch-class-oled-tvs-s84f-sku-qn77s84faexza",
+          "consumerUrl": "/us/tvs/oled-tv/77-inch-class-oled-tvs-s84f-sku-qn77s84faexza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "38",
+            "pickYn": "N",
+            "representativeModel": "QN77S84FAEXZA",
+            "familyName": "OLED S85F 4K Samsung Vision AI Smart TV 2025",
+            "id": "559630",
+            "marketingName": "OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "77\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN75QN80FAFXZA",
+      "modelName": "QN75QN80FAF",
+      "id": "QN75QN80FAFXZA",
+      "group_id": "FMY_ID_541641",
+      "pdpURL": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn80f-sku-qn75qn80fafxza",
+      "consumerUrl": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn80f-sku-qn75qn80fafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "37",
+        "pickYn": "N",
+        "representativeModel": "QN55QN80FAFXZA",
+        "familyName": "size Neo QLED QN80F 4K Vision AI Smart TV 2025",
+        "id": "541641",
+        "marketingName": "{size}\" Neo QLED QN80F 4K Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "75\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN75QN80FAFXZA",
+          "modelName": "QN75QN80FAF",
+          "id": "QN75QN80FAFXZA",
+          "group_id": "FMY_ID_541641",
+          "pdpURL": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn80f-sku-qn75qn80fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/75-class-neo-qled-4k-tv-qn80f-sku-qn75qn80fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "QN55QN80FAFXZA",
+            "familyName": "size Neo QLED QN80F 4K Vision AI Smart TV 2025",
+            "id": "541641",
+            "marketingName": "{size}\" Neo QLED QN80F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55QN80FAFXZA",
+          "modelName": "QN55QN80FAF",
+          "id": "QN55QN80FAFXZA",
+          "group_id": "FMY_ID_541641",
+          "pdpURL": "/us/tvs/neo-qled/55-class-neo-qled-4k-tv-qn80f-sku-qn55qn80fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/55-class-neo-qled-4k-tv-qn80f-sku-qn55qn80fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "QN55QN80FAFXZA",
+            "familyName": "size Neo QLED QN80F 4K Vision AI Smart TV 2025",
+            "id": "541641",
+            "marketingName": "{size}\" Neo QLED QN80F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN100QN80FFXZA",
+          "modelName": "QN100QN80FF",
+          "id": "QN100QN80FFXZA",
+          "group_id": "FMY_ID_541641",
+          "pdpURL": "/us/tvs/neo-qled/100-class-neo-qled-4k-tv-qn80f-sku-qn100qn80ffxza",
+          "consumerUrl": "/us/tvs/neo-qled/100-class-neo-qled-4k-tv-qn80f-sku-qn100qn80ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "QN55QN80FAFXZA",
+            "familyName": "size Neo QLED QN80F 4K Vision AI Smart TV 2025",
+            "id": "541641",
+            "marketingName": "{size}\" Neo QLED QN80F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "100\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN85QN80FAFXZA",
+          "modelName": "QN85QN80FAF",
+          "id": "QN85QN80FAFXZA",
+          "group_id": "FMY_ID_541641",
+          "pdpURL": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn80f-sku-qn85qn80fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/85-class-neo-qled-4k-tv-qn80f-sku-qn85qn80fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "QN55QN80FAFXZA",
+            "familyName": "size Neo QLED QN80F 4K Vision AI Smart TV 2025",
+            "id": "541641",
+            "marketingName": "{size}\" Neo QLED QN80F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65QN80FAFXZA",
+          "modelName": "QN65QN80FAF",
+          "id": "QN65QN80FAFXZA",
+          "group_id": "FMY_ID_541641",
+          "pdpURL": "/us/tvs/neo-qled/65-class-neo-qled-4k-tv-qn80f-sku-qn65qn80fafxza",
+          "consumerUrl": "/us/tvs/neo-qled/65-class-neo-qled-4k-tv-qn80f-sku-qn65qn80fafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "QN55QN80FAFXZA",
+            "familyName": "size Neo QLED QN80F 4K Vision AI Smart TV 2025",
+            "id": "541641",
+            "marketingName": "{size}\" Neo QLED QN80F 4K Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN65QN1EFAFXZA",
+      "modelName": "QN65QN1EFAF",
+      "id": "QN65QN1EFAFXZA",
+      "group_id": "FMY_ID_545861",
+      "pdpURL": "/us/tvs/neo-qled/65-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn65qn1efafxza",
+      "consumerUrl": "/us/tvs/neo-qled/65-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn65qn1efafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "35",
+        "pickYn": "N",
+        "representativeModel": "QN55QN1EFAFXZA",
+        "familyName": "size Neo QLED QN1EF 4K Samsung Vision AI Smart TV 2025",
+        "id": "545861",
+        "marketingName": "{size}\" Neo QLED QN1EF 4K Samsung Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "65\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN65QN1EFAFXZA",
+          "modelName": "QN65QN1EFAF",
+          "id": "QN65QN1EFAFXZA",
+          "group_id": "FMY_ID_545861",
+          "pdpURL": "/us/tvs/neo-qled/65-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn65qn1efafxza",
+          "consumerUrl": "/us/tvs/neo-qled/65-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn65qn1efafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "35",
+            "pickYn": "N",
+            "representativeModel": "QN55QN1EFAFXZA",
+            "familyName": "size Neo QLED QN1EF 4K Samsung Vision AI Smart TV 2025",
+            "id": "545861",
+            "marketingName": "{size}\" Neo QLED QN1EF 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN75QN1EFAFXZA",
+          "modelName": "QN75QN1EFAF",
+          "id": "QN75QN1EFAFXZA",
+          "group_id": "FMY_ID_545861",
+          "pdpURL": "/us/tvs/neo-qled/75-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn75qn1efafxza",
+          "consumerUrl": "/us/tvs/neo-qled/75-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn75qn1efafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "35",
+            "pickYn": "N",
+            "representativeModel": "QN55QN1EFAFXZA",
+            "familyName": "size Neo QLED QN1EF 4K Samsung Vision AI Smart TV 2025",
+            "id": "545861",
+            "marketingName": "{size}\" Neo QLED QN1EF 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN85QN1EFAFXZA",
+          "modelName": "QN85QN1EFAF",
+          "id": "QN85QN1EFAFXZA",
+          "group_id": "FMY_ID_545861",
+          "pdpURL": "/us/tvs/neo-qled/85-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn85qn1efafxza",
+          "consumerUrl": "/us/tvs/neo-qled/85-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn85qn1efafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "35",
+            "pickYn": "N",
+            "representativeModel": "QN55QN1EFAFXZA",
+            "familyName": "size Neo QLED QN1EF 4K Samsung Vision AI Smart TV 2025",
+            "id": "545861",
+            "marketingName": "{size}\" Neo QLED QN1EF 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55QN1EFAFXZA",
+          "modelName": "QN55QN1EFAF",
+          "id": "QN55QN1EFAFXZA",
+          "group_id": "FMY_ID_545861",
+          "pdpURL": "/us/tvs/neo-qled/55-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn55qn1efafxza",
+          "consumerUrl": "/us/tvs/neo-qled/55-inch-neo-qled-4k-qn1ef-vision-ai-smart-tv-sku-qn55qn1efafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "35",
+            "pickYn": "N",
+            "representativeModel": "QN55QN1EFAFXZA",
+            "familyName": "size Neo QLED QN1EF 4K Samsung Vision AI Smart TV 2025",
+            "id": "545861",
+            "marketingName": "{size}\" Neo QLED QN1EF 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN75QEF1AFXZA",
+      "modelName": "QN75QEF1AF",
+      "id": "QN75QEF1AFXZA",
+      "group_id": "FMY_ID_548500",
+      "pdpURL": "/us/tvs/qled-tv/75-class-qled-4k-tv-qef1-sku-qn75qef1afxza",
+      "consumerUrl": "/us/tvs/qled-tv/75-class-qled-4k-tv-qef1-sku-qn75qef1afxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "30",
+        "pickYn": "N",
+        "representativeModel": "QN75QEF1AFXZA",
+        "familyName": "inch QLED QEF1 4K Samsung Vision AI Smart TV 2025",
+        "id": "548500",
+        "marketingName": "{inch}\" QLED QEF1 4K Samsung Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "75\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN75QEF1AFXZA",
+          "modelName": "QN75QEF1AF",
+          "id": "QN75QEF1AFXZA",
+          "group_id": "FMY_ID_548500",
+          "pdpURL": "/us/tvs/qled-tv/75-class-qled-4k-tv-qef1-sku-qn75qef1afxza",
+          "consumerUrl": "/us/tvs/qled-tv/75-class-qled-4k-tv-qef1-sku-qn75qef1afxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "30",
+            "pickYn": "N",
+            "representativeModel": "QN75QEF1AFXZA",
+            "familyName": "inch QLED QEF1 4K Samsung Vision AI Smart TV 2025",
+            "id": "548500",
+            "marketingName": "{inch}\" QLED QEF1 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65QEF1AFXZA",
+          "modelName": "QN65QEF1AF",
+          "id": "QN65QEF1AFXZA",
+          "group_id": "FMY_ID_548500",
+          "pdpURL": "/us/tvs/qled-tv/65-class-qled-4k-tv-qef1-sku-qn65qef1afxza",
+          "consumerUrl": "/us/tvs/qled-tv/65-class-qled-4k-tv-qef1-sku-qn65qef1afxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "30",
+            "pickYn": "N",
+            "representativeModel": "QN75QEF1AFXZA",
+            "familyName": "inch QLED QEF1 4K Samsung Vision AI Smart TV 2025",
+            "id": "548500",
+            "marketingName": "{inch}\" QLED QEF1 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN43QEF1AFXZA",
+          "modelName": "QN43QEF1AF",
+          "id": "QN43QEF1AFXZA",
+          "group_id": "FMY_ID_548500",
+          "pdpURL": "/us/tvs/qled-tv/43-class-qled-4k-tv-qef1-sku-qn43qef1afxza",
+          "consumerUrl": "/us/tvs/qled-tv/43-class-qled-4k-tv-qef1-sku-qn43qef1afxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "30",
+            "pickYn": "N",
+            "representativeModel": "QN75QEF1AFXZA",
+            "familyName": "inch QLED QEF1 4K Samsung Vision AI Smart TV 2025",
+            "id": "548500",
+            "marketingName": "{inch}\" QLED QEF1 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN85QEF1AFXZA",
+          "modelName": "QN85QEF1AF",
+          "id": "QN85QEF1AFXZA",
+          "group_id": "FMY_ID_548500",
+          "pdpURL": "/us/tvs/qled-tv/85-class-qled-4k-tv-qef1-sku-qn85qef1afxza",
+          "consumerUrl": "/us/tvs/qled-tv/85-class-qled-4k-tv-qef1-sku-qn85qef1afxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "30",
+            "pickYn": "N",
+            "representativeModel": "QN75QEF1AFXZA",
+            "familyName": "inch QLED QEF1 4K Samsung Vision AI Smart TV 2025",
+            "id": "548500",
+            "marketingName": "{inch}\" QLED QEF1 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN55QEF1AFXZA",
+          "modelName": "QN55QEF1AF",
+          "id": "QN55QEF1AFXZA",
+          "group_id": "FMY_ID_548500",
+          "pdpURL": "/us/tvs/qled-tv/55-class-qled-4k-tv-qef1-sku-qn55qef1afxza",
+          "consumerUrl": "/us/tvs/qled-tv/55-class-qled-4k-tv-qef1-sku-qn55qef1afxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "30",
+            "pickYn": "N",
+            "representativeModel": "QN75QEF1AFXZA",
+            "familyName": "inch QLED QEF1 4K Samsung Vision AI Smart TV 2025",
+            "id": "548500",
+            "marketingName": "{inch}\" QLED QEF1 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN50QEF1AFXZA",
+          "modelName": "QN50QEF1AF",
+          "id": "QN50QEF1AFXZA",
+          "group_id": "FMY_ID_548500",
+          "pdpURL": "/us/tvs/qled-tv/50-class-qled-4k-tv-qef1-sku-qn50qef1afxza",
+          "consumerUrl": "/us/tvs/qled-tv/50-class-qled-4k-tv-qef1-sku-qn50qef1afxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "30",
+            "pickYn": "N",
+            "representativeModel": "QN75QEF1AFXZA",
+            "familyName": "inch QLED QEF1 4K Samsung Vision AI Smart TV 2025",
+            "id": "548500",
+            "marketingName": "{inch}\" QLED QEF1 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "50\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN55Q6FAAFXZA",
+      "modelName": "QN55Q6FAAF",
+      "id": "QN55Q6FAAFXZA",
+      "group_id": "FMY_ID_553751",
+      "pdpURL": "/us/tvs/qled-tv/55-inch-class-qled-4k-tv-sku-qn55q6faafxza",
+      "consumerUrl": "/us/tvs/qled-tv/55-inch-class-qled-4k-tv-sku-qn55q6faafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "29",
+        "pickYn": "N",
+        "representativeModel": "QN75Q6FAAFXZA",
+        "familyName": "inch QLED Q6F 4K Smart TV 2025",
+        "id": "553751",
+        "marketingName": "QLED Q6F 4K Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "55\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN55Q6FAAFXZA",
+          "modelName": "QN55Q6FAAF",
+          "id": "QN55Q6FAAFXZA",
+          "group_id": "FMY_ID_553751",
+          "pdpURL": "/us/tvs/qled-tv/55-inch-class-qled-4k-tv-sku-qn55q6faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/55-inch-class-qled-4k-tv-sku-qn55q6faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "29",
+            "pickYn": "N",
+            "representativeModel": "QN75Q6FAAFXZA",
+            "familyName": "inch QLED Q6F 4K Smart TV 2025",
+            "id": "553751",
+            "marketingName": "QLED Q6F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN75Q6FAAFXZA",
+          "modelName": "QN75Q6FAAF",
+          "id": "QN75Q6FAAFXZA",
+          "group_id": "FMY_ID_553751",
+          "pdpURL": "/us/tvs/qled-tv/75-inch-class-qled-4k-tv-sku-qn75q6faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/75-inch-class-qled-4k-tv-sku-qn75q6faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "29",
+            "pickYn": "N",
+            "representativeModel": "QN75Q6FAAFXZA",
+            "familyName": "inch QLED Q6F 4K Smart TV 2025",
+            "id": "553751",
+            "marketingName": "QLED Q6F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN85Q6FAAFXZA",
+          "modelName": "QN85Q6FAAF",
+          "id": "QN85Q6FAAFXZA",
+          "group_id": "FMY_ID_553751",
+          "pdpURL": "/us/tvs/qled-tv/85-inch-class-qled-4k-tv-sku-qn85q6faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/85-inch-class-qled-4k-tv-sku-qn85q6faafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "29",
+            "pickYn": "N",
+            "representativeModel": "QN75Q6FAAFXZA",
+            "familyName": "inch QLED Q6F 4K Smart TV 2025",
+            "id": "553751",
+            "marketingName": "QLED Q6F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN65Q6FAAFXZA",
+          "modelName": "QN65Q6FAAF",
+          "id": "QN65Q6FAAFXZA",
+          "group_id": "FMY_ID_553751",
+          "pdpURL": "/us/tvs/qled-tv/65-inch-class-qled-4k-tv-sku-qn65q6faafxza",
+          "consumerUrl": "/us/tvs/qled-tv/65-inch-class-qled-4k-tv-sku-qn65q6faafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "29",
+            "pickYn": "N",
+            "representativeModel": "QN75Q6FAAFXZA",
+            "familyName": "inch QLED Q6F 4K Smart TV 2025",
+            "id": "553751",
+            "marketingName": "QLED Q6F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "UN65U7900FFXZA",
+      "modelName": "UN65U7900FF",
+      "id": "UN65U7900FFXZA",
+      "group_id": "FMY_ID_546814",
+      "pdpURL": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un65u7900ffxza",
+      "consumerUrl": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un65u7900ffxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "27",
+        "pickYn": "N",
+        "representativeModel": "UN50U7900FFXZA",
+        "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+        "id": "546814",
+        "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "65\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "UN65U7900FFXZA",
+          "modelName": "UN65U7900FF",
+          "id": "UN65U7900FFXZA",
+          "group_id": "FMY_ID_546814",
+          "pdpURL": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un65u7900ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/65-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un65u7900ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "27",
+            "pickYn": "N",
+            "representativeModel": "UN50U7900FFXZA",
+            "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+            "id": "546814",
+            "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN50U7900FFXZA",
+          "modelName": "UN50U7900FF",
+          "id": "UN50U7900FFXZA",
+          "group_id": "FMY_ID_546814",
+          "pdpURL": "/us/tvs/uhd-4k-tv/50-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un50u7900ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/50-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un50u7900ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "27",
+            "pickYn": "N",
+            "representativeModel": "UN50U7900FFXZA",
+            "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+            "id": "546814",
+            "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "50\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN70U7900FFXZA",
+          "modelName": "UN70U7900FF",
+          "id": "UN70U7900FFXZA",
+          "group_id": "FMY_ID_546814",
+          "pdpURL": "/us/tvs/uhd-4k-tv/70-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un70u7900ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/70-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un70u7900ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "27",
+            "pickYn": "N",
+            "representativeModel": "UN50U7900FFXZA",
+            "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+            "id": "546814",
+            "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "70\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN55U7900FFXZA",
+          "modelName": "UN55U7900FF",
+          "id": "UN55U7900FFXZA",
+          "group_id": "FMY_ID_546814",
+          "pdpURL": "/us/tvs/uhd-4k-tv/55-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un55u7900ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/55-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un55u7900ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "27",
+            "pickYn": "N",
+            "representativeModel": "UN50U7900FFXZA",
+            "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+            "id": "546814",
+            "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN85U7900FFXZA",
+          "modelName": "UN85U7900FF",
+          "id": "UN85U7900FFXZA",
+          "group_id": "FMY_ID_546814",
+          "pdpURL": "/us/tvs/uhd-4k-tv/85-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un85u7900ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/85-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un85u7900ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "27",
+            "pickYn": "N",
+            "representativeModel": "UN50U7900FFXZA",
+            "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+            "id": "546814",
+            "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "85\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN58U7900FFXZA",
+          "modelName": "UN58U7900FF",
+          "id": "UN58U7900FFXZA",
+          "group_id": "FMY_ID_546814",
+          "pdpURL": "/us/tvs/uhd-4k-tv/58-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un58u7900ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/58-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un58u7900ffxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "27",
+            "pickYn": "N",
+            "representativeModel": "UN50U7900FFXZA",
+            "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+            "id": "546814",
+            "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "58\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "UN75U7900FFXZA",
+          "modelName": "UN75U7900FF",
+          "id": "UN75U7900FFXZA",
+          "group_id": "FMY_ID_546814",
+          "pdpURL": "/us/tvs/uhd-4k-tv/75-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un75u7900ffxza",
+          "consumerUrl": "/us/tvs/uhd-4k-tv/75-inch-class-crystal-uhd-u7900f-4k-smart-tv-sku-un75u7900ffxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "27",
+            "pickYn": "N",
+            "representativeModel": "UN50U7900FFXZA",
+            "familyName": "size Crystal UHD U7900F 4K Smart TV 2025",
+            "id": "546814",
+            "marketingName": "Crystal UHD U7900F 4K Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "75\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "MNA89MS1BACXZA",
+      "modelName": "MNA89MS1BAC",
+      "id": "MNA89MS1BACXZA",
+      "group_id": "FMY_ID_582013",
+      "pdpURL": "/us/tvs/micro-led/89-class-micro-led-sku-mna89ms1bacxza",
+      "consumerUrl": "/us/tvs/micro-led/89-class-micro-led-sku-mna89ms1bacxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "26",
+        "pickYn": "N",
+        "representativeModel": "MNA101MS1BCXZA",
+        "familyName": "2021 MICRO LED MS1A",
+        "id": "582013",
+        "marketingName": "2021 MICRO LED MS1A"
+      },
+      "chips": [
+        {
+          "fmyChipName": "89\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "MNA89MS1BACXZA",
+          "modelName": "MNA89MS1BAC",
+          "id": "MNA89MS1BACXZA",
+          "group_id": "FMY_ID_582013",
+          "pdpURL": "/us/tvs/micro-led/89-class-micro-led-sku-mna89ms1bacxza",
+          "consumerUrl": "/us/tvs/micro-led/89-class-micro-led-sku-mna89ms1bacxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "26",
+            "pickYn": "N",
+            "representativeModel": "MNA101MS1BCXZA",
+            "familyName": "2021 MICRO LED MS1A",
+            "id": "582013",
+            "marketingName": "2021 MICRO LED MS1A"
+          },
+          "chips": [
+            {
+              "fmyChipName": "89\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "MNA101MS1BCXZA",
+          "modelName": "MNA101MS1BC",
+          "id": "MNA101MS1BCXZA",
+          "group_id": "FMY_ID_582013",
+          "pdpURL": "/us/tvs/micro-led/101-class-micro-led-sku-mna101ms1bcxza",
+          "consumerUrl": "/us/tvs/micro-led/101-class-micro-led-sku-mna101ms1bcxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "26",
+            "pickYn": "N",
+            "representativeModel": "MNA101MS1BCXZA",
+            "familyName": "2021 MICRO LED MS1A",
+            "id": "582013",
+            "marketingName": "2021 MICRO LED MS1A"
+          },
+          "chips": [
+            {
+              "fmyChipName": "101\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN55S84FAFXZA",
+      "modelName": "QN55S84FAF",
+      "id": "QN55S84FAFXZA",
+      "group_id": "FMY_ID_581806",
+      "pdpURL": "/us/tvs/oled-tv/55-class-oled-tv-s84f-sku-qn55s84fafxza",
+      "consumerUrl": "/us/tvs/oled-tv/55-class-oled-tv-s84f-sku-qn55s84fafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "25",
+        "pickYn": "N",
+        "representativeModel": "QN55S84FAFXZA",
+        "familyName": "OLED S85F 4K Samsung Vision AI Smart TV 2025",
+        "id": "581806",
+        "marketingName": "OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "55\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN55S84FAFXZA",
+          "modelName": "QN55S84FAF",
+          "id": "QN55S84FAFXZA",
+          "group_id": "FMY_ID_581806",
+          "pdpURL": "/us/tvs/oled-tv/55-class-oled-tv-s84f-sku-qn55s84fafxza",
+          "consumerUrl": "/us/tvs/oled-tv/55-class-oled-tv-s84f-sku-qn55s84fafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "25",
+            "pickYn": "N",
+            "representativeModel": "QN55S84FAFXZA",
+            "familyName": "OLED S85F 4K Samsung Vision AI Smart TV 2025",
+            "id": "581806",
+            "marketingName": "OLED S85F 4K Samsung Vision AI Smart TV (2025)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "55\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN77S95DAFXZA",
+      "modelName": "QN77S95DAF",
+      "id": "QN77S95DAFXZA",
+      "group_id": "FMY_ID_572462",
+      "pdpURL": "/us/tvs/oled-tv/77-class-oled-s95d-sku-qn77s95dafxza",
+      "consumerUrl": "/us/tvs/oled-tv/77-class-oled-s95d-sku-qn77s95dafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "14",
+        "pickYn": "N",
+        "representativeModel": "QN77S95DAFXZA",
+        "familyName": "size Inch OLED S95D 4K Tizen OS Smart TV 2024",
+        "id": "572462",
+        "marketingName": "{size} Inch OLED S95D 4K Tizen OS Smart TV (2024)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "77\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN77S95DAFXZA",
+          "modelName": "QN77S95DAF",
+          "id": "QN77S95DAFXZA",
+          "group_id": "FMY_ID_572462",
+          "pdpURL": "/us/tvs/oled-tv/77-class-oled-s95d-sku-qn77s95dafxza",
+          "consumerUrl": "/us/tvs/oled-tv/77-class-oled-s95d-sku-qn77s95dafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "14",
+            "pickYn": "N",
+            "representativeModel": "QN77S95DAFXZA",
+            "familyName": "size Inch OLED S95D 4K Tizen OS Smart TV 2024",
+            "id": "572462",
+            "marketingName": "{size} Inch OLED S95D 4K Tizen OS Smart TV (2024)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "77\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "QN65S90DAFXZA",
+      "modelName": "QN65S90DAF",
+      "id": "QN65S90DAFXZA",
+      "group_id": "FMY_ID_572443",
+      "pdpURL": "/us/tvs/oled-tv/65-class-oled-s90d-sku-qn65s90dafxza",
+      "consumerUrl": "/us/tvs/oled-tv/65-class-oled-s90d-sku-qn65s90dafxza",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "13",
+        "pickYn": "N",
+        "representativeModel": "QN65S90DAFXZA",
+        "familyName": "size Inch OLED S90D 4K Tizen OS Smart TV 2024",
+        "id": "572443",
+        "marketingName": "{size} Inch OLED S90D 4K Tizen OS Smart TV (2024)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "65\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "QN65S90DAFXZA",
+          "modelName": "QN65S90DAF",
+          "id": "QN65S90DAFXZA",
+          "group_id": "FMY_ID_572443",
+          "pdpURL": "/us/tvs/oled-tv/65-class-oled-s90d-sku-qn65s90dafxza",
+          "consumerUrl": "/us/tvs/oled-tv/65-class-oled-s90d-sku-qn65s90dafxza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "13",
+            "pickYn": "N",
+            "representativeModel": "QN65S90DAFXZA",
+            "familyName": "size Inch OLED S90D 4K Tizen OS Smart TV 2024",
+            "id": "572443",
+            "marketingName": "{size} Inch OLED S90D 4K Tizen OS Smart TV (2024)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "65\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN77S90DAFXZA",
+          "modelName": "QN77S90DAF",
+          "id": "QN77S90DAFXZA",
+          "group_id": "FMY_ID_572443",
+          "pdpURL": "/us/tvs/oled-tv/77-class-oled-s90d-sku-qn77s90dafxza",
+          "consumerUrl": "/us/tvs/oled-tv/77-class-oled-s90d-sku-qn77s90dafxza",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "13",
+            "pickYn": "N",
+            "representativeModel": "QN65S90DAFXZA",
+            "familyName": "size Inch OLED S90D 4K Tizen OS Smart TV 2024",
+            "id": "572443",
+            "marketingName": "{size} Inch OLED S90D 4K Tizen OS Smart TV (2024)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "77\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "QN83S90DAEXZA",
+          "modelName": "QN83S90DAE",
+          "id": "QN83S90DAEXZA",
+          "group_id": "FMY_ID_572443",
+          "pdpURL": "/us/tvs/oled-tv/83-class-oled-s90d-sku-qn83s90daexza",
+          "consumerUrl": "/us/tvs/oled-tv/83-class-oled-s90d-sku-qn83s90daexza",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "13",
+            "pickYn": "N",
+            "representativeModel": "QN65S90DAFXZA",
+            "familyName": "size Inch OLED S90D 4K Tizen OS Smart TV 2024",
+            "id": "572443",
+            "marketingName": "{size} Inch OLED S90D 4K Tizen OS Smart TV (2024)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "83\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
