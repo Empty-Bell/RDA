@@ -1,0 +1,409 @@
+{
+  "searchTotalCount": 18,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "WA47CG3500AVA4",
+      "modelName": "WA47CG3500AVA4",
+      "id": "WA47CG3500AVA4",
+      "group_id": "MULTI_GROUP_ID_601710",
+      "pdpURL": "/us/laundry/washers/top-load-wa3500c-large-capacity-smartthings-4-7-cu-ft-black-sku-wa47cg3500ava4",
+      "consumerUrl": "/us/laundry/washers/top-load-wa3500c-large-capacity-smartthings-4-7-cu-ft-black-sku-wa47cg3500ava4",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "59",
+        "pickYn": "N",
+        "representativeModel": "WA47CG3500AVA4",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-15",
+        "id": "601710"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Impeller",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WA47CG3500AVA4",
+          "modelName": "WA47CG3500AVA4",
+          "id": "WA47CG3500AVA4",
+          "group_id": "MULTI_GROUP_ID_601710",
+          "pdpURL": "/us/laundry/washers/top-load-wa3500c-large-capacity-smartthings-4-7-cu-ft-black-sku-wa47cg3500ava4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3500c-large-capacity-smartthings-4-7-cu-ft-black-sku-wa47cg3500ava4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "59",
+            "pickYn": "N",
+            "representativeModel": "WA47CG3500AVA4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-15",
+            "id": "601710"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Impeller",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA47CG3500AWA4",
+          "modelName": "WA47CG3500AWA4",
+          "id": "WA47CG3500AWA4",
+          "group_id": "MULTI_GROUP_ID_601710",
+          "pdpURL": "/us/laundry/washers/top-load-wa3500c-large-capacity-smartthings-4-7-cu-ft-white-sku-wa47cg3500awa4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3500c-large-capacity-smartthings-4-7-cu-ft-white-sku-wa47cg3500awa4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "59",
+            "pickYn": "N",
+            "representativeModel": "WA47CG3500AVA4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-15",
+            "id": "601710"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Impeller",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA46CG3505AWA4",
+          "modelName": "WA46CG3505AWA4",
+          "id": "WA46CG3505AWA4",
+          "group_id": "MULTI_GROUP_ID_601710",
+          "pdpURL": "/us/laundry/washers/top-load-wa3505c-top-load-large-capacity-smartthings-4-6-cu-ft-white-sku-wa46cg3505awa4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3505c-top-load-large-capacity-smartthings-4-6-cu-ft-white-sku-wa46cg3505awa4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "59",
+            "pickYn": "N",
+            "representativeModel": "WA47CG3500AVA4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-15",
+            "id": "601710"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Agitator",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA46CG3505AVA4",
+          "modelName": "WA46CG3505AVA4",
+          "id": "WA46CG3505AVA4",
+          "group_id": "MULTI_GROUP_ID_601710",
+          "pdpURL": "/us/laundry/washers/top-load-wa3505c-top-load-large-capacity-smartthings-4-6-cu-ft-black-sku-wa46cg3505ava4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3505c-top-load-large-capacity-smartthings-4-6-cu-ft-black-sku-wa46cg3505ava4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "59",
+            "pickYn": "N",
+            "representativeModel": "WA47CG3500AVA4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-15",
+            "id": "601710"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Agitator",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WA45T3200AW/A4",
+      "modelName": "WA45T3200AW/A4",
+      "id": "WA45T3200AW/A4",
+      "group_id": "MULTI_GROUP_ID_601713",
+      "pdpURL": "/us/laundry/washers/top-load-wa3000j-top-loading-smart-care-self-clean-soft-close-lid-4-5-cu-ft-white-sku-wa45t3200aw-a4",
+      "consumerUrl": "/us/laundry/washers/top-load-wa3000j-top-loading-smart-care-self-clean-soft-close-lid-4-5-cu-ft-white-sku-wa45t3200aw-a4",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "58",
+        "pickYn": "N",
+        "representativeModel": "WA45T3200AW/A4",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-16",
+        "id": "601713"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Impeller",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WA45T3200AW/A4",
+          "modelName": "WA45T3200AW/A4",
+          "id": "WA45T3200AW/A4",
+          "group_id": "MULTI_GROUP_ID_601713",
+          "pdpURL": "/us/laundry/washers/top-load-wa3000j-top-loading-smart-care-self-clean-soft-close-lid-4-5-cu-ft-white-sku-wa45t3200aw-a4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3000j-top-loading-smart-care-self-clean-soft-close-lid-4-5-cu-ft-white-sku-wa45t3200aw-a4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "58",
+            "pickYn": "N",
+            "representativeModel": "WA45T3200AW/A4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-16",
+            "id": "601713"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Impeller",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA44A3205AW/A4",
+          "modelName": "WA44A3205AW",
+          "id": "WA44A3205AW/A4",
+          "group_id": "MULTI_GROUP_ID_601713",
+          "pdpURL": "/us/laundry/washers/top-load-wa3000j-top-load-washer-with-activewave-agitator-and-soft-close-lid-4-4-cu-ft-white-sku-wa44a3205aw-a4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3000j-top-load-washer-with-activewave-agitator-and-soft-close-lid-4-4-cu-ft-white-sku-wa44a3205aw-a4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "58",
+            "pickYn": "N",
+            "representativeModel": "WA45T3200AW/A4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-16",
+            "id": "601713"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Agitator",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WA40A3005AW/A4",
+      "modelName": "WA40A3005AW",
+      "id": "WA40A3005AW/A4",
+      "group_id": "MULTI_GROUP_ID_601717",
+      "pdpURL": "/us/laundry/washers/top-load-wa3000j-4-cu-ft-white-sku-wa40a3005aw-a4",
+      "consumerUrl": "/us/laundry/washers/top-load-wa3000j-4-cu-ft-white-sku-wa40a3005aw-a4",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "57",
+        "pickYn": "N",
+        "representativeModel": "WA40A3005AW/A4",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-17",
+        "id": "601717"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Agitator",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WA40A3005AW/A4",
+          "modelName": "WA40A3005AW",
+          "id": "WA40A3005AW/A4",
+          "group_id": "MULTI_GROUP_ID_601717",
+          "pdpURL": "/us/laundry/washers/top-load-wa3000j-4-cu-ft-white-sku-wa40a3005aw-a4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3000j-4-cu-ft-white-sku-wa40a3005aw-a4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "WA40A3005AW/A4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-17",
+            "id": "601717"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Agitator",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA41A3000AW/A4",
+          "modelName": "WA41A3000AW",
+          "id": "WA41A3000AW/A4",
+          "group_id": "MULTI_GROUP_ID_601717",
+          "pdpURL": "/us/laundry/washers/top-load-wa3000j-top-load-washer-with-soft-close-lid-and-8-washing-cycles-4-1-cu-ft-white-sku-wa41a3000aw-a4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa3000j-top-load-washer-with-soft-close-lid-and-8-washing-cycles-4-1-cu-ft-white-sku-wa41a3000aw-a4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "WA40A3005AW/A4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-17",
+            "id": "601717"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Impeller",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WW25FG6B34BEA2",
+      "modelName": "WW25FG6B34BEA2",
+      "id": "WW25FG6B34BEA2",
+      "group_id": "MULTI_GROUP_ID_601721",
+      "pdpURL": "/us/laundry/washers/front-load-2-5-cu-ft-smart-dial-compact-washer-in-white-sku-ww25fg6b34bea2",
+      "consumerUrl": "/us/laundry/washers/front-load-2-5-cu-ft-smart-dial-compact-washer-in-white-sku-ww25fg6b34bea2",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "56",
+        "pickYn": "N",
+        "representativeModel": "WW25FG6B34BEA2",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-18",
+        "id": "601721"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WW25FG6B34BEA2",
+          "modelName": "WW25FG6B34BEA2",
+          "id": "WW25FG6B34BEA2",
+          "group_id": "MULTI_GROUP_ID_601721",
+          "pdpURL": "/us/laundry/washers/front-load-2-5-cu-ft-smart-dial-compact-washer-in-white-sku-ww25fg6b34bea2",
+          "consumerUrl": "/us/laundry/washers/front-load-2-5-cu-ft-smart-dial-compact-washer-in-white-sku-ww25fg6b34bea2",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "56",
+            "pickYn": "N",
+            "representativeModel": "WW25FG6B34BEA2",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-18",
+            "id": "601721"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

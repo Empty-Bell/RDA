@@ -1,0 +1,3526 @@
+{
+  "Specs": [
+    {
+      "modelCode": "WD53DBA900HBA1",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Brushed Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Dryer Feature",
+          "specList": [
+            {
+              "name": "Vent Exhaust (Electric/Gas)",
+              "value": "Extra Rinse"
+            },
+            {
+              "name": "Wrinkle Prevent",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "Bubble Soak",
+              "value": "Y (On/Off)"
+            },
+            {
+              "name": "Smart Things",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Rinse",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Condenser Cleaning",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Safety",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            },
+            {
+              "name": "Languages",
+              "value": "Yes"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispense System",
+              "value": "Yes"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            },
+            {
+              "name": "Super Speed",
+              "value": "98 minutes"
+            },
+            {
+              "name": "Vibration Reduction Technology Plus™",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Number of Preset Wash Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Motor Power",
+              "value": "Digital Inverter Motor"
+            },
+            {
+              "name": "Internal Water Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Options",
+              "value": "5"
+            },
+            {
+              "name": "Interior Light",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Electric"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Handle",
+              "value": "Inner"
+            },
+            {
+              "name": "Drum Interior",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 1 - General Detergent",
+              "value": "(Off/Low/Medium/High)"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent",
+              "value": "(Off/Low/Medium/High)"
+            },
+            {
+              "name": "Pump Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Diagnosis",
+              "value": "Yes"
+            },
+            {
+              "name": "Sounds",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Connections",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Accounts",
+              "value": "Yes"
+            },
+            {
+              "name": "Home Device Notifications",
+              "value": "Yes"
+            },
+            {
+              "name": "Display and Style",
+              "value": "Yes"
+            },
+            {
+              "name": "Liquid units",
+              "value": "gal (water) / fl oz (detergent)"
+            },
+            {
+              "name": "Microphone",
+              "value": "Yes"
+            },
+            {
+              "name": "Date and time",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility",
+              "value": "Yes"
+            },
+            {
+              "name": "Software update",
+              "value": "Yes"
+            },
+            {
+              "name": "About product",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Dry Prep",
+              "value": "Y (On/Off)"
+            },
+            {
+              "name": "Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent and Softener",
+              "value": "(Off/Low/Medium/High)"
+            }
+          ]
+        },
+        {
+          "groupName": "Fabric Care",
+          "specList": [
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Swirl+ Interior Drum",
+              "value": "Yes"
+            },
+            {
+              "name": "Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Options",
+              "value": "32"
+            },
+            {
+              "name": "Steam Washing Technology",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Washing",
+              "value": "Yes"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Spin Speeds",
+          "specList": [
+            {
+              "name": "Extra High",
+              "value": "Yes"
+            },
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Maximum Spin Speed",
+              "value": "1,200 RPM"
+            }
+          ]
+        },
+        {
+          "groupName": "Detergent",
+          "specList": [
+            {
+              "name": "Bleach",
+              "value": "Manual"
+            },
+            {
+              "name": "Flex Auto Dispenser [2]",
+              "value": "Auto"
+            },
+            {
+              "name": "Pebble Dispenser",
+              "value": "Manual (Accessory, Detergent usage only)"
+            },
+            {
+              "name": "Auto Detergent",
+              "value": "Auto"
+            },
+            {
+              "name": "Auto Softener",
+              "value": "Auto(Share with Flex Auto Dispenser)"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "120 V / 60 Hz"
+            },
+            {
+              "name": "Ampere",
+              "value": "15 Amps"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "Energy Gallons / Year",
+              "value": "4500"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Energy Guide Label",
+              "value": "103 kWh/Year"
+            },
+            {
+              "name": "IMEF",
+              "value": "2.92(cu.ft/kWh/cycle)"
+            },
+            {
+              "name": "IWF",
+              "value": "2.9 (gal/cycle/cu.ft)"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Washer Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27\" W X 43.7\" H X 34.4\" D"
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29.4\" W X 49.2\" H X 36\" D"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "43.7"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "34.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "317"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "328"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            },
+            {
+              "name": "Three (3) Year Stainless Steel Tub (Part Only)",
+              "value": "Yes"
+            },
+            {
+              "name": "10-year Digital Inverter Motor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Soil Levels",
+          "specList": [
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Levels",
+          "specList": [
+            {
+              "name": "Extra Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Tap Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Warm",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Pedestal",
+              "value": "WE702NB/US"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WD53DBA900HYA1",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Ivory"
+            }
+          ]
+        },
+        {
+          "groupName": "Dryer Feature",
+          "specList": [
+            {
+              "name": "Vent Exhaust (Electric/Gas)",
+              "value": "Extra Rinse"
+            },
+            {
+              "name": "Wrinkle Prevent",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "Interior Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Things",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Rinse",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Condenser Cleaning",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Safety",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            },
+            {
+              "name": "Languages",
+              "value": "Yes"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispense System",
+              "value": "Yes"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            },
+            {
+              "name": "Super Speed",
+              "value": "98 minutes"
+            },
+            {
+              "name": "Vibration Reduction Technology Plus™",
+              "value": "Yes"
+            },
+            {
+              "name": "10-Year Warranty",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Number of Preset Wash Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Motor Power",
+              "value": "Digital Inverter Motor"
+            },
+            {
+              "name": "Internal Water Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Options",
+              "value": "5"
+            },
+            {
+              "name": "Interior Light",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Electric"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Handle",
+              "value": "Inner"
+            },
+            {
+              "name": "Drum Interior",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 1 - General Detergent",
+              "value": "(Off/Low/Medium/High)"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent",
+              "value": "(Off/Low/Medium/High)"
+            },
+            {
+              "name": "Pump Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Diagnosis",
+              "value": "Yes"
+            },
+            {
+              "name": "Sounds",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Connections",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Accounts",
+              "value": "Yes"
+            },
+            {
+              "name": "Home Device Notifications",
+              "value": "Yes"
+            },
+            {
+              "name": "Display and Style",
+              "value": "Yes"
+            },
+            {
+              "name": "Liquid units",
+              "value": "gal (water) / fl oz (detergent)"
+            },
+            {
+              "name": "Microphone",
+              "value": "Yes"
+            },
+            {
+              "name": "Date and time",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility",
+              "value": "Yes"
+            },
+            {
+              "name": "Software update",
+              "value": "Yes"
+            },
+            {
+              "name": "About product",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Dry Prep",
+              "value": "Y (On/Off)"
+            },
+            {
+              "name": "Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent and Softener",
+              "value": "(Off/Low/Medium/High)"
+            },
+            {
+              "name": "Bubble Soak",
+              "value": "Y (On/Off)"
+            }
+          ]
+        },
+        {
+          "groupName": "Fabric Care",
+          "specList": [
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Swirl+ Interior Drum",
+              "value": "Yes"
+            },
+            {
+              "name": "Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Options",
+              "value": "32"
+            },
+            {
+              "name": "Steam Washing Technology",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Washing",
+              "value": "Yes"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Spin Speeds",
+          "specList": [
+            {
+              "name": "Extra High",
+              "value": "Yes"
+            },
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Maximum Spin Speed",
+              "value": "1,200 RPM"
+            }
+          ]
+        },
+        {
+          "groupName": "Detergent",
+          "specList": [
+            {
+              "name": "Bleach",
+              "value": "Manual"
+            },
+            {
+              "name": "Flex Auto Dispenser [2]",
+              "value": "Auto"
+            },
+            {
+              "name": "Pebble Dispenser",
+              "value": "Manual (Accessory, Detergent usage only)"
+            },
+            {
+              "name": "Auto Detergent",
+              "value": "Auto"
+            },
+            {
+              "name": "Auto Softener",
+              "value": "Auto(Share with Flex Auto Dispenser)"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "120 V / 60 Hz"
+            },
+            {
+              "name": "Ampere",
+              "value": "15 Amps"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "Energy Gallons / Year",
+              "value": "4500"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Energy Guide Label",
+              "value": "103 kWh/Year"
+            },
+            {
+              "name": "IMEF",
+              "value": "2.92(cu.ft/kWh/cycle)"
+            },
+            {
+              "name": "IWF",
+              "value": "2.9 (gal/cycle/cu.ft)"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Washer Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27\" W X 43.7\" H X 34.4\" D"
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29.4\" W X 49.2\" H X 36\" D"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "43.7"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "34.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "317"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "328"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            },
+            {
+              "name": "Three (3) Year Stainless Steel Tub (Part Only)",
+              "value": "Yes"
+            },
+            {
+              "name": "10-year Digital Inverter Motor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Soil Levels",
+          "specList": [
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Levels",
+          "specList": [
+            {
+              "name": "Extra Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Tap Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Warm",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Pedestal",
+              "value": "WE702NY/US"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WD53DBA900HZA1",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Dark Steel"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "Smart Things",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes (24 hrs)"
+            },
+            {
+              "name": "Auto Condenser Cleaning",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Safety",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Electric"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            },
+            {
+              "name": "Languages",
+              "value": "Yes"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispense System",
+              "value": "Flex Dispense"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            },
+            {
+              "name": "Super Speed",
+              "value": "98 minutes"
+            },
+            {
+              "name": "Vibration Reduction Technology Plus™",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Number of Preset Wash Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Motor Power",
+              "value": "Digital Inverter Motor"
+            },
+            {
+              "name": "Internal Water Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Options",
+              "value": "5"
+            },
+            {
+              "name": "Interior Light",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Handle",
+              "value": "Inner"
+            },
+            {
+              "name": "Drum Interior",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "5.3"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 1 - General Detergent",
+              "value": "(Off/Low/Medium/High)"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent",
+              "value": "(Off/Low/Medium/High)"
+            },
+            {
+              "name": "Pump Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Diagnosis",
+              "value": "Yes"
+            },
+            {
+              "name": "Sounds",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Connections",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Accounts",
+              "value": "Yes"
+            },
+            {
+              "name": "Home Device Notifications",
+              "value": "Yes"
+            },
+            {
+              "name": "Display and Style",
+              "value": "Yes"
+            },
+            {
+              "name": "Liquid units",
+              "value": "gal (water) / fl oz (detergent)"
+            },
+            {
+              "name": "Microphone",
+              "value": "Yes"
+            },
+            {
+              "name": "Date and time",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility",
+              "value": "Yes"
+            },
+            {
+              "name": "Software update",
+              "value": "Yes"
+            },
+            {
+              "name": "About product",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Dry Prep",
+              "value": "Y (On/Off)"
+            },
+            {
+              "name": "Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Drum Light",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Fabric Care",
+          "specList": [
+            {
+              "name": "Swirl+ Interior Drum",
+              "value": "Yes"
+            },
+            {
+              "name": "Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Options",
+              "value": "32"
+            },
+            {
+              "name": "Steam Washing Technology",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Washing",
+              "value": "Yes"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Spin Speeds",
+          "specList": [
+            {
+              "name": "Extra High",
+              "value": "Yes"
+            },
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Maximum Spin Speed",
+              "value": "1,200 RPM"
+            }
+          ]
+        },
+        {
+          "groupName": "Detergent",
+          "specList": [
+            {
+              "name": "Bleach",
+              "value": "Manual"
+            },
+            {
+              "name": "Auto Dispenser [1]",
+              "value": "Auto"
+            },
+            {
+              "name": "Flex Auto Dispenser [2]",
+              "value": "Auto"
+            },
+            {
+              "name": "Pebble Dispenser",
+              "value": "Manual (Accessory, Detergent usage only)"
+            },
+            {
+              "name": "Auto Softener",
+              "value": "Auto(Share with Flex Auto Dispenser)"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "120 V / 60 Hz"
+            },
+            {
+              "name": "Ampere",
+              "value": "15 Amps"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "Energy Gallons / Year",
+              "value": "4500"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Energy Guide Label",
+              "value": "103 kWh/Year"
+            },
+            {
+              "name": "IMEF",
+              "value": "2.92(cu.ft/kWh/cycle)"
+            },
+            {
+              "name": "IWF",
+              "value": "2.9 (gal/cycle/cu.ft)"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Washer Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27\" W X 43.7\" H X 34.4\" D"
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29.4\" W X 49.2\" H X 36\" D"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "43.7"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "34.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "317"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "328"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            },
+            {
+              "name": "Three (3) Year Stainless Steel Tub (Part Only)",
+              "value": "Yes"
+            },
+            {
+              "name": "10-year Digital Inverter Motor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Soil Levels",
+          "specList": [
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Levels",
+          "specList": [
+            {
+              "name": "Extra Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Tap Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Warm",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Pedestal",
+              "value": "WE702NZ/US"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WD90F53AVBUS",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Display Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Color",
+              "value": "Brushed Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "Smart Things",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Safety",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            },
+            {
+              "name": "Languages",
+              "value": "English, Spanish, French"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispense System",
+              "value": "Flex Dispense"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            },
+            {
+              "name": "Super Speed",
+              "value": "68 minutes"
+            },
+            {
+              "name": "Vibration Reduction Technology Plus™",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Number of Preset Wash Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Motor Power",
+              "value": "Digital Inverter Motor"
+            },
+            {
+              "name": "Internal Water Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Options",
+              "value": "34"
+            },
+            {
+              "name": "Controls Display",
+              "value": "AI Home 7\" LCD Display"
+            },
+            {
+              "name": "Interior Light",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Electric"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Handle",
+              "value": "Inner"
+            },
+            {
+              "name": "Drum Interior",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Voice Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Washing",
+              "value": "Yes"
+            },
+            {
+              "name": "Electrical",
+              "value": "240 V / 60 Hz"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Language",
+              "value": "Yes"
+            },
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 1 - General Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Pump Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Diagnosis",
+              "value": "Yes"
+            },
+            {
+              "name": "Sounds",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Connections",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Accounts",
+              "value": "Yes"
+            },
+            {
+              "name": "Home Device Notifications",
+              "value": "Yes"
+            },
+            {
+              "name": "Display and Style",
+              "value": "Yes"
+            },
+            {
+              "name": "Liquid units",
+              "value": "Yes"
+            },
+            {
+              "name": "Microphone",
+              "value": "Yes"
+            },
+            {
+              "name": "Date and time",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility",
+              "value": "Yes"
+            },
+            {
+              "name": "Software update",
+              "value": "Yes"
+            },
+            {
+              "name": "About product",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Dry Prep",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "Yes"
+            },
+            {
+              "name": "Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "My Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Rinse",
+              "value": "Yes"
+            },
+            {
+              "name": "Wrinkle Prevent",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay End",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Pattern",
+              "value": "Yes"
+            },
+            {
+              "name": "Calibration",
+              "value": "Yes"
+            },
+            {
+              "name": "Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Bubble Soak",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Fabric Care",
+          "specList": [
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Options",
+              "value": "34"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Spin Speeds",
+          "specList": [
+            {
+              "name": "Extra High",
+              "value": "Yes"
+            },
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Maximum Spin Speed",
+              "value": "1,200 RPM"
+            }
+          ]
+        },
+        {
+          "groupName": "Detergent",
+          "specList": [
+            {
+              "name": "Bleach",
+              "value": "Yes"
+            },
+            {
+              "name": "Flex Auto Dispenser [2]",
+              "value": "Yes"
+            },
+            {
+              "name": "Pebble Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Softener",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Quiet Performance",
+          "specList": [
+            {
+              "name": "Vibration Reduction Technology +",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "240V / 60Hz"
+            },
+            {
+              "name": "Ampere",
+              "value": "30"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "Energy Gallons / Year",
+              "value": "4500"
+            },
+            {
+              "name": "Energy Guide Label",
+              "value": "103 kWh/year"
+            },
+            {
+              "name": "IMEF",
+              "value": "2.92"
+            },
+            {
+              "name": "IWF",
+              "value": "2.9"
+            },
+            {
+              "name": "CEE Rating",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Washer Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27\" x 43 3/4\" x 34 1/2\""
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29 3/8\" x 49 1/4\" x 36 1/16\""
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "43.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "34.5"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "297.6"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "308.6"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            },
+            {
+              "name": "Three (3) Year Stainless Steel Tub (Part Only)",
+              "value": "Yes"
+            },
+            {
+              "name": "10-year Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Soil Levels",
+          "specList": [
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Levels",
+          "specList": [
+            {
+              "name": "Extra Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Tap Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Warm",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Pedestal",
+              "value": "WE702NB/US"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Cycles",
+          "specList": [
+            {
+              "name": "Eco Cold Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Perm Press",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Sanitize",
+              "value": "Yes"
+            },
+            {
+              "name": "Bedding",
+              "value": "Yes"
+            },
+            {
+              "name": "Activewear",
+              "value": "Yes"
+            },
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Rinse + Spin",
+              "value": "Yes"
+            },
+            {
+              "name": "Spin Only",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Towels",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors",
+              "value": "Yes"
+            },
+            {
+              "name": "Small Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Whites",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Opti Wash and Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Tide POD Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Less Microfiber",
+              "value": "Yes"
+            },
+            {
+              "name": "Time Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Fluff",
+              "value": "Yes"
+            },
+            {
+              "name": "Product Care",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Electrical Ratings",
+          "specList": [
+            {
+              "name": "Cycle Time (Super Speed)",
+              "value": "68 mins"
+            },
+            {
+              "name": "Cycle Time (AHAM 8lbs)",
+              "value": "106"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WD90F53AVSUS",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Display Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Color",
+              "value": "Dark Steel"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Safety",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            },
+            {
+              "name": "Languages",
+              "value": "English, Spanish, French"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispense System",
+              "value": "Flex Dispense"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            },
+            {
+              "name": "Super Speed",
+              "value": "68 minutes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "68 minutes"
+            },
+            {
+              "name": "Vibration Reduction Technology Plus™",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Motor Power",
+              "value": "Digital Inverter Motor"
+            },
+            {
+              "name": "Internal Water Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Options",
+              "value": "34"
+            },
+            {
+              "name": "Controls Display",
+              "value": "AI Home 7\" LCD Display"
+            },
+            {
+              "name": "Interior Light",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Electric"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Handle",
+              "value": "Inner"
+            },
+            {
+              "name": "Drum Interior",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Voice Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Preset Drying Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Washing",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Washing",
+              "value": "Yes"
+            },
+            {
+              "name": "Electrical",
+              "value": "240 V / 60 Hz"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Language",
+              "value": "Yes"
+            },
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 1 - General Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Pump Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Diagnosis",
+              "value": "Yes"
+            },
+            {
+              "name": "Sounds",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Connections",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Accounts",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Accounts",
+              "value": "Yes"
+            },
+            {
+              "name": "Home Device Notifications",
+              "value": "Yes"
+            },
+            {
+              "name": "Display and Style",
+              "value": "Yes"
+            },
+            {
+              "name": "Liquid units",
+              "value": "gal (water) / fl oz (detergent)"
+            },
+            {
+              "name": "Microphone",
+              "value": "Yes"
+            },
+            {
+              "name": "Date and time",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility",
+              "value": "Yes"
+            },
+            {
+              "name": "Software update",
+              "value": "Yes"
+            },
+            {
+              "name": "About product",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Dry Prep",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "Yes"
+            },
+            {
+              "name": "Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "My Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Wrinkle Prevent",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay End",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Pattern",
+              "value": "Yes"
+            },
+            {
+              "name": "Calibration",
+              "value": "Yes"
+            },
+            {
+              "name": "Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Bubble Soak",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Fabric Care",
+          "specList": [
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Options",
+              "value": "34"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Level",
+          "specList": [
+            {
+              "name": "Extra Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Warm",
+              "value": "Yes"
+            },
+            {
+              "name": "Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Tap Cold",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Spin Speeds",
+          "specList": [
+            {
+              "name": "Extra High",
+              "value": "Yes"
+            },
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Maximum Spin Speed",
+              "value": "1,200 RPM"
+            },
+            {
+              "name": "Drain and No Spin",
+              "value": "Yes"
+            },
+            {
+              "name": "Rinse hold and No Spin",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Detergent",
+          "specList": [
+            {
+              "name": "Bleach",
+              "value": "Yes"
+            },
+            {
+              "name": "Flex Auto Dispenser [2]",
+              "value": "Yes"
+            },
+            {
+              "name": "Pebble Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Softener",
+              "value": "Quiet Performance"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "240V / 60Hz"
+            },
+            {
+              "name": "Ampere",
+              "value": "30"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "Energy Gallons / Year",
+              "value": "4500"
+            },
+            {
+              "name": "Energy Guide Label",
+              "value": "103 kWh/year"
+            },
+            {
+              "name": "IMEF",
+              "value": "2.92"
+            },
+            {
+              "name": "IWF",
+              "value": "2.9"
+            },
+            {
+              "name": "CEE Rating",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Washer Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27\" x 43 3/4\" x 34 1/2\""
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29 3/8\" x 49 1/4\" x 36 1/16\""
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "43.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "34.5"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "297.6"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "308.6"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            },
+            {
+              "name": "Three (3) Year Stainless Steel Tub (Part Only)",
+              "value": "Yes"
+            },
+            {
+              "name": "10-year Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Washer Electrical Ratings",
+          "specList": [
+            {
+              "name": "Cycle Time (AHAM 8lbs)",
+              "value": "106"
+            },
+            {
+              "name": "Cycle Time (Super Speed)",
+              "value": "68 mins"
+            }
+          ]
+        },
+        {
+          "groupName": "Soil Levels",
+          "specList": [
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Pedestal",
+              "value": "WE702NZ/US"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Cycles",
+          "specList": [
+            {
+              "name": "Eco Cold Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Perm Press",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Sanitize",
+              "value": "Yes"
+            },
+            {
+              "name": "Bedding",
+              "value": "Yes"
+            },
+            {
+              "name": "Activewear",
+              "value": "Yes"
+            },
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Rinse + Spin",
+              "value": "Yes"
+            },
+            {
+              "name": "Spin Only",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Towels",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors",
+              "value": "Yes"
+            },
+            {
+              "name": "Small Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Whites",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Opti Wash and Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Tide POD Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Less Microfiber",
+              "value": "Yes"
+            },
+            {
+              "name": "Time Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Fluff",
+              "value": "Yes"
+            },
+            {
+              "name": "Product Care",
+              "value": "Yes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WD90F53AVYUS",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Display Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Color",
+              "value": "Ivory"
+            }
+          ]
+        },
+        {
+          "groupName": "Feature",
+          "specList": [
+            {
+              "name": "Interior Drum Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Things",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Safety",
+              "value": "Yes"
+            },
+            {
+              "name": "Temperature Levels",
+              "value": "5"
+            },
+            {
+              "name": "Languages",
+              "value": "English, Spanish, French"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispense System",
+              "value": "Flex Dispense"
+            },
+            {
+              "name": "Spin Speeds",
+              "value": "5"
+            },
+            {
+              "name": "Super Speed",
+              "value": "68 minutes"
+            },
+            {
+              "name": "Vibration Reduction Technology Plus™",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Number of Preset Wash Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Motor Power",
+              "value": "Digital Inverter Motor"
+            },
+            {
+              "name": "Internal Water Heater",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Options",
+              "value": "34"
+            },
+            {
+              "name": "Controls Display",
+              "value": "AI Home 7\" LCD Display"
+            },
+            {
+              "name": "Interior Light",
+              "value": "Yes"
+            },
+            {
+              "name": "End of Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Source",
+              "value": "Electric"
+            },
+            {
+              "name": "Remaining Time Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Door Handle",
+              "value": "Inner"
+            },
+            {
+              "name": "Drum Interior",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Voice Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby Compatible",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Touch Screen LCD",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Washing",
+              "value": "Yes"
+            },
+            {
+              "name": "Electrical",
+              "value": "240 V / 60 Hz"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Language",
+              "value": "Yes"
+            },
+            {
+              "name": "Factory Reset",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 1 - General Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Dispenser 2 - Specialty Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Pump Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Diagnosis",
+              "value": "Yes"
+            },
+            {
+              "name": "Sounds",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Connections",
+              "value": "Yes"
+            },
+            {
+              "name": "Samsung Accounts",
+              "value": "Yes"
+            },
+            {
+              "name": "Home Device Notifications",
+              "value": "Yes"
+            },
+            {
+              "name": "Display and Style",
+              "value": "Yes"
+            },
+            {
+              "name": "Liquid units",
+              "value": "Yes"
+            },
+            {
+              "name": "Microphone",
+              "value": "Yes"
+            },
+            {
+              "name": "Date and time",
+              "value": "Yes"
+            },
+            {
+              "name": "Accessibility",
+              "value": "Yes"
+            },
+            {
+              "name": "Software update",
+              "value": "Yes"
+            },
+            {
+              "name": "About product",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Dry Prep",
+              "value": "Yes"
+            },
+            {
+              "name": "Eco Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Vent Blockage Test",
+              "value": "Yes"
+            },
+            {
+              "name": "Support",
+              "value": "Yes"
+            },
+            {
+              "name": "My Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Rinse",
+              "value": "Yes"
+            },
+            {
+              "name": "Wrinkle Prevent",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay End",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Pattern",
+              "value": "Yes"
+            },
+            {
+              "name": "Calibration",
+              "value": "Yes"
+            },
+            {
+              "name": "Display",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Open Door",
+              "value": "Yes"
+            },
+            {
+              "name": "Bubble Soak",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Fabric Care",
+          "specList": [
+            {
+              "name": "Steam",
+              "value": "Yes"
+            },
+            {
+              "name": "Cycles",
+              "value": "23"
+            },
+            {
+              "name": "Options",
+              "value": "34"
+            },
+            {
+              "name": "Swirl Interior Drum",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Spin Speeds",
+          "specList": [
+            {
+              "name": "Extra High",
+              "value": "Yes"
+            },
+            {
+              "name": "High",
+              "value": "Yes"
+            },
+            {
+              "name": "Medium",
+              "value": "Yes"
+            },
+            {
+              "name": "Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Low",
+              "value": "Yes"
+            },
+            {
+              "name": "Maximum Spin Speed",
+              "value": "1,200 RPM"
+            }
+          ]
+        },
+        {
+          "groupName": "Detergent",
+          "specList": [
+            {
+              "name": "Bleach",
+              "value": "Yes"
+            },
+            {
+              "name": "Flex Auto Dispenser [2]",
+              "value": "Yes"
+            },
+            {
+              "name": "Pebble Dispenser",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Detergent",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Softener",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Quiet Performance",
+          "specList": [
+            {
+              "name": "Vibration Reduction Technology +",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Voltage / Frequency",
+              "value": "240V / 60Hz"
+            },
+            {
+              "name": "Ampere",
+              "value": "30"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy Usage",
+          "specList": [
+            {
+              "name": "Energy Gallons / Year",
+              "value": "4500"
+            },
+            {
+              "name": "Energy Guide Label",
+              "value": "103 kWh/year"
+            },
+            {
+              "name": "IMEF",
+              "value": "2.92"
+            },
+            {
+              "name": "IWF",
+              "value": "2.9"
+            },
+            {
+              "name": "CEE Rating",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Washer Capacity (cu. ft.)",
+              "value": "5.3"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "27\" x 43 3/4\" x 34 1/2\""
+            },
+            {
+              "name": "Shipping Dimensions (W x H x D)",
+              "value": "29 3/8\" x 49 1/4\" x 36 1/16\""
+            },
+            {
+              "name": "Width Standard (27\"-27.5\")",
+              "value": "Yes"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "43.75"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "34.5"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Product Weight (lbs.)",
+              "value": "297.6"
+            },
+            {
+              "name": "Shipping Weight (lbs.)",
+              "value": "308.6"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "One (1) Year Parts and Labor",
+              "value": "Yes"
+            },
+            {
+              "name": "Three (3) Year Stainless Steel Tub (Part Only)",
+              "value": "Yes"
+            },
+            {
+              "name": "10-year Digital Inverter Motor",
+              "value": "Yes"
+            },
+            {
+              "name": "Digital Inverter Motor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Soil Levels",
+          "specList": [
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Extra Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Temperature Levels",
+          "specList": [
+            {
+              "name": "Extra Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Hot",
+              "value": "Yes"
+            },
+            {
+              "name": "Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Tap Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Warm",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Pedestal",
+              "value": "WE702NY/US"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Cycles",
+          "specList": [
+            {
+              "name": "Eco Cold Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Duty",
+              "value": "Yes"
+            },
+            {
+              "name": "Perm Press",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Sanitize",
+              "value": "Yes"
+            },
+            {
+              "name": "Bedding",
+              "value": "Yes"
+            },
+            {
+              "name": "Activewear",
+              "value": "Yes"
+            },
+            {
+              "name": "Wool",
+              "value": "Yes"
+            },
+            {
+              "name": "Rinse + Spin",
+              "value": "Yes"
+            },
+            {
+              "name": "Spin Only",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicates",
+              "value": "Yes"
+            },
+            {
+              "name": "Towels",
+              "value": "Yes"
+            },
+            {
+              "name": "Colors",
+              "value": "Yes"
+            },
+            {
+              "name": "Small Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Super Speed",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Steam Whites",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Opti Wash and Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Tide POD Cold",
+              "value": "Yes"
+            },
+            {
+              "name": "Less Microfiber",
+              "value": "Yes"
+            },
+            {
+              "name": "Time Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Fluff",
+              "value": "Yes"
+            },
+            {
+              "name": "Product Care",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Electrical Ratings",
+          "specList": [
+            {
+              "name": "Cycle Time (Super Speed)",
+              "value": "68 mins"
+            },
+            {
+              "name": "Cycle Time (AHAM 8lbs)",
+              "value": "106"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "WD53DBA900HBA1",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd53dba900hba1/energyguide/us-energyguide-wd53dba900hba1-550443768.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "WD53DBA900HYA1",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd53dba900hya1/energyguide/us-energyguide-wd53dba900hya1-551311128.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "WD53DBA900HZA1",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd53dba900hza1/energyguide/us-energyguide-wd53dba900hza1-550443770.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "WD90F53AVBUS",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avbus/energyguide/us-energyguide-wd90f53avbus-550443963.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "WD90F53AVSUS",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avsus/energyguide/us-energyguide-wd90f53avsus-550443967.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "WD90F53AVYUS",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avyus/energyguide/us-energyguide-wd90f53avyus-551754496.pdf"
+        }
+      ]
+    }
+  ]
+}

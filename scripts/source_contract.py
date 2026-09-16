@@ -68,7 +68,7 @@ def pdp_facts(data, target, family='refrigerator'):
     names = {
         'refrigerator': ('Energy Consumption', 'Total Capacity (cu. ft.)'),
         'dishwasher': ('Energy Usage (kWh/year)', 'Place Setting'),
-        'washer': (None, None),  # discover names from live raw spec pairs, never guess
+        'washer': ('Energy Guide Label', 'Total Capacity (cu. ft.)'),
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')

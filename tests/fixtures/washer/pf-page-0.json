@@ -1,0 +1,1256 @@
+{
+  "searchTotalCount": 18,
+  "hasMoreResults": true,
+  "searchResults": [
+    {
+      "modelCode": "WD90F53AVBUS",
+      "modelName": "WD90F53AVBUS",
+      "id": "WD90F53AVBUS",
+      "group_id": "MULTI_GROUP_ID_601634",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "73",
+        "pickYn": "N",
+        "representativeModel": "WD90F53AVBUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-1",
+        "id": "601634"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Vented",
+          "fmyChipType": "Vent Type"
+        },
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WD90F53AVBUS",
+          "modelName": "WD90F53AVBUS",
+          "id": "WD90F53AVBUS",
+          "group_id": "MULTI_GROUP_ID_601634",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "WD90F53AVBUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-1",
+            "id": "601634"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Vented",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD90F53AVSUS",
+          "modelName": "WD90F53AVSUS",
+          "id": "WD90F53AVSUS",
+          "group_id": "MULTI_GROUP_ID_601634",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-dark-steel-sku-wd90f53avsus",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-dark-steel-sku-wd90f53avsus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "WD90F53AVBUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-1",
+            "id": "601634"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Vented",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#5e6061",
+              "fmyChipName": "Dark Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD90F53AVYUS",
+          "modelName": "WD90F53AVYUS",
+          "id": "WD90F53AVYUS",
+          "group_id": "MULTI_GROUP_ID_601634",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-ivory-sku-wd90f53avyus",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-ivory-sku-wd90f53avyus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "WD90F53AVBUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-1",
+            "id": "601634"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Vented",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#fafafa",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WH46DBH500EVA3",
+      "modelName": "WH46DBH500EVA3",
+      "id": "WH46DBH500EVA3",
+      "group_id": "MULTI_GROUP_ID_601639",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "72",
+        "pickYn": "N",
+        "representativeModel": "WH46DBH500EVA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-2",
+        "id": "601639"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WH46DBH500EVA3",
+          "modelName": "WH46DBH500EVA3",
+          "id": "WH46DBH500EVA3",
+          "group_id": "MULTI_GROUP_ID_601639",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH500EVA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-2",
+            "id": "601639"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WH46DBH500GVA3",
+          "modelName": "WH46DBH500GVA3",
+          "id": "WH46DBH500GVA3",
+          "group_id": "MULTI_GROUP_ID_601639",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-gas-dryer-in-brushed-black-sku-wh46dbh500gva3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-gas-dryer-in-brushed-black-sku-wh46dbh500gva3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH500EVA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-2",
+            "id": "601639"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WF90F53ADSA5",
+      "modelName": "WF90F53ADSA5",
+      "id": "WF90F53ADSA5",
+      "group_id": "MULTI_GROUP_ID_601641",
+      "pdpURL": "/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-dark-steel-sku-wf90f53adsa5",
+      "consumerUrl": "/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-dark-steel-sku-wf90f53adsa5",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "71",
+        "pickYn": "N",
+        "representativeModel": "WF90F53ADSA5",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-3",
+        "id": "601641"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#8b8e8d",
+          "fmyChipName": "Dark Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WF90F53ADSA5",
+          "modelName": "WF90F53ADSA5",
+          "id": "WF90F53ADSA5",
+          "group_id": "MULTI_GROUP_ID_601641",
+          "pdpURL": "/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-dark-steel-sku-wf90f53adsa5",
+          "consumerUrl": "/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-dark-steel-sku-wf90f53adsa5",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "71",
+            "pickYn": "N",
+            "representativeModel": "WF90F53ADSA5",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-3",
+            "id": "601641"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#8b8e8d",
+              "fmyChipName": "Dark Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WF90F53ADYA5",
+          "modelName": "WF90F53ADYA5",
+          "id": "WF90F53ADYA5",
+          "group_id": "MULTI_GROUP_ID_601641",
+          "pdpURL": "/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-ivory-sku-wf90f53adya5",
+          "consumerUrl": "/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-ivory-sku-wf90f53adya5",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "71",
+            "pickYn": "N",
+            "representativeModel": "WF90F53ADSA5",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-3",
+            "id": "601641"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#eeebe4",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WF50BG8300AVUS",
+      "modelName": "WF50BG8300AVUS",
+      "id": "WF50BG8300AVUS",
+      "group_id": "MULTI_GROUP_ID_601648",
+      "pdpURL": "/us/laundry/washers/front-load-wf8300b-front-loading-large-capacity-super-speed-energy-star-certified-5-cu-ft-brushed-black-sku-wf50bg8300avus",
+      "consumerUrl": "/us/laundry/washers/front-load-wf8300b-front-loading-large-capacity-super-speed-energy-star-certified-5-cu-ft-brushed-black-sku-wf50bg8300avus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "70",
+        "pickYn": "N",
+        "representativeModel": "WF50BG8300AVUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-4",
+        "id": "601648"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WF50BG8300AVUS",
+          "modelName": "WF50BG8300AVUS",
+          "id": "WF50BG8300AVUS",
+          "group_id": "MULTI_GROUP_ID_601648",
+          "pdpURL": "/us/laundry/washers/front-load-wf8300b-front-loading-large-capacity-super-speed-energy-star-certified-5-cu-ft-brushed-black-sku-wf50bg8300avus",
+          "consumerUrl": "/us/laundry/washers/front-load-wf8300b-front-loading-large-capacity-super-speed-energy-star-certified-5-cu-ft-brushed-black-sku-wf50bg8300avus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "70",
+            "pickYn": "N",
+            "representativeModel": "WF50BG8300AVUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-4",
+            "id": "601648"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WF50BG8300AEUS",
+          "modelName": "WF50BG8300AEUS",
+          "id": "WF50BG8300AEUS",
+          "group_id": "MULTI_GROUP_ID_601648",
+          "pdpURL": "/us/laundry/washers/front-load-wf8300b-front-loading-large-capacity-super-speed-energy-star-certified-5-cu-ft-ivory-sku-wf50bg8300aeus",
+          "consumerUrl": "/us/laundry/washers/front-load-wf8300b-front-loading-large-capacity-super-speed-energy-star-certified-5-cu-ft-ivory-sku-wf50bg8300aeus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "70",
+            "pickYn": "N",
+            "representativeModel": "WF50BG8300AVUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-4",
+            "id": "601648"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#fafafa",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WA55CG7500AEUS",
+      "modelName": "WA55CG7500AEUS",
+      "id": "WA55CG7500AEUS",
+      "group_id": "MULTI_GROUP_ID_601649",
+      "pdpURL": "/us/laundry/washers/top-load-wa7500c-auto-dispense-large-capacity-5-5-cu-ft-ivory-sku-wa55cg7500aeus",
+      "consumerUrl": "/us/laundry/washers/top-load-wa7500c-auto-dispense-large-capacity-5-5-cu-ft-ivory-sku-wa55cg7500aeus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "69",
+        "pickYn": "N",
+        "representativeModel": "WA55CG7500AEUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-5",
+        "id": "601649"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#fafafa",
+          "fmyChipName": "Ivory",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WA55CG7500AEUS",
+          "modelName": "WA55CG7500AEUS",
+          "id": "WA55CG7500AEUS",
+          "group_id": "MULTI_GROUP_ID_601649",
+          "pdpURL": "/us/laundry/washers/top-load-wa7500c-auto-dispense-large-capacity-5-5-cu-ft-ivory-sku-wa55cg7500aeus",
+          "consumerUrl": "/us/laundry/washers/top-load-wa7500c-auto-dispense-large-capacity-5-5-cu-ft-ivory-sku-wa55cg7500aeus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "69",
+            "pickYn": "N",
+            "representativeModel": "WA55CG7500AEUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-5",
+            "id": "601649"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#fafafa",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WA54CG7150ADA4",
+      "modelName": "WA54CG7150ADA4",
+      "id": "WA54CG7150ADA4",
+      "group_id": "MULTI_GROUP_ID_601651",
+      "pdpURL": "/us/laundry/washers/top-load-wa7150c-top-load-pet-care-solution-large-capacity-5-4-cu-ft-brushed-navy-sku-wa54cg7150ada4",
+      "consumerUrl": "/us/laundry/washers/top-load-wa7150c-top-load-pet-care-solution-large-capacity-5-4-cu-ft-brushed-navy-sku-wa54cg7150ada4",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "68",
+        "pickYn": "N",
+        "representativeModel": "WA54CG7150ADA4",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-6",
+        "id": "601651"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#101820",
+          "fmyChipName": "Brushed Navy",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WA54CG7150ADA4",
+          "modelName": "WA54CG7150ADA4",
+          "id": "WA54CG7150ADA4",
+          "group_id": "MULTI_GROUP_ID_601651",
+          "pdpURL": "/us/laundry/washers/top-load-wa7150c-top-load-pet-care-solution-large-capacity-5-4-cu-ft-brushed-navy-sku-wa54cg7150ada4",
+          "consumerUrl": "/us/laundry/washers/top-load-wa7150c-top-load-pet-care-solution-large-capacity-5-4-cu-ft-brushed-navy-sku-wa54cg7150ada4",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "68",
+            "pickYn": "N",
+            "representativeModel": "WA54CG7150ADA4",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-6",
+            "id": "601651"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#101820",
+              "fmyChipName": "Brushed Navy",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WA55CG7100AVUS",
+      "modelName": "WA55CG7100AVUS",
+      "id": "WA55CG7100AVUS",
+      "group_id": "MULTI_GROUP_ID_601653",
+      "pdpURL": "/us/laundry/washers/top-load-wa7100c-top-load-large-capacity-smartthings-5-5-cu-ft-brushed-black-sku-wa55cg7100avus",
+      "consumerUrl": "/us/laundry/washers/top-load-wa7100c-top-load-large-capacity-smartthings-5-5-cu-ft-brushed-black-sku-wa55cg7100avus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "67",
+        "pickYn": "N",
+        "representativeModel": "WA55CG7100AVUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-7",
+        "id": "601653"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Impeller",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WA55CG7100AVUS",
+          "modelName": "WA55CG7100AVUS",
+          "id": "WA55CG7100AVUS",
+          "group_id": "MULTI_GROUP_ID_601653",
+          "pdpURL": "/us/laundry/washers/top-load-wa7100c-top-load-large-capacity-smartthings-5-5-cu-ft-brushed-black-sku-wa55cg7100avus",
+          "consumerUrl": "/us/laundry/washers/top-load-wa7100c-top-load-large-capacity-smartthings-5-5-cu-ft-brushed-black-sku-wa55cg7100avus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "67",
+            "pickYn": "N",
+            "representativeModel": "WA55CG7100AVUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-7",
+            "id": "601653"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Impeller",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA54CG7105AVUS",
+          "modelName": "WA54CG7105AVUS",
+          "id": "WA54CG7105AVUS",
+          "group_id": "MULTI_GROUP_ID_601653",
+          "pdpURL": "/us/laundry/washers/top-load-wa7105c-top-load-large-capacity-activewave-agitator-5-4-cu-ft-brushed-black-sku-wa54cg7105avus",
+          "consumerUrl": "/us/laundry/washers/top-load-wa7105c-top-load-large-capacity-activewave-agitator-5-4-cu-ft-brushed-black-sku-wa54cg7105avus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "67",
+            "pickYn": "N",
+            "representativeModel": "WA55CG7100AVUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-7",
+            "id": "601653"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Agitator",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA54CG7105AWUS",
+          "modelName": "WA54CG7105AWUS",
+          "id": "WA54CG7105AWUS",
+          "group_id": "MULTI_GROUP_ID_601653",
+          "pdpURL": "/us/laundry/washers/top-load-wa7105c-top-load-large-capacity-activewave-agitator-5-4-cu-ft-white-sku-wa54cg7105awus",
+          "consumerUrl": "/us/laundry/washers/top-load-wa7105c-top-load-large-capacity-activewave-agitator-5-4-cu-ft-white-sku-wa54cg7105awus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "67",
+            "pickYn": "N",
+            "representativeModel": "WA55CG7100AVUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-7",
+            "id": "601653"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Agitator",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA55CG7100AWUS",
+          "modelName": "WA55CG7100AWUS",
+          "id": "WA55CG7100AWUS",
+          "group_id": "MULTI_GROUP_ID_601653",
+          "pdpURL": "/us/laundry/washers/top-load-wa7100c-top-load-large-capacity-smartthings-5-5-cu-ft-white-sku-wa55cg7100awus",
+          "consumerUrl": "/us/laundry/washers/top-load-wa7100c-top-load-large-capacity-smartthings-5-5-cu-ft-white-sku-wa55cg7100awus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "67",
+            "pickYn": "N",
+            "representativeModel": "WA55CG7100AVUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-7",
+            "id": "601653"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Impeller",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WD53DBA900HZA1",
+      "modelName": "WD53DBA900HZA1",
+      "id": "WD53DBA900HZA1",
+      "group_id": "MULTI_GROUP_ID_601657",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "66",
+        "pickYn": "N",
+        "representativeModel": "WD53DBA900HZA1",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-8",
+        "id": "601657"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#5e6061",
+          "fmyChipName": "Dark Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Ventless",
+          "fmyChipType": "Vent Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WD53DBA900HZA1",
+          "modelName": "WD53DBA900HZA1",
+          "id": "WD53DBA900HZA1",
+          "group_id": "MULTI_GROUP_ID_601657",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "WD53DBA900HZA1",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-8",
+            "id": "601657"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#5e6061",
+              "fmyChipName": "Dark Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Ventless",
+              "fmyChipType": "Vent Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD53DBA900HBA1",
+          "modelName": "WD53DBA900HBA1",
+          "id": "WD53DBA900HBA1",
+          "group_id": "MULTI_GROUP_ID_601657",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-brushed-black-sku-wd53dba900hba1",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-brushed-black-sku-wd53dba900hba1",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "WD53DBA900HZA1",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-8",
+            "id": "601657"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Ventless",
+              "fmyChipType": "Vent Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD53DBA900HYA1",
+          "modelName": "WD53DBA900HYA1",
+          "id": "WD53DBA900HYA1",
+          "group_id": "MULTI_GROUP_ID_601657",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/5-3-cu-ft-bespoke-ai-laundry-ventless-heat-pump-dryer-combo-heat-pump-dryer-all-in-one-ultra-capacity-washer-with-ai-home-in-ivory-sku-wd53dba900hya1",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/5-3-cu-ft-bespoke-ai-laundry-ventless-heat-pump-dryer-combo-heat-pump-dryer-all-in-one-ultra-capacity-washer-with-ai-home-in-ivory-sku-wd53dba900hya1",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "WD53DBA900HZA1",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-8",
+            "id": "601657"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Ventless",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#eeebe4",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WH46DBH100EWA3",
+      "modelName": "WH46DBH100EWA3",
+      "id": "WH46DBH100EWA3",
+      "group_id": "MULTI_GROUP_ID_601664",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "65",
+        "pickYn": "N",
+        "representativeModel": "WH46DBH100EWA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-9",
+        "id": "601664"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WH46DBH100EWA3",
+          "modelName": "WH46DBH100EWA3",
+          "id": "WH46DBH100EWA3",
+          "group_id": "MULTI_GROUP_ID_601664",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "65",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH100EWA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-9",
+            "id": "601664"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WH46DBH100GWA3",
+          "modelName": "WH46DBH100GWA3",
+          "id": "WH46DBH100GWA3",
+          "group_id": "MULTI_GROUP_ID_601664",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-gas-dryer-in-white-sku-wh46dbh100gwa3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-gas-dryer-in-white-sku-wh46dbh100gwa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "65",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH100EWA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-9",
+            "id": "601664"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WF53BB8900ADUS",
+      "modelName": "WF53BB8900AD",
+      "id": "WF53BB8900ADUS",
+      "group_id": "MULTI_GROUP_ID_601671",
+      "pdpURL": "/us/laundry/washers/front-load-wf8900b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-navy-sku-wf53bb8900adus",
+      "consumerUrl": "/us/laundry/washers/front-load-wf8900b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-navy-sku-wf53bb8900adus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "64",
+        "pickYn": "N",
+        "representativeModel": "WF53BB8900ADUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-10",
+        "id": "601671"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#304561",
+          "fmyChipName": "Brushed Navy",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WF53BB8900ADUS",
+          "modelName": "WF53BB8900AD",
+          "id": "WF53BB8900ADUS",
+          "group_id": "MULTI_GROUP_ID_601671",
+          "pdpURL": "/us/laundry/washers/front-load-wf8900b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-navy-sku-wf53bb8900adus",
+          "consumerUrl": "/us/laundry/washers/front-load-wf8900b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-navy-sku-wf53bb8900adus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "64",
+            "pickYn": "N",
+            "representativeModel": "WF53BB8900ADUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-10",
+            "id": "601671"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#304561",
+              "fmyChipName": "Brushed Navy",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WF53BB8700AVUS",
+      "modelName": "WF53BB8700AV",
+      "id": "WF53BB8700AVUS",
+      "group_id": "MULTI_GROUP_ID_601679",
+      "pdpURL": "/us/laundry/washers/front-load-wf8700b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-black-sku-wf53bb8700avus",
+      "consumerUrl": "/us/laundry/washers/front-load-wf8700b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-black-sku-wf53bb8700avus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "63",
+        "pickYn": "N",
+        "representativeModel": "WF53BB8700AVUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-11",
+        "id": "601679"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WF53BB8700AVUS",
+          "modelName": "WF53BB8700AV",
+          "id": "WF53BB8700AVUS",
+          "group_id": "MULTI_GROUP_ID_601679",
+          "pdpURL": "/us/laundry/washers/front-load-wf8700b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-black-sku-wf53bb8700avus",
+          "consumerUrl": "/us/laundry/washers/front-load-wf8700b-front-loading-bespoke-design-5-3-cu-ft-ultra-capacity-5-3-cu-ft-brushed-black-sku-wf53bb8700avus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "63",
+            "pickYn": "N",
+            "representativeModel": "WF53BB8700AVUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-11",
+            "id": "601679"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WF45B6300AP/US",
+      "modelName": "WF45B6300AP",
+      "id": "WF45B6300AP/US",
+      "group_id": "MULTI_GROUP_ID_601688",
+      "pdpURL": "/us/laundry/washers/front-load-wf6300b-front-loading-washer-superspeed-large-capacity-4-5-cu-ft-flexible-installation-4-5-cu-ft-platinum-sku-wf45b6300ap-us",
+      "consumerUrl": "/us/laundry/washers/front-load-wf6300b-front-loading-washer-superspeed-large-capacity-4-5-cu-ft-flexible-installation-4-5-cu-ft-platinum-sku-wf45b6300ap-us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "62",
+        "pickYn": "N",
+        "representativeModel": "WF45B6300AP/US",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-12",
+        "id": "601688"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#808080",
+          "fmyChipName": "Platinum",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WF45B6300AP/US",
+          "modelName": "WF45B6300AP",
+          "id": "WF45B6300AP/US",
+          "group_id": "MULTI_GROUP_ID_601688",
+          "pdpURL": "/us/laundry/washers/front-load-wf6300b-front-loading-washer-superspeed-large-capacity-4-5-cu-ft-flexible-installation-4-5-cu-ft-platinum-sku-wf45b6300ap-us",
+          "consumerUrl": "/us/laundry/washers/front-load-wf6300b-front-loading-washer-superspeed-large-capacity-4-5-cu-ft-flexible-installation-4-5-cu-ft-platinum-sku-wf45b6300ap-us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "62",
+            "pickYn": "N",
+            "representativeModel": "WF45B6300AP/US",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-12",
+            "id": "601688"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Platinum",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WF45B6300AW/US",
+          "modelName": "WF45B6300AW",
+          "id": "WF45B6300AW/US",
+          "group_id": "MULTI_GROUP_ID_601688",
+          "pdpURL": "/us/laundry/washers/front-load-wf6300b-front-loading-washer-superspeed-large-capacity-4-5-cu-ft-flexible-installation-4-5-cu-ft-white-sku-wf45b6300aw-us",
+          "consumerUrl": "/us/laundry/washers/front-load-wf6300b-front-loading-washer-superspeed-large-capacity-4-5-cu-ft-flexible-installation-4-5-cu-ft-white-sku-wf45b6300aw-us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "62",
+            "pickYn": "N",
+            "representativeModel": "WF45B6300AP/US",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-12",
+            "id": "601688"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WF45T6000AV/A5",
+      "modelName": "WF45T6000AV/A5",
+      "id": "WF45T6000AV/A5",
+      "group_id": "MULTI_GROUP_ID_601694",
+      "pdpURL": "/us/laundry/washers/front-load-wf6000r-front-loading-super-speed-4-5-cu-ft-black-sku-wf45t6000av-a5",
+      "consumerUrl": "/us/laundry/washers/front-load-wf6000r-front-loading-super-speed-4-5-cu-ft-black-sku-wf45t6000av-a5",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "61",
+        "pickYn": "N",
+        "representativeModel": "WF45T6000AV/A5",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-13",
+        "id": "601694"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WF45T6000AV/A5",
+          "modelName": "WF45T6000AV/A5",
+          "id": "WF45T6000AV/A5",
+          "group_id": "MULTI_GROUP_ID_601694",
+          "pdpURL": "/us/laundry/washers/front-load-wf6000r-front-loading-super-speed-4-5-cu-ft-black-sku-wf45t6000av-a5",
+          "consumerUrl": "/us/laundry/washers/front-load-wf6000r-front-loading-super-speed-4-5-cu-ft-black-sku-wf45t6000av-a5",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "61",
+            "pickYn": "N",
+            "representativeModel": "WF45T6000AV/A5",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-13",
+            "id": "601694"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WF45T6000AW/A5",
+          "modelName": "WF45T6000AW/A5",
+          "id": "WF45T6000AW/A5",
+          "group_id": "MULTI_GROUP_ID_601694",
+          "pdpURL": "/us/laundry/washers/front-load-wf6000r-front-loading-super-speed-4-5-cu-ft-white-sku-wf45t6000aw-a5",
+          "consumerUrl": "/us/laundry/washers/front-load-wf6000r-front-loading-super-speed-4-5-cu-ft-white-sku-wf45t6000aw-a5",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "61",
+            "pickYn": "N",
+            "representativeModel": "WF45T6000AV/A5",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-13",
+            "id": "601694"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WA52DG5500AWUS",
+      "modelName": "WA52DG5500AWUS",
+      "id": "WA52DG5500AWUS",
+      "group_id": "MULTI_GROUP_ID_601708",
+      "pdpURL": "/us/laundry/washers/top-load-wa5500d-top-load-large-capacity-super-speed-5-2-cu-ft-white-sku-wa52dg5500awus",
+      "consumerUrl": "/us/laundry/washers/top-load-wa5500d-top-load-large-capacity-super-speed-5-2-cu-ft-white-sku-wa52dg5500awus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "60",
+        "pickYn": "N",
+        "representativeModel": "WA52DG5500AWUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-14",
+        "id": "601708"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Impeller",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WA52DG5500AWUS",
+          "modelName": "WA52DG5500AWUS",
+          "id": "WA52DG5500AWUS",
+          "group_id": "MULTI_GROUP_ID_601708",
+          "pdpURL": "/us/laundry/washers/top-load-wa5500d-top-load-large-capacity-super-speed-5-2-cu-ft-white-sku-wa52dg5500awus",
+          "consumerUrl": "/us/laundry/washers/top-load-wa5500d-top-load-large-capacity-super-speed-5-2-cu-ft-white-sku-wa52dg5500awus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "60",
+            "pickYn": "N",
+            "representativeModel": "WA52DG5500AWUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-14",
+            "id": "601708"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Impeller",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WA51DG5505AWUS",
+          "modelName": "WA51DG5505AWUS",
+          "id": "WA51DG5505AWUS",
+          "group_id": "MULTI_GROUP_ID_601708",
+          "pdpURL": "/us/laundry/washers/top-load-5-1-cu-ft-large-capacity-smart-top-load-washer-with-activewave-agitator-and-super-speed-wash-in-white-sku-wa51dg5505awus",
+          "consumerUrl": "/us/laundry/washers/top-load-5-1-cu-ft-large-capacity-smart-top-load-washer-with-activewave-agitator-and-super-speed-wash-in-white-sku-wa51dg5505awus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "60",
+            "pickYn": "N",
+            "representativeModel": "WA52DG5500AWUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-14",
+            "id": "601708"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Agitator",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
