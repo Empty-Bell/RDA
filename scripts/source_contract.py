@@ -82,6 +82,7 @@ def pdp_facts(data, target, family='refrigerator'):
         'washer': ('Energy Guide Label', 'Total Capacity (cu. ft.)'),
         'tv': (None, None),  # sample PDP has power/screen fields, no annual energy/capacity
         'range': (None, None),  # discover cooking-specific spec names from raw pairs
+        'cooktop': (None, None),  # same dataset does not imply identical PDP specs
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')

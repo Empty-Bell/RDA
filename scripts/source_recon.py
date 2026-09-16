@@ -27,6 +27,9 @@ FAMILIES = {
     'range': {'plp': 'https://www.samsung.com/us/cooking-appliances/ranges/',
               'dataset': 'm6gi-ng33', 'dataset_name': 'ENERGY STAR Certified Residential Electric Cooking Products',
               'recon_domain': 'EPA_ONLY'},
+    'cooktop': {'plp': 'https://www.samsung.com/us/cooking-appliances/cooktops/',
+                'dataset': 'm6gi-ng33', 'dataset_name': 'ENERGY STAR Certified Residential Electric Cooking Products',
+                'recon_domain': 'EPA_ONLY'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
