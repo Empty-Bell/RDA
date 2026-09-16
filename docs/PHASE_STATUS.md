@@ -1,6 +1,6 @@
 # Phase status
 
-Phase 0: RUNNING — bounded refrigerator and dishwasher source reconnaissance PASSED on hosted Ubuntu.
+Phase 0: RUNNING — bounded refrigerator, dishwasher and washer source reconnaissance PASSED on hosted Ubuntu.
 Phases 1–7: NOT_STARTED.
 
 Desktop User-Agent validation (commit 434f5af6b99d83e99306e3b51b61344a61f4b896):
@@ -43,9 +43,17 @@ commit 629e3a6a21baa1a39f03e4bd61d0435640b30189 — success.
 Mixed US/Canada PDF requires US-region OCR selection before automatic field parsing.
 See DISHWASHER_SOURCE_CONTRACT.md and docs/evidence/dishwasher-source-recon.json.
 
-Next bounded task: repeat source-contract reconnaissance for Clothes Washer using
-the family-configured workflow/collector; discover category/dataset from actual sources.
-Other 9 families and remaining claim/quality semantics are not complete.
+Washer bounded reconnaissance PASS: run 35104751514, commit eb0689f9d392e310875afb8d1378f62fcc7f9ad7,
+job 104822950139. 39 tests and five live source checks passed; all three family jobs success.
+18 API groups = 18 rendered tile groups; 37 exact SKUs; combo WD90F53AVBUS and
+front-load WF90F53ADSA5 sample PDP/PDF plus bghd-e2wd EPA schema/sample verified.
+Partial embedded text missing kWh now triggers OCR; both label renders manually checked.
+Run 35104431554 refrigerator pagination failed due to repeated group across offsets;
+preserved as source-health failure, not corrected into PASS. Final snapshot passed.
+See WASHER_SOURCE_CONTRACT.md and docs/evidence/washer-source-recon.json.
+
+Next bounded task: Television source-contract reconnaissance using the family workflow.
+Other 8 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;

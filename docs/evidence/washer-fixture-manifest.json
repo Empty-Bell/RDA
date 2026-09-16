@@ -1,0 +1,37 @@
+[
+  {
+    "file": "tests/fixtures/washer/bridge-combo.json",
+    "sha256": "167247ab35a1c720840152df0e82615e50e584561c883077f351a230b45d4b2f",
+    "source_run_id": 35104059834
+  },
+  {
+    "file": "tests/fixtures/washer/bridge-standalone.json",
+    "sha256": "20d901c2855d61f5b5241c698b7055564ad0080d26f651149ded6664c198c185",
+    "source_run_id": 35104431554
+  },
+  {
+    "file": "tests/fixtures/washer/epa-metadata.projected.json",
+    "sha256": "d7ee3bb0553ec2e6f6e38b35081c93f806fa310680d7e6cf0bb04594334e4c6c",
+    "source_run_id": 35104059834
+  },
+  {
+    "file": "tests/fixtures/washer/epa-sample.projected.json",
+    "sha256": "595e40bd0853022c8ef0883b0c402aa36c2480b80143696609b3bc8c26522494",
+    "source_run_id": 35104059834
+  },
+  {
+    "file": "tests/fixtures/washer/partial-text-energyguide.json",
+    "sha256": "8dd075a48acfd950b02589654ae6e17a08971ac45838a795b574b232e802e6e4",
+    "source_run_id": 35104431554
+  },
+  {
+    "file": "tests/fixtures/washer/pf-page-0.json",
+    "sha256": "081ecabb0c8d22de5c7f3074cedc3ec237c57f23903d07b8d277b426fd176874",
+    "source_run_id": 35104059834
+  },
+  {
+    "file": "tests/fixtures/washer/pf-page-1.json",
+    "sha256": "655081e5c575cb1d6405daf92e7a288109ae123dee15b605e27773dee3d9943f",
+    "source_run_id": 35104059834
+  }
+]

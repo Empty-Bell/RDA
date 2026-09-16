@@ -2,6 +2,13 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+Washer reconnaissance: the listing includes standalone, stacked and all-in-one PDPs.
+Combo WD90F53AVBUS has a Clothes Washer EnergyGuide, not a combined wash/dry metric.
+Catalog routing to bghd-e2wd versus separate combo dataset 9jai-gs6t remains OPEN
+(D09); do not force listing membership into certification type. Its label explicitly
+requires same-test-procedure yellow-number comparisons (D01). Preserve label/test
+basis before numerical findings; no new issue code is implied.
+
 Dishwasher reconnaissance: mixed US EnergyGuide + Canadian EnerGuide in one PDF
 requires US-region selection with OCR coordinates (D07); whole-page text order is
 insufficient. PDP 16 place settings and label Standard capacity category are distinct

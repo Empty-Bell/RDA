@@ -1,4 +1,4 @@
-# EPA source contracts — refrigerator and dishwasher datasets identified
+# EPA source contracts — refrigerator, dishwasher and washer datasets identified
 
 Catalog reachability does not establish a certification match.
 Each of 11 families requires dataset ID/endpoint, brand/model/UPC, energy unit,
@@ -9,6 +9,13 @@ Dishwasher q8py-6w3f live metadata and three sample rows passed in hosted run
 35103320640. See [DISHWASHER_SOURCE_CONTRACT.md](DISHWASHER_SOURCE_CONTRACT.md).
 Observed energy/date fields are annual_energy_use_kwh_year and date_certified;
 do not substitute refrigerator field names. The other 9 families remain UNKNOWN.
+
+Washer bghd-e2wd schema/sample passed in hosted run 35104751514. Energy is
+annual_energy_use_kwh_year; Date Certified displays on field date_qualified.
+Annual water, IMEF and IWF are distinct quantities. Separate all-in-one dataset
+9jai-gs6t applicability is not verified; do not force every washer listing SKU into
+the standalone dataset. See [WASHER_SOURCE_CONTRACT.md](WASHER_SOURCE_CONTRACT.md).
+Other 8 families remain UNKNOWN. Certification matching is NOT_EVALUATED.
 
 ## Refrigerator v0.1
 

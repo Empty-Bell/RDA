@@ -1,0 +1,443 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35104751514",
+  "artifact_id": 10448949688,
+  "artifact_size_bytes": 1749287,
+  "artifact_zip_sha256": "1c209031a4655a016a4da0df7ef623fad91ea17ea26a0c47d242724231b92464",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T13:53:21.216734+00:00",
+    "run_id": "35104751514",
+    "attempt": "1",
+    "git_sha": "eb0689f9d392e310875afb8d1378f62fcc7f9ad7",
+    "scope": "washer source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "14",
+          "category_code": "08010000",
+          "taxonomy_code": "08010100",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "081ecabb0c8d22de5c7f3074cedc3ec237c57f23903d07b8d277b426fd176874",
+        "page_count": 14
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "14",
+          "requestCount": "16",
+          "category_code": "08010000",
+          "taxonomy_code": "08010100",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-1.json",
+        "fixture_sha256": "655081e5c575cb1d6405daf92e7a288109ae123dee15b605e27773dee3d9943f",
+        "page_count": 4
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/laundry/washers/",
+          "api_total": 18
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 18,
+          "exact_skus": 37,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 14,
+              "expected_groups": 18
+            },
+            {
+              "round": 1,
+              "groups": 18,
+              "expected_groups": 18
+            }
+          ],
+          "rendered_representative_link_count": 14,
+          "rendered_tile_count": 18,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "WD90F53AVBUS",
+          "url": "https://www.samsung.com/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus/",
+          "json_endpoints": 1,
+          "energyguide_link_count": 0,
+          "energyguide_pdf_valid": true
+        }
+      },
+      {
+        "name": "standalone_washer_pdp_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "WF90F53ADSA5",
+          "url": "https://www.samsung.com/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-dark-steel-sku-wf90f53adsa5/",
+          "json_endpoints": 1,
+          "energyguide_link_count": 0,
+          "energyguide_pdf_valid": true
+        }
+      },
+      {
+        "name": "epa_washer_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "bghd-e2wd",
+          "column_count": 38,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "combo_energyguide": {
+    "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avbus/energyguide/us-energyguide-wd90f53avbus-550443963.pdf",
+    "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avbus/energyguide/us-energyguide-wd90f53avbus-550443963.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "size_bytes": 974330,
+    "sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+    "embedded_text": "",
+    "extraction_engine": "RapidOCR",
+    "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+    "ocr_raw_texts": [
+      "U.S. Government",
+      "Federal law prohibits removal of this label before consumer purchase.",
+      "ENERGYGUIDE",
+      "Clothes Washer",
+      "Samsung",
+      "Capacity Class: Standard",
+      "Models WD90F53AV*",
+      "Capacity (tub volume): 5.3 cubic feet",
+      "Compare ONLY to other labels with yellow numbers.",
+      "Labels with yellow numbers are based on the same test procedures.",
+      "Estimated Yearly Energy Cost",
+      "(when used with an electric water heater)",
+      "$14",
+      "$4",
+      "Cost Range of Similar Models",
+      "$48",
+      "$11",
+      "103",
+      "kWh",
+      "Estimated Yearly Energy Cost",
+      "Estimated Yearly Electricity Use",
+      "(when used with a natural gas water heater)",
+      "Your cost will depend on your utility rates and use.",
+      "Cost range based only on standard capacity models.",
+      "energy",
+      "Estimated energy cost based on six wash loads a week and a national average",
+      "electricity cost of 14 cents per kWh and natural gas cost of $1.21 per therm.",
+      "ENERGY STAR",
+      "ftc.gov/energy",
+      "DC68-04592A-00"
+    ],
+    "ocr_scale": 2,
+    "field_parser_contract": "NOT_EVALUATED"
+  },
+  "standalone_energyguide": {
+    "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wf90f53adsa5/energyguide/us-energyguide-wf90f53adsa5-554563643.pdf",
+    "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wf90f53adsa5/energyguide/us-energyguide-wf90f53adsa5-554563643.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "size_bytes": 620278,
+    "sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+    "embedded_text": "U.S. Government \nFederal law prohibits removal of this label before consumer purchase. \nClothes Washer \nCapacity Class: Standard \nSamsung \nModels WF90F53*D* \nCapacity (tub volume): 5.3 cubic feet \nCompare ONLY to other labels with yellow numbers. \nLabels with yellow numbers are based on the same test procedures. \n• Your cost will depend on your utility rates and use.\n• Cost range based only on standard capacity models.\n• Estimated energy cost based on six wash loads a week and a national average\nelectricity cost of 14 cents per kWh and natural gas cost of $1.21 per therm.\nftc.gov/energy \nDC68-04096U-OO \n",
+    "extraction_engine": "RapidOCR",
+    "fallback_reason": "MISSING_ENERGY_VALUE_IN_EMBEDDED_TEXT",
+    "ocr_raw_texts": [
+      "U.S. Government",
+      "Federal law prohibits removal of this label before consumer purchase.",
+      "ENERGYGUIDE",
+      "Clothes Washer",
+      "Samsung",
+      "Capacity Class: Standard",
+      "Models WF90F53*D*",
+      "Capacity (tub volume): 5.3 cubic feet",
+      "Compare ONLY to other labels with yellow numbers.",
+      "Labels with yellow numbers are based on the same test procedures.",
+      "Estimated Yearly Energy Cost",
+      "(when used with an electric water heater)",
+      "$14",
+      "$4",
+      "Cost Range of Similar Models",
+      "$48",
+      "103",
+      "$11",
+      "kWh",
+      "Estimated Yearly Energy Cost",
+      "Estimated Yearly Electricity Use",
+      "(when used with a natural gas water heater)",
+      "● Your cost will depend on your utility rates and use.",
+      "• Cost range based only on standard capacity models.",
+      "energyn",
+      "● Estimated energy cost based on six wash loads a week and a national average",
+      "electricity cost of 14 cents per kWh and natural gas cost of $1.21 per therm.",
+      "ENERGY STAR",
+      "ftc.gov/energy",
+      "DC68-04096U-00"
+    ],
+    "ocr_scale": 2,
+    "field_parser_contract": "NOT_EVALUATED"
+  },
+  "epa": {
+    "dataset_id": "bghd-e2wd",
+    "name": "ENERGY STAR Certified Residential Clothes Washers",
+    "rows_updated_at": 1789564819,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "load_configuration",
+        "name": "Load Configuration",
+        "type": "text"
+      },
+      {
+        "field": "special_type",
+        "name": "Special Type",
+        "type": "text"
+      },
+      {
+        "field": "additional_washer_features",
+        "name": "Additional Washer Features",
+        "type": "text"
+      },
+      {
+        "field": "intended_market",
+        "name": "Intended Market",
+        "type": "text"
+      },
+      {
+        "field": "volume_cubic_feet",
+        "name": "Volume (cu. ft.)",
+        "type": "number"
+      },
+      {
+        "field": "height_inches",
+        "name": "Height (inches)",
+        "type": "text"
+      },
+      {
+        "field": "width_inches",
+        "name": "Width (inches)",
+        "type": "text"
+      },
+      {
+        "field": "depth_inches",
+        "name": "Depth (inches)",
+        "type": "text"
+      },
+      {
+        "field": "integrated_modified_energy_factor_imef",
+        "name": "Integrated Modified Energy Factor (IMEF)",
+        "type": "number"
+      },
+      {
+        "field": "us_federal_standard_imef",
+        "name": "US Federal Standard (IMEF)",
+        "type": "number"
+      },
+      {
+        "field": "annual_energy_use_kwh_year",
+        "name": "Annual Energy Use (kWh/yr)",
+        "type": "number"
+      },
+      {
+        "field": "integrated_water_factor_iwf",
+        "name": "Integrated Water Factor (IWF)",
+        "type": "number"
+      },
+      {
+        "field": "us_federal_standard_iwf",
+        "name": "US Federal Standard (IWF)",
+        "type": "number"
+      },
+      {
+        "field": "annual_water_use_gallons_year",
+        "name": "Annual Water Use (gallons/yr)",
+        "type": "number"
+      },
+      {
+        "field": "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Drum Capacity for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Heat Pump Technology for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Combined Energy Factor (CEF) for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Annual Energy Use (kWh/yr) for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Energy Test Cycle Time (min) for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Energy Test Cycle Information for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh) for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Additional Dryer Features for the dryer in a Combination All-in-One Washer-Dryer",
+        "type": "text"
+      },
+      {
+        "field": "connected",
+        "name": "Connected",
+        "type": "text"
+      },
+      {
+        "field": "connects_using",
+        "name": "Connects Using",
+        "type": "text"
+      },
+      {
+        "field": "communication_standard_application_layer",
+        "name": "Communication Standard Application Layer",
+        "type": "text"
+      },
+      {
+        "field": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "type": "text"
+      },
+      {
+        "field": "paired_energy_star_clothes_dryer_available",
+        "name": "Paired ENERGY STAR Clothes Dryer Available",
+        "type": "text"
+      },
+      {
+        "field": "paired_energy_star_clothes_dryer_energy_star_model_identifier",
+        "name": "Paired ENERGY STAR Clothes Dryer ENERGY STAR Model Identifier",
+        "type": "text"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available On Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_qualified",
+        "name": "Date Certified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "ENERGY STAR Model Identifier",
+        "type": "text"
+      },
+      {
+        "field": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "manual_render_observations": [
+    {
+      "target_sku": "WD90F53AVBUS",
+      "label_model": "WD90F53AV*",
+      "label_type": "Clothes Washer",
+      "annual_electricity_kwh": 103,
+      "tub_volume_cuft": 5.3
+    },
+    {
+      "target_sku": "WF90F53ADSA5",
+      "label_model": "WF90F53*D*",
+      "label_type": "Clothes Washer",
+      "annual_electricity_kwh": 103,
+      "tub_volume_cuft": 5.3
+    }
+  ],
+  "automatic_field_parser_and_certification_matching": "NOT_EVALUATED"
+}
