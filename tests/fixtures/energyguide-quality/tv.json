@@ -1,0 +1,1136 @@
+{
+  "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+  "baseline_model_candidates_raw": [
+    {
+      "value_raw": "MRN75R95HAF",
+      "line": 6,
+      "context_raw": "MRN75R95HAF",
+      "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+    }
+  ],
+  "model_regions_raw": [
+    {
+      "source_detection": 6,
+      "source_text_raw": "MRN75R95HAF",
+      "model_candidates_raw": [
+        {
+          "value_raw": "MRN75R95HAF",
+          "line": 0,
+          "context_raw": "MRN75R95HAF",
+          "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+        }
+      ],
+      "clip_pdf_points": [
+        280.0,
+        168.0,
+        378.5,
+        208.5
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "render": {
+        "name": "page-36dpi",
+        "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+        "page": 0,
+        "scale": 0.5,
+        "dpi": 36.0,
+        "clip_pdf_points": null,
+        "pixel_origin": [
+          0,
+          0
+        ],
+        "pixel_size": [
+          298,
+          421
+        ],
+        "png_sha256": "00141b47b254fc14d6a661eed9b8c4d0b6fc64c1efd17d566ca8da848be8d7bb",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "Feteol lbe potbt rmmovet dros",
+          "bbox": [
+            [
+              224.0,
+              28.0
+            ],
+            [
+              364.0,
+              28.0
+            ],
+            [
+              364.0,
+              46.0
+            ],
+            [
+              224.0,
+              46.0
+            ]
+          ],
+          "confidence": 0.5744,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGY",
+          "bbox": [
+            [
+              220.0,
+              56.0
+            ],
+            [
+              372.0,
+              58.0
+            ],
+            [
+              370.0,
+              108.0
+            ],
+            [
+              220.0,
+              106.0
+            ]
+          ],
+          "confidence": 0.99875,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "GUIDE",
+          "bbox": [
+            [
+              222.0,
+              96.0
+            ],
+            [
+              342.0,
+              96.0
+            ],
+            [
+              342.0,
+              140.0
+            ],
+            [
+              222.0,
+              140.0
+            ]
+          ],
+          "confidence": 0.99977,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Sarsin",
+          "bbox": [
+            [
+              266.0,
+              162.0
+            ],
+            [
+              306.0,
+              162.0
+            ],
+            [
+              306.0,
+              178.0
+            ],
+            [
+              266.0,
+              178.0
+            ]
+          ],
+          "confidence": 0.90051,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly",
+          "bbox": [
+            [
+              234.0,
+              202.0
+            ],
+            [
+              356.0,
+              204.0
+            ],
+            [
+              356.0,
+              232.0
+            ],
+            [
+              234.0,
+              230.0
+            ]
+          ],
+          "confidence": 0.99987,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Energy Cost",
+          "bbox": [
+            [
+              250.0,
+              224.0
+            ],
+            [
+              342.0,
+              226.0
+            ],
+            [
+              342.0,
+              252.0
+            ],
+            [
+              250.0,
+              250.0
+            ]
+          ],
+          "confidence": 0.99664,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$155",
+          "bbox": [
+            [
+              328.0,
+              256.0
+            ],
+            [
+              368.0,
+              256.0
+            ],
+            [
+              368.0,
+              282.0
+            ],
+            [
+              328.0,
+              282.0
+            ]
+          ],
+          "confidence": 0.99992,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$ 62",
+          "bbox": [
+            [
+              216.0,
+              282.0
+            ],
+            [
+              312.0,
+              282.0
+            ],
+            [
+              312.0,
+              328.0
+            ],
+            [
+              216.0,
+              328.0
+            ]
+          ],
+          "confidence": 0.91764,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "(69.5° of greater)",
+          "bbox": [
+            [
+              230.0,
+              364.0
+            ],
+            [
+              316.0,
+              364.0
+            ],
+            [
+              316.0,
+              384.0
+            ],
+            [
+              230.0,
+              384.0
+            ]
+          ],
+          "confidence": 0.83294,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "nga of",
+          "bbox": [
+            [
+              278.0,
+              336.0
+            ],
+            [
+              308.0,
+              336.0
+            ],
+            [
+              308.0,
+              352.0
+            ],
+            [
+              278.0,
+              352.0
+            ]
+          ],
+          "confidence": 0.79999,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$32",
+          "bbox": [
+            [
+              332.0,
+              418.0
+            ],
+            [
+              366.0,
+              418.0
+            ],
+            [
+              366.0,
+              440.0
+            ],
+            [
+              332.0,
+              440.0
+            ]
+          ],
+          "confidence": 0.99981,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "• Siset an 1t certs per k",
+          "bbox": [
+            [
+              226.0,
+              466.0
+            ],
+            [
+              356.0,
+              468.0
+            ],
+            [
+              356.0,
+              486.0
+            ],
+            [
+              226.0,
+              486.0
+            ]
+          ],
+          "confidence": 0.81146,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "and 5 tours uwe per dey",
+          "bbox": [
+            [
+              236.0,
+              482.0
+            ],
+            [
+              344.0,
+              484.0
+            ],
+            [
+              344.0,
+              500.0
+            ],
+            [
+              234.0,
+              498.0
+            ]
+          ],
+          "confidence": 0.8596,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "your utility rities and umo.",
+          "bbox": [
+            [
+              236.0,
+              538.0
+            ],
+            [
+              354.0,
+              536.0
+            ],
+            [
+              354.0,
+              554.0
+            ],
+            [
+              236.0,
+              556.0
+            ]
+          ],
+          "confidence": 0.87212,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ae of this nodel 300",
+          "bbox": [
+            [
+              238.0,
+              508.0
+            ],
+            [
+              354.0,
+              508.0
+            ],
+            [
+              354.0,
+              526.0
+            ],
+            [
+              238.0,
+              526.0
+            ]
+          ],
+          "confidence": 0.61242,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Your",
+          "bbox": [
+            [
+              238.0,
+              526.0
+            ],
+            [
+              264.0,
+              526.0
+            ],
+            [
+              264.0,
+              538.0
+            ],
+            [
+              238.0,
+              538.0
+            ]
+          ],
+          "confidence": 0.99783,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "yearly electicly",
+          "bbox": [
+            [
+              278.0,
+              496.0
+            ],
+            [
+              354.0,
+              498.0
+            ],
+            [
+              352.0,
+              514.0
+            ],
+            [
+              278.0,
+              512.0
+            ]
+          ],
+          "confidence": 0.7456,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Vist fit govlenergr",
+          "bbox": [
+            [
+              244.0,
+              558.0
+            ],
+            [
+              350.0,
+              560.0
+            ],
+            [
+              350.0,
+              578.0
+            ],
+            [
+              244.0,
+              578.0
+            ]
+          ],
+          "confidence": 0.85904,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "page-72dpi",
+        "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+        "page": 0,
+        "scale": 1,
+        "dpi": 72,
+        "clip_pdf_points": null,
+        "pixel_origin": [
+          0,
+          0
+        ],
+        "pixel_size": [
+          595,
+          842
+        ],
+        "png_sha256": "f82b1d4ca10061baf1ba85cda92c4cdf9a28e6cb03e18dca397dec80642f9186",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "Federal law prohibits removal of this",
+          "bbox": [
+            [
+              227.0,
+              31.0
+            ],
+            [
+              363.0,
+              31.0
+            ],
+            [
+              363.0,
+              45.0
+            ],
+            [
+              227.0,
+              45.0
+            ]
+          ],
+          "confidence": 0.955,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "label before consumer purchase.",
+          "bbox": [
+            [
+              226.0,
+              43.0
+            ],
+            [
+              351.0,
+              44.0
+            ],
+            [
+              351.0,
+              58.0
+            ],
+            [
+              226.0,
+              57.0
+            ]
+          ],
+          "confidence": 0.99872,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGY",
+          "bbox": [
+            [
+              222.0,
+              57.0
+            ],
+            [
+              373.0,
+              57.0
+            ],
+            [
+              373.0,
+              107.0
+            ],
+            [
+              222.0,
+              107.0
+            ]
+          ],
+          "confidence": 0.9999,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "GUIDE",
+          "bbox": [
+            [
+              224.0,
+              98.0
+            ],
+            [
+              344.0,
+              98.0
+            ],
+            [
+              344.0,
+              140.0
+            ],
+            [
+              224.0,
+              140.0
+            ]
+          ],
+          "confidence": 0.99987,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Television",
+          "bbox": [
+            [
+              315.0,
+              139.0
+            ],
+            [
+              367.0,
+              139.0
+            ],
+            [
+              367.0,
+              155.0
+            ],
+            [
+              315.0,
+              155.0
+            ]
+          ],
+          "confidence": 0.99978,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Samsung Electronics",
+          "bbox": [
+            [
+              265.0,
+              163.0
+            ],
+            [
+              367.0,
+              163.0
+            ],
+            [
+              367.0,
+              179.0
+            ],
+            [
+              265.0,
+              179.0
+            ]
+          ],
+          "confidence": 0.99939,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "MRN75R95HAF",
+          "bbox": [
+            [
+              293.0,
+              180.0
+            ],
+            [
+              365.0,
+              180.0
+            ],
+            [
+              365.0,
+              196.0
+            ],
+            [
+              293.0,
+              196.0
+            ]
+          ],
+          "confidence": 0.99989,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly",
+          "bbox": [
+            [
+              236.0,
+              208.0
+            ],
+            [
+              356.0,
+              210.0
+            ],
+            [
+              355.0,
+              232.0
+            ],
+            [
+              236.0,
+              230.0
+            ]
+          ],
+          "confidence": 0.99998,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Energy Cost",
+          "bbox": [
+            [
+              251.0,
+              227.0
+            ],
+            [
+              343.0,
+              227.0
+            ],
+            [
+              343.0,
+              251.0
+            ],
+            [
+              251.0,
+              251.0
+            ]
+          ],
+          "confidence": 0.99957,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$155",
+          "bbox": [
+            [
+              328.0,
+              256.0
+            ],
+            [
+              370.0,
+              256.0
+            ],
+            [
+              370.0,
+              284.0
+            ],
+            [
+              328.0,
+              284.0
+            ]
+          ],
+          "confidence": 0.9991,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$",
+          "bbox": [
+            [
+              222.0,
+              287.0
+            ],
+            [
+              253.0,
+              287.0
+            ],
+            [
+              253.0,
+              325.0
+            ],
+            [
+              222.0,
+              325.0
+            ]
+          ],
+          "confidence": 0.99943,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "62",
+          "bbox": [
+            [
+              247.0,
+              283.0
+            ],
+            [
+              313.0,
+              283.0
+            ],
+            [
+              313.0,
+              330.0
+            ],
+            [
+              247.0,
+              330.0
+            ]
+          ],
+          "confidence": 0.99999,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Cost Range of",
+          "bbox": [
+            [
+              237.0,
+              336.0
+            ],
+            [
+              310.0,
+              336.0
+            ],
+            [
+              310.0,
+              353.0
+            ],
+            [
+              237.0,
+              353.0
+            ]
+          ],
+          "confidence": 0.99981,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Similar Models",
+          "bbox": [
+            [
+              235.0,
+              349.0
+            ],
+            [
+              311.0,
+              351.0
+            ],
+            [
+              311.0,
+              370.0
+            ],
+            [
+              234.0,
+              368.0
+            ]
+          ],
+          "confidence": 0.99956,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "(69.5° or greater)",
+          "bbox": [
+            [
+              231.0,
+              365.0
+            ],
+            [
+              316.0,
+              365.0
+            ],
+            [
+              316.0,
+              384.0
+            ],
+            [
+              231.0,
+              384.0
+            ]
+          ],
+          "confidence": 0.96796,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$32",
+          "bbox": [
+            [
+              328.0,
+              418.0
+            ],
+            [
+              366.0,
+              418.0
+            ],
+            [
+              366.0,
+              443.0
+            ],
+            [
+              328.0,
+              443.0
+            ]
+          ],
+          "confidence": 0.99662,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "• Based on 16 cents per kWh",
+          "bbox": [
+            [
+              229.0,
+              470.0
+            ],
+            [
+              357.0,
+              470.0
+            ],
+            [
+              357.0,
+              486.0
+            ],
+            [
+              229.0,
+              486.0
+            ]
+          ],
+          "confidence": 0.9796,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "and 5 hours use per day",
+          "bbox": [
+            [
+              235.0,
+              483.0
+            ],
+            [
+              344.0,
+              485.0
+            ],
+            [
+              344.0,
+              501.0
+            ],
+            [
+              235.0,
+              499.0
+            ]
+          ],
+          "confidence": 0.99759,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated yearly electricity",
+          "bbox": [
+            [
+              232.0,
+              498.0
+            ],
+            [
+              354.0,
+              498.0
+            ],
+            [
+              354.0,
+              514.0
+            ],
+            [
+              232.0,
+              513.0
+            ]
+          ],
+          "confidence": 0.99947,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "use of this model: 390kWh",
+          "bbox": [
+            [
+              237.0,
+              511.0
+            ],
+            [
+              356.0,
+              511.0
+            ],
+            [
+              356.0,
+              527.0
+            ],
+            [
+              237.0,
+              527.0
+            ]
+          ],
+          "confidence": 0.9964,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Your cost depends on",
+          "bbox": [
+            [
+              233.0,
+              524.0
+            ],
+            [
+              342.0,
+              526.0
+            ],
+            [
+              342.0,
+              541.0
+            ],
+            [
+              233.0,
+              540.0
+            ]
+          ],
+          "confidence": 0.99985,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "your utility rates and use.",
+          "bbox": [
+            [
+              237.0,
+              540.0
+            ],
+            [
+              356.0,
+              540.0
+            ],
+            [
+              356.0,
+              556.0
+            ],
+            [
+              237.0,
+              556.0
+            ]
+          ],
+          "confidence": 0.99309,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Visit ftc.gov/energy",
+          "bbox": [
+            [
+              245.0,
+              559.0
+            ],
+            [
+              351.0,
+              561.0
+            ],
+            [
+              351.0,
+              580.0
+            ],
+            [
+              245.0,
+              577.0
+            ]
+          ],
+          "confidence": 0.99811,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "model-roi-0",
+        "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+        "page": 0,
+        "scale": 3,
+        "dpi": 216,
+        "clip_pdf_points": [
+          280.0,
+          168.0,
+          378.5,
+          208.5
+        ],
+        "pixel_origin": [
+          840,
+          504
+        ],
+        "pixel_size": [
+          296,
+          122
+        ],
+        "png_sha256": "7632856198948e10d2ddf860ef654c06013be845618e4611ad6e4808f3553c66",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "msung Electronics",
+          "bbox": [
+            [
+              280.0,
+              168.0
+            ],
+            [
+              365.3333333333333,
+              168.0
+            ],
+            [
+              365.3333333333333,
+              179.66666666666666
+            ],
+            [
+              280.0,
+              180.0
+            ]
+          ],
+          "confidence": 0.9991,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "MRN75R95HAF",
+          "bbox": [
+            [
+              293.6666666666667,
+              182.0
+            ],
+            [
+              365.0,
+              182.0
+            ],
+            [
+              365.0,
+              195.33333333333334
+            ],
+            [
+              293.6666666666667,
+              195.33333333333334
+            ]
+          ],
+          "confidence": 0.98224,
+          "engine": "RapidOCR"
+        }
+      ]
+    }
+  ]
+}

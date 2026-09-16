@@ -1,0 +1,1307 @@
+{
+  "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+  "baseline_model_candidates_raw": [
+    {
+      "value_raw": "WD90F53AV*",
+      "line": 6,
+      "context_raw": "Models WD90F53AV*",
+      "wildcard_count_status": "NOT_EVALUATED"
+    },
+    {
+      "value_raw": "DC68-04592A-00",
+      "line": 29,
+      "context_raw": "DC68-04592A-00",
+      "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+    }
+  ],
+  "model_regions_raw": [
+    {
+      "source_detection": 6,
+      "source_text_raw": "Models WD90F53AV*",
+      "model_candidates_raw": [
+        {
+          "value_raw": "WD90F53AV*",
+          "line": 0,
+          "context_raw": "Models WD90F53AV*",
+          "wildcard_count_status": "NOT_EVALUATED"
+        }
+      ],
+      "clip_pdf_points": [
+        287.5,
+        84.5,
+        397.0,
+        120.5
+      ]
+    },
+    {
+      "source_detection": 29,
+      "source_text_raw": "DC68-04592A-00",
+      "model_candidates_raw": [
+        {
+          "value_raw": "DC68-04592A-00",
+          "line": 0,
+          "context_raw": "DC68-04592A-00",
+          "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+        }
+      ],
+      "clip_pdf_points": [
+        261.0,
+        509.0,
+        319.5,
+        534.2949829101562
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "render": {
+        "name": "page-36dpi",
+        "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+        "page": 0,
+        "scale": 0.5,
+        "dpi": 36.0,
+        "clip_pdf_points": null,
+        "pixel_origin": [
+          0,
+          0
+        ],
+        "pixel_size": [
+          200,
+          268
+        ],
+        "png_sha256": "0e01504035b4b72bd48f5d82e7e9a21fa525839aa24284cf7e24e3d5914a1f4d",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "ENERGYGUIDE",
+          "bbox": [
+            [
+              4.0,
+              14.0
+            ],
+            [
+              394.0,
+              14.0
+            ],
+            [
+              396.0,
+              88.0
+            ],
+            [
+              4.0,
+              90.0
+            ]
+          ],
+          "confidence": 0.99964,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Oisex: Standand",
+          "bbox": [
+            [
+              46.0,
+              96.0
+            ],
+            [
+              114.0,
+              96.0
+            ],
+            [
+              114.0,
+              108.0
+            ],
+            [
+              46.0,
+              108.0
+            ]
+          ],
+          "confidence": 0.86781,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Capacity (huà valuanaș 5.3 cabic feat",
+          "bbox": [
+            [
+              240.0,
+              108.0
+            ],
+            [
+              384.0,
+              108.0
+            ],
+            [
+              384.0,
+              122.0
+            ],
+            [
+              240.0,
+              122.0
+            ]
+          ],
+          "confidence": 0.85181,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Mcdals IMDHIFSAAV",
+          "bbox": [
+            [
+              298.0,
+              96.0
+            ],
+            [
+              384.0,
+              96.0
+            ],
+            [
+              384.0,
+              108.0
+            ],
+            [
+              298.0,
+              108.0
+            ]
+          ],
+          "confidence": 0.73149,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Compare ONLY to other labels with yellow numbers.",
+          "bbox": [
+            [
+              12.0,
+              154.0
+            ],
+            [
+              384.0,
+              156.0
+            ],
+            [
+              384.0,
+              176.0
+            ],
+            [
+              12.0,
+              176.0
+            ]
+          ],
+          "confidence": 0.9967,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Labels wvith yellou numbers are based on the same test procedures.",
+          "bbox": [
+            [
+              24.0,
+              174.0
+            ],
+            [
+              374.0,
+              174.0
+            ],
+            [
+              374.0,
+              190.0
+            ],
+            [
+              24.0,
+              190.0
+            ]
+          ],
+          "confidence": 0.95136,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Energy Cost",
+          "bbox": [
+            [
+              98.0,
+              210.0
+            ],
+            [
+              304.0,
+              212.0
+            ],
+            [
+              304.0,
+              234.0
+            ],
+            [
+              98.0,
+              232.0
+            ]
+          ],
+          "confidence": 0.99911,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$14",
+          "bbox": [
+            [
+              54.0,
+              246.0
+            ],
+            [
+              160.0,
+              244.0
+            ],
+            [
+              162.0,
+              300.0
+            ],
+            [
+              54.0,
+              302.0
+            ]
+          ],
+          "confidence": 0.99971,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": " pn )",
+          "bbox": [
+            [
+              108.0,
+              230.0
+            ],
+            [
+              226.0,
+              230.0
+            ],
+            [
+              226.0,
+              242.0
+            ],
+            [
+              108.0,
+              242.0
+            ]
+          ],
+          "confidence": 0.57662,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "103",
+          "bbox": [
+            [
+              48.0,
+              370.0
+            ],
+            [
+              128.0,
+              370.0
+            ],
+            [
+              128.0,
+              408.0
+            ],
+            [
+              48.0,
+              408.0
+            ]
+          ],
+          "confidence": 0.99998,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$11",
+          "bbox": [
+            [
+              258.0,
+              364.0
+            ],
+            [
+              336.0,
+              364.0
+            ],
+            [
+              336.0,
+              408.0
+            ],
+            [
+              258.0,
+              408.0
+            ]
+          ],
+          "confidence": 0.99994,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimaed Yearly",
+          "bbox": [
+            [
+              224.0,
+              406.0
+            ],
+            [
+              306.0,
+              406.0
+            ],
+            [
+              306.0,
+              420.0
+            ],
+            [
+              224.0,
+              420.0
+            ]
+          ],
+          "confidence": 0.89138,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Eswgy Cost",
+          "bbox": [
+            [
+              306.0,
+              408.0
+            ],
+            [
+              368.0,
+              406.0
+            ],
+            [
+              368.0,
+              420.0
+            ],
+            [
+              306.0,
+              422.0
+            ]
+          ],
+          "confidence": 0.96525,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "fie.gowenergy",
+          "bbox": [
+            [
+              154.0,
+              506.0
+            ],
+            [
+              238.0,
+              508.0
+            ],
+            [
+              238.0,
+              528.0
+            ],
+            [
+              154.0,
+              526.0
+            ]
+          ],
+          "confidence": 0.95408,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "SEIRPSTAR",
+          "bbox": [
+            [
+              322.0,
+              498.0
+            ],
+            [
+              384.0,
+              498.0
+            ],
+            [
+              384.0,
+              514.0
+            ],
+            [
+              322.0,
+              514.0
+            ]
+          ],
+          "confidence": 0.59563,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "page-72dpi",
+        "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+        "page": 0,
+        "scale": 1,
+        "dpi": 72,
+        "clip_pdf_points": null,
+        "pixel_origin": [
+          0,
+          0
+        ],
+        "pixel_size": [
+          399,
+          535
+        ],
+        "png_sha256": "36a979ef2b44e61fcf9fff32be0c7d928df9a181fd49d86e92d50c7bd39c600c",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "ENERGYGUIDE",
+          "bbox": [
+            [
+              7.0,
+              17.0
+            ],
+            [
+              394.0,
+              17.0
+            ],
+            [
+              394.0,
+              86.0
+            ],
+            [
+              7.0,
+              86.0
+            ]
+          ],
+          "confidence": 0.99966,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "U.S. Goverment",
+          "bbox": [
+            [
+              10.0,
+              6.0
+            ],
+            [
+              79.0,
+              8.0
+            ],
+            [
+              78.0,
+              21.0
+            ],
+            [
+              10.0,
+              19.0
+            ]
+          ],
+          "confidence": 0.97487,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Federal law prohibits removal of this label before consumer purchase.",
+          "bbox": [
+            [
+              157.0,
+              10.0
+            ],
+            [
+              386.0,
+              10.0
+            ],
+            [
+              386.0,
+              21.0
+            ],
+            [
+              157.0,
+              21.0
+            ]
+          ],
+          "confidence": 0.99901,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Clothes Washer",
+          "bbox": [
+            [
+              11.0,
+              84.0
+            ],
+            [
+              75.0,
+              84.0
+            ],
+            [
+              75.0,
+              94.0
+            ],
+            [
+              11.0,
+              94.0
+            ]
+          ],
+          "confidence": 0.99983,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Samsung",
+          "bbox": [
+            [
+              345.0,
+              83.0
+            ],
+            [
+              385.0,
+              85.0
+            ],
+            [
+              385.0,
+              97.0
+            ],
+            [
+              344.0,
+              96.0
+            ]
+          ],
+          "confidence": 0.99977,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Capacity Class: Standard",
+          "bbox": [
+            [
+              11.0,
+              96.0
+            ],
+            [
+              113.0,
+              96.0
+            ],
+            [
+              113.0,
+              108.0
+            ],
+            [
+              11.0,
+              108.0
+            ]
+          ],
+          "confidence": 0.99981,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Models WD90F53AV*",
+          "bbox": [
+            [
+              298.0,
+              97.0
+            ],
+            [
+              385.0,
+              95.0
+            ],
+            [
+              386.0,
+              108.0
+            ],
+            [
+              298.0,
+              109.0
+            ]
+          ],
+          "confidence": 0.94641,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Capacity (tub volume): 5.3 cubic feet",
+          "bbox": [
+            [
+              239.0,
+              108.0
+            ],
+            [
+              385.0,
+              108.0
+            ],
+            [
+              385.0,
+              121.0
+            ],
+            [
+              239.0,
+              121.0
+            ]
+          ],
+          "confidence": 0.98437,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Compare ONLY to other labels with yellow numbers.",
+          "bbox": [
+            [
+              14.0,
+              155.0
+            ],
+            [
+              384.0,
+              155.0
+            ],
+            [
+              384.0,
+              175.0
+            ],
+            [
+              14.0,
+              175.0
+            ]
+          ],
+          "confidence": 0.99966,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Labels with yellow numbers are based on the same test procedures.",
+          "bbox": [
+            [
+              24.0,
+              175.0
+            ],
+            [
+              373.0,
+              175.0
+            ],
+            [
+              373.0,
+              189.0
+            ],
+            [
+              24.0,
+              189.0
+            ]
+          ],
+          "confidence": 0.99951,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Energy Cost",
+          "bbox": [
+            [
+              99.0,
+              212.0
+            ],
+            [
+              304.0,
+              213.0
+            ],
+            [
+              304.0,
+              233.0
+            ],
+            [
+              99.0,
+              232.0
+            ]
+          ],
+          "confidence": 0.99319,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "(when used with an electric water heater)",
+          "bbox": [
+            [
+              109.0,
+              230.0
+            ],
+            [
+              288.0,
+              230.0
+            ],
+            [
+              288.0,
+              243.0
+            ],
+            [
+              109.0,
+              243.0
+            ]
+          ],
+          "confidence": 0.9997,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$14",
+          "bbox": [
+            [
+              55.0,
+              248.0
+            ],
+            [
+              159.0,
+              248.0
+            ],
+            [
+              159.0,
+              301.0
+            ],
+            [
+              55.0,
+              301.0
+            ]
+          ],
+          "confidence": 0.99997,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$4",
+          "bbox": [
+            [
+              35.0,
+              332.0
+            ],
+            [
+              49.0,
+              332.0
+            ],
+            [
+              49.0,
+              346.0
+            ],
+            [
+              35.0,
+              346.0
+            ]
+          ],
+          "confidence": 0.99971,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Cost Range of Similar Models",
+          "bbox": [
+            [
+              131.0,
+              337.0
+            ],
+            [
+              261.0,
+              337.0
+            ],
+            [
+              261.0,
+              349.0
+            ],
+            [
+              131.0,
+              349.0
+            ]
+          ],
+          "confidence": 0.99992,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$48",
+          "bbox": [
+            [
+              347.0,
+              332.0
+            ],
+            [
+              366.0,
+              332.0
+            ],
+            [
+              366.0,
+              345.0
+            ],
+            [
+              347.0,
+              345.0
+            ]
+          ],
+          "confidence": 0.99997,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "103",
+          "bbox": [
+            [
+              49.0,
+              370.0
+            ],
+            [
+              128.0,
+              370.0
+            ],
+            [
+              128.0,
+              409.0
+            ],
+            [
+              49.0,
+              409.0
+            ]
+          ],
+          "confidence": 0.99998,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$11",
+          "bbox": [
+            [
+              260.0,
+              365.0
+            ],
+            [
+              335.0,
+              365.0
+            ],
+            [
+              335.0,
+              405.0
+            ],
+            [
+              260.0,
+              405.0
+            ]
+          ],
+          "confidence": 0.99997,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "kWh",
+          "bbox": [
+            [
+              125.0,
+              390.0
+            ],
+            [
+              153.0,
+              390.0
+            ],
+            [
+              153.0,
+              406.0
+            ],
+            [
+              125.0,
+              406.0
+            ]
+          ],
+          "confidence": 0.99929,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Electricity Use",
+          "bbox": [
+            [
+              24.0,
+              413.0
+            ],
+            [
+              179.0,
+              414.0
+            ],
+            [
+              179.0,
+              428.0
+            ],
+            [
+              24.0,
+              427.0
+            ]
+          ],
+          "confidence": 0.99988,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "(when used with a natural gas water heater)",
+          "bbox": [
+            [
+              219.0,
+              420.0
+            ],
+            [
+              374.0,
+              420.0
+            ],
+            [
+              374.0,
+              430.0
+            ],
+            [
+              219.0,
+              430.0
+            ]
+          ],
+          "confidence": 0.99895,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Energy Cost",
+          "bbox": [
+            [
+              224.0,
+              406.0
+            ],
+            [
+              369.0,
+              406.0
+            ],
+            [
+              369.0,
+              421.0
+            ],
+            [
+              224.0,
+              421.0
+            ]
+          ],
+          "confidence": 0.99625,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": " Your cost will depend on your utility rates and use.",
+          "bbox": [
+            [
+              10.0,
+              453.0
+            ],
+            [
+              196.0,
+              453.0
+            ],
+            [
+              196.0,
+              465.0
+            ],
+            [
+              10.0,
+              465.0
+            ]
+          ],
+          "confidence": 0.99428,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Cost range based only on standard capacity models.",
+          "bbox": [
+            [
+              12.0,
+              465.0
+            ],
+            [
+              188.0,
+              465.0
+            ],
+            [
+              188.0,
+              476.0
+            ],
+            [
+              12.0,
+              476.0
+            ]
+          ],
+          "confidence": 0.99962,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated energy cost based on six wash loads a week and a national average",
+          "bbox": [
+            [
+              12.0,
+              478.0
+            ],
+            [
+              268.0,
+              478.0
+            ],
+            [
+              268.0,
+              489.0
+            ],
+            [
+              12.0,
+              489.0
+            ]
+          ],
+          "confidence": 0.99434,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "electricity cost of 14 cents per kWh and natural gas cost of $1.21 per therm.",
+          "bbox": [
+            [
+              14.0,
+              489.0
+            ],
+            [
+              256.0,
+              489.0
+            ],
+            [
+              256.0,
+              499.0
+            ],
+            [
+              14.0,
+              499.0
+            ]
+          ],
+          "confidence": 0.99622,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ftc.gov/energy",
+          "bbox": [
+            [
+              155.0,
+              507.0
+            ],
+            [
+              237.0,
+              509.0
+            ],
+            [
+              237.0,
+              527.0
+            ],
+            [
+              155.0,
+              526.0
+            ]
+          ],
+          "confidence": 0.99929,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGY STAR",
+          "bbox": [
+            [
+              320.0,
+              499.0
+            ],
+            [
+              383.0,
+              499.0
+            ],
+            [
+              383.0,
+              513.0
+            ],
+            [
+              320.0,
+              513.0
+            ]
+          ],
+          "confidence": 0.99907,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "DC58-04582A-00",
+          "bbox": [
+            [
+              269.0,
+              518.0
+            ],
+            [
+              311.0,
+              518.0
+            ],
+            [
+              311.0,
+              525.0
+            ],
+            [
+              269.0,
+              525.0
+            ]
+          ],
+          "confidence": 0.92236,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "model-roi-0",
+        "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+        "page": 0,
+        "scale": 3,
+        "dpi": 216,
+        "clip_pdf_points": [
+          287.5,
+          84.5,
+          397.0,
+          120.5
+        ],
+        "pixel_origin": [
+          862,
+          253
+        ],
+        "pixel_size": [
+          329,
+          109
+        ],
+        "png_sha256": "c75fff3db9dda22bb0cfa37da2ceea200c8f2e6516c68f039aa346d3e7082a15",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "Samsung",
+          "bbox": [
+            [
+              344.3333333333333,
+              84.33333333333333
+            ],
+            [
+              384.66666666666663,
+              84.33333333333333
+            ],
+            [
+              384.66666666666663,
+              97.66666666666666
+            ],
+            [
+              344.3333333333333,
+              97.66666666666666
+            ]
+          ],
+          "confidence": 0.99995,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Models WD90F53AV*",
+          "bbox": [
+            [
+              298.66666666666663,
+              94.66666666666666
+            ],
+            [
+              385.0,
+              94.33333333333333
+            ],
+            [
+              385.0,
+              108.66666666666666
+            ],
+            [
+              298.66666666666663,
+              109.33333333333333
+            ]
+          ],
+          "confidence": 0.9995,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "b volume): 5.3 cubic feet",
+          "bbox": [
+            [
+              287.3333333333333,
+              108.33333333333333
+            ],
+            [
+              385.66666666666663,
+              107.0
+            ],
+            [
+              385.66666666666663,
+              120.33333333333333
+            ],
+            [
+              287.3333333333333,
+              120.33333333333333
+            ]
+          ],
+          "confidence": 0.99942,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "model-roi-1",
+        "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+        "page": 0,
+        "scale": 3,
+        "dpi": 216,
+        "clip_pdf_points": [
+          261.0,
+          509.0,
+          319.5,
+          534.2949829101562
+        ],
+        "pixel_origin": [
+          783,
+          1527
+        ],
+        "pixel_size": [
+          176,
+          76
+        ],
+        "png_sha256": "aadd8944b8e64ca74068a00bcdc817f8a0c46765159c8a07e55f413268a779c2",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "DC68-04592A-00",
+          "bbox": [
+            [
+              270.3333333333333,
+              518.0
+            ],
+            [
+              310.6666666666667,
+              518.3333333333334
+            ],
+            [
+              310.6666666666667,
+              525.0
+            ],
+            [
+              270.3333333333333,
+              525.0
+            ]
+          ],
+          "confidence": 0.99998,
+          "engine": "RapidOCR"
+        }
+      ]
+    }
+  ]
+}

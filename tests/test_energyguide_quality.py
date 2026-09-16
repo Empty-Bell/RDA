@@ -1,5 +1,7 @@
 import unittest
-from scripts.energyguide_quality import model_regions, project_detections, observation
+import json
+from pathlib import Path
+from scripts.energyguide_quality import model_regions, project_detections, observation, compare_model_candidates
 
 
 class QualityContract(unittest.TestCase):
@@ -30,3 +32,61 @@ class QualityContract(unittest.TestCase):
         span = {'page': 0, 'bbox': [10, 10, 50, 20], 'text': 'Models WF90F53*D*', 'engine': 'RapidOCR'}
         with self.assertRaises(ValueError):
             model_regions([span] * 9, [0, 0, 100, 100], 'a' * 64)
+
+
+class ActualQualityRegression(unittest.TestCase):
+    def fixture(self, name):
+        return json.loads((Path(__file__).parent / 'fixtures/energyguide-quality' / (name + '.json')).read_text(encoding='utf-8'))
+
+    def variant(self, data, name):
+        return next(v for v in data['variants'] if v['render']['name'] == name)
+
+    def models(self, data, name):
+        v = self.variant(data, name)
+        result = observation(v['spans'], data['pdf_sha256'])
+        return [c['value_raw'] for c in result['fields_raw']['model_candidates_raw']]
+
+    def test_actual_36dpi_model_loss_and_digit_confusion_are_not_corrected(self):
+        data = self.fixture('refrigerator')
+        v = self.variant(data, 'page-36dpi')
+        observed = observation(v['spans'], data['pdf_sha256'])
+        self.assertEqual(self.models(data, 'page-36dpi'), ['RF290B9900'])
+        comparison = compare_model_candidates(data['baseline_model_candidates_raw'], observed)
+        self.assertEqual(comparison['raw_set_observation'], 'DIFFERENT_RAW_CANDIDATE_SET')
+        self.assertEqual(comparison['identity_matching'], 'NOT_EVALUATED')
+        self.assertEqual(comparison['wildcard_correction'], 'NOT_APPLIED')
+
+    def test_actual_72dpi_bilingual_wildcard_disagreement_is_preserved(self):
+        data = self.fixture('dishwasher')
+        models = self.models(data, 'page-72dpi')
+        self.assertIn('DW90F8**0**', models)
+        self.assertIn('DW90F8**0***', models)
+        self.assertEqual(self.models(data, 'model-roi-0'), ['DW90F8**0***'])
+        self.assertEqual(self.models(data, 'model-roi-1'), ['DW90F8**0***'])
+
+    def test_actual_36dpi_missing_annual_caption_never_becomes_selected_value(self):
+        for name in ('refrigerator', 'dishwasher', 'washer', 'washer-standalone', 'tv'):
+            data = self.fixture(name)
+            observed = observation(self.variant(data, 'page-36dpi')['spans'], data['pdf_sha256'])
+            self.assertEqual(observed['layout_raw']['annual_layout_candidates'], [], msg=name)
+            self.assertEqual(observed['annual_value_selection'], 'NOT_EVALUATED')
+            self.assertEqual(observed['compliance'], 'NOT_EVALUATED')
+
+    def test_actual_roi_part_number_stays_candidate_not_proven_model(self):
+        data = self.fixture('washer')
+        self.assertIn('DC58-04582A-00', self.models(data, 'page-72dpi'))
+        self.assertEqual(self.models(data, 'model-roi-1'), ['DC68-04592A-00'])
+        observed = observation(self.variant(data, 'model-roi-1')['spans'], data['pdf_sha256'])
+        self.assertEqual(observed['identity_matching'], 'NOT_EVALUATED')
+
+    def test_actual_roi_geometry_retains_source_pdf_and_crop_origin(self):
+        data = self.fixture('dishwasher')
+        variant = self.variant(data, 'model-roi-0')
+        render = variant['render']
+        self.assertEqual(render['pdf_sha256'], data['pdf_sha256'])
+        self.assertEqual(render['scale'], 3)
+        origin = [v / 3 for v in render['pixel_origin']]
+        for span in variant['spans']:
+            for point in span['bbox']:
+                self.assertGreaterEqual(point[0], origin[0])
+                self.assertGreaterEqual(point[1], origin[1])

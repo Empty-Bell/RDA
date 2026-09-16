@@ -55,6 +55,15 @@ def observation(spans, digest):
             'identity_matching': 'NOT_EVALUATED', 'compliance': 'NOT_EVALUATED'}
 
 
+def compare_model_candidates(baseline_candidates, observed):
+    baseline = [c['value_raw'] for c in baseline_candidates]
+    fields = observed['fields_raw']
+    current = [c['value_raw'] for c in fields['model_candidates_raw']] if fields else []
+    return {'baseline_candidates_raw': baseline, 'observed_candidates_raw': current,
+            'raw_set_observation': 'SAME_RAW_CANDIDATE_SET' if set(baseline) == set(current) else 'DIFFERENT_RAW_CANDIDATE_SET',
+            'wildcard_correction': 'NOT_APPLIED', 'identity_matching': 'NOT_EVALUATED'}
+
+
 def probe(root, engine):
     import pymupdf
     output = root / 'quality'
@@ -73,6 +82,7 @@ def probe(root, engine):
         summary['pdf_sha256'] = digest
         spans_file = root / 'fixtures' / ('energyguide-ocr-spans.json' if source['extraction_engine'] == 'RapidOCR' else 'energyguide-embedded-spans.json')
         baseline = json.loads(spans_file.read_text(encoding='utf-8'))
+        baseline_models = label_candidates('\n'.join(s['text'] for s in baseline), source['extraction_engine'], digest)['model_candidates_raw']
         with pymupdf.open(stream=raw, filetype='pdf') as doc:
             page = doc[0]
             regions = model_regions(baseline, list(page.rect), digest)
@@ -100,6 +110,8 @@ def probe(root, engine):
                 spans = project_detections(texts, boxes, scores, scale, [pix.x / scale, pix.y / scale])
                 save(name + '-spans.json', spans)
                 observed = observation(spans, digest)
+                reference = regions[int(name.rsplit('-', 1)[1])]['model_candidates_raw'] if clip else baseline_models
+                observed['model_candidate_comparison'] = compare_model_candidates(reference, observed)
                 save(name + '-observation.json', observed)
                 summary['variants'].append({'render': provenance, 'observation': observed})
                 save('summary.json', summary)

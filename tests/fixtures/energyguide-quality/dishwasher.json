@@ -1,0 +1,2897 @@
+{
+  "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+  "baseline_model_candidates_raw": [
+    {
+      "value_raw": "DW90F8**0***",
+      "line": 7,
+      "context_raw": "Models DW90F8**0***",
+      "wildcard_count_status": "NOT_EVALUATED"
+    },
+    {
+      "value_raw": "DW90F8**0***",
+      "line": 38,
+      "context_raw": "DW90F8**0***",
+      "wildcard_count_status": "NOT_EVALUATED"
+    },
+    {
+      "value_raw": "DD68-00152Q-00",
+      "line": 46,
+      "context_raw": "DD68-00152Q-00",
+      "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+    },
+    {
+      "value_raw": "DD68-00152Q-00",
+      "line": 49,
+      "context_raw": "DD68-00152Q-00",
+      "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+    }
+  ],
+  "model_regions_raw": [
+    {
+      "source_detection": 7,
+      "source_text_raw": "Models DW90F8**0***",
+      "model_candidates_raw": [
+        {
+          "value_raw": "DW90F8**0***",
+          "line": 0,
+          "context_raw": "Models DW90F8**0***",
+          "wildcard_count_status": "NOT_EVALUATED"
+        }
+      ],
+      "clip_pdf_points": [
+        624.7592163085938,
+        304.51708984375,
+        741.7932739257812,
+        347.65692138671875
+      ]
+    },
+    {
+      "source_detection": 38,
+      "source_text_raw": "DW90F8**0***",
+      "model_candidates_raw": [
+        {
+          "value_raw": "DW90F8**0***",
+          "line": 0,
+          "context_raw": "DW90F8**0***",
+          "wildcard_count_status": "NOT_EVALUATED"
+        }
+      ],
+      "clip_pdf_points": [
+        1027.9403076171875,
+        566.739990234375,
+        1137.3238525390625,
+        614.955322265625
+      ]
+    },
+    {
+      "source_detection": 46,
+      "source_text_raw": "DD68-00152Q-00",
+      "model_candidates_raw": [
+        {
+          "value_raw": "DD68-00152Q-00",
+          "line": 0,
+          "context_raw": "DD68-00152Q-00",
+          "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+        }
+      ],
+      "clip_pdf_points": [
+        663.9577026367188,
+        584.5035400390625,
+        794.2640991210938,
+        762.1385498046875
+      ]
+    },
+    {
+      "source_detection": 49,
+      "source_text_raw": "DD68-00152Q-00",
+      "model_candidates_raw": [
+        {
+          "value_raw": "DD68-00152Q-00",
+          "line": 0,
+          "context_raw": "DD68-00152Q-00",
+          "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+        }
+      ],
+      "clip_pdf_points": [
+        1202.0966186523438,
+        583.65771484375,
+        1335.7864379882812,
+        766.3678588867188
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "render": {
+        "name": "page-36dpi",
+        "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+        "page": 0,
+        "scale": 0.5,
+        "dpi": 36.0,
+        "clip_pdf_points": null,
+        "pixel_origin": [
+          0,
+          0
+        ],
+        "pixel_size": [
+          842,
+          596
+        ],
+        "png_sha256": "aa4e739cb2864307a5c2077cc1fc719b09281505f5f4e660d97e34b1985a4c21",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "Canada",
+          "bbox": [
+            [
+              1038.0,
+              216.0
+            ],
+            [
+              1130.0,
+              216.0
+            ],
+            [
+              1130.0,
+              250.0
+            ],
+            [
+              1038.0,
+              250.0
+            ]
+          ],
+          "confidence": 0.98461,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGYGUIDE",
+          "bbox": [
+            [
+              356.0,
+              238.0
+            ],
+            [
+              740.0,
+              238.0
+            ],
+            [
+              740.0,
+              298.0
+            ],
+            [
+              356.0,
+              298.0
+            ]
+          ],
+          "confidence": 0.99994,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGUIDE",
+          "bbox": [
+            [
+              932.0,
+              256.0
+            ],
+            [
+              1238.0,
+              256.0
+            ],
+            [
+              1238.0,
+              322.0
+            ],
+            [
+              932.0,
+              322.0
+            ]
+          ],
+          "confidence": 0.9942,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Energy consumption / Consommation énergétique",
+          "bbox": [
+            [
+              918.0,
+              336.0
+            ],
+            [
+              1248.0,
+              336.0
+            ],
+            [
+              1248.0,
+              358.0
+            ],
+            [
+              918.0,
+              358.0
+            ]
+          ],
+          "confidence": 0.99234,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Energy Cost",
+          "bbox": [
+            [
+              440.0,
+              364.0
+            ],
+            [
+              644.0,
+              364.0
+            ],
+            [
+              644.0,
+              390.0
+            ],
+            [
+              440.0,
+              390.0
+            ]
+          ],
+          "confidence": 0.99953,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "when used with an elest",
+          "bbox": [
+            [
+              456.0,
+              382.0
+            ],
+            [
+              560.0,
+              382.0
+            ],
+            [
+              560.0,
+              398.0
+            ],
+            [
+              456.0,
+              398.0
+            ]
+          ],
+          "confidence": 0.83108,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$32",
+          "bbox": [
+            [
+              496.0,
+              406.0
+            ],
+            [
+              606.0,
+              406.0
+            ],
+            [
+              606.0,
+              464.0
+            ],
+            [
+              496.0,
+              464.0
+            ]
+          ],
+          "confidence": 0.99754,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "225",
+          "bbox": [
+            [
+              950.0,
+              372.0
+            ],
+            [
+              1118.0,
+              372.0
+            ],
+            [
+              1118.0,
+              470.0
+            ],
+            [
+              950.0,
+              470.0
+            ]
+          ],
+          "confidence": 0.95781,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "kWh",
+          "bbox": [
+            [
+              1100.0,
+              396.0
+            ],
+            [
+              1176.0,
+              396.0
+            ],
+            [
+              1176.0,
+              440.0
+            ],
+            [
+              1100.0,
+              440.0
+            ]
+          ],
+          "confidence": 0.99522,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "per year / par année",
+          "bbox": [
+            [
+              1100.0,
+              428.0
+            ],
+            [
+              1228.0,
+              428.0
+            ],
+            [
+              1228.0,
+              450.0
+            ],
+            [
+              1100.0,
+              450.0
+            ]
+          ],
+          "confidence": 0.94922,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "t21",
+          "bbox": [
+            [
+              376.0,
+              494.0
+            ],
+            [
+              398.0,
+              494.0
+            ],
+            [
+              398.0,
+              514.0
+            ],
+            [
+              376.0,
+              514.0
+            ]
+          ],
+          "confidence": 0.61749,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "541",
+          "bbox": [
+            [
+              686.0,
+              494.0
+            ],
+            [
+              708.0,
+              494.0
+            ],
+            [
+              708.0,
+              514.0
+            ],
+            [
+              686.0,
+              514.0
+            ]
+          ],
+          "confidence": 0.68103,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Uses least energy /",
+          "bbox": [
+            [
+              918.0,
+              506.0
+            ],
+            [
+              1040.0,
+              506.0
+            ],
+            [
+              1040.0,
+              530.0
+            ],
+            [
+              918.0,
+              530.0
+            ]
+          ],
+          "confidence": 0.93796,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "200 kWh",
+          "bbox": [
+            [
+              924.0,
+              488.0
+            ],
+            [
+              972.0,
+              488.0
+            ],
+            [
+              972.0,
+              504.0
+            ],
+            [
+              924.0,
+              504.0
+            ]
+          ],
+          "confidence": 0.89112,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Uses most energy /",
+          "bbox": [
+            [
+              1132.0,
+              508.0
+            ],
+            [
+              1254.0,
+              508.0
+            ],
+            [
+              1254.0,
+              530.0
+            ],
+            [
+              1132.0,
+              530.0
+            ]
+          ],
+          "confidence": 0.92831,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Consomme le plus",
+          "bbox": [
+            [
+              1134.0,
+              518.0
+            ],
+            [
+              1252.0,
+              522.0
+            ],
+            [
+              1252.0,
+              544.0
+            ],
+            [
+              1132.0,
+              540.0
+            ]
+          ],
+          "confidence": 0.94904,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "d'énergie",
+          "bbox": [
+            [
+              1188.0,
+              536.0
+            ],
+            [
+              1250.0,
+              536.0
+            ],
+            [
+              1250.0,
+              554.0
+            ],
+            [
+              1188.0,
+              554.0
+            ]
+          ],
+          "confidence": 0.98252,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "307 kW",
+          "bbox": [
+            [
+              1198.0,
+              488.0
+            ],
+            [
+              1248.0,
+              488.0
+            ],
+            [
+              1248.0,
+              506.0
+            ],
+            [
+              1198.0,
+              506.0
+            ]
+          ],
+          "confidence": 0.80328,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "225 kW",
+          "bbox": [
+            [
+              388.0,
+              558.0
+            ],
+            [
+              508.0,
+              564.0
+            ],
+            [
+              504.0,
+              610.0
+            ],
+            [
+              386.0,
+              604.0
+            ]
+          ],
+          "confidence": 0.80986,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$22",
+          "bbox": [
+            [
+              600.0,
+              558.0
+            ],
+            [
+              682.0,
+              558.0
+            ],
+            [
+              682.0,
+              600.0
+            ],
+            [
+              600.0,
+              600.0
+            ]
+          ],
+          "confidence": 0.87001,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estineated Yearly Erwrgy Cest",
+          "bbox": [
+            [
+              570.0,
+              598.0
+            ],
+            [
+              718.0,
+              598.0
+            ],
+            [
+              718.0,
+              620.0
+            ],
+            [
+              570.0,
+              620.0
+            ]
+          ],
+          "confidence": 0.88702,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Your cost will depend on your utility rates and use.",
+          "bbox": [
+            [
+              356.0,
+              640.0
+            ],
+            [
+              672.0,
+              640.0
+            ],
+            [
+              672.0,
+              666.0
+            ],
+            [
+              356.0,
+              666.0
+            ]
+          ],
+          "confidence": 0.95553,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGY STAR",
+          "bbox": [
+            [
+              596.0,
+              716.0
+            ],
+            [
+              668.0,
+              716.0
+            ],
+            [
+              668.0,
+              738.0
+            ],
+            [
+              596.0,
+              738.0
+            ]
+          ],
+          "confidence": 0.95814,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "[REMARK]",
+          "bbox": [
+            [
+              52.0,
+              996.0
+            ],
+            [
+              194.0,
+              996.0
+            ],
+            [
+              194.0,
+              1034.0
+            ],
+            [
+              52.0,
+              1034.0
+            ]
+          ],
+          "confidence": 0.99654,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "1. Size : W140 x H198 mm (Double-sided printing)",
+          "bbox": [
+            [
+              52.0,
+              1030.0
+            ],
+            [
+              776.0,
+              1034.0
+            ],
+            [
+              776.0,
+              1076.0
+            ],
+            [
+              50.0,
+              1072.0
+            ]
+          ],
+          "confidence": 0.97891,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "2. Metarial : Pound paper 180 gram",
+          "bbox": [
+            [
+              50.0,
+              1068.0
+            ],
+            [
+              552.0,
+              1072.0
+            ],
+            [
+              550.0,
+              1114.0
+            ],
+            [
+              50.0,
+              1110.0
+            ]
+          ],
+          "confidence": 0.97803,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "page-72dpi",
+        "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+        "page": 0,
+        "scale": 1,
+        "dpi": 72,
+        "clip_pdf_points": null,
+        "pixel_origin": [
+          0,
+          0
+        ],
+        "pixel_size": [
+          1684,
+          1191
+        ],
+        "png_sha256": "5d02ae2f60c827cadbd9184d3bc441168f1200ef2ff4d868333f6530ab46c24a",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "ENERGYGUIDE",
+          "bbox": [
+            [
+              352.0,
+              235.0
+            ],
+            [
+              739.0,
+              238.0
+            ],
+            [
+              738.0,
+              302.0
+            ],
+            [
+              351.0,
+              300.0
+            ]
+          ],
+          "confidence": 0.99299,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "U.S. Goverment",
+          "bbox": [
+            [
+              357.0,
+              226.0
+            ],
+            [
+              425.0,
+              226.0
+            ],
+            [
+              425.0,
+              240.0
+            ],
+            [
+              357.0,
+              240.0
+            ]
+          ],
+          "confidence": 0.95183,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Canadã",
+          "bbox": [
+            [
+              1044.0,
+              220.0
+            ],
+            [
+              1129.0,
+              220.0
+            ],
+            [
+              1129.0,
+              248.0
+            ],
+            [
+              1044.0,
+              248.0
+            ]
+          ],
+          "confidence": 0.89819,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENER",
+          "bbox": [
+            [
+              938.0,
+              265.0
+            ],
+            [
+              1073.0,
+              265.0
+            ],
+            [
+              1073.0,
+              314.0
+            ],
+            [
+              938.0,
+              314.0
+            ]
+          ],
+          "confidence": 0.99984,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "GUIDE",
+          "bbox": [
+            [
+              1048.0,
+              257.0
+            ],
+            [
+              1234.0,
+              257.0
+            ],
+            [
+              1234.0,
+              324.0
+            ],
+            [
+              1048.0,
+              324.0
+            ]
+          ],
+          "confidence": 0.9957,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Dishwasher",
+          "bbox": [
+            [
+              354.0,
+              301.0
+            ],
+            [
+              407.0,
+              301.0
+            ],
+            [
+              407.0,
+              318.0
+            ],
+            [
+              354.0,
+              318.0
+            ]
+          ],
+          "confidence": 0.9997,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Capacity: Standard",
+          "bbox": [
+            [
+              354.0,
+              313.0
+            ],
+            [
+              436.0,
+              313.0
+            ],
+            [
+              436.0,
+              330.0
+            ],
+            [
+              354.0,
+              330.0
+            ]
+          ],
+          "confidence": 0.99988,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Models DW90F8**0**",
+          "bbox": [
+            [
+              637.0,
+              318.0
+            ],
+            [
+              728.0,
+              316.0
+            ],
+            [
+              728.0,
+              333.0
+            ],
+            [
+              638.0,
+              335.0
+            ]
+          ],
+          "confidence": 0.9285,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Samsung",
+          "bbox": [
+            [
+              684.0,
+              306.0
+            ],
+            [
+              727.0,
+              308.0
+            ],
+            [
+              726.0,
+              323.0
+            ],
+            [
+              683.0,
+              321.0
+            ]
+          ],
+          "confidence": 0.99976,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Energy consumption / Consommation énergétique",
+          "bbox": [
+            [
+              921.0,
+              337.0
+            ],
+            [
+              1250.0,
+              337.0
+            ],
+            [
+              1250.0,
+              357.0
+            ],
+            [
+              921.0,
+              357.0
+            ]
+          ],
+          "confidence": 0.99884,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Energy Cost",
+          "bbox": [
+            [
+              445.0,
+              367.0
+            ],
+            [
+              641.0,
+              367.0
+            ],
+            [
+              641.0,
+              387.0
+            ],
+            [
+              445.0,
+              387.0
+            ]
+          ],
+          "confidence": 0.99502,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "225",
+          "bbox": [
+            [
+              954.0,
+              369.0
+            ],
+            [
+              1115.0,
+              374.0
+            ],
+            [
+              1112.0,
+              468.0
+            ],
+            [
+              952.0,
+              464.0
+            ]
+          ],
+          "confidence": 0.97459,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "(when used with an electric water heater)",
+          "bbox": [
+            [
+              451.0,
+              383.0
+            ],
+            [
+              633.0,
+              383.0
+            ],
+            [
+              633.0,
+              399.0
+            ],
+            [
+              451.0,
+              399.0
+            ]
+          ],
+          "confidence": 0.98643,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$32",
+          "bbox": [
+            [
+              494.0,
+              406.0
+            ],
+            [
+              605.0,
+              402.0
+            ],
+            [
+              607.0,
+              465.0
+            ],
+            [
+              496.0,
+              469.0
+            ]
+          ],
+          "confidence": 0.99992,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "kWh",
+          "bbox": [
+            [
+              1098.0,
+              399.0
+            ],
+            [
+              1179.0,
+              399.0
+            ],
+            [
+              1179.0,
+              441.0
+            ],
+            [
+              1098.0,
+              441.0
+            ]
+          ],
+          "confidence": 0.94882,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "per year/ par année",
+          "bbox": [
+            [
+              1099.0,
+              432.0
+            ],
+            [
+              1230.0,
+              429.0
+            ],
+            [
+              1230.0,
+              450.0
+            ],
+            [
+              1099.0,
+              452.0
+            ]
+          ],
+          "confidence": 0.99087,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "This model / Ce modèle",
+          "bbox": [
+            [
+              1058.0,
+              447.0
+            ],
+            [
+              1149.0,
+              447.0
+            ],
+            [
+              1149.0,
+              461.0
+            ],
+            [
+              1058.0,
+              461.0
+            ]
+          ],
+          "confidence": 0.99261,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$21",
+          "bbox": [
+            [
+              377.0,
+              495.0
+            ],
+            [
+              398.0,
+              495.0
+            ],
+            [
+              398.0,
+              511.0
+            ],
+            [
+              377.0,
+              511.0
+            ]
+          ],
+          "confidence": 0.99947,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$41",
+          "bbox": [
+            [
+              686.0,
+              496.0
+            ],
+            [
+              707.0,
+              496.0
+            ],
+            [
+              707.0,
+              512.0
+            ],
+            [
+              686.0,
+              512.0
+            ]
+          ],
+          "confidence": 0.99992,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "200 kWh",
+          "bbox": [
+            [
+              923.0,
+              487.0
+            ],
+            [
+              972.0,
+              487.0
+            ],
+            [
+              972.0,
+              504.0
+            ],
+            [
+              923.0,
+              504.0
+            ]
+          ],
+          "confidence": 0.99895,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "307 kWh",
+          "bbox": [
+            [
+              1199.0,
+              487.0
+            ],
+            [
+              1249.0,
+              487.0
+            ],
+            [
+              1249.0,
+              504.0
+            ],
+            [
+              1199.0,
+              504.0
+            ]
+          ],
+          "confidence": 0.96405,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Cost Range of Similar Models",
+          "bbox": [
+            [
+              477.0,
+              510.0
+            ],
+            [
+              610.0,
+              510.0
+            ],
+            [
+              610.0,
+              526.0
+            ],
+            [
+              477.0,
+              526.0
+            ]
+          ],
+          "confidence": 0.99993,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Uses least energy/",
+          "bbox": [
+            [
+              921.0,
+              509.0
+            ],
+            [
+              1038.0,
+              510.0
+            ],
+            [
+              1038.0,
+              527.0
+            ],
+            [
+              920.0,
+              526.0
+            ]
+          ],
+          "confidence": 0.99896,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Uses most energy /",
+          "bbox": [
+            [
+              1134.0,
+              510.0
+            ],
+            [
+              1251.0,
+              510.0
+            ],
+            [
+              1251.0,
+              527.0
+            ],
+            [
+              1134.0,
+              527.0
+            ]
+          ],
+          "confidence": 0.97355,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Consomme le moins",
+          "bbox": [
+            [
+              921.0,
+              522.0
+            ],
+            [
+              1045.0,
+              522.0
+            ],
+            [
+              1045.0,
+              539.0
+            ],
+            [
+              921.0,
+              539.0
+            ]
+          ],
+          "confidence": 0.99415,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Consomme le plus",
+          "bbox": [
+            [
+              1137.0,
+              522.0
+            ],
+            [
+              1250.0,
+              522.0
+            ],
+            [
+              1250.0,
+              539.0
+            ],
+            [
+              1137.0,
+              539.0
+            ]
+          ],
+          "confidence": 0.99768,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "d'énergie",
+          "bbox": [
+            [
+              920.0,
+              535.0
+            ],
+            [
+              981.0,
+              535.0
+            ],
+            [
+              981.0,
+              552.0
+            ],
+            [
+              920.0,
+              552.0
+            ]
+          ],
+          "confidence": 0.9937,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "d'énergie",
+          "bbox": [
+            [
+              1190.0,
+              535.0
+            ],
+            [
+              1251.0,
+              535.0
+            ],
+            [
+              1251.0,
+              552.0
+            ],
+            [
+              1190.0,
+              552.0
+            ]
+          ],
+          "confidence": 0.99531,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "225",
+          "bbox": [
+            [
+              390.0,
+              564.0
+            ],
+            [
+              473.0,
+              564.0
+            ],
+            [
+              473.0,
+              604.0
+            ],
+            [
+              390.0,
+              604.0
+            ]
+          ],
+          "confidence": 1.0,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "$22",
+          "bbox": [
+            [
+              602.0,
+              559.0
+            ],
+            [
+              679.0,
+              559.0
+            ],
+            [
+              679.0,
+              601.0
+            ],
+            [
+              602.0,
+              601.0
+            ]
+          ],
+          "confidence": 0.99991,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Similar models",
+          "bbox": [
+            [
+              921.0,
+              556.0
+            ],
+            [
+              990.0,
+              556.0
+            ],
+            [
+              990.0,
+              570.0
+            ],
+            [
+              921.0,
+              570.0
+            ]
+          ],
+          "confidence": 0.99976,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "compared",
+          "bbox": [
+            [
+              921.0,
+              567.0
+            ],
+            [
+              970.0,
+              567.0
+            ],
+            [
+              970.0,
+              581.0
+            ],
+            [
+              921.0,
+              581.0
+            ]
+          ],
+          "confidence": 0.99999,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Standard / Ordinaires",
+          "bbox": [
+            [
+              1032.0,
+              561.0
+            ],
+            [
+              1136.0,
+              561.0
+            ],
+            [
+              1136.0,
+              577.0
+            ],
+            [
+              1032.0,
+              577.0
+            ]
+          ],
+          "confidence": 0.97006,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Built-in / Encastrés",
+          "bbox": [
+            [
+              1035.0,
+              552.0
+            ],
+            [
+              1127.0,
+              552.0
+            ],
+            [
+              1127.0,
+              566.0
+            ],
+            [
+              1035.0,
+              566.0
+            ]
+          ],
+          "confidence": 0.96351,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Modèles similaires",
+          "bbox": [
+            [
+              1171.0,
+              555.0
+            ],
+            [
+              1255.0,
+              557.0
+            ],
+            [
+              1255.0,
+              571.0
+            ],
+            [
+              1171.0,
+              569.0
+            ]
+          ],
+          "confidence": 0.98709,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "comparés",
+          "bbox": [
+            [
+              1207.0,
+              567.0
+            ],
+            [
+              1256.0,
+              567.0
+            ],
+            [
+              1256.0,
+              581.0
+            ],
+            [
+              1207.0,
+              581.0
+            ]
+          ],
+          "confidence": 0.99918,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "kWh",
+          "bbox": [
+            [
+              469.0,
+              579.0
+            ],
+            [
+              499.0,
+              579.0
+            ],
+            [
+              499.0,
+              599.0
+            ],
+            [
+              469.0,
+              599.0
+            ]
+          ],
+          "confidence": 0.98974,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Model number",
+          "bbox": [
+            [
+              922.0,
+              583.0
+            ],
+            [
+              989.0,
+              583.0
+            ],
+            [
+              989.0,
+              598.0
+            ],
+            [
+              922.0,
+              598.0
+            ]
+          ],
+          "confidence": 0.99985,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "DW90F8**0***",
+          "bbox": [
+            [
+              1042.0,
+              584.0
+            ],
+            [
+              1121.0,
+              581.0
+            ],
+            [
+              1121.0,
+              598.0
+            ],
+            [
+              1043.0,
+              601.0
+            ]
+          ],
+          "confidence": 0.9399,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Numéro du modèle",
+          "bbox": [
+            [
+              1170.0,
+              584.0
+            ],
+            [
+              1256.0,
+              584.0
+            ],
+            [
+              1256.0,
+              599.0
+            ],
+            [
+              1170.0,
+              599.0
+            ]
+          ],
+          "confidence": 0.99978,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Electricity Use",
+          "bbox": [
+            [
+              366.0,
+              604.0
+            ],
+            [
+              521.0,
+              604.0
+            ],
+            [
+              521.0,
+              621.0
+            ],
+            [
+              366.0,
+              621.0
+            ]
+          ],
+          "confidence": 0.99993,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Estimated Yearly Energy Cost",
+          "bbox": [
+            [
+              572.0,
+              601.0
+            ],
+            [
+              717.0,
+              601.0
+            ],
+            [
+              717.0,
+              618.0
+            ],
+            [
+              572.0,
+              618.0
+            ]
+          ],
+          "confidence": 0.9999,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Enlever cette étiquette avant le premier achat au détail constitue une infraction (LC. 1992, ch. 36).",
+          "bbox": [
+            [
+              929.0,
+              611.0
+            ],
+            [
+              1238.0,
+              611.0
+            ],
+            [
+              1238.0,
+              624.0
+            ],
+            [
+              929.0,
+              624.0
+            ]
+          ],
+          "confidence": 0.95411,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Removal of this label before first retail purchase is an oflence (S.C. 1992, c. 36).",
+          "bbox": [
+            [
+              957.0,
+              604.0
+            ],
+            [
+              1209.0,
+              604.0
+            ],
+            [
+              1209.0,
+              617.0
+            ],
+            [
+              957.0,
+              617.0
+            ]
+          ],
+          "confidence": 0.98036,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Your cost will depend on your utility rates and use.",
+          "bbox": [
+            [
+              358.0,
+              643.0
+            ],
+            [
+              670.0,
+              643.0
+            ],
+            [
+              670.0,
+              663.0
+            ],
+            [
+              358.0,
+              663.0
+            ]
+          ],
+          "confidence": 0.9951,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "EnerGuide raing to determine how this appliance compares to other",
+          "bbox": [
+            [
+              1011.0,
+              665.0
+            ],
+            [
+              1229.0,
+              666.0
+            ],
+            [
+              1229.0,
+              683.0
+            ],
+            [
+              1011.0,
+              682.0
+            ]
+          ],
+          "confidence": 0.92469,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "exceeds the Govemment of Canada's high efticency levels. Use the",
+          "bbox": [
+            [
+              1012.0,
+              658.0
+            ],
+            [
+              1227.0,
+              658.0
+            ],
+            [
+              1227.0,
+              674.0
+            ],
+            [
+              1012.0,
+              674.0
+            ]
+          ],
+          "confidence": 0.92148,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "The ENERGY STAR* mark on this EnerGuide label signifies that this",
+          "bbox": [
+            [
+              1013.0,
+              643.0
+            ],
+            [
+              1223.0,
+              643.0
+            ],
+            [
+              1223.0,
+              656.0
+            ],
+            [
+              1013.0,
+              656.0
+            ]
+          ],
+          "confidence": 0.99066,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "DD68-00152Q-00",
+          "bbox": [
+            [
+              1263.0,
+              645.0
+            ],
+            [
+              1277.0,
+              645.0
+            ],
+            [
+              1277.0,
+              704.0
+            ],
+            [
+              1263.0,
+              704.0
+            ]
+          ],
+          "confidence": 0.97578,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "● Cost range based only on standard capacity models.",
+          "bbox": [
+            [
+              359.0,
+              678.0
+            ],
+            [
+              545.0,
+              678.0
+            ],
+            [
+              545.0,
+              694.0
+            ],
+            [
+              359.0,
+              694.0
+            ]
+          ],
+          "confidence": 0.98783,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "● Estimated energy cost based on four wash loads a week and",
+          "bbox": [
+            [
+              360.0,
+              691.0
+            ],
+            [
+              568.0,
+              691.0
+            ],
+            [
+              568.0,
+              704.0
+            ],
+            [
+              360.0,
+              704.0
+            ]
+          ],
+          "confidence": 0.98842,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "natural gas cost of $0.15 per them",
+          "bbox": [
+            [
+              368.0,
+              711.0
+            ],
+            [
+              483.0,
+              711.0
+            ],
+            [
+              483.0,
+              724.0
+            ],
+            [
+              368.0,
+              724.0
+            ]
+          ],
+          "confidence": 0.99397,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGY STAR",
+          "bbox": [
+            [
+              595.0,
+              718.0
+            ],
+            [
+              670.0,
+              718.0
+            ],
+            [
+              670.0,
+              738.0
+            ],
+            [
+              595.0,
+              738.0
+            ]
+          ],
+          "confidence": 0.99947,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "MIGGIEIECENCY",
+          "bbox": [
+            [
+              942.0,
+              701.0
+            ],
+            [
+              1002.0,
+              703.0
+            ],
+            [
+              1001.0,
+              720.0
+            ],
+            [
+              941.0,
+              718.0
+            ]
+          ],
+          "confidence": 0.51083,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "HAUTE EFFICACITÉ",
+          "bbox": [
+            [
+              942.0,
+              715.0
+            ],
+            [
+              1002.0,
+              715.0
+            ],
+            [
+              1002.0,
+              729.0
+            ],
+            [
+              942.0,
+              729.0
+            ]
+          ],
+          "confidence": 0.997,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ENERGY STAR",
+          "bbox": [
+            [
+              943.0,
+              692.0
+            ],
+            [
+              1002.0,
+              692.0
+            ],
+            [
+              1002.0,
+              706.0
+            ],
+            [
+              943.0,
+              706.0
+            ]
+          ],
+          "confidence": 0.99966,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "sastait u dépasse les nveux de haute eficacité du gouvernement",
+          "bbox": [
+            [
+              1012.0,
+              701.0
+            ],
+            [
+              1231.0,
+              701.0
+            ],
+            [
+              1231.0,
+              717.0
+            ],
+            [
+              1012.0,
+              717.0
+            ]
+          ],
+          "confidence": 0.64554,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "du Canada. Utilisez la cote EnerGuide atin de comparer le rendement",
+          "bbox": [
+            [
+              1012.0,
+              710.0
+            ],
+            [
+              1232.0,
+              711.0
+            ],
+            [
+              1232.0,
+              725.0
+            ],
+            [
+              1012.0,
+              724.0
+            ]
+          ],
+          "confidence": 0.9154,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ss saol sae, o cae de a",
+          "bbox": [
+            [
+              1012.0,
+              720.0
+            ],
+            [
+              1176.0,
+              720.0
+            ],
+            [
+              1176.0,
+              733.0
+            ],
+            [
+              1012.0,
+              733.0
+            ]
+          ],
+          "confidence": 0.52701,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "similar models.",
+          "bbox": [
+            [
+              1013.0,
+              676.0
+            ],
+            [
+              1063.0,
+              676.0
+            ],
+            [
+              1063.0,
+              689.0
+            ],
+            [
+              1013.0,
+              689.0
+            ]
+          ],
+          "confidence": 0.99657,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "La marque ENERGY STAR* sur cette étiquette ÉnerGuide signifie",
+          "bbox": [
+            [
+              1013.0,
+              687.0
+            ],
+            [
+              1215.0,
+              687.0
+            ],
+            [
+              1215.0,
+              700.0
+            ],
+            [
+              1013.0,
+              700.0
+            ]
+          ],
+          "confidence": 0.98085,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "[REMARK]",
+          "bbox": [
+            [
+              54.0,
+              998.0
+            ],
+            [
+              192.0,
+              998.0
+            ],
+            [
+              192.0,
+              1032.0
+            ],
+            [
+              54.0,
+              1032.0
+            ]
+          ],
+          "confidence": 0.99994,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "1. Size : W140 x H198 mm (Double-sided printing)",
+          "bbox": [
+            [
+              55.0,
+              1031.0
+            ],
+            [
+              773.0,
+              1035.0
+            ],
+            [
+              772.0,
+              1074.0
+            ],
+            [
+              55.0,
+              1070.0
+            ]
+          ],
+          "confidence": 0.99827,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "2. Metarial : Pound paper 180 gram",
+          "bbox": [
+            [
+              52.0,
+              1072.0
+            ],
+            [
+              549.0,
+              1075.0
+            ],
+            [
+              549.0,
+              1113.0
+            ],
+            [
+              52.0,
+              1109.0
+            ]
+          ],
+          "confidence": 0.98482,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "model-roi-0",
+        "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+        "page": 0,
+        "scale": 3,
+        "dpi": 216,
+        "clip_pdf_points": [
+          624.7592163085938,
+          304.51708984375,
+          741.7932739257812,
+          347.65692138671875
+        ],
+        "pixel_origin": [
+          1874,
+          913
+        ],
+        "pixel_size": [
+          352,
+          130
+        ],
+        "png_sha256": "babd964790dc7300a1d73b5330cd3863f0d68d82c0715946665ee7823daf883a",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "Samsung",
+          "bbox": [
+            [
+              686.0,
+              308.3333333333333
+            ],
+            [
+              726.3333333333333,
+              309.66666666666663
+            ],
+            [
+              726.0,
+              322.3333333333333
+            ],
+            [
+              685.6666666666666,
+              321.0
+            ]
+          ],
+          "confidence": 0.99996,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Models DW90F8**0***",
+          "bbox": [
+            [
+              639.6666666666666,
+              320.0
+            ],
+            [
+              727.6666666666666,
+              319.3333333333333
+            ],
+            [
+              728.0,
+              332.66666666666663
+            ],
+            [
+              640.0,
+              333.66666666666663
+            ]
+          ],
+          "confidence": 0.98101,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "model-roi-1",
+        "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+        "page": 0,
+        "scale": 3,
+        "dpi": 216,
+        "clip_pdf_points": [
+          1027.9403076171875,
+          566.739990234375,
+          1137.3238525390625,
+          614.955322265625
+        ],
+        "pixel_origin": [
+          3083,
+          1700
+        ],
+        "pixel_size": [
+          329,
+          145
+        ],
+        "png_sha256": "7dfff5dfebdecaa91910fbf9e494b0d59d9a9265c136b9b67a9db8058d8898c3",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "Standard 7 Ordinaires",
+          "bbox": [
+            [
+              1033.3333333333335,
+              566.6666666666666
+            ],
+            [
+              1133.0,
+              566.6666666666666
+            ],
+            [
+              1133.0,
+              574.6666666666666
+            ],
+            [
+              1033.3333333333335,
+              575.0
+            ]
+          ],
+          "confidence": 0.97437,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "DW90F8**0***",
+          "bbox": [
+            [
+              1045.6666666666667,
+              584.6666666666666
+            ],
+            [
+              1120.6666666666667,
+              584.3333333333333
+            ],
+            [
+              1120.6666666666667,
+              598.3333333333333
+            ],
+            [
+              1045.6666666666667,
+              598.3333333333333
+            ]
+          ],
+          "confidence": 0.99979,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "before first retail purchase is an offe",
+          "bbox": [
+            [
+              1027.6666666666667,
+              606.0
+            ],
+            [
+              1137.0,
+              606.0
+            ],
+            [
+              1137.0,
+              614.6666666666666
+            ],
+            [
+              1027.6666666666667,
+              614.6666666666666
+            ]
+          ],
+          "confidence": 0.98493,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "model-roi-2",
+        "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+        "page": 0,
+        "scale": 3,
+        "dpi": 216,
+        "clip_pdf_points": [
+          663.9577026367188,
+          584.5035400390625,
+          794.2640991210938,
+          762.1385498046875
+        ],
+        "pixel_origin": [
+          1991,
+          1753
+        ],
+        "pixel_size": [
+          392,
+          534
+        ],
+        "png_sha256": "21c8f4f05a568d58f16021a0dd22006bdd4c263bec388b436ba1cd483381ddf2",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "nergy Cost",
+          "bbox": [
+            [
+              663.6666666666666,
+              602.3333333333334
+            ],
+            [
+              716.0,
+              601.3333333333334
+            ],
+            [
+              716.3333333333333,
+              617.0
+            ],
+            [
+              663.6666666666666,
+              617.6666666666667
+            ]
+          ],
+          "confidence": 0.98327,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "as water heater)",
+          "bbox": [
+            [
+              663.6666666666666,
+              614.6666666666667
+            ],
+            [
+              712.6666666666666,
+              615.0
+            ],
+            [
+              712.3333333333333,
+              624.6666666666667
+            ],
+            [
+              663.6666666666666,
+              624.3333333333334
+            ]
+          ],
+          "confidence": 0.99991,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "DD68-00152Q-00",
+          "bbox": [
+            [
+              725.0,
+              645.6666666666667
+            ],
+            [
+              733.3333333333333,
+              645.6666666666667
+            ],
+            [
+              733.3333333333333,
+              702.3333333333334
+            ],
+            [
+              725.0,
+              702.3333333333334
+            ]
+          ],
+          "confidence": 0.99997,
+          "engine": "RapidOCR"
+        }
+      ]
+    },
+    {
+      "render": {
+        "name": "model-roi-3",
+        "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+        "page": 0,
+        "scale": 3,
+        "dpi": 216,
+        "clip_pdf_points": [
+          1202.0966186523438,
+          583.65771484375,
+          1335.7864379882812,
+          766.3678588867188
+        ],
+        "pixel_origin": [
+          3606,
+          1750
+        ],
+        "pixel_size": [
+          402,
+          550
+        ],
+        "png_sha256": "131a594183789295bf6f66dbaaf93ee1e000b430dc0c3dc691c9e8a653f241e1",
+        "transformation": "PDF render at stated scale; no glyph correction"
+      },
+      "spans": [
+        {
+          "page": 0,
+          "text": "o du modèle",
+          "bbox": [
+            [
+              1202.0,
+              586.0
+            ],
+            [
+              1254.3333333333333,
+              586.0
+            ],
+            [
+              1254.3333333333333,
+              596.6666666666667
+            ],
+            [
+              1202.0,
+              596.6666666666667
+            ]
+          ],
+          "confidence": 0.99935,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "6).",
+          "bbox": [
+            [
+              1202.0,
+              606.0
+            ],
+            [
+              1210.0,
+              606.0
+            ],
+            [
+              1210.0,
+              615.0
+            ],
+            [
+              1202.0,
+              615.0
+            ]
+          ],
+          "confidence": 0.96286,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "92, ch. 36).",
+          "bbox": [
+            [
+              1202.0,
+              613.0
+            ],
+            [
+              1237.0,
+              613.0
+            ],
+            [
+              1237.0,
+              622.6666666666667
+            ],
+            [
+              1202.0,
+              622.6666666666667
+            ]
+          ],
+          "confidence": 0.99409,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "at this",
+          "bbox": [
+            [
+              1202.0,
+              644.3333333333334
+            ],
+            [
+              1222.0,
+              644.3333333333334
+            ],
+            [
+              1222.0,
+              654.3333333333334
+            ],
+            [
+              1202.0,
+              654.3333333333334
+            ]
+          ],
+          "confidence": 0.99998,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "DD68-00152Q-00",
+          "bbox": [
+            [
+              1266.0,
+              646.6666666666667
+            ],
+            [
+              1274.3333333333333,
+              646.6666666666667
+            ],
+            [
+              1274.3333333333333,
+              703.6666666666667
+            ],
+            [
+              1266.0,
+              703.6666666666667
+            ]
+          ],
+          "confidence": 0.99998,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ts or",
+          "bbox": [
+            [
+              1202.0,
+              653.3333333333334
+            ],
+            [
+              1217.0,
+              653.3333333333334
+            ],
+            [
+              1217.0,
+              662.3333333333334
+            ],
+            [
+              1202.0,
+              662.3333333333334
+            ]
+          ],
+          "confidence": 0.99989,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "Jse the",
+          "bbox": [
+            [
+              1202.0,
+              661.3333333333334
+            ],
+            [
+              1225.3333333333333,
+              661.3333333333334
+            ],
+            [
+              1225.3333333333333,
+              670.3333333333334
+            ],
+            [
+              1202.0,
+              670.3333333333334
+            ]
+          ],
+          "confidence": 0.98871,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "to other",
+          "bbox": [
+            [
+              1202.0,
+              669.6666666666667
+            ],
+            [
+              1227.0,
+              669.6666666666667
+            ],
+            [
+              1227.0,
+              678.6666666666667
+            ],
+            [
+              1202.0,
+              678.6666666666667
+            ]
+          ],
+          "confidence": 0.9998,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "nifie",
+          "bbox": [
+            [
+              1202.0,
+              688.6666666666667
+            ],
+            [
+              1214.0,
+              688.6666666666667
+            ],
+            [
+              1214.0,
+              698.3333333333334
+            ],
+            [
+              1202.0,
+              698.3333333333334
+            ]
+          ],
+          "confidence": 0.91411,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "gétique",
+          "bbox": [
+            [
+              1202.0,
+              697.3333333333334
+            ],
+            [
+              1223.3333333333333,
+              697.3333333333334
+            ],
+            [
+              1223.3333333333333,
+              707.0
+            ],
+            [
+              1202.0,
+              707.0
+            ]
+          ],
+          "confidence": 0.92362,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "rnement",
+          "bbox": [
+            [
+              1202.0,
+              706.0
+            ],
+            [
+              1229.3333333333333,
+              706.0
+            ],
+            [
+              1229.3333333333333,
+              714.3333333333334
+            ],
+            [
+              1202.0,
+              714.3333333333334
+            ]
+          ],
+          "confidence": 0.99996,
+          "engine": "RapidOCR"
+        },
+        {
+          "page": 0,
+          "text": "ndement",
+          "bbox": [
+            [
+              1202.0,
+              714.0
+            ],
+            [
+              1231.0,
+              714.0
+            ],
+            [
+              1231.0,
+              723.0
+            ],
+            [
+              1202.0,
+              723.0
+            ]
+          ],
+          "confidence": 0.99998,
+          "engine": "RapidOCR"
+        }
+      ]
+    }
+  ]
+}
