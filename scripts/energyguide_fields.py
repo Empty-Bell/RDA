@@ -51,3 +51,41 @@ def label_candidates(text, engine, pdf_sha256):
             'standalone_numeric_candidates_raw':standalone,'annual_caption_lines_raw':captions,
             'annual_value_selection':'NOT_EVALUATED','identity_matching':'NOT_EVALUATED',
             'wildcard_correction':'NOT_APPLIED','compliance':'NOT_EVALUATED'}
+
+
+def annual_layout_candidates(spans, pdf_sha256):
+    """Proposed descriptor/unit association in PDF coordinates, never final selection."""
+    def rect(span):
+        box = span['bbox']
+        if len(box)==4 and isinstance(box[0],(int,float)):return box
+        return [min(p[0] for p in box),min(p[1] for p in box),max(p[0] for p in box),max(p[1] for p in box)]
+    def gap(a,b):return max(a[0]-b[2],b[0]-a[2],0),max(a[1]-b[3],b[1]-a[3],0)
+    captions = [(i,s,rect(s)) for i,s in enumerate(spans) if ANNUAL.search(s['text'])]
+    units = [(i,s,rect(s)) for i,s in enumerate(spans) if re.fullmatch(r'\s*kwh\s*',s['text'],re.I)]
+    result=[]
+    for caption_index,caption,box in captions:
+        proposals=[]
+        for index,span in enumerate(spans):
+            if span['page']!=caption['page']:continue
+            matches=list(ENERGY.finditer(span['text']))
+            standalone=re.fullmatch(r'\s*(\d+(?:[.,]\d+)?)\s*',span['text'])
+            if not matches and not standalone:continue
+            candidate_box=rect(span)
+            height=max(candidate_box[3]-candidate_box[1],box[3]-box[1],1)
+            dx,dy=gap(candidate_box,box)
+            if dx>0 or dy>8*height:continue
+            unit_index=index if matches else None
+            if standalone:
+                nearby=[(j,u) for j,u,u_box in units if u['page']==span['page']
+                        and gap(candidate_box,u_box)[0]<=2*height and gap(candidate_box,u_box)[1]<=2*height]
+                if len(nearby)!=1:continue
+                unit_index=nearby[0][0]
+            values=[m['value'] for m in matches] if matches else [standalone[1]]
+            for value in values:
+                proposals.append({'value_raw':value,'number_detection':index,'unit_detection':unit_index,
+                                  'distance_pdf_points':abs((candidate_box[1]+candidate_box[3]-box[1]-box[3])/2)})
+        proposals.sort(key=lambda p:p['distance_pdf_points'])
+        result.append({'page':caption['page'],'caption_detection':caption_index,'caption_raw':caption['text'],
+                       'proposals_raw':proposals,'nearest_proposal_raw':proposals[0] if proposals else None})
+    return {'pdf_sha256':pdf_sha256,'annual_layout_candidates':result,
+            'field_selection':'NOT_EVALUATED','method':'caption overlap, nearby unit, nearest vertical distance; candidate only'}

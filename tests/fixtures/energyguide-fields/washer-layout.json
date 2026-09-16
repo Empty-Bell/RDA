@@ -1,0 +1,725 @@
+{
+  "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+  "spans": [
+    {
+      "page": 0,
+      "text": "U.S. Government",
+      "bbox": [
+        [
+          11.0,
+          6.5
+        ],
+        [
+          79.0,
+          7.5
+        ],
+        [
+          78.5,
+          20.0
+        ],
+        [
+          11.0,
+          18.5
+        ]
+      ],
+      "confidence": 0.97387,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Federal law prohibits removal of this label before consumer purchase.",
+      "bbox": [
+        [
+          157.5,
+          10.0
+        ],
+        [
+          385.5,
+          10.0
+        ],
+        [
+          385.5,
+          20.0
+        ],
+        [
+          157.5,
+          20.0
+        ]
+      ],
+      "confidence": 0.99391,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "ENERGYGUIDE",
+      "bbox": [
+        [
+          6.0,
+          18.0
+        ],
+        [
+          394.5,
+          16.0
+        ],
+        [
+          394.5,
+          83.5
+        ],
+        [
+          6.0,
+          85.0
+        ]
+      ],
+      "confidence": 0.99958,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Clothes Washer",
+      "bbox": [
+        [
+          10.5,
+          82.0
+        ],
+        [
+          76.0,
+          83.0
+        ],
+        [
+          75.5,
+          95.0
+        ],
+        [
+          10.5,
+          94.0
+        ]
+      ],
+      "confidence": 0.99934,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Samsung",
+      "bbox": [
+        [
+          344.5,
+          83.5
+        ],
+        [
+          384.5,
+          84.5
+        ],
+        [
+          384.5,
+          97.5
+        ],
+        [
+          344.0,
+          96.0
+        ]
+      ],
+      "confidence": 0.99994,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Capacity Class: Standard",
+      "bbox": [
+        [
+          11.0,
+          96.5
+        ],
+        [
+          112.5,
+          96.5
+        ],
+        [
+          112.5,
+          108.5
+        ],
+        [
+          11.0,
+          108.5
+        ]
+      ],
+      "confidence": 0.99983,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Models WD90F53AV*",
+      "bbox": [
+        [
+          299.5,
+          96.5
+        ],
+        [
+          385.0,
+          96.5
+        ],
+        [
+          385.0,
+          108.5
+        ],
+        [
+          299.5,
+          108.5
+        ]
+      ],
+      "confidence": 0.99934,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Capacity (tub volume): 5.3 cubic feet",
+      "bbox": [
+        [
+          239.5,
+          109.0
+        ],
+        [
+          385.0,
+          109.0
+        ],
+        [
+          385.0,
+          120.5
+        ],
+        [
+          239.5,
+          120.5
+        ]
+      ],
+      "confidence": 0.98772,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Compare ONLY to other labels with yellow numbers.",
+      "bbox": [
+        [
+          13.0,
+          155.0
+        ],
+        [
+          384.0,
+          156.0
+        ],
+        [
+          384.0,
+          175.5
+        ],
+        [
+          13.0,
+          174.5
+        ]
+      ],
+      "confidence": 0.99652,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Labels with yellow numbers are based on the same test procedures.",
+      "bbox": [
+        [
+          25.0,
+          175.0
+        ],
+        [
+          373.0,
+          175.0
+        ],
+        [
+          373.0,
+          190.0
+        ],
+        [
+          25.0,
+          190.0
+        ]
+      ],
+      "confidence": 0.99003,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Estimated Yearly Energy Cost",
+      "bbox": [
+        [
+          100.0,
+          212.5
+        ],
+        [
+          302.5,
+          212.5
+        ],
+        [
+          302.5,
+          232.5
+        ],
+        [
+          100.0,
+          232.5
+        ]
+      ],
+      "confidence": 0.99994,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "(when used with an electric water heater)",
+      "bbox": [
+        [
+          109.0,
+          229.5
+        ],
+        [
+          288.0,
+          230.5
+        ],
+        [
+          287.5,
+          243.5
+        ],
+        [
+          108.5,
+          242.5
+        ]
+      ],
+      "confidence": 0.99599,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$14",
+      "bbox": [
+        [
+          56.5,
+          248.5
+        ],
+        [
+          157.5,
+          248.5
+        ],
+        [
+          157.5,
+          297.5
+        ],
+        [
+          56.5,
+          297.5
+        ]
+      ],
+      "confidence": 0.99996,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$4",
+      "bbox": [
+        [
+          35.5,
+          332.5
+        ],
+        [
+          49.0,
+          332.5
+        ],
+        [
+          49.0,
+          345.0
+        ],
+        [
+          35.5,
+          345.0
+        ]
+      ],
+      "confidence": 0.99996,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Cost Range of Similar Models",
+      "bbox": [
+        [
+          130.5,
+          336.0
+        ],
+        [
+          261.0,
+          336.0
+        ],
+        [
+          261.0,
+          349.0
+        ],
+        [
+          130.5,
+          349.0
+        ]
+      ],
+      "confidence": 0.9808,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$48",
+      "bbox": [
+        [
+          347.0,
+          332.0
+        ],
+        [
+          366.0,
+          332.0
+        ],
+        [
+          366.0,
+          345.5
+        ],
+        [
+          347.0,
+          345.5
+        ]
+      ],
+      "confidence": 0.99998,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$11",
+      "bbox": [
+        [
+          260.0,
+          365.0
+        ],
+        [
+          335.5,
+          366.5
+        ],
+        [
+          334.5,
+          405.5
+        ],
+        [
+          259.0,
+          404.0
+        ]
+      ],
+      "confidence": 0.99997,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "103",
+      "bbox": [
+        [
+          50.5,
+          371.0
+        ],
+        [
+          126.5,
+          371.0
+        ],
+        [
+          126.5,
+          408.0
+        ],
+        [
+          50.5,
+          408.0
+        ]
+      ],
+      "confidence": 0.99997,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "kWh",
+      "bbox": [
+        [
+          124.5,
+          390.0
+        ],
+        [
+          153.5,
+          390.0
+        ],
+        [
+          153.5,
+          407.0
+        ],
+        [
+          124.5,
+          407.0
+        ]
+      ],
+      "confidence": 0.9998,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Estimated Yearly Energy Cost",
+      "bbox": [
+        [
+          225.0,
+          406.5
+        ],
+        [
+          368.5,
+          406.5
+        ],
+        [
+          368.5,
+          420.0
+        ],
+        [
+          225.0,
+          420.0
+        ]
+      ],
+      "confidence": 0.99823,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Estimated Yearly Electricity Use",
+      "bbox": [
+        [
+          25.0,
+          413.5
+        ],
+        [
+          178.5,
+          414.0
+        ],
+        [
+          178.5,
+          427.5
+        ],
+        [
+          25.0,
+          427.0
+        ]
+      ],
+      "confidence": 0.99958,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "(when used with a natural gas water heater)",
+      "bbox": [
+        [
+          219.5,
+          420.5
+        ],
+        [
+          372.5,
+          420.5
+        ],
+        [
+          372.5,
+          429.0
+        ],
+        [
+          219.5,
+          429.0
+        ]
+      ],
+      "confidence": 0.98504,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Your cost will depend on your utility rates and use.",
+      "bbox": [
+        [
+          12.5,
+          452.5
+        ],
+        [
+          195.5,
+          453.0
+        ],
+        [
+          195.5,
+          465.0
+        ],
+        [
+          12.5,
+          464.5
+        ]
+      ],
+      "confidence": 0.9864,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Cost range based only on standard capacity models.",
+      "bbox": [
+        [
+          12.5,
+          465.5
+        ],
+        [
+          188.0,
+          465.5
+        ],
+        [
+          188.0,
+          476.0
+        ],
+        [
+          12.5,
+          476.0
+        ]
+      ],
+      "confidence": 0.99786,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "energy",
+      "bbox": [
+        [
+          323.5,
+          471.0
+        ],
+        [
+          379.0,
+          473.0
+        ],
+        [
+          378.5,
+          492.5
+        ],
+        [
+          323.0,
+          491.0
+        ]
+      ],
+      "confidence": 0.98638,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Estimated energy cost based on six wash loads a week and a national average",
+      "bbox": [
+        [
+          14.0,
+          478.0
+        ],
+        [
+          268.5,
+          478.0
+        ],
+        [
+          268.5,
+          488.0
+        ],
+        [
+          14.0,
+          488.0
+        ]
+      ],
+      "confidence": 0.98397,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "electricity cost of 14 cents per kWh and natural gas cost of $1.21 per therm.",
+      "bbox": [
+        [
+          14.5,
+          488.5
+        ],
+        [
+          257.0,
+          488.5
+        ],
+        [
+          257.0,
+          498.5
+        ],
+        [
+          14.5,
+          498.5
+        ]
+      ],
+      "confidence": 0.99081,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "ENERGY STAR",
+      "bbox": [
+        [
+          321.0,
+          500.0
+        ],
+        [
+          382.0,
+          500.0
+        ],
+        [
+          382.0,
+          512.0
+        ],
+        [
+          321.0,
+          512.0
+        ]
+      ],
+      "confidence": 0.99976,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "ftc.gov/energy",
+      "bbox": [
+        [
+          155.0,
+          507.0
+        ],
+        [
+          236.5,
+          508.5
+        ],
+        [
+          236.0,
+          527.0
+        ],
+        [
+          154.5,
+          526.0
+        ]
+      ],
+      "confidence": 0.99552,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "DC68-04592A-00",
+      "bbox": [
+        [
+          269.5,
+          517.5
+        ],
+        [
+          311.0,
+          517.5
+        ],
+        [
+          311.0,
+          526.0
+        ],
+        [
+          269.5,
+          526.0
+        ]
+      ],
+      "confidence": 0.99987,
+      "engine": "RapidOCR"
+    }
+  ]
+}

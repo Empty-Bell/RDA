@@ -1,0 +1,773 @@
+{
+  "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+  "spans": [
+    {
+      "page": 0,
+      "text": "U.S. Government",
+      "bbox": [
+        [
+          65.5,
+          58.0
+        ],
+        [
+          166.5,
+          58.0
+        ],
+        [
+          166.5,
+          74.5
+        ],
+        [
+          65.5,
+          74.5
+        ]
+      ],
+      "confidence": 0.99871,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Federal law prohibits removal of this label before consumer purchase.",
+      "bbox": [
+        [
+          218.5,
+          59.5
+        ],
+        [
+          543.0,
+          60.5
+        ],
+        [
+          543.0,
+          75.5
+        ],
+        [
+          218.5,
+          74.5
+        ]
+      ],
+      "confidence": 0.98908,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "ENERGYGUIDE",
+      "bbox": [
+        [
+          49.0,
+          73.5
+        ],
+        [
+          552.5,
+          72.0
+        ],
+        [
+          553.0,
+          168.5
+        ],
+        [
+          49.5,
+          170.5
+        ]
+      ],
+      "confidence": 0.99871,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Refrigerator-Freezer",
+      "bbox": [
+        [
+          63.5,
+          159.0
+        ],
+        [
+          187.5,
+          159.0
+        ],
+        [
+          187.5,
+          175.5
+        ],
+        [
+          63.5,
+          175.5
+        ]
+      ],
+      "confidence": 0.99996,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Samsung",
+      "bbox": [
+        [
+          475.5,
+          159.0
+        ],
+        [
+          536.5,
+          160.0
+        ],
+        [
+          536.0,
+          177.0
+        ],
+        [
+          475.0,
+          175.5
+        ]
+      ],
+      "confidence": 0.99986,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Automatic Defrost",
+      "bbox": [
+        [
+          82.0,
+          176.0
+        ],
+        [
+          177.5,
+          176.0
+        ],
+        [
+          177.5,
+          189.0
+        ],
+        [
+          82.0,
+          189.0
+        ]
+      ],
+      "confidence": 0.99993,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Model RF29DB9900**",
+      "bbox": [
+        [
+          427.0,
+          176.0
+        ],
+        [
+          536.5,
+          174.5
+        ],
+        [
+          536.5,
+          190.0
+        ],
+        [
+          427.0,
+          191.0
+        ]
+      ],
+      "confidence": 0.99329,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Bottom-Mounted Freezer",
+      "bbox": [
+        [
+          83.0,
+          191.5
+        ],
+        [
+          210.0,
+          191.5
+        ],
+        [
+          210.0,
+          205.0
+        ],
+        [
+          83.0,
+          205.0
+        ]
+      ],
+      "confidence": 0.99984,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Capacity: 28.6 Cubic Feet",
+      "bbox": [
+        [
+          407.0,
+          192.5
+        ],
+        [
+          536.0,
+          192.5
+        ],
+        [
+          536.0,
+          206.0
+        ],
+        [
+          407.0,
+          206.0
+        ]
+      ],
+      "confidence": 0.99985,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "No Through-the-Door Ice",
+      "bbox": [
+        [
+          82.0,
+          207.0
+        ],
+        [
+          208.5,
+          207.0
+        ],
+        [
+          208.5,
+          220.5
+        ],
+        [
+          82.0,
+          220.5
+        ]
+      ],
+      "confidence": 0.99973,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Compare ONLY to other labels with yellow numbers.",
+      "bbox": [
+        [
+          85.5,
+          250.5
+        ],
+        [
+          518.0,
+          251.5
+        ],
+        [
+          518.0,
+          276.0
+        ],
+        [
+          85.5,
+          275.0
+        ]
+      ],
+      "confidence": 0.99341,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Labels with yellow numbers are based on the same test procedures.",
+      "bbox": [
+        [
+          81.0,
+          276.5
+        ],
+        [
+          524.0,
+          276.5
+        ],
+        [
+          524.0,
+          296.0
+        ],
+        [
+          81.0,
+          296.0
+        ]
+      ],
+      "confidence": 0.9979,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Estimated Yearly Energy Cost",
+      "bbox": [
+        [
+          175.0,
+          322.5
+        ],
+        [
+          426.5,
+          324.0
+        ],
+        [
+          426.5,
+          350.5
+        ],
+        [
+          175.0,
+          349.0
+        ]
+      ],
+      "confidence": 0.99353,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$98",
+      "bbox": [
+        [
+          237.5,
+          346.5
+        ],
+        [
+          361.0,
+          348.5
+        ],
+        [
+          360.0,
+          408.0
+        ],
+        [
+          236.5,
+          406.0
+        ]
+      ],
+      "confidence": 0.99999,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Cost Ranges",
+      "bbox": [
+        [
+          64.5,
+          425.0
+        ],
+        [
+          81.0,
+          425.0
+        ],
+        [
+          80.0,
+          490.5
+        ],
+        [
+          63.5,
+          490.5
+        ]
+      ],
+      "confidence": 0.99981,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Models with",
+      "bbox": [
+        [
+          88.0,
+          433.0
+        ],
+        [
+          145.5,
+          433.0
+        ],
+        [
+          145.5,
+          445.0
+        ],
+        [
+          88.0,
+          445.0
+        ]
+      ],
+      "confidence": 0.99996,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$91 $101",
+      "bbox": [
+        [
+          237.0,
+          431.0
+        ],
+        [
+          330.5,
+          432.0
+        ],
+        [
+          330.0,
+          456.5
+        ],
+        [
+          237.0,
+          455.0
+        ]
+      ],
+      "confidence": 0.98319,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "similar features",
+      "bbox": [
+        [
+          88.0,
+          447.0
+        ],
+        [
+          161.5,
+          447.0
+        ],
+        [
+          161.5,
+          458.5
+        ],
+        [
+          88.0,
+          458.5
+        ]
+      ],
+      "confidence": 0.99407,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$84",
+      "bbox": [
+        [
+          178.5,
+          459.5
+        ],
+        [
+          209.5,
+          459.5
+        ],
+        [
+          209.5,
+          481.5
+        ],
+        [
+          178.5,
+          481.5
+        ]
+      ],
+      "confidence": 0.99975,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "$124",
+      "bbox": [
+        [
+          487.0,
+          458.5
+        ],
+        [
+          529.5,
+          458.5
+        ],
+        [
+          529.5,
+          483.0
+        ],
+        [
+          487.0,
+          483.0
+        ]
+      ],
+      "confidence": 0.99985,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "All models",
+      "bbox": [
+        [
+          87.5,
+          467.5
+        ],
+        [
+          146.0,
+          467.5
+        ],
+        [
+          146.0,
+          483.0
+        ],
+        [
+          87.5,
+          483.0
+        ]
+      ],
+      "confidence": 0.99844,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "700",
+      "bbox": [
+        [
+          231.0,
+          523.5
+        ],
+        [
+          328.5,
+          523.5
+        ],
+        [
+          328.5,
+          570.5
+        ],
+        [
+          231.0,
+          570.5
+        ]
+      ],
+      "confidence": 0.99999,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "kWh",
+      "bbox": [
+        [
+          328.0,
+          547.5
+        ],
+        [
+          364.5,
+          547.5
+        ],
+        [
+          364.5,
+          567.5
+        ],
+        [
+          328.0,
+          567.5
+        ]
+      ],
+      "confidence": 0.99973,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Estimated Yearly Electricity Use",
+      "bbox": [
+        [
+          207.5,
+          574.0
+        ],
+        [
+          387.0,
+          575.0
+        ],
+        [
+          386.5,
+          592.0
+        ],
+        [
+          207.0,
+          591.0
+        ]
+      ],
+      "confidence": 0.99991,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Your cost will depend on your utility rates and use.",
+      "bbox": [
+        [
+          82.0,
+          611.0
+        ],
+        [
+          389.5,
+          611.0
+        ],
+        [
+          389.5,
+          627.5
+        ],
+        [
+          82.0,
+          627.5
+        ]
+      ],
+      "confidence": 0.99443,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Both cost ranges based on models of similar size capacity.",
+      "bbox": [
+        [
+          82.0,
+          627.5
+        ],
+        [
+          356.0,
+          628.5
+        ],
+        [
+          356.0,
+          643.5
+        ],
+        [
+          82.0,
+          642.5
+        ]
+      ],
+      "confidence": 0.99853,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Models with similar features have automatic defrost, bottom-mounted",
+      "bbox": [
+        [
+          82.5,
+          643.5
+        ],
+        [
+          405.5,
+          643.5
+        ],
+        [
+          405.5,
+          658.0
+        ],
+        [
+          82.5,
+          658.0
+        ]
+      ],
+      "confidence": 0.99987,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "freezer, and no through-the-door ice.",
+      "bbox": [
+        [
+          82.0,
+          657.5
+        ],
+        [
+          256.5,
+          658.0
+        ],
+        [
+          256.5,
+          672.5
+        ],
+        [
+          82.0,
+          672.0
+        ]
+      ],
+      "confidence": 0.99238,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "Estimated energy cost based on a national average electricity cost",
+      "bbox": [
+        [
+          82.5,
+          673.0
+        ],
+        [
+          393.5,
+          673.0
+        ],
+        [
+          393.5,
+          688.0
+        ],
+        [
+          82.5,
+          688.0
+        ]
+      ],
+      "confidence": 0.99933,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "of 14 cents per kWh.",
+      "bbox": [
+        [
+          83.0,
+          688.0
+        ],
+        [
+          182.0,
+          688.0
+        ],
+        [
+          182.0,
+          703.0
+        ],
+        [
+          83.0,
+          703.0
+        ]
+      ],
+      "confidence": 0.99918,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "ftc.gov/energy",
+      "bbox": [
+        [
+          249.5,
+          703.5
+        ],
+        [
+          353.5,
+          705.0
+        ],
+        [
+          353.5,
+          729.0
+        ],
+        [
+          249.5,
+          727.0
+        ]
+      ],
+      "confidence": 0.9959,
+      "engine": "RapidOCR"
+    },
+    {
+      "page": 0,
+      "text": "ENERGY STAR",
+      "bbox": [
+        [
+          448.0,
+          703.0
+        ],
+        [
+          542.5,
+          703.0
+        ],
+        [
+          542.5,
+          723.0
+        ],
+        [
+          448.0,
+          723.0
+        ]
+      ],
+      "confidence": 0.99955,
+      "engine": "RapidOCR"
+    }
+  ]
+}

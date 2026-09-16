@@ -1,0 +1,27 @@
+[
+  {
+    "file": "tests/fixtures/energyguide-fields/refrigerator-layout.json",
+    "sha256": "da301784bed2d5435d30a070183701bcbfb2343247ac61afe72bd1f13db7252a",
+    "source_run_id": 35162912783
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/dishwasher-layout.json",
+    "sha256": "7d884511a173d57a8aabd3a32a2b3a0226f6e10cf1702f6af570722acd2250cd",
+    "source_run_id": 35162912783
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/washer-layout.json",
+    "sha256": "24173c15f1ca28f9064a7a279bbd34fdf2dc149ce08add5a3f0cbcaf102ebc40",
+    "source_run_id": 35162912783
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/washer-standalone-layout.json",
+    "sha256": "4b717e92232bef4e719b8f06d58411918cc96abce5ef07d6f3afa7a0a7e463e3",
+    "source_run_id": 35162912783
+  },
+  {
+    "file": "tests/fixtures/energyguide-fields/tv-layout.json",
+    "sha256": "099c6f68d14759831d81a4f59474c862738c2d2129f357c47381bcb8fac8a462",
+    "source_run_id": 35162912783
+  }
+]

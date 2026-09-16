@@ -14,7 +14,7 @@ from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason
 from browser_runtime import desktop_context
 from claim_recon import project_claim_records, project_nested_claim_fields, project_inline_product_claims, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
-from energyguide_fields import label_candidates
+from energyguide_fields import label_candidates, annual_layout_candidates
 
 OUT = Path('runtime/source-recon')
 FAMILIES = {
@@ -410,6 +410,7 @@ def main():
             document = facts['energyguide_documents'][0]
             pdf = context.request.get(document['url'], timeout=30000)
             raw = pdf.body()
+            (OUT / 'energyguide-response.bin').write_bytes(raw)
             assert pdf.status == 200 and raw.startswith(b'%PDF-'), 'EnergyGuide response is not a valid PDF'
             import pymupdf
             parsed = pymupdf.open(stream=raw, filetype='pdf')
@@ -433,10 +434,12 @@ def main():
                                           'EngineConfig.onnxruntime.inter_op_num_threads': 1})
                 result = engine(str(OUT / 'energyguide-ocr-2x.png'))
                 ocr_texts = list(result.txts or [])
+                save('fixtures/energyguide-ocr-texts.json', ocr_texts)
                 ocr_spans = [{'page':0,'text':text,'bbox':[[float(x)/2,float(y)/2] for x,y in box],
                               'confidence':float(score),'engine':'RapidOCR'}
                              for text,box,score in zip(result.txts, result.boxes, result.scores)]
                 save('fixtures/energyguide-ocr-spans.json', ocr_spans)
+                assert len(ocr_spans)==len(ocr_texts), 'OCR coordinate/confidence observations incomplete'
                 assert ocr_texts, 'EnergyGuide image-only OCR failed'
                 engine_name = 'RapidOCR'
             save('energyguide-observation.json', {'requested_url': document['url'], 'final_url': safe_url(pdf.url),
@@ -450,11 +453,25 @@ def main():
             evidence_text = '\n'.join(ocr_texts) if ocr_texts else extracted
             candidates = label_candidates(evidence_text, engine_name, hashlib.sha256(raw).hexdigest())
             save('energyguide-field-candidates.json', candidates)
+            save('energyguide-layout-candidates.json', annual_layout_candidates(ocr_spans if ocr_texts else embedded_spans,
+                                                                              hashlib.sha256(raw).hexdigest()))
             assert candidates['energy_candidates_raw'], 'No numeric kWh candidates; field extraction unavailable'
             return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
                     'energyguide_link_count': len(documents), 'energyguide_pdf_valid': True}
 
         check('pdp_identity_and_documents', pdp)
+
+        if config.get('recon_domain') != 'EPA_ONLY':
+            def label_fields():
+                candidates = json.loads((OUT / 'energyguide-field-candidates.json').read_text(encoding='utf-8'))
+                layout = json.loads((OUT / 'energyguide-layout-candidates.json').read_text(encoding='utf-8'))
+                assert candidates['pdf_sha256']==layout['pdf_sha256'], 'Label field provenance disagrees'
+                associated = [c for c in layout['annual_layout_candidates'] if c['nearest_proposal_raw']]
+                assert associated, 'Annual caption layout association unavailable'
+                return {'numeric_kwh_candidates':len(candidates['energy_candidates_raw']),
+                        'annual_caption_layout_candidates':len(associated),
+                        'annual_selection':'NOT_EVALUATED','identity_matching':'NOT_EVALUATED'}
+            check('energyguide_field_observation', label_fields)
 
         def claims():
             snapshot = json.loads((OUT / 'fixtures/public-claim-snapshot.json').read_text(encoding='utf-8'))

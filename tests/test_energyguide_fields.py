@@ -1,7 +1,7 @@
 import json
 import unittest
 from pathlib import Path
-from scripts.energyguide_fields import label_candidates
+from scripts.energyguide_fields import label_candidates, annual_layout_candidates
 
 ROOT=Path(__file__).parent/'fixtures'/'energyguide-fields'
 
@@ -58,3 +58,25 @@ class EnergyGuideCandidates(unittest.TestCase):
     def test_empty_text_and_missing_pdf_hash_fail(self):
         for text,digest in [('', 'a'*64),('700 kWh','missing')]:
             with self.assertRaises(ValueError):label_candidates(text,'RapidOCR',digest)
+
+    def test_real_caption_coordinates_find_us_annual_candidates(self):
+        for name,value in [('refrigerator','700'),('dishwasher','225'),('washer','103'),('washer-standalone','103'),('tv','390')]:
+            fixture=self.read(name+'-layout')
+            result=annual_layout_candidates(fixture['spans'],fixture['pdf_sha256'])
+            self.assertEqual(result['annual_layout_candidates'][0]['nearest_proposal_raw']['value_raw'],value,msg=name)
+            self.assertEqual(result['field_selection'],'NOT_EVALUATED')
+
+    def test_bilingual_panels_do_not_share_caption_column(self):
+        fixture=self.read('dishwasher-layout')
+        result=annual_layout_candidates(fixture['spans'],fixture['pdf_sha256'])
+        caption=result['annual_layout_candidates'][0]
+        self.assertEqual(caption['nearest_proposal_raw']['number_detection'],28)
+        self.assertEqual(caption['nearest_proposal_raw']['unit_detection'],36)
+        self.assertFalse(any(p['value_raw'] in ('200','307') for p in caption['proposals_raw']))
+
+    def test_unreadable_unit_glyph_is_not_automatically_corrected(self):
+        fixture=self.read('refrigerator-layout')
+        for span in fixture['spans']:
+            if span['text'].strip().lower()=='kwh':span['text']='kVVh'
+        result=annual_layout_candidates(fixture['spans'],fixture['pdf_sha256'])
+        self.assertIsNone(result['annual_layout_candidates'][0]['nearest_proposal_raw'])
