@@ -39,6 +39,9 @@ FAMILIES = {
     'monitor': {'plp': 'https://www.samsung.com/us/monitors/all-monitors/',
                 'dataset': 'qbg3-d468', 'dataset_name': 'ENERGY STAR Certified Displays',
                 'recon_domain': 'EPA_ONLY'},
+    'computer': {'plp': 'https://www.samsung.com/us/computers/galaxy-book/',
+                 'dataset': 'rxdj-2c88', 'dataset_name': 'ENERGY STAR Certified Computers V9.0',
+                 'recon_domain': 'EPA_ONLY'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
