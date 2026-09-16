@@ -30,6 +30,9 @@ FAMILIES = {
     'cooktop': {'plp': 'https://www.samsung.com/us/cooking-appliances/cooktops/',
                 'dataset': 'm6gi-ng33', 'dataset_name': 'ENERGY STAR Certified Residential Electric Cooking Products',
                 'recon_domain': 'EPA_ONLY'},
+    'dryer': {'plp': 'https://www.samsung.com/us/laundry/dryers/',
+              'dataset': 't9u7-4d2j', 'dataset_name': 'ENERGY STAR Certified Residential Clothes Dryers',
+              'recon_domain': 'EPA_ONLY'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')

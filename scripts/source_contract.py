@@ -83,6 +83,7 @@ def pdp_facts(data, target, family='refrigerator'):
         'tv': (None, None),  # sample PDP has power/screen fields, no annual energy/capacity
         'range': (None, None),  # discover cooking-specific spec names from raw pairs
         'cooktop': (None, None),  # same dataset does not imply identical PDP specs
+        'dryer': (None, None),  # map only observed dryer-specific spec names
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')
@@ -145,6 +146,8 @@ def epa_contract(metadata, rows, dataset='p5st-her9'):
                       'annual_energy_consumption_kwh_yr',
                       'low_power_mode_energy_consumption_oven_kwh_yr',
                       'low_power_mode_energy_consumption_cooking_top_kwh_yr'},
+        't9u7-4d2j': {'product_type', 'type', 'drum_capacity_cu_ft', 'combined_energy_factor_cef',
+                      'estimated_annual_energy_use_kwh_yr', 'date_qualified'},
     }
     if dataset not in columns:
         raise ValueError('Unknown EPA dataset contract')
