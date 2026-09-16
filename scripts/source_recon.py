@@ -42,6 +42,9 @@ FAMILIES = {
     'computer': {'plp': 'https://www.samsung.com/us/computers/galaxy-book/',
                  'dataset': 'rxdj-2c88', 'dataset_name': 'ENERGY STAR Certified Computers V9.0',
                  'recon_domain': 'EPA_ONLY'},
+    'chromebook': {'plp': 'https://www.samsung.com/us/computers/chromebook/',
+                   'dataset': 'rxdj-2c88', 'dataset_name': 'ENERGY STAR Certified Computers V9.0',
+                   'recon_domain': 'EPA_ONLY'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
@@ -328,7 +331,7 @@ def main():
                 assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
             assert pdp_json, 'Specs/Support bridge-data endpoint was not observed'
             source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))
-            facts = pdp_facts(source, target, family=family)
+            facts = pdp_facts(source, target, family='computer' if family == 'chromebook' else family)
             save('pdp-facts.json', facts)
             if config.get('recon_domain') == 'EPA_ONLY':
                 return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
