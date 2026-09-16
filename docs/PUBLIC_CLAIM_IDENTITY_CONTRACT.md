@@ -1,6 +1,6 @@
 # Independent public claim and PDP identity reconnaissance
 
-Status: hosted discovery pending; Phase 0 RUNNING; claim consistency and
+Status: bounded hosted discovery PASS; Phase 0 RUNNING; claim consistency and
 certification NOT_EVALUATED. No new regulatory rule or issue code.
 
 Observe and preserve independently:
@@ -17,7 +17,8 @@ Observe and preserve independently:
 Product-only snapshots are saved before interpretation. Do not save full DOM,
 arbitrary network payloads, account/chat data, unrelated JSON-LD or offer prices.
 JSON-LD projection retains Product identifiers/name/availability and only ENERGY STAR
-additionalProperty pairs. Exact SKU/MPN is required; title similarity and URL alone
+additionalProperty pairs. Nonempty SKU/MPN identifiers must all agree with the
+target; contradictory identifiers remain unattributed. Title similarity and URL alone
 never establish the current product. JSON-LD parser errors fail the observation check.
 
 PLP Y/N, ecomFlag/stockFlag, spec claim and raw PDP flags remain source values;
@@ -36,3 +37,39 @@ Next validation after discovery: actual fixture contracts, independent rendered
 badge attribution and structured field coverage. Preserve disagreement without
 choosing one source as certification truth. Full SKU collection and EPA matching
 are downstream work.
+
+Final hosted acceptance: https://github.com/Empty-Bell/RDA/actions/runs/35160456564,
+commit 8b1ee4d0a798179a64486b782f0c0709225597ea. 126 tests and all 12 source jobs
+for 11 product groups passed. Three product-only actual fixtures (refrigerator,
+dishwasher, Tablet), source-run/SHA256 manifest and initial failure history are
+versioned. Initial run 35160080596 had a Computer selected-control loading timeout;
+the dependent claim observation failed, not an absence result. One bounded reload
+is now allowed only for selected-control loading timeout, with per-attempt selection
+evidence and source errors preserved. Exact selected/purchase/backend SKU gates
+remain unchanged. An identity mismatch is not retried into a different configuration.
+
+RF29DB9900QDAA: listing modelName RF29DB9900QD differs from the rendered product
+title; exact Product JSON-LD supplies SKU, name and raw schema.org InStock.
+DW90F89P0USRAA likewise has exact Product JSON-LD and a spec ENERGY STAR Certified
+Yes value. Both have PLP Y plus a visible logo candidate. SM-X930NZAAXAR has PLP Y,
+an exact Product JSON-LD and a visible logo candidate, but no sampled spec-table
+ENERGY STAR field. These differences are observations, not claim conflicts or EPA
+findings. The Tablet PLP cards have observed card scopes but no sampled mounted-DOM
+ENERGY STAR candidates; this is not proof of no public claim.
+
+Open contract work: establish product attribution for PDP logo candidates from their
+observed ancestor context; verify broader structured flag sections rather than
+assuming no flag from the direct modelCode-record allowlist. Define normalized
+commerce semantics only with actual source evidence. Broad page candidates, absent
+fields and missing exact JSON-LD remain distinct from source access/parsing errors.
+Compact final evidence is docs/evidence/public-claim-identity-recon.json; raw
+artifacts retain their recorded 14-day expiry. Full G0 is still NOT_EVALUATED.
+
+All 12 source legs had one exact Product JSON-LD record for their primary PDP
+sample. Direct modelCode-identified ENERGY STAR fields were unobserved in all
+samples and remain NOT_EVALUATED. Samples with spec claims: refrigerator,
+dishwasher, washer/combo, dryer/combo and range. Computer/Chromebook/Tablet
+samples had PLP Y and PDP logo candidates without spec claims. TV/cooktop/hood/
+monitor primary samples had PLP N and no mounted-DOM PDP candidates. These are
+sample observations, not family-wide absence or certification findings. Positive
+PLP card candidates existed on other TV/cooktop cards and must retain their own SKUs.

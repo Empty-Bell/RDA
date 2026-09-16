@@ -1,0 +1,1715 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35160456564",
+  "code_commit": "8b1ee4d0a798179a64486b782f0c0709225597ea",
+  "hosted_tests": 126,
+  "source_jobs": 12,
+  "product_groups": 11,
+  "status": "PASS",
+  "scope": "bounded mounted-DOM / exact Product JSON-LD / direct structured flag discovery",
+  "claim_consistency": "NOT_EVALUATED",
+  "certification_matching": "NOT_EVALUATED",
+  "phase_gate": "NOT_EVALUATED",
+  "sources": {
+    "tv": {
+      "job_id": 105009936474,
+      "artifact": {
+        "id": 10473296579,
+        "name": "source-recon-tv-35160456564-1",
+        "size_in_bytes": 240512,
+        "expires_at": "2026-09-30T23:03:56Z"
+      },
+      "artifact_zip_sha256": "fa0e08969c6388d6b8a562ede15eff2f3b1c5029d1ccbefbb6dd7bb6055b67b0",
+      "captured_at": "2026-09-16T23:03:22.226042+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/tvs/all-tvs/",
+            "api_total": 41
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 41,
+            "exact_skus": 167,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 21,
+                "expected_groups": 41
+              },
+              {
+                "round": 1,
+                "groups": 41,
+                "expected_groups": 41
+              }
+            ],
+            "rendered_representative_link_count": 41,
+            "rendered_tile_count": 41,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "MRN75R95HAFXZA",
+            "url": "https://www.samsung.com/us/tvs/micro-rgb/75-inch-micro-rgb-4k-tv-r95h-sku-mrn75r95hafxza/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "MRN75R95HAFXZA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 0,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_tv_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "pd96-rr3d",
+            "column_count": 35,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "MRN75R95HAFXZA",
+        "listing_title_raw": "MRN75R95HAF",
+        "pdp_headings_raw": [
+          "75 Inch Class Micro RGB R95H4K | Samsung Vision AI Smart TV | (2026)"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "MRN75R95HAFXZA",
+            "mpn": null,
+            "name": "75 Inch Class Micro RGB R95H 4K Samsung Vision AI Smart TV (2026)",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "N",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [],
+        "rendered_page_candidates_raw": [],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 27,
+      "rendered_cards": 41,
+      "card_scope_found_count": 41,
+      "cards_with_energy_candidates": 41,
+      "selected_configuration": null
+    },
+    "cooktop": {
+      "job_id": 105009936463,
+      "artifact": {
+        "id": 10472966246,
+        "name": "source-recon-cooktop-35160456564-1",
+        "size_in_bytes": 20125,
+        "expires_at": "2026-09-30T23:03:55Z"
+      },
+      "artifact_zip_sha256": "6b2a48e2fff01d56b391bb2656665c5e9113ac13306a1c99e8e40c740d93891d",
+      "captured_at": "2026-09-16T23:03:17.393484+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/cooking-appliances/cooktops/",
+            "api_total": 9
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 9,
+            "exact_skus": 20,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 9,
+                "expected_groups": 9
+              }
+            ],
+            "rendered_representative_link_count": 3,
+            "rendered_tile_count": 9,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NA30N6555TS/AA",
+            "url": "https://www.samsung.com/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555ts-aa/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": 0,
+            "document_collection_status": "OBSERVED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NA30N6555TS/AA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 0,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "electric_cooktop_pdp_contract",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NZ30K7570RS/AA",
+            "url": "https://www.samsung.com/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-with-rapid-boil-sku-nz30k7570rs-aa/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": 0,
+            "document_collection_status": "OBSERVED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_cooktop_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "m6gi-ng33",
+            "column_count": 40,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "NA30N6555TS/AA",
+        "listing_title_raw": "NA30N6555TS/AA",
+        "pdp_headings_raw": [
+          "Gas Cooktop with Griddle30\" | Illuminated Knobs | Wi-Fi"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "NA30N6555TS/AA",
+            "mpn": null,
+            "name": "Gas Cooktop with Griddle 30\" Illuminated Knobs | Wi-Fi",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "N",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [],
+        "rendered_page_candidates_raw": [],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 6,
+      "rendered_cards": 9,
+      "card_scope_found_count": 9,
+      "cards_with_energy_candidates": 9,
+      "selected_configuration": null
+    },
+    "dishwasher": {
+      "job_id": 105009936172,
+      "artifact": {
+        "id": 10472886282,
+        "name": "source-recon-dishwasher-35160456564-1",
+        "size_in_bytes": 1333109,
+        "expires_at": "2026-09-30T23:04:02Z"
+      },
+      "artifact_zip_sha256": "c7dcc0d5d4a43f49e50d89eb8477868588ba11717e4b981e7e4f5268725bb006",
+      "captured_at": "2026-09-16T23:03:27.057159+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/dishwashers/all-dishwashers/",
+            "api_total": 9
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 9,
+            "exact_skus": 21,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 9,
+                "expected_groups": 9
+              }
+            ],
+            "rendered_representative_link_count": 6,
+            "rendered_tile_count": 9,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "DW90F89P0USRAA",
+            "url": "https://www.samsung.com/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "DW90F89P0USRAA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 1,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_dishwasher_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "q8py-6w3f",
+            "column_count": 29,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "DW90F89P0USRAA",
+        "listing_title_raw": "DW90F89P0USRAA",
+        "pdp_headings_raw": [
+          "Bespoke AI Smart DishwasherAI Wash & 3rd Rack Wash System | AutoRelease™ Door | 38dBA"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "DW90F89P0USRAA",
+            "mpn": null,
+            "name": "Bespoke AI Smart Dishwasher AI Wash & 3rd Rack Wash System | AutoRelease™ Door 38dBA",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [
+          {
+            "group": "Energy & Performance",
+            "name": "ENERGY STAR® Certified",
+            "value": "Yes"
+          }
+        ],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": null,
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_energyStarContainer__jOl_2"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_outerContainer__TUF3_"
+              },
+              {
+                "tag": "DIV",
+                "cls": "MainContent_left__ugZZo"
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 18,
+      "rendered_cards": 9,
+      "card_scope_found_count": 9,
+      "cards_with_energy_candidates": 9,
+      "selected_configuration": null
+    },
+    "tablet": {
+      "job_id": 105009936400,
+      "artifact": {
+        "id": 10472842229,
+        "name": "source-recon-tablet-35160456564-1",
+        "size_in_bytes": 21807,
+        "expires_at": "2026-09-30T23:03:48Z"
+      },
+      "artifact_zip_sha256": "2509c698a312711d2d72a4a23bf44cd3597ff59380920ea89850c7f59e7a98b8",
+      "captured_at": "2026-09-16T23:03:16.125316+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/tablets/all-tablets/",
+            "api_total": 11
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 11,
+            "exact_skus": 50,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 11,
+                "expected_groups": 11
+              }
+            ],
+            "rendered_representative_link_count": 11,
+            "rendered_tile_count": 11,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "SM-X930NZAAXAR",
+            "url": "https://www.samsung.com/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": null,
+            "document_collection_status": "NOT_EVALUATED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "SM-X930NZAAXAR",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 1,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_tablet_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "rxdj-2c88",
+            "column_count": 68,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "SM-X930NZAAXAR",
+        "listing_title_raw": "SM-X930",
+        "pdp_headings_raw": [
+          "Galaxy Tab S11 Ultra"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "SM-X930NZAAXAR",
+            "mpn": null,
+            "name": "Galaxy Tab S11 Ultra (14.6\")",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": "",
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "q6b6RelationContainer"
+              },
+              {
+                "tag": "DIV",
+                "cls": "container templateB__container"
+              },
+              {
+                "tag": "DIV",
+                "cls": ""
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 12,
+      "rendered_cards": 11,
+      "card_scope_found_count": 11,
+      "cards_with_energy_candidates": 0,
+      "selected_configuration": {
+        "target_sku": "SM-X930NZAAXAR",
+        "final_url": "https://www.samsung.com/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar/",
+        "rendered_target_present": false,
+        "selected_controls": [
+          {
+            "sku": "sm-x930nzaaxar",
+            "label": "Galaxy Tab S11 Ultra"
+          }
+        ],
+        "continue_sku": "sm-x930nzaaxar",
+        "continue_visible": true,
+        "attempt": 1,
+        "selected_control_timeout": false
+      }
+    },
+    "washer": {
+      "job_id": 105009936321,
+      "artifact": {
+        "id": 10472832200,
+        "name": "source-recon-washer-35160456564-1",
+        "size_in_bytes": 1754973,
+        "expires_at": "2026-09-30T23:04:07Z"
+      },
+      "artifact_zip_sha256": "941fca67717d54d6365929d5ebb5f1178f13f31fa9fa01ed6abce5e64ea26252",
+      "captured_at": "2026-09-16T23:03:18.610071+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/laundry/washers/",
+            "api_total": 18
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 18,
+            "exact_skus": 37,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 14,
+                "expected_groups": 18
+              },
+              {
+                "round": 1,
+                "groups": 18,
+                "expected_groups": 18
+              }
+            ],
+            "rendered_representative_link_count": 14,
+            "rendered_tile_count": 18,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WD90F53AVBUS",
+            "url": "https://www.samsung.com/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WD90F53AVBUS",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 1,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "standalone_washer_pdp_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WF90F53ADSA5",
+            "url": "https://www.samsung.com/us/laundry/washers/front-load-wf90f27-front-loading-ai-home-ai-optiwash-plus-ultra-capacity-5-3-cu-ft-dark-steel-sku-wf90f53adsa5/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "epa_washer_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "bghd-e2wd",
+            "column_count": 38,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "WD90F53AVBUS",
+        "listing_title_raw": "WD90F53AVBUS",
+        "pdp_headings_raw": [
+          "Bespoke AI All-in-One Vented ComboAI Home 7\" LCD Display | AI OptiWash™ and Dry | 5.3 cu.ft."
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "WD90F53AVBUS",
+            "mpn": null,
+            "name": "Bespoke AI All-in-One Vented Combo AI Home 7\" LCD Display AI OptiWash™ and Dry + 5.3 cu.ft.",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [
+          {
+            "group": "Key Features",
+            "name": "ENERGY STAR® Certified",
+            "value": "Yes"
+          }
+        ],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": null,
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_energyStarContainer__jOl_2"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_outerContainer__TUF3_"
+              },
+              {
+                "tag": "DIV",
+                "cls": "MainContent_left__ugZZo"
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 18,
+      "rendered_cards": 18,
+      "card_scope_found_count": 18,
+      "cards_with_energy_candidates": 18,
+      "selected_configuration": null
+    },
+    "chromebook": {
+      "job_id": 105009936459,
+      "artifact": {
+        "id": 10472802141,
+        "name": "source-recon-chromebook-35160456564-1",
+        "size_in_bytes": 15849,
+        "expires_at": "2026-09-30T23:04:00Z"
+      },
+      "artifact_zip_sha256": "730ee89448fefb425a8dddbd9d133cadb039cdf7fa2636ec3834b0f3cdc4002f",
+      "captured_at": "2026-09-16T23:03:25.252914+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/computers/chromebook/",
+            "api_total": 1
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 1,
+            "exact_skus": 1,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 1,
+                "expected_groups": 1
+              }
+            ],
+            "rendered_representative_link_count": 1,
+            "rendered_tile_count": 1,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "XE550XGA-KC1US",
+            "url": "https://www.samsung.com/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": null,
+            "document_collection_status": "NOT_EVALUATED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "XE550XGA-KC1US",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 1,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_chromebook_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "rxdj-2c88",
+            "column_count": 68,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "XE550XGA-KC1US",
+        "listing_title_raw": "XE550XGAA-EXP",
+        "pdp_headings_raw": [
+          "Galaxy Chromebook Plus"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "XE550XGA-KC1US",
+            "mpn": null,
+            "name": "Galaxy Chromebook Plus",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": "",
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "q6b6RelationContainer"
+              },
+              {
+                "tag": "DIV",
+                "cls": "container templateB__container"
+              },
+              {
+                "tag": "DIV",
+                "cls": ""
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 0,
+      "rendered_cards": 1,
+      "card_scope_found_count": 1,
+      "cards_with_energy_candidates": 0,
+      "selected_configuration": {
+        "target_sku": "XE550XGA-KC1US",
+        "final_url": "https://www.samsung.com/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us/",
+        "rendered_target_present": false,
+        "selected_controls": [
+          {
+            "sku": "xe550xga-kc1us",
+            "label": "Color Variant: Neptune Blue"
+          }
+        ],
+        "continue_sku": "xe550xga-kc1us",
+        "continue_visible": true,
+        "attempt": 1,
+        "selected_control_timeout": false
+      }
+    },
+    "dryer": {
+      "job_id": 105009936395,
+      "artifact": {
+        "id": 10472696455,
+        "name": "source-recon-dryer-35160456564-1",
+        "size_in_bytes": 32904,
+        "expires_at": "2026-09-30T23:04:03Z"
+      },
+      "artifact_zip_sha256": "e6824456d2956f565e11bc71a6b28bd1ee56d7b59ade0f30ae1020c0a3f3c05c",
+      "captured_at": "2026-09-16T23:03:18.837184+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/laundry/dryers/",
+            "api_total": 19
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 19,
+            "exact_skus": 54,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 14,
+                "expected_groups": 19
+              },
+              {
+                "round": 1,
+                "groups": 19,
+                "expected_groups": 19
+              }
+            ],
+            "rendered_representative_link_count": 13,
+            "rendered_tile_count": 19,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WD90F53AVBUS",
+            "url": "https://www.samsung.com/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": 1,
+            "document_collection_status": "OBSERVED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "WD90F53AVBUS",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 1,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "standalone_dryer_pdp_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "DV90F53AESA3",
+            "url": "https://www.samsung.com/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-dark-steel-sku-dv90f53aesa3/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": 0,
+            "document_collection_status": "OBSERVED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_dryer_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "t9u7-4d2j",
+            "column_count": 35,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "WD90F53AVBUS",
+        "listing_title_raw": "WD90F53AVBUS",
+        "pdp_headings_raw": [
+          "Bespoke AI All-in-One Vented ComboAI Home 7\" LCD Display | AI OptiWash™ and Dry | 5.3 cu.ft."
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "WD90F53AVBUS",
+            "mpn": null,
+            "name": "Bespoke AI All-in-One Vented Combo AI Home 7\" LCD Display AI OptiWash™ and Dry + 5.3 cu.ft.",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [
+          {
+            "group": "Key Features",
+            "name": "ENERGY STAR® Certified",
+            "value": "Yes"
+          }
+        ],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": null,
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_energyStarContainer__jOl_2"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_outerContainer__TUF3_"
+              },
+              {
+                "tag": "DIV",
+                "cls": "MainContent_left__ugZZo"
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 18,
+      "rendered_cards": 19,
+      "card_scope_found_count": 19,
+      "cards_with_energy_candidates": 19,
+      "selected_configuration": null
+    },
+    "range": {
+      "job_id": 105009936360,
+      "artifact": {
+        "id": 10472602711,
+        "name": "source-recon-range-35160456564-1",
+        "size_in_bytes": 21482,
+        "expires_at": "2026-09-30T23:03:48Z"
+      },
+      "artifact_zip_sha256": "8689789fb3c1f10675b7cf37675a2a32660990fce1b3b7cd416f57879d450bc6",
+      "captured_at": "2026-09-16T23:03:19.777953+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/cooking-appliances/ranges/",
+            "api_total": 19
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 19,
+            "exact_skus": 58,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 14,
+                "expected_groups": 19
+              },
+              {
+                "round": 1,
+                "groups": 19,
+                "expected_groups": 19
+              }
+            ],
+            "rendered_representative_link_count": 14,
+            "rendered_tile_count": 19,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NSE80H63XRAA",
+            "url": "https://www.samsung.com/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63xraa/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": 0,
+            "document_collection_status": "OBSERVED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NSE80H63XRAA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 2,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_range_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "m6gi-ng33",
+            "column_count": 40,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "NSE80H63XRAA",
+        "listing_title_raw": "NSE80H63XRAA",
+        "pdp_headings_raw": [
+          "Bespoke Smart Slide-in Electric RangePro Style Design | Air Fry Max | True Convection"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "NSE80H63XRAA",
+            "mpn": null,
+            "name": "Bespoke Smart Slide-in Electric Range Pro Style Design | Air Fry Max | True Convection",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [
+          {
+            "group": "Key Features",
+            "name": "ENERGY STAR® Certified",
+            "value": "Yes"
+          }
+        ],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": " Bespoke Smart Slide-In Electric Range with No Preheat Air Fry Max and True Convection | Samsung US is Energy Star rated",
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "gallery-image fadeIn lazyload Gallery_selectedImage__ndxZm"
+              },
+              {
+                "tag": "A",
+                "cls": "Gallery_imageLink__ts1kE"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_imageContainer__ROla4"
+              },
+              {
+                "tag": "DIV",
+                "cls": ""
+              },
+              {
+                "tag": "DIV",
+                "cls": "slick-slide"
+              }
+            ],
+            "src": "https://images.samsung.com/is/image/samsung/p6pim/us/nse80h63xraa/gallery/us-nse80h30-nse80h63sraa-599356-nse80h63xraa-553792317?$product-details-jpg$"
+          },
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": "",
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_energyStarContainer__jOl_2"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_outerContainer__TUF3_"
+              },
+              {
+                "tag": "DIV",
+                "cls": "MainContent_left__ugZZo"
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 6,
+      "rendered_cards": 19,
+      "card_scope_found_count": 19,
+      "cards_with_energy_candidates": 19,
+      "selected_configuration": null
+    },
+    "computer": {
+      "job_id": 105009936287,
+      "artifact": {
+        "id": 10472522925,
+        "name": "source-recon-computer-35160456564-1",
+        "size_in_bytes": 21483,
+        "expires_at": "2026-09-30T23:03:57Z"
+      },
+      "artifact_zip_sha256": "25021a099db62121d8b76621790fe5ade85c9b319b5220c18774f15705b2c9ff",
+      "captured_at": "2026-09-16T23:03:27.484248+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/computers/galaxy-book/",
+            "api_total": 11
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 11,
+            "exact_skus": 23,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 11,
+                "expected_groups": 11
+              }
+            ],
+            "rendered_representative_link_count": 11,
+            "rendered_tile_count": 11,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NP960UJH-XG7US",
+            "url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": null,
+            "document_collection_status": "NOT_EVALUATED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NP960UJH-XG7US",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 1,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_computer_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "rxdj-2c88",
+            "column_count": 68,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "NP960UJH-XG7US",
+        "listing_title_raw": "NP960UJHB-EXP",
+        "pdp_headings_raw": [
+          "Galaxy Book6 Ultra"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "NP960UJH-XG7US",
+            "mpn": null,
+            "name": "Galaxy Book6 Ultra (16\", 64 GB), a Copilot+ PC",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": null,
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "q6b6RelationContainer"
+              },
+              {
+                "tag": "DIV",
+                "cls": "container templateB__container"
+              },
+              {
+                "tag": "DIV",
+                "cls": ""
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 15,
+      "rendered_cards": 11,
+      "card_scope_found_count": 11,
+      "cards_with_energy_candidates": 0,
+      "selected_configuration": {
+        "target_sku": "NP960UJH-XG7US",
+        "final_url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us/",
+        "rendered_target_present": false,
+        "selected_controls": [
+          {
+            "sku": "np960ujh-xg7us",
+            "label": "Galaxy Book6 Ultra"
+          }
+        ],
+        "continue_sku": "np960ujh-xg7us",
+        "continue_visible": true,
+        "attempt": 1,
+        "selected_control_timeout": false
+      }
+    },
+    "hood": {
+      "job_id": 105009936345,
+      "artifact": {
+        "id": 10472508147,
+        "name": "source-recon-hood-35160456564-1",
+        "size_in_bytes": 13664,
+        "expires_at": "2026-09-30T23:03:47Z"
+      },
+      "artifact_zip_sha256": "220aee4fed30246b540f762a0e59dfdb8f1715d0b6551ec17e348f9503fdf43a",
+      "captured_at": "2026-09-16T23:03:23.392245+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/cooking-appliances/range-hoods/",
+            "api_total": 6
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 6,
+            "exact_skus": 16,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 6,
+                "expected_groups": 6
+              }
+            ],
+            "rendered_representative_link_count": 2,
+            "rendered_tile_count": 6,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NK30CB700WCGAA",
+            "url": "https://www.samsung.com/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-grey-sku-nk30cb700wcgaa/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": 0,
+            "document_collection_status": "OBSERVED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "NK30CB700WCGAA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 0,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_hood_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "8dv7-nngq",
+            "column_count": 42,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "NK30CB700WCGAA",
+        "listing_title_raw": "NK30CB700WCGAA",
+        "pdp_headings_raw": [
+          "Bespoke Hood30\" | Triple Air Sensor | Low Noise"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "NK30CB700WCGAA",
+            "mpn": null,
+            "name": "Bespoke Hood 30\" Triple Air Sensor | Low Noise",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "N",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [],
+        "rendered_page_candidates_raw": [],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 15,
+      "rendered_cards": 6,
+      "card_scope_found_count": 6,
+      "cards_with_energy_candidates": 0,
+      "selected_configuration": null
+    },
+    "refrigerator": {
+      "job_id": 105009936253,
+      "artifact": {
+        "id": 10472503167,
+        "name": "source-recon-refrigerator-35160456564-1",
+        "size_in_bytes": 471897,
+        "expires_at": "2026-09-30T23:03:55Z"
+      },
+      "artifact_zip_sha256": "547bce742485445e37b7a12c67214330f1a9498f962b3d6fede1d2e7dc49e5af",
+      "captured_at": "2026-09-16T23:03:19.697511+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/refrigerators/all-refrigerators/",
+            "api_total": 41
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 41,
+            "exact_skus": 75,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 14,
+                "expected_groups": 41
+              },
+              {
+                "round": 1,
+                "groups": 41,
+                "expected_groups": 41
+              }
+            ],
+            "rendered_representative_link_count": 29,
+            "rendered_tile_count": 41,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "RF29DB9900QDAA",
+            "url": "https://www.samsung.com/us/refrigerators/french-door/bespoke-4-door-flex-refrigerator-29-cu-ft-with-family-hub-32-and-ai-vision-in-stainless-steel-sku-rf29db9900qdaa/",
+            "json_endpoints": 1,
+            "energyguide_link_count": 0,
+            "energyguide_pdf_valid": true
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "RF29DB9900QDAA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 1,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_refrigerator_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "p5st-her9",
+            "column_count": 32,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "RF29DB9900QDAA",
+        "listing_title_raw": "RF29DB9900QD",
+        "pdp_headings_raw": [
+          "Bespoke AI 4-Door Flex™Family Hub™ 32\" | AI Vision & Auto Open Door | 29 cu.ft."
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "RF29DB9900QDAA",
+            "mpn": null,
+            "name": "Bespoke AI 4-Door Flex™ Family Hub™ 32\" AI Vision & Auto Open Door | 29 cu.ft.",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "Y",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [
+          {
+            "group": "Key Features",
+            "name": "ENERGY STAR® Certified",
+            "value": "Yes"
+          }
+        ],
+        "rendered_page_candidates_raw": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "alt": null,
+            "label": null,
+            "ancestors": [
+              {
+                "tag": "IMG",
+                "cls": "EnergyStar_energyStar__nkHUr"
+              },
+              {
+                "tag": "DIV",
+                "cls": "EnergyStar_toolTipContainer___Lc6W"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_energyStarContainer__jOl_2"
+              },
+              {
+                "tag": "DIV",
+                "cls": "Gallery_outerContainer__TUF3_"
+              },
+              {
+                "tag": "DIV",
+                "cls": "MainContent_left__ugZZo"
+              }
+            ],
+            "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+          }
+        ],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 12,
+      "rendered_cards": 41,
+      "card_scope_found_count": 41,
+      "cards_with_energy_candidates": 41,
+      "selected_configuration": null
+    },
+    "monitor": {
+      "job_id": 105009936358,
+      "artifact": {
+        "id": 10472308610,
+        "name": "source-recon-monitor-35160456564-1",
+        "size_in_bytes": 26908,
+        "expires_at": "2026-09-30T23:03:53Z"
+      },
+      "artifact_zip_sha256": "7684fc0ea752f69dd6edde7dca86df9ce9ce0864a3f9da239b00a878b76d9199",
+      "captured_at": "2026-09-16T23:03:20.637435+00:00",
+      "checks": [
+        {
+          "name": "plp_request_contract",
+          "status": "PASS",
+          "details": {
+            "url": "https://www.samsung.com/us/monitors/all-monitors/",
+            "api_total": 56
+          }
+        },
+        {
+          "name": "pagination_observation",
+          "status": "PASS",
+          "details": {
+            "groups": 56,
+            "exact_skus": 76,
+            "rounds": [
+              {
+                "round": 0,
+                "groups": 21,
+                "expected_groups": 56
+              },
+              {
+                "round": 1,
+                "groups": 45,
+                "expected_groups": 56
+              },
+              {
+                "round": 2,
+                "groups": 56,
+                "expected_groups": 56
+              }
+            ],
+            "rendered_representative_link_count": 56,
+            "rendered_tile_count": 56,
+            "strict_tile_count_gate": "PASS"
+          }
+        },
+        {
+          "name": "pdp_identity_and_documents",
+          "status": "PASS",
+          "details": {
+            "target_sku": "LS40H850TANXZA",
+            "url": "https://www.samsung.com/us/monitors/high-resolution/40-inch-viewfinity-s8-s85th-5k-high-resolution-monitor-sku-ls40h850tanxza/",
+            "json_endpoints": 1,
+            "energyguide_metadata_count": 0,
+            "document_collection_status": "OBSERVED",
+            "energyguide_probe": "OUT_OF_RECON_SCOPE",
+            "certification_matching": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "public_claim_identity_observation",
+          "status": "PASS",
+          "details": {
+            "target_sku": "LS40H850TANXZA",
+            "exact_product_jsonld_records": 1,
+            "structured_claim_status": "NOT_EVALUATED",
+            "rendered_candidates": 0,
+            "claim_consistency": "NOT_EVALUATED"
+          }
+        },
+        {
+          "name": "epa_monitor_dataset_contract",
+          "status": "PASS",
+          "details": {
+            "dataset_id": "qbg3-d468",
+            "column_count": 44,
+            "sample_rows": 3
+          }
+        }
+      ],
+      "facts": {
+        "exact_sku": "LS40H850TANXZA",
+        "listing_title_raw": "S40H850TAN",
+        "pdp_headings_raw": [
+          "40 Inch ViewFinity S8 S85TH5K2K | Curved Monitor (2026)"
+        ],
+        "pdp_exact_jsonld_raw": [
+          {
+            "sku": "LS40H850TANXZA",
+            "mpn": null,
+            "name": "40 Inch ViewFinity S8 S85TH 5K2K Curved Monitor (2026)",
+            "availability": [
+              "https://schema.org/InStock"
+            ],
+            "additionalProperty": []
+          }
+        ],
+        "listing_commerce_raw": {
+          "ecomFlag": "Y",
+          "stockFlag": "Y"
+        },
+        "plp_energy_star_flag_raw": "N",
+        "pdp_structured_energy_star_fields_raw": [],
+        "pdp_jsonld_energy_star_properties_raw": [],
+        "pdp_structured_claim_status": "NOT_EVALUATED",
+        "pdp_spec_energy_star_claim_raw": [],
+        "rendered_page_candidates_raw": [],
+        "rendered_claim_attribution": "NOT_EVALUATED",
+        "certification_matching": "NOT_EVALUATED",
+        "claim_consistency": "NOT_EVALUATED"
+      },
+      "structured_record_count": 2,
+      "rendered_cards": 56,
+      "card_scope_found_count": 56,
+      "cards_with_energy_candidates": 0,
+      "selected_configuration": null
+    }
+  }
+}

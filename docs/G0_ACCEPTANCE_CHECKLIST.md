@@ -12,7 +12,10 @@ been reviewed; downstream full per-SKU collection and compliance are not perform
 | Hosted runtime freeze and recovery | Transitive dependency lock, OCR model checksums, verified Actions pins, source failure records | Cold ubuntu-24.04 x64 PDF/OCR/browser probes and full source regression; no credentials in artifacts; bounded retries preserve failures; desktop UA does not prove permanent 403 resolution |
 | Consolidated G0 review | Updated Samsung/EPA/runtime contracts, coverage and unresolved decision list | Each requirement links to hosted evidence; unresolved semantics are explicitly retained; discovery PASS never becomes full collection or compliance PASS |
 
-Start with independent claim/identity reconnaissance. Reuse existing sanitized
+Bounded raw claim/identity reconnaissance passed in run 35160456564 (126 tests,
+12 source legs); see PUBLIC_CLAIM_IDENTITY_CONTRACT.md. Next establish PDP logo
+attribution and broader structured flag source coverage before closing that contract.
+Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate
 only a specific unresolved problem. Actions collection/parsing/tests use no LLM.

@@ -125,7 +125,16 @@ rows is not candidate matching. Initial Chromebook timeout and final recovery
 are preserved without relaxing identity gates. See TABLET_SOURCE_CONTRACT.md,
 SOURCE_COVERAGE.md and docs/evidence/tablet-source-recon.json.
 
-Next bounded task: independent ENERGY STAR claim and PDP identity source contracts.
+Independent public claim/identity bounded discovery PASS: run 35160456564,
+commit 8b1ee4d0a798179a64486b782f0c0709225597ea. 126 tests and all 12 source jobs
+succeeded. Raw PLP flags, card candidates, PDP headings/exact Product JSON-LD,
+direct modelCode-identified structured fields, spec claims and page logo candidates
+are separately retained. Initial Computer loading failure is preserved; one bounded
+reload retains failed attempts without relaxing identity. No claim truth, normalized
+commerce status, certification or consistency decision was made.
+See PUBLIC_CLAIM_IDENTITY_CONTRACT.md and public-claim-identity-recon.json.
+
+Next bounded task: PDP badge attribution and broader structured flag source coverage.
 All family discovery is complete; common claim/quality/runtime acceptance remains.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
@@ -134,6 +143,6 @@ Follow-ups before locking runtime: freeze transitive Python dependencies and OCR
 replace older Node20 Actions pins with verified current releases (runner currently upgrades
 them to Node24; first run succeeded with warnings). No downgrade flag should be enabled.
 
-Token handoff: use Sol medium for the next exploratory claim contract only; Terra medium
+Token handoff: use Sol medium for the remaining exploratory claim contract only; Terra medium
 for repeated adapters after the contract is fixed. Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.
