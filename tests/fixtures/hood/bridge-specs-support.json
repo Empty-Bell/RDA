@@ -1,0 +1,815 @@
+{
+  "Specs": [
+    {
+      "modelCode": "NK30CB700W12AA",
+      "fullSpecs": [
+        {
+          "groupName": "Weights/Dimensions",
+          "specList": [
+            {
+              "name": "Product Width",
+              "value": "30\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "29 7/8\" x 25 7/16\" x 19 11/16\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "35.7"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Clean White Panel-Stainless Steel Duct"
+            },
+            {
+              "name": "General Feature",
+              "value": "Ventilation"
+            },
+            {
+              "name": "Hood Size",
+              "value": "30\""
+            }
+          ]
+        },
+        {
+          "groupName": "Hood Performance",
+          "specList": [
+            {
+              "name": "Venting Type",
+              "value": "Exterior & Recirculating Capable"
+            },
+            {
+              "name": "Hood Type",
+              "value": "Wall Mount Chimney"
+            },
+            {
+              "name": "CFM",
+              "value": "390-630"
+            },
+            {
+              "name": "Lighting",
+              "value": "LED Bar"
+            },
+            {
+              "name": "Number of Fan Speeds",
+              "value": "4 (3 step + booster)"
+            },
+            {
+              "name": "Filter Type",
+              "value": "Baffle"
+            },
+            {
+              "name": "Removable Filter",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch"
+            },
+            {
+              "name": "Noise Level",
+              "value": "50 dBA (1.0 sones)"
+            },
+            {
+              "name": "Power",
+              "value": "210W"
+            },
+            {
+              "name": "Rated Voltage",
+              "value": "120V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "25.44"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "29.88"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "19.69"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK30CB700W33AA",
+      "fullSpecs": [
+        {
+          "groupName": "Weights/Dimensions",
+          "specList": [
+            {
+              "name": "Product Width",
+              "value": "30\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "29 7/8\" x 25 7/16\" x 19 11/16\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "35.7"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Clean Deep Charcoal Panel-Stainless Steel Duct"
+            },
+            {
+              "name": "General Feature",
+              "value": "Ventilation"
+            },
+            {
+              "name": "Hood Size",
+              "value": "30\""
+            }
+          ]
+        },
+        {
+          "groupName": "Hood Performance",
+          "specList": [
+            {
+              "name": "Venting Type",
+              "value": "Exterior & Recirculating Capable"
+            },
+            {
+              "name": "Hood Type",
+              "value": "Wall Mount Chimney"
+            },
+            {
+              "name": "CFM",
+              "value": "390-630"
+            },
+            {
+              "name": "Lighting",
+              "value": "LED Bar"
+            },
+            {
+              "name": "Number of Fan Speeds",
+              "value": "4 (3 step + booster)"
+            },
+            {
+              "name": "Filter Type",
+              "value": "Baffle"
+            },
+            {
+              "name": "Removable Filter",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch"
+            },
+            {
+              "name": "Noise Level",
+              "value": "50 dBA (1.0 sones)"
+            },
+            {
+              "name": "Power",
+              "value": "210W"
+            },
+            {
+              "name": "Rated Voltage",
+              "value": "120V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "25.44"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "29.44"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "19.69"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK30CB700WCGAA",
+      "fullSpecs": [
+        {
+          "groupName": "Weights/Dimensions",
+          "specList": [
+            {
+              "name": "Product Width",
+              "value": "30\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "29 7/8\" x 25 7/16\" x 19 11/16\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "35.7"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Clean Grey Panel-Stainless Steel Duct"
+            },
+            {
+              "name": "General Feature",
+              "value": "Ventilation"
+            },
+            {
+              "name": "Hood Size",
+              "value": "30\""
+            }
+          ]
+        },
+        {
+          "groupName": "Hood Performance",
+          "specList": [
+            {
+              "name": "Venting Type",
+              "value": "Exterior & Recirculating Capable"
+            },
+            {
+              "name": "Hood Type",
+              "value": "Wall Mount Chimney"
+            },
+            {
+              "name": "CFM",
+              "value": "390-630"
+            },
+            {
+              "name": "Lighting",
+              "value": "LED Bar"
+            },
+            {
+              "name": "Number of Fan Speeds",
+              "value": "4 (3 step + booster)"
+            },
+            {
+              "name": "Filter Type",
+              "value": "Baffle"
+            },
+            {
+              "name": "Removable Filter",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch"
+            },
+            {
+              "name": "Noise Level",
+              "value": "50 dBA (1.0 sones)"
+            },
+            {
+              "name": "Power",
+              "value": "210W"
+            },
+            {
+              "name": "Rated Voltage",
+              "value": "120V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "25.44"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "29.88"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "19.69"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK36CB700W12AA",
+      "fullSpecs": [
+        {
+          "groupName": "Weights/Dimensions",
+          "specList": [
+            {
+              "name": "Product Width",
+              "value": "36\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "35 3/8\" x 25 7/16\" x 19 11/16\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "37.5"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Clean White Panel-Stainless Steel Duct"
+            },
+            {
+              "name": "General Feature",
+              "value": "Ventilation"
+            },
+            {
+              "name": "Hood Size",
+              "value": "36\""
+            }
+          ]
+        },
+        {
+          "groupName": "Hood Performance",
+          "specList": [
+            {
+              "name": "Venting Type",
+              "value": "Exterior & Recirculating Capable"
+            },
+            {
+              "name": "Hood Type",
+              "value": "Wall Mount Chimney"
+            },
+            {
+              "name": "CFM",
+              "value": "390-630"
+            },
+            {
+              "name": "Lighting",
+              "value": "LED Bar"
+            },
+            {
+              "name": "Number of Fan Speeds",
+              "value": "4 (3 step + booster)"
+            },
+            {
+              "name": "Filter Type",
+              "value": "Baffle"
+            },
+            {
+              "name": "Removable Filter",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch"
+            },
+            {
+              "name": "Noise Level",
+              "value": "50 dBA (1.0 sones)"
+            },
+            {
+              "name": "Power",
+              "value": "210W"
+            },
+            {
+              "name": "Rated Voltage",
+              "value": "120V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "25.44"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "35.38"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "19.69"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK36CB700W33AA",
+      "fullSpecs": [
+        {
+          "groupName": "Weights/Dimensions",
+          "specList": [
+            {
+              "name": "Product Width",
+              "value": "30\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "35 3/8\" x 25 7/16\" x 19 11/16\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "35.7"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Clean Deep Charcoal Panel-Stainless Steel Duct"
+            },
+            {
+              "name": "General Feature",
+              "value": "Ventilation"
+            },
+            {
+              "name": "Hood Size",
+              "value": "36\""
+            }
+          ]
+        },
+        {
+          "groupName": "Hood Performance",
+          "specList": [
+            {
+              "name": "Venting Type",
+              "value": "Exterior & Recirculating Capable"
+            },
+            {
+              "name": "Hood Type",
+              "value": "Wall Mount Chimney"
+            },
+            {
+              "name": "CFM",
+              "value": "390-630"
+            },
+            {
+              "name": "Lighting",
+              "value": "LED Bar"
+            },
+            {
+              "name": "Number of Fan Speeds",
+              "value": "4 (3 step + booster)"
+            },
+            {
+              "name": "Filter Type",
+              "value": "Baffle"
+            },
+            {
+              "name": "Removable Filter",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch"
+            },
+            {
+              "name": "Noise Level",
+              "value": "50 dBA (1.0 sones)"
+            },
+            {
+              "name": "Power",
+              "value": "210W"
+            },
+            {
+              "name": "Rated Voltage",
+              "value": "120V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "25.44"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "35.36"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "19.69"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK36CB700WCGAA",
+      "fullSpecs": [
+        {
+          "groupName": "Weights/Dimensions",
+          "specList": [
+            {
+              "name": "Product Width",
+              "value": "36\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "35 3/8\" x 25 7/16\" x 19 11/16\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "37.5"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Clean Grey Panel-Stainless Steel Duct"
+            },
+            {
+              "name": "General Feature",
+              "value": "Ventilation"
+            },
+            {
+              "name": "Hood Size",
+              "value": "36\""
+            }
+          ]
+        },
+        {
+          "groupName": "Hood Performance",
+          "specList": [
+            {
+              "name": "Venting Type",
+              "value": "Exterior & Recirculating Capable"
+            },
+            {
+              "name": "Hood Type",
+              "value": "Wall Mount Chimney"
+            },
+            {
+              "name": "CFM",
+              "value": "390-630"
+            },
+            {
+              "name": "Lighting",
+              "value": "LED Bar"
+            },
+            {
+              "name": "Number of Fan Speeds",
+              "value": "4 (3 step + booster)"
+            },
+            {
+              "name": "Filter Type",
+              "value": "Baffle"
+            },
+            {
+              "name": "Removable Filter",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch"
+            },
+            {
+              "name": "Noise Level",
+              "value": "50 dBA (1.0 sones)"
+            },
+            {
+              "name": "Power",
+              "value": "210W"
+            },
+            {
+              "name": "Rated Voltage",
+              "value": "120V / 60 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "25.44"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "35.38"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "19.69"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "NK30CB700W12AA",
+      "supports": []
+    },
+    {
+      "modelCode": "NK30CB700WCGAA",
+      "supports": []
+    },
+    {
+      "modelCode": "NK36CB700W12AA",
+      "supports": []
+    },
+    {
+      "modelCode": "NK36CB700W33AA",
+      "supports": []
+    },
+    {
+      "modelCode": "NK36CB700WCGAA",
+      "supports": []
+    }
+  ]
+}

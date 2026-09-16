@@ -113,6 +113,11 @@ def pdp_facts(data, target, family='refrigerator'):
             'fuel_type_raw': [x for x in fields if x['name'] == 'Fuel Type'],
             'cooktop_type_raw': [x for x in fields if x['name'] == 'Cooktop Type'],
             'oven_capacity_raw': [x for x in fields if x['name'] == 'Oven Capacity'],
+            'hood_type_raw': [x for x in fields if x['name'] == 'Hood Type'],
+            'venting_type_raw': [x for x in fields if x['name'] == 'Venting Type'],
+            'airflow_raw': [x for x in fields if x['name'] == 'CFM'],
+            'noise_raw': [x for x in fields if x['name'] == 'Noise Level'],
+            'hood_power_raw': [x for x in fields if x['name'] == 'Power'],
             'energy_star_spec_claim_raw': [x for x in fields if re.search(r'energy\s*star', x['name'] or '', re.I)],
             'energy_star_structured_claim': None,
             'energyguide_documents': [{k: x.get(k) for k in ('name', 'type', 'url')} for x in documents]}

@@ -1,0 +1,698 @@
+{
+  "searchTotalCount": 6,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "NK30CB700WCGAA",
+      "modelName": "NK30CB700WCGAA",
+      "id": "NK30CB700WCGAA",
+      "group_id": "MULTI_GROUP_ID_601748",
+      "pdpURL": "/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-grey-sku-nk30cb700wcgaa",
+      "consumerUrl": "/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-grey-sku-nk30cb700wcgaa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "51",
+        "pickYn": "N",
+        "representativeModel": "NK30CB700W12AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-23",
+        "id": "601748"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#808080",
+          "fmyChipName": "Clean Grey Panel-Stainless Steel Duct",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NK30CB700WCGAA",
+          "modelName": "NK30CB700WCGAA",
+          "id": "NK30CB700WCGAA",
+          "group_id": "MULTI_GROUP_ID_601748",
+          "pdpURL": "/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-grey-sku-nk30cb700wcgaa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-grey-sku-nk30cb700wcgaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "51",
+            "pickYn": "N",
+            "representativeModel": "NK30CB700W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-23",
+            "id": "601748"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Clean Grey Panel-Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK30CB700W12AA",
+          "modelName": "NK30CB700W12AA",
+          "id": "NK30CB700W12AA",
+          "group_id": "MULTI_GROUP_ID_601748",
+          "pdpURL": "/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-white-sku-nk30cb700w12aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-white-sku-nk30cb700w12aa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "51",
+            "pickYn": "N",
+            "representativeModel": "NK30CB700W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-23",
+            "id": "601748"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#f5f7f6",
+              "fmyChipName": "Clean White Panel-Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK36CB700WCGAA",
+          "modelName": "NK36CB700WCGAA",
+          "id": "NK36CB700WCGAA",
+          "group_id": "MULTI_GROUP_ID_601748",
+          "pdpURL": "/us/cooking-appliances/range-hoods/wall-mounted-36-bespoke-smart-wall-with-lcd-display-in-clean-grey-sku-nk36cb700wcgaa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/wall-mounted-36-bespoke-smart-wall-with-lcd-display-in-clean-grey-sku-nk36cb700wcgaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "51",
+            "pickYn": "N",
+            "representativeModel": "NK30CB700W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-23",
+            "id": "601748"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Clean Grey Panel-Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK36CB700W33AA",
+          "modelName": "NK36CB700W33AA",
+          "id": "NK36CB700W33AA",
+          "group_id": "MULTI_GROUP_ID_601748",
+          "pdpURL": "/us/cooking-appliances/range-hoods/wall-mounted-36-bespoke-smart-hood-with-lcd-display-in-clean-deep-charcoal-sku-nk36cb700w33aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/wall-mounted-36-bespoke-smart-hood-with-lcd-display-in-clean-deep-charcoal-sku-nk36cb700w33aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "51",
+            "pickYn": "N",
+            "representativeModel": "NK30CB700W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-23",
+            "id": "601748"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#191a1a",
+              "fmyChipName": "Clean Deep Charcoal Panel-Black Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK36CB700W12AA",
+          "modelName": "NK36CB700W12AA",
+          "id": "NK36CB700W12AA",
+          "group_id": "MULTI_GROUP_ID_601748",
+          "pdpURL": "/us/cooking-appliances/range-hoods/wall-mounted-36-bespoke-smart-hood-with-lcd-display-in-clean-white-sku-nk36cb700w12aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/wall-mounted-36-bespoke-smart-hood-with-lcd-display-in-clean-white-sku-nk36cb700w12aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "51",
+            "pickYn": "N",
+            "representativeModel": "NK30CB700W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-23",
+            "id": "601748"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#f5f7f6",
+              "fmyChipName": "Clean White Panel-Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK30N7000US/AA",
+      "modelName": "NK30N7000US/AA",
+      "id": "NK30N7000US/AA",
+      "group_id": "MULTI_GROUP_ID_601751",
+      "pdpURL": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-2018-sku-nk30n7000us-aa",
+      "consumerUrl": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-2018-sku-nk30n7000us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "50",
+        "pickYn": "N",
+        "representativeModel": "NK30N7000US/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-24",
+        "id": "601751"
+      },
+      "chips": [
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        },
+        {
+          "fmyChipCode": "#dbdbdb",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NK30N7000US/AA",
+          "modelName": "NK30N7000US/AA",
+          "id": "NK30N7000US/AA",
+          "group_id": "MULTI_GROUP_ID_601751",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-2018-sku-nk30n7000us-aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-2018-sku-nk30n7000us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "50",
+            "pickYn": "N",
+            "representativeModel": "NK30N7000US/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-24",
+            "id": "601751"
+          },
+          "chips": [
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK36N7000US/AA",
+          "modelName": "NK36N7000US/AA",
+          "id": "NK36N7000US/AA",
+          "group_id": "MULTI_GROUP_ID_601751",
+          "pdpURL": "/us/cooking-appliances/range-hoods/36-under-cabinet-hood-2018-sku-nk36n7000us-aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/36-under-cabinet-hood-2018-sku-nk36n7000us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "50",
+            "pickYn": "N",
+            "representativeModel": "NK30N7000US/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-24",
+            "id": "601751"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK36N7000UG/AA",
+          "modelName": "NK36N7000UG/AA",
+          "id": "NK36N7000UG/AA",
+          "group_id": "MULTI_GROUP_ID_601751",
+          "pdpURL": "/us/cooking-appliances/range-hoods/36-under-cabinet-hood-2018-sku-nk36n7000ug-aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/36-under-cabinet-hood-2018-sku-nk36n7000ug-aa",
+          "ecomFlag": "N",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "50",
+            "pickYn": "N",
+            "representativeModel": "NK30N7000US/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-24",
+            "id": "601751"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK30R5000WS/AA",
+      "modelName": "NK30R5000WS/AA",
+      "id": "NK30R5000WS/AA",
+      "group_id": "MULTI_GROUP_ID_601755",
+      "pdpURL": "/us/cooking-appliances/range-hoods/30-range-hood-sku-nk30r5000ws-aa",
+      "consumerUrl": "/us/cooking-appliances/range-hoods/30-range-hood-sku-nk30r5000ws-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "49",
+        "pickYn": "N",
+        "representativeModel": "NK30R5000WS/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-25",
+        "id": "601755"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#dbdbdb",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NK30R5000WS/AA",
+          "modelName": "NK30R5000WS/AA",
+          "id": "NK30R5000WS/AA",
+          "group_id": "MULTI_GROUP_ID_601755",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-range-hood-sku-nk30r5000ws-aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-range-hood-sku-nk30r5000ws-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "49",
+            "pickYn": "N",
+            "representativeModel": "NK30R5000WS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-25",
+            "id": "601755"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK30R5000WG/AA",
+          "modelName": "NK30R5000WG/AA",
+          "id": "NK30R5000WG/AA",
+          "group_id": "MULTI_GROUP_ID_601755",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-range-hood-sku-nk30r5000wg-aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-range-hood-sku-nk30r5000wg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "49",
+            "pickYn": "N",
+            "representativeModel": "NK30R5000WS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-25",
+            "id": "601755"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Fingerprint Resistant Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK30CB600W12AA",
+      "modelName": "NK30CB600W12AA",
+      "id": "NK30CB600W12AA",
+      "group_id": "MULTI_GROUP_ID_601780",
+      "pdpURL": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-white-sku-nk30cb600w12aa",
+      "consumerUrl": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-white-sku-nk30cb600w12aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "43",
+        "pickYn": "N",
+        "representativeModel": "NK30CB600W12AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-32",
+        "id": "601780"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#e3e3e3",
+          "fmyChipName": "Clean White Panel-Stainless Steel Duct",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NK30CB600W12AA",
+          "modelName": "NK30CB600W12AA",
+          "id": "NK30CB600W12AA",
+          "group_id": "MULTI_GROUP_ID_601780",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-white-sku-nk30cb600w12aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-white-sku-nk30cb600w12aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "43",
+            "pickYn": "N",
+            "representativeModel": "NK30CB600W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-32",
+            "id": "601780"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "Clean White Panel-Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK30CB600W33AA",
+          "modelName": "NK30CB600W33AA",
+          "id": "NK30CB600W33AA",
+          "group_id": "MULTI_GROUP_ID_601780",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-deep-charcoal-sku-nk30cb600w33aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-deep-charcoal-sku-nk30cb600w33aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "43",
+            "pickYn": "N",
+            "representativeModel": "NK30CB600W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-32",
+            "id": "601780"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#191a1a",
+              "fmyChipName": "Clean Deep Charcoal Panel-Black Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK30CB600WCGAA",
+          "modelName": "NK30CB600WCGAA",
+          "id": "NK30CB600WCGAA",
+          "group_id": "MULTI_GROUP_ID_601780",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-grey-sku-nk30cb600wcgaa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-bespoke-smart-wall-mount-hood-in-clean-grey-sku-nk30cb600wcgaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "43",
+            "pickYn": "N",
+            "representativeModel": "NK30CB600W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-32",
+            "id": "601780"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Clean Grey Panel-Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NK36CB600WCGAA",
+          "modelName": "NK36CB600WCGAA",
+          "id": "NK36CB600WCGAA",
+          "group_id": "MULTI_GROUP_ID_601780",
+          "pdpURL": "/us/cooking-appliances/range-hoods/36-bespoke-smart-wall-mount-hood-in-clean-grey-sku-nk36cb600wcgaa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/36-bespoke-smart-wall-mount-hood-in-clean-grey-sku-nk36cb600wcgaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "43",
+            "pickYn": "N",
+            "representativeModel": "NK30CB600W12AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-32",
+            "id": "601780"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Clean Grey Panel-Stainless Steel Duct",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK30B3500US/AA",
+      "modelName": "NK30B3500US/AA",
+      "id": "NK30B3500US/AA",
+      "group_id": "MULTI_GROUP_ID_601786",
+      "pdpURL": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3500us-aa",
+      "consumerUrl": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3500us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "42",
+        "pickYn": "N",
+        "representativeModel": "NK30B3500US/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-33",
+        "id": "601786"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NK30B3500US/AA",
+          "modelName": "NK30B3500US/AA",
+          "id": "NK30B3500US/AA",
+          "group_id": "MULTI_GROUP_ID_601786",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3500us-aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3500us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "42",
+            "pickYn": "N",
+            "representativeModel": "NK30B3500US/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-33",
+            "id": "601786"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NK30B3000US/AA",
+      "modelName": "NK30B3000US/AA",
+      "id": "NK30B3000US/AA",
+      "group_id": "FMY_ID_568912",
+      "pdpURL": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3000us-aa",
+      "consumerUrl": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3000us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "41",
+        "pickYn": "N",
+        "representativeModel": "NK30B3000US/AA",
+        "familyName": "795mm Hood with Power Ventilation200 CFM System and LED Cooktop Lighting",
+        "id": "568912",
+        "marketingName": "30\" Under Cabinet Hood in Stainless Steel"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NK30B3000US/AA",
+          "modelName": "NK30B3000US/AA",
+          "id": "NK30B3000US/AA",
+          "group_id": "FMY_ID_568912",
+          "pdpURL": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3000us-aa",
+          "consumerUrl": "/us/cooking-appliances/range-hoods/30-under-cabinet-hood-in-stainless-steel-sku-nk30b3000us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "NK30B3000US/AA",
+            "familyName": "795mm Hood with Power Ventilation200 CFM System and LED Cooktop Lighting",
+            "id": "568912",
+            "marketingName": "30\" Under Cabinet Hood in Stainless Steel"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
