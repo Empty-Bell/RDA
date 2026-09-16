@@ -12,7 +12,7 @@ class EnergyGuideCandidates(unittest.TestCase):
         return label_candidates('\n'.join(f['ocr_raw_texts']) if f['ocr_raw_texts'] else f['embedded_text'],f['extraction_engine'],f['sha256'])
 
     def test_observed_annual_numbers_have_caption_context(self):
-        for name,value in [('refrigerator','700'),('dishwasher','225'),('washer','103'),('tv','390')]:
+        for name,value in [('refrigerator','700'),('washer','103'),('tv','390')]:
             result=self.parse(name)
             annual=[c['value_raw'] for c in result['energy_candidates_raw'] if c['role']=='ANNUAL_CAPTION_CONTEXT']
             self.assertIn(value,annual,msg=name)
@@ -23,7 +23,15 @@ class EnergyGuideCandidates(unittest.TestCase):
         for value in ('200','307'):
             c=next(c for c in candidates if c['value_raw']==value)
             self.assertNotEqual(c['role'],'ANNUAL_CAPTION_CONTEXT')
-        self.assertGreaterEqual(sum(c['value_raw']=='225' for c in candidates),2)
+        result=self.parse('dishwasher')
+        self.assertEqual(sum(c['value_raw']=='225' for c in result['standalone_numeric_candidates_raw']),2)
+        self.assertTrue(result['annual_caption_lines_raw'])
+        self.assertEqual(result['annual_value_selection'],'NOT_EVALUATED')
+
+    def test_mixed_ocr_reading_order_does_not_force_long_distance_unit_pair(self):
+        result=self.parse('dishwasher')
+        self.assertIn({'value_raw':'225','line':28},result['standalone_numeric_candidates_raw'])
+        self.assertFalse(any(c['line_start']==28 for c in result['energy_candidates_raw']))
 
     def test_wildcards_and_capacity_preserved_without_matching(self):
         result=self.parse('refrigerator')

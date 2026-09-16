@@ -11,6 +11,9 @@ def label_candidates(text, engine, pdf_sha256):
     if not re.fullmatch(r'[0-9a-f]{64}', pdf_sha256):
         raise ValueError('Label candidate PDF provenance missing')
     lines = text.splitlines()
+    standalone = [{'value_raw':line.strip(),'line':index} for index,line in enumerate(lines)
+                  if re.fullmatch(r'\s*\d+(?:[.,]\d+)?\s*',line)]
+    captions = [{'text_raw':line,'line':index} for index,line in enumerate(lines) if ANNUAL.search(line)]
     # OCR splits a number and its kWh unit across detections. Join only adjacent
     # standalone numeric/unit lines; preserve both original line indices.
     energy = []
@@ -45,5 +48,6 @@ def label_candidates(text, engine, pdf_sha256):
     return {'pdf_sha256':pdf_sha256,'extraction_engine':engine,
             'energy_candidates_raw':energy,'model_candidates_raw':models,
             'capacity_candidates_raw':capacities,
+            'standalone_numeric_candidates_raw':standalone,'annual_caption_lines_raw':captions,
             'annual_value_selection':'NOT_EVALUATED','identity_matching':'NOT_EVALUATED',
             'wildcard_correction':'NOT_APPLIED','compliance':'NOT_EVALUATED'}
