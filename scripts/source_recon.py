@@ -8,7 +8,7 @@ import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import urljoin, urlsplit, parse_qs
 
 from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract, energyguide_ocr_reason
@@ -122,7 +122,15 @@ def main():
             if family == 'computer' and response.request.resource_type in ('xhr', 'fetch'):
                 parsed_url = urlsplit(url)
                 if parsed_url.hostname == 'www.samsung.com' and not re.search(r'chat|analytics|license|account|auth', parsed_url.path, re.I):
-                    computer_spec_endpoints.append({'path': parsed_url.path, 'status': response.status})
+                    endpoint = {'path': parsed_url.path, 'status': response.status}
+                    if parsed_url.path.endswith('/bridge-data'):
+                        endpoint['data_type'] = parse_qs(parsed_url.query).get('data_type', [])
+                        try:
+                            payload = response.json()
+                            endpoint['sections'] = list(payload) if isinstance(payload, dict) else type(payload).__name__
+                        except Exception:
+                            endpoint['sections'] = 'NON_JSON'
+                    computer_spec_endpoints.append(endpoint)
             if 'pf_search' in url:
                 try:
                     data = response.json()
@@ -141,7 +149,7 @@ def main():
                     report['observations'].append({'url': safe_url(url), 'status': response.status,
                                                    'request_user_agent': response.request.headers.get('user-agent'),
                                                    'error_type': type(exc).__name__})
-            elif '/bridge-data?' in url and 'data_type=Specs' in url:
+            elif '/bridge-data?' in url and 'Specs' in parse_qs(urlsplit(url).query).get('data_type', [''])[0].split(','):
                 try:
                     if 'json' not in response.headers.get('content-type', ''):
                         return
@@ -283,9 +291,9 @@ def main():
                             '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
                         'buttons': page.get_by_role('button').all_text_contents()[:30]})
                 specs_button = page.get_by_role('button', name='Specs', exact=True)
-                if specs_button.count() and specs_button.first.is_visible():
-                    specs_button.first.click(timeout=10000)
-                    page.wait_for_timeout(10000)
+                specs_button.first.wait_for(state='visible', timeout=20000)
+                specs_button.first.click(timeout=10000)
+                page.wait_for_timeout(10000)
             text = page.locator('body').inner_text()
             html = page.content()
             links = page.locator('a[href]').evaluate_all('(els) => els.map(e => ({text:e.textContent,url:e.href}))')
