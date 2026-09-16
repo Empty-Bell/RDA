@@ -1,0 +1,182 @@
+{
+  "id": "t9u7-4d2j",
+  "name": "ENERGY STAR Certified Residential Clothes Dryers",
+  "rowsUpdatedAt": 1789563703,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_name",
+      "name": "Model Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "product_type",
+      "name": "Product Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "type",
+      "name": "Fuel Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "special_type",
+      "name": "Special Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "heat_pump_technology",
+      "name": "Heat Pump Technology",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "voltage",
+      "name": "Voltage (V)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "drum_capacity_cu_ft",
+      "name": "Drum Capacity (cu-ft)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "height_inches",
+      "name": "Height (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "width_inches",
+      "name": "Width (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "depth_inches",
+      "name": "Depth (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "combined_energy_factor_cef",
+      "name": "Combined Energy Factor (CEF)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "estimated_annual_energy_use_kwh_yr",
+      "name": "Estimated Annual Energy Use (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "estimated_energy_test_cycle_time_min",
+      "name": "Estimated Energy Test Cycle Time (min)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "energy_test_cycle_information",
+      "name": "Energy Test Cycle Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_dryer_features",
+      "name": "Additional Dryer Features",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "vented_or_ventless",
+      "name": "Vented or Ventless",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "refrigerant_type",
+      "name": "Refrigerant Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "refrigerant_with_gwp",
+      "name": "Refrigerant with GWP",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connected",
+      "name": "Connected",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connected_demand_response_functionality_tested",
+      "name": "Connects Using",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "communication_standard_application_layer",
+      "name": "Communication Standard - Application Layer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "direct_on_premises_open_standard_based_interconnection",
+      "name": "Direct on-premises Open-standard Based Interconnection",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh",
+      "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "paired_energy_star_clothes_washer_available",
+      "name": "Paired ENERGY STAR Clothes Washer Available",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "paired_energy_star_clothes_washer_energy_star_model_identifier",
+      "name": "Paired ENERGY STAR Clothes Washer ENERGY STAR Model Identifier",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available on Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_qualified",
+      "name": "Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "CB Model Identifier",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "meets_most_efficient_criteria",
+      "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+      "dataTypeName": "text"
+    }
+  ]
+}

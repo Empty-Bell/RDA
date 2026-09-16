@@ -310,18 +310,18 @@ def main():
 
         check('pdp_identity_and_documents', pdp)
 
-        if family == 'washer':
+        if family in {'washer', 'dryer'}:
             # Observed standalone listing paths provide a second diagnostic sample;
             # this is not certification routing or a model-prefix classification rule.
             candidates = [x for data, _, _ in captured_pf for x in data['searchResults']
-                          if '/us/laundry/washers/' in x.get('pdpURL', '')]
+                          if f'/us/laundry/{"washers" if family == "washer" else "dryers"}/' in x.get('pdpURL', '')]
             base_out = OUT
             OUT = base_out / 'standalone'
             pdp_json.clear()  # never select the earlier combo's bridge record
             def standalone():
                 assert candidates, 'No source-backed standalone-path sample'
                 return pdp(candidates[0])
-            check('standalone_washer_pdp_and_documents', standalone)
+            check(f'standalone_{family}_pdp_and_documents', standalone)
             OUT = base_out
 
         if family == 'cooktop':

@@ -1,0 +1,1770 @@
+{
+  "searchTotalCount": 19,
+  "hasMoreResults": true,
+  "searchResults": [
+    {
+      "modelCode": "WD90F53AVBUS",
+      "modelName": "WD90F53AVBUS",
+      "id": "WD90F53AVBUS",
+      "group_id": "MULTI_GROUP_ID_601634",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "73",
+        "pickYn": "N",
+        "representativeModel": "WD90F53AVBUS",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-1",
+        "id": "601634"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Vented",
+          "fmyChipType": "Vent Type"
+        },
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WD90F53AVBUS",
+          "modelName": "WD90F53AVBUS",
+          "id": "WD90F53AVBUS",
+          "group_id": "MULTI_GROUP_ID_601634",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "WD90F53AVBUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-1",
+            "id": "601634"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Vented",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD90F53AVSUS",
+          "modelName": "WD90F53AVSUS",
+          "id": "WD90F53AVSUS",
+          "group_id": "MULTI_GROUP_ID_601634",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-dark-steel-sku-wd90f53avsus",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-dark-steel-sku-wd90f53avsus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "WD90F53AVBUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-1",
+            "id": "601634"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Vented",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#5e6061",
+              "fmyChipName": "Dark Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD90F53AVYUS",
+          "modelName": "WD90F53AVYUS",
+          "id": "WD90F53AVYUS",
+          "group_id": "MULTI_GROUP_ID_601634",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-ivory-sku-wd90f53avyus",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-ivory-sku-wd90f53avyus",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "WD90F53AVBUS",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-1",
+            "id": "601634"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Vented",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#fafafa",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WH46DBH500EVA3",
+      "modelName": "WH46DBH500EVA3",
+      "id": "WH46DBH500EVA3",
+      "group_id": "MULTI_GROUP_ID_601639",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "72",
+        "pickYn": "N",
+        "representativeModel": "WH46DBH500EVA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-2",
+        "id": "601639"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WH46DBH500EVA3",
+          "modelName": "WH46DBH500EVA3",
+          "id": "WH46DBH500EVA3",
+          "group_id": "MULTI_GROUP_ID_601639",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH500EVA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-2",
+            "id": "601639"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "WH46DBH500GVA3",
+          "modelName": "WH46DBH500GVA3",
+          "id": "WH46DBH500GVA3",
+          "group_id": "MULTI_GROUP_ID_601639",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-gas-dryer-in-brushed-black-sku-wh46dbh500gva3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-gas-dryer-in-brushed-black-sku-wh46dbh500gva3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH500EVA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-2",
+            "id": "601639"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WD53DBA900HZA1",
+      "modelName": "WD53DBA900HZA1",
+      "id": "WD53DBA900HZA1",
+      "group_id": "MULTI_GROUP_ID_601657",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "66",
+        "pickYn": "N",
+        "representativeModel": "WD53DBA900HZA1",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-8",
+        "id": "601657"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#5e6061",
+          "fmyChipName": "Dark Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Ventless",
+          "fmyChipType": "Vent Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WD53DBA900HZA1",
+          "modelName": "WD53DBA900HZA1",
+          "id": "WD53DBA900HZA1",
+          "group_id": "MULTI_GROUP_ID_601657",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-dark-steel-sku-wd53dba900hza1",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "WD53DBA900HZA1",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-8",
+            "id": "601657"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#5e6061",
+              "fmyChipName": "Dark Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Ventless",
+              "fmyChipType": "Vent Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD53DBA900HBA1",
+          "modelName": "WD53DBA900HBA1",
+          "id": "WD53DBA900HBA1",
+          "group_id": "MULTI_GROUP_ID_601657",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-brushed-black-sku-wd53dba900hba1",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-bespoke-ai-laundry-ventless-combo-super-speed-5-3-cu-ft-brushed-black-sku-wd53dba900hba1",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "WD53DBA900HZA1",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-8",
+            "id": "601657"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Ventless",
+              "fmyChipType": "Vent Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WD53DBA900HYA1",
+          "modelName": "WD53DBA900HYA1",
+          "id": "WD53DBA900HYA1",
+          "group_id": "MULTI_GROUP_ID_601657",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/5-3-cu-ft-bespoke-ai-laundry-ventless-heat-pump-dryer-combo-heat-pump-dryer-all-in-one-ultra-capacity-washer-with-ai-home-in-ivory-sku-wd53dba900hya1",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/5-3-cu-ft-bespoke-ai-laundry-ventless-heat-pump-dryer-combo-heat-pump-dryer-all-in-one-ultra-capacity-washer-with-ai-home-in-ivory-sku-wd53dba900hya1",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "WD53DBA900HZA1",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-8",
+            "id": "601657"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Ventless",
+              "fmyChipType": "Vent Type"
+            },
+            {
+              "fmyChipCode": "#eeebe4",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "WH46DBH100EWA3",
+      "modelName": "WH46DBH100EWA3",
+      "id": "WH46DBH100EWA3",
+      "group_id": "MULTI_GROUP_ID_601664",
+      "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+      "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "65",
+        "pickYn": "N",
+        "representativeModel": "WH46DBH100EWA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-9",
+        "id": "601664"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "WH46DBH100EWA3",
+          "modelName": "WH46DBH100EWA3",
+          "id": "WH46DBH100EWA3",
+          "group_id": "MULTI_GROUP_ID_601664",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-electric-dryer-in-white-sku-wh46dbh100ewa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "65",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH100EWA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-9",
+            "id": "601664"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "WH46DBH100GWA3",
+          "modelName": "WH46DBH100GWA3",
+          "id": "WH46DBH100GWA3",
+          "group_id": "MULTI_GROUP_ID_601664",
+          "pdpURL": "/us/laundry/washer-and-dryer-sets/bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-gas-dryer-in-white-sku-wh46dbh100gwa3",
+          "consumerUrl": "/us/laundry/washer-and-dryer-sets/bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-steam-wash-and-7-6-cu-ft-gas-dryer-in-white-sku-wh46dbh100gwa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "65",
+            "pickYn": "N",
+            "representativeModel": "WH46DBH100EWA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-9",
+            "id": "601664"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DV90F53AESA3",
+      "modelName": "DV90F53AESA3",
+      "id": "DV90F53AESA3",
+      "group_id": "MULTI_GROUP_ID_601730",
+      "pdpURL": "/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-dark-steel-sku-dv90f53aesa3",
+      "consumerUrl": "/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-dark-steel-sku-dv90f53aesa3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "53",
+        "pickYn": "N",
+        "representativeModel": "DV90F53AESA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-21",
+        "id": "601730"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#777777",
+          "fmyChipName": "Dark Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DV90F53AESA3",
+          "modelName": "DV90F53AESA3",
+          "id": "DV90F53AESA3",
+          "group_id": "MULTI_GROUP_ID_601730",
+          "pdpURL": "/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-dark-steel-sku-dv90f53aesa3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-dark-steel-sku-dv90f53aesa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "53",
+            "pickYn": "N",
+            "representativeModel": "DV90F53AESA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-21",
+            "id": "601730"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#777777",
+              "fmyChipName": "Dark Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DV90F53AEYA3",
+          "modelName": "DV90F53AEYA3",
+          "id": "DV90F53AEYA3",
+          "group_id": "MULTI_GROUP_ID_601730",
+          "pdpURL": "/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-ivory-sku-dv90f53aeya3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-ivory-sku-dv90f53aeya3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "53",
+            "pickYn": "N",
+            "representativeModel": "DV90F53AESA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-21",
+            "id": "601730"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#eeebe4",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DV90F53AGSA3",
+          "modelName": "DV90F53AGSA3",
+          "id": "DV90F53AGSA3",
+          "group_id": "MULTI_GROUP_ID_601730",
+          "pdpURL": "/us/laundry/dryers/bespoke-7-6-cu-ft-bespoke-ai-ultra-capacity-front-load-gas-dryer-with-ai-home-and-ai-optidry-in-dark-steel-sku-dv90f53agsa3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-7-6-cu-ft-bespoke-ai-ultra-capacity-front-load-gas-dryer-with-ai-home-and-ai-optidry-in-dark-steel-sku-dv90f53agsa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "53",
+            "pickYn": "N",
+            "representativeModel": "DV90F53AESA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-21",
+            "id": "601730"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#777777",
+              "fmyChipName": "Dark Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DV90F53AGYA3",
+          "modelName": "DV90F53AGYA3",
+          "id": "DV90F53AGYA3",
+          "group_id": "MULTI_GROUP_ID_601730",
+          "pdpURL": "/us/laundry/dryers/bespoke-7-6-cu-ft-bespoke-ai-ultra-capacity-front-load-gas-dryer-with-ai-home-and-ai-optidry-in-ivory-sku-dv90f53agya3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-7-6-cu-ft-bespoke-ai-ultra-capacity-front-load-gas-dryer-with-ai-home-and-ai-optidry-in-ivory-sku-dv90f53agya3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "53",
+            "pickYn": "N",
+            "representativeModel": "DV90F53AESA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-21",
+            "id": "601730"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#eeebe4",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE50BG8300VA3",
+      "modelName": "DVE50BG8300VA3",
+      "id": "DVE50BG8300VA3",
+      "group_id": "MULTI_GROUP_ID_601739",
+      "pdpURL": "/us/laundry/dryers/front-load-dv8300b-dryer-steam-sanitize-energy-star-certified-7-5-cu-ft-brushed-black-sku-dve50bg8300va3",
+      "consumerUrl": "/us/laundry/dryers/front-load-dv8300b-dryer-steam-sanitize-energy-star-certified-7-5-cu-ft-brushed-black-sku-dve50bg8300va3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "52",
+        "pickYn": "N",
+        "representativeModel": "DVE50BG8300VA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-22",
+        "id": "601739"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE50BG8300VA3",
+          "modelName": "DVE50BG8300VA3",
+          "id": "DVE50BG8300VA3",
+          "group_id": "MULTI_GROUP_ID_601739",
+          "pdpURL": "/us/laundry/dryers/front-load-dv8300b-dryer-steam-sanitize-energy-star-certified-7-5-cu-ft-brushed-black-sku-dve50bg8300va3",
+          "consumerUrl": "/us/laundry/dryers/front-load-dv8300b-dryer-steam-sanitize-energy-star-certified-7-5-cu-ft-brushed-black-sku-dve50bg8300va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "52",
+            "pickYn": "N",
+            "representativeModel": "DVE50BG8300VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-22",
+            "id": "601739"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVE50BG8300EA3",
+          "modelName": "DVE50BG8300EA3",
+          "id": "DVE50BG8300EA3",
+          "group_id": "MULTI_GROUP_ID_601739",
+          "pdpURL": "/us/laundry/dryers/front-load-dv8300b-dryer-steam-sanitize-energy-star-certified-7-5-cu-ft-ivory-sku-dve50bg8300ea3",
+          "consumerUrl": "/us/laundry/dryers/front-load-dv8300b-dryer-steam-sanitize-energy-star-certified-7-5-cu-ft-ivory-sku-dve50bg8300ea3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "52",
+            "pickYn": "N",
+            "representativeModel": "DVE50BG8300VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-22",
+            "id": "601739"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#fafafa",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG50BG8300EA3",
+          "modelName": "DVG50BG8300EA3",
+          "id": "DVG50BG8300EA3",
+          "group_id": "MULTI_GROUP_ID_601739",
+          "pdpURL": "/us/laundry/dryers/gas-7-5-cu-ft-smart-gas-dryer-with-steam-sanitize-and-sensor-dry-in-ivory-sku-dvg50bg8300ea3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-5-cu-ft-smart-gas-dryer-with-steam-sanitize-and-sensor-dry-in-ivory-sku-dvg50bg8300ea3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "52",
+            "pickYn": "N",
+            "representativeModel": "DVE50BG8300VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-22",
+            "id": "601739"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#fafafa",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG50BG8300VA3",
+          "modelName": "DVG50BG8300VA3",
+          "id": "DVG50BG8300VA3",
+          "group_id": "MULTI_GROUP_ID_601739",
+          "pdpURL": "/us/laundry/dryers/gas-7-5-cu-ft-smart-gas-dryer-with-steam-sanitize-and-sensor-dry-in-brushed-black-sku-dvg50bg8300va3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-5-cu-ft-smart-gas-dryer-with-steam-sanitize-and-sensor-dry-in-brushed-black-sku-dvg50bg8300va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "52",
+            "pickYn": "N",
+            "representativeModel": "DVE50BG8300VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-22",
+            "id": "601739"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE55CG7500EA3",
+      "modelName": "DVE55CG7500EA3",
+      "id": "DVE55CG7500EA3",
+      "group_id": "MULTI_GROUP_ID_601743",
+      "pdpURL": "/us/laundry/dryers/electric-dv7500c-top-load-dryer-steam-sanitize-plus-smartthings-7-4-cu-ft-ivory-sku-dve55cg7500ea3",
+      "consumerUrl": "/us/laundry/dryers/electric-dv7500c-top-load-dryer-steam-sanitize-plus-smartthings-7-4-cu-ft-ivory-sku-dve55cg7500ea3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "51",
+        "pickYn": "N",
+        "representativeModel": "DVE55CG7500EA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-23",
+        "id": "601743"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#f0eae0",
+          "fmyChipName": "Ivory",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE55CG7500EA3",
+          "modelName": "DVE55CG7500EA3",
+          "id": "DVE55CG7500EA3",
+          "group_id": "MULTI_GROUP_ID_601743",
+          "pdpURL": "/us/laundry/dryers/electric-dv7500c-top-load-dryer-steam-sanitize-plus-smartthings-7-4-cu-ft-ivory-sku-dve55cg7500ea3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv7500c-top-load-dryer-steam-sanitize-plus-smartthings-7-4-cu-ft-ivory-sku-dve55cg7500ea3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "51",
+            "pickYn": "N",
+            "representativeModel": "DVE55CG7500EA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-23",
+            "id": "601743"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#f0eae0",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG55CG7500EA3",
+          "modelName": "DVG55CG7500EA3",
+          "id": "DVG55CG7500EA3",
+          "group_id": "MULTI_GROUP_ID_601743",
+          "pdpURL": "/us/laundry/dryers/gas-dv7500c-front-load-dryer-steam-sanitize-plus-smartthings-7-4-cu-ft-ivory-sku-dvg55cg7500ea3",
+          "consumerUrl": "/us/laundry/dryers/gas-dv7500c-front-load-dryer-steam-sanitize-plus-smartthings-7-4-cu-ft-ivory-sku-dvg55cg7500ea3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "51",
+            "pickYn": "N",
+            "representativeModel": "DVE55CG7500EA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-23",
+            "id": "601743"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#f0eae0",
+              "fmyChipName": "Ivory",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE54CG7150DA3",
+      "modelName": "DVE54CG7150DA3",
+      "id": "DVE54CG7150DA3",
+      "group_id": "MULTI_GROUP_ID_601746",
+      "pdpURL": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-pet-care-dry-and-steam-sanitize-in-brushed-navy-sku-dve54cg7150da3",
+      "consumerUrl": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-pet-care-dry-and-steam-sanitize-in-brushed-navy-sku-dve54cg7150da3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "50",
+        "pickYn": "N",
+        "representativeModel": "DVE54CG7150DA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-24",
+        "id": "601746"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#3e4e5f",
+          "fmyChipName": "Brushed Navy",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE54CG7150DA3",
+          "modelName": "DVE54CG7150DA3",
+          "id": "DVE54CG7150DA3",
+          "group_id": "MULTI_GROUP_ID_601746",
+          "pdpURL": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-pet-care-dry-and-steam-sanitize-in-brushed-navy-sku-dve54cg7150da3",
+          "consumerUrl": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-pet-care-dry-and-steam-sanitize-in-brushed-navy-sku-dve54cg7150da3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "50",
+            "pickYn": "N",
+            "representativeModel": "DVE54CG7150DA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-24",
+            "id": "601746"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#3e4e5f",
+              "fmyChipName": "Brushed Navy",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG54CG7150DA3",
+          "modelName": "DVG54CG7150DA3",
+          "id": "DVG54CG7150DA3",
+          "group_id": "MULTI_GROUP_ID_601746",
+          "pdpURL": "/us/laundry/dryers/7-4-cu-ft-smart-gas-dryer-with-pet-care-dry-and-steam-sanitize-in-brushed-navy-sku-dvg54cg7150da3",
+          "consumerUrl": "/us/laundry/dryers/7-4-cu-ft-smart-gas-dryer-with-pet-care-dry-and-steam-sanitize-in-brushed-navy-sku-dvg54cg7150da3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "50",
+            "pickYn": "N",
+            "representativeModel": "DVE54CG7150DA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-24",
+            "id": "601746"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#3e4e5f",
+              "fmyChipName": "Brushed Navy",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE55CG7100VA3",
+      "modelName": "DVE55CG7100VA3",
+      "id": "DVE55CG7100VA3",
+      "group_id": "MULTI_GROUP_ID_601750",
+      "pdpURL": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-brushed-black-sku-dve55cg7100va3",
+      "consumerUrl": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-brushed-black-sku-dve55cg7100va3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "49",
+        "pickYn": "N",
+        "representativeModel": "DVE55CG7100VA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-25",
+        "id": "601750"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE55CG7100VA3",
+          "modelName": "DVE55CG7100VA3",
+          "id": "DVE55CG7100VA3",
+          "group_id": "MULTI_GROUP_ID_601750",
+          "pdpURL": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-brushed-black-sku-dve55cg7100va3",
+          "consumerUrl": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-brushed-black-sku-dve55cg7100va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "49",
+            "pickYn": "N",
+            "representativeModel": "DVE55CG7100VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-25",
+            "id": "601750"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG55CG7100VA3",
+          "modelName": "DVG55CG7100VA3",
+          "id": "DVG55CG7100VA3",
+          "group_id": "MULTI_GROUP_ID_601750",
+          "pdpURL": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-steam-sanitize-in-brushed-black-sku-dvg55cg7100va3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-steam-sanitize-in-brushed-black-sku-dvg55cg7100va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "49",
+            "pickYn": "N",
+            "representativeModel": "DVE55CG7100VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-25",
+            "id": "601750"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVE55CG7100WA3",
+          "modelName": "DVE55CG7100WA3",
+          "id": "DVE55CG7100WA3",
+          "group_id": "MULTI_GROUP_ID_601750",
+          "pdpURL": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-white-sku-dve55cg7100wa3",
+          "consumerUrl": "/us/laundry/dryers/electric-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-white-sku-dve55cg7100wa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "49",
+            "pickYn": "N",
+            "representativeModel": "DVE55CG7100VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-25",
+            "id": "601750"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG55CG7100WA3",
+          "modelName": "DVG55CG7100WA3",
+          "id": "DVG55CG7100WA3",
+          "group_id": "MULTI_GROUP_ID_601750",
+          "pdpURL": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-steam-sanitize-in-white-sku-dvg55cg7100wa3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-steam-sanitize-in-white-sku-dvg55cg7100wa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "49",
+            "pickYn": "N",
+            "representativeModel": "DVE55CG7100VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-25",
+            "id": "601750"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE53BB8900DA3",
+      "modelName": "DVE53BB8900D",
+      "id": "DVE53BB8900DA3",
+      "group_id": "MULTI_GROUP_ID_601754",
+      "pdpURL": "/us/laundry/dryers/bespoke-7-6-cu-ft-ultra-capacity-electric-dryer-with-ai-optimal-dry-and-super-speed-dry-in-brushed-navy-sku-dve53bb8900da3",
+      "consumerUrl": "/us/laundry/dryers/bespoke-7-6-cu-ft-ultra-capacity-electric-dryer-with-ai-optimal-dry-and-super-speed-dry-in-brushed-navy-sku-dve53bb8900da3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "48",
+        "pickYn": "N",
+        "representativeModel": "DVE53BB8900DA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-26",
+        "id": "601754"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#304561",
+          "fmyChipName": "Brushed Navy",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE53BB8900DA3",
+          "modelName": "DVE53BB8900D",
+          "id": "DVE53BB8900DA3",
+          "group_id": "MULTI_GROUP_ID_601754",
+          "pdpURL": "/us/laundry/dryers/bespoke-7-6-cu-ft-ultra-capacity-electric-dryer-with-ai-optimal-dry-and-super-speed-dry-in-brushed-navy-sku-dve53bb8900da3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-7-6-cu-ft-ultra-capacity-electric-dryer-with-ai-optimal-dry-and-super-speed-dry-in-brushed-navy-sku-dve53bb8900da3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "48",
+            "pickYn": "N",
+            "representativeModel": "DVE53BB8900DA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-26",
+            "id": "601754"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#304561",
+              "fmyChipName": "Brushed Navy",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG53BB8900DA3",
+          "modelName": "DVG53BB8900D",
+          "id": "DVG53BB8900DA3",
+          "group_id": "MULTI_GROUP_ID_601754",
+          "pdpURL": "/us/laundry/dryers/bespoke-7-6-cu-ft-ultra-capacity-gas-dryer-with-ai-optimal-dry-and-super-speed-dry-in-brushed-navy-sku-dvg53bb8900da3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-7-6-cu-ft-ultra-capacity-gas-dryer-with-ai-optimal-dry-and-super-speed-dry-in-brushed-navy-sku-dvg53bb8900da3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "48",
+            "pickYn": "N",
+            "representativeModel": "DVE53BB8900DA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-26",
+            "id": "601754"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#304561",
+              "fmyChipName": "Brushed Navy",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DV53BB8900HDA2",
+          "modelName": "DV53BB8900HDA2",
+          "id": "DV53BB8900HDA2",
+          "group_id": "MULTI_GROUP_ID_601754",
+          "pdpURL": "/us/laundry/dryers/bespoke-7-8-cu-ft-ultra-capacity-ventless-hybrid-heat-pump-dryer-with-ai-optimal-dry-in-brushed-navy-sku-dv53bb8900hda2",
+          "consumerUrl": "/us/laundry/dryers/bespoke-7-8-cu-ft-ultra-capacity-ventless-hybrid-heat-pump-dryer-with-ai-optimal-dry-in-brushed-navy-sku-dv53bb8900hda2",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "48",
+            "pickYn": "N",
+            "representativeModel": "DVE53BB8900DA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-26",
+            "id": "601754"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Heat Pump",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#3a414a",
+              "fmyChipName": "Brushed Navy",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE53BB8700VA3",
+      "modelName": "DVE53BB8700V",
+      "id": "DVE53BB8700VA3",
+      "group_id": "MULTI_GROUP_ID_601760",
+      "pdpURL": "/us/laundry/dryers/bespoke-dv8700b-front-load-electric-ultra-capacity-dryer-with-super-speed-dry-and-ai-smart-dial-7-6-cu-ft-brushed-black-sku-dve53bb8700va3",
+      "consumerUrl": "/us/laundry/dryers/bespoke-dv8700b-front-load-electric-ultra-capacity-dryer-with-super-speed-dry-and-ai-smart-dial-7-6-cu-ft-brushed-black-sku-dve53bb8700va3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "47",
+        "pickYn": "N",
+        "representativeModel": "DVE53BB8700VA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-27",
+        "id": "601760"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE53BB8700VA3",
+          "modelName": "DVE53BB8700V",
+          "id": "DVE53BB8700VA3",
+          "group_id": "MULTI_GROUP_ID_601760",
+          "pdpURL": "/us/laundry/dryers/bespoke-dv8700b-front-load-electric-ultra-capacity-dryer-with-super-speed-dry-and-ai-smart-dial-7-6-cu-ft-brushed-black-sku-dve53bb8700va3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-dv8700b-front-load-electric-ultra-capacity-dryer-with-super-speed-dry-and-ai-smart-dial-7-6-cu-ft-brushed-black-sku-dve53bb8700va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "47",
+            "pickYn": "N",
+            "representativeModel": "DVE53BB8700VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-27",
+            "id": "601760"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG53BB8700VA3",
+          "modelName": "DVG53BB8700V",
+          "id": "DVG53BB8700VA3",
+          "group_id": "MULTI_GROUP_ID_601760",
+          "pdpURL": "/us/laundry/dryers/bespoke-dv8700b-front-load-gas-dryer-with-super-speed-dry-and-ai-smart-dial-7-6-cu-ft-brushed-black-sku-dvg53bb8700va3",
+          "consumerUrl": "/us/laundry/dryers/bespoke-dv8700b-front-load-gas-dryer-with-super-speed-dry-and-ai-smart-dial-7-6-cu-ft-brushed-black-sku-dvg53bb8700va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "47",
+            "pickYn": "N",
+            "representativeModel": "DVE53BB8700VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-27",
+            "id": "601760"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE45B6300P/A3",
+      "modelName": "DVE45B6300P",
+      "id": "DVE45B6300P/A3",
+      "group_id": "MULTI_GROUP_ID_601763",
+      "pdpURL": "/us/laundry/dryers/electric-dv6300b-front-load-smart-electric-dryer-with-steam-sanitize-7-5-cu-ft-platinum-sku-dve45b6300p-a3",
+      "consumerUrl": "/us/laundry/dryers/electric-dv6300b-front-load-smart-electric-dryer-with-steam-sanitize-7-5-cu-ft-platinum-sku-dve45b6300p-a3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "46",
+        "pickYn": "N",
+        "representativeModel": "DVE45B6300P/A3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-28",
+        "id": "601763"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#808080",
+          "fmyChipName": "Platinum",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE45B6300P/A3",
+          "modelName": "DVE45B6300P",
+          "id": "DVE45B6300P/A3",
+          "group_id": "MULTI_GROUP_ID_601763",
+          "pdpURL": "/us/laundry/dryers/electric-dv6300b-front-load-smart-electric-dryer-with-steam-sanitize-7-5-cu-ft-platinum-sku-dve45b6300p-a3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv6300b-front-load-smart-electric-dryer-with-steam-sanitize-7-5-cu-ft-platinum-sku-dve45b6300p-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "46",
+            "pickYn": "N",
+            "representativeModel": "DVE45B6300P/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-28",
+            "id": "601763"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Platinum",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG45B6300W/A3",
+          "modelName": "DVG45B6300W",
+          "id": "DVG45B6300W/A3",
+          "group_id": "MULTI_GROUP_ID_601763",
+          "pdpURL": "/us/laundry/dryers/gas-7-5-cu-ft-front-load-smart-gas-dryer-with-steam-sanitize-in-white-sku-dvg45b6300w-a3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-5-cu-ft-front-load-smart-gas-dryer-with-steam-sanitize-in-white-sku-dvg45b6300w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "46",
+            "pickYn": "N",
+            "representativeModel": "DVE45B6300P/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-28",
+            "id": "601763"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG45B6300P/A3",
+          "modelName": "DVG45B6300P",
+          "id": "DVG45B6300P/A3",
+          "group_id": "MULTI_GROUP_ID_601763",
+          "pdpURL": "/us/laundry/dryers/gas-7-5-cu-ft-front-load-smart-gas-dryer-with-steam-sanitize-in-platinum-sku-dvg45b6300p-a3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-5-cu-ft-front-load-smart-gas-dryer-with-steam-sanitize-in-platinum-sku-dvg45b6300p-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "46",
+            "pickYn": "N",
+            "representativeModel": "DVE45B6300P/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-28",
+            "id": "601763"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Platinum",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVE45B6300W/A3",
+          "modelName": "DVE45B6300W",
+          "id": "DVE45B6300W/A3",
+          "group_id": "MULTI_GROUP_ID_601763",
+          "pdpURL": "/us/laundry/dryers/electric-dv6300b-front-load-smart-electric-dryer-with-steam-sanitize-7-5-cu-ft-white-sku-dve45b6300w-a3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv6300b-front-load-smart-electric-dryer-with-steam-sanitize-7-5-cu-ft-white-sku-dve45b6300w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "46",
+            "pickYn": "N",
+            "representativeModel": "DVE45B6300P/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-28",
+            "id": "601763"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE45T6000W/A3",
+      "modelName": "DVE45T6000W/A3",
+      "id": "DVE45T6000W/A3",
+      "group_id": "MULTI_GROUP_ID_601766",
+      "pdpURL": "/us/laundry/dryers/electric-7-5-cu-ft-dryer-with-sensor-dry-in-white-sku-dve45t6000w-a3",
+      "consumerUrl": "/us/laundry/dryers/electric-7-5-cu-ft-dryer-with-sensor-dry-in-white-sku-dve45t6000w-a3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "45",
+        "pickYn": "N",
+        "representativeModel": "DVE45T6000W/A3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-29",
+        "id": "601766"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE45T6000W/A3",
+          "modelName": "DVE45T6000W/A3",
+          "id": "DVE45T6000W/A3",
+          "group_id": "MULTI_GROUP_ID_601766",
+          "pdpURL": "/us/laundry/dryers/electric-7-5-cu-ft-dryer-with-sensor-dry-in-white-sku-dve45t6000w-a3",
+          "consumerUrl": "/us/laundry/dryers/electric-7-5-cu-ft-dryer-with-sensor-dry-in-white-sku-dve45t6000w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "45",
+            "pickYn": "N",
+            "representativeModel": "DVE45T6000W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-29",
+            "id": "601766"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVE45T6000V/A3",
+          "modelName": "DVE45T6000V/A3",
+          "id": "DVE45T6000V/A3",
+          "group_id": "MULTI_GROUP_ID_601766",
+          "pdpURL": "/us/laundry/dryers/electric-7-5-cu-ft-dryer-with-sensor-dry-in-brushed-black-sku-dve45t6000v-a3",
+          "consumerUrl": "/us/laundry/dryers/electric-7-5-cu-ft-dryer-with-sensor-dry-in-brushed-black-sku-dve45t6000v-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "45",
+            "pickYn": "N",
+            "representativeModel": "DVE45T6000W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-29",
+            "id": "601766"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG45T6000W/A3",
+          "modelName": "DVG45T6000W/A3",
+          "id": "DVG45T6000W/A3",
+          "group_id": "MULTI_GROUP_ID_601766",
+          "pdpURL": "/us/laundry/dryers/gas-7-5-cu-ft-gas-dryer-with-sensor-dry-in-white-sku-dvg45t6000w-a3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-5-cu-ft-gas-dryer-with-sensor-dry-in-white-sku-dvg45t6000w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "45",
+            "pickYn": "N",
+            "representativeModel": "DVE45T6000W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-29",
+            "id": "601766"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG45T6000V/A3",
+          "modelName": "DVG45T6000V/A3",
+          "id": "DVG45T6000V/A3",
+          "group_id": "MULTI_GROUP_ID_601766",
+          "pdpURL": "/us/laundry/dryers/gas-7-5-cu-ft-gas-dryer-with-sensor-dry-in-black-stainless-steel-sku-dvg45t6000v-a3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-5-cu-ft-gas-dryer-with-sensor-dry-in-black-stainless-steel-sku-dvg45t6000v-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "45",
+            "pickYn": "N",
+            "representativeModel": "DVE45T6000W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-29",
+            "id": "601766"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DV45DG6000HWA2",
+          "modelName": "DV45DG6000HWA2",
+          "id": "DV45DG6000HWA2",
+          "group_id": "MULTI_GROUP_ID_601766",
+          "pdpURL": "/us/laundry/dryers/ventless-7-5-cu-ft-large-capacity-ventless-hybrid-heat-pump-dryer-with-wi-fi-in-white-sku-dv45dg6000hwa2",
+          "consumerUrl": "/us/laundry/dryers/ventless-7-5-cu-ft-large-capacity-ventless-hybrid-heat-pump-dryer-with-wi-fi-in-white-sku-dv45dg6000hwa2",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "45",
+            "pickYn": "N",
+            "representativeModel": "DVE45T6000W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-29",
+            "id": "601766"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Heat Pump",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DV25FG60BVBEA2",
+      "modelName": "DV25FG60BVBEA2",
+      "id": "DV25FG60BVBEA2",
+      "group_id": "MULTI_GROUP_ID_601772",
+      "pdpURL": "/us/laundry/dryers/electric-4-cu-ft-compact-dryer-in-white-sku-dv25fg60bvbea2",
+      "consumerUrl": "/us/laundry/dryers/electric-4-cu-ft-compact-dryer-in-white-sku-dv25fg60bvbea2",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "44",
+        "pickYn": "N",
+        "representativeModel": "DV25FG60BVBEA2",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-30",
+        "id": "601772"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DV25FG60BVBEA2",
+          "modelName": "DV25FG60BVBEA2",
+          "id": "DV25FG60BVBEA2",
+          "group_id": "MULTI_GROUP_ID_601772",
+          "pdpURL": "/us/laundry/dryers/electric-4-cu-ft-compact-dryer-in-white-sku-dv25fg60bvbea2",
+          "consumerUrl": "/us/laundry/dryers/electric-4-cu-ft-compact-dryer-in-white-sku-dv25fg60bvbea2",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "44",
+            "pickYn": "N",
+            "representativeModel": "DV25FG60BVBEA2",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-30",
+            "id": "601772"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DV25FG62B0BEA2",
+          "modelName": "DV25FG62B0BEA2",
+          "id": "DV25FG62B0BEA2",
+          "group_id": "MULTI_GROUP_ID_601772",
+          "pdpURL": "/us/laundry/dryers/ventless-4-cu-ft-compact-heat-pump-dryer-in-white-sku-dv25fg62b0bea2",
+          "consumerUrl": "/us/laundry/dryers/ventless-4-cu-ft-compact-heat-pump-dryer-in-white-sku-dv25fg62b0bea2",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "44",
+            "pickYn": "N",
+            "representativeModel": "DV25FG60BVBEA2",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-30",
+            "id": "601772"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Heat Pump",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

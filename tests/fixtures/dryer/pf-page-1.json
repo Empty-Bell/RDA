@@ -1,0 +1,543 @@
+{
+  "searchTotalCount": 19,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "DVE52A5500W/A3",
+      "modelName": "DVE52A5500W",
+      "id": "DVE52A5500W/A3",
+      "group_id": "MULTI_GROUP_ID_601775",
+      "pdpURL": "/us/laundry/dryers/electric-dv5500a-front-load-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-white-sku-dve52a5500w-a3",
+      "consumerUrl": "/us/laundry/dryers/electric-dv5500a-front-load-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-white-sku-dve52a5500w-a3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "43",
+        "pickYn": "N",
+        "representativeModel": "DVE52A5500W/A3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-31",
+        "id": "601775"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE52A5500W/A3",
+          "modelName": "DVE52A5500W",
+          "id": "DVE52A5500W/A3",
+          "group_id": "MULTI_GROUP_ID_601775",
+          "pdpURL": "/us/laundry/dryers/electric-dv5500a-front-load-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-white-sku-dve52a5500w-a3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv5500a-front-load-7-4-cu-ft-smart-electric-dryer-with-steam-sanitize-in-white-sku-dve52a5500w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "43",
+            "pickYn": "N",
+            "representativeModel": "DVE52A5500W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-31",
+            "id": "601775"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG52A5500W/A3",
+          "modelName": "DVG52A5500W",
+          "id": "DVG52A5500W/A3",
+          "group_id": "MULTI_GROUP_ID_601775",
+          "pdpURL": "/us/laundry/dryers/gas-dv5500a-top-load-7-4-cu-ft-smart-dryer-with-steam-sanitize-in-white-sku-dvg52a5500w-a3",
+          "consumerUrl": "/us/laundry/dryers/gas-dv5500a-top-load-7-4-cu-ft-smart-dryer-with-steam-sanitize-in-white-sku-dvg52a5500w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "43",
+            "pickYn": "N",
+            "representativeModel": "DVE52A5500W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-31",
+            "id": "601775"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE47CG3500VA3",
+      "modelName": "DVE47CG3500VA3",
+      "id": "DVE47CG3500VA3",
+      "group_id": "MULTI_GROUP_ID_601777",
+      "pdpURL": "/us/laundry/dryers/electric-dv3500c-top-load-smart-electric-dryer-with-sensor-dry-7-4-cu-ft-brushed-black-sku-dve47cg3500va3",
+      "consumerUrl": "/us/laundry/dryers/electric-dv3500c-top-load-smart-electric-dryer-with-sensor-dry-7-4-cu-ft-brushed-black-sku-dve47cg3500va3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "42",
+        "pickYn": "N",
+        "representativeModel": "DVE47CG3500VA3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-32",
+        "id": "601777"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Brushed Black",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE47CG3500VA3",
+          "modelName": "DVE47CG3500VA3",
+          "id": "DVE47CG3500VA3",
+          "group_id": "MULTI_GROUP_ID_601777",
+          "pdpURL": "/us/laundry/dryers/electric-dv3500c-top-load-smart-electric-dryer-with-sensor-dry-7-4-cu-ft-brushed-black-sku-dve47cg3500va3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv3500c-top-load-smart-electric-dryer-with-sensor-dry-7-4-cu-ft-brushed-black-sku-dve47cg3500va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "42",
+            "pickYn": "N",
+            "representativeModel": "DVE47CG3500VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-32",
+            "id": "601777"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVE47CG3500WA3",
+          "modelName": "DVE47CG3500WA3",
+          "id": "DVE47CG3500WA3",
+          "group_id": "MULTI_GROUP_ID_601777",
+          "pdpURL": "/us/laundry/dryers/electric-dv3500c-top-load-smart-electric-dryer-with-sensor-dry-7-4-cu-ft-white-sku-dve47cg3500wa3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv3500c-top-load-smart-electric-dryer-with-sensor-dry-7-4-cu-ft-white-sku-dve47cg3500wa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "42",
+            "pickYn": "N",
+            "representativeModel": "DVE47CG3500VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-32",
+            "id": "601777"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG47CG3500VA3",
+          "modelName": "DVG47CG3500VA3",
+          "id": "DVG47CG3500VA3",
+          "group_id": "MULTI_GROUP_ID_601777",
+          "pdpURL": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-sensor-dry-in-brushed-black-sku-dvg47cg3500va3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-sensor-dry-in-brushed-black-sku-dvg47cg3500va3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "42",
+            "pickYn": "N",
+            "representativeModel": "DVE47CG3500VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-32",
+            "id": "601777"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Brushed Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG47CG3500WA3",
+          "modelName": "DVG47CG3500WA3",
+          "id": "DVG47CG3500WA3",
+          "group_id": "MULTI_GROUP_ID_601777",
+          "pdpURL": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-sensor-dry-in-white-sku-dvg47cg3500wa3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-4-cu-ft-smart-gas-dryer-with-sensor-dry-in-white-sku-dvg47cg3500wa3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "42",
+            "pickYn": "N",
+            "representativeModel": "DVE47CG3500VA3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-32",
+            "id": "601777"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE45T3200W/A3",
+      "modelName": "DVE45T3200W/A3",
+      "id": "DVE45T3200W/A3",
+      "group_id": "MULTI_GROUP_ID_601779",
+      "pdpURL": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-electric-dryer-with-sensor-dry-in-white-sku-dve45t3200w-a3",
+      "consumerUrl": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-electric-dryer-with-sensor-dry-in-white-sku-dve45t3200w-a3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "41",
+        "pickYn": "N",
+        "representativeModel": "DVE45T3200W/A3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-33",
+        "id": "601779"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE45T3200W/A3",
+          "modelName": "DVE45T3200W/A3",
+          "id": "DVE45T3200W/A3",
+          "group_id": "MULTI_GROUP_ID_601779",
+          "pdpURL": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-electric-dryer-with-sensor-dry-in-white-sku-dve45t3200w-a3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-electric-dryer-with-sensor-dry-in-white-sku-dve45t3200w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "DVE45T3200W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-33",
+            "id": "601779"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG45T3200W/A3",
+          "modelName": "DVG45T3200W/A3",
+          "id": "DVG45T3200W/A3",
+          "group_id": "MULTI_GROUP_ID_601779",
+          "pdpURL": "/us/laundry/dryers/gas-7-2-cu-ft-gas-dryer-with-sensor-dry-in-white-sku-dvg45t3200w-a3",
+          "consumerUrl": "/us/laundry/dryers/gas-7-2-cu-ft-gas-dryer-with-sensor-dry-in-white-sku-dvg45t3200w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "41",
+            "pickYn": "N",
+            "representativeModel": "DVE45T3200W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-33",
+            "id": "601779"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DVE41A3000W/A3",
+      "modelName": "DVE41A3000W",
+      "id": "DVE41A3000W/A3",
+      "group_id": "MULTI_GROUP_ID_601781",
+      "pdpURL": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-top-load-dryer-with-sensor-dry-and-8-drying-cycles-in-white-sku-dve41a3000w-a3",
+      "consumerUrl": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-top-load-dryer-with-sensor-dry-and-8-drying-cycles-in-white-sku-dve41a3000w-a3",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "40",
+        "pickYn": "N",
+        "representativeModel": "DVE41A3000W/A3",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-34",
+        "id": "601781"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DVE41A3000W/A3",
+          "modelName": "DVE41A3000W",
+          "id": "DVE41A3000W/A3",
+          "group_id": "MULTI_GROUP_ID_601781",
+          "pdpURL": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-top-load-dryer-with-sensor-dry-and-8-drying-cycles-in-white-sku-dve41a3000w-a3",
+          "consumerUrl": "/us/laundry/dryers/electric-dv3000a-7-2-cu-ft-top-load-dryer-with-sensor-dry-and-8-drying-cycles-in-white-sku-dve41a3000w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "DVE41A3000W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-34",
+            "id": "601781"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DVG41A3000W/A3",
+          "modelName": "DVG41A3000W",
+          "id": "DVG41A3000W/A3",
+          "group_id": "MULTI_GROUP_ID_601781",
+          "pdpURL": "/us/laundry/dryers/gas-dv3000a-top-load-7-2-cu-ft-dryer-with-sensor-dry-and-8-drying-cycles-in-white-sku-dvg41a3000w-a3",
+          "consumerUrl": "/us/laundry/dryers/gas-dv3000a-top-load-7-2-cu-ft-dryer-with-sensor-dry-and-8-drying-cycles-in-white-sku-dvg41a3000w-a3",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "DVE41A3000W/A3",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-34",
+            "id": "601781"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DV25B6900HW/A2",
+      "modelName": "DV25B6900HW/A2",
+      "id": "DV25B6900HW/A2",
+      "group_id": "MULTI_GROUP_ID_601785",
+      "pdpURL": "/us/laundry/dryers/ventless-4-0-cu-ft-heat-pump-dryer-with-ai-smart-dial-and-wi-fi-connectivity-in-white-sku-dv25b6900hw-a2",
+      "consumerUrl": "/us/laundry/dryers/ventless-4-0-cu-ft-heat-pump-dryer-with-ai-smart-dial-and-wi-fi-connectivity-in-white-sku-dv25b6900hw-a2",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "38",
+        "pickYn": "N",
+        "representativeModel": "DV25B6900EW/A2",
+        "taxonomyId": "08010000",
+        "isPrimary": "Y",
+        "familyName": "Laundry PF-36",
+        "id": "601785"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Heat Pump",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#ffffff",
+          "fmyChipName": "White",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DV25B6900HW/A2",
+          "modelName": "DV25B6900HW/A2",
+          "id": "DV25B6900HW/A2",
+          "group_id": "MULTI_GROUP_ID_601785",
+          "pdpURL": "/us/laundry/dryers/ventless-4-0-cu-ft-heat-pump-dryer-with-ai-smart-dial-and-wi-fi-connectivity-in-white-sku-dv25b6900hw-a2",
+          "consumerUrl": "/us/laundry/dryers/ventless-4-0-cu-ft-heat-pump-dryer-with-ai-smart-dial-and-wi-fi-connectivity-in-white-sku-dv25b6900hw-a2",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "38",
+            "pickYn": "N",
+            "representativeModel": "DV25B6900EW/A2",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-36",
+            "id": "601785"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Heat Pump",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DV25B6900EW/A2",
+          "modelName": "DV25B6900EW/A2",
+          "id": "DV25B6900EW/A2",
+          "group_id": "MULTI_GROUP_ID_601785",
+          "pdpURL": "/us/laundry/dryers/ventless-4-0-cu-ft-heat-pump-dryer-with-ai-smart-dial-and-wi-fi-connectivity-in-white-sku-dv25b6900ew-a2",
+          "consumerUrl": "/us/laundry/dryers/ventless-4-0-cu-ft-heat-pump-dryer-with-ai-smart-dial-and-wi-fi-connectivity-in-white-sku-dv25b6900ew-a2",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "38",
+            "pickYn": "N",
+            "representativeModel": "DV25B6900EW/A2",
+            "taxonomyId": "08010000",
+            "isPrimary": "Y",
+            "familyName": "Laundry PF-36",
+            "id": "601785"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#ffffff",
+              "fmyChipName": "White",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
