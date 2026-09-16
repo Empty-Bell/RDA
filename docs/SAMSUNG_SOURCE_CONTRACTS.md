@@ -162,7 +162,11 @@ Bounded raw claim/identity observations are now hosted-verified across all sourc
 see PUBLIC_CLAIM_IDENTITY_CONTRACT.md for exact Product JSON-LD/title observations,
 separate source values and remaining badge attribution/structured flag scope.
 
-Remaining: independent rendered badge attribution and structured flag coverage;
+Bounded primary badge attribution and nested product-field discovery are now
+hosted-verified; see CLAIM_ATTRIBUTION_SOURCE_CONTRACT.md. Unsupported surfaces
+and unobserved flag interfaces remain unknown.
+
+Remaining: unsupported badge/flag surfaces and exhaustive variant coverage;
 normalized PDP title/commerce mapping; full PDF field-quality parser and low-resolution/wildcard
 regression corpus; stable hosted-source access; EPA matching/currency semantics.
 This closes the bounded refrigerator source reconnaissance, not full Phase 0.

@@ -134,7 +134,22 @@ reload retains failed attempts without relaxing identity. No claim truth, normal
 commerce status, certification or consistency decision was made.
 See PUBLIC_CLAIM_IDENTITY_CONTRACT.md and public-claim-identity-recon.json.
 
-Next bounded task: PDP badge attribution and broader structured flag source coverage.
+Current-product badge attribution / inline flag contract PASS: run 35162114501,
+commit a39c9e3914c13a7554ab1954c3edd18827b3fea3. All 12 source jobs succeeded
+with 143 tests. Unique primary gallery/configurator surfaces, sole exact Product
+JSON-LD and existing PDP identity gates corroborate attributed logo candidates.
+Nested product projections retain JSON paths and explicit SKU scope; unrelated
+branches cannot inherit the target. Trade-in/navigation/pricing are explicitly
+outside product-field scope; initial trade-in truncation remains in fixtures.
+All primary samples have one exact raw energyStarFlag from public NEXT_DATA
+props.pageProps.productData.products. Strict array-only extraction eliminates unrelated
+page traversal/truncation; missing/duplicate target records fail extraction. Actual
+Computer Y / TV N fixtures preserve raw flags, without taking the first array row.
+See CLAIM_ATTRIBUTION_SOURCE_CONTRACT.md and claim-attribution-recon.json.
+Unobserved flags and unsupported surfaces stay NOT_EVALUATED; no EPA/consistency
+rule or normalized commerce mapping was introduced.
+
+Next bounded task: EnergyGuide field-quality/source parser contract.
 All family discovery is complete; common claim/quality/runtime acceptance remains.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
@@ -143,6 +158,6 @@ Follow-ups before locking runtime: freeze transitive Python dependencies and OCR
 replace older Node20 Actions pins with verified current releases (runner currently upgrades
 them to Node24; first run succeeded with warnings). No downgrade flag should be enabled.
 
-Token handoff: use Sol medium for the remaining exploratory claim contract only; Terra medium
+Token handoff: use Sol medium for the next exploratory PDF field-quality contract only; Terra medium
 for repeated adapters after the contract is fixed. Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.

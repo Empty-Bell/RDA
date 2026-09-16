@@ -57,10 +57,12 @@ ENERGY STAR field. These differences are observations, not claim conflicts or EP
 findings. The Tablet PLP cards have observed card scopes but no sampled mounted-DOM
 ENERGY STAR candidates; this is not proof of no public claim.
 
-Open contract work: establish product attribution for PDP logo candidates from their
-observed ancestor context; verify broader structured flag sections rather than
-assuming no flag from the direct modelCode-record allowlist. Define normalized
-commerce semantics only with actual source evidence. Broad page candidates, absent
+Subsequent bounded primary badge attribution and nested field discovery are covered
+by CLAIM_ATTRIBUTION_SOURCE_CONTRACT.md (run 35162114501). The exact inline
+product energyStarFlag source is now observed on all primary samples, separately
+from earlier unobserved direct bridge fields. Unsupported surfaces
+and flag interfaces outside that scope remain unknown. Define normalized commerce
+semantics only with actual source evidence. Broad page candidates, absent
 fields and missing exact JSON-LD remain distinct from source access/parsing errors.
 Compact final evidence is docs/evidence/public-claim-identity-recon.json; raw
 artifacts retain their recorded 14-day expiry. Full G0 is still NOT_EVALUATED.

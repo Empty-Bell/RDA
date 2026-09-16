@@ -13,8 +13,10 @@ been reviewed; downstream full per-SKU collection and compliance are not perform
 | Consolidated G0 review | Updated Samsung/EPA/runtime contracts, coverage and unresolved decision list | Each requirement links to hosted evidence; unresolved semantics are explicitly retained; discovery PASS never becomes full collection or compliance PASS |
 
 Bounded raw claim/identity reconnaissance passed in run 35160456564 (126 tests,
-12 source legs); see PUBLIC_CLAIM_IDENTITY_CONTRACT.md. Next establish PDP logo
-attribution and broader structured flag source coverage before closing that contract.
+12 source legs); see PUBLIC_CLAIM_IDENTITY_CONTRACT.md. Bounded primary PDP logo
+attribution and exact inline product-flag extraction passed in run 35162114501 (143 tests,
+12 source legs); see CLAIM_ATTRIBUTION_SOURCE_CONTRACT.md. Unsupported surfaces
+and unobserved flags remain unknown. Next: EnergyGuide field-quality/source parser.
 Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate
