@@ -24,6 +24,9 @@ FAMILIES = {
                'dataset': 'bghd-e2wd', 'dataset_name': 'ENERGY STAR Certified Residential Clothes Washers'},
     'tv': {'plp': 'https://www.samsung.com/us/televisions-home-theater/tvs/all-tvs/',
            'dataset': 'pd96-rr3d', 'dataset_name': 'ENERGY STAR Certified Televisions'},
+    'range': {'plp': 'https://www.samsung.com/us/cooking-appliances/ranges/',
+              'dataset': 'm6gi-ng33', 'dataset_name': 'ENERGY STAR Certified Residential Electric Cooking Products',
+              'recon_domain': 'EPA_ONLY'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
@@ -261,6 +264,10 @@ def main():
             source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))
             facts = pdp_facts(source, target, family=family)
             save('pdp-facts.json', facts)
+            if config.get('recon_domain') == 'EPA_ONLY':
+                return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
+                        'energyguide_metadata_count': len(facts['energyguide_documents']),
+                        'energyguide_probe': 'OUT_OF_RECON_SCOPE', 'certification_matching': 'NOT_EVALUATED'}
             assert facts['energyguide_documents'], 'No EnergyGuide metadata in target Support record'
             document = facts['energyguide_documents'][0]
             pdf = context.request.get(document['url'], timeout=30000)

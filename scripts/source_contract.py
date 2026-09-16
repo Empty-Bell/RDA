@@ -81,6 +81,7 @@ def pdp_facts(data, target, family='refrigerator'):
         'dishwasher': ('Energy Usage (kWh/year)', 'Place Setting'),
         'washer': ('Energy Guide Label', 'Total Capacity (cu. ft.)'),
         'tv': (None, None),  # sample PDP has power/screen fields, no annual energy/capacity
+        'range': (None, None),  # discover cooking-specific spec names from raw pairs
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')
@@ -136,6 +137,10 @@ def epa_contract(metadata, rows, dataset='p5st-her9'):
         'pd96-rr3d': {'reported_annual_energy_consumption_kwh', 'date_qualified',
                       'diagonal_viewable_screen_size_inches', 'power_consumption_in_on_mode_watts',
                       'reported_on_mode_power_per_the_federal_test_procedure_watts'},
+        'm6gi-ng33': {'product_type', 'cooking_top_technology', 'date_certified',
+                      'annual_energy_consumption_kwh_yr',
+                      'low_power_mode_energy_consumption_oven_kwh_yr',
+                      'low_power_mode_energy_consumption_cooking_top_kwh_yr'},
     }
     if dataset not in columns:
         raise ValueError('Unknown EPA dataset contract')
