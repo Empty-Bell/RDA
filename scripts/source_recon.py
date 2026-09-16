@@ -252,7 +252,7 @@ def main():
             assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
             assert pdp_json, 'Specs/Support bridge-data endpoint was not observed'
             source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))
-            facts = pdp_facts(source, target)
+            facts = pdp_facts(source, target, family=family)
             save('pdp-facts.json', facts)
             assert facts['energyguide_documents'], 'No EnergyGuide metadata in target Support record'
             document = facts['energyguide_documents'][0]
@@ -309,8 +309,8 @@ def main():
             assert sample_response.status == 200, 'EPA dataset sample unavailable'
             sample = sample_response.json()
             assert isinstance(sample, list) and sample, 'EPA sample empty'
-            epa_contract(metadata, sample, dataset=dataset)
             save('fixtures/epa-sample.json', sample)
+            epa_contract(metadata, sample, dataset=dataset)
             save('epa-observation.json', {'dataset_id': dataset, 'name': metadata.get('name'),
                                           'rows_updated_at': metadata.get('rowsUpdatedAt'), 'columns': columns,
                                           'sample_rows': len(sample), 'certification_matching': 'NOT_EVALUATED'})

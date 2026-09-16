@@ -1,0 +1,954 @@
+{
+  "searchTotalCount": 9,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "DW90F89P0USRAA",
+      "modelName": "DW90F89P0USRAA",
+      "id": "DW90F89P0USRAA",
+      "group_id": "MULTI_GROUP_ID_601635",
+      "pdpURL": "/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa",
+      "consumerUrl": "/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "15",
+        "pickYn": "N",
+        "representativeModel": "DW90F89P0USRAA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-1",
+        "id": "601635"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Handleless",
+          "fmyChipType": "Handle Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW90F89P0USRAA",
+          "modelName": "DW90F89P0USRAA",
+          "id": "DW90F89P0USRAA",
+          "group_id": "MULTI_GROUP_ID_601635",
+          "pdpURL": "/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa",
+          "consumerUrl": "/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "15",
+            "pickYn": "N",
+            "representativeModel": "DW90F89P0USRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-1",
+            "id": "601635"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Handleless",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW90F89T0USRAA",
+          "modelName": "DW90F89T0USRAA",
+          "id": "DW90F89T0USRAA",
+          "group_id": "MULTI_GROUP_ID_601635",
+          "pdpURL": "/us/dishwashers/freestanding/38-dba-bespoke-smart-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89t0usraa",
+          "consumerUrl": "/us/dishwashers/freestanding/38-dba-bespoke-smart-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89t0usraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "15",
+            "pickYn": "N",
+            "representativeModel": "DW90F89P0USRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-1",
+            "id": "601635"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Pocket Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW90H89TETEAA",
+          "modelName": "DW90H89TETEAA",
+          "id": "DW90H89TETEAA",
+          "group_id": "MULTI_GROUP_ID_601635",
+          "pdpURL": "/us/dishwashers/built-under/38-dba-dishwasher-with-3rd-rack-washing-system-in-matte-black-steel-sku-dw90h89teteaa",
+          "consumerUrl": "/us/dishwashers/built-under/38-dba-dishwasher-with-3rd-rack-washing-system-in-matte-black-steel-sku-dw90h89teteaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "15",
+            "pickYn": "N",
+            "representativeModel": "DW90F89P0USRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-1",
+            "id": "601635"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Bar Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Fingerprint Resistant Matte Black Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW90F89T0U12AA",
+          "modelName": "DW90F89T0U12AA",
+          "id": "DW90F89T0U12AA",
+          "group_id": "MULTI_GROUP_ID_601635",
+          "pdpURL": "/us/dishwashers/freestanding/38-dba-bespoke-smart-dishwasher-with-3rd-rack-washing-system-in-white-glass-sku-dw90f89t0u12aa",
+          "consumerUrl": "/us/dishwashers/freestanding/38-dba-bespoke-smart-dishwasher-with-3rd-rack-washing-system-in-white-glass-sku-dw90f89t0u12aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "15",
+            "pickYn": "N",
+            "representativeModel": "DW90F89P0USRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-1",
+            "id": "601635"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Pocket Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#dededa",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW90H89TETRAA",
+          "modelName": "DW90H89TETRAA",
+          "id": "DW90H89TETRAA",
+          "group_id": "MULTI_GROUP_ID_601635",
+          "pdpURL": "/us/dishwashers/built-under/38-dba-dishwasher-with-3rd-rack-washing-system-in-stainless-steel-sku-dw90h89tetraa",
+          "consumerUrl": "/us/dishwashers/built-under/38-dba-dishwasher-with-3rd-rack-washing-system-in-stainless-steel-sku-dw90h89tetraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "15",
+            "pickYn": "N",
+            "representativeModel": "DW90F89P0USRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-1",
+            "id": "601635"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Bar Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW90F89T0UMTAA",
+          "modelName": "DW90F89T0UMTAA",
+          "id": "DW90F89T0UMTAA",
+          "group_id": "MULTI_GROUP_ID_601635",
+          "pdpURL": "/us/dishwashers/freestanding/38-dba-bespoke-smart-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-matte-black-steel-sku-dw90f89t0umtaa",
+          "consumerUrl": "/us/dishwashers/freestanding/38-dba-bespoke-smart-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-matte-black-steel-sku-dw90f89t0umtaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "15",
+            "pickYn": "N",
+            "representativeModel": "DW90F89P0USRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-1",
+            "id": "601635"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Pocket Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Fingerprint Resistant Matte Black Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW80B7070US/AA",
+      "modelName": "DW80B7070US/AA",
+      "id": "DW80B7070US/AA",
+      "group_id": "MULTI_GROUP_ID_601646",
+      "pdpURL": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-stainless-steel-sku-dw80b7070us-aa",
+      "consumerUrl": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-stainless-steel-sku-dw80b7070us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "14",
+        "pickYn": "N",
+        "representativeModel": "DW80B7070US/AA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-2",
+        "id": "601646"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Recessed Handle",
+          "fmyChipType": "Handle Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW80B7070US/AA",
+          "modelName": "DW80B7070US/AA",
+          "id": "DW80B7070US/AA",
+          "group_id": "MULTI_GROUP_ID_601646",
+          "pdpURL": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-stainless-steel-sku-dw80b7070us-aa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-stainless-steel-sku-dw80b7070us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "14",
+            "pickYn": "N",
+            "representativeModel": "DW80B7070US/AA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-2",
+            "id": "601646"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW80B7070UG/AA",
+          "modelName": "DW80B7070UG/AA",
+          "id": "DW80B7070UG/AA",
+          "group_id": "MULTI_GROUP_ID_601646",
+          "pdpURL": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-black-stainless-steel-sku-dw80b7070ug-aa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-black-stainless-steel-sku-dw80b7070ug-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "14",
+            "pickYn": "N",
+            "representativeModel": "DW80B7070US/AA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-2",
+            "id": "601646"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Fingerprint Resistant Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW80B7071US/AA",
+          "modelName": "DW80B7071US/AA",
+          "id": "DW80B7071US/AA",
+          "group_id": "MULTI_GROUP_ID_601646",
+          "pdpURL": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-stainless-steel-sku-dw80b7071us-aa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-stainless-steel-sku-dw80b7071us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "14",
+            "pickYn": "N",
+            "representativeModel": "DW80B7070US/AA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-2",
+            "id": "601646"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Bar Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW80BB707012AA",
+          "modelName": "DW80BB707012AA",
+          "id": "DW80BB707012AA",
+          "group_id": "MULTI_GROUP_ID_601646",
+          "pdpURL": "/us/dishwashers/freestanding/bespoke-smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-white-glass-sku-dw80bb707012aa",
+          "consumerUrl": "/us/dishwashers/freestanding/bespoke-smart-42dba-dishwasher-with-stormwash-and-smart-dry-in-white-glass-sku-dw80bb707012aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "14",
+            "pickYn": "N",
+            "representativeModel": "DW80B7070US/AA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-2",
+            "id": "601646"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#f3f4f4",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW80CG5450SRAA",
+      "modelName": "DW80CG5450SRAA",
+      "id": "DW80CG5450SRAA",
+      "group_id": "MULTI_GROUP_ID_601662",
+      "pdpURL": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-stainless-steel-sku-dw80cg5450sraa",
+      "consumerUrl": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-stainless-steel-sku-dw80cg5450sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "12",
+        "pickYn": "N",
+        "representativeModel": "DW80CG5450SRAA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-4",
+        "id": "601662"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Recessed Handle",
+          "fmyChipType": "Handle Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW80CG5450SRAA",
+          "modelName": "DW80CG5450SRAA",
+          "id": "DW80CG5450SRAA",
+          "group_id": "MULTI_GROUP_ID_601662",
+          "pdpURL": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-stainless-steel-sku-dw80cg5450sraa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-stainless-steel-sku-dw80cg5450sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "DW80CG5450SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-4",
+            "id": "601662"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW80CG5451SRAA",
+          "modelName": "DW80CG5451SRAA",
+          "id": "DW80CG5451SRAA",
+          "group_id": "MULTI_GROUP_ID_601662",
+          "pdpURL": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-fingerprint-resistant-stainless-steel-sku-dw80cg5451sraa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-fingerprint-resistant-stainless-steel-sku-dw80cg5451sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "DW80CG5450SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-4",
+            "id": "601662"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Bar Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW80CG5451MTAA",
+          "modelName": "DW80CG5451MTAA",
+          "id": "DW80CG5451MTAA",
+          "group_id": "MULTI_GROUP_ID_601662",
+          "pdpURL": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-fingerprint-resistant-matte-black-steel-sku-dw80cg5451mtaa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-fingerprint-resistant-matte-black-steel-sku-dw80cg5451mtaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "DW80CG5450SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-4",
+            "id": "601662"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Bar Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW80CB545012AA",
+          "modelName": "DW80CB545012AA",
+          "id": "DW80CB545012AA",
+          "group_id": "MULTI_GROUP_ID_601662",
+          "pdpURL": "/us/dishwashers/freestanding/bespoke-smart-46-dba-dishwasher-with-stormwash-in-white-glass-sku-dw80cb545012aa",
+          "consumerUrl": "/us/dishwashers/freestanding/bespoke-smart-46-dba-dishwasher-with-stormwash-in-white-glass-sku-dw80cb545012aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "DW80CG5450SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-4",
+            "id": "601662"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#e9e9e7",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "DW80CG5450MTAA",
+          "modelName": "DW80CG5450MTAA",
+          "id": "DW80CG5450MTAA",
+          "group_id": "MULTI_GROUP_ID_601662",
+          "pdpURL": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-matte-black-steel-sku-dw80cg5450mtaa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-46-dba-dishwasher-with-stormwash-in-matte-black-steel-sku-dw80cg5450mtaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "DW80CG5450SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-4",
+            "id": "601662"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW70H83YEURAA",
+      "modelName": "DW70H83YEURAA",
+      "id": "DW70H83YEURAA",
+      "group_id": "MULTI_GROUP_ID_601672",
+      "pdpURL": "/us/dishwashers/built-in/48-dba-dishwasher-with-3rd-rack-and-autorelease-door-drying-in-stainless-steel-sku-dw70h83yeuraa",
+      "consumerUrl": "/us/dishwashers/built-in/48-dba-dishwasher-with-3rd-rack-and-autorelease-door-drying-in-stainless-steel-sku-dw70h83yeuraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "11",
+        "pickYn": "N",
+        "representativeModel": "DW70H83YEURAA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-5",
+        "id": "601672"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Pocket Handle",
+          "fmyChipType": "Handle Type"
+        },
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW70H83YEURAA",
+          "modelName": "DW70H83YEURAA",
+          "id": "DW70H83YEURAA",
+          "group_id": "MULTI_GROUP_ID_601672",
+          "pdpURL": "/us/dishwashers/built-in/48-dba-dishwasher-with-3rd-rack-and-autorelease-door-drying-in-stainless-steel-sku-dw70h83yeuraa",
+          "consumerUrl": "/us/dishwashers/built-in/48-dba-dishwasher-with-3rd-rack-and-autorelease-door-drying-in-stainless-steel-sku-dw70h83yeuraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "DW70H83YEURAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-5",
+            "id": "601672"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Pocket Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW80CG4051SRAA",
+      "modelName": "DW80CG4051SRAA",
+      "id": "DW80CG4051SRAA",
+      "group_id": "MULTI_GROUP_ID_601681",
+      "pdpURL": "/us/dishwashers/freestanding/fingerprint-resistant-51-dba-dishwasher-with-3rd-rack-in-stainless-steel-sku-dw80cg4051sraa",
+      "consumerUrl": "/us/dishwashers/freestanding/fingerprint-resistant-51-dba-dishwasher-with-3rd-rack-in-stainless-steel-sku-dw80cg4051sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "10",
+        "pickYn": "N",
+        "representativeModel": "DW80CG4051SRAA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-6",
+        "id": "601681"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Bar Handle",
+          "fmyChipType": "Handle Type"
+        },
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW80CG4051SRAA",
+          "modelName": "DW80CG4051SRAA",
+          "id": "DW80CG4051SRAA",
+          "group_id": "MULTI_GROUP_ID_601681",
+          "pdpURL": "/us/dishwashers/freestanding/fingerprint-resistant-51-dba-dishwasher-with-3rd-rack-in-stainless-steel-sku-dw80cg4051sraa",
+          "consumerUrl": "/us/dishwashers/freestanding/fingerprint-resistant-51-dba-dishwasher-with-3rd-rack-in-stainless-steel-sku-dw80cg4051sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "DW80CG4051SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-6",
+            "id": "601681"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Bar Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW80CG4021SRAA",
+      "modelName": "DW80CG4021SRAA",
+      "id": "DW80CG4021SRAA",
+      "group_id": "MULTI_GROUP_ID_601684",
+      "pdpURL": "/us/dishwashers/freestanding/fingerprint-resistant-53-dba-dishwasher-with-height-adjustable-rack-in-stainless-steel-sku-dw80cg4021sraa",
+      "consumerUrl": "/us/dishwashers/freestanding/fingerprint-resistant-53-dba-dishwasher-with-height-adjustable-rack-in-stainless-steel-sku-dw80cg4021sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "9",
+        "pickYn": "N",
+        "representativeModel": "DW80CG4021SRAA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-7",
+        "id": "601684"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Bar Handle",
+          "fmyChipType": "Handle Type"
+        },
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW80CG4021SRAA",
+          "modelName": "DW80CG4021SRAA",
+          "id": "DW80CG4021SRAA",
+          "group_id": "MULTI_GROUP_ID_601684",
+          "pdpURL": "/us/dishwashers/freestanding/fingerprint-resistant-53-dba-dishwasher-with-height-adjustable-rack-in-stainless-steel-sku-dw80cg4021sraa",
+          "consumerUrl": "/us/dishwashers/freestanding/fingerprint-resistant-53-dba-dishwasher-with-height-adjustable-rack-in-stainless-steel-sku-dw80cg4021sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "N",
+            "representativeModel": "DW80CG4021SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-7",
+            "id": "601684"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Bar Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW50T6060US/AA",
+      "modelName": "DW50T6060US",
+      "id": "DW50T6060US/AA",
+      "group_id": "MULTI_GROUP_ID_601690",
+      "pdpURL": "/us/dishwashers/freestanding/whisper-quiet-46-dba-dishwasher-in-stainless-steel-sku-dw50t6060us-aa",
+      "consumerUrl": "/us/dishwashers/freestanding/whisper-quiet-46-dba-dishwasher-in-stainless-steel-sku-dw50t6060us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "8",
+        "pickYn": "N",
+        "representativeModel": "DW50T6060US/AA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-8",
+        "id": "601690"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Tilted Handle",
+          "fmyChipType": "Handle Type"
+        },
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW50T6060US/AA",
+          "modelName": "DW50T6060US",
+          "id": "DW50T6060US/AA",
+          "group_id": "MULTI_GROUP_ID_601690",
+          "pdpURL": "/us/dishwashers/freestanding/whisper-quiet-46-dba-dishwasher-in-stainless-steel-sku-dw50t6060us-aa",
+          "consumerUrl": "/us/dishwashers/freestanding/whisper-quiet-46-dba-dishwasher-in-stainless-steel-sku-dw50t6060us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "8",
+            "pickYn": "N",
+            "representativeModel": "DW50T6060US/AA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-8",
+            "id": "601690"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Tilted Handle",
+              "fmyChipType": "Handle Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW60R2014US/AA",
+      "modelName": "DW60R2014US",
+      "id": "DW60R2014US/AA",
+      "group_id": "MULTI_GROUP_ID_601697",
+      "pdpURL": "/us/dishwashers/freestanding/front-control-52-dba-ada-dishwasher-in-stainless-steel-sku-dw60r2014us-aa",
+      "consumerUrl": "/us/dishwashers/freestanding/front-control-52-dba-ada-dishwasher-in-stainless-steel-sku-dw60r2014us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "7",
+        "pickYn": "N",
+        "representativeModel": "DW60R2014US/AA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-9",
+        "id": "601697"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#dbdbdb",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Recessed Handle",
+          "fmyChipType": "Handle Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW60R2014US/AA",
+          "modelName": "DW60R2014US",
+          "id": "DW60R2014US/AA",
+          "group_id": "MULTI_GROUP_ID_601697",
+          "pdpURL": "/us/dishwashers/freestanding/front-control-52-dba-ada-dishwasher-in-stainless-steel-sku-dw60r2014us-aa",
+          "consumerUrl": "/us/dishwashers/freestanding/front-control-52-dba-ada-dishwasher-in-stainless-steel-sku-dw60r2014us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "DW60R2014US/AA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-9",
+            "id": "601697"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW80CG5420SRAA",
+      "modelName": "DW80CG5420SRAA",
+      "id": "DW80CG5420SRAA",
+      "group_id": "MULTI_GROUP_ID_601702",
+      "pdpURL": "/us/dishwashers/freestanding/smart-48-dba-dishwasher-with-stormwash-cleaning-system-sku-dw80cg5420sraa",
+      "consumerUrl": "/us/dishwashers/freestanding/smart-48-dba-dishwasher-with-stormwash-cleaning-system-sku-dw80cg5420sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "6",
+        "pickYn": "N",
+        "representativeModel": "DW80CG5420SRAA",
+        "taxonomyId": "08090000",
+        "isPrimary": "Y",
+        "familyName": "Dishwashers-PF-10",
+        "id": "601702"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Silver",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Recessed Handle",
+          "fmyChipType": "Handle Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "DW80CG5420SRAA",
+          "modelName": "DW80CG5420SRAA",
+          "id": "DW80CG5420SRAA",
+          "group_id": "MULTI_GROUP_ID_601702",
+          "pdpURL": "/us/dishwashers/freestanding/smart-48-dba-dishwasher-with-stormwash-cleaning-system-sku-dw80cg5420sraa",
+          "consumerUrl": "/us/dishwashers/freestanding/smart-48-dba-dishwasher-with-stormwash-cleaning-system-sku-dw80cg5420sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "DW80CG5420SRAA",
+            "taxonomyId": "08090000",
+            "isPrimary": "Y",
+            "familyName": "Dishwashers-PF-10",
+            "id": "601702"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Recessed Handle",
+              "fmyChipType": "Handle Type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

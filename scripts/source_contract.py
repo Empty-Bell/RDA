@@ -64,7 +64,14 @@ def pf_page(data):
             'page_groups': len(groups), 'records': records}
 
 
-def pdp_facts(data, target):
+def pdp_facts(data, target, family='refrigerator'):
+    names = {
+        'refrigerator': ('Energy Consumption', 'Total Capacity (cu. ft.)'),
+        'dishwasher': ('Energy Usage (kWh/year)', 'Place Setting'),
+    }
+    if family not in names:
+        raise ValueError('Unknown PDP family contract')
+    energy_name, capacity_name = names[family]
     if not isinstance(data, dict) or not isinstance(data.get('Specs'), list) or not isinstance(data.get('Support'), list):
         raise ValueError('Missing Specs/Support bridge-data contract')
     specs = [x for x in data['Specs'] if x.get('modelCode') == target]
@@ -82,8 +89,8 @@ def pdp_facts(data, target):
     documents = [x for x in support[0]['supports'] if re.fullmatch(r'energy\s*guide', x.get('name', ''), re.I)]
     return {'exact_sku': target,
             'spec_fields_raw': fields,
-            'energy_consumption_raw': [x for x in fields if x['name'] == 'Energy Consumption'],
-            'capacity_raw': [x for x in fields if x['name'] == 'Total Capacity (cu. ft.)'],
+            'energy_consumption_raw': [x for x in fields if x['name'] == energy_name],
+            'capacity_raw': [x for x in fields if x['name'] == capacity_name],
             'energy_star_spec_claim_raw': [x for x in fields if 'ENERGY STAR' in (x['name'] or '')],
             'energy_star_structured_claim': None,
             'energyguide_documents': [{k: x.get(k) for k in ('name', 'type', 'url')} for x in documents]}
@@ -104,8 +111,14 @@ def pf_population(pages):
 
 
 def epa_contract(metadata, rows, dataset='p5st-her9'):
-    required = {'pd_id', 'brand_name', 'model_number', 'upc', 'annual_energy_use_kwh_yr',
-                'markets', 'date_qualified'}
+    columns = {
+        'p5st-her9': {'annual_energy_use_kwh_yr', 'date_qualified'},
+        'q8py-6w3f': {'annual_energy_use_kwh_year', 'date_certified',
+                      'capacity_maximum_number_of_place_settings', 'water_use_gallons_cycle'},
+    }
+    if dataset not in columns:
+        raise ValueError('Unknown EPA dataset contract')
+    required = {'pd_id', 'brand_name', 'model_number', 'upc', 'markets'} | columns[dataset]
     fields = {c.get('fieldName') for c in metadata.get('columns', [])}
     if dataset not in {'p5st-her9', 'q8py-6w3f'} or metadata.get('id') != dataset or not required <= fields:
         raise ValueError('EPA dataset identity or required columns drifted')

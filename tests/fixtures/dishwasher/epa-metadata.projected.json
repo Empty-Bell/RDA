@@ -1,0 +1,152 @@
+{
+  "id": "q8py-6w3f",
+  "name": "ENERGY STAR Certified Residential Dishwashers",
+  "rowsUpdatedAt": 1789564310,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "type",
+      "name": "Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "width_inches",
+      "name": "Width (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "depth_inches",
+      "name": "Depth (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "capacity_maximum_number_of_place_settings",
+      "name": "Capacity - Maximum Number of Place Settings",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "soil_sensing_capability",
+      "name": "Soil-Sensing Capability",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "tub_material",
+      "name": "Tub Material",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "drying_method",
+      "name": "Drying Method",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_product_features",
+      "name": "Additional Product Features",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "annual_energy_use_kwh_year",
+      "name": "Annual Energy Use (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "us_federal_standard_kwh_year",
+      "name": "US Federal Standard (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "better_than_us_federal_standard_kwh_year",
+      "name": "% Better than US Federal Standard (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "water_use_gallons_cycle",
+      "name": "Water Use (gallons/cycle)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "us_federal_standard_gallons_cycle",
+      "name": "US Federal Standard (gallons/cycle)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "better_than_us_federal_standard_gallons_cycle",
+      "name": "% Better than US Federal Standard (gallons/cycle)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "connected_capable",
+      "name": "Connected Capable",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connects_using",
+      "name": "Connects Using",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "communication_hardware_architecture",
+      "name": "Communication Hardware Architecture",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "dr_protocol",
+      "name": "DR Protocol",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "direct_on_premises_open_standard_based_interconnection",
+      "name": "Direct on-premises Open-standard Based Interconnection",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available On Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_certified",
+      "name": " Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "CB Model Identifier",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "meets_most_efficient_criteria",
+      "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+      "dataTypeName": "text"
+    }
+  ]
+}

@@ -1,0 +1,3194 @@
+{
+  "Specs": [
+    {
+      "modelCode": "DW90F89P0USRAA",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Handle Type",
+              "value": "Auto Open Door"
+            },
+            {
+              "name": "Control Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Front Cycle Progress Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            },
+            {
+              "name": "Exterior Color",
+              "value": "Fingerprint Resistant Stainless Steel"
+            },
+            {
+              "name": "Place Setting",
+              "value": "16"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "Display Position",
+              "value": "Top"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Dry System",
+              "value": "Smart Dry with AutoRelease™ Door"
+            }
+          ]
+        },
+        {
+          "groupName": "Programs",
+          "specList": [
+            {
+              "name": "Auto",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Pre Blast",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Option",
+          "specList": [
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Hi-Temp Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Lock",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cutlery Basket",
+          "specList": [
+            {
+              "name": "Cutlery Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Tray (3rd Rack)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Electrical (Voltz/Hertz/Amps)",
+              "value": "120V/60Hz/15A"
+            },
+            {
+              "name": "Heater Watts",
+              "value": "1200W"
+            },
+            {
+              "name": "Drain Pump",
+              "value": "Yes"
+            },
+            {
+              "name": "Drain Pump Watts",
+              "value": "35W"
+            },
+            {
+              "name": "Circulation Motor Watts",
+              "value": "60-100W"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "Parts and Labor",
+              "value": "1 Year"
+            },
+            {
+              "name": "Circuit Board and Interior Racking",
+              "value": "5 Year (Limited)"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "3rd Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "StormWash™ Cleaning",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            },
+            {
+              "name": "FlexTray™",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "3rd Rack Washing System",
+              "value": "Yes"
+            },
+            {
+              "name": "StormWash+™ Cleaning",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Cancel & Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Start & Pause Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Rack Coating Material",
+              "value": "Nylon"
+            },
+            {
+              "name": "Digital Leak Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash Arm",
+              "value": "Upper/Mid/Low"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            },
+            {
+              "name": "Silence Rating",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Control Type",
+              "value": "Top Control"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Handleless"
+            },
+            {
+              "name": "Download Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Rating (Decibels)",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Ventilation Drying System (Fan Assisted)",
+              "value": "Yes"
+            },
+            {
+              "name": "Audible End-of-Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Self-Cleaning Filter System",
+              "value": "Yes"
+            },
+            {
+              "name": "Indicator Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "Yes"
+            },
+            {
+              "name": "Optimal Cycle Detection",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Half Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize (Anti-bacterial-NSF)",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control (Wi-Fi)",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Racks/Interior",
+          "specList": [
+            {
+              "name": "Upper Rack Adjustable Height",
+              "value": "One-Touch"
+            },
+            {
+              "name": "Upper Rack Basket Handle",
+              "value": "Plastic"
+            },
+            {
+              "name": "Upper Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Cup Shelf",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Fold Down Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack 2 Piece Silverware Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Type",
+              "value": "3rd Rack Washing"
+            },
+            {
+              "name": "Upper Rack Soft Rail (Glide Rail)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy & Performance",
+          "specList": [
+            {
+              "name": "Energy Usage (kWh/year)",
+              "value": "225"
+            },
+            {
+              "name": "Water Consumption (gallons/cycle)",
+              "value": "2.9"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cut-Out Dimensions",
+          "specList": [
+            {
+              "name": "Width - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Min",
+              "value": "34 1/8\""
+            },
+            {
+              "name": "Depth - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Max",
+              "value": "35 1/3\""
+            }
+          ]
+        },
+        {
+          "groupName": "Wash System",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "Normal Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Auto Wash Cycle",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "STSS"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            }
+          ]
+        },
+        {
+          "groupName": "Weights & Dimensions",
+          "specList": [
+            {
+              "name": "Product Weight",
+              "value": "93.7 lbs"
+            },
+            {
+              "name": "Width",
+              "value": "23 7/8\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "25\" D x 33 7/8\"\" H x 23 7/8\" W"
+            },
+            {
+              "name": "Counter Depth",
+              "value": "25\""
+            },
+            {
+              "name": "Product Height w/ Legs Extended",
+              "value": "35\""
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "100.3 lbs"
+            },
+            {
+              "name": "Shipping Dimensions",
+              "value": "29 3/4\" D x 34 7/8\" H x 26\" W"
+            },
+            {
+              "name": "Height",
+              "value": "33 7/8\""
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "33.875 - 35"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90F89T0U12AA",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Handle Type",
+              "value": "Recessed"
+            },
+            {
+              "name": "Control Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Front Cycle Progress Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            },
+            {
+              "name": "General Feature",
+              "value": "Rotary"
+            },
+            {
+              "name": "Exterior Color",
+              "value": "White Glass"
+            },
+            {
+              "name": "Place Setting",
+              "value": "16"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "Display Position",
+              "value": "Top"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Dry System",
+              "value": "Smart Dry with AutoRelease™ Door"
+            }
+          ]
+        },
+        {
+          "groupName": "Programs",
+          "specList": [
+            {
+              "name": "Auto",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Pre Blast",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Option",
+          "specList": [
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Hi-Temp Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Lock",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cutlery Basket",
+          "specList": [
+            {
+              "name": "Cutlery Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Tray (3rd Rack)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "General Feature",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "STSS"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "33.875 - 35"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "25"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Electrical (Voltz/Hertz/Amps)",
+              "value": "120V/60Hz/15A"
+            },
+            {
+              "name": "Heater Watts",
+              "value": "1200W"
+            },
+            {
+              "name": "Drain Pump",
+              "value": "Yes"
+            },
+            {
+              "name": "Drain Pump Watts",
+              "value": "35W"
+            },
+            {
+              "name": "Circulation Motor Watts",
+              "value": "60-100W"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "Parts and Labor",
+              "value": "1 Year"
+            },
+            {
+              "name": "Circuit Board and Interior Racking",
+              "value": "5 Year (Limited)"
+            }
+          ]
+        },
+        {
+          "groupName": "Awards and Certificates",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Most Efficient",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "3rd Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "FlexTray™",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "3rd Rack Washing System",
+              "value": "Yes"
+            },
+            {
+              "name": "StormWash+™ Cleaning",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Cancel & Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Start & Pause Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Rack Coating Material",
+              "value": "Nylon"
+            },
+            {
+              "name": "Digital Leak Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash Arm",
+              "value": "Upper/Mid/Low"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            },
+            {
+              "name": "Silence Rating",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Control Type",
+              "value": "Top Control"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Pocket Handle"
+            },
+            {
+              "name": "Download Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Rating (Decibels)",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Ventilation Drying System (Fan Assisted)",
+              "value": "Yes"
+            },
+            {
+              "name": "Audible End-of-Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Self-Cleaning Filter System",
+              "value": "Yes"
+            },
+            {
+              "name": "Indicator Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "Yes"
+            },
+            {
+              "name": "Optimal Cycle Detection",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Half Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize (Anti-bacterial-NSF)",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control (Wi-Fi)",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Racks/Interior",
+          "specList": [
+            {
+              "name": "Upper Rack Adjustable Height",
+              "value": "One-Touch"
+            },
+            {
+              "name": "Upper Rack Basket Handle",
+              "value": "Plastic"
+            },
+            {
+              "name": "Upper Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Cup Shelf",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Fold Down Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack 2 Piece Silverware Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Type",
+              "value": "3rd Rack Washing"
+            },
+            {
+              "name": "Upper Rack Soft Rail (Glide Rail)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy & Performance",
+          "specList": [
+            {
+              "name": "Energy Usage (kWh/year)",
+              "value": "225"
+            },
+            {
+              "name": "Water Consumption (gallons/cycle)",
+              "value": "2.9"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight & Dimensions",
+          "specList": [
+            {
+              "name": "Width",
+              "value": "23 7/8\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "94.8 lbs"
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "25\" D x 33 7/8\"\" H x 23 7/8\" W"
+            },
+            {
+              "name": "Counter Depth",
+              "value": "25\""
+            },
+            {
+              "name": "Product Height w/ Legs Extended",
+              "value": "35\""
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "101.4 lbs"
+            },
+            {
+              "name": "Shipping Dimensions",
+              "value": "29 3/4\" D x 34 7/8\" H x 26\" W"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "33.875 - 35"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "25"
+            },
+            {
+              "name": "Height",
+              "value": "33 7/8\""
+            }
+          ]
+        },
+        {
+          "groupName": "Cut-Out Dimensions",
+          "specList": [
+            {
+              "name": "Width - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Min",
+              "value": "34 1/8\""
+            },
+            {
+              "name": "Depth - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Max",
+              "value": "35 1/3\""
+            }
+          ]
+        },
+        {
+          "groupName": "Wash System",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "Normal Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Auto Wash Cycle",
+              "value": "Yes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90F89T0UMTAA",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Handle Type",
+              "value": "Recessed"
+            },
+            {
+              "name": "Control Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Front Cycle Progress Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            },
+            {
+              "name": "General Feature",
+              "value": "Rotary"
+            },
+            {
+              "name": "Exterior Color",
+              "value": "Matte Black Steel"
+            },
+            {
+              "name": "Place Setting",
+              "value": "16"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "Display Position",
+              "value": "Top"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Dry System",
+              "value": "Smart Dry with AutoRelease™ Door"
+            }
+          ]
+        },
+        {
+          "groupName": "Programs",
+          "specList": [
+            {
+              "name": "Auto",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Pre Blast",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Option",
+          "specList": [
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Hi-Temp Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Lock",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cutlery Basket",
+          "specList": [
+            {
+              "name": "Cutlery Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Tray (3rd Rack)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "General Feature",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "STSS"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "33.875 - 35"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "25"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Electrical (Voltz/Hertz/Amps)",
+              "value": "120V/60Hz/15A"
+            },
+            {
+              "name": "Heater Watts",
+              "value": "1200W"
+            },
+            {
+              "name": "Drain Pump",
+              "value": "Yes"
+            },
+            {
+              "name": "Drain Pump Watts",
+              "value": "35W"
+            },
+            {
+              "name": "Circulation Motor Watts",
+              "value": "60-100W"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "Parts and Labor",
+              "value": "1 Year"
+            },
+            {
+              "name": "Circuit Board and Interior Racking",
+              "value": "5 Year (Limited)"
+            }
+          ]
+        },
+        {
+          "groupName": "Awards and Certificates",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Most Efficient",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "3rd Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "FlexTray™",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "3rd Rack Washing System",
+              "value": "Yes"
+            },
+            {
+              "name": "StormWash+™ Cleaning",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Cancel & Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Start & Pause Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Rack Coating Material",
+              "value": "Nylon"
+            },
+            {
+              "name": "Digital Leak Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash Arm",
+              "value": "Upper/Mid/Low"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            },
+            {
+              "name": "Silence Rating",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Control Type",
+              "value": "Top Control"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Pocket Handle"
+            },
+            {
+              "name": "Download Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Rating (Decibels)",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Ventilation Drying System (Fan Assisted)",
+              "value": "Yes"
+            },
+            {
+              "name": "Audible End-of-Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Self-Cleaning Filter System",
+              "value": "Yes"
+            },
+            {
+              "name": "Indicator Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "Yes"
+            },
+            {
+              "name": "Optimal Cycle Detection",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Half Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize (Anti-bacterial-NSF)",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control (Wi-Fi)",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Racks/Interior",
+          "specList": [
+            {
+              "name": "Upper Rack Adjustable Height",
+              "value": "One-Touch"
+            },
+            {
+              "name": "Upper Rack Basket Handle",
+              "value": "Plastic"
+            },
+            {
+              "name": "Upper Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Cup Shelf",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Fold Down Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack 2 Piece Silverware Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Type",
+              "value": "3rd Rack Washing"
+            },
+            {
+              "name": "Upper Rack Soft Rail (Glide Rail)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy & Performance",
+          "specList": [
+            {
+              "name": "Energy Usage (kWh/year)",
+              "value": "225"
+            },
+            {
+              "name": "Water Consumption (gallons/cycle)",
+              "value": "2.9"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight & Dimensions",
+          "specList": [
+            {
+              "name": "Width",
+              "value": "23 7/8\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "88.2 lbs"
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "25\" D x 33 7/8\"\" H x 23 7/8\" W"
+            },
+            {
+              "name": "Counter Depth",
+              "value": "25\""
+            },
+            {
+              "name": "Product Height w/ Legs Extended",
+              "value": "35\""
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "94.8 lbs"
+            },
+            {
+              "name": "Shipping Dimensions",
+              "value": "29 3/4\" D x 34 7/8\" H x 26\" W"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "33.875 - 35"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "25"
+            },
+            {
+              "name": "Height",
+              "value": "33 7/8\""
+            }
+          ]
+        },
+        {
+          "groupName": "Cut-Out Dimensions",
+          "specList": [
+            {
+              "name": "Width - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Min",
+              "value": "34 1/8\""
+            },
+            {
+              "name": "Depth - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Max",
+              "value": "35 1/3\""
+            }
+          ]
+        },
+        {
+          "groupName": "Wash System",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "Normal Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Auto Wash Cycle",
+              "value": "Yes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90F89T0USRAA",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Handle Type",
+              "value": "Recessed"
+            },
+            {
+              "name": "Control Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Front Cycle Progress Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            },
+            {
+              "name": "General Feature",
+              "value": "Rotary"
+            },
+            {
+              "name": "Exterior Color",
+              "value": "Fingerprint Resistant Stainless Steel"
+            },
+            {
+              "name": "Place Setting",
+              "value": "16"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "Display Position",
+              "value": "Top"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Dry System",
+              "value": "Smart Dry with AutoRelease™ Door"
+            }
+          ]
+        },
+        {
+          "groupName": "Programs",
+          "specList": [
+            {
+              "name": "Auto",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Pre Blast",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Option",
+          "specList": [
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Hi-Temp Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Lock",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cutlery Basket",
+          "specList": [
+            {
+              "name": "Cutlery Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Tray (3rd Rack)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "General Feature",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "STSS"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "33.875 - 35"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "25"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Electrical (Voltz/Hertz/Amps)",
+              "value": "120V/60Hz/15A"
+            },
+            {
+              "name": "Heater Watts",
+              "value": "1200W"
+            },
+            {
+              "name": "Drain Pump",
+              "value": "Yes"
+            },
+            {
+              "name": "Drain Pump Watts",
+              "value": "35W"
+            },
+            {
+              "name": "Circulation Motor Watts",
+              "value": "60-100W"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "Parts and Labor",
+              "value": "1 Year"
+            },
+            {
+              "name": "Circuit Board and Interior Racking",
+              "value": "5 Year (Limited)"
+            }
+          ]
+        },
+        {
+          "groupName": "Awards and Certificates",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Most Efficient",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "3rd Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "FlexTray™",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "3rd Rack Washing System",
+              "value": "Yes"
+            },
+            {
+              "name": "StormWash+™ Cleaning",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Cancel & Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Start & Pause Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Rack Coating Material",
+              "value": "Nylon"
+            },
+            {
+              "name": "Digital Leak Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash Arm",
+              "value": "Upper/Mid/Low"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            },
+            {
+              "name": "Silence Rating",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Control Type",
+              "value": "Top Control"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Pocket Handle"
+            },
+            {
+              "name": "Download Cycles",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Rating (Decibels)",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Ventilation Drying System (Fan Assisted)",
+              "value": "Yes"
+            },
+            {
+              "name": "Audible End-of-Cycle Signal",
+              "value": "Yes"
+            },
+            {
+              "name": "Self-Cleaning Filter System",
+              "value": "Yes"
+            },
+            {
+              "name": "Indicator Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "Yes"
+            },
+            {
+              "name": "Optimal Cycle Detection",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Half Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize (Anti-bacterial-NSF)",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control (Wi-Fi)",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Racks/Interior",
+          "specList": [
+            {
+              "name": "Upper Rack Adjustable Height",
+              "value": "One-Touch"
+            },
+            {
+              "name": "Upper Rack Basket Handle",
+              "value": "Plastic"
+            },
+            {
+              "name": "Upper Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Cup Shelf",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Fold Down Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack 2 Piece Silverware Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Lower Rack Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Type",
+              "value": "3rd Rack Washing"
+            },
+            {
+              "name": "Upper Rack Soft Rail (Glide Rail)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy & Performance",
+          "specList": [
+            {
+              "name": "Energy Usage (kWh/year)",
+              "value": "225"
+            },
+            {
+              "name": "Water Consumption (gallons/cycle)",
+              "value": "2.9"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight & Dimensions",
+          "specList": [
+            {
+              "name": "Width",
+              "value": "23 7/8\""
+            },
+            {
+              "name": "Product Weight",
+              "value": "88.2 lbs"
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "25\" D x 33 7/8\"\" H x 23 7/8\" W"
+            },
+            {
+              "name": "Counter Depth",
+              "value": "25\""
+            },
+            {
+              "name": "Product Height w/ Legs Extended",
+              "value": "35\""
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "94.8 lbs"
+            },
+            {
+              "name": "Shipping Dimensions",
+              "value": "29 3/4\" D x 34 7/8\" H x 26\" W"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "33.875 - 35"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "25"
+            },
+            {
+              "name": "Height",
+              "value": "33 7/8\""
+            }
+          ]
+        },
+        {
+          "groupName": "Cut-Out Dimensions",
+          "specList": [
+            {
+              "name": "Width - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Min",
+              "value": "34 1/8\""
+            },
+            {
+              "name": "Depth - Min",
+              "value": "24\""
+            },
+            {
+              "name": "Height - Max",
+              "value": "35 1/3\""
+            }
+          ]
+        },
+        {
+          "groupName": "Wash System",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "Normal Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Auto Wash Cycle",
+              "value": "Yes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90H89TETEAA",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Install Type",
+              "value": "Built-In"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Bar"
+            },
+            {
+              "name": "Control Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Display Light Color",
+              "value": "White"
+            },
+            {
+              "name": "Washing Type",
+              "value": "StormWash+™"
+            },
+            {
+              "name": "Fingerprint Resistant",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Cycle Progress Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            },
+            {
+              "name": "General Feature",
+              "value": "3rd Rack Washing System"
+            },
+            {
+              "name": "Exterior Color",
+              "value": "Fingerprint Resistant Matte Black Steel"
+            },
+            {
+              "name": "Place Setting",
+              "value": "16"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "Upper Rack Type",
+              "value": "Adjustable Upper Rack"
+            },
+            {
+              "name": "Color",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Display Type",
+              "value": "Hidden LCD"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Auto",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash System",
+              "value": "StormWash+™"
+            },
+            {
+              "name": "Capacity (Place Setting)",
+              "value": "16 P/S"
+            },
+            {
+              "name": "Energy Star Certification",
+              "value": "Yes"
+            },
+            {
+              "name": "Energy Star",
+              "value": "Yes"
+            },
+            {
+              "name": "Energy Efficiency Class",
+              "value": "Most Efficient"
+            },
+            {
+              "name": "Annual Energy Consumption",
+              "value": "225 kWh/year"
+            },
+            {
+              "name": "Water Consumption Per Cycle (gallons)",
+              "value": "2.9 gallons"
+            },
+            {
+              "name": "Noise Level (dB(A))",
+              "value": "38 dB(A)"
+            }
+          ]
+        },
+        {
+          "groupName": "Programs",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "AI Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Pre Blast",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Pots&Pans",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60 min",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Plastic",
+              "value": "Yes"
+            },
+            {
+              "name": "Baby Care",
+              "value": "Yes"
+            },
+            {
+              "name": "Download",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Option",
+          "specList": [
+            {
+              "name": "Number of Option",
+              "value": "7"
+            },
+            {
+              "name": "StormWash+™",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Door Open",
+              "value": "Yes"
+            },
+            {
+              "name": "Optimal Scheduling",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Upper Rack",
+          "specList": [
+            {
+              "name": "Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Soft Rail (Glide Rail)",
+              "value": "Yes"
+            },
+            {
+              "name": "Foldable Cup Shelves",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Height",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Tine Guide",
+              "value": "Yes"
+            },
+            {
+              "name": "Silicon Wine Glass Protector",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Lower Rack",
+          "specList": [
+            {
+              "name": "Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Fold Down Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Max Dish loading",
+              "value": "12"
+            },
+            {
+              "name": "Frying-pan Holder",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cutlery Basket",
+          "specList": [
+            {
+              "name": "Cutlery Tray",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Tray (3rd Rack)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "General Feature",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            },
+            {
+              "name": "NSF Certified for Sanitization",
+              "value": "Yes"
+            },
+            {
+              "name": "Leakage Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Arm",
+              "value": "3"
+            },
+            {
+              "name": "Cancel and Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Tub Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            },
+            {
+              "name": "Optimal Cycle Detection",
+              "value": "Yes"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Bar"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "33.875"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "27"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Electrical (Voltz/Hertz/Amps)",
+              "value": "120 V / 60 Hz / 11 Amps"
+            },
+            {
+              "name": "Heater Watts",
+              "value": "1200W"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart",
+          "specList": [
+            {
+              "name": "Bluetooth",
+              "value": "No"
+            },
+            {
+              "name": "WiFi Embedded",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "App Connectivity",
+          "specList": [
+            {
+              "name": "SmartThings App Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Voice Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "Parts and Labor",
+              "value": "1 Year"
+            },
+            {
+              "name": "Circuit Board and Interior Racking",
+              "value": "5 Years"
+            },
+            {
+              "name": "2 Year Parts and Labor",
+              "value": "No"
+            }
+          ]
+        },
+        {
+          "groupName": "Awards and Certificates",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Most Efficient",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "3rd Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Indicator Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Smart AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "3rd Rack Washing System",
+              "value": "Yes"
+            },
+            {
+              "name": "StormWash+™ Cleaning",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Cancel & Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash Arm",
+              "value": "Upper/Mid/Low"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Half Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize (Anti-bacterial-NSF)",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control (Wi-Fi)",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Racks/Interior",
+          "specList": [
+            {
+              "name": "Upper Rack Adjustable Height",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy & Performance",
+          "specList": [
+            {
+              "name": "Energy Usage (kWh/year)",
+              "value": "225"
+            },
+            {
+              "name": "Water Consumption (gallons/cycle)",
+              "value": "2.9"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight & Dimensions",
+          "specList": [
+            {
+              "name": "Width",
+              "value": "23 7/8\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "23 7/8\"(W) x 33 7/8\"-35\"(H) x 27\"(D)"
+            },
+            {
+              "name": "Product Height w/ Legs Extended",
+              "value": "35\""
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "102.3 lbs"
+            },
+            {
+              "name": "Shipping Dimensions",
+              "value": "26\"(W) x 34 7/8\"(H) x 29 3/4\"(D)"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "33.875"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Height",
+              "value": "33 7/8\""
+            },
+            {
+              "name": "Depth",
+              "value": "35\""
+            }
+          ]
+        },
+        {
+          "groupName": "Wash System",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "Normal Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Auto Wash Cycle",
+              "value": "AI Wash"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90H89TETRAA",
+      "fullSpecs": [
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Install Type",
+              "value": "Built-In"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Bar"
+            },
+            {
+              "name": "Control Type",
+              "value": "LCD"
+            },
+            {
+              "name": "Display Light Color",
+              "value": "White"
+            },
+            {
+              "name": "Washing Type",
+              "value": "StormWash+™"
+            },
+            {
+              "name": "Fingerprint Resistant",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Cycle Progress Indicator",
+              "value": "Yes"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            },
+            {
+              "name": "General Feature",
+              "value": "3rd Rack Washing System"
+            },
+            {
+              "name": "Exterior Color",
+              "value": "Fingerprint Resistant Stainless Steel"
+            },
+            {
+              "name": "Place Setting",
+              "value": "16"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "Upper Rack Type",
+              "value": "Adjustable Upper Rack"
+            },
+            {
+              "name": "Color",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Display Type",
+              "value": "Hidden LCD"
+            }
+          ]
+        },
+        {
+          "groupName": "Performance",
+          "specList": [
+            {
+              "name": "Water Consumption per Cycle",
+              "value": "2.9"
+            },
+            {
+              "name": "Auto",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash System",
+              "value": "StormWash+™"
+            },
+            {
+              "name": "Capacity (Place Setting)",
+              "value": "16 P/S"
+            },
+            {
+              "name": "Energy Star Certification",
+              "value": "Yes"
+            },
+            {
+              "name": "Energy Star",
+              "value": "Yes"
+            },
+            {
+              "name": "Energy Efficiency Class",
+              "value": "Most Efficient"
+            },
+            {
+              "name": "Annual Energy Consumption",
+              "value": "225 kWh/year"
+            },
+            {
+              "name": "Noise Level (dB(A))",
+              "value": "38 dB(A)"
+            }
+          ]
+        },
+        {
+          "groupName": "Programs",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "AI Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "Normal",
+              "value": "Yes"
+            },
+            {
+              "name": "Delicate",
+              "value": "Yes"
+            },
+            {
+              "name": "Pre Blast",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy",
+              "value": "Yes"
+            },
+            {
+              "name": "Pots&Pans",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60 min",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Plastic",
+              "value": "Yes"
+            },
+            {
+              "name": "Baby Care",
+              "value": "Yes"
+            },
+            {
+              "name": "Download",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Option",
+          "specList": [
+            {
+              "name": "Number of Option",
+              "value": "7"
+            },
+            {
+              "name": "StormWash+™",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Door Open",
+              "value": "Yes"
+            },
+            {
+              "name": "Optimal Scheduling",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Upper Rack",
+          "specList": [
+            {
+              "name": "Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Upper Rack Soft Rail (Glide Rail)",
+              "value": "Yes"
+            },
+            {
+              "name": "Foldable Cup Shelves",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Height",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Tine Guide",
+              "value": "Yes"
+            },
+            {
+              "name": "Silicon Wine Glass Protector",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Lower Rack",
+          "specList": [
+            {
+              "name": "Basket Handle",
+              "value": "Yes"
+            },
+            {
+              "name": "Fold Down Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Tines",
+              "value": "Yes"
+            },
+            {
+              "name": "Max Dish loading",
+              "value": "12"
+            },
+            {
+              "name": "Frying-pan Holder",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cutlery Basket",
+          "specList": [
+            {
+              "name": "Cutlery Tray",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Basket",
+              "value": "Yes"
+            },
+            {
+              "name": "Cutlery Tray (3rd Rack)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "General Feature",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            },
+            {
+              "name": "NSF Certified for Sanitization",
+              "value": "Yes"
+            },
+            {
+              "name": "Leakage Sensor",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Wash Arm",
+              "value": "3"
+            },
+            {
+              "name": "Cancel and Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Tub Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            },
+            {
+              "name": "Optimal Cycle Detection",
+              "value": "Yes"
+            },
+            {
+              "name": "Handle Type",
+              "value": "Bar"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "33.875"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "27"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Electrical (Voltz/Hertz/Amps)",
+              "value": "120 V / 60 Hz / 11 Amps"
+            },
+            {
+              "name": "Heater Watts",
+              "value": "1200W"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart",
+          "specList": [
+            {
+              "name": "Bluetooth",
+              "value": "No"
+            },
+            {
+              "name": "WiFi Embedded",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "App Connectivity",
+          "specList": [
+            {
+              "name": "SmartThings App Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Bixby",
+              "value": "Yes"
+            },
+            {
+              "name": "Voice Guide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "Parts and Labor",
+              "value": "1 Year"
+            },
+            {
+              "name": "Circuit Board and Interior Racking",
+              "value": "5  Years"
+            },
+            {
+              "name": "2 Year Parts and Labor",
+              "value": "No"
+            }
+          ]
+        },
+        {
+          "groupName": "Awards and Certificates",
+          "specList": [
+            {
+              "name": "ENERGY STAR® Most Efficient",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "3rd Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Adjustable Rack",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Indicator Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "Yes"
+            },
+            {
+              "name": "Whisper Quiet",
+              "value": "38 dBA"
+            },
+            {
+              "name": "Smart AutoRelease™ Door Drying",
+              "value": "Yes"
+            },
+            {
+              "name": "AI Wash",
+              "value": "Yes"
+            },
+            {
+              "name": "3rd Rack Washing System",
+              "value": "Yes"
+            },
+            {
+              "name": "StormWash+™ Cleaning",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Cancel & Drain Button",
+              "value": "Yes"
+            },
+            {
+              "name": "Wash Arm",
+              "value": "Upper/Mid/Low"
+            },
+            {
+              "name": "Kickplate Color",
+              "value": "Black"
+            }
+          ]
+        },
+        {
+          "groupName": "Wash Options",
+          "specList": [
+            {
+              "name": "Half Load",
+              "value": "Yes"
+            },
+            {
+              "name": "Sanitize (Anti-bacterial-NSF)",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Control (Wi-Fi)",
+              "value": "Yes"
+            },
+            {
+              "name": "Heated Dry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Racks/Interior",
+          "specList": [
+            {
+              "name": "Upper Rack Adjustable Height",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Energy & Performance",
+          "specList": [
+            {
+              "name": "Energy Usage (kWh/year)",
+              "value": "225"
+            },
+            {
+              "name": "Water Consumption (gallons/cycle)",
+              "value": "2.9"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight & Dimensions",
+          "specList": [
+            {
+              "name": "Width",
+              "value": "23 7/8\""
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "23 7/8\"(W) x 33 7/8\"-35\"(H) x 27\"(D)"
+            },
+            {
+              "name": "Product Height w/ Legs Extended",
+              "value": "35\""
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "102.3 lbs"
+            },
+            {
+              "name": "Shipping Dimensions",
+              "value": "26\"(W) x 34 7/8\"(H) x 29 3/4\"(D)"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "33.875"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "23.875"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "27"
+            },
+            {
+              "name": "Height",
+              "value": "33 7/8\""
+            },
+            {
+              "name": "Depth",
+              "value": "35\""
+            }
+          ]
+        },
+        {
+          "groupName": "Wash System",
+          "specList": [
+            {
+              "name": "Number of Programs",
+              "value": "10"
+            },
+            {
+              "name": "Normal Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Heavy Cycle",
+              "value": "Yes"
+            },
+            {
+              "name": "Express 60",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Smart Auto Wash Cycle",
+              "value": "AI Wash"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Tub Material",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "Heater Position",
+              "value": "Hidden"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "DW90F89P0USRAA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89p0usraa/energyguide/us-energyguide-dw90f89p0usraa-554563789.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90F89T0U12AA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89t0u12aa/energyguide/us-energyguide-dw90f89t0u12aa-550422720.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90F89T0UMTAA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89t0umtaa/energyguide/us-energyguide-dw90f89t0umtaa-550422745.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90F89T0USRAA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89t0usraa/energyguide/us-energyguide-dw90f89t0usraa-550422783.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90H89TETEAA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90h89teteaa/energyguide/us-energyguide-dw90h89teteaa-553811644.pdf"
+        }
+      ]
+    },
+    {
+      "modelCode": "DW90H89TETRAA",
+      "supports": [
+        {
+          "name": "Energy Guide",
+          "type": "PDF",
+          "url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90h89tetraa/energyguide/us-energyguide-dw90h89tetraa-553811310.pdf"
+        }
+      ]
+    }
+  ]
+}
