@@ -142,12 +142,15 @@ Artifact 10448527895, size 474900 bytes, ZIP SHA256
 Raw PDF/render remain in artifact (expires 2026-09-30). Compact observed metadata/text
 is versioned in docs/evidence/refrigerator-source-recon.json.
 
-Eight groups now have bounded source reconnaissance; see PHASE_STATUS.md and
+Nine groups now have bounded source reconnaissance; see PHASE_STATUS.md and
 SOURCE_COVERAGE.md for their individual acceptance and sample coverage.
 Hood uses the verified dedicated /us/cooking-appliances/range-hoods/ listing;
 the marketing All Hoods link routes to mixed cooking appliances. See HOOD_SOURCE_CONTRACT.md.
 
-Remaining: Monitor/Display, Computer and Tablet; independent rendered badge/structured claim contracts;
+Monitor uses the marketing Shop All Monitors redirect to /us/monitors/all-monitors/;
+see MONITOR_SOURCE_CONTRACT.md for observed category, size and power fields.
+
+Remaining: Computer and Tablet; independent rendered badge/structured claim contracts;
 PDP title/commerce mapping; full PDF field-quality parser and low-resolution/wildcard
 regression corpus; stable hosted-source access; EPA matching/currency semantics.
 This closes the bounded refrigerator source reconnaissance, not full Phase 0.

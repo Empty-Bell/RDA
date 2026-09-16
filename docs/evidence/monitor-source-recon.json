@@ -1,0 +1,835 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35111109416",
+  "job_id": 104844741738,
+  "artifact_id": 10452317500,
+  "artifact_size_bytes": 24125,
+  "artifact_zip_sha256": "29822e97d168577cd3881dca13d90b72eb6e4edf007f8fdca4886c790cd4fc0d",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T14:49:35.038967+00:00",
+    "run_id": "35111109416",
+    "attempt": "1",
+    "git_sha": "eb170dfcf1f4ffd9b4167b916e469cee2023935d",
+    "scope": "monitor source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "21",
+          "category_code": "07010000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "25349e68bc8a19810c700fe96be4112c8f9ec53f37da3e189225205db3871bdf",
+        "page_count": 21
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "21",
+          "requestCount": "24",
+          "category_code": "07010000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-1.json",
+        "fixture_sha256": "e8ba54f7807d2b3300cc24c2946dd6010e7a35b20b99532aae3a1304b4cf356c",
+        "page_count": 24
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "45",
+          "requestCount": "24",
+          "category_code": "07010000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-2.json",
+        "fixture_sha256": "d561b9c8cbbf7740cf5b5faf976be9408faf324e014ae7e64d1f656dcdbbb982",
+        "page_count": 11
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/monitors/all-monitors/",
+          "api_total": 56
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 56,
+          "exact_skus": 76,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 21,
+              "expected_groups": 56
+            },
+            {
+              "round": 1,
+              "groups": 56,
+              "expected_groups": 56
+            }
+          ],
+          "rendered_representative_link_count": 56,
+          "rendered_tile_count": 56,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "LS40H850TANXZA",
+          "url": "https://www.samsung.com/us/monitors/high-resolution/40-inch-viewfinity-s8-s85th-5k-high-resolution-monitor-sku-ls40h850tanxza/",
+          "json_endpoints": 1,
+          "energyguide_metadata_count": 0,
+          "energyguide_probe": "OUT_OF_RECON_SCOPE",
+          "certification_matching": "NOT_EVALUATED"
+        }
+      },
+      {
+        "name": "epa_monitor_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "qbg3-d468",
+          "column_count": 44,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "pdp_facts": {
+    "exact_sku": "LS40H850TANXZA",
+    "spec_fields_raw": [
+      {
+        "group": "Display",
+        "name": "Screen Size (Class)",
+        "value": "40"
+      },
+      {
+        "group": "Display",
+        "name": "Flat / Curved",
+        "value": "Curved"
+      },
+      {
+        "group": "Display",
+        "name": "Active Display Size (HxV)",
+        "value": "36.5 x 15.4 in"
+      },
+      {
+        "group": "Display",
+        "name": "Active Display Size (HxV)",
+        "value": "926.8 x 391.0 mm"
+      },
+      {
+        "group": "Display",
+        "name": "Screen Curvature",
+        "value": "1000R"
+      },
+      {
+        "group": "Display",
+        "name": "Aspect Ratio",
+        "value": "21:9"
+      },
+      {
+        "group": "Display",
+        "name": "Panel Type",
+        "value": "VA"
+      },
+      {
+        "group": "Display",
+        "name": "Brightness (Typical)",
+        "value": "350 cd/㎡"
+      },
+      {
+        "group": "Display",
+        "name": "Brightness (Min)",
+        "value": "280 cd/㎡"
+      },
+      {
+        "group": "Display",
+        "name": "Contrast Ratio Static",
+        "value": "3,000:1"
+      },
+      {
+        "group": "Display",
+        "name": "HDR(High Dynamic Range)",
+        "value": "HDR10"
+      },
+      {
+        "group": "Display",
+        "name": "HDR10+",
+        "value": "HDR10+"
+      },
+      {
+        "group": "Display",
+        "name": "Resolution",
+        "value": "WUHD (5120 x 2160)"
+      },
+      {
+        "group": "Display",
+        "name": "Response Time (ms)",
+        "value": "4 (GTG)"
+      },
+      {
+        "group": "Display",
+        "name": "Viewing Angle (H/V)",
+        "value": "178 / 178"
+      },
+      {
+        "group": "Display",
+        "name": "Color Support",
+        "value": "Max 1.07B"
+      },
+      {
+        "group": "Display",
+        "name": "Color Gamut (sRGB Coverage)",
+        "value": "99 %"
+      },
+      {
+        "group": "Display",
+        "name": "Frame Rate",
+        "value": "Max 144 Hz"
+      },
+      {
+        "group": "General Feature",
+        "name": "Energy Saving Solution",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Eye Saver Mode",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Flicker Free",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Picture-In-Picture",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Picture-By-Picture",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Image Size",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Daisy Chain",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Windows Certification",
+        "value": "Windows11"
+      },
+      {
+        "group": "General Feature",
+        "name": "FreeSync",
+        "value": "FreeSync Premium"
+      },
+      {
+        "group": "General Feature",
+        "name": "Off Timer Plus",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "Auto Source Switch",
+        "value": "Auto Source Switch+"
+      },
+      {
+        "group": "General Feature",
+        "name": "Adaptive Picture",
+        "value": "Yes"
+      },
+      {
+        "group": "General Feature",
+        "name": "KVM Switch",
+        "value": "Yes"
+      },
+      {
+        "group": "Interface",
+        "name": "Display Port",
+        "value": "1 EA"
+      },
+      {
+        "group": "Interface",
+        "name": "Display Port Version",
+        "value": "1.4"
+      },
+      {
+        "group": "Interface",
+        "name": "HDCP Version (DP)",
+        "value": "2.2"
+      },
+      {
+        "group": "Interface",
+        "name": "HDMI",
+        "value": "1 EA"
+      },
+      {
+        "group": "Interface",
+        "name": "HDMI Version",
+        "value": "2.1"
+      },
+      {
+        "group": "Interface",
+        "name": "HDCP Version (HDMI)",
+        "value": "2.2"
+      },
+      {
+        "group": "Interface",
+        "name": "Headphone",
+        "value": "1"
+      },
+      {
+        "group": "Interface",
+        "name": "USB-C Upstream Port (ONLY DATA)",
+        "value": "1"
+      },
+      {
+        "group": "Interface",
+        "name": "USB Type-A Downstream Port",
+        "value": "5 EA"
+      },
+      {
+        "group": "Interface",
+        "name": "USB Type-A Downstream Version",
+        "value": "3.2 Gen2, 3.2 Gen1"
+      },
+      {
+        "group": "Interface",
+        "name": "USB Type-C Downstream Port",
+        "value": "1"
+      },
+      {
+        "group": "Interface",
+        "name": "USB Type-C Downstream Version",
+        "value": "3.2 Gen2"
+      },
+      {
+        "group": "Interface",
+        "name": "Thunderbolt Downstream Port (Daisy Chain)",
+        "value": "1"
+      },
+      {
+        "group": "Interface",
+        "name": "Thunderbolt Downstream Port Charging Power",
+        "value": "15 W"
+      },
+      {
+        "group": "Interface",
+        "name": "Thunderbolt Input",
+        "value": "1 EA"
+      },
+      {
+        "group": "Interface",
+        "name": "Thunderbolt Charging Power (Port 1)",
+        "value": "140 W"
+      },
+      {
+        "group": "Interface",
+        "name": "Version of Thunderbolt",
+        "value": "5.0"
+      },
+      {
+        "group": "Interface",
+        "name": "HDCP Version (Thunderbolt)",
+        "value": "2.2"
+      },
+      {
+        "group": "Interface",
+        "name": "Ethernet (LAN)",
+        "value": "1 EA"
+      },
+      {
+        "group": "Operation Conditions",
+        "name": "Temperature",
+        "value": "10 ~ 40 ℃"
+      },
+      {
+        "group": "Operation Conditions",
+        "name": "Humidity",
+        "value": "10 ~ 80 (Non-Condensing)"
+      },
+      {
+        "group": "Calibration",
+        "name": "Factory Tunning",
+        "value": "Yes"
+      },
+      {
+        "group": "Design",
+        "name": "Front Color",
+        "value": "Black"
+      },
+      {
+        "group": "Design",
+        "name": "Rear Color",
+        "value": "Black"
+      },
+      {
+        "group": "Design",
+        "name": "Stand Color",
+        "value": "Black"
+      },
+      {
+        "group": "Design",
+        "name": "Stand Type",
+        "value": "HAS"
+      },
+      {
+        "group": "Design",
+        "name": "HAS(Height Adjustable Stand)",
+        "value": "120.0(±5.0)"
+      },
+      {
+        "group": "Design",
+        "name": "Tilt",
+        "value": "-5˚(±2˚) ~ 20˚(±2˚)"
+      },
+      {
+        "group": "Design",
+        "name": "Swivel",
+        "value": "-20˚(±3˚) ~ 20˚(±3˚)"
+      },
+      {
+        "group": "Design",
+        "name": "Wall Mount",
+        "value": "100 x 100 mm"
+      },
+      {
+        "group": "Eco",
+        "name": "TCO Certified",
+        "value": "Yes"
+      },
+      {
+        "group": "Eco",
+        "name": "EPEAT",
+        "value": "Gold (US, CA)"
+      },
+      {
+        "group": "Eco",
+        "name": "Recycled Plastic",
+        "value": "50 %"
+      },
+      {
+        "group": "Power",
+        "name": "Power Supply",
+        "value": "AC 100 - 240 V"
+      },
+      {
+        "group": "Power",
+        "name": "Power Consumption (Max)",
+        "value": "340 W"
+      },
+      {
+        "group": "Power",
+        "name": "Type",
+        "value": "Internal Power"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Set Dimension with Stand (WxHxD)",
+        "value": "36.56 x 23.62 x 14.25 inch"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Set Dimension without Stand (WxHxD)",
+        "value": "36.56 x 16.65 x 7.83 inch"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Package Dimension (WxHxD)",
+        "value": "40.55 x 11.06 x 20.47 inch"
+      },
+      {
+        "group": "Weight",
+        "name": "Set Weight with Stand (lb)",
+        "value": "30.87 lb"
+      },
+      {
+        "group": "Weight",
+        "name": "Set Weight without Stand (lb)",
+        "value": "19.84 lb"
+      },
+      {
+        "group": "Weight",
+        "name": "Shipping Weight",
+        "value": "38.58 lb"
+      },
+      {
+        "group": "Accessory",
+        "name": "Power Cable Length",
+        "value": "4.92 Foot"
+      },
+      {
+        "group": "Accessory",
+        "name": "HDMI Cable",
+        "value": "Yes"
+      },
+      {
+        "group": "Audio",
+        "name": "Speaker",
+        "value": "Yes"
+      },
+      {
+        "group": "Audio",
+        "name": "Speaker Output",
+        "value": "5 W"
+      }
+    ],
+    "energy_consumption_raw": [],
+    "capacity_raw": [],
+    "screen_size_raw": [],
+    "screen_size_class_raw": [
+      {
+        "group": "Display",
+        "name": "Screen Size (Class)",
+        "value": "40"
+      }
+    ],
+    "active_display_size_raw": [
+      {
+        "group": "Display",
+        "name": "Active Display Size (HxV)",
+        "value": "36.5 x 15.4 in"
+      },
+      {
+        "group": "Display",
+        "name": "Active Display Size (HxV)",
+        "value": "926.8 x 391.0 mm"
+      }
+    ],
+    "resolution_raw": [
+      {
+        "group": "Display",
+        "name": "Resolution",
+        "value": "WUHD (5120 x 2160)"
+      }
+    ],
+    "charging_power_raw": [
+      {
+        "group": "Interface",
+        "name": "Thunderbolt Downstream Port Charging Power",
+        "value": "15 W"
+      },
+      {
+        "group": "Interface",
+        "name": "Thunderbolt Charging Power (Port 1)",
+        "value": "140 W"
+      }
+    ],
+    "power_supply_raw": [
+      {
+        "group": "Power",
+        "name": "Power Supply",
+        "value": "AC 100 - 240 V"
+      }
+    ],
+    "power_consumption_raw": [
+      {
+        "group": "Power",
+        "name": "Power Consumption (Max)",
+        "value": "340 W"
+      }
+    ],
+    "fuel_type_raw": [],
+    "cooktop_type_raw": [],
+    "oven_capacity_raw": [],
+    "hood_type_raw": [],
+    "venting_type_raw": [],
+    "airflow_raw": [],
+    "noise_raw": [],
+    "hood_power_raw": [],
+    "energy_star_spec_claim_raw": [],
+    "energy_star_structured_claim": null,
+    "energyguide_documents": []
+  },
+  "epa": {
+    "dataset_id": "qbg3-d468",
+    "name": "ENERGY STAR Certified Displays",
+    "rows_updated_at": 1789564667,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "type": "text"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_name",
+        "name": "Model Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "display_type",
+        "name": "Product Type",
+        "type": "text"
+      },
+      {
+        "field": "panel_type",
+        "name": "Panel Type",
+        "type": "text"
+      },
+      {
+        "field": "native_resolution_pixels",
+        "name": "Native Resolution (pixels)",
+        "type": "text"
+      },
+      {
+        "field": "total_native_resolution",
+        "name": "Total Native Resolution (megapixels)",
+        "type": "number"
+      },
+      {
+        "field": "screen_size_inches",
+        "name": "Screen Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "screen_area_square_inches",
+        "name": "Screen Area (square inches)",
+        "type": "text"
+      },
+      {
+        "field": "model_features",
+        "name": "Model Features",
+        "type": "text"
+      },
+      {
+        "field": "features_enabled_in_default",
+        "name": "Features Enabled in Default On Mode",
+        "type": "text"
+      },
+      {
+        "field": "features_enabled_in_default_1",
+        "name": "Features Enabled in Default Sleep Mode",
+        "type": "text"
+      },
+      {
+        "field": "signal_or_data_interfaces",
+        "name": "Signal or Data Interfaces",
+        "type": "text"
+      },
+      {
+        "field": "power_source",
+        "name": "Power Source",
+        "type": "text"
+      },
+      {
+        "field": "on_mode_power_watts",
+        "name": "On Mode Power (watts)",
+        "type": "number"
+      },
+      {
+        "field": "maximum_on_mode_power_limit",
+        "name": "Maximum On Mode Power Limit for Signage Certification (watts)",
+        "type": "number"
+      },
+      {
+        "field": "sleep_mode_power_watts",
+        "name": "Sleep Mode Power (watts)",
+        "type": "number"
+      },
+      {
+        "field": "maximum_sleep_mode_power",
+        "name": "Maximum Sleep Mode Power Limit for Signage Certification (watts)",
+        "type": "number"
+      },
+      {
+        "field": "off_mode_power_watts",
+        "name": "Off Mode Power (watts)",
+        "type": "number"
+      },
+      {
+        "field": "on_mode_power_at_12_lux_at_115_volts_w",
+        "name": "On Mode Power at 12 Lux at 115 Volts (W)",
+        "type": "number"
+      },
+      {
+        "field": "on_mode_power_at_300_lux",
+        "name": "On Mode Power at 300 Lux (watts)",
+        "type": "number"
+      },
+      {
+        "field": "monitor_total_energy",
+        "name": "Monitor Total Energy Consumption at 115 Volts (kWh/yr)",
+        "type": "number"
+      },
+      {
+        "field": "maximum_total_energy",
+        "name": "Maximum Total Energy Consumption Limit for Monitor Certification (kWh/yr)",
+        "type": "number"
+      },
+      {
+        "field": "maximum_luminance_candelas",
+        "name": "Maximum Luminance (candelas per square meter)",
+        "type": "number"
+      },
+      {
+        "field": "enhanced_performance_display",
+        "name": "Enhanced-Performance Display?",
+        "type": "text"
+      },
+      {
+        "field": "color_gamut",
+        "name": "Color Gamut",
+        "type": "text"
+      },
+      {
+        "field": "color_spaces_supported",
+        "name": "Color Spaces Supported",
+        "type": "text"
+      },
+      {
+        "field": "high_dynamic_range_hdr",
+        "name": "High Dynamic Range (HDR)",
+        "type": "text"
+      },
+      {
+        "field": "display_contrast_ratio_at",
+        "name": "Display Contrast Ratio  at 0 deg. Horiz. Viewing Angle",
+        "type": "number"
+      },
+      {
+        "field": "reported_contrast_ratio_at",
+        "name": "Reported Contrast Ratio at -85 Degrees (Left) Horizontal Viewing Angle",
+        "type": "number"
+      },
+      {
+        "field": "reported_contrast_ratio_at_1",
+        "name": "Reported Contrast Ratio at +85 Degrees (Right) Horizontal Viewing Angle",
+        "type": "number"
+      },
+      {
+        "field": "usb_c_with_power_delivery",
+        "name": "USB-C with Power Delivery Supported",
+        "type": "text"
+      },
+      {
+        "field": "maximum_power_delivery_w",
+        "name": "Maximum Power Delivery (W)",
+        "type": "number"
+      },
+      {
+        "field": "tiled_display_system",
+        "name": "Tiled Display System",
+        "type": "text"
+      },
+      {
+        "field": "maximum_tiled_configuration",
+        "name": "Maximum Tiled Configuration",
+        "type": "text"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available On Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_certified",
+        "name": "Date Certified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "type": "text"
+      },
+      {
+        "field": "meets_most_efficient_criteria",
+        "name": "Meets Most Efficient 2025 Criteria",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "certification_matching": "NOT_EVALUATED",
+  "energyguide_probe": "OUT_OF_RECON_SCOPE",
+  "coverage": "listing plus one sample PDP; generic EPA schema sample"
+}

@@ -82,3 +82,7 @@ Certification matching is NOT_EVALUATED.
 Ventilating Hood discovery: official Certified Ventilating Fans dataset 8dv7-nngq;
 see HOOD_SOURCE_CONTRACT.md for URLs, observed fields and type/measurement limitations.
 The generic sample includes bathroom/utility fans; no Samsung SKU lookup is implied.
+
+Monitor/Display discovery: qbg3-d468 Certified Displays; see MONITOR_SOURCE_CONTRACT.md.
+Product Type, voltage-specific annual monitor energy and mode power are separate.
+The generic signage sample can omit monitor annual energy; no per-SKU match implied.

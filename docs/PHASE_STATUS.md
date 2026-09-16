@@ -93,8 +93,17 @@ Raw CFM range, power W, noise dBA/sones and venting type remain separate; bathro
 fan sample is not hood certification matching. EnergyGuide is OUT_OF_RECON_SCOPE.
 See HOOD_SOURCE_CONTRACT.md and docs/evidence/hood-source-recon.json.
 
-Next bounded task: Monitor / Display EPA-focused source-contract reconnaissance.
-Other 3 families and remaining claim/quality semantics are not complete.
+Monitor / Display EPA-focused reconnaissance PASS: run 35111109416, job 104844741738,
+commit eb170dfcf1f4ffd9b4167b916e469cee2023935d. 88 tests and four monitor source checks
+passed; all nine family jobs succeeded. 56 API groups = 56 rendered groups, 76 exact
+SKUs; LS40H850TANXZA sample PDP plus qbg3-d468 metadata/three generic rows verified.
+Maximum consumption 340 W remains separate from Thunderbolt output 140/15 W;
+class size, active dimensions and resolution retained separately. Generic signage row
+without annual monitor energy is not a Samsung match or zero-energy observation.
+EnergyGuide is OUT_OF_RECON_SCOPE. See MONITOR_SOURCE_CONTRACT.md and evidence.
+
+Next bounded task: Computer EPA-focused source-contract reconnaissance.
+Other 2 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;

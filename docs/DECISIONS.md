@@ -51,6 +51,12 @@ Preserve 390-630 CFM, 210W and 50 dBA (1.0 sones) verbatim. Numbered EPA speed,
 pressure and sound measurements require compatible test bases before comparison (D01).
 Do not infer dBA/sones equivalence, annual kWh, or fan power from lighting power.
 
+Monitor reconnaissance: qbg3-d468 Product Type separates monitor/signage applicability
+(D09); Smart Monitor TV apps are not a TV classification rule. Monitor total energy
+at 115 V (kWh/yr), mode power W, certification energy limit and USB-C delivered W
+are different quantities (D01). Preserve source labels/units/test basis; do not derive
+annual PDP energy or certification currency from available watts/date_certified.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |
