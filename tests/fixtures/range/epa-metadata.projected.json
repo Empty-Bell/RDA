@@ -1,0 +1,207 @@
+{
+  "id": "m6gi-ng33",
+  "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+  "rowsUpdatedAt": 1789564327,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "energy_star_partner",
+      "name": "ENERGY STAR Partner",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_name",
+      "name": "Model Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "product_type",
+      "name": "Product Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "installation_type",
+      "name": "Installation Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "cooking_top_technology",
+      "name": "Cooking Top Technology",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "width_inches",
+      "name": "Width (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "height_inches",
+      "name": "Height (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "depth_inches",
+      "name": "Depth (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "number_of_cooking_zones",
+      "name": "Number of Cooking Zones",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "control_type",
+      "name": "Control Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "voltage_volts",
+      "name": "Voltage (volts)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "amperage_amps",
+      "name": "Amperage (amps)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "specialty_zones",
+      "name": "Specialty Zones",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "smart_capabilities",
+      "name": "Smart Capabilities",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_product_features",
+      "name": "Additional Product Features",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "annual_energy_consumption_kwh_yr",
+      "name": "Annual Energy Consumption (kWh/year)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "low_power_mode_energy_consumption_oven_kwh_yr",
+      "name": "Low-Power Mode Energy Consumption for Oven Component (kWh/year)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "low_power_mode_energy_consumption_cooking_top_kwh_yr",
+      "name": "Low-Power Mode Energy Consumption for Cooking Top (kWh/year)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "average_cooking_zone_time_minutes",
+      "name": "Average Cooking Zone Time (minutes)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_1_size_inches",
+      "name": "Cooking Zone #1 Size (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_2_size_inches",
+      "name": "Cooking Zone #2 Size (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_3_size_inches",
+      "name": "Cooking Zone #3 Size (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_4_size_inches",
+      "name": "Cooking Zone #4 Size (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_5_size_inches",
+      "name": "Cooking Zone #5 Size (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_6_size_inches",
+      "name": "Cooking Zone #6 Size (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_1_wattage_watts",
+      "name": "Cooking Zone #1 Wattage (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_2_wattage_watts",
+      "name": "Cooking Zone #2 Wattage (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_3_wattage_watts",
+      "name": "Cooking Zone #3 Wattage (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_4_wattage_watts",
+      "name": "Cooking Zone #4 Wattage (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_5_wattage_watts",
+      "name": "Cooking Zone #5 Wattage (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cooking_zone_6_wattage_watts",
+      "name": "Cooking Zone #6 Wattage (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available On Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_certified",
+      "name": " Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "CB Model Identifier",
+      "dataTypeName": "text"
+    }
+  ]
+}

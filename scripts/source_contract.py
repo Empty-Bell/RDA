@@ -107,6 +107,9 @@ def pdp_facts(data, target, family='refrigerator'):
             'capacity_raw': [x for x in fields if capacity_name is not None and x['name'] == capacity_name],
             'screen_size_raw': [x for x in fields if x['name'] == 'Screen Size'],
             'power_consumption_raw': [x for x in fields if (x['name'] or '').startswith('Power Consumption (')],
+            'fuel_type_raw': [x for x in fields if x['name'] == 'Fuel Type'],
+            'cooktop_type_raw': [x for x in fields if x['name'] == 'Cooktop Type'],
+            'oven_capacity_raw': [x for x in fields if x['name'] == 'Oven Capacity'],
             'energy_star_spec_claim_raw': [x for x in fields if 'ENERGY STAR' in (x['name'] or '')],
             'energy_star_structured_claim': None,
             'energyguide_documents': [{k: x.get(k) for k in ('name', 'type', 'url')} for x in documents]}

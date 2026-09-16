@@ -1,0 +1,668 @@
+{
+  "Specs": [
+    {
+      "modelCode": "NSE80H63XRAA",
+      "fullSpecs": [
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Large Oven Capacity",
+              "value": "6.3 cu. ft."
+            },
+            {
+              "name": "Voice-Enabled",
+              "value": "Yes"
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch + Precision Knobs"
+            },
+            {
+              "name": "Oven Cleaning Type",
+              "value": "Steam & Self Clean"
+            },
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Storage Drawer",
+              "value": "Yes"
+            },
+            {
+              "name": "SmartThings",
+              "value": "Yes"
+            },
+            {
+              "name": "Self and Steam Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Precision Knobs",
+              "value": "Yes"
+            },
+            {
+              "name": "Glass Touch Controls",
+              "value": "Yes"
+            },
+            {
+              "name": "ENERGY STAR® Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Sous Vide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Fingerprint Resistant Stainless Steel"
+            },
+            {
+              "name": "Fuel Type",
+              "value": "Electric"
+            },
+            {
+              "name": "Cavity Type",
+              "value": "Single"
+            },
+            {
+              "name": "Controls for Oven",
+              "value": "Touch"
+            },
+            {
+              "name": "Controls for Cooktop",
+              "value": "Precision Knobs"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            },
+            {
+              "name": "Configuration",
+              "value": "Slide-In"
+            }
+          ]
+        },
+        {
+          "groupName": "Capacity",
+          "specList": [
+            {
+              "name": "Oven Capacity",
+              "value": "6.3 cu. ft."
+            }
+          ]
+        },
+        {
+          "groupName": "Weights/Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "36-36.75 (Adjustable)"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "29.94"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "28.38"
+            },
+            {
+              "name": "Product Dimensions (W x H x D)",
+              "value": "29 15/16\" W x 36\"- 36 3/4\" (Adjustable) H x 28 3/8\" D"
+            },
+            {
+              "name": "Oven Dimensions",
+              "value": "24 13/16\" W x 22 7/16\" H x 19 3/4\" D"
+            },
+            {
+              "name": "Product Weight",
+              "value": "158.7 lbs"
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "180.6 lbs"
+            }
+          ]
+        },
+        {
+          "groupName": "Cooktop",
+          "specList": [
+            {
+              "name": "Total Number of Elements",
+              "value": "5"
+            },
+            {
+              "name": "Element - Left Front",
+              "value": "6\"/9\" 3,000W"
+            },
+            {
+              "name": "Element - Left Rear",
+              "value": "6\" 1,200W"
+            },
+            {
+              "name": "Element - Right Front",
+              "value": "9\"/12\" 3,000W"
+            },
+            {
+              "name": "Element - Right Rear",
+              "value": "6\" 1,200W"
+            },
+            {
+              "name": "Hot Surface Indicator Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Element - Center Rear",
+              "value": "6\" Warming Zone (100W)"
+            },
+            {
+              "name": "Cooktop Type",
+              "value": "Electric"
+            },
+            {
+              "name": "Total Number of Elements",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "groupName": "Oven",
+          "specList": [
+            {
+              "name": "Convection Bake",
+              "value": "Yes"
+            },
+            {
+              "name": "Bake",
+              "value": "Yes"
+            },
+            {
+              "name": "Proofing",
+              "value": "Yes"
+            },
+            {
+              "name": "Convection Roast",
+              "value": "Yes"
+            },
+            {
+              "name": "Variable Broil",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Number of Racks",
+              "value": "2"
+            },
+            {
+              "name": "Keep Warm",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Rack Positions",
+              "value": "7"
+            },
+            {
+              "name": "Convection",
+              "value": "True Convection"
+            },
+            {
+              "name": "Air Fry",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Included Accessories",
+          "specList": [
+            {
+              "name": "Air Fry Tray",
+              "value": "Yes"
+            },
+            {
+              "name": "Filler Kit (For Slide In Range)",
+              "value": "Yes"
+            },
+            {
+              "name": "Anti-Tip Bracket",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Drawer Type",
+              "value": "Storage"
+            },
+            {
+              "name": "Hidden Bake Element",
+              "value": "Yes"
+            },
+            {
+              "name": "Kitchen Timer",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Safety Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Oven Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Interior Lights (qty)",
+              "value": "Incandescent 40W (1)"
+            },
+            {
+              "name": "Power/Ratings",
+              "value": "240V/60Hz/40A"
+            },
+            {
+              "name": "Steam & Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Sabbath Mode",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Warranty",
+          "specList": [
+            {
+              "name": "1 Year Parts and Labor",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Electrical Specifications",
+          "specList": [
+            {
+              "name": "plug",
+              "value": "3 or 4 prong plug"
+            },
+            {
+              "name": "Outlet",
+              "value": "220/240 volt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG80H60XRAA",
+      "fullSpecs": [
+        {
+          "groupName": "Capacity",
+          "specList": [
+            {
+              "name": "Oven Capacity",
+              "value": "6.0 cu. ft."
+            }
+          ]
+        },
+        {
+          "groupName": "Features",
+          "specList": [
+            {
+              "name": "Air Fry",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Wi-Fi Connection",
+              "value": "Yes"
+            },
+            {
+              "name": "Keep Warm",
+              "value": "Yes"
+            },
+            {
+              "name": "Clock",
+              "value": "Yes"
+            },
+            {
+              "name": "Kitchen Timer",
+              "value": "Yes"
+            },
+            {
+              "name": "Child Safety Lock",
+              "value": "Yes"
+            },
+            {
+              "name": "Hidden Bake Element",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Oven Light",
+              "value": "Yes"
+            },
+            {
+              "name": "Light On/Off (Lamp)",
+              "value": "Yes"
+            },
+            {
+              "name": "Delay Start",
+              "value": "Yes"
+            },
+            {
+              "name": "Sabbath Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Power/Ratings",
+              "value": "120V/60Hz/20A"
+            },
+            {
+              "name": "Interior Lights (qty)",
+              "value": "Incandescent 40W (1)"
+            },
+            {
+              "name": "Oven Cleaning Type",
+              "value": "Self Clean"
+            },
+            {
+              "name": "Storage Drawer",
+              "value": "Yes"
+            },
+            {
+              "name": "Air Sous Vide",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Cooktop",
+          "specList": [
+            {
+              "name": "Burner - Left Front",
+              "value": "16,000 BTU"
+            },
+            {
+              "name": "Burner - Left Rear",
+              "value": "9,500 BTU"
+            },
+            {
+              "name": "Burner - Right Front",
+              "value": "17,000 BTU"
+            },
+            {
+              "name": "Total Number of Burners",
+              "value": "5"
+            },
+            {
+              "name": "Burner - Right Rear",
+              "value": "5,000 BTU"
+            },
+            {
+              "name": "Burner - Center",
+              "value": "9,500 BTU, Round"
+            },
+            {
+              "name": "Cooktop Type",
+              "value": "Gas"
+            },
+            {
+              "name": "Center Burner Type",
+              "value": "Round"
+            },
+            {
+              "name": "Simmer Burner",
+              "value": "Yes"
+            },
+            {
+              "name": "Matte Black Continuous Grates",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Power",
+              "value": "57,000 BTU"
+            },
+            {
+              "name": "Sealed Burner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Drawer",
+          "specList": [
+            {
+              "name": "1 Year Parts and Labor",
+              "value": "Yes"
+            },
+            {
+              "name": "Cavity Type",
+              "value": "Single"
+            }
+          ]
+        },
+        {
+          "groupName": "Weights & Dimensions",
+          "specList": [
+            {
+              "name": "Shipping Weight (lb.)",
+              "value": "198.6 lb"
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "29 15/16\" W x 36\"- 36 3/4\" (Adjustable) H x 28 3/8\" D"
+            },
+            {
+              "name": "Oven Dimensions",
+              "value": "24 13/16\" W x 21 5/8\" H x 19 5/8\" D"
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "198.6 lbs"
+            },
+            {
+              "name": "Product Weight",
+              "value": "176.1 lbs"
+            },
+            {
+              "name": "Height (decimal)",
+              "value": "36-36.75 (Adjustable)"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "29.94"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "28.38"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Air Fry Tray (EA)",
+              "value": "Yes"
+            },
+            {
+              "name": "Anti-Tip Bracket",
+              "value": "Yes"
+            },
+            {
+              "name": "LP Conversion Kit",
+              "value": "Yes"
+            },
+            {
+              "name": "Filler Kit (for Slide-In Range)",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            },
+            {
+              "name": "Self Clean",
+              "value": "Yes"
+            },
+            {
+              "name": "Large Oven Capacity",
+              "value": "6.0 cu. ft."
+            },
+            {
+              "name": "Control Type",
+              "value": "Touch + Precision Knobs"
+            },
+            {
+              "name": "Glass Touch Controls",
+              "value": "Yes"
+            },
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Fingerprint Resistant Stainless Steel"
+            },
+            {
+              "name": "Configuration",
+              "value": "Slide-In"
+            },
+            {
+              "name": "Fuel Type",
+              "value": "Gas"
+            },
+            {
+              "name": "Controls for Oven",
+              "value": "Touch Controls"
+            },
+            {
+              "name": "Controls for Cooktop",
+              "value": "Precision Knobs"
+            },
+            {
+              "name": "Display Color",
+              "value": "White"
+            },
+            {
+              "name": "BESPOKE",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Oven",
+          "specList": [
+            {
+              "name": "Convection Bake",
+              "value": "Yes"
+            },
+            {
+              "name": "Bake",
+              "value": "Yes"
+            },
+            {
+              "name": "Variable Broil",
+              "value": "Yes"
+            },
+            {
+              "name": "Proofing",
+              "value": "Yes"
+            },
+            {
+              "name": "Total Number of Racks",
+              "value": "2"
+            },
+            {
+              "name": "Number of Wire Racks",
+              "value": "1"
+            },
+            {
+              "name": "Number of Rack Positions",
+              "value": "7"
+            },
+            {
+              "name": "Convection",
+              "value": "True Convection"
+            },
+            {
+              "name": "Convection Roast",
+              "value": "Yes"
+            },
+            {
+              "name": "Number of Broil Racks",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Drawer Type",
+              "value": "Storage"
+            },
+            {
+              "name": "Hidden Bake Element",
+              "value": "Yes"
+            },
+            {
+              "name": "Kitchen Timer",
+              "value": "Yes"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "NSE80H63XRAA",
+      "supports": []
+    },
+    {
+      "modelCode": "NSG80H60XRAA",
+      "supports": []
+    }
+  ]
+}

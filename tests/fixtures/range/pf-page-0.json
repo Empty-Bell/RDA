@@ -1,0 +1,1706 @@
+{
+  "searchTotalCount": 19,
+  "hasMoreResults": true,
+  "searchResults": [
+    {
+      "modelCode": "NSE80H63XRAA",
+      "modelName": "NSE80H63XRAA",
+      "id": "NSE80H63XRAA",
+      "group_id": "MULTI_GROUP_ID_601636",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63xraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63xraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "75",
+        "pickYn": "N",
+        "representativeModel": "NSE80H63XRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-3",
+        "id": "601636"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSE80H63XRAA",
+          "modelName": "NSE80H63XRAA",
+          "id": "NSE80H63XRAA",
+          "group_id": "MULTI_GROUP_ID_601636",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63xraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63xraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "75",
+            "pickYn": "N",
+            "representativeModel": "NSE80H63XRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-3",
+            "id": "601636"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG80H60XRAA",
+          "modelName": "NSG80H60XRAA",
+          "id": "NSG80H60XRAA",
+          "group_id": "MULTI_GROUP_ID_601636",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nsg80h60xraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nsg80h60xraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "75",
+            "pickYn": "N",
+            "representativeModel": "NSE80H63XRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-3",
+            "id": "601636"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG90H60SRAA",
+      "modelName": "NSG90H60SRAA",
+      "id": "NSG90H60SRAA",
+      "group_id": "MULTI_GROUP_ID_601630",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-stainless-steel-sku-nsg90h60sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-stainless-steel-sku-nsg90h60sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "73",
+        "pickYn": "N",
+        "representativeModel": "NSG90H60SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-1",
+        "id": "601630"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSG90H60SRAA",
+          "modelName": "NSG90H60SRAA",
+          "id": "NSG90H60SRAA",
+          "group_id": "MULTI_GROUP_ID_601630",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-stainless-steel-sku-nsg90h60sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-stainless-steel-sku-nsg90h60sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "NSG90H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-1",
+            "id": "601630"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG90H60SWAA",
+          "modelName": "NSG90H60SWAA",
+          "id": "NSG90H60SWAA",
+          "group_id": "MULTI_GROUP_ID_601630",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-white-glass-sku-nsg90h60swaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-white-glass-sku-nsg90h60swaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "NSG90H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-1",
+            "id": "601630"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#f3f4f4",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE90H63SRAA",
+          "modelName": "NSE90H63SRAA",
+          "id": "NSE90H63SRAA",
+          "group_id": "MULTI_GROUP_ID_601630",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-stainless-steel-sku-nse90h63sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-stainless-steel-sku-nse90h63sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "NSG90H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-1",
+            "id": "601630"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE90H63SWAA",
+          "modelName": "NSE90H63SWAA",
+          "id": "NSE90H63SWAA",
+          "group_id": "MULTI_GROUP_ID_601630",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-white-glass-sku-nse90h63swaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-illuminated-precision-knobs-and-no-preheat-air-fry-max-in-white-glass-sku-nse90h63swaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "73",
+            "pickYn": "N",
+            "representativeModel": "NSG90H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-1",
+            "id": "601630"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#f3f4f4",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG80H60SRAA",
+      "modelName": "NSG80H60SRAA",
+      "id": "NSG80H60SRAA",
+      "group_id": "MULTI_GROUP_ID_601633",
+      "pdpURL": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nsg80h60sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nsg80h60sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "72",
+        "pickYn": "N",
+        "representativeModel": "NSG80H60SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-2",
+        "id": "601633"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSG80H60SRAA",
+          "modelName": "NSG80H60SRAA",
+          "id": "NSG80H60SRAA",
+          "group_id": "MULTI_GROUP_ID_601633",
+          "pdpURL": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nsg80h60sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nsg80h60sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "NSG80H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-2",
+            "id": "601633"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG80H60SWAA",
+          "modelName": "NSG80H60SWAA",
+          "id": "NSG80H60SWAA",
+          "group_id": "MULTI_GROUP_ID_601633",
+          "pdpURL": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-white-glass-sku-nsg80h60swaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-white-glass-sku-nsg80h60swaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "NSG80H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-2",
+            "id": "601633"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#f3f4f4",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE80H63SRAA",
+          "modelName": "NSE80H63SRAA",
+          "id": "NSE80H63SRAA",
+          "group_id": "MULTI_GROUP_ID_601633",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-stainless-steel-sku-nse80h63sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "NSG80H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-2",
+            "id": "601633"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE80H63SEAA",
+          "modelName": "NSE80H63SEAA",
+          "id": "NSE80H63SEAA",
+          "group_id": "MULTI_GROUP_ID_601633",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-matte-black-steel-sku-nse80h63seaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-matte-black-steel-sku-nse80h63seaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "NSG80H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-2",
+            "id": "601633"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#4a4a4d",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG80H60SEAA",
+          "modelName": "NSG80H60SEAA",
+          "id": "NSG80H60SEAA",
+          "group_id": "MULTI_GROUP_ID_601633",
+          "pdpURL": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-matte-black-steel-sku-nsg80h60seaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/30-bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-and-true-convection-in-matte-black-steel-sku-nsg80h60seaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "NSG80H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-2",
+            "id": "601633"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#4a4a4d",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE80H63SWAA",
+          "modelName": "NSE80H63SWAA",
+          "id": "NSE80H63SWAA",
+          "group_id": "MULTI_GROUP_ID_601633",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-white-glass-sku-nse80h63swaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-and-true-convection-in-white-glass-sku-nse80h63swaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "72",
+            "pickYn": "N",
+            "representativeModel": "NSG80H60SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-2",
+            "id": "601633"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#f3f4f4",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NE63A6751SG/AA",
+      "modelName": "NE63A6751SG/AA",
+      "id": "NE63A6751SG/AA",
+      "group_id": "MULTI_GROUP_ID_598969",
+      "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-flex-duo-no-preheat-air-fry-griddle-in-black-stainless-steel-sku-ne63a6751sg-aa",
+      "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-flex-duo-no-preheat-air-fry-griddle-in-black-stainless-steel-sku-ne63a6751sg-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "70",
+        "pickYn": "N",
+        "representativeModel": "NE63A6751SG/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Ranges-PF-4",
+        "id": "598969"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Black Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NE63A6751SG/AA",
+          "modelName": "NE63A6751SG/AA",
+          "id": "NE63A6751SG/AA",
+          "group_id": "MULTI_GROUP_ID_598969",
+          "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-flex-duo-no-preheat-air-fry-griddle-in-black-stainless-steel-sku-ne63a6751sg-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-flex-duo-no-preheat-air-fry-griddle-in-black-stainless-steel-sku-ne63a6751sg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "70",
+            "pickYn": "N",
+            "representativeModel": "NE63A6751SG/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-4",
+            "id": "598969"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NX60A6751SG/AA",
+          "modelName": "NX60A6751SG/AA",
+          "id": "NX60A6751SG/AA",
+          "group_id": "MULTI_GROUP_ID_598969",
+          "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-flex-duo-air-fry-in-black-stainless-steel-sku-nx60a6751sg-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-flex-duo-air-fry-in-black-stainless-steel-sku-nx60a6751sg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "70",
+            "pickYn": "N",
+            "representativeModel": "NE63A6751SG/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-4",
+            "id": "598969"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NE63A6751SS/AA",
+          "modelName": "NE63A6751SS/AA",
+          "id": "NE63A6751SS/AA",
+          "group_id": "MULTI_GROUP_ID_598969",
+          "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-flex-duo-no-preheat-air-fry-griddle-in-stainless-steel-sku-ne63a6751ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-flex-duo-no-preheat-air-fry-griddle-in-stainless-steel-sku-ne63a6751ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "70",
+            "pickYn": "N",
+            "representativeModel": "NE63A6751SG/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-4",
+            "id": "598969"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NX60A6751SS/AA",
+          "modelName": "NX60A6751SS/AA",
+          "id": "NX60A6751SS/AA",
+          "group_id": "MULTI_GROUP_ID_598969",
+          "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-flex-duo-stainless-cooktop-air-fry-in-stainless-steel-sku-nx60a6751ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-flex-duo-stainless-cooktop-air-fry-in-stainless-steel-sku-nx60a6751ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "70",
+            "pickYn": "N",
+            "representativeModel": "NE63A6751SG/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-4",
+            "id": "598969"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSE70H63SRAA",
+      "modelName": "NSE70H63SRAA",
+      "id": "NSE70H63SRAA",
+      "group_id": "MULTI_GROUP_ID_601650",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-in-stainless-steel-sku-nse70h63sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-in-stainless-steel-sku-nse70h63sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "69",
+        "pickYn": "N",
+        "representativeModel": "NSE70H63SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-5",
+        "id": "601650"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSE70H63SRAA",
+          "modelName": "NSE70H63SRAA",
+          "id": "NSE70H63SRAA",
+          "group_id": "MULTI_GROUP_ID_601650",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-in-stainless-steel-sku-nse70h63sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-no-preheat-air-fry-max-in-stainless-steel-sku-nse70h63sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "69",
+            "pickYn": "N",
+            "representativeModel": "NSE70H63SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-5",
+            "id": "601650"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG70H60SRAA",
+          "modelName": "NSG70H60SRAA",
+          "id": "NSG70H60SRAA",
+          "group_id": "MULTI_GROUP_ID_601650",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-in-stainless-steel-sku-nsg70h60sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-no-preheat-air-fry-max-in-stainless-steel-sku-nsg70h60sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "69",
+            "pickYn": "N",
+            "representativeModel": "NSE70H63SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-5",
+            "id": "601650"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSI6DG9550SRAA",
+      "modelName": "NSI6DG9550SRAA",
+      "id": "NSI6DG9550SRAA",
+      "group_id": "MULTI_GROUP_ID_601654",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-induction-range-6-3-cu-ft-in-stainless-steel-with-flex-duo-ambient-edge-lighting-in-stainless-steel-sku-nsi6dg9550sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-induction-range-6-3-cu-ft-in-stainless-steel-with-flex-duo-ambient-edge-lighting-in-stainless-steel-sku-nsi6dg9550sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "68",
+        "pickYn": "N",
+        "representativeModel": "NSI6DG9550SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-6",
+        "id": "601654"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c8c9cd",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Induction",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSI6DG9550SRAA",
+          "modelName": "NSI6DG9550SRAA",
+          "id": "NSI6DG9550SRAA",
+          "group_id": "MULTI_GROUP_ID_601654",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-induction-range-6-3-cu-ft-in-stainless-steel-with-flex-duo-ambient-edge-lighting-in-stainless-steel-sku-nsi6dg9550sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-induction-range-6-3-cu-ft-in-stainless-steel-with-flex-duo-ambient-edge-lighting-in-stainless-steel-sku-nsi6dg9550sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "68",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9550SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-6",
+            "id": "601654"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c8c9cd",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG90H60DRAA",
+      "modelName": "NSG90H60DRAA",
+      "id": "NSG90H60DRAA",
+      "group_id": "MULTI_GROUP_ID_601659",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-flex-duo-oven-and-dual-true-convection-in-stainless-steel-sku-nsg90h60draa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-flex-duo-oven-and-dual-true-convection-in-stainless-steel-sku-nsg90h60draa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "67",
+        "pickYn": "N",
+        "representativeModel": "NSG90H60DRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-7",
+        "id": "601659"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSG90H60DRAA",
+          "modelName": "NSG90H60DRAA",
+          "id": "NSG90H60DRAA",
+          "group_id": "MULTI_GROUP_ID_601659",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-flex-duo-oven-and-dual-true-convection-in-stainless-steel-sku-nsg90h60draa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-with-flex-duo-oven-and-dual-true-convection-in-stainless-steel-sku-nsg90h60draa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "67",
+            "pickYn": "N",
+            "representativeModel": "NSG90H60DRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-7",
+            "id": "601659"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE90H63DRAA",
+          "modelName": "NSE90H63DRAA",
+          "id": "NSE90H63DRAA",
+          "group_id": "MULTI_GROUP_ID_601659",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-flex-duo-oven-and-dual-true-convection-in-stainless-steel-sku-nse90h63draa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-with-flex-duo-oven-and-dual-true-convection-in-stainless-steel-sku-nse90h63draa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "67",
+            "pickYn": "N",
+            "representativeModel": "NSG90H60DRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-7",
+            "id": "601659"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG90H63SRAA",
+          "modelName": "NSG90H63SRAA",
+          "id": "NSG90H63SRAA",
+          "group_id": "MULTI_GROUP_ID_601659",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-dual-fuel-range-with-illuminated-knobs-no-preheat-airfry-max-and-true-convection-in-stainless-steel-sku-nsg90h63sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-dual-fuel-range-with-illuminated-knobs-no-preheat-airfry-max-and-true-convection-in-stainless-steel-sku-nsg90h63sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "67",
+            "pickYn": "N",
+            "representativeModel": "NSG90H60DRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-7",
+            "id": "601659"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Dual Fuel",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NE63A6511SG/AA",
+      "modelName": "NE63A6511SG/AA",
+      "id": "NE63A6511SG/AA",
+      "group_id": "MULTI_GROUP_ID_598966",
+      "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-black-stainless-steel-sku-ne63a6511sg-aa",
+      "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-black-stainless-steel-sku-ne63a6511sg-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "66",
+        "pickYn": "N",
+        "representativeModel": "NE63D6511SR/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Ranges-PF-1",
+        "id": "598966"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Black Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NE63A6511SG/AA",
+          "modelName": "NE63A6511SG/AA",
+          "id": "NE63A6511SG/AA",
+          "group_id": "MULTI_GROUP_ID_598966",
+          "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-black-stainless-steel-sku-ne63a6511sg-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-black-stainless-steel-sku-ne63a6511sg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "NE63D6511SR/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-1",
+            "id": "598966"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NX60A6511SS/AA",
+          "modelName": "NX60A6511SS/AA",
+          "id": "NX60A6511SS/AA",
+          "group_id": "MULTI_GROUP_ID_598966",
+          "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convection-in-stainless-steel-sku-nx60a6511ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convection-in-stainless-steel-sku-nx60a6511ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "NE63D6511SR/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-1",
+            "id": "598966"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NX60A6511SG/AA",
+          "modelName": "NX60A6511SG/AA",
+          "id": "NX60A6511SG/AA",
+          "group_id": "MULTI_GROUP_ID_598966",
+          "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convection-in-black-stainless-steel-sku-nx60a6511sg-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convection-in-black-stainless-steel-sku-nx60a6511sg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "NE63D6511SR/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-1",
+            "id": "598966"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NE63A6511SS/AA",
+      "modelName": "NE63A6511SS/AA",
+      "id": "NE63A6511SS/AA",
+      "group_id": "SKU_ID_ne63a6511ss/aa",
+      "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-stainless-steel-sku-ne63a6511ss-aa",
+      "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-stainless-steel-sku-ne63a6511ss-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "66",
+        "pickYn": "N",
+        "representativeModel": "NE63A6511SS/AA",
+        "familyName": "6.3 cu. ft. Smart Freestanding Electric Range with No-Preheat Air Fry  Convection",
+        "id": "568542",
+        "marketingName": "Freestanding Electric Range"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NE63A6511SS/AA",
+          "modelName": "NE63A6511SS/AA",
+          "id": "NE63A6511SS/AA",
+          "group_id": "SKU_ID_ne63a6511ss/aa",
+          "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-stainless-steel-sku-ne63a6511ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-no-preheat-air-fry-convection-in-stainless-steel-sku-ne63a6511ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "66",
+            "pickYn": "N",
+            "representativeModel": "NE63A6511SS/AA",
+            "familyName": "6.3 cu. ft. Smart Freestanding Electric Range with No-Preheat Air Fry  Convection",
+            "id": "568542",
+            "marketingName": "Freestanding Electric Range"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSI6DG9500SRAA",
+      "modelName": "NSI6DG9500SRAA",
+      "id": "NSI6DG9500SRAA",
+      "group_id": "MULTI_GROUP_ID_601687",
+      "pdpURL": "/us/cooking-appliances/ranges/ne9100d-5series-plus-3series-stainless-steel-sku-nsi6dg9500sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/ne9100d-5series-plus-3series-stainless-steel-sku-nsi6dg9500sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "65",
+        "pickYn": "N",
+        "representativeModel": "NSI6DG9500SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-9",
+        "id": "601687"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Induction",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSI6DG9500SRAA",
+          "modelName": "NSI6DG9500SRAA",
+          "id": "NSI6DG9500SRAA",
+          "group_id": "MULTI_GROUP_ID_601687",
+          "pdpURL": "/us/cooking-appliances/ranges/ne9100d-5series-plus-3series-stainless-steel-sku-nsi6dg9500sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/ne9100d-5series-plus-3series-stainless-steel-sku-nsi6dg9500sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "65",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-9",
+            "id": "601687"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSI6DB950012AA",
+          "modelName": "NSI6DB950012AA",
+          "id": "NSI6DB950012AA",
+          "group_id": "MULTI_GROUP_ID_601687",
+          "pdpURL": "/us/cooking-appliances/ranges/ne9100d-5series-plus-3series-white-glass-sku-nsi6db950012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/ne9100d-5series-plus-3series-white-glass-sku-nsi6db950012aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "65",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-9",
+            "id": "601687"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSI6DG9500MTAA",
+          "modelName": "NSI6DG9500MTAA",
+          "id": "NSI6DG9500MTAA",
+          "group_id": "MULTI_GROUP_ID_601687",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-ambient-edge-lighting-air-sous-vide-in-matte-black-steel-sku-nsi6dg9500mtaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-ambient-edge-lighting-air-sous-vide-in-matte-black-steel-sku-nsi6dg9500mtaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "65",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-9",
+            "id": "601687"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#303034",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSI6DG9300SRAA",
+      "modelName": "NSI6DG9300SRAA",
+      "id": "NSI6DG9300SRAA",
+      "group_id": "MULTI_GROUP_ID_601692",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-anti-scratch-glass-cooktop-air-fry-in-stainless-steel-sku-nsi6dg9300sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-anti-scratch-glass-cooktop-air-fry-in-stainless-steel-sku-nsi6dg9300sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "64",
+        "pickYn": "N",
+        "representativeModel": "NSI6DG9300SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-10",
+        "id": "601692"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Induction",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSI6DG9300SRAA",
+          "modelName": "NSI6DG9300SRAA",
+          "id": "NSI6DG9300SRAA",
+          "group_id": "MULTI_GROUP_ID_601692",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-anti-scratch-glass-cooktop-air-fry-in-stainless-steel-sku-nsi6dg9300sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-anti-scratch-glass-cooktop-air-fry-in-stainless-steel-sku-nsi6dg9300sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "64",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9300SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-10",
+            "id": "601692"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSI6DB930012AA",
+          "modelName": "NSI6DB930012AA",
+          "id": "NSI6DB930012AA",
+          "group_id": "MULTI_GROUP_ID_601692",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-anti-scratch-glass-cooktop-air-fry-in-white-glass-sku-nsi6db930012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-induction-range-with-anti-scratch-glass-cooktop-air-fry-in-white-glass-sku-nsi6db930012aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "64",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9300SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-10",
+            "id": "601692"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSE6DG8100SRAA",
+      "modelName": "NSE6DG8100SRAA",
+      "id": "NSE6DG8100SRAA",
+      "group_id": "MULTI_GROUP_ID_601700",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-precision-knobs-in-stainless-steel-sku-nse6dg8100sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-precision-knobs-in-stainless-steel-sku-nse6dg8100sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "63",
+        "pickYn": "N",
+        "representativeModel": "NSE6DG8100SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-11",
+        "id": "601700"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#d3d3d3",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSE6DG8100SRAA",
+          "modelName": "NSE6DG8100SRAA",
+          "id": "NSE6DG8100SRAA",
+          "group_id": "MULTI_GROUP_ID_601700",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-precision-knobs-in-stainless-steel-sku-nse6dg8100sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-precision-knobs-in-stainless-steel-sku-nse6dg8100sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "63",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8100SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-11",
+            "id": "601700"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#d3d3d3",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG6DG8100SRAA",
+          "modelName": "NSG6DG8100SRAA",
+          "id": "NSG6DG8100SRAA",
+          "group_id": "MULTI_GROUP_ID_601700",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-precision-knobs-in-stainless-steel-sku-nsg6dg8100sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-precision-knobs-in-stainless-steel-sku-nsg6dg8100sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "63",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8100SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-11",
+            "id": "601700"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG6DG8100MTAA",
+          "modelName": "NSG6DG8100MTAA",
+          "id": "NSG6DG8100MTAA",
+          "group_id": "MULTI_GROUP_ID_601700",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-precision-knobs-in-matte-black-steel-sku-nsg6dg8100mtaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-precision-knobs-in-matte-black-steel-sku-nsg6dg8100mtaa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "63",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8100SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-11",
+            "id": "601700"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#303034",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NE63A6311SS/AA",
+      "modelName": "NE63A6311SS/AA",
+      "id": "NE63A6311SS/AA",
+      "group_id": "MULTI_GROUP_ID_601705",
+      "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-rapid-boil-self-clean-in-stainless-steel-sku-ne63a6311ss-aa",
+      "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-rapid-boil-self-clean-in-stainless-steel-sku-ne63a6311ss-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "62",
+        "pickYn": "N",
+        "representativeModel": "NE63A6311SS/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-12",
+        "id": "601705"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Electric",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NE63A6311SS/AA",
+          "modelName": "NE63A6311SS/AA",
+          "id": "NE63A6311SS/AA",
+          "group_id": "MULTI_GROUP_ID_601705",
+          "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-rapid-boil-self-clean-in-stainless-steel-sku-ne63a6311ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-rapid-boil-self-clean-in-stainless-steel-sku-ne63a6311ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "62",
+            "pickYn": "N",
+            "representativeModel": "NE63A6311SS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-12",
+            "id": "601705"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NX60A6311SS/AA",
+          "modelName": "NX60A6311SS/AA",
+          "id": "NX60A6311SS/AA",
+          "group_id": "MULTI_GROUP_ID_601705",
+          "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-18k-btu-dual-power-burner-self-clean-in-stainless-steel-sku-nx60a6311ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-18k-btu-dual-power-burner-self-clean-in-stainless-steel-sku-nx60a6311ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "62",
+            "pickYn": "N",
+            "representativeModel": "NE63A6311SS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-12",
+            "id": "601705"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NX60A6111SS/AA",
+          "modelName": "NX60A6111SS/AA",
+          "id": "NX60A6111SS/AA",
+          "group_id": "MULTI_GROUP_ID_601705",
+          "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-integrated-griddle-in-stainless-steel-sku-nx60a6111ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-integrated-griddle-in-stainless-steel-sku-nx60a6111ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "62",
+            "pickYn": "N",
+            "representativeModel": "NE63A6311SS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-12",
+            "id": "601705"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NE63A6111SS/AA",
+          "modelName": "NE63A6111SS/AA",
+          "id": "NE63A6111SS/AA",
+          "group_id": "MULTI_GROUP_ID_601705",
+          "pdpURL": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-steam-clean-in-stainless-steel-sku-ne63a6111ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-3-cu-ft-smart-freestanding-electric-range-with-steam-clean-in-stainless-steel-sku-ne63a6111ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "62",
+            "pickYn": "N",
+            "representativeModel": "NE63A6311SS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-12",
+            "id": "601705"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSI6DG9900SRAA",
+      "modelName": "NSI6DG9900SRAA",
+      "id": "NSI6DG9900SRAA",
+      "group_id": "MULTI_GROUP_ID_601718",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-electric-induction-bespoke-6-3-cu-ft-ai-slide-in-induction-range-with-ai-hub-smart-oven-camera-in-stainless-steel-sku-nsi6dg9900sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-electric-induction-bespoke-6-3-cu-ft-ai-slide-in-induction-range-with-ai-hub-smart-oven-camera-in-stainless-steel-sku-nsi6dg9900sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "60",
+        "pickYn": "N",
+        "representativeModel": "NSI6DG9900SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-14",
+        "id": "601718"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Induction",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSI6DG9900SRAA",
+          "modelName": "NSI6DG9900SRAA",
+          "id": "NSI6DG9900SRAA",
+          "group_id": "MULTI_GROUP_ID_601718",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-electric-induction-bespoke-6-3-cu-ft-ai-slide-in-induction-range-with-ai-hub-smart-oven-camera-in-stainless-steel-sku-nsi6dg9900sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-electric-induction-bespoke-6-3-cu-ft-ai-slide-in-induction-range-with-ai-hub-smart-oven-camera-in-stainless-steel-sku-nsi6dg9900sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "60",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9900SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-14",
+            "id": "601718"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSI6DB990012AA",
+          "modelName": "NSI6DB990012AA",
+          "id": "NSI6DB990012AA",
+          "group_id": "MULTI_GROUP_ID_601718",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-electric-induction-bespoke-6-3-cu-ft-ai-slide-in-induction-range-with-ai-hub-smart-oven-camera-in-white-glass-sku-nsi6db990012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-electric-induction-bespoke-6-3-cu-ft-ai-slide-in-induction-range-with-ai-hub-smart-oven-camera-in-white-glass-sku-nsi6db990012aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "60",
+            "pickYn": "N",
+            "representativeModel": "NSI6DG9900SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-14",
+            "id": "601718"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Induction",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

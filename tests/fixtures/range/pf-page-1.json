@@ -1,0 +1,729 @@
+{
+  "searchTotalCount": 19,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "NX60A6711SS/AA",
+      "modelName": "NX60A6711SS/AA",
+      "id": "NX60A6711SS/AA",
+      "group_id": "MULTI_GROUP_ID_598972",
+      "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convectionplus-stainless-cooktop-in-stainless-steel-sku-nx60a6711ss-aa",
+      "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convectionplus-stainless-cooktop-in-stainless-steel-sku-nx60a6711ss-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "59",
+        "pickYn": "N",
+        "representativeModel": "NX60A6711SS/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Ranges-PF-5",
+        "id": "598972"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NX60A6711SS/AA",
+          "modelName": "NX60A6711SS/AA",
+          "id": "NX60A6711SS/AA",
+          "group_id": "MULTI_GROUP_ID_598972",
+          "pdpURL": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convectionplus-stainless-cooktop-in-stainless-steel-sku-nx60a6711ss-aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/6-0-cu-ft-smart-freestanding-gas-range-with-no-preheat-air-fry-convectionplus-stainless-cooktop-in-stainless-steel-sku-nx60a6711ss-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "59",
+            "pickYn": "N",
+            "representativeModel": "NX60A6711SS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Ranges-PF-5",
+            "id": "598972"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG6DG8550SRAA",
+      "modelName": "NSG6DG8550SRAA",
+      "id": "NSG6DG8550SRAA",
+      "group_id": "MULTI_GROUP_ID_601724",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-6-0-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nsg6dg8550sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-6-0-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nsg6dg8550sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "58",
+        "pickYn": "N",
+        "representativeModel": "NSG6DG8550SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-16",
+        "id": "601724"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSG6DG8550SRAA",
+          "modelName": "NSG6DG8550SRAA",
+          "id": "NSG6DG8550SRAA",
+          "group_id": "MULTI_GROUP_ID_601724",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-6-0-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nsg6dg8550sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-gas-range-6-0-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nsg6dg8550sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "58",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8550SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-16",
+            "id": "601724"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DG8550SRAA",
+          "modelName": "NSE6DG8550SRAA",
+          "id": "NSE6DG8550SRAA",
+          "group_id": "MULTI_GROUP_ID_601724",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-6-3-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nse6dg8550sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-electric-range-6-3-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nse6dg8550sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "58",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8550SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-16",
+            "id": "601724"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSY6DG8550SRAA",
+          "modelName": "NSY6DG8550SRAA",
+          "id": "NSY6DG8550SRAA",
+          "group_id": "MULTI_GROUP_ID_601724",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-dual-fuel-range-6-3-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nsy6dg8550sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-smart-slide-in-dual-fuel-range-6-3-cu-ft-with-flex-duo-illuminated-precision-knobs-in-stainless-steel-sku-nsy6dg8550sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "58",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8550SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-16",
+            "id": "601724"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Dual Fuel",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG6DB850012AA",
+      "modelName": "NSG6DB850012AA",
+      "id": "NSG6DB850012AA",
+      "group_id": "MULTI_GROUP_ID_601727",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-white-glass-sku-nsg6db850012aa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-white-glass-sku-nsg6db850012aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "57",
+        "pickYn": "N",
+        "representativeModel": "NSG6DG8500SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-17",
+        "id": "601727"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#e3e3e3",
+          "fmyChipName": "White Glass",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSG6DB850012AA",
+          "modelName": "NSG6DB850012AA",
+          "id": "NSG6DB850012AA",
+          "group_id": "MULTI_GROUP_ID_601727",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-white-glass-sku-nsg6db850012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-white-glass-sku-nsg6db850012aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-17",
+            "id": "601727"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DG8502MTAA",
+          "modelName": "NSE6DG8502MTAA",
+          "id": "NSE6DG8502MTAA",
+          "group_id": "MULTI_GROUP_ID_601727",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-energy-star-certified-electric-range-with-air-fry-in-matte-black-steel-sku-nse6dg8502mtaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-energy-star-certified-electric-range-with-air-fry-in-matte-black-steel-sku-nse6dg8502mtaa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-17",
+            "id": "601727"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#303034",
+              "fmyChipName": "Matte Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG6DG8500MTAA",
+          "modelName": "NSG6DG8500MTAA",
+          "id": "NSG6DG8500MTAA",
+          "group_id": "MULTI_GROUP_ID_601727",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-matte-black-sku-nsg6dg8500mtaa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-matte-black-sku-nsg6dg8500mtaa",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-17",
+            "id": "601727"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#303034",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DB850212AA",
+          "modelName": "NSE6DB850212AA",
+          "id": "NSE6DB850212AA",
+          "group_id": "MULTI_GROUP_ID_601727",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-energy-star-certified-electric-range-with-air-fry-in-white-glass-sku-nse6db850212aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-energy-star-certified-electric-range-with-air-fry-in-white-glass-sku-nse6db850212aa",
+          "ecomFlag": "N",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-17",
+            "id": "601727"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG6DG8500SRAA",
+          "modelName": "NSG6DG8500SRAA",
+          "id": "NSG6DG8500SRAA",
+          "group_id": "MULTI_GROUP_ID_601727",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-stainless-steel-sku-nsg6dg8500sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-sous-vide-air-fry-in-stainless-steel-sku-nsg6dg8500sraa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-17",
+            "id": "601727"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DG8502SRAA",
+          "modelName": "NSE6DG8502SRAA",
+          "id": "NSE6DG8502SRAA",
+          "group_id": "MULTI_GROUP_ID_601727",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-energy-star-certified-electric-range-with-air-fry-in-stainless-steel-sku-nse6dg8502sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-energy-star-certified-electric-range-with-air-fry-in-stainless-steel-sku-nse6dg8502sraa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "57",
+            "pickYn": "N",
+            "representativeModel": "NSG6DG8500SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-17",
+            "id": "601727"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG6DB870012AA",
+      "modelName": "NSG6DB870012AA",
+      "id": "NSG6DB870012AA",
+      "group_id": "MULTI_GROUP_ID_601732",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-smart-oven-camera-illuminated-precision-knobs-in-white-glass-sku-nsg6db870012aa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-smart-oven-camera-illuminated-precision-knobs-in-white-glass-sku-nsg6db870012aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "56",
+        "pickYn": "N",
+        "representativeModel": "NSE6DG8700SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-18",
+        "id": "601732"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#e3e3e3",
+          "fmyChipName": "White Glass",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSG6DB870012AA",
+          "modelName": "NSG6DB870012AA",
+          "id": "NSG6DB870012AA",
+          "group_id": "MULTI_GROUP_ID_601732",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-smart-oven-camera-illuminated-precision-knobs-in-white-glass-sku-nsg6db870012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-smart-oven-camera-illuminated-precision-knobs-in-white-glass-sku-nsg6db870012aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "56",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8700SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-18",
+            "id": "601732"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG6DG8700SRAA",
+          "modelName": "NSG6DG8700SRAA",
+          "id": "NSG6DG8700SRAA",
+          "group_id": "MULTI_GROUP_ID_601732",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-smart-oven-camera-illuminated-precision-knobs-in-stainless-steel-sku-nsg6dg8700sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-smart-oven-camera-illuminated-precision-knobs-in-stainless-steel-sku-nsg6dg8700sraa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "56",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8700SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-18",
+            "id": "601732"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DB870012AA",
+          "modelName": "NSE6DB870012AA",
+          "id": "NSE6DB870012AA",
+          "group_id": "MULTI_GROUP_ID_601732",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-smart-oven-camera-illuminated-precision-knobs-in-white-glass-sku-nse6db870012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-smart-oven-camera-illuminated-precision-knobs-in-white-glass-sku-nse6db870012aa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "56",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8700SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-18",
+            "id": "601732"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DG8700SRAA",
+          "modelName": "NSE6DG8700SRAA",
+          "id": "NSE6DG8700SRAA",
+          "group_id": "MULTI_GROUP_ID_601732",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-smart-oven-camera-illuminated-precision-knobs-in-stainless-steel-sku-nse6dg8700sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-smart-oven-camera-illuminated-precision-knobs-in-stainless-steel-sku-nse6dg8700sraa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "56",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8700SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-18",
+            "id": "601732"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NSG6DG8300SRAA",
+      "modelName": "NSG6DG8300SRAA",
+      "id": "NSG6DG8300SRAA",
+      "group_id": "MULTI_GROUP_ID_601735",
+      "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-fry-precision-knobs-in-stainless-steel-sku-nsg6dg8300sraa",
+      "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-fry-precision-knobs-in-stainless-steel-sku-nsg6dg8300sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "55",
+        "pickYn": "N",
+        "representativeModel": "NSE6DG8300SRAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-19",
+        "id": "601735"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Gas",
+          "fmyChipType": "Type"
+        },
+        {
+          "fmyChipCode": "#babdc2",
+          "fmyChipName": "",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NSG6DG8300SRAA",
+          "modelName": "NSG6DG8300SRAA",
+          "id": "NSG6DG8300SRAA",
+          "group_id": "MULTI_GROUP_ID_601735",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-fry-precision-knobs-in-stainless-steel-sku-nsg6dg8300sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-fry-precision-knobs-in-stainless-steel-sku-nsg6dg8300sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "55",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8300SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-19",
+            "id": "601735"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            },
+            {
+              "fmyChipCode": "#babdc2",
+              "fmyChipName": "",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSG6DB830012AA",
+          "modelName": "NSG6DB830012AA",
+          "id": "NSG6DB830012AA",
+          "group_id": "MULTI_GROUP_ID_601735",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-fry-precision-knobs-in-white-glass-sku-nsg6db830012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-0-cu-ft-smart-slide-in-gas-range-with-air-fry-precision-knobs-in-white-glass-sku-nsg6db830012aa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "55",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8300SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-19",
+            "id": "601735"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Gas",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DB830012AA",
+          "modelName": "NSE6DB830012AA",
+          "id": "NSE6DB830012AA",
+          "group_id": "MULTI_GROUP_ID_601735",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-air-fry-precision-knobs-in-white-glass-sku-nse6db830012aa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-air-fry-precision-knobs-in-white-glass-sku-nse6db830012aa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "55",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8300SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-19",
+            "id": "601735"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#e3e3e3",
+              "fmyChipName": "White Glass",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        },
+        {
+          "modelCode": "NSE6DG8300SRAA",
+          "modelName": "NSE6DG8300SRAA",
+          "id": "NSE6DG8300SRAA",
+          "group_id": "MULTI_GROUP_ID_601735",
+          "pdpURL": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-air-fry-precision-knobs-in-stainless-steel-sku-nse6dg8300sraa",
+          "consumerUrl": "/us/cooking-appliances/ranges/bespoke-6-3-cu-ft-smart-slide-in-electric-range-with-air-fry-precision-knobs-in-stainless-steel-sku-nse6dg8300sraa",
+          "ecomFlag": "N",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "55",
+            "pickYn": "N",
+            "representativeModel": "NSE6DG8300SRAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-19",
+            "id": "601735"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Electric",
+              "fmyChipType": "Type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
