@@ -100,6 +100,7 @@ def main():
               'status': 'RUNNING', 'phase_gate': 'NOT_EVALUATED', 'observations': [], 'checks': []}
     captured_pf = []
     pdp_json = []
+    computer_spec_endpoints = []
 
     def check(name, fn):
         try:
@@ -118,6 +119,9 @@ def main():
 
         def observe(response):
             url = response.url
+            if family == 'computer' and response.request.resource_type in ('xhr', 'fetch'):
+                if re.search(r'samsung\.com/.*(?:spec|product|bridge)', url, re.I) and not re.search(r'chat|analytics|license', url, re.I):
+                    computer_spec_endpoints.append({'url': safe_url(url), 'status': response.status})
             if 'pf_search' in url:
                 try:
                     data = response.json()
@@ -262,6 +266,15 @@ def main():
             url = urljoin('https://www.samsung.com', product['pdpURL'])
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
             page.wait_for_timeout(10000)
+            if family == 'computer':
+                # Buy configurator mounts selected SKU and lazy Specs after hydration.
+                # Retain the same rendered exact-SKU gate; URL alone is insufficient.
+                page.wait_for_function('(sku) => document.body.innerText.toLowerCase().includes(sku.toLowerCase())',
+                                       arg=target, timeout=30000)
+                specs_button = page.get_by_role('button', name='Specs', exact=True)
+                if specs_button.count() and specs_button.first.is_visible():
+                    specs_button.first.click(timeout=10000)
+                    page.wait_for_timeout(10000)
             text = page.locator('body').inner_text()
             html = page.content()
             links = page.locator('a[href]').evaluate_all('(els) => els.map(e => ({text:e.textContent,url:e.href}))')
@@ -273,6 +286,8 @@ def main():
                                          'rendered_target_present': target.lower() in text.lower(),
                                          'energyguide_links': documents, 'bridge_snippets': bridge_snippets[:8],
                                          'json_endpoints': pdp_json})
+            if family == 'computer':
+                save('computer-spec-endpoints.json', computer_spec_endpoints)
             assert response and response.status < 400, 'PDP HTTP access failed'
             assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
             assert pdp_json, 'Specs/Support bridge-data endpoint was not observed'
