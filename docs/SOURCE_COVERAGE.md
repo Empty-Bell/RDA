@@ -15,6 +15,7 @@ fact collection, EPA certification matching or compliance PASS.
 | Ventilating Hood | 16 | 1 | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 | Monitor / Display | 76 | 1 | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 | Computer | 24 (Galaxy Book + Chromebook union) | 2 (Windows/Chrome OS) | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows per source leg |
+| Tablet | 50 | 1 (Wi-Fi / 256 GB) | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 
 Listing snapshots include source variants and source-backed PDP URLs; they do not
 mean that each linked PDP has been visited. Counts are historical observations,

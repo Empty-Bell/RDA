@@ -1,6 +1,6 @@
 # Phase status
 
-Phase 0: RUNNING — bounded refrigerator, dishwasher, washer and TV source reconnaissance PASSED on hosted Ubuntu.
+Phase 0: RUNNING — bounded source reconnaissance for all 11 product groups PASSED on hosted Ubuntu; full G0 acceptance NOT_EVALUATED.
 Phases 1–7: NOT_STARTED.
 
 Desktop User-Agent validation (commit 434f5af6b99d83e99306e3b51b61344a61f4b896):
@@ -115,14 +115,25 @@ are preserved in computer-source-failure-history.json; stale failed run 35113871
 was cancelled after evidence preservation. Final regression recovered all source jobs.
 See COMPUTER_SOURCE_CONTRACT.md and docs/evidence/computer-source-recon.json.
 
-Next bounded task: Tablet EPA-focused source-contract reconnaissance.
-Other 1 family and remaining claim/quality semantics are not complete.
+Tablet EPA-focused reconnaissance PASS: run 35159081725, commit
+76d0e271c58a9a02f88efaa3447101168b6dcf40, job 105005374161. 115 tests and all
+12 source jobs for 11 product groups succeeded. Tablet 11 API/rendered groups,
+50 exact SKUs; SM-X930NZAAXAR sample verified through selected configuration,
+visible Continue SKU and Specs-only array. Preserve 11600 mAh separately from
+Wh/annual energy and Up to 23 playback hours; EPA rxdj-2c88 metadata + 3 generic
+rows is not candidate matching. Initial Chromebook timeout and final recovery
+are preserved without relaxing identity gates. See TABLET_SOURCE_CONTRACT.md,
+SOURCE_COVERAGE.md and docs/evidence/tablet-source-recon.json.
+
+Next bounded task: independent ENERGY STAR claim and PDP identity source contracts.
+All family discovery is complete; common claim/quality/runtime acceptance remains.
+See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;
 replace older Node20 Actions pins with verified current releases (runner currently upgrades
 them to Node24; first run succeeded with warnings). No downgrade flag should be enabled.
 
-Token handoff: use Sol medium for the next exploratory source contract only; Terra medium
+Token handoff: use Sol medium for the next exploratory claim contract only; Terra medium
 for repeated adapters after the contract is fixed. Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.

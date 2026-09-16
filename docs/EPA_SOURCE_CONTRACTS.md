@@ -79,6 +79,12 @@ Schema tests distinguish dataset access from certification lookup and reject mis
 required columns or an empty/error sample without creating a no-candidate conclusion.
 Certification matching is NOT_EVALUATED.
 
+Tablet discovery: rxdj-2c88 Certified Computers V9.0 also covers slate/tablets in
+the official Computers specification. See TABLET_SOURCE_CONTRACT.md for hosted
+metadata and generic sample evidence. Preserve EPA type; Android alone does not
+classify a record as Tablet. PDP battery mAh and playback hours are not EPA battery
+Wh or TEC kWh. No Tablet/Samsung candidate lookup or current-certification rule exists.
+
 Ventilating Hood discovery: official Certified Ventilating Fans dataset 8dv7-nngq;
 see HOOD_SOURCE_CONTRACT.md for URLs, observed fields and type/measurement limitations.
 The generic sample includes bathroom/utility fans; no Samsung SKU lookup is implied.
