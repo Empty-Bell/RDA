@@ -2,7 +2,7 @@ import copy
 import json
 import unittest
 from pathlib import Path
-from scripts.source_contract import pf_page, pf_population, pdp_facts, project_bridge
+from scripts.source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract
 
 FIXTURE = Path(__file__).parent / 'fixtures/refrigerator/pf-initial.projected.json'
 
@@ -100,3 +100,25 @@ class RefrigeratorPdpContract(unittest.TestCase):
         self.assertNotIn('TEST_SECRET', json.dumps(projected))
         self.assertTrue(all(set(d) <= {'name', 'type', 'url'}
                             for s in projected['Support'] for d in s['supports']))
+
+
+class RefrigeratorEpaContract(unittest.TestCase):
+    def setUp(self):
+        root = FIXTURE.parent
+        self.metadata = json.loads((root / 'epa-metadata.projected.json').read_text(encoding='utf-8'))
+        self.rows = json.loads((root / 'epa-sample.projected.json').read_text(encoding='utf-8'))
+
+    def test_dataset_schema_does_not_imply_certification_match(self):
+        result = epa_contract(self.metadata, self.rows)
+        self.assertEqual(result['certification_matching'], 'NOT_EVALUATED')
+        self.assertEqual(self.rows[0]['model_number'], 'AREF18**')
+        self.assertIsInstance(self.rows[0]['annual_energy_use_kwh_yr'], str)
+
+    def test_missing_model_column_fails(self):
+        self.metadata['columns'] = [x for x in self.metadata['columns'] if x['fieldName'] != 'model_number']
+        with self.assertRaises(ValueError):
+            epa_contract(self.metadata, self.rows)
+
+    def test_empty_sample_is_not_no_candidate(self):
+        with self.assertRaises(ValueError):
+            epa_contract(self.metadata, [])

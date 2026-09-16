@@ -100,3 +100,18 @@ def pf_population(pages):
         raise ValueError('Population has duplicate/missing groups')
     records = [r for page in parsed for r in page['records']]
     return {'total_groups': total, 'unique_exact_skus': len({r['exact_sku'] for r in records}), 'records': records}
+
+
+def epa_contract(metadata, rows):
+    required = {'pd_id', 'brand_name', 'model_number', 'upc', 'annual_energy_use_kwh_yr',
+                'markets', 'date_qualified'}
+    fields = {c.get('fieldName') for c in metadata.get('columns', [])}
+    if metadata.get('id') != 'p5st-her9' or not required <= fields:
+        raise ValueError('EPA refrigerator dataset identity or required columns drifted')
+    if not isinstance(rows, list) or not rows:
+        raise ValueError('EPA sample response unavailable/empty; no absence conclusion')
+    for row in rows:
+        if not row.get('model_number') or not row.get('brand_name') or not row.get('pd_id'):
+            raise ValueError('EPA row missing model/brand/unique ID')
+    return {'dataset_id': metadata['id'], 'rows_updated_at': metadata.get('rowsUpdatedAt'),
+            'sample_rows': len(rows), 'certification_matching': 'NOT_EVALUATED'}

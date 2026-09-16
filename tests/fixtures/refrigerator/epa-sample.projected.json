@@ -1,0 +1,29 @@
+[
+  {
+    "pd_id": "4015668",
+    "brand_name": "ABL",
+    "model_number": "AREF18**",
+    "upc": null,
+    "annual_energy_use_kwh_yr": "360",
+    "markets": "United States, Canada",
+    "date_qualified": "2025-04-15T00:00:00.000"
+  },
+  {
+    "pd_id": "4015667",
+    "brand_name": "ABL",
+    "model_number": "AREF18B",
+    "upc": null,
+    "annual_energy_use_kwh_yr": "360",
+    "markets": "United States, Canada",
+    "date_qualified": "2025-04-15T00:00:00.000"
+  },
+  {
+    "pd_id": "4015665",
+    "brand_name": "ABL",
+    "model_number": "AREF18S",
+    "upc": null,
+    "annual_energy_use_kwh_yr": "360",
+    "markets": "United States, Canada",
+    "date_qualified": "2025-04-15T00:00:00.000"
+  }
+]

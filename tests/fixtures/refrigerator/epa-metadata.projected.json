@@ -1,0 +1,167 @@
+{
+  "id": "p5st-her9",
+  "name": "ENERGY STAR Certified Residential Refrigerators",
+  "rowsUpdatedAt": 1789478931,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "type",
+      "name": "Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "product_class",
+      "name": "Product Class",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "defrost_type",
+      "name": "Defrost Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "compact",
+      "name": "Compact",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "built_in",
+      "name": "Built-in",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "thru_the_door_dispenser",
+      "name": "Thru the Door Dispenser",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "ice_maker",
+      "name": "Ice Maker",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "standard_or_counter_depth",
+      "name": "Counter Depth",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "height_in",
+      "name": "Height (in)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "width_in",
+      "name": "Width (in)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "capacity_total_volume_ft3",
+      "name": "Capacity (Total Volume) (ft3)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "adjusted_volume_ft3",
+      "name": "Adjusted Volume (ft3)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "annual_energy_use_kwh_yr",
+      "name": "Annual Energy Use (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "us_federal_standard_kwh_yr",
+      "name": "US Federal Standard (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "percent_less_energy_use_than_us_federal_standard",
+      "name": "Percent Less Energy Use than US Federal Standard",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "refrigerant_type",
+      "name": "Refrigerant Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "refrigerant_with_gwp",
+      "name": "Refrigerant with GWP",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connected_functionality",
+      "name": "Connected Functionality",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connects_using",
+      "name": "Connects Using",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connected_functionality_tested",
+      "name": "Connected Functionality Tested",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "communication_standard_application_layer",
+      "name": "Communication Standard Application Layer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "direct_on_premises_open_standard_based_interconnection",
+      "name": "Direct on-premises Open-standard Based Interconnection",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available On Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_qualified",
+      "name": "Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "CB Model Identifier",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "meets_most_efficient_criteria",
+      "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+      "dataTypeName": "text"
+    }
+  ]
+}

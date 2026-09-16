@@ -3,5 +3,31 @@
   "source_artifact_id": 10448091149,
   "source_fixture_sha256": "29ca1d7f5b1bf3d15ad1e7c895bcf49822df5d04278c1bfdd634cb5a9fb368d0",
   "projection": "identity/url/commerce/claim fields, all page products and grouped variants preserved; analytics omitted",
-  "projected_sha256": "17a756fd324fbf976130c86677707a43d8de0be92d47bcef1c591f15d076c462"
+  "projected_sha256": "17a756fd324fbf976130c86677707a43d8de0be92d47bcef1c591f15d076c462",
+  "additional_fixtures": [
+    {
+      "file": "pf-page-0.json",
+      "sha256": "82815e0050fa0462b468402ee98ab00641d67106eef7c3d6ed25698157cb1c30",
+      "source_run_id": 35100922262,
+      "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
+    },
+    {
+      "file": "pf-page-1.json",
+      "sha256": "3047d2980142501ba66b029ebbf35fd79f7092c1a8f0c6e8a7e3239907c82f02",
+      "source_run_id": 35100922262,
+      "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
+    },
+    {
+      "file": "pf-page-2.json",
+      "sha256": "1107f3db5c37f5227eb0fef99141644a51e122d886f919a9333f38d5b25364fd",
+      "source_run_id": 35100922262,
+      "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
+    },
+    {
+      "file": "bridge-specs-support.json",
+      "sha256": "7ef9bd53096fb1d259abd6d61d762e1ee0258bb21b2c824cd17fa69a3c50a9a7",
+      "source_run_id": 35100922262,
+      "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
+    }
+  ]
 }

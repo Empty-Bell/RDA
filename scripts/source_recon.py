@@ -10,7 +10,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 
 from runner_probe import safe_url, sanitize
-from source_contract import pf_page, pf_population, pdp_facts, project_bridge
+from source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract
 
 OUT = Path('runtime/source-recon')
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
@@ -180,13 +180,26 @@ def main():
             visible_links = page.locator('a[href*="-sku-"]:visible').evaluate_all('(els) => els.map(e => e.href.toUpperCase())')
             supported_reps = {x['modelCode'] for x in all_products.values()
                               if any(x['modelCode'] in link for link in visible_links)}
+            # API responses arrive before their tiles are mounted; wait for the
+            # observed per-card name selector, not arbitrary PDP links/navigation.
+            page.wait_for_function('(n) => document.querySelectorAll(".pd21-product-card__name").length >= n',
+                                   arg=total, timeout=20000)
+            tiles = page.locator('.pd21-product-card__name').evaluate_all(
+                '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),url:e.href}))')
+            tile_groups = []
+            for tile in tiles:
+                matching = {r['family_id'] for r in population['records'] if r['exact_sku'] == tile['sku']}
+                assert len(matching) == 1, 'Rendered tile SKU has missing/ambiguous population provenance'
+                tile_groups.append(next(iter(matching)))
             save('population-observation.json', {'rounds': rounds, 'groups': len(all_products),
                                                 'exact_skus': sorted(exact), 'rendered_candidates': rendered[:200],
-                                                'rendered_representative_link_count': len(supported_reps)})
+                                                'rendered_representative_link_count': len(supported_reps),
+                                                'rendered_tiles': tiles, 'rendered_tile_groups': tile_groups})
             assert len(all_products) == total, f'Pagination incomplete: {len(all_products)}/{total} groups'
+            assert len(tiles) == len(set(tile_groups)) == total, 'Rendered tile/API group counts do not reconcile'
             return {'groups': len(all_products), 'exact_skus': len(exact), 'rounds': rounds,
                     'rendered_representative_link_count': len(supported_reps),
-                    'strict_tile_count_gate': 'NOT_EVALUATED'}
+                    'rendered_tile_count': len(tiles), 'strict_tile_count_gate': 'PASS'}
 
         check('pagination_observation', pagination)
 
@@ -229,10 +242,28 @@ def main():
             parsed = pymupdf.open(stream=raw, filetype='pdf')
             extracted = '\n'.join(p.get_text() for p in parsed)
             (OUT / 'energyguide-original.pdf').write_bytes(raw)
+            ocr_texts = []
+            fallback_reason = None
+            engine_name = 'PyMuPDF'
+            if len(extracted.strip()) < 20:
+                import cv2
+                from rapidocr import RapidOCR
+                cv2.setNumThreads(1)
+                fallback_reason = 'EMPTY_EMBEDDED_TEXT' if not extracted.strip() else 'SHORT_EMBEDDED_TEXT'
+                parsed[0].get_pixmap(matrix=pymupdf.Matrix(2, 2)).save(OUT / 'energyguide-ocr-2x.png')
+                engine = RapidOCR(params={'EngineConfig.onnxruntime.intra_op_num_threads': 1,
+                                          'EngineConfig.onnxruntime.inter_op_num_threads': 1})
+                result = engine(str(OUT / 'energyguide-ocr-2x.png'))
+                ocr_texts = list(result.txts or [])
+                assert ocr_texts, 'EnergyGuide image-only OCR failed'
+                engine_name = 'RapidOCR'
             save('energyguide-observation.json', {'requested_url': document['url'], 'final_url': safe_url(pdf.url),
                                                  'http_status': pdf.status, 'content_type': pdf.headers.get('content-type'),
                                                  'size_bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(),
-                                                 'embedded_text': extracted, 'extraction_engine': 'PyMuPDF'})
+                                                 'embedded_text': extracted, 'extraction_engine': engine_name,
+                                                 'fallback_reason': fallback_reason, 'ocr_raw_texts': ocr_texts,
+                                                 'ocr_scale': 2 if ocr_texts else None,
+                                                 'field_parser_contract': 'NOT_EVALUATED'})
             return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
                     'energyguide_link_count': len(documents), 'energyguide_pdf_valid': True}
 
@@ -251,6 +282,7 @@ def main():
             assert sample_response.status == 200, 'EPA dataset sample unavailable'
             sample = sample_response.json()
             assert isinstance(sample, list) and sample, 'EPA sample empty'
+            epa_contract(metadata, sample)
             save('fixtures/epa-sample.json', sample)
             save('epa-observation.json', {'dataset_id': dataset, 'name': metadata.get('name'),
                                           'rows_updated_at': metadata.get('rowsUpdatedAt'), 'columns': columns,
