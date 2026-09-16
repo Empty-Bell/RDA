@@ -22,6 +22,8 @@ FAMILIES = {
                    'dataset': 'q8py-6w3f', 'dataset_name': 'ENERGY STAR Certified Residential Dishwashers'},
     'washer': {'plp': 'https://www.samsung.com/us/laundry/washers/',
                'dataset': 'bghd-e2wd', 'dataset_name': 'ENERGY STAR Certified Residential Clothes Washers'},
+    'tv': {'plp': 'https://www.samsung.com/us/televisions-home-theater/tvs/all-tvs/',
+           'dataset': 'pd96-rr3d', 'dataset_name': 'ENERGY STAR Certified Televisions'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
