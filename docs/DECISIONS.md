@@ -2,6 +2,12 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+Dryer reconnaissance: combo WD90F53AVBUS belongs to both washer and dryer listings.
+Future canonical SKU population must retain both listing provenances without creating
+two exact identities (D08/D11). Its 103 kWh label is Clothes Washer energy, not dryer
+or combined wash/dry energy (D01). Gas dryer EPA kWh and CEF test-basis semantics,
+combo/stacked certification routing and heat-pump/vented applicability remain OPEN (D09).
+
 Range reconnaissance: Samsung sales population includes gas/electric variants but
 EPA m6gi-ng33 is residential electric cooking and includes both Cooktop and Range
 product types (D09). Gas/dual-fuel applicability must not be inferred from dataset

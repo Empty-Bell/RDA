@@ -1,0 +1,32 @@
+[
+  {
+    "file": "tests/fixtures/dryer/bridge-combo.json",
+    "sha256": "167247ab35a1c720840152df0e82615e50e584561c883077f351a230b45d4b2f",
+    "source_run_id": 35108542847
+  },
+  {
+    "file": "tests/fixtures/dryer/bridge-standalone.json",
+    "sha256": "1a1adfc72f79689329600ac87fdc8434a902bde488605707bfd3c94d5e51082f",
+    "source_run_id": 35108856923
+  },
+  {
+    "file": "tests/fixtures/dryer/epa-metadata.projected.json",
+    "sha256": "98537e6c3d6ad6773f01081ae1065c296b253956529d5659632e098bd65cd593",
+    "source_run_id": 35108542847
+  },
+  {
+    "file": "tests/fixtures/dryer/epa-sample.projected.json",
+    "sha256": "6864479da96fbcbaa95a6f5796b1c8f6607372d255ae2ce2db11db7ada31a011",
+    "source_run_id": 35108542847
+  },
+  {
+    "file": "tests/fixtures/dryer/pf-page-0.json",
+    "sha256": "6dccc1a380933e89ddb7c19434a7686e3e9842cba5b2faed2db9904a16fc750f",
+    "source_run_id": 35108542847
+  },
+  {
+    "file": "tests/fixtures/dryer/pf-page-1.json",
+    "sha256": "bf809f9a28a39aa3d8bfe647105bdb8eab4be08589f5da58f1a9bb5a60f7f75a",
+    "source_run_id": 35108542847
+  }
+]

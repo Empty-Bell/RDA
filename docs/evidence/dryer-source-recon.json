@@ -1,0 +1,1301 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35109208255",
+  "job_id": 104838211794,
+  "artifact_id": 10452050631,
+  "artifact_size_bytes": 27276,
+  "artifact_zip_sha256": "3720b0c6719f43f7a9e6794a03537807775478cefa87a853805b0bae20c54116",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T14:33:01.911463+00:00",
+    "run_id": "35109208255",
+    "attempt": "1",
+    "git_sha": "bb87f1aa2530a56d4327e8a88d245f76590dffa8",
+    "scope": "dryer source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "14",
+          "category_code": "08010000",
+          "taxonomy_code": "08010300",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "6dccc1a380933e89ddb7c19434a7686e3e9842cba5b2faed2db9904a16fc750f",
+        "page_count": 14
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "14",
+          "requestCount": "16",
+          "category_code": "08010000",
+          "taxonomy_code": "08010300",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-1.json",
+        "fixture_sha256": "bf809f9a28a39aa3d8bfe647105bdb8eab4be08589f5da58f1a9bb5a60f7f75a",
+        "page_count": 5
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/laundry/dryers/",
+          "api_total": 19
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 19,
+          "exact_skus": 54,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 14,
+              "expected_groups": 19
+            },
+            {
+              "round": 1,
+              "groups": 19,
+              "expected_groups": 19
+            }
+          ],
+          "rendered_representative_link_count": 13,
+          "rendered_tile_count": 19,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "WD90F53AVBUS",
+          "url": "https://www.samsung.com/us/laundry/washer-and-dryer-sets/all-in-one-washer-dryer-combo-wd90f27v-bespoke-ai-laundry-combo-vented-all-in-one-ultra-capacity-washer-and-electric-dryer-with-ai-home-5-3-cu-ft-brushed-black-sku-wd90f53avbus/",
+          "json_endpoints": 1,
+          "energyguide_metadata_count": 1,
+          "energyguide_probe": "OUT_OF_RECON_SCOPE",
+          "certification_matching": "NOT_EVALUATED"
+        }
+      },
+      {
+        "name": "standalone_dryer_pdp_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "DV90F53AESA3",
+          "url": "https://www.samsung.com/us/laundry/dryers/bespoke-dv90f27v-electric-front-load-dryer-ai-home-ai-optidry-plus-bedding-7-6-cu-ft-dark-steel-sku-dv90f53aesa3/",
+          "json_endpoints": 1,
+          "energyguide_metadata_count": 0,
+          "energyguide_probe": "OUT_OF_RECON_SCOPE",
+          "certification_matching": "NOT_EVALUATED"
+        }
+      },
+      {
+        "name": "epa_dryer_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "t9u7-4d2j",
+          "column_count": 35,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "combo_pdp_facts": {
+    "exact_sku": "WD90F53AVBUS",
+    "spec_fields_raw": [
+      {
+        "group": "Design",
+        "name": "Display Type",
+        "value": "LCD"
+      },
+      {
+        "group": "Design",
+        "name": "Color",
+        "value": "Brushed Black"
+      },
+      {
+        "group": "Feature",
+        "name": "Smart Things",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Child Lock",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Auto Open Door",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Door Safety",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Temperature Levels",
+        "value": "5"
+      },
+      {
+        "group": "Feature",
+        "name": "Languages",
+        "value": "English, Spanish, French"
+      },
+      {
+        "group": "Key Features",
+        "name": "ENERGY STAR® Certified",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Auto Dispense System",
+        "value": "Flex Dispense"
+      },
+      {
+        "group": "Key Features",
+        "name": "Spin Speeds",
+        "value": "5"
+      },
+      {
+        "group": "Key Features",
+        "name": "Super Speed",
+        "value": "68 minutes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Vibration Reduction Technology Plus™",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Number of Preset Wash Cycles",
+        "value": "23"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Motor Power",
+        "value": "Digital Inverter Motor"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Internal Water Heater",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Number of Wash Options",
+        "value": "34"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Controls Display",
+        "value": "AI Home 7\" LCD Display"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Interior Light",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "End of Cycle Signal",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Power Source",
+        "value": "Electric"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Remaining Time Display",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Door Handle",
+        "value": "Inner"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Drum Interior",
+        "value": "Stainless Steel"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Wi-Fi Connectivity",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Voice Compatible",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Digital Inverter Motor",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Bixby Compatible",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Total Capacity (cu. ft.)",
+        "value": "5.3"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Touch Screen LCD",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Steam Washing",
+        "value": "Yes"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Electrical",
+        "value": "240 V / 60 Hz"
+      },
+      {
+        "group": "Standard Features",
+        "name": "Swirl Interior Drum",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Language",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Factory Reset",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Dispenser 1 - General Detergent",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Dispenser 2 - Specialty Detergent",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Pump Clean",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Self Diagnosis",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Sounds",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Bixby",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Connections",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Samsung Accounts",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Home Device Notifications",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Display and Style",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Liquid units",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Microphone",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Date and time",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Accessibility",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Software update",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "About product",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Auto Dispenser",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Dry Prep",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Eco Dry",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Vent Blockage Test",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Support",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Drum Light",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "My Cycles",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Extra Rinse",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Wrinkle Prevent",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Child Lock",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Delay End",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "AI Pattern",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Calibration",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Display",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Auto Open Door",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Options",
+        "name": "Bubble Soak",
+        "value": "Yes"
+      },
+      {
+        "group": "Fabric Care",
+        "name": "Steam",
+        "value": "Yes"
+      },
+      {
+        "group": "Fabric Care",
+        "name": "Cycles",
+        "value": "23"
+      },
+      {
+        "group": "Fabric Care",
+        "name": "Options",
+        "value": "34"
+      },
+      {
+        "group": "Fabric Care",
+        "name": "Swirl Interior Drum",
+        "value": "Yes"
+      },
+      {
+        "group": "Spin Speeds",
+        "name": "Extra High",
+        "value": "Yes"
+      },
+      {
+        "group": "Spin Speeds",
+        "name": "High",
+        "value": "Yes"
+      },
+      {
+        "group": "Spin Speeds",
+        "name": "Medium",
+        "value": "Yes"
+      },
+      {
+        "group": "Spin Speeds",
+        "name": "Low",
+        "value": "Yes"
+      },
+      {
+        "group": "Spin Speeds",
+        "name": "Extra Low",
+        "value": "Yes"
+      },
+      {
+        "group": "Spin Speeds",
+        "name": "Maximum Spin Speed",
+        "value": "1,200 RPM"
+      },
+      {
+        "group": "Detergent",
+        "name": "Bleach",
+        "value": "Yes"
+      },
+      {
+        "group": "Detergent",
+        "name": "Flex Auto Dispenser [2]",
+        "value": "Yes"
+      },
+      {
+        "group": "Detergent",
+        "name": "Pebble Dispenser",
+        "value": "Yes"
+      },
+      {
+        "group": "Detergent",
+        "name": "Auto Detergent",
+        "value": "Yes"
+      },
+      {
+        "group": "Detergent",
+        "name": "Auto Softener",
+        "value": "Yes"
+      },
+      {
+        "group": "Quiet Performance",
+        "name": "Vibration Reduction Technology +",
+        "value": "Yes"
+      },
+      {
+        "group": "Power",
+        "name": "Voltage / Frequency",
+        "value": "240V / 60Hz"
+      },
+      {
+        "group": "Power",
+        "name": "Ampere",
+        "value": "30"
+      },
+      {
+        "group": "Energy Usage",
+        "name": "Energy Gallons / Year",
+        "value": "4500"
+      },
+      {
+        "group": "Energy Usage",
+        "name": "Energy Guide Label",
+        "value": "103 kWh/year"
+      },
+      {
+        "group": "Energy Usage",
+        "name": "IMEF",
+        "value": "2.92"
+      },
+      {
+        "group": "Energy Usage",
+        "name": "IWF",
+        "value": "2.9"
+      },
+      {
+        "group": "Energy Usage",
+        "name": "CEE Rating",
+        "value": "2"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Washer Capacity (cu. ft.)",
+        "value": "5.3"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Product Dimensions (W x H x D)",
+        "value": "27\" x 43 3/4\" x 34 1/2\""
+      },
+      {
+        "group": "Dimensions",
+        "name": "Shipping Dimensions (W x H x D)",
+        "value": "29 3/8\" x 49 1/4\" x 36 1/16\""
+      },
+      {
+        "group": "Dimensions",
+        "name": "Width Standard (27\"-27.5\")",
+        "value": "Yes"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Height (decimal)",
+        "value": "43.75"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Width (decimal)",
+        "value": "27"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Depth (decimal)",
+        "value": "34.5"
+      },
+      {
+        "group": "Weight",
+        "name": "Product Weight (lbs.)",
+        "value": "297.6"
+      },
+      {
+        "group": "Weight",
+        "name": "Shipping Weight (lbs.)",
+        "value": "308.6"
+      },
+      {
+        "group": "Warranty",
+        "name": "One (1) Year Parts and Labor",
+        "value": "Yes"
+      },
+      {
+        "group": "Warranty",
+        "name": "Three (3) Year Stainless Steel Tub (Part Only)",
+        "value": "Yes"
+      },
+      {
+        "group": "Warranty",
+        "name": "10-year Digital Inverter Motor",
+        "value": "Yes"
+      },
+      {
+        "group": "Warranty",
+        "name": "Digital Inverter Motor",
+        "value": "Yes"
+      },
+      {
+        "group": "Soil Levels",
+        "name": "Heavy",
+        "value": "Yes"
+      },
+      {
+        "group": "Soil Levels",
+        "name": "Extra Heavy",
+        "value": "Yes"
+      },
+      {
+        "group": "Soil Levels",
+        "name": "Light",
+        "value": "Yes"
+      },
+      {
+        "group": "Soil Levels",
+        "name": "Extra Light",
+        "value": "Yes"
+      },
+      {
+        "group": "Soil Levels",
+        "name": "Normal",
+        "value": "Yes"
+      },
+      {
+        "group": "Temperature Levels",
+        "name": "Extra Hot",
+        "value": "Yes"
+      },
+      {
+        "group": "Temperature Levels",
+        "name": "Hot",
+        "value": "Yes"
+      },
+      {
+        "group": "Temperature Levels",
+        "name": "Cold",
+        "value": "Yes"
+      },
+      {
+        "group": "Temperature Levels",
+        "name": "Tap Cold",
+        "value": "Yes"
+      },
+      {
+        "group": "Temperature Levels",
+        "name": "Warm",
+        "value": "Yes"
+      },
+      {
+        "group": "Accessories",
+        "name": "Pedestal",
+        "value": "WE702NB/US"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Eco Cold Wash",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Normal",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Heavy Duty",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Perm Press",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Steam Sanitize",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Bedding",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Activewear",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Wool",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Rinse + Spin",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Spin Only",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Delicates",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Towels",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Colors",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Small Load",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Super Speed",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Steam Normal",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Steam Whites",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "AI Opti Wash and Dry",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Tide POD Cold",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Less Microfiber",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Time Dry",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Air Fluff",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Product Care",
+        "value": "Yes"
+      },
+      {
+        "group": "Electrical Ratings",
+        "name": "Cycle Time (Super Speed)",
+        "value": "68 mins"
+      },
+      {
+        "group": "Electrical Ratings",
+        "name": "Cycle Time (AHAM 8lbs)",
+        "value": "106"
+      }
+    ],
+    "energy_consumption_raw": [],
+    "capacity_raw": [],
+    "screen_size_raw": [],
+    "power_consumption_raw": [],
+    "fuel_type_raw": [],
+    "cooktop_type_raw": [],
+    "oven_capacity_raw": [],
+    "energy_star_spec_claim_raw": [
+      {
+        "group": "Key Features",
+        "name": "ENERGY STAR® Certified",
+        "value": "Yes"
+      }
+    ],
+    "energy_star_structured_claim": null,
+    "energyguide_documents": [
+      {
+        "name": "Energy Guide",
+        "type": "PDF",
+        "url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avbus/energyguide/us-energyguide-wd90f53avbus-550443963.pdf"
+      }
+    ]
+  },
+  "standalone_pdp_facts": {
+    "exact_sku": "DV90F53AESA3",
+    "spec_fields_raw": [
+      {
+        "group": "Drying Capacity",
+        "name": "Drying Capacity (cu.ft)",
+        "value": "7.6 cu.ft"
+      },
+      {
+        "group": "Design",
+        "name": "Body color",
+        "value": "Dark Steel"
+      },
+      {
+        "group": "Design",
+        "name": "Door",
+        "value": "Black Deco+Glass"
+      },
+      {
+        "group": "Design",
+        "name": "Panel Display",
+        "value": "7\" LCD Display"
+      },
+      {
+        "group": "Performance",
+        "name": "Cycle time (min)",
+        "value": "75 min"
+      },
+      {
+        "group": "Performance",
+        "name": "Energy Star Certification",
+        "value": "Yes"
+      },
+      {
+        "group": "Performance",
+        "name": "DOE Energy Factor",
+        "value": "3.93 lb/kWh"
+      },
+      {
+        "group": "Performance",
+        "name": "Ampere",
+        "value": "30 A"
+      },
+      {
+        "group": "Feature",
+        "name": "AI Home",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Interior Drum Light",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Smart Control",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Smart Care",
+        "value": "No"
+      },
+      {
+        "group": "Feature",
+        "name": "Reversible Door",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Child Lock",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Drying Rack",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Dual Heater",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Filter Check Indicator",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Mixed Load Bell / Damp Alert",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "My Cycle",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Steam",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Vent Exhaust (Electric/Gas)",
+        "value": "4 ways"
+      },
+      {
+        "group": "Feature",
+        "name": "Vent Sensor",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Wrinkle Prevent",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Number of Drying Level",
+        "value": "5 EA"
+      },
+      {
+        "group": "Feature",
+        "name": "Number of Temp. Level",
+        "value": "5 EA"
+      },
+      {
+        "group": "Feature",
+        "name": "Number of Time Level",
+        "value": "9 EA"
+      },
+      {
+        "group": "Feature",
+        "name": "MultiControl™",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Sensor Dry",
+        "value": "Yes"
+      },
+      {
+        "group": "Feature",
+        "name": "Vent Blockage Test",
+        "value": "Yes"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Number of Cycle",
+        "value": "20"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Number of Option",
+        "value": "7"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Cycle List",
+        "value": "Steam Refresh, Wrinkle Away, Steam Sanitize+, AI OptiDry+, Super Speed, Eco Normal, Normal, Heavy Duty, Towels, Perm Press, Activewear, Bedding, Delicates, Wool, Shirts, Denim(Jeans), Time Dry, Air Fluff, Small Load, Rack Dry"
+      },
+      {
+        "group": "Wash Cycles",
+        "name": "Option List",
+        "value": "Dryness, Dry time, Drying Temp, Damp Alert, Wrinkle Prevent, Eco Dry, AntiStatic"
+      },
+      {
+        "group": "Physical specification",
+        "name": "Net Dimension (WxHxD)",
+        "value": "686 x 984 x 798 inch"
+      },
+      {
+        "group": "Physical specification",
+        "name": "Net Weight",
+        "value": "55 lb"
+      },
+      {
+        "group": "Physical specification",
+        "name": "Gross Dimension (WxHxD)",
+        "value": "746 x 1090 x 880 inch"
+      },
+      {
+        "group": "Physical specification",
+        "name": "Gross Weight",
+        "value": "59 lb"
+      },
+      {
+        "group": "Physical specification",
+        "name": "Voltage/Frequency",
+        "value": "240 V / 60 Hz"
+      },
+      {
+        "group": "Physical specification",
+        "name": "Drum Material",
+        "value": "Stainless Steel"
+      },
+      {
+        "group": "Smart",
+        "name": "WiFi Embedded",
+        "value": "Yes"
+      },
+      {
+        "group": "Smart",
+        "name": "SmartThings Hub",
+        "value": "No"
+      },
+      {
+        "group": "App Connectivity",
+        "name": "SmartThings App Support",
+        "value": "Yes"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Height (decimal)",
+        "value": "38.75"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Width (decimal)",
+        "value": "27"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Depth (decimal)",
+        "value": "31.4375"
+      }
+    ],
+    "energy_consumption_raw": [],
+    "capacity_raw": [
+      {
+        "group": "Drying Capacity",
+        "name": "Drying Capacity (cu.ft)",
+        "value": "7.6 cu.ft"
+      }
+    ],
+    "screen_size_raw": [],
+    "power_consumption_raw": [],
+    "fuel_type_raw": [],
+    "cooktop_type_raw": [],
+    "oven_capacity_raw": [],
+    "energy_star_spec_claim_raw": [
+      {
+        "group": "Performance",
+        "name": "Energy Star Certification",
+        "value": "Yes"
+      }
+    ],
+    "energy_star_structured_claim": null,
+    "energyguide_documents": []
+  },
+  "epa": {
+    "dataset_id": "t9u7-4d2j",
+    "name": "ENERGY STAR Certified Residential Clothes Dryers",
+    "rows_updated_at": 1789563703,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_name",
+        "name": "Model Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "product_type",
+        "name": "Product Type",
+        "type": "text"
+      },
+      {
+        "field": "type",
+        "name": "Fuel Type",
+        "type": "text"
+      },
+      {
+        "field": "special_type",
+        "name": "Special Type",
+        "type": "text"
+      },
+      {
+        "field": "heat_pump_technology",
+        "name": "Heat Pump Technology",
+        "type": "text"
+      },
+      {
+        "field": "voltage",
+        "name": "Voltage (V)",
+        "type": "number"
+      },
+      {
+        "field": "drum_capacity_cu_ft",
+        "name": "Drum Capacity (cu-ft)",
+        "type": "number"
+      },
+      {
+        "field": "height_inches",
+        "name": "Height (inches)",
+        "type": "number"
+      },
+      {
+        "field": "width_inches",
+        "name": "Width (inches)",
+        "type": "number"
+      },
+      {
+        "field": "depth_inches",
+        "name": "Depth (inches)",
+        "type": "number"
+      },
+      {
+        "field": "combined_energy_factor_cef",
+        "name": "Combined Energy Factor (CEF)",
+        "type": "number"
+      },
+      {
+        "field": "estimated_annual_energy_use_kwh_yr",
+        "name": "Estimated Annual Energy Use (kWh/yr)",
+        "type": "number"
+      },
+      {
+        "field": "estimated_energy_test_cycle_time_min",
+        "name": "Estimated Energy Test Cycle Time (min)",
+        "type": "number"
+      },
+      {
+        "field": "energy_test_cycle_information",
+        "name": "Energy Test Cycle Information",
+        "type": "text"
+      },
+      {
+        "field": "additional_dryer_features",
+        "name": "Additional Dryer Features",
+        "type": "text"
+      },
+      {
+        "field": "vented_or_ventless",
+        "name": "Vented or Ventless",
+        "type": "text"
+      },
+      {
+        "field": "refrigerant_type",
+        "name": "Refrigerant Type",
+        "type": "text"
+      },
+      {
+        "field": "refrigerant_with_gwp",
+        "name": "Refrigerant with GWP",
+        "type": "text"
+      },
+      {
+        "field": "connected",
+        "name": "Connected",
+        "type": "text"
+      },
+      {
+        "field": "connected_demand_response_functionality_tested",
+        "name": "Connects Using",
+        "type": "text"
+      },
+      {
+        "field": "communication_standard_application_layer",
+        "name": "Communication Standard - Application Layer",
+        "type": "text"
+      },
+      {
+        "field": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "type": "text"
+      },
+      {
+        "field": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh",
+        "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh)",
+        "type": "number"
+      },
+      {
+        "field": "paired_energy_star_clothes_washer_available",
+        "name": "Paired ENERGY STAR Clothes Washer Available",
+        "type": "text"
+      },
+      {
+        "field": "paired_energy_star_clothes_washer_energy_star_model_identifier",
+        "name": "Paired ENERGY STAR Clothes Washer ENERGY STAR Model Identifier",
+        "type": "text"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available on Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_qualified",
+        "name": "Date Certified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "type": "text"
+      },
+      {
+        "field": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "certification_matching": "NOT_EVALUATED",
+  "energyguide_probe": "OUT_OF_RECON_SCOPE",
+  "coverage": "listing plus two sample PDPs; generic EPA schema sample"
+}

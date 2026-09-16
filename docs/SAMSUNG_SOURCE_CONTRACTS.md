@@ -7,7 +7,8 @@ TV contracts: [TV_SOURCE_CONTRACT.md](TV_SOURCE_CONTRACT.md).
 Range contracts: [RANGE_SOURCE_CONTRACT.md](RANGE_SOURCE_CONTRACT.md).
 Cooktop contracts: [COOKTOP_SOURCE_CONTRACT.md](COOKTOP_SOURCE_CONTRACT.md).
 Actual collection coverage: [SOURCE_COVERAGE.md](SOURCE_COVERAGE.md).
-Other 5 product groups remain UNKNOWN. No compliance semantics implemented.
+Clothes Dryer contracts: [DRYER_SOURCE_CONTRACT.md](DRYER_SOURCE_CONTRACT.md).
+Other 4 product groups remain UNKNOWN. No compliance semantics implemented.
 
 ## PLP / pf_search
 

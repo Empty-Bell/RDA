@@ -37,6 +37,12 @@ does not imply a Samsung gas or electric candidate match. See
 [COOKTOP_SOURCE_CONTRACT.md](COOKTOP_SOURCE_CONTRACT.md) and SOURCE_COVERAGE.md.
 Other 5 families remain UNKNOWN. No per-SKU certification matching performed.
 
+Clothes Dryer t9u7-4d2j schema/sample verified in hosted run 35109208255.
+Fuel type, drum capacity, CEF and estimated annual kWh are distinct raw fields;
+combo washer label energy and Samsung raw Energy Factor never substitute for CEF
+or dryer annual energy. See [DRYER_SOURCE_CONTRACT.md](DRYER_SOURCE_CONTRACT.md).
+Other 4 families remain UNKNOWN. Samsung candidate/currency matching NOT_EVALUATED.
+
 ## Refrigerator v0.1
 
 Dataset `p5st-her9`, `ENERGY STAR Certified Residential Refrigerators`, identified

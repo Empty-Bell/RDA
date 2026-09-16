@@ -1,6 +1,7 @@
 # Clothes Dryer EPA-focused source reconnaissance
 
-Status: RUNNING; Phase 0. Certification matching/compliance NOT_EVALUATED.
+Status: bounded Clothes Dryer source reconnaissance PASS on hosted Ubuntu (35109208255).
+Phase 0 remains RUNNING. Certification matching/compliance NOT_EVALUATED.
 
 Official sources:
 - Samsung listing: https://www.samsung.com/us/laundry/dryers/
@@ -22,3 +23,60 @@ reconnaissance. No legal applicability conclusion is made from that probe scope.
 Cold hosted Ubuntu 24.04, version-matched desktop Chromium UA, no runtime LLM.
 See SOURCE_COVERAGE.md: this is population discovery plus sample verification,
 not full per-model PDP/label collection or EPA SKU lookup.
+
+## First hosted observations
+
+Run https://github.com/Empty-Bell/RDA/actions/runs/35108542847, commit bf2d77e.
+Dryer source checks PASS. Actual pf_search category_code 08010000 with taxonomy_code
+08010300, distinct from washer taxonomy 08010100. Offsets 0/14, request counts 14/16,
+returned 14/5, terminal total 19 groups = 19 distinct rendered groups; 54 exact SKUs.
+13 representative visible links are not a tile count. Snapshot counts are not constants.
+
+First target WD90F53AVBUS is the combo also observed in the washer listing; bridge
+group_id 569348. Keep cross-listing provenance and do not double-count it as two
+different exact products in a future canonical population. Its source Energy Guide
+Label 103 kWh/year describes Clothes Washer, not full wash-plus-dry energy. Raw
+Specs/Support remain preserved but dryer annual-energy/capacity projection is UNKNOWN.
+EnergyGuide metadata exists; PDF probe remains OUT_OF_RECON_SCOPE in this EPA task.
+
+EPA t9u7-4d2j metadata has 35 columns. Generic sample LG DLGX3371*, Gas Standard
+Vented, fuel Gas, drum 7.4 cu-ft, CEF 3.49, annual energy 685 kWh/yr. This is not a
+Samsung candidate lookup. Gas energy/test-basis semantics must not be inferred from
+the unit label alone. Full fuel/vented/heat-pump routing and matching remain open.
+
+Initial dryer artifact 10451073435 (20640 bytes), ZIP SHA256
+c4885fca61d696d32ea9fefaea006135f4895e413934de9fc377d72f1d1b6810.
+The same run's refrigerator pagination FAIL detected duplicate/missing source groups;
+failed artifact 10451058425 ZIP SHA256
+81a3131a507930be4912dae141d96656634847a4d4e1fd65edb5a658e0cf20b1.
+The source-health failure is retained, not deduplicated into a complete population.
+
+## Additional standalone sample
+
+Run 35108856923, commit 6ad110c94f08148354f52ee55be51369eb7a7d9a, dryer job
+104837015196 source checks PASS. Sample DV90F53AESA3 exact Specs/Support uses
+bridge group_id 570057. Drying Capacity (cu.ft) 7.6 cu.ft; Energy Star Certification
+Yes (mixed-case source name). Claim collector was subsequently made case-insensitive
+while preserving original names/values; a real fixture reproduces that prior omission.
+No annual-energy spec inferred. PDP DOE Energy Factor 3.93 lb/kWh is retained only
+as an uninterpreted Samsung raw spec, never used as audit input or substituted for
+EPA CEF. DOE is not an input source under the master plan.
+
+Full standalone gas/heat-pump/stacked product coverage and fuel/combination applicability
+remain unverified. Only combo and one standalone sample PDP are probed. Neither
+schema samples nor a Yes PDP claim establish current EPA certification.
+
+## Final hosted validation
+
+https://github.com/Empty-Bell/RDA/actions/runs/35109208255
+Commit bb87f1aa2530a56d4327e8a88d245f76590dffa8, dryer job 104838211794.
+71 tests, all five dryer source checks and artifact upload PASS. All seven product
+group jobs in this final hosted run concluded success. Earlier refrigerator duplicate
+pagination failure remains source-health evidence; this success does not prove stability.
+
+Final dryer artifact 10452050631 (27276 bytes), ZIP SHA256
+3720b0c6719f43f7a9e6794a03537807775478cefa87a853805b0bae20c54116.
+Compact source observations: docs/evidence/dryer-source-recon.json; fixture hashes/
+source run IDs: docs/evidence/dryer-fixture-manifest.json. Raw evidence expires 2026-09-30.
+Next bounded group: Ventilating Hood. No LLM calls in hosted runtime. Source coverage
+is population plus two sample PDPs and generic EPA sample, not per-model certification.

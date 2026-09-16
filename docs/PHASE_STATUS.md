@@ -76,8 +76,17 @@ radiant electric NZ30K7570RS/AA sample Specs/Support plus m6gi-ng33 schema/sampl
 verified. EnergyGuide is OUT_OF_RECON_SCOPE under EPA-only scope. No EPA SKU lookup.
 See COOKTOP_SOURCE_CONTRACT.md and SOURCE_COVERAGE.md for actual coverage limits.
 
-Next bounded task: Clothes Dryer EPA-focused source-contract reconnaissance.
-Other 5 families and remaining claim/quality semantics are not complete.
+Clothes Dryer EPA-focused reconnaissance PASS: run 35109208255, job 104838211794,
+commit bb87f1aa2530a56d4327e8a88d245f76590dffa8. 71 tests and five source checks passed;
+all seven product group jobs concluded success. 19 API groups = 19 rendered groups,
+54 exact SKUs; combo WD90F53AVBUS and standalone DV90F53AESA3 PDP plus t9u7-4d2j
+metadata/schema/sample verified. Mixed-case Energy Star Certification now retained.
+103 kWh combo washer label is not dryer energy; annual dryer energy projection remains
+UNKNOWN where no verified spec exists. Earlier refrigerator duplicate pagination failure
+run 35108542847 preserved; final source snapshot passed. See DRYER_SOURCE_CONTRACT.md.
+
+Next bounded task: Ventilating Hood EPA-focused source-contract reconnaissance.
+Other 4 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;
