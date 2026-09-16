@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['scripts/source_recon.py', '.github/workflows/source-recon.yml']
+    paths: ['scripts/source_recon.py', 'scripts/source_contract.py', 'tests/**', '.github/workflows/source-recon.yml']
 permissions:
   contents: read
 concurrency:
@@ -27,7 +27,9 @@ jobs:
           mkdir -p runtime
           bash scripts/bootstrap.sh
       - name: Observe refrigerator source contracts
-        run: python scripts/source_recon.py
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/source_recon.py
       - name: Preserve observations
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

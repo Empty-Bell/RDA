@@ -1,0 +1,7 @@
+{
+  "source_run_id": 35100312790,
+  "source_artifact_id": 10448091149,
+  "source_fixture_sha256": "29ca1d7f5b1bf3d15ad1e7c895bcf49822df5d04278c1bfdd634cb5a9fb368d0",
+  "projection": "identity/url/commerce/claim fields, all page products and grouped variants preserved; analytics omitted",
+  "projected_sha256": "17a756fd324fbf976130c86677707a43d8de0be92d47bcef1c591f15d076c462"
+}

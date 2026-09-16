@@ -10,6 +10,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 
 from runner_probe import safe_url, sanitize
+from source_contract import pf_page, pdp_facts, project_bridge
 
 OUT = Path('runtime/source-recon')
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
@@ -95,12 +96,12 @@ def main():
                 except Exception as exc:
                     report['observations'].append({'url': safe_url(url), 'status': response.status,
                                                    'error_type': type(exc).__name__})
-            elif 'samsung.com' in url and ('api' in url.lower() or 'bridge_data' in url.lower()):
+            elif '/bridge-data?' in url and 'data_type=Specs' in url:
                 try:
                     if 'json' not in response.headers.get('content-type', ''):
                         return
-                    data = response.json()
-                    paths = profile(sanitize(data))
+                    data = project_bridge(response.json())
+                    paths = profile(data)
                     if paths and len(pdp_json) < 12:
                         index = len(pdp_json)
                         digest = save(f'fixtures/pdp-{index}.json', data)
@@ -138,11 +139,15 @@ def main():
                 rounds.append({'round': round_no, 'groups': len(all_products), 'expected_groups': total})
                 if len(all_products) == total:
                     break
+                before = len(captured_pf)
                 page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
-                page.wait_for_timeout(1500)
+                page.wait_for_timeout(3500)
+                if len(captured_pf) > before:
+                    continue  # scrolling may already trigger the next page
                 button = page.get_by_role('button', name=re.compile(r'view more|load more|show more', re.I))
                 if button.count() and button.first.is_visible():
-                    button.first.click(timeout=10000)
+                    if button.first.is_enabled():
+                        button.first.click(timeout=10000)
                 else:
                     link = page.get_by_text(re.compile(r'^view more$', re.I))
                     if link.count() and link.first.is_visible():
@@ -150,14 +155,23 @@ def main():
                     else:
                         break
                 page.wait_for_timeout(3500)
+            for data, _, _ in captured_pf:
+                pf_page(project_pf(data))
+                for product in data['searchResults']:
+                    all_products[product['group_id']] = product
             exact = {v['modelCode'] for item in all_products.values()
                      for v in [item] + item.get('groupedProductList', [])}
             rendered = page.locator('[data-modelcode]').evaluate_all('(els) => els.map(e => ({tag:e.tagName, cls:e.className, sku:e.getAttribute("data-modelcode")}))')
+            visible_links = page.locator('a[href*="-sku-"]:visible').evaluate_all('(els) => els.map(e => e.href.toUpperCase())')
+            supported_reps = {x['modelCode'] for x in all_products.values()
+                              if any(x['modelCode'] in link for link in visible_links)}
             save('population-observation.json', {'rounds': rounds, 'groups': len(all_products),
-                                                'exact_skus': sorted(exact), 'rendered_candidates': rendered[:200]})
+                                                'exact_skus': sorted(exact), 'rendered_candidates': rendered[:200],
+                                                'rendered_representative_link_count': len(supported_reps)})
             assert len(all_products) == total, f'Pagination incomplete: {len(all_products)}/{total} groups'
             return {'groups': len(all_products), 'exact_skus': len(exact), 'rounds': rounds,
-                    'rendered_count_gate': 'NOT_EVALUATED'}
+                    'rendered_representative_link_count': len(supported_reps),
+                    'strict_tile_count_gate': 'NOT_EVALUATED'}
 
         check('pagination_observation', pagination)
 
@@ -171,7 +185,7 @@ def main():
             text = page.locator('body').inner_text()
             html = page.content()
             links = page.locator('a[href]').evaluate_all('(els) => els.map(e => ({text:e.textContent,url:e.href}))')
-            documents = [x for x in links if re.search(r'energy.?guide', x['text'] or '', re.I)]
+            documents = [x for x in links if re.search(r'energy\s*guide', x['text'] or '', re.I)]
             bridge_snippets = re.findall(r'.{0,100}bridge_data.{0,150}', html, re.I)
             save('pdp-observation.json', {'target_sku': target, 'source_url': url, 'final_url': safe_url(page.url),
                                          'http_status': response.status if response else None,
@@ -180,10 +194,48 @@ def main():
                                          'json_endpoints': pdp_json})
             assert response and response.status < 400, 'PDP HTTP access failed'
             assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
+            assert pdp_json, 'Specs/Support bridge-data endpoint was not observed'
+            source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))
+            facts = pdp_facts(source, target)
+            save('pdp-facts.json', facts)
+            assert facts['energyguide_documents'], 'No EnergyGuide metadata in target Support record'
+            document = facts['energyguide_documents'][0]
+            pdf = context.request.get(document['url'], timeout=30000)
+            raw = pdf.body()
+            assert pdf.status == 200 and raw.startswith(b'%PDF-'), 'EnergyGuide response is not a valid PDF'
+            import pymupdf
+            parsed = pymupdf.open(stream=raw, filetype='pdf')
+            extracted = '\n'.join(p.get_text() for p in parsed)
+            (OUT / 'energyguide-original.pdf').write_bytes(raw)
+            save('energyguide-observation.json', {'requested_url': document['url'], 'final_url': safe_url(pdf.url),
+                                                 'http_status': pdf.status, 'content_type': pdf.headers.get('content-type'),
+                                                 'size_bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(),
+                                                 'embedded_text': extracted, 'extraction_engine': 'PyMuPDF'})
             return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
-                    'energyguide_link_count': len(documents)}
+                    'energyguide_link_count': len(documents), 'energyguide_pdf_valid': True}
 
         check('pdp_identity_and_documents', pdp)
+
+        def epa():
+            dataset = 'p5st-her9'  # observed in official ENERGY STAR catalog, initial hosted artifact
+            base = 'https://data.energystar.gov'
+            metadata_response = context.request.get(f'{base}/api/views/{dataset}.json', timeout=30000)
+            assert metadata_response.status == 200, 'EPA dataset metadata unavailable'
+            metadata = metadata_response.json()
+            save('fixtures/epa-metadata.json', metadata)
+            columns = [{'field': c.get('fieldName'), 'name': c.get('name'), 'type': c.get('dataTypeName')}
+                       for c in metadata.get('columns', []) if not c.get('fieldName', '').startswith(':')]
+            sample_response = context.request.get(f'{base}/resource/{dataset}.json?$limit=3', timeout=30000)
+            assert sample_response.status == 200, 'EPA dataset sample unavailable'
+            sample = sample_response.json()
+            assert isinstance(sample, list) and sample, 'EPA sample empty'
+            save('fixtures/epa-sample.json', sample)
+            save('epa-observation.json', {'dataset_id': dataset, 'name': metadata.get('name'),
+                                          'rows_updated_at': metadata.get('rowsUpdatedAt'), 'columns': columns,
+                                          'sample_rows': len(sample), 'certification_matching': 'NOT_EVALUATED'})
+            return {'dataset_id': dataset, 'column_count': len(columns), 'sample_rows': len(sample)}
+
+        check('epa_refrigerator_dataset_contract', epa)
         browser.close()
 
     report['status'] = 'FAIL' if any(x['status'] == 'FAIL' for x in report['checks']) else 'PASS'

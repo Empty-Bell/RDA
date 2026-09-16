@@ -1,0 +1,835 @@
+{
+  "searchTotalCount": 41,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "RF18A5101SR/AA",
+      "modelName": "RF18A5101SR",
+      "id": "RF18A5101SR/AA",
+      "group_id": "MULTI_GROUP_ID_601368",
+      "pdpURL": "/us/refrigerators/french-door/18-cu-ft-smart-counter-depth-3-door-french-door-refrigerator-in-stainless-steel-sku-rf18a5101sr-aa",
+      "consumerUrl": "/us/refrigerators/french-door/18-cu-ft-smart-counter-depth-3-door-french-door-refrigerator-in-stainless-steel-sku-rf18a5101sr-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "38",
+        "pickYn": "N",
+        "representativeModel": "RF18A5101SR/AA",
+        "taxonomyId": "08030000",
+        "isPrimary": "Y",
+        "familyName": "Refrigerator-PF-33",
+        "id": "601368"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RF18A5101SR/AA",
+          "modelName": "RF18A5101SR",
+          "id": "RF18A5101SR/AA",
+          "group_id": "MULTI_GROUP_ID_601368",
+          "pdpURL": "/us/refrigerators/french-door/18-cu-ft-smart-counter-depth-3-door-french-door-refrigerator-in-stainless-steel-sku-rf18a5101sr-aa",
+          "consumerUrl": "/us/refrigerators/french-door/18-cu-ft-smart-counter-depth-3-door-french-door-refrigerator-in-stainless-steel-sku-rf18a5101sr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "38",
+            "pickYn": "N",
+            "representativeModel": "RF18A5101SR/AA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-33",
+            "id": "601368"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "RF18A5101MT/AA",
+          "modelName": "RF18A5101MT",
+          "id": "RF18A5101MT/AA",
+          "group_id": "MULTI_GROUP_ID_601368",
+          "pdpURL": "/us/refrigerators/french-door/18-cu-ft-counter-depth-3-door-french-door-refrigerator-in-matte-black-steel-sku-rf18a5101mt-aa",
+          "consumerUrl": "/us/refrigerators/french-door/18-cu-ft-counter-depth-3-door-french-door-refrigerator-in-matte-black-steel-sku-rf18a5101mt-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "38",
+            "pickYn": "N",
+            "representativeModel": "RF18A5101SR/AA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-33",
+            "id": "601368"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Matte Black Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "RF18A5101S9/AA",
+          "modelName": "RF18A5101S9",
+          "id": "RF18A5101S9/AA",
+          "group_id": "MULTI_GROUP_ID_601368",
+          "pdpURL": "/us/refrigerators/french-door/18-cu-ft-smart-counter-depth-3-door-french-door-refrigerator-in-stainless-look-sku-rf18a5101s9-aa",
+          "consumerUrl": "/us/refrigerators/french-door/18-cu-ft-smart-counter-depth-3-door-french-door-refrigerator-in-stainless-look-sku-rf18a5101s9-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "38",
+            "pickYn": "N",
+            "representativeModel": "RF18A5101SR/AA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-33",
+            "id": "601368"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Look",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RS27T5200SR/AA",
+      "modelName": "RS27T5200SR",
+      "id": "RS27T5200SR/AA",
+      "group_id": "MULTI_GROUP_ID_601366",
+      "pdpURL": "/us/refrigerators/side-by-side/rs5300t-large-capacity-27-4-cu-ft-silver-mirror-sku-rs27t5200sr-aa",
+      "consumerUrl": "/us/refrigerators/side-by-side/rs5300t-large-capacity-27-4-cu-ft-silver-mirror-sku-rs27t5200sr-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "37",
+        "pickYn": "N",
+        "representativeModel": "RS27T5200SR/AA",
+        "taxonomyId": "08030000",
+        "isPrimary": "Y",
+        "familyName": "Refrigerator-PF-34",
+        "id": "601366"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c2c2c2",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Full Depth",
+          "fmyChipType": "Depth"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RS27T5200SR/AA",
+          "modelName": "RS27T5200SR",
+          "id": "RS27T5200SR/AA",
+          "group_id": "MULTI_GROUP_ID_601366",
+          "pdpURL": "/us/refrigerators/side-by-side/rs5300t-large-capacity-27-4-cu-ft-silver-mirror-sku-rs27t5200sr-aa",
+          "consumerUrl": "/us/refrigerators/side-by-side/rs5300t-large-capacity-27-4-cu-ft-silver-mirror-sku-rs27t5200sr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "RS27T5200SR/AA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-34",
+            "id": "601366"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c2c2c2",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Full Depth",
+              "fmyChipType": "Depth"
+            }
+          ]
+        },
+        {
+          "modelCode": "RS22T5201SR/AA",
+          "modelName": "RS22T5201SR",
+          "id": "RS22T5201SR/AA",
+          "group_id": "MULTI_GROUP_ID_601366",
+          "pdpURL": "/us/refrigerators/side-by-side/22-cu-ft-counter-depth-side-by-side-refrigerator-in-stainless-steel-sku-rs22t5201sr-aa",
+          "consumerUrl": "/us/refrigerators/side-by-side/22-cu-ft-counter-depth-side-by-side-refrigerator-in-stainless-steel-sku-rs22t5201sr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "RS27T5200SR/AA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-34",
+            "id": "601366"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c8c9cd",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            }
+          ]
+        },
+        {
+          "modelCode": "RS27T5200SG/AA",
+          "modelName": "RS27T5200SG",
+          "id": "RS27T5200SG/AA",
+          "group_id": "MULTI_GROUP_ID_601366",
+          "pdpURL": "/us/refrigerators/side-by-side/rs5300t-large-capacity-27-4-cu-ft-ebony-black-sku-rs27t5200sg-aa",
+          "consumerUrl": "/us/refrigerators/side-by-side/rs5300t-large-capacity-27-4-cu-ft-ebony-black-sku-rs27t5200sg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "37",
+            "pickYn": "N",
+            "representativeModel": "RS27T5200SR/AA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-34",
+            "id": "601366"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Full Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#010101",
+              "fmyChipName": "Fingerprint Resistant Black Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RS28A500ASR/AA",
+      "modelName": "RS28A500ASR",
+      "id": "RS28A500ASR/AA",
+      "group_id": "FMY_ID_569398",
+      "pdpURL": "/us/refrigerators/side-by-side/28-cu-ft-smart-side-by-side-refrigerator-in-stainless-steel-sku-rs28a500asr-aa",
+      "consumerUrl": "/us/refrigerators/side-by-side/28-cu-ft-smart-side-by-side-refrigerator-in-stainless-steel-sku-rs28a500asr-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "36",
+        "pickYn": "N",
+        "representativeModel": "RS28A500ASR/AA",
+        "familyName": "RS5300TRS5300TC Side by Side Refrigerator with Large Capacity",
+        "id": "569398",
+        "marketingName": "RS5300T/RS5300TC Side by Side Refrigerator with Large Capacity"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Full Depth",
+          "fmyChipType": "Depth"
+        },
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RS28A500ASR/AA",
+          "modelName": "RS28A500ASR",
+          "id": "RS28A500ASR/AA",
+          "group_id": "FMY_ID_569398",
+          "pdpURL": "/us/refrigerators/side-by-side/28-cu-ft-smart-side-by-side-refrigerator-in-stainless-steel-sku-rs28a500asr-aa",
+          "consumerUrl": "/us/refrigerators/side-by-side/28-cu-ft-smart-side-by-side-refrigerator-in-stainless-steel-sku-rs28a500asr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "36",
+            "pickYn": "N",
+            "representativeModel": "RS28A500ASR/AA",
+            "familyName": "RS5300TRS5300TC Side by Side Refrigerator with Large Capacity",
+            "id": "569398",
+            "marketingName": "RS5300T/RS5300TC Side by Side Refrigerator with Large Capacity"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Full Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RT16A6195SR/AA",
+      "modelName": "RT16A6195SR",
+      "id": "RT16A6195SR/AA",
+      "group_id": "MULTI_GROUP_ID_601360",
+      "pdpURL": "/us/refrigerators/top-freezer/15-6-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt16a6195sr-aa",
+      "consumerUrl": "/us/refrigerators/top-freezer/15-6-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt16a6195sr-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "34",
+        "pickYn": "N",
+        "representativeModel": "RT16A6195SR/AA",
+        "taxonomyId": "08030000",
+        "isPrimary": "Y",
+        "familyName": "Refrigerator-PF-37",
+        "id": "601360"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Counter Depth",
+          "fmyChipType": "Depth"
+        },
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RT16A6195SR/AA",
+          "modelName": "RT16A6195SR",
+          "id": "RT16A6195SR/AA",
+          "group_id": "MULTI_GROUP_ID_601360",
+          "pdpURL": "/us/refrigerators/top-freezer/15-6-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt16a6195sr-aa",
+          "consumerUrl": "/us/refrigerators/top-freezer/15-6-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt16a6195sr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "34",
+            "pickYn": "N",
+            "representativeModel": "RT16A6195SR/AA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-37",
+            "id": "601360"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RT70F18LRSRAA",
+      "modelName": "RT70F18LRSRAA",
+      "id": "RT70F18LRSRAA",
+      "group_id": "MULTI_GROUP_ID_601361",
+      "pdpURL": "/us/refrigerators/top-freezer/18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt70f18lrsraa",
+      "consumerUrl": "/us/refrigerators/top-freezer/18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt70f18lrsraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "33",
+        "pickYn": "N",
+        "representativeModel": "RT70F18LRSRAA",
+        "taxonomyId": "08030000",
+        "isPrimary": "Y",
+        "familyName": "Refrigerator-PF-36",
+        "id": "601361"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Counter Depth",
+          "fmyChipType": "Depth"
+        },
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RT70F18LRSRAA",
+          "modelName": "RT70F18LRSRAA",
+          "id": "RT70F18LRSRAA",
+          "group_id": "MULTI_GROUP_ID_601361",
+          "pdpURL": "/us/refrigerators/top-freezer/18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt70f18lrsraa",
+          "consumerUrl": "/us/refrigerators/top-freezer/18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-in-stainless-steel-sku-rt70f18lrsraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "33",
+            "pickYn": "N",
+            "representativeModel": "RT70F18LRSRAA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-36",
+            "id": "601361"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RT18DG6700SRAA",
+      "modelName": "RT18DG6700SR",
+      "id": "RT18DG6700SRAA",
+      "group_id": "MULTI_GROUP_ID_601355",
+      "pdpURL": "/us/refrigerators/top-freezer/bespoke-ai-18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-and-auto-ice-maker-in-stainless-steel-sku-rt18dg6700sraa",
+      "consumerUrl": "/us/refrigerators/top-freezer/bespoke-ai-18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-and-auto-ice-maker-in-stainless-steel-sku-rt18dg6700sraa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "32",
+        "pickYn": "N",
+        "representativeModel": "RT18DG6700SRAA",
+        "taxonomyId": "08030000",
+        "isPrimary": "Y",
+        "familyName": "Refrigerator-PF-40",
+        "id": "601355"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RT18DG6700SRAA",
+          "modelName": "RT18DG6700SR",
+          "id": "RT18DG6700SRAA",
+          "group_id": "MULTI_GROUP_ID_601355",
+          "pdpURL": "/us/refrigerators/top-freezer/bespoke-ai-18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-and-auto-ice-maker-in-stainless-steel-sku-rt18dg6700sraa",
+          "consumerUrl": "/us/refrigerators/top-freezer/bespoke-ai-18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-and-auto-ice-maker-in-stainless-steel-sku-rt18dg6700sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "32",
+            "pickYn": "N",
+            "representativeModel": "RT18DG6700SRAA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-40",
+            "id": "601355"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "RT18DG6500SRAA",
+          "modelName": "RT18DG6500SR",
+          "id": "RT18DG6500SRAA",
+          "group_id": "MULTI_GROUP_ID_601355",
+          "pdpURL": "/us/refrigerators/top-freezer/bespoke-ai-18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-and-ice-maker-ready-in-stainless-steel-sku-rt18dg6500sraa",
+          "consumerUrl": "/us/refrigerators/top-freezer/bespoke-ai-18-cu-ft-top-freezer-refrigerator-with-all-around-cooling-and-ice-maker-ready-in-stainless-steel-sku-rt18dg6500sraa",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "32",
+            "pickYn": "N",
+            "representativeModel": "RT18DG6700SRAA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-40",
+            "id": "601355"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RS27T5561SR/AA",
+      "modelName": "RS27T5561SR",
+      "id": "RS27T5561SR/AA",
+      "group_id": "FMY_ID_569486",
+      "pdpURL": "/us/refrigerators/side-by-side/26-7-cu-ft-large-capacity-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs27t5561sr-aa",
+      "consumerUrl": "/us/refrigerators/side-by-side/26-7-cu-ft-large-capacity-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs27t5561sr-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "31",
+        "pickYn": "N",
+        "representativeModel": "RS27T5561SR/AA",
+        "familyName": "26.7 cu. ft. Large Capacity Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel",
+        "id": "569486",
+        "marketingName": "26.7 cu. ft. Large Capacity Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Full Depth",
+          "fmyChipType": "Depth"
+        },
+        {
+          "fmyChipCode": "#c2c2c2",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RS27T5561SR/AA",
+          "modelName": "RS27T5561SR",
+          "id": "RS27T5561SR/AA",
+          "group_id": "FMY_ID_569486",
+          "pdpURL": "/us/refrigerators/side-by-side/26-7-cu-ft-large-capacity-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs27t5561sr-aa",
+          "consumerUrl": "/us/refrigerators/side-by-side/26-7-cu-ft-large-capacity-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs27t5561sr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "31",
+            "pickYn": "N",
+            "representativeModel": "RS27T5561SR/AA",
+            "familyName": "26.7 cu. ft. Large Capacity Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel",
+            "id": "569486",
+            "marketingName": "26.7 cu. ft. Large Capacity Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Full Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#c2c2c2",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RF24BB6600QLAA",
+      "modelName": "RF24BB6600QL",
+      "id": "RF24BB6600QLAA",
+      "group_id": "FMY_ID_579743",
+      "pdpURL": "/us/refrigerators/french-door/bespoke-3-door-french-door-refrigerator-24-cu-ft-with-beverage-center-in-stainless-steel-sku-rf24bb6600qlaa",
+      "consumerUrl": "/us/refrigerators/french-door/bespoke-3-door-french-door-refrigerator-24-cu-ft-with-beverage-center-in-stainless-steel-sku-rf24bb6600qlaa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "25",
+        "pickYn": "N",
+        "representativeModel": "RF24BB6600QLAA",
+        "familyName": "BESPOKE RF8000BC 3 Door French Door Refrigertor with Beverage Center",
+        "id": "579743",
+        "marketingName": "BESPOKE RF8000BC 3 Door French Door Refrigertor with Beverage Center"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Counter Depth",
+          "fmyChipType": "Depth"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RF24BB6600QLAA",
+          "modelName": "RF24BB6600QL",
+          "id": "RF24BB6600QLAA",
+          "group_id": "FMY_ID_579743",
+          "pdpURL": "/us/refrigerators/french-door/bespoke-3-door-french-door-refrigerator-24-cu-ft-with-beverage-center-in-stainless-steel-sku-rf24bb6600qlaa",
+          "consumerUrl": "/us/refrigerators/french-door/bespoke-3-door-french-door-refrigerator-24-cu-ft-with-beverage-center-in-stainless-steel-sku-rf24bb6600qlaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "25",
+            "pickYn": "N",
+            "representativeModel": "RF24BB6600QLAA",
+            "familyName": "BESPOKE RF8000BC 3 Door French Door Refrigertor with Beverage Center",
+            "id": "579743",
+            "marketingName": "BESPOKE RF8000BC 3 Door French Door Refrigertor with Beverage Center"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RS22T5561SR/AA",
+      "modelName": "RS22T5561SR",
+      "id": "RS22T5561SR/AA",
+      "group_id": "FMY_ID_569368",
+      "pdpURL": "/us/refrigerators/side-by-side/22-cu-ft-counter-depth-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs22t5561sr-aa",
+      "consumerUrl": "/us/refrigerators/side-by-side/22-cu-ft-counter-depth-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs22t5561sr-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "10",
+        "pickYn": "N",
+        "representativeModel": "RS22T5561SR/AA",
+        "familyName": "22 cu. ft. Counter Depth Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel",
+        "id": "569368",
+        "marketingName": "22 cu. ft. Counter Depth Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Counter Depth",
+          "fmyChipType": "Depth"
+        },
+        {
+          "fmyChipCode": "#c3c3c3",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RS22T5561SR/AA",
+          "modelName": "RS22T5561SR",
+          "id": "RS22T5561SR/AA",
+          "group_id": "FMY_ID_569368",
+          "pdpURL": "/us/refrigerators/side-by-side/22-cu-ft-counter-depth-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs22t5561sr-aa",
+          "consumerUrl": "/us/refrigerators/side-by-side/22-cu-ft-counter-depth-side-by-side-refrigerator-with-touch-screen-family-hub-in-stainless-steel-sku-rs22t5561sr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "RS22T5561SR/AA",
+            "familyName": "22 cu. ft. Counter Depth Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel",
+            "id": "569368",
+            "marketingName": "22 cu. ft. Counter Depth Side-by-Side Refrigerator with Touch Screen Family Hub™ in Stainless Steel"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#c3c3c3",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RF23DB9750QLAA",
+      "modelName": "RF23DB9750QL",
+      "id": "RF23DB9750QLAA",
+      "group_id": "MULTI_GROUP_ID_601369",
+      "pdpURL": "/us/refrigerators/french-door/bespoke-counter-depth-4-door-flex-refrigerator-23-cu-ft-with-beverage-zone-and-auto-open-door-in-stainless-steel-sku-rf23db9750qlaa",
+      "consumerUrl": "/us/refrigerators/french-door/bespoke-counter-depth-4-door-flex-refrigerator-23-cu-ft-with-beverage-zone-and-auto-open-door-in-stainless-steel-sku-rf23db9750qlaa",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "53",
+        "pickYn": "N",
+        "representativeModel": "RF23DB9750QLAA",
+        "taxonomyId": "08030000",
+        "isPrimary": "Y",
+        "familyName": "Refrigerator-PF-16",
+        "id": "601369"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "Counter Depth",
+          "fmyChipType": "Depth"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RF23DB9750QLAA",
+          "modelName": "RF23DB9750QL",
+          "id": "RF23DB9750QLAA",
+          "group_id": "MULTI_GROUP_ID_601369",
+          "pdpURL": "/us/refrigerators/french-door/bespoke-counter-depth-4-door-flex-refrigerator-23-cu-ft-with-beverage-zone-and-auto-open-door-in-stainless-steel-sku-rf23db9750qlaa",
+          "consumerUrl": "/us/refrigerators/french-door/bespoke-counter-depth-4-door-flex-refrigerator-23-cu-ft-with-beverage-zone-and-auto-open-door-in-stainless-steel-sku-rf23db9750qlaa",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "53",
+            "pickYn": "N",
+            "representativeModel": "RF23DB9750QLAA",
+            "taxonomyId": "08030000",
+            "isPrimary": "Y",
+            "familyName": "Refrigerator-PF-16",
+            "id": "601369"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "RS23A500ASR/AA",
+      "modelName": "RS23A500ASR",
+      "id": "RS23A500ASR/AA",
+      "group_id": "FMY_ID_569397",
+      "pdpURL": "/us/refrigerators/side-by-side/23-cu-ft-smart-counter-depth-side-by-side-refrigerator-in-stainless-steel-sku-rs23a500asr-aa",
+      "consumerUrl": "/us/refrigerators/side-by-side/23-cu-ft-smart-counter-depth-side-by-side-refrigerator-in-stainless-steel-sku-rs23a500asr-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "11",
+        "pickYn": "N",
+        "representativeModel": "RS23A500ASR/AA",
+        "familyName": "RS5300TRS5300TC Side by Side Refrigerator with Large Capacity",
+        "id": "569397",
+        "marketingName": "RS5300T/RS5300TC Side by Side Refrigerator with Large Capacity"
+      },
+      "chips": [
+        {
+          "fmyChipName": "Counter Depth",
+          "fmyChipType": "Depth"
+        },
+        {
+          "fmyChipCode": "#c0c0c0",
+          "fmyChipName": "Fingerprint Resistant Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "RS23A500ASR/AA",
+          "modelName": "RS23A500ASR",
+          "id": "RS23A500ASR/AA",
+          "group_id": "FMY_ID_569397",
+          "pdpURL": "/us/refrigerators/side-by-side/23-cu-ft-smart-counter-depth-side-by-side-refrigerator-in-stainless-steel-sku-rs23a500asr-aa",
+          "consumerUrl": "/us/refrigerators/side-by-side/23-cu-ft-smart-counter-depth-side-by-side-refrigerator-in-stainless-steel-sku-rs23a500asr-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "RS23A500ASR/AA",
+            "familyName": "RS5300TRS5300TC Side by Side Refrigerator with Large Capacity",
+            "id": "569397",
+            "marketingName": "RS5300T/RS5300TC Side by Side Refrigerator with Large Capacity"
+          },
+          "chips": [
+            {
+              "fmyChipName": "Counter Depth",
+              "fmyChipType": "Depth"
+            },
+            {
+              "fmyChipCode": "#c0c0c0",
+              "fmyChipName": "Fingerprint Resistant Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
