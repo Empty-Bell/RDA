@@ -130,6 +130,12 @@ def claim_facts(snapshot, target, listing, specs):
             'rendered_claim_attribution': 'NOT_EVALUATED',
             'certification_matching': 'NOT_EVALUATED', 'claim_consistency': 'NOT_EVALUATED'}
     if 'structured_probes' in snapshot:
+        for probe in snapshot['structured_probes']:
+            if 'product_claim_records' in probe:
+                matching = [record for record in probe['product_claim_records']
+                            if record['identifiers'] and all(value.upper() == target.upper() for value in record['identifiers'].values())]
+                if len(matching) != 1:
+                    raise ValueError('Inline target SKU missing, conflicting or duplicated')
         nested = [field for probe in snapshot['structured_probes'] for field in probe['fields']
                   if field['identifiers_raw'] and all(value.upper() == target.upper() for value in field['identifiers_raw'])]
         result['pdp_nested_energy_star_fields_raw'] = nested

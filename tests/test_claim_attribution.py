@@ -123,3 +123,9 @@ class ClaimAttributionContract(unittest.TestCase):
             self.assertEqual(len(current),1)
             self.assertEqual(current[0]['value'],value)
             self.assertFalse(probe['truncated'])
+
+    def test_inline_duplicate_or_missing_target_record_is_extraction_failure(self):
+        for products in ([{'sku':'OTHER','energyStarFlag':'Y'}],
+                         [{'sku':'SKU','energyStarFlag':'Y'},{'sku':'SKU','energyStarFlag':'N'}]):
+            self.snapshot['structured_probes']=[project_inline_product_claims({'props':{'pageProps':{'productData':{'products':products}}}})]
+            with self.assertRaises(ValueError): self.facts()
