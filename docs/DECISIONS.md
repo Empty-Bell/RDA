@@ -1,0 +1,18 @@
+# Open semantic decisions
+
+All decisions below are OPEN; no rule approval is implied.
+
+| ID | Gap | Proposed direction | Due |
+|---|---|---|---|
+| D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |
+| D02 | §12·13: 우선순위와 양 도메인 동시 finding의 관계 불명확 | 모든 control 평가를 보존하고 도메인별 대표 이슈/정렬을 별도 정의하는 안 검토. 전역 첫 이슈에서 반환하여 EPA를 누락시키지 않음 | Phase 1–2 |
+| D03 | §16·20.4: Hero의 LOW-only, 미평가, coverage=0 처리 미정 | 평가 완결성 → finding 상태 순으로 판정표 작성. 미평가·오류를 PASS로 표시하지 않음. LOW-only 표시와 HIGH+오류 동시 표시 결정 | Phase 2 UI 전 |
+| D04 | §20.5: finding 수와 SKU 수 혼합 가능 | finding 수, 영향받은 고유 SKU 수, 배타적 모델 요약 상태를 분리. coverage 분모와 양 도메인 완료 조건 명시 | Phase 1 |
+| D05 | §18: 모집단 이탈/수집 실패가 RESOLVED로 오인될 위험 | 동일 SKU/control의 유효한 재평가로만 해소 판정하는 안 검토. 이탈·미평가는 별도 관측 메타데이터, 기존 history 상태를 임의 추가하지 않음 | Phase 5 |
+| D06 | §3·27: 부분 가족 게시와 모든 가족 게시 gate 관계 | V1 production은 전 가족 gate 통과 시만 교체하는 안 권장. 실패 run은 진단 artifact에 보관하고 기존 validated site 유지 | Phase 6–7 |
+| D07 | §8: OCR 독립 보강증거의 최소 충족 조건 없음 | 제품군별 필수/선택 보강증거와 모순 시 우선조건을 표로 고정. URL 일치만으로 독립 검증으로 취급하지 않음 | Phase 2 OCR 전 |
+| D08 | §3: family는 제품군과 tile group 양쪽 의미로 사용 | product_group과 source family_id의 의미를 계약에 구분. 페이지 count가 tile/SKU 중 무엇인지 실측하여 동일 grain끼리 대조 | Phase 0 |
+| D09 | §11: current EPA, 미국 시장, 중복 인증, wildcard 의미 미정 | dataset별 갱신/상태/시장/모델 패턴 계약 작성. 불완전 조회를 no-candidate로 바꾸지 않음. 지원하지 않는 제품군은 미확인/비적용 근거를 구분 | Phase 0–2 |
+| D10 | §12·25: 읽기 불가 HIGH와 403/429 pipeline 장애의 경계 | 실제 개별 문서 문제와 수집환경/광역 장애 구분표 작성. timeout만으로 문서 부재를 확정하지 않음 | Phase 2 |
+| D11 | §15·17·20: fact provenance/run_id와 다중 finding 표현 보강 필요 | fact와 evidence의 run 연결·버전·hash를 보장. report는 SKU당 1행 + 다중 issue 표현을 명세하여 finding 유실 방지 | Phase 1 |
+| D12 | §17·18: raw artifact 만료, 역사 저장소, 재실행 ID 충돌 | 보존기간·복구·history 입력 저장 위치·재시도 식별자 결정. 같은 초/commit 재실행 충돌 검증 | Phase 1, 5–6 |
