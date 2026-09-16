@@ -13,7 +13,7 @@ from urllib.parse import urljoin, urlsplit, parse_qs, urlencode
 from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason
 from browser_runtime import desktop_context
-from claim_recon import project_claim_records, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
+from claim_recon import project_claim_records, project_nested_claim_fields, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
 
 OUT = Path('runtime/source-recon')
 FAMILIES = {
@@ -111,6 +111,7 @@ def main():
     computer_group_ids = []
     structured_claim_records = []
     structured_claim_errors = []
+    structured_claim_probes = []
 
     def check(name, fn):
         try:
@@ -135,7 +136,10 @@ def main():
                 try:
                     if response.status >= 400:
                         raise ValueError('Public product endpoint HTTP error')
-                    for record in project_claim_records(response.json()):
+                    public_payload = response.json()
+                    structured_claim_probes.append({**project_nested_claim_fields(public_payload),
+                                                    'source_url': safe_url(url), 'status': response.status})
+                    for record in project_claim_records(public_payload):
                         structured_claim_records.append({**record, 'source_url': safe_url(url), 'status': response.status})
                 except Exception as exc:
                     structured_claim_errors.append({'source_url': safe_url(url), 'status': response.status,
@@ -301,6 +305,7 @@ def main():
             url = urljoin('https://www.samsung.com', product['pdpURL'])
             structured_claim_records.clear()
             structured_claim_errors.clear()
+            structured_claim_probes.clear()
             if family in ('computer', 'chromebook', 'tablet'):
                 computer_group_ids.clear()
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
@@ -333,7 +338,9 @@ def main():
                     computer_group_ids.clear()
                     structured_claim_records.clear()
                     save('structured-claim-retry-errors.json', list(structured_claim_errors))
+                    save('structured-claim-retry-probes.json', list(structured_claim_probes))
                     structured_claim_errors.clear()
+                    structured_claim_probes.clear()
                     pdp_json.clear()
                     response = page.reload(wait_until='domcontentloaded', timeout=60000)
                     page.wait_for_timeout(10000)
@@ -353,6 +360,7 @@ def main():
                                  'sampling_source': 'observed Specs pattern; current ecom-data group and selected SKU'})
             snapshot = {'target_sku': target, 'final_url': safe_url(page.url), **page.evaluate(DOM_SNAPSHOT),
                         'structured_records': list(structured_claim_records),
+                        'structured_probes': list(structured_claim_probes),
                         'structured_errors': list(structured_claim_errors)}
             save('fixtures/public-claim-snapshot.json', snapshot)
             text = page.locator('body').inner_text()
@@ -426,6 +434,9 @@ def main():
             return {'target_sku': facts['exact_sku'], 'exact_product_jsonld_records': len(facts['pdp_exact_jsonld_raw']),
                     'structured_claim_status': facts['pdp_structured_claim_status'],
                     'rendered_candidates': len(facts['rendered_page_candidates_raw']),
+                    'attributed_badges': len(facts['rendered_attributed_badges_raw']),
+                    'nested_claim_fields': len(facts['pdp_nested_energy_star_fields_raw']),
+                    'structured_probe_status': facts['structured_probe_status'],
                     'claim_consistency': 'NOT_EVALUATED'}
 
         check('public_claim_identity_observation', claims)

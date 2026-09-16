@@ -4,6 +4,55 @@ import re
 ENERGY_STAR = re.compile(r'energy[\s_-]*star', re.I)
 
 
+def project_nested_claim_fields(payload):
+    """Bounded schema/flag projection, excluding private and unrelated payload values."""
+    fields = []
+    visited = 0
+    truncated = False
+    private = re.compile(r'chat|analytics|license|account|auth|token|session|cookie|customer|email', re.I)
+    identifiers = ('modelCode', 'modelcode', 'model_code', 'sku')
+    def visit(node, path, identity, depth):
+        nonlocal visited, truncated
+        visited += 1
+        if visited > 20000 or depth > 16 or len(fields) >= 100:
+            truncated = True
+            return
+        if isinstance(node, list):
+            for index, child in enumerate(node):
+                if visited > 20000: break
+                visit(child, f'{path}[{index}]', identity, depth + 1)
+        elif isinstance(node, dict):
+            local = [node[key] for key in identifiers if isinstance(node.get(key), str) and node[key]]
+            current = local or identity
+            for key, value in node.items():
+                if private.search(key): continue
+                child_path = f'{path}.{key}'
+                if ENERGY_STAR.search(key) and (value is None or isinstance(value, (str, bool, int, float))):
+                    fields.append({'path': child_path, 'identifiers_raw': current,
+                                   'identity_basis': 'nearest explicit product identifier; unbound is not target',
+                                   'name': key, 'value': value})
+                if isinstance(value, (dict, list)):
+                    visit(value, child_path, current, depth + 1)
+    visit(payload, '$', [], 0)
+    return {'fields': fields, 'truncated': truncated,
+            'root_sections': [key for key in payload if not private.search(key)] if isinstance(payload, dict) else ['ARRAY' if isinstance(payload, list) else 'SCALAR']}
+
+
+def badge_attribution(snapshot, exact_jsonld, target):
+    attributed = []
+    if len(exact_jsonld) != 1 or len(snapshot['product_jsonld']) != 1:
+        return attributed
+    for candidate in snapshot.get('energy_candidates', []):
+        if candidate.get('tag') != 'IMG' or not re.search(r'/us/b2c_pf/badge/energy-star-logo-pdp-', candidate.get('src') or '', re.I):
+            continue
+        if candidate.get('product_surface') not in ('CURRENT_GALLERY', 'BUY_CONFIGURATOR_RELATION') or candidate.get('surface_count') != 1:
+            continue
+        attributed.append({'exact_sku': target, 'src': candidate['src'],
+                           'product_surface': candidate['product_surface'],
+                           'identity_basis': 'unique observed primary product surface; sole exact Product JSON-LD; existing PDP identity gate'})
+    return attributed
+
+
 def project_claim_records(payload):
     """Only direct fields on explicitly SKU-identified public product records."""
     sections = payload if isinstance(payload, dict) else {'ROOT': payload}
@@ -33,7 +82,7 @@ def claim_facts(snapshot, target, listing, specs):
     direct = [f for r in records for f in r['energy_star_fields_raw']]
     properties = [p for r in exact_jsonld for p in r.get('additionalProperty', [])
                   if ENERGY_STAR.search(p.get('name') or '')]
-    return {'exact_sku': target,
+    result = {'exact_sku': target,
             'listing_title_raw': listing.get('modelName'),
             'pdp_headings_raw': snapshot.get('headings', []),
             'pdp_exact_jsonld_raw': exact_jsonld,
@@ -46,6 +95,15 @@ def claim_facts(snapshot, target, listing, specs):
             'rendered_page_candidates_raw': snapshot.get('energy_candidates', []),
             'rendered_claim_attribution': 'NOT_EVALUATED',
             'certification_matching': 'NOT_EVALUATED', 'claim_consistency': 'NOT_EVALUATED'}
+    if 'structured_probes' in snapshot:
+        nested = [field for probe in snapshot['structured_probes'] for field in probe['fields']
+                  if field['identifiers_raw'] and all(value.upper() == target.upper() for value in field['identifiers_raw'])]
+        result['pdp_nested_energy_star_fields_raw'] = nested
+        result['structured_probe_status'] = 'BOUNDED_PROJECTION_TRUNCATED' if any(p['truncated'] for p in snapshot['structured_probes']) else 'BOUNDED_PROJECTION_COMPLETE'
+        if nested: result['pdp_structured_claim_status'] = 'OBSERVED_RAW_FIELDS'
+        result['rendered_attributed_badges_raw'] = badge_attribution(snapshot, exact_jsonld, target)
+        result['rendered_claim_attribution'] = 'OBSERVED_CURRENT_PRODUCT_SURFACE' if result['rendered_attributed_badges_raw'] else 'NOT_EVALUATED'
+    return result
 
 
 DOM_SNAPSHOT = r"""() => {
@@ -55,6 +113,8 @@ DOM_SNAPSHOT = r"""() => {
     .filter(visible).map(e => ({tag:e.tagName, text:(e.children.length ? '' : e.textContent || '').trim(),
       alt:e.getAttribute('alt'), label:e.getAttribute('aria-label'),
       ancestors:Array.from((function*(){let p=e;for(let i=0;p && i<5;i++,p=p.parentElement) yield {tag:p.tagName,cls:p.className};})()),
+      product_surface:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? 'CURRENT_GALLERY' : e.closest('.q6b6RelationContainer') ? 'BUY_CONFIGURATOR_RELATION' : null,
+      surface_count:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? document.querySelectorAll('[class*="Gallery_outerContainer__"]').length : e.closest('.q6b6RelationContainer') ? document.querySelectorAll('.q6b6RelationContainer').length : 0,
       src:e.tagName === 'IMG' ? e.getAttribute('src') : null}))
     .filter(x => energy.test([x.text,x.alt,x.label,x.src].join(' ')))
     .map(x => ({...x,text:x.text.slice(0,400)})).slice(0,40);
