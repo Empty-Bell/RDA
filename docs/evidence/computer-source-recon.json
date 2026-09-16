@@ -1,0 +1,1522 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35114575198",
+  "hosted_tests": 103,
+  "product_groups": 10,
+  "source_jobs": 11,
+  "sources": {
+    "computer": {
+      "job_id": 104856607424,
+      "artifact_id": 10455345030,
+      "artifact_size_bytes": 18506,
+      "artifact_expires_at": "2026-09-30T15:21:03Z",
+      "artifact_zip_sha256": "b82dd71da3fbd9b3f17636555c615c988f34b97742489661ecb0a0b9c88e7cc2",
+      "recon": {
+        "captured_at": "2026-09-16T15:20:24.384275+00:00",
+        "run_id": "35114575198",
+        "attempt": "1",
+        "git_sha": "deabaff76e980ba33c97e54a3fd4ad31ba60532f",
+        "scope": "computer source contracts only",
+        "status": "PASS",
+        "phase_gate": "NOT_EVALUATED",
+        "observations": [
+          {
+            "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+            "method": "POST",
+            "status": 200,
+            "request_body": {
+              "clientCode": "b2c",
+              "clientName": "scom_pf",
+              "firstSearchYN": "true",
+              "countryCode": "us",
+              "storeID": "us",
+              "startIndex": "0",
+              "requestCount": "22",
+              "category_code": "03010000",
+              "taxonomy_code": "03010100",
+              "filters": "[]",
+              "sort": "recommended"
+            },
+            "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+            "fixture": "fixtures/pf-0.json",
+            "fixture_sha256": "9c89ad78a9f7106bca12d5ff363ea1ef2472c1aede9c7dc45666f86abb93bffc",
+            "page_count": 11
+          }
+        ],
+        "checks": [
+          {
+            "name": "plp_request_contract",
+            "status": "PASS",
+            "details": {
+              "url": "https://www.samsung.com/us/computers/galaxy-book/",
+              "api_total": 11
+            }
+          },
+          {
+            "name": "pagination_observation",
+            "status": "PASS",
+            "details": {
+              "groups": 11,
+              "exact_skus": 23,
+              "rounds": [
+                {
+                  "round": 0,
+                  "groups": 11,
+                  "expected_groups": 11
+                }
+              ],
+              "rendered_representative_link_count": 11,
+              "rendered_tile_count": 11,
+              "strict_tile_count_gate": "PASS"
+            }
+          },
+          {
+            "name": "pdp_identity_and_documents",
+            "status": "PASS",
+            "details": {
+              "target_sku": "NP960UJH-XG7US",
+              "url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us/",
+              "json_endpoints": 1,
+              "energyguide_metadata_count": null,
+              "document_collection_status": "NOT_EVALUATED",
+              "energyguide_probe": "OUT_OF_RECON_SCOPE",
+              "certification_matching": "NOT_EVALUATED"
+            }
+          },
+          {
+            "name": "epa_computer_dataset_contract",
+            "status": "PASS",
+            "details": {
+              "dataset_id": "rxdj-2c88",
+              "column_count": 68,
+              "sample_rows": 3
+            }
+          }
+        ],
+        "browser_identity": {
+          "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+          "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+          "browser_version": "153.0.8010.12",
+          "locale": "en-US",
+          "viewport": {
+            "width": 1365,
+            "height": 768
+          },
+          "profile": "desktop-linux-chromium"
+        }
+      },
+      "pdp_facts": {
+        "exact_sku": "NP960UJH-XG7US",
+        "spec_fields_raw": [
+          {
+            "group": "Operating System",
+            "name": "Operating System",
+            "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+          },
+          {
+            "group": "Processor",
+            "name": "CPU",
+            "value": "Intel® Core™ Ultra 9 processor 386H"
+          },
+          {
+            "group": "Processor",
+            "name": "GPU",
+            "value": "NVIDIA® GeForce RTX™ 5070 Laptop GPU 8GB GDDR7"
+          },
+          {
+            "group": "Processor",
+            "name": "GPU Type",
+            "value": "Discrete"
+          },
+          {
+            "group": "Processor",
+            "name": "NPU",
+            "value": "Intel® NPU"
+          },
+          {
+            "group": "Memory",
+            "name": "Memory Capacity",
+            "value": "64 GB"
+          },
+          {
+            "group": "Memory",
+            "name": "Memory",
+            "value": "LPDDR5X (On Board)"
+          },
+          {
+            "group": "Memory",
+            "name": "Storage Capacity",
+            "value": "2 TB"
+          },
+          {
+            "group": "Memory",
+            "name": "Storage Type",
+            "value": "NVMe SSD"
+          },
+          {
+            "group": "Memory",
+            "name": "Number of Storage Slots",
+            "value": "2"
+          },
+          {
+            "group": "General Information",
+            "name": "Color",
+            "value": "Gray"
+          },
+          {
+            "group": "General Information",
+            "name": "Form Factor",
+            "value": "Laptop"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Speaker",
+            "value": "Six Speakers"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Smart Amp",
+            "value": "Yes"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Sound Effect",
+            "value": "Dolby Atmos®"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Mic",
+            "value": "Dual Array Digital Mic"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Camera",
+            "value": "2.0 MP"
+          },
+          {
+            "group": "Network",
+            "name": "Wi-Fi",
+            "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+          },
+          {
+            "group": "Network",
+            "name": "Bluetooth Version",
+            "value": "Bluetooth v5.4"
+          },
+          {
+            "group": "Ports",
+            "name": "HDMI",
+            "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+          },
+          {
+            "group": "Ports",
+            "name": "USB",
+            "value": "2 Thunderbolt™ 4, 1 USB3.2"
+          },
+          {
+            "group": "Ports",
+            "name": "External Storage Support",
+            "value": "SDXC"
+          },
+          {
+            "group": "Ports",
+            "name": "Earjack",
+            "value": "1 Headphone out/Mic-in Combo"
+          },
+          {
+            "group": "Input",
+            "name": "Keyboard",
+            "value": "Pro keyboard"
+          },
+          {
+            "group": "Input",
+            "name": "Keyboard Backlit",
+            "value": "Yes"
+          },
+          {
+            "group": "Input",
+            "name": "Touchpad",
+            "value": "Haptic Touchpad"
+          },
+          {
+            "group": "Sensor",
+            "name": "Sensor",
+            "value": "Ambient Light Sensor,Hall Sensor"
+          },
+          {
+            "group": "Security",
+            "name": "TPM",
+            "value": "Yes"
+          },
+          {
+            "group": "Security",
+            "name": "FingerPrint Reader",
+            "value": "Yes"
+          },
+          {
+            "group": "Physical specification",
+            "name": "Dimension (WxDxH, mm)",
+            "value": "356.9 x 248.0 x 15.4 mm (14.05\" x 9.76\" x 0.61\")"
+          },
+          {
+            "group": "Physical specification",
+            "name": "Weight (kg)",
+            "value": "1.89 kg (4.17 lbs)"
+          },
+          {
+            "group": "Services and Applications",
+            "name": "SmartThings Support",
+            "value": "Yes"
+          },
+          {
+            "group": "Battery",
+            "name": "Battery Chemistry",
+            "value": "Lithium-Ion"
+          },
+          {
+            "group": "Battery",
+            "name": "Battery Capacity (Typical, Wh)",
+            "value": "80.20"
+          },
+          {
+            "group": "Display",
+            "name": "Size (inch)",
+            "value": "16.0\""
+          },
+          {
+            "group": "Display",
+            "name": "Resolution",
+            "value": "2880 x 1800 (WQXGA+)"
+          },
+          {
+            "group": "Display",
+            "name": "Type",
+            "value": "Dynamic AMOLED 2X, Anti-Reflective"
+          },
+          {
+            "group": "Display",
+            "name": "Touch Screen",
+            "value": "Yes"
+          },
+          {
+            "group": "Power",
+            "name": "AC Adapter",
+            "value": "140W USB Type-C Adapter"
+          },
+          {
+            "group": "Power",
+            "name": "USB PD Support",
+            "value": "Yes"
+          },
+          {
+            "group": "Power",
+            "name": "Power Required for Charging (Min / Max, W)",
+            "value": "135 | 140"
+          }
+        ],
+        "energy_consumption_raw": [],
+        "capacity_raw": [],
+        "screen_size_raw": [],
+        "screen_size_class_raw": [],
+        "active_display_size_raw": [],
+        "resolution_raw": [
+          {
+            "group": "Display",
+            "name": "Resolution",
+            "value": "2880 x 1800 (WQXGA+)"
+          }
+        ],
+        "charging_power_raw": [],
+        "power_supply_raw": [],
+        "battery_capacity_raw": [
+          {
+            "group": "Battery",
+            "name": "Battery Capacity (Typical, Wh)",
+            "value": "80.20"
+          }
+        ],
+        "adapter_rating_raw": [
+          {
+            "group": "Power",
+            "name": "AC Adapter",
+            "value": "140W USB Type-C Adapter"
+          }
+        ],
+        "computer_configuration_raw": [
+          {
+            "group": "Operating System",
+            "name": "Operating System",
+            "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+          },
+          {
+            "group": "Processor",
+            "name": "CPU",
+            "value": "Intel® Core™ Ultra 9 processor 386H"
+          },
+          {
+            "group": "Processor",
+            "name": "GPU",
+            "value": "NVIDIA® GeForce RTX™ 5070 Laptop GPU 8GB GDDR7"
+          },
+          {
+            "group": "Memory",
+            "name": "Memory Capacity",
+            "value": "64 GB"
+          },
+          {
+            "group": "Memory",
+            "name": "Storage Capacity",
+            "value": "2 TB"
+          }
+        ],
+        "document_collection_status": "NOT_EVALUATED",
+        "power_consumption_raw": [],
+        "fuel_type_raw": [],
+        "cooktop_type_raw": [],
+        "oven_capacity_raw": [],
+        "hood_type_raw": [],
+        "venting_type_raw": [],
+        "airflow_raw": [],
+        "noise_raw": [],
+        "hood_power_raw": [],
+        "energy_star_spec_claim_raw": [],
+        "energy_star_structured_claim": null,
+        "energyguide_documents": []
+      },
+      "configuration": {
+        "target_sku": "NP960UJH-XG7US",
+        "final_url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us/",
+        "rendered_target_present": false,
+        "selected_controls": [
+          {
+            "sku": "np960ujh-xg7us",
+            "label": "Galaxy Book6 Ultra"
+          }
+        ],
+        "continue_sku": "np960ujh-xg7us",
+        "continue_visible": true
+      },
+      "epa": {
+        "dataset_id": "rxdj-2c88",
+        "name": "ENERGY STAR Certified Computers V9.0",
+        "rows_updated_at": 1789564401,
+        "columns": [
+          {
+            "field": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "type": "number"
+          },
+          {
+            "field": "energy_star_partner",
+            "name": "ENERGY STAR Partner",
+            "type": "text"
+          },
+          {
+            "field": "brand_name",
+            "name": "Brand Name",
+            "type": "text"
+          },
+          {
+            "field": "model_name",
+            "name": "Model Name",
+            "type": "text"
+          },
+          {
+            "field": "model_number",
+            "name": "Model Number",
+            "type": "text"
+          },
+          {
+            "field": "additional_model_information",
+            "name": "Additional Model Information",
+            "type": "text"
+          },
+          {
+            "field": "upc",
+            "name": "UPC",
+            "type": "text"
+          },
+          {
+            "field": "type",
+            "name": "Type",
+            "type": "text"
+          },
+          {
+            "field": "integrated_desktop_category",
+            "name": "Integrated Desktop Category",
+            "type": "text"
+          },
+          {
+            "field": "product_marketed_as_a_workstation",
+            "name": "Product Marketed as a Workstation",
+            "type": "text"
+          },
+          {
+            "field": "installed_npu",
+            "name": "Installed NPU",
+            "type": "text"
+          },
+          {
+            "field": "motherboard_form_factor",
+            "name": "Motherboard Form Factor",
+            "type": "text"
+          },
+          {
+            "field": "product_dimm_count",
+            "name": "Product DIMM Count",
+            "type": "number"
+          },
+          {
+            "field": "operating_system_name",
+            "name": "Operating System Name",
+            "type": "text"
+          },
+          {
+            "field": "processor_brand",
+            "name": "Processor Brand",
+            "type": "text"
+          },
+          {
+            "field": "processor_name",
+            "name": "Processor Name",
+            "type": "text"
+          },
+          {
+            "field": "physical_cpu_cores_count",
+            "name": "Physical CPU Cores (count)",
+            "type": "number"
+          },
+          {
+            "field": "cpu_packages_count",
+            "name": "CPU Packages (count)",
+            "type": "number"
+          },
+          {
+            "field": "cpu_base_clock_speed_ghz",
+            "name": "CPU Base Clock Speed (GHz) ",
+            "type": "number"
+          },
+          {
+            "field": "cpu_maximum_clock_speed_ghz",
+            "name": "CPU Maximum Clock Speed (GHz) ",
+            "type": "number"
+          },
+          {
+            "field": "system_memory_ram_gb",
+            "name": "System Memory (GB)",
+            "type": "number"
+          },
+          {
+            "field": "multi_channel_memory_support",
+            "name": "Multi-Channel Memory Support",
+            "type": "text"
+          },
+          {
+            "field": "capable_of_switchable_graphics",
+            "name": "Capable of Switchable Graphics",
+            "type": "text"
+          },
+          {
+            "field": "switchable_graphics_enabled_by_default_in_ac_mode",
+            "name": "Switchable Graphics Enabled by Default in AC Mode ",
+            "type": "text"
+          },
+          {
+            "field": "discrete_graphics_frame_buffer_bandwidth_gb_s",
+            "name": "Discrete Graphics Frame Buffer Bandwidth (GB/s) ",
+            "type": "number"
+          },
+          {
+            "field": "discrete_graphics_frame_buffer_data_width_bits",
+            "name": "Discrete Graphics Frame Buffer Data Width (bits) ",
+            "type": "number"
+          },
+          {
+            "field": "fast_ethernet_ports_count",
+            "name": "Fast Ethernet Ports (count)",
+            "type": "number"
+          },
+          {
+            "field": "gigabit_ethernet_ports_count",
+            "name": "Gigabit Ethernet Ports (count) ",
+            "type": "number"
+          },
+          {
+            "field": "gigabit_10_ethernet_ports_count",
+            "name": "10 Gigabit Ethernet Ports (count)",
+            "type": "number"
+          },
+          {
+            "field": "energy_efficient_ethernet_eee",
+            "name": "Energy Efficient Ethernet (EEE) ",
+            "type": "text"
+          },
+          {
+            "field": "number_of_installed_storage_drives",
+            "name": "Number of Installed Storage Drives ",
+            "type": "number"
+          },
+          {
+            "field": "number_of_integrated_displays_count",
+            "name": "Number of Integrated Displays (count) ",
+            "type": "number"
+          },
+          {
+            "field": "integrated_display_resolution_megapixels",
+            "name": "Integrated Display Resolution (megapixels) ",
+            "type": "number"
+          },
+          {
+            "field": "integrated_display_viewable_screen_area_sq_in",
+            "name": "Integrated Display Viewable Screen Area (sq in) ",
+            "type": "number"
+          },
+          {
+            "field": "enhanced_performance_display_present",
+            "name": "Enhanced Performance Display Present ",
+            "type": "text"
+          },
+          {
+            "field": "integrated_display_diagonal_screen_size_in",
+            "name": "Integrated Display Diagonal Screen Size (in)",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_10_load",
+            "name": "Internal Power Supply Efficiency at 10% Load",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_20_load",
+            "name": "Internal Power Supply Efficiency at 20% Load",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_50_load",
+            "name": "Internal Power Supply Efficiency at 50% Load",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_100_load",
+            "name": "Internal Power Supply Efficiency at 100% Load",
+            "type": "number"
+          },
+          {
+            "field": "category_i1_1_internal_power_supply_efficiency_at_50_load",
+            "name": "Category I1/1 Internal Power Supply Efficiency at 50% Load",
+            "type": "number"
+          },
+          {
+            "field": "category_i1_1_internal_power_supply_efficiency_at_100_load",
+            "name": "Category I1/1 Internal Power Supply Efficiency at 100% Load",
+            "type": "number"
+          },
+          {
+            "field": "external_power_supply_rated_power_w",
+            "name": "External Power Supply Rated Power (W)",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_rated_power_w",
+            "name": "Internal Power Supply Rated Power (W)",
+            "type": "number"
+          },
+          {
+            "field": "mux_device",
+            "name": "MUX Device",
+            "type": "text"
+          },
+          {
+            "field": "storage_technology",
+            "name": "Storage Technology",
+            "type": "text"
+          },
+          {
+            "field": "total_battery_capacity_watt_hours",
+            "name": "Total Battery Capacity (watt-hours)",
+            "type": "number"
+          },
+          {
+            "field": "default_low_power_mode",
+            "name": "Default Low-power Mode",
+            "type": "text"
+          },
+          {
+            "field": "long_idle_power_used_for_sleep_mode",
+            "name": "Long Idle Power Used for Sleep Mode",
+            "type": "text"
+          },
+          {
+            "field": "off_mode_watts",
+            "name": "Off Mode (watts)",
+            "type": "number"
+          },
+          {
+            "field": "sleep_mode_watts",
+            "name": "Sleep Mode (watts)",
+            "type": "number"
+          },
+          {
+            "field": "long_idle_watts",
+            "name": "Long Idle (watts)",
+            "type": "number"
+          },
+          {
+            "field": "short_idle_watts",
+            "name": "Short Idle (watts)",
+            "type": "number"
+          },
+          {
+            "field": "additional_measured_power_in_short_idle_at_115v__",
+            "name": "Additional Measured Power in Short Idle at 115V (W) ",
+            "type": "number"
+          },
+          {
+            "field": "base_tec_allowance_kwh",
+            "name": "Base TEC Allowance (kWh)",
+            "type": "number"
+          },
+          {
+            "field": "functional_adder_allowances_kwh",
+            "name": "Functional Adder Allowances (kWh)",
+            "type": "number"
+          },
+          {
+            "field": "tec_of_model_kwh",
+            "name": "TEC of Model (kWh)",
+            "type": "number"
+          },
+          {
+            "field": "maximum_tec_requirements_etec_max_kwh",
+            "name": "Maximum TEC Requirements (Etec max) (kWh) ",
+            "type": "number"
+          },
+          {
+            "field": "ethernet_capability",
+            "name": "Ethernet Capability",
+            "type": "text"
+          },
+          {
+            "field": "touch_screen",
+            "name": "Touch Screen",
+            "type": "text"
+          },
+          {
+            "field": "sleep_mode_default_time_upon_shipment_min",
+            "name": "Sleep Mode Default Time Upon Shipment (min.)",
+            "type": "number"
+          },
+          {
+            "field": "display_sleep_mode_default_time_upon_shipment_min",
+            "name": "Display Sleep Mode Default Time Upon Shipment (min.)",
+            "type": "number"
+          },
+          {
+            "field": "wol_wake_on_lan_from_sleep",
+            "name": "WOL (Wake on LAN) From Sleep",
+            "type": "text"
+          },
+          {
+            "field": "will_the_speed_of_any_active_1_gb_s_or_higher_ethernet_network_links_be_reduced_to_less_than_1_gb_s_when_transitioning_to_sleep_or_off_mode",
+            "name": "Will the Speed of Any Active 1 GB/s or Higher Ethernet Network Links be Reduced to Less Than 1 GB/s When Transitioning to Sleep or Off Mode?",
+            "type": "text"
+          },
+          {
+            "field": "date_available_on_market",
+            "name": "Date Available On Market",
+            "type": "calendar_date"
+          },
+          {
+            "field": "date_certified",
+            "name": "Date Certified",
+            "type": "calendar_date"
+          },
+          {
+            "field": "markets",
+            "name": "Markets",
+            "type": "text"
+          },
+          {
+            "field": "energy_star_model_identifier",
+            "name": "CB Model Identifier",
+            "type": "text"
+          }
+        ],
+        "sample_rows": 3,
+        "certification_matching": "NOT_EVALUATED"
+      },
+      "energyguide_probe": "OUT_OF_RECON_SCOPE"
+    },
+    "chromebook": {
+      "job_id": 104856607323,
+      "artifact_id": 10455330019,
+      "artifact_size_bytes": 13296,
+      "artifact_expires_at": "2026-09-30T15:20:57Z",
+      "artifact_zip_sha256": "7072fffac0565eed276a77ecf10c397675b69a502e042be242d8225c7102409d",
+      "recon": {
+        "captured_at": "2026-09-16T15:20:30.177174+00:00",
+        "run_id": "35114575198",
+        "attempt": "1",
+        "git_sha": "deabaff76e980ba33c97e54a3fd4ad31ba60532f",
+        "scope": "chromebook source contracts only",
+        "status": "PASS",
+        "phase_gate": "NOT_EVALUATED",
+        "observations": [
+          {
+            "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+            "method": "POST",
+            "status": 200,
+            "request_body": {
+              "clientCode": "b2c",
+              "clientName": "scom_pf",
+              "firstSearchYN": "true",
+              "countryCode": "us",
+              "storeID": "us",
+              "startIndex": "0",
+              "requestCount": "24",
+              "category_code": "03010000",
+              "taxonomy_code": "03010500",
+              "filters": "[]",
+              "sort": "recommended"
+            },
+            "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+            "fixture": "fixtures/pf-0.json",
+            "fixture_sha256": "88fea7c23966aea5cac31c379f3e8424756f23418ae09cd897bc125f11a5605b",
+            "page_count": 1
+          }
+        ],
+        "checks": [
+          {
+            "name": "plp_request_contract",
+            "status": "PASS",
+            "details": {
+              "url": "https://www.samsung.com/us/computers/chromebook/",
+              "api_total": 1
+            }
+          },
+          {
+            "name": "pagination_observation",
+            "status": "PASS",
+            "details": {
+              "groups": 1,
+              "exact_skus": 1,
+              "rounds": [
+                {
+                  "round": 0,
+                  "groups": 1,
+                  "expected_groups": 1
+                }
+              ],
+              "rendered_representative_link_count": 1,
+              "rendered_tile_count": 1,
+              "strict_tile_count_gate": "PASS"
+            }
+          },
+          {
+            "name": "pdp_identity_and_documents",
+            "status": "PASS",
+            "details": {
+              "target_sku": "XE550XGA-KC1US",
+              "url": "https://www.samsung.com/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us/",
+              "json_endpoints": 1,
+              "energyguide_metadata_count": null,
+              "document_collection_status": "NOT_EVALUATED",
+              "energyguide_probe": "OUT_OF_RECON_SCOPE",
+              "certification_matching": "NOT_EVALUATED"
+            }
+          },
+          {
+            "name": "epa_chromebook_dataset_contract",
+            "status": "PASS",
+            "details": {
+              "dataset_id": "rxdj-2c88",
+              "column_count": 68,
+              "sample_rows": 3
+            }
+          }
+        ],
+        "browser_identity": {
+          "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+          "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+          "browser_version": "153.0.8010.12",
+          "locale": "en-US",
+          "viewport": {
+            "width": 1365,
+            "height": 768
+          },
+          "profile": "desktop-linux-chromium"
+        }
+      },
+      "pdp_facts": {
+        "exact_sku": "XE550XGA-KC1US",
+        "spec_fields_raw": [
+          {
+            "group": "Operating System",
+            "name": "Operating System",
+            "value": "Chrome OS"
+          },
+          {
+            "group": "Processor",
+            "name": "CPU",
+            "value": "Intel® Core™ 3 Processor 100U (1.2 GHz up to 4.7 GHz 10 MB Smart Cache)"
+          },
+          {
+            "group": "Processor",
+            "name": "GPU",
+            "value": "Intel® Graphics"
+          },
+          {
+            "group": "Processor",
+            "name": "GPU Type",
+            "value": "Shared"
+          },
+          {
+            "group": "Memory",
+            "name": "Memory Capacity",
+            "value": "8 GB"
+          },
+          {
+            "group": "Memory",
+            "name": "Memory",
+            "value": "LPDDR5X (On Board)"
+          },
+          {
+            "group": "Memory",
+            "name": "Storage Capacity",
+            "value": "256 GB"
+          },
+          {
+            "group": "Memory",
+            "name": "Storage Type",
+            "value": "eUFS"
+          },
+          {
+            "group": "General Information",
+            "name": "Color",
+            "value": "Neptune Blue"
+          },
+          {
+            "group": "General Information",
+            "name": "Form Factor",
+            "value": "Laptop"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Speaker",
+            "value": "Stereo Speakers"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Mic",
+            "value": "Digital Mic"
+          },
+          {
+            "group": "Multimedia",
+            "name": "Camera",
+            "value": "2.0 MP"
+          },
+          {
+            "group": "Network",
+            "name": "Wi-Fi",
+            "value": "Wi-Fi 6E, 802.11 ax 2x2"
+          },
+          {
+            "group": "Network",
+            "name": "Bluetooth Version",
+            "value": "Bluetooth v5.3"
+          },
+          {
+            "group": "Ports",
+            "name": "HDMI",
+            "value": "1 HDMI 1.4"
+          },
+          {
+            "group": "Ports",
+            "name": "USB",
+            "value": "2 USB Type-C, 1 USB3.2"
+          },
+          {
+            "group": "Ports",
+            "name": "External Storage Support",
+            "value": "MicroSD"
+          },
+          {
+            "group": "Ports",
+            "name": "Earjack",
+            "value": "1 Headphone out/Mic-in Combo"
+          },
+          {
+            "group": "Input",
+            "name": "Keyboard",
+            "value": "Pro Keyboard with Numeric key"
+          },
+          {
+            "group": "Input",
+            "name": "Keyboard Backlit",
+            "value": "Yes"
+          },
+          {
+            "group": "Input",
+            "name": "Touchpad",
+            "value": "Clickpad"
+          },
+          {
+            "group": "Security",
+            "name": "TPM",
+            "value": "Yes"
+          },
+          {
+            "group": "Sensor",
+            "name": "Sensor",
+            "value": "Accelerometer Sensor"
+          },
+          {
+            "group": "Physical specification",
+            "name": "Dimension (WxDxH, mm)",
+            "value": "355.4 x 225.8 x 11.8 mm (13.99\" x 8.89\" x 0.46\")"
+          },
+          {
+            "group": "Physical specification",
+            "name": "Weight (kg)",
+            "value": "1.17 kg (2.58 lbs)"
+          },
+          {
+            "group": "Battery",
+            "name": "Battery Capacity (Typical, Wh)",
+            "value": "68.0"
+          },
+          {
+            "group": "Display",
+            "name": "Size (inch)",
+            "value": "15.6\""
+          },
+          {
+            "group": "Display",
+            "name": "Resolution",
+            "value": "1920 x 1080 (FHD)"
+          },
+          {
+            "group": "Display",
+            "name": "Type",
+            "value": "AMLOED"
+          },
+          {
+            "group": "Power",
+            "name": "AC Adapter",
+            "value": "45 W USB Type-C Adapter"
+          }
+        ],
+        "energy_consumption_raw": [],
+        "capacity_raw": [],
+        "screen_size_raw": [],
+        "screen_size_class_raw": [],
+        "active_display_size_raw": [],
+        "resolution_raw": [
+          {
+            "group": "Display",
+            "name": "Resolution",
+            "value": "1920 x 1080 (FHD)"
+          }
+        ],
+        "charging_power_raw": [],
+        "power_supply_raw": [],
+        "battery_capacity_raw": [
+          {
+            "group": "Battery",
+            "name": "Battery Capacity (Typical, Wh)",
+            "value": "68.0"
+          }
+        ],
+        "adapter_rating_raw": [
+          {
+            "group": "Power",
+            "name": "AC Adapter",
+            "value": "45 W USB Type-C Adapter"
+          }
+        ],
+        "computer_configuration_raw": [
+          {
+            "group": "Operating System",
+            "name": "Operating System",
+            "value": "Chrome OS"
+          },
+          {
+            "group": "Processor",
+            "name": "CPU",
+            "value": "Intel® Core™ 3 Processor 100U (1.2 GHz up to 4.7 GHz 10 MB Smart Cache)"
+          },
+          {
+            "group": "Processor",
+            "name": "GPU",
+            "value": "Intel® Graphics"
+          },
+          {
+            "group": "Memory",
+            "name": "Memory Capacity",
+            "value": "8 GB"
+          },
+          {
+            "group": "Memory",
+            "name": "Storage Capacity",
+            "value": "256 GB"
+          }
+        ],
+        "document_collection_status": "NOT_EVALUATED",
+        "power_consumption_raw": [],
+        "fuel_type_raw": [],
+        "cooktop_type_raw": [],
+        "oven_capacity_raw": [],
+        "hood_type_raw": [],
+        "venting_type_raw": [],
+        "airflow_raw": [],
+        "noise_raw": [],
+        "hood_power_raw": [],
+        "energy_star_spec_claim_raw": [],
+        "energy_star_structured_claim": null,
+        "energyguide_documents": []
+      },
+      "configuration": {
+        "target_sku": "XE550XGA-KC1US",
+        "final_url": "https://www.samsung.com/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us/",
+        "rendered_target_present": false,
+        "selected_controls": [
+          {
+            "sku": "xe550xga-kc1us",
+            "label": "Color Variant: Neptune Blue"
+          }
+        ],
+        "continue_sku": "xe550xga-kc1us",
+        "continue_visible": true
+      },
+      "epa": {
+        "dataset_id": "rxdj-2c88",
+        "name": "ENERGY STAR Certified Computers V9.0",
+        "rows_updated_at": 1789564401,
+        "columns": [
+          {
+            "field": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "type": "number"
+          },
+          {
+            "field": "energy_star_partner",
+            "name": "ENERGY STAR Partner",
+            "type": "text"
+          },
+          {
+            "field": "brand_name",
+            "name": "Brand Name",
+            "type": "text"
+          },
+          {
+            "field": "model_name",
+            "name": "Model Name",
+            "type": "text"
+          },
+          {
+            "field": "model_number",
+            "name": "Model Number",
+            "type": "text"
+          },
+          {
+            "field": "additional_model_information",
+            "name": "Additional Model Information",
+            "type": "text"
+          },
+          {
+            "field": "upc",
+            "name": "UPC",
+            "type": "text"
+          },
+          {
+            "field": "type",
+            "name": "Type",
+            "type": "text"
+          },
+          {
+            "field": "integrated_desktop_category",
+            "name": "Integrated Desktop Category",
+            "type": "text"
+          },
+          {
+            "field": "product_marketed_as_a_workstation",
+            "name": "Product Marketed as a Workstation",
+            "type": "text"
+          },
+          {
+            "field": "installed_npu",
+            "name": "Installed NPU",
+            "type": "text"
+          },
+          {
+            "field": "motherboard_form_factor",
+            "name": "Motherboard Form Factor",
+            "type": "text"
+          },
+          {
+            "field": "product_dimm_count",
+            "name": "Product DIMM Count",
+            "type": "number"
+          },
+          {
+            "field": "operating_system_name",
+            "name": "Operating System Name",
+            "type": "text"
+          },
+          {
+            "field": "processor_brand",
+            "name": "Processor Brand",
+            "type": "text"
+          },
+          {
+            "field": "processor_name",
+            "name": "Processor Name",
+            "type": "text"
+          },
+          {
+            "field": "physical_cpu_cores_count",
+            "name": "Physical CPU Cores (count)",
+            "type": "number"
+          },
+          {
+            "field": "cpu_packages_count",
+            "name": "CPU Packages (count)",
+            "type": "number"
+          },
+          {
+            "field": "cpu_base_clock_speed_ghz",
+            "name": "CPU Base Clock Speed (GHz) ",
+            "type": "number"
+          },
+          {
+            "field": "cpu_maximum_clock_speed_ghz",
+            "name": "CPU Maximum Clock Speed (GHz) ",
+            "type": "number"
+          },
+          {
+            "field": "system_memory_ram_gb",
+            "name": "System Memory (GB)",
+            "type": "number"
+          },
+          {
+            "field": "multi_channel_memory_support",
+            "name": "Multi-Channel Memory Support",
+            "type": "text"
+          },
+          {
+            "field": "capable_of_switchable_graphics",
+            "name": "Capable of Switchable Graphics",
+            "type": "text"
+          },
+          {
+            "field": "switchable_graphics_enabled_by_default_in_ac_mode",
+            "name": "Switchable Graphics Enabled by Default in AC Mode ",
+            "type": "text"
+          },
+          {
+            "field": "discrete_graphics_frame_buffer_bandwidth_gb_s",
+            "name": "Discrete Graphics Frame Buffer Bandwidth (GB/s) ",
+            "type": "number"
+          },
+          {
+            "field": "discrete_graphics_frame_buffer_data_width_bits",
+            "name": "Discrete Graphics Frame Buffer Data Width (bits) ",
+            "type": "number"
+          },
+          {
+            "field": "fast_ethernet_ports_count",
+            "name": "Fast Ethernet Ports (count)",
+            "type": "number"
+          },
+          {
+            "field": "gigabit_ethernet_ports_count",
+            "name": "Gigabit Ethernet Ports (count) ",
+            "type": "number"
+          },
+          {
+            "field": "gigabit_10_ethernet_ports_count",
+            "name": "10 Gigabit Ethernet Ports (count)",
+            "type": "number"
+          },
+          {
+            "field": "energy_efficient_ethernet_eee",
+            "name": "Energy Efficient Ethernet (EEE) ",
+            "type": "text"
+          },
+          {
+            "field": "number_of_installed_storage_drives",
+            "name": "Number of Installed Storage Drives ",
+            "type": "number"
+          },
+          {
+            "field": "number_of_integrated_displays_count",
+            "name": "Number of Integrated Displays (count) ",
+            "type": "number"
+          },
+          {
+            "field": "integrated_display_resolution_megapixels",
+            "name": "Integrated Display Resolution (megapixels) ",
+            "type": "number"
+          },
+          {
+            "field": "integrated_display_viewable_screen_area_sq_in",
+            "name": "Integrated Display Viewable Screen Area (sq in) ",
+            "type": "number"
+          },
+          {
+            "field": "enhanced_performance_display_present",
+            "name": "Enhanced Performance Display Present ",
+            "type": "text"
+          },
+          {
+            "field": "integrated_display_diagonal_screen_size_in",
+            "name": "Integrated Display Diagonal Screen Size (in)",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_10_load",
+            "name": "Internal Power Supply Efficiency at 10% Load",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_20_load",
+            "name": "Internal Power Supply Efficiency at 20% Load",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_50_load",
+            "name": "Internal Power Supply Efficiency at 50% Load",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_efficiency_at_100_load",
+            "name": "Internal Power Supply Efficiency at 100% Load",
+            "type": "number"
+          },
+          {
+            "field": "category_i1_1_internal_power_supply_efficiency_at_50_load",
+            "name": "Category I1/1 Internal Power Supply Efficiency at 50% Load",
+            "type": "number"
+          },
+          {
+            "field": "category_i1_1_internal_power_supply_efficiency_at_100_load",
+            "name": "Category I1/1 Internal Power Supply Efficiency at 100% Load",
+            "type": "number"
+          },
+          {
+            "field": "external_power_supply_rated_power_w",
+            "name": "External Power Supply Rated Power (W)",
+            "type": "number"
+          },
+          {
+            "field": "internal_power_supply_rated_power_w",
+            "name": "Internal Power Supply Rated Power (W)",
+            "type": "number"
+          },
+          {
+            "field": "mux_device",
+            "name": "MUX Device",
+            "type": "text"
+          },
+          {
+            "field": "storage_technology",
+            "name": "Storage Technology",
+            "type": "text"
+          },
+          {
+            "field": "total_battery_capacity_watt_hours",
+            "name": "Total Battery Capacity (watt-hours)",
+            "type": "number"
+          },
+          {
+            "field": "default_low_power_mode",
+            "name": "Default Low-power Mode",
+            "type": "text"
+          },
+          {
+            "field": "long_idle_power_used_for_sleep_mode",
+            "name": "Long Idle Power Used for Sleep Mode",
+            "type": "text"
+          },
+          {
+            "field": "off_mode_watts",
+            "name": "Off Mode (watts)",
+            "type": "number"
+          },
+          {
+            "field": "sleep_mode_watts",
+            "name": "Sleep Mode (watts)",
+            "type": "number"
+          },
+          {
+            "field": "long_idle_watts",
+            "name": "Long Idle (watts)",
+            "type": "number"
+          },
+          {
+            "field": "short_idle_watts",
+            "name": "Short Idle (watts)",
+            "type": "number"
+          },
+          {
+            "field": "additional_measured_power_in_short_idle_at_115v__",
+            "name": "Additional Measured Power in Short Idle at 115V (W) ",
+            "type": "number"
+          },
+          {
+            "field": "base_tec_allowance_kwh",
+            "name": "Base TEC Allowance (kWh)",
+            "type": "number"
+          },
+          {
+            "field": "functional_adder_allowances_kwh",
+            "name": "Functional Adder Allowances (kWh)",
+            "type": "number"
+          },
+          {
+            "field": "tec_of_model_kwh",
+            "name": "TEC of Model (kWh)",
+            "type": "number"
+          },
+          {
+            "field": "maximum_tec_requirements_etec_max_kwh",
+            "name": "Maximum TEC Requirements (Etec max) (kWh) ",
+            "type": "number"
+          },
+          {
+            "field": "ethernet_capability",
+            "name": "Ethernet Capability",
+            "type": "text"
+          },
+          {
+            "field": "touch_screen",
+            "name": "Touch Screen",
+            "type": "text"
+          },
+          {
+            "field": "sleep_mode_default_time_upon_shipment_min",
+            "name": "Sleep Mode Default Time Upon Shipment (min.)",
+            "type": "number"
+          },
+          {
+            "field": "display_sleep_mode_default_time_upon_shipment_min",
+            "name": "Display Sleep Mode Default Time Upon Shipment (min.)",
+            "type": "number"
+          },
+          {
+            "field": "wol_wake_on_lan_from_sleep",
+            "name": "WOL (Wake on LAN) From Sleep",
+            "type": "text"
+          },
+          {
+            "field": "will_the_speed_of_any_active_1_gb_s_or_higher_ethernet_network_links_be_reduced_to_less_than_1_gb_s_when_transitioning_to_sleep_or_off_mode",
+            "name": "Will the Speed of Any Active 1 GB/s or Higher Ethernet Network Links be Reduced to Less Than 1 GB/s When Transitioning to Sleep or Off Mode?",
+            "type": "text"
+          },
+          {
+            "field": "date_available_on_market",
+            "name": "Date Available On Market",
+            "type": "calendar_date"
+          },
+          {
+            "field": "date_certified",
+            "name": "Date Certified",
+            "type": "calendar_date"
+          },
+          {
+            "field": "markets",
+            "name": "Markets",
+            "type": "text"
+          },
+          {
+            "field": "energy_star_model_identifier",
+            "name": "CB Model Identifier",
+            "type": "text"
+          }
+        ],
+        "sample_rows": 3,
+        "certification_matching": "NOT_EVALUATED"
+      },
+      "energyguide_probe": "OUT_OF_RECON_SCOPE"
+    }
+  },
+  "certification_matching": "NOT_EVALUATED",
+  "phase_gate": "NOT_EVALUATED",
+  "coverage": "two consumer listing sources plus two individual PDP samples; generic EPA schema/sample only",
+  "listing_union": {
+    "exact_skus": 24,
+    "sku_source_provenance": {
+      "NP740VJG-KA1US": [
+        "computer"
+      ],
+      "NP740VJG-KG2US": [
+        "computer"
+      ],
+      "NP750QHA-KA1US": [
+        "computer"
+      ],
+      "NP750XHD-KB1US": [
+        "computer"
+      ],
+      "NP750XQB-KA2US": [
+        "computer"
+      ],
+      "NP760VJG-KA1US": [
+        "computer"
+      ],
+      "NP760VJG-KG2US": [
+        "computer"
+      ],
+      "NP760XJG-KG2US": [
+        "computer"
+      ],
+      "NP940XJG-KG1US": [
+        "computer"
+      ],
+      "NP940XJG-KG2US": [
+        "computer"
+      ],
+      "NP960QHA-KG1US": [
+        "computer"
+      ],
+      "NP960UJG-KG2US": [
+        "computer"
+      ],
+      "NP960UJH-XG2US": [
+        "computer"
+      ],
+      "NP960UJH-XG3US": [
+        "computer"
+      ],
+      "NP960UJH-XG7US": [
+        "computer"
+      ],
+      "NP960UJH-XG8US": [
+        "computer"
+      ],
+      "NP960XGL-XG1US": [
+        "computer"
+      ],
+      "NP960XGL-XG2US": [
+        "computer"
+      ],
+      "NP960XJG-KA1US": [
+        "computer"
+      ],
+      "NP960XJG-KA2US": [
+        "computer"
+      ],
+      "NP960XJG-KG1US": [
+        "computer"
+      ],
+      "NP960XMB-KB1US": [
+        "computer"
+      ],
+      "NP960XRD-KB1US": [
+        "computer"
+      ],
+      "XE550XGA-KC1US": [
+        "chromebook"
+      ]
+    }
+  }
+}

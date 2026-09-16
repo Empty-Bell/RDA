@@ -102,8 +102,21 @@ class size, active dimensions and resolution retained separately. Generic signag
 without annual monitor energy is not a Samsung match or zero-energy observation.
 EnergyGuide is OUT_OF_RECON_SCOPE. See MONITOR_SOURCE_CONTRACT.md and evidence.
 
-Next bounded task: Computer EPA-focused source-contract reconnaissance.
-Other 2 families and remaining claim/quality semantics are not complete.
+Computer EPA-focused reconnaissance PASS: run 35114575198, commit
+deabaff76e980ba33c97e54a3fd4ad31ba60532f; Galaxy Book job 104856607424,
+Chromebook job 104856607323. 103 tests and four live checks per Computer source leg
+passed; all 11 source jobs for 10 product groups succeeded. Separately linked Galaxy
+Book 11 groups/23 SKUs + Chromebook 1 group/1 SKU yield a verified 24-SKU union.
+NP960UJH-XG7US and XE550XGA-KC1US sample PDPs verified using selected SKU / visible
+purchase control and exact Specs-only array. Battery Wh, adapter W and TEC kWh remain
+distinct; Support is NOT_EVALUATED, metadata count null; EnergyGuide OUT_OF_RECON_SCOPE.
+Earlier lazy-summary/Specs contract failures and implementation pagination regression
+are preserved in computer-source-failure-history.json; stale failed run 35113871784
+was cancelled after evidence preservation. Final regression recovered all source jobs.
+See COMPUTER_SOURCE_CONTRACT.md and docs/evidence/computer-source-recon.json.
+
+Next bounded task: Tablet EPA-focused source-contract reconnaissance.
+Other 1 family and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;

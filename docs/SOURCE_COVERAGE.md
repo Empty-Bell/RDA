@@ -14,10 +14,13 @@ fact collection, EPA certification matching or compliance PASS.
 | Clothes Dryer | 54 | 2 (combo/standalone) | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 | Ventilating Hood | 16 | 1 | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 | Monitor / Display | 76 | 1 | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
+| Computer | 24 (Galaxy Book + Chromebook union) | 2 (Windows/Chrome OS) | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows per source leg |
 
 Listing snapshots include source variants and source-backed PDP URLs; they do not
 mean that each linked PDP has been visited. Counts are historical observations,
 not fixed production constants. See each product group's source contract for run IDs.
+Computer has two separately linked consumer listing sources; its union retains SKU
+provenance without treating repeated generic EPA queries as additional certification coverage.
 
 EPA generic sample rows can belong to other brands/product types. No Samsung SKU
 candidate lookup has been performed. Complete EPA snapshot/pagination, product-type

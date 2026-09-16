@@ -1,0 +1,37 @@
+[
+  {
+    "file": "tests/fixtures/computer/epa-metadata.projected.json",
+    "sha256": "c2b10aacd35c4c14593e07ed75d69c63c77de1882a4dae969ab2b8fb20e83e5c",
+    "source_run_id": 35111568246
+  },
+  {
+    "file": "tests/fixtures/computer/epa-sample.projected.json",
+    "sha256": "01a2dd5fb9d8d72ccb9fa3088d3df6d29a880dfcc973047a7f39b4b6abcd1d8a",
+    "source_run_id": 35111568246
+  },
+  {
+    "file": "tests/fixtures/computer/pf-chromebook-page-0.json",
+    "sha256": "88fea7c23966aea5cac31c379f3e8424756f23418ae09cd897bc125f11a5605b",
+    "source_run_id": 35113871784
+  },
+  {
+    "file": "tests/fixtures/computer/pf-page-0.json",
+    "sha256": "9c89ad78a9f7106bca12d5ff363ea1ef2472c1aede9c7dc45666f86abb93bffc",
+    "source_run_id": 35111568246
+  },
+  {
+    "file": "tests/fixtures/computer/selected-configuration.projected.json",
+    "sha256": "ae98bf96c5e6f3aca8f91c4c6fa1cf1d7eb869a3ba52e040919ff62515f5cb05",
+    "source_run_id": 35113694951
+  },
+  {
+    "file": "tests/fixtures/computer/specs-chromebook.projected.json",
+    "sha256": "e128824c76f1116f6fc154dbb62d6a9cf846c287cc076afc55a66081c23f7c3f",
+    "source_run_id": 35114137145
+  },
+  {
+    "file": "tests/fixtures/computer/specs-only.projected.json",
+    "sha256": "8ad1a5e1dbd86821a7becb6ad440c7964f5234162d309af4a7c08bb6bfa88325",
+    "source_run_id": 35113694951
+  }
+]

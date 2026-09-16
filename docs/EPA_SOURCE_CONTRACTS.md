@@ -86,3 +86,8 @@ The generic sample includes bathroom/utility fans; no Samsung SKU lookup is impl
 Monitor/Display discovery: qbg3-d468 Certified Displays; see MONITOR_SOURCE_CONTRACT.md.
 Product Type, voltage-specific annual monitor energy and mode power are separate.
 The generic signage sample can omit monitor annual energy; no per-SKU match implied.
+
+Computer discovery: rxdj-2c88 ENERGY STAR Certified Computers V9.0; see
+COMPUTER_SOURCE_CONTRACT.md. Type and exact hardware/OS configuration matter for
+later routing/matching. TEC kWh, mode power W, adapter rating W and battery Wh differ.
+Android OS in a generic Integrated Desktop sample does not establish Tablet routing.
