@@ -1,0 +1,347 @@
+{
+  "id": "rxdj-2c88",
+  "name": "ENERGY STAR Certified Computers V9.0",
+  "rowsUpdatedAt": 1789564401,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "energy_star_partner",
+      "name": "ENERGY STAR Partner",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_name",
+      "name": "Model Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "type",
+      "name": "Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "integrated_desktop_category",
+      "name": "Integrated Desktop Category",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "product_marketed_as_a_workstation",
+      "name": "Product Marketed as a Workstation",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "installed_npu",
+      "name": "Installed NPU",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "motherboard_form_factor",
+      "name": "Motherboard Form Factor",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "product_dimm_count",
+      "name": "Product DIMM Count",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "operating_system_name",
+      "name": "Operating System Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "processor_brand",
+      "name": "Processor Brand",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "processor_name",
+      "name": "Processor Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "physical_cpu_cores_count",
+      "name": "Physical CPU Cores (count)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cpu_packages_count",
+      "name": "CPU Packages (count)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cpu_base_clock_speed_ghz",
+      "name": "CPU Base Clock Speed (GHz) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "cpu_maximum_clock_speed_ghz",
+      "name": "CPU Maximum Clock Speed (GHz) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "system_memory_ram_gb",
+      "name": "System Memory (GB)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "multi_channel_memory_support",
+      "name": "Multi-Channel Memory Support",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "capable_of_switchable_graphics",
+      "name": "Capable of Switchable Graphics",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "switchable_graphics_enabled_by_default_in_ac_mode",
+      "name": "Switchable Graphics Enabled by Default in AC Mode ",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "discrete_graphics_frame_buffer_bandwidth_gb_s",
+      "name": "Discrete Graphics Frame Buffer Bandwidth (GB/s) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "discrete_graphics_frame_buffer_data_width_bits",
+      "name": "Discrete Graphics Frame Buffer Data Width (bits) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "fast_ethernet_ports_count",
+      "name": "Fast Ethernet Ports (count)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "gigabit_ethernet_ports_count",
+      "name": "Gigabit Ethernet Ports (count) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "gigabit_10_ethernet_ports_count",
+      "name": "10 Gigabit Ethernet Ports (count)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "energy_efficient_ethernet_eee",
+      "name": "Energy Efficient Ethernet (EEE) ",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "number_of_installed_storage_drives",
+      "name": "Number of Installed Storage Drives ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "number_of_integrated_displays_count",
+      "name": "Number of Integrated Displays (count) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "integrated_display_resolution_megapixels",
+      "name": "Integrated Display Resolution (megapixels) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "integrated_display_viewable_screen_area_sq_in",
+      "name": "Integrated Display Viewable Screen Area (sq in) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "enhanced_performance_display_present",
+      "name": "Enhanced Performance Display Present ",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "integrated_display_diagonal_screen_size_in",
+      "name": "Integrated Display Diagonal Screen Size (in)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "internal_power_supply_efficiency_at_10_load",
+      "name": "Internal Power Supply Efficiency at 10% Load",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "internal_power_supply_efficiency_at_20_load",
+      "name": "Internal Power Supply Efficiency at 20% Load",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "internal_power_supply_efficiency_at_50_load",
+      "name": "Internal Power Supply Efficiency at 50% Load",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "internal_power_supply_efficiency_at_100_load",
+      "name": "Internal Power Supply Efficiency at 100% Load",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "category_i1_1_internal_power_supply_efficiency_at_50_load",
+      "name": "Category I1/1 Internal Power Supply Efficiency at 50% Load",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "category_i1_1_internal_power_supply_efficiency_at_100_load",
+      "name": "Category I1/1 Internal Power Supply Efficiency at 100% Load",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "external_power_supply_rated_power_w",
+      "name": "External Power Supply Rated Power (W)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "internal_power_supply_rated_power_w",
+      "name": "Internal Power Supply Rated Power (W)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "mux_device",
+      "name": "MUX Device",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "storage_technology",
+      "name": "Storage Technology",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "total_battery_capacity_watt_hours",
+      "name": "Total Battery Capacity (watt-hours)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "default_low_power_mode",
+      "name": "Default Low-power Mode",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "long_idle_power_used_for_sleep_mode",
+      "name": "Long Idle Power Used for Sleep Mode",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "off_mode_watts",
+      "name": "Off Mode (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "sleep_mode_watts",
+      "name": "Sleep Mode (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "long_idle_watts",
+      "name": "Long Idle (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "short_idle_watts",
+      "name": "Short Idle (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "additional_measured_power_in_short_idle_at_115v__",
+      "name": "Additional Measured Power in Short Idle at 115V (W) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "base_tec_allowance_kwh",
+      "name": "Base TEC Allowance (kWh)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "functional_adder_allowances_kwh",
+      "name": "Functional Adder Allowances (kWh)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "tec_of_model_kwh",
+      "name": "TEC of Model (kWh)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "maximum_tec_requirements_etec_max_kwh",
+      "name": "Maximum TEC Requirements (Etec max) (kWh) ",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "ethernet_capability",
+      "name": "Ethernet Capability",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "touch_screen",
+      "name": "Touch Screen",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "sleep_mode_default_time_upon_shipment_min",
+      "name": "Sleep Mode Default Time Upon Shipment (min.)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "display_sleep_mode_default_time_upon_shipment_min",
+      "name": "Display Sleep Mode Default Time Upon Shipment (min.)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "wol_wake_on_lan_from_sleep",
+      "name": "WOL (Wake on LAN) From Sleep",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "will_the_speed_of_any_active_1_gb_s_or_higher_ethernet_network_links_be_reduced_to_less_than_1_gb_s_when_transitioning_to_sleep_or_off_mode",
+      "name": "Will the Speed of Any Active 1 GB/s or Higher Ethernet Network Links be Reduced to Less Than 1 GB/s When Transitioning to Sleep or Off Mode?",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available On Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_certified",
+      "name": "Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "CB Model Identifier",
+      "dataTypeName": "text"
+    }
+  ]
+}

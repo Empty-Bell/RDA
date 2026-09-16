@@ -8,10 +8,10 @@ import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlsplit, parse_qs
+from urllib.parse import urljoin, urlsplit, parse_qs, urlencode
 
 from runner_probe import safe_url, sanitize
-from source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract, energyguide_ocr_reason
+from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason
 from browser_runtime import desktop_context
 
 OUT = Path('runtime/source-recon')
@@ -101,6 +101,7 @@ def main():
     captured_pf = []
     pdp_json = []
     computer_spec_endpoints = []
+    computer_group_ids = []
 
     def check(name, fn):
         try:
@@ -121,6 +122,8 @@ def main():
             url = response.url
             if family == 'computer' and response.request.resource_type in ('xhr', 'fetch'):
                 parsed_url = urlsplit(url)
+                if parsed_url.path.endswith('/ecom-data'):
+                    computer_group_ids.extend(parse_qs(parsed_url.query).get('group_id', []))
                 if parsed_url.hostname == 'www.samsung.com' and not re.search(r'chat|analytics|license|account|auth', parsed_url.path, re.I):
                     endpoint = {'path': parsed_url.path, 'status': response.status}
                     if parsed_url.path.endswith('/bridge-data'):
@@ -153,7 +156,8 @@ def main():
                 try:
                     if 'json' not in response.headers.get('content-type', ''):
                         return
-                    data = project_bridge(response.json())
+                    raw_data = response.json()
+                    data = project_computer_specs(raw_data) if family == 'computer' and isinstance(raw_data, list) else project_bridge(raw_data)
                     paths = profile(data)
                     if paths and len(pdp_json) < 12:
                         index = len(pdp_json)
@@ -200,13 +204,7 @@ def main():
                 if len(all_products) == total:
                     break
                 before = len(captured_pf)
-                # Jumping to an early document bottom can skip or precede lazy sections.
-                # Walk the viewport through configuration/summary, bounded to 12 steps.
-                for _ in range(12):
-                    if target.lower() in page.locator('body').inner_text().lower():
-                        break
-                    page.evaluate('window.scrollBy(0, window.innerHeight * 0.75)')
-                    page.wait_for_timeout(750)
+                page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
                 page.wait_for_timeout(3500)
                 if len(captured_pf) > before:
                     continue  # scrolling may already trigger the next page
@@ -279,27 +277,39 @@ def main():
                 sampling_source = 'previous hosted fixture; independent source diagnosis, not population'
             target = product['modelCode']
             url = urljoin('https://www.samsung.com', product['pdpURL'])
+            if family == 'computer':
+                computer_group_ids.clear()
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
             page.wait_for_timeout(10000)
             if family == 'computer':
-                # Buy configurator mounts selected SKU and lazy Specs after hydration.
-                # Retain the same rendered exact-SKU gate; URL alone is insufficient.
-                page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+                # Current selected controls plus exact backend Specs corroborate SKU.
                 try:
-                    page.wait_for_function('(sku) => document.body.innerText.toLowerCase().includes(sku.toLowerCase())',
-                                           arg=target, timeout=30000)
+                    page.locator('[data-modelcode][aria-checked="true"]').first.wait_for(state='visible', timeout=30000)
                 finally:
                     save('computer-spec-endpoints.json', computer_spec_endpoints)
-                    save('computer-configurator-observation.json', {
+                    purchase_control = page.get_by_role('button', name=re.compile(r'^Continue')).first
+                    selection = {
                         'target_sku': target, 'final_url': safe_url(page.url),
                         'rendered_target_present': target.lower() in page.locator('body').inner_text().lower(),
                         'selected_controls': page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
                             '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
-                        'buttons': page.get_by_role('button').all_text_contents()[:30]})
-                specs_button = page.get_by_role('button', name='Specs', exact=True)
-                specs_button.first.wait_for(state='visible', timeout=20000)
-                specs_button.first.click(timeout=10000)
-                page.wait_for_timeout(10000)
+                        'continue_sku': purchase_control.get_attribute('data-modelcode') if purchase_control.count() else None,
+                        'continue_visible': purchase_control.is_visible() if purchase_control.count() else False}
+                    save('computer-configurator-observation.json', selection)
+                computer_selection(selection, target)
+                assert len(set(computer_group_ids)) == 1, 'Missing/ambiguous current ecom-data group provenance'
+                spec_url = 'https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?' + urlencode({
+                    'data_type': 'Specs', 'store_type': 'B2C', 'group_id': computer_group_ids[0],
+                    'modelCode': target, 'version': 'v2'})
+                spec_response = context.request.get(spec_url, timeout=30000)
+                assert spec_response.status == 200, 'Computer Specs request failed'
+                projected = project_computer_specs(spec_response.json())
+                index = len(pdp_json)
+                fixture_name = f'fixtures/pdp-{index}.json'
+                digest = save(fixture_name, projected)
+                pdp_json.append({'url': safe_url(spec_url), 'method': 'GET', 'status': spec_response.status,
+                                 'fixture': fixture_name, 'fixture_sha256': digest,
+                                 'sampling_source': 'observed Specs pattern; current ecom-data group and selected SKU'})
             text = page.locator('body').inner_text()
             html = page.content()
             links = page.locator('a[href]').evaluate_all('(els) => els.map(e => ({text:e.textContent,url:e.href}))')
@@ -314,14 +324,16 @@ def main():
             if family == 'computer':
                 save('computer-spec-endpoints.json', computer_spec_endpoints)
             assert response and response.status < 400, 'PDP HTTP access failed'
-            assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
+            if family != 'computer':
+                assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
             assert pdp_json, 'Specs/Support bridge-data endpoint was not observed'
             source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))
             facts = pdp_facts(source, target, family=family)
             save('pdp-facts.json', facts)
             if config.get('recon_domain') == 'EPA_ONLY':
                 return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
-                        'energyguide_metadata_count': len(facts['energyguide_documents']),
+                        'energyguide_metadata_count': None if facts['document_collection_status'] == 'NOT_EVALUATED' else len(facts['energyguide_documents']),
+                        'document_collection_status': facts['document_collection_status'],
                         'energyguide_probe': 'OUT_OF_RECON_SCOPE', 'certification_matching': 'NOT_EVALUATED'}
             assert facts['energyguide_documents'], 'No EnergyGuide metadata in target Support record'
             document = facts['energyguide_documents'][0]

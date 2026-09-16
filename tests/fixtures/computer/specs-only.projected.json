@@ -1,0 +1,3834 @@
+{
+  "Specs": [
+    {
+      "modelCode": "NP740VJG-KA1US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 5 processor 325"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "16 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "512 GB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2 (2nd Slot : M.2 2230)"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 6E, 802.11 a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, MIMO, HE160, 1024-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "Ethernet",
+              "value": "10/100/1000 Gigabit ethernet"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI"
+            },
+            {
+              "name": "USB",
+              "value": "2 USB Type-C, 2 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            },
+            {
+              "name": "Network Ports",
+              "value": "1 RJ45 (LAN)"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Clickpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "Security Slot",
+              "value": "Yes"
+            },
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "313.4 x 221.1 x 14.9 mm (12.34\" x 8.70\" x 0.59\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.43 kg (3.15 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "4.57"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "61.2"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "14.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "1920 x 1200 (WUXGA)"
+            },
+            {
+              "name": "Type",
+              "value": "IPS, Anti-Glare"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "45W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "40 | 45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP740VJG-KG2US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 355"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "16 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "512 GB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2 (2nd Slot : M.2 2230)"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 6E, 802.11 a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, MIMO, HE160, 1024-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "Ethernet",
+              "value": "10/100/1000 Gigabit ethernet"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI"
+            },
+            {
+              "name": "USB",
+              "value": "2 USB Type-C, 2 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            },
+            {
+              "name": "Network Ports",
+              "value": "1 RJ45 (LAN)"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Clickpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "Security Slot",
+              "value": "Yes"
+            },
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "313.4 x 221.1 x 14.9 mm (12.34\" x 8.70\" x 0.59\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.43 kg (3.15 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "4.57"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "61.2"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "14.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "1920 x 1200 (WUXGA)"
+            },
+            {
+              "name": "Type",
+              "value": "IPS, Anti-Glare"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "45W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "40 | 45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP760VJG-KA1US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 5 processor 325"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "16 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "512 GB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 6E, 802.11 a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, MIMO, HE160, 1024-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "Ethernet",
+              "value": "10/100/1000 Gigabit ethernet"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI"
+            },
+            {
+              "name": "USB",
+              "value": "2 USB Type-C, 2 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            },
+            {
+              "name": "Network Ports",
+              "value": "1 RJ45 (LAN)"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Clickpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "Security Slot",
+              "value": "Yes"
+            },
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "357.1 x 248.0 x 14.9 mm (14.06\" x 9.76\" x 0.59\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.74 kg (3.84 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "5.82"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "61.2"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "1920 x 1200 (WUXGA)"
+            },
+            {
+              "name": "Type",
+              "value": "IPS, Anti-Glare"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "45W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "40 | 45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP760VJG-KG2US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 355"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "16 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 6E, 802.11 a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, MIMO, HE160, 1024-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "Ethernet",
+              "value": "10/100/1000 Gigabit ethernet"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI"
+            },
+            {
+              "name": "USB",
+              "value": "2 USB Type-C, 2 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            },
+            {
+              "name": "Network Ports",
+              "value": "1 RJ45 (LAN)"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Clickpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "Security Slot",
+              "value": "Yes"
+            },
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "357.1 x 248.0 x 14.9 mm (14.06\" x 9.76\" x 0.59\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.74 kg (3.84 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "5.82"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "61.2"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "1920 x 1200 (WUXGA)"
+            },
+            {
+              "name": "Type",
+              "value": "IPS, Anti-Glare"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "45W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "40 | 45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP760XJG-KG2US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 355"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "16 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "512 GB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 6E, 802.11 a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, MIMO, HE160, 1024-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "Ethernet",
+              "value": "10/100/1000 Gigabit ethernet"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI"
+            },
+            {
+              "name": "USB",
+              "value": "2 USB Type-C, 2 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            },
+            {
+              "name": "Network Ports",
+              "value": "1 RJ45 (LAN)"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Clickpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "Security Slot",
+              "value": "Yes"
+            },
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "357.1 x 248.0 x 16.8 mm (14.06\" x 9.76\" x 0.66\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.84 kg (4.06 lbs)"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "61.2"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "1920 x 1200 (WUXGA)"
+            },
+            {
+              "name": "Type",
+              "value": "IPS"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "45W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "40 | 45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP940XJG-KG1US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 356H"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "32 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4G+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "314.2 x 220.6 x 11.6 mm (12.37\" x 8.69\" x 0.46\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.24 kg (2.73 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "4.20"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "67.18"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "14.0\" (35.6 cm)"
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "65W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "60 | 65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP940XJG-KG2US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 356H"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "16 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "512 GB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4G+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "314.2 x 220.6 x 11.6 mm (12.37\" x 8.69\" x 0.46\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.24 kg (2.73 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "4.20"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "67.18"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "14.0\" (35.6 cm)"
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "65W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "60 | 65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960UJG-KG2US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra X7 processor 358H"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Arc™ B390"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "32 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Six Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4G+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "SDXC"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 15.4 mm (14.05\" x 9.76\" x 0.61\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.79 kg (3.95 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "6.23"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "80.20"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\" (40.6 cm)"
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "100W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "95 | 100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960UJH-XG2US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 356H"
+            },
+            {
+              "name": "GPU",
+              "value": "NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Discrete"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "32 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Six Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4G+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "SDXC"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 15.4 mm (14.05\" x 9.76\" x 0.61\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.89 kg (4.17 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "6.25"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "80.20"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\" (40.6 cm)"
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "140W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "135 | 140"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960UJH-XG3US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 356H"
+            },
+            {
+              "name": "GPU",
+              "value": "NVIDIA® GeForce RTX™ 5070 Laptop GPU 8GB GDDR7"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Discrete"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "32 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Six Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "SDXC"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 15.4 mm (14.05\" x 9.76\" x 0.61\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.89 kg (4.17 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "6.25"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "80.20"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "140W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "135 | 140"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960UJH-XG7US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 9 processor 386H"
+            },
+            {
+              "name": "GPU",
+              "value": "NVIDIA® GeForce RTX™ 5070 Laptop GPU 8GB GDDR7"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Discrete"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "64 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "2 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Six Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "SDXC"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 15.4 mm (14.05\" x 9.76\" x 0.61\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.89 kg (4.17 lbs)"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "80.20"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "140W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "135 | 140"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960UJH-XG8US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 9 processor 386H"
+            },
+            {
+              "name": "GPU",
+              "value": "NVIDIA® GeForce RTX™ 5070 Laptop GPU 8GB GDDR7"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Discrete"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "32 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Six Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "SDXC"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 15.4 mm (14.05\" x 9.76\" x 0.61\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.89 kg (4.17 lbs)"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "80.20"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "140W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "135 | 140"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960XJG-KA1US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 356H"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "32 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Quad Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4G+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 11.9 mm (14.05\" x 9.76\" x 0.47\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.59 kg (3.51 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "5.28"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "78.07"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\" (40.6 cm)"
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "65W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "60 | 65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960XJG-KA2US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra 7 processor 356H"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "16 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Quad Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4G+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 11.9 mm (14.05\" x 9.76\" x 0.47\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.59 kg (3.51 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "5.28"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "78.07"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\" (40.6 cm)"
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "65W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "60 | 65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960XJG-KG1US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Windows 11 Home<br>Samsung recommends Windows 11 Pro for Business"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ Ultra X7 processor 358H"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Arc™ B390"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            },
+            {
+              "name": "NPU",
+              "value": "Intel® NPU"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "32 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "1 TB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "NVMe SSD"
+            },
+            {
+              "name": "Number of Storage Slots",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Quad Speakers"
+            },
+            {
+              "name": "Smart Amp",
+              "value": "Yes"
+            },
+            {
+              "name": "Sound Effect",
+              "value": "Dolby Atmos®"
+            },
+            {
+              "name": "Mic",
+              "value": "Dual Array Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 7, 802.11 a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, MIMO, EHT320, 4096-QAM"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 2.1 (Supports 8K@60Hz, 5K@120Hz)"
+            },
+            {
+              "name": "USB",
+              "value": "2 Thunderbolt™ 4, 1 USB3.2"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro keyboard"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Haptic Touchpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Ambient Light Sensor,Hall Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            },
+            {
+              "name": "FingerPrint Reader",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "356.9 x 248.0 x 11.9 mm (14.05\" x 9.76\" x 0.47\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.59 kg (3.51 lbs)"
+            },
+            {
+              "name": "Shipping Weight &#40;lb&#41;",
+              "value": "5.35"
+            }
+          ]
+        },
+        {
+          "groupName": "Certification",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-Ion"
+            },
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "78.07"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "16.0\""
+            },
+            {
+              "name": "Resolution",
+              "value": "2880 x 1800 (WQXGA+)"
+            },
+            {
+              "name": "Type",
+              "value": "Dynamic AMOLED 2X, Anti-Reflective"
+            },
+            {
+              "name": "Touch Screen",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "65W USB Type-C Adapter"
+            },
+            {
+              "name": "USB PD Support",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Required for Charging (Min / Max, W)",
+              "value": "60 | 65"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "document_collection_status": "NOT_EVALUATED"
+}

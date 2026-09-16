@@ -1,0 +1,1000 @@
+{
+  "searchTotalCount": 11,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "NP960UJH-XG7US",
+      "modelName": "NP960UJHB-EXP",
+      "id": "NP960UJH-XG7US",
+      "group_id": "FMY_ID_600397",
+      "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us",
+      "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "14",
+        "pickYn": "N",
+        "representativeModel": "NP960UJH-XG7US",
+        "familyName": "Galaxy Book6 Ultra 16 Ultra 9",
+        "id": "600397",
+        "marketingName": "Galaxy Book6 Ultra (16\", Ultra 9)"
+      },
+      "chips": [
+        {
+          "fmyChipName": "2 TB",
+          "fmyChipType": "Storage"
+        },
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP960UJH-XG7US",
+          "modelName": "NP960UJHB-EXP",
+          "id": "NP960UJH-XG7US",
+          "group_id": "FMY_ID_600397",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "14",
+            "pickYn": "N",
+            "representativeModel": "NP960UJH-XG7US",
+            "familyName": "Galaxy Book6 Ultra 16 Ultra 9",
+            "id": "600397",
+            "marketingName": "Galaxy Book6 Ultra (16\", Ultra 9)"
+          },
+          "chips": [
+            {
+              "fmyChipName": "2 TB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP960UJH-XG8US",
+          "modelName": "NP960UJHB-EXP",
+          "id": "NP960UJH-XG8US",
+          "group_id": "FMY_ID_600397",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-1tb-gray-sku-np960ujh-xg8us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-1tb-gray-sku-np960ujh-xg8us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "14",
+            "pickYn": "N",
+            "representativeModel": "NP960UJH-XG7US",
+            "familyName": "Galaxy Book6 Ultra 16 Ultra 9",
+            "id": "600397",
+            "marketingName": "Galaxy Book6 Ultra (16\", Ultra 9)"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960XRD-KB1US",
+      "modelName": "NP960XRDA-EXP",
+      "id": "NP960XRD-KB1US",
+      "group_id": "FMY_ID_594207",
+      "pdpURL": "/us/computers/galaxy-book/galaxy-book6-edge/buy/galaxy-book6-edge-16-snapdragon-x2-elite-1tb-gray-blue-sku-np960xrd-kb1us",
+      "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-edge/buy/galaxy-book6-edge-16-snapdragon-x2-elite-1tb-gray-blue-sku-np960xrd-kb1us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "13",
+        "pickYn": "N",
+        "representativeModel": "NP960XRD-KB1US",
+        "familyName": "Galaxy Book6 Edge",
+        "id": "594207",
+        "marketingName": "Galaxy Book6 Edge"
+      },
+      "chips": [],
+      "groupedProductList": [
+        {
+          "modelCode": "NP960XRD-KB1US",
+          "modelName": "NP960XRDA-EXP",
+          "id": "NP960XRD-KB1US",
+          "group_id": "FMY_ID_594207",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-edge/buy/galaxy-book6-edge-16-snapdragon-x2-elite-1tb-gray-blue-sku-np960xrd-kb1us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-edge/buy/galaxy-book6-edge-16-snapdragon-x2-elite-1tb-gray-blue-sku-np960xrd-kb1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "13",
+            "pickYn": "N",
+            "representativeModel": "NP960XRD-KB1US",
+            "familyName": "Galaxy Book6 Edge",
+            "id": "594207",
+            "marketingName": "Galaxy Book6 Edge"
+          },
+          "chips": []
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960UJG-KG2US",
+      "modelName": "NP960UJGD-EXP",
+      "id": "NP960UJG-KG2US",
+      "group_id": "FMY_ID_581491",
+      "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-x7-1tb-gray-sku-np960ujg-kg2us",
+      "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-x7-1tb-gray-sku-np960ujg-kg2us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "12",
+        "pickYn": "N",
+        "representativeModel": "NP960UJG-KG2US",
+        "familyName": "Galaxy Book6 Ultra 16 Ultra 7",
+        "id": "581491",
+        "marketingName": "Galaxy Book6 Ultra"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "1 TB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP960UJG-KG2US",
+          "modelName": "NP960UJGD-EXP",
+          "id": "NP960UJG-KG2US",
+          "group_id": "FMY_ID_581491",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-x7-1tb-gray-sku-np960ujg-kg2us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-x7-1tb-gray-sku-np960ujg-kg2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "NP960UJG-KG2US",
+            "familyName": "Galaxy Book6 Ultra 16 Ultra 7",
+            "id": "581491",
+            "marketingName": "Galaxy Book6 Ultra"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP960UJH-XG3US",
+          "modelName": "NP960UJHE-EXP",
+          "id": "NP960UJH-XG3US",
+          "group_id": "FMY_ID_581491",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-7-1tb-gray-sku-np960ujh-xg3us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-7-1tb-gray-sku-np960ujh-xg3us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "NP960UJG-KG2US",
+            "familyName": "Galaxy Book6 Ultra 16 Ultra 7",
+            "id": "581491",
+            "marketingName": "Galaxy Book6 Ultra"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP960UJH-XG2US",
+          "modelName": "NP960UJHE-EXP",
+          "id": "NP960UJH-XG2US",
+          "group_id": "FMY_ID_581491",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-7-1tb-gray-sku-np960ujh-xg2us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-7-1tb-gray-sku-np960ujh-xg2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "12",
+            "pickYn": "N",
+            "representativeModel": "NP960UJG-KG2US",
+            "familyName": "Galaxy Book6 Ultra 16 Ultra 7",
+            "id": "581491",
+            "marketingName": "Galaxy Book6 Ultra"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960XJG-KA1US",
+      "modelName": "NP960XJGE-EXP",
+      "id": "NP960XJG-KA1US",
+      "group_id": "FMY_ID_581503",
+      "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-7-1tb-gray-sku-np960xjg-ka1us",
+      "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-7-1tb-gray-sku-np960xjg-ka1us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "11",
+        "pickYn": "N",
+        "representativeModel": "NP960XJG-KA1US",
+        "familyName": "Galaxy Book6 Pro 16 Ultra 7 4XE",
+        "id": "581503",
+        "marketingName": "Galaxy Book6 Pro"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "1 TB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP960XJG-KA1US",
+          "modelName": "NP960XJGE-EXP",
+          "id": "NP960XJG-KA1US",
+          "group_id": "FMY_ID_581503",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-7-1tb-gray-sku-np960xjg-ka1us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-7-1tb-gray-sku-np960xjg-ka1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "NP960XJG-KA1US",
+            "familyName": "Galaxy Book6 Pro 16 Ultra 7 4XE",
+            "id": "581503",
+            "marketingName": "Galaxy Book6 Pro"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP940XJG-KG2US",
+          "modelName": "NP940XJGE-EXP",
+          "id": "NP940XJG-KG2US",
+          "group_id": "FMY_ID_581503",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-14-intel-core-ultra-7-512gb-gray-sku-np940xjg-kg2us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-14-intel-core-ultra-7-512gb-gray-sku-np940xjg-kg2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "NP960XJG-KA1US",
+            "familyName": "Galaxy Book6 Pro 16 Ultra 7 4XE",
+            "id": "581503",
+            "marketingName": "Galaxy Book6 Pro"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP960XJG-KG1US",
+          "modelName": "NP960XJGD-EXP",
+          "id": "NP960XJG-KG1US",
+          "group_id": "FMY_ID_581503",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-x7-1tb-gray-sku-np960xjg-kg1us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-x7-1tb-gray-sku-np960xjg-kg1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "NP960XJG-KA1US",
+            "familyName": "Galaxy Book6 Pro 16 Ultra 7 4XE",
+            "id": "581503",
+            "marketingName": "Galaxy Book6 Pro"
+          },
+          "chips": [
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP940XJG-KG1US",
+          "modelName": "NP940XJGE-EXP",
+          "id": "NP940XJG-KG1US",
+          "group_id": "FMY_ID_581503",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-14-intel-core-ultra-7-1tb-gray-sku-np940xjg-kg1us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-14-intel-core-ultra-7-1tb-gray-sku-np940xjg-kg1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "NP960XJG-KA1US",
+            "familyName": "Galaxy Book6 Pro 16 Ultra 7 4XE",
+            "id": "581503",
+            "marketingName": "Galaxy Book6 Pro"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP960XJG-KA2US",
+          "modelName": "NP960XJGE-EXP",
+          "id": "NP960XJG-KA2US",
+          "group_id": "FMY_ID_581503",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-7-1tb-gray-sku-np960xjg-ka2us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-pro-16-intel-core-ultra-7-1tb-gray-sku-np960xjg-ka2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "NP960XJG-KA1US",
+            "familyName": "Galaxy Book6 Pro 16 Ultra 7 4XE",
+            "id": "581503",
+            "marketingName": "Galaxy Book6 Pro"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP760VJG-KG2US",
+      "modelName": "NP760VJGF-EXP",
+      "id": "NP760VJG-KG2US",
+      "group_id": "FMY_ID_586144",
+      "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-1tb-gray-sku-np760vjg-kg2us",
+      "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-1tb-gray-sku-np760vjg-kg2us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "10",
+        "pickYn": "N",
+        "representativeModel": "NP760VJG-KG2US",
+        "familyName": "Galaxy Book6 Base",
+        "id": "586144",
+        "marketingName": "Galaxy Book6"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "1 TB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP760VJG-KG2US",
+          "modelName": "NP760VJGF-EXP",
+          "id": "NP760VJG-KG2US",
+          "group_id": "FMY_ID_586144",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-1tb-gray-sku-np760vjg-kg2us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-1tb-gray-sku-np760vjg-kg2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "NP760VJG-KG2US",
+            "familyName": "Galaxy Book6 Base",
+            "id": "586144",
+            "marketingName": "Galaxy Book6"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP760VJG-KA1US",
+          "modelName": "NP760VJGG-EXP",
+          "id": "NP760VJG-KA1US",
+          "group_id": "FMY_ID_586144",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-5-512gb-gray-sku-np760vjg-ka1us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-5-512gb-gray-sku-np760vjg-ka1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "NP760VJG-KG2US",
+            "familyName": "Galaxy Book6 Base",
+            "id": "586144",
+            "marketingName": "Galaxy Book6"
+          },
+          "chips": [
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP740VJG-KG2US",
+          "modelName": "NP740VJGF-EXP",
+          "id": "NP740VJG-KG2US",
+          "group_id": "FMY_ID_586144",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-512gb-gray-sku-np740vjg-kg2us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-512gb-gray-sku-np740vjg-kg2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "NP760VJG-KG2US",
+            "familyName": "Galaxy Book6 Base",
+            "id": "586144",
+            "marketingName": "Galaxy Book6"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP740VJG-KA1US",
+          "modelName": "NP740VJGG-EXP",
+          "id": "NP740VJG-KA1US",
+          "group_id": "FMY_ID_586144",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-5-512gb-gray-sku-np740vjg-ka1us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-5-512gb-gray-sku-np740vjg-ka1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "NP760VJG-KG2US",
+            "familyName": "Galaxy Book6 Base",
+            "id": "586144",
+            "marketingName": "Galaxy Book6"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960XMB-KB1US",
+      "modelName": "NP960XMBA-EXP",
+      "id": "NP960XMB-KB1US",
+      "group_id": "FMY_ID_573060",
+      "pdpURL": "/us/computing/galaxy-books/galaxy-book4-edge/buy/galaxy-book4-edge-16-qualcomm-snapdragon-x-elite-1tb-sapphire-blue-sku-np960xmb-kb1us",
+      "consumerUrl": "/us/computing/galaxy-books/galaxy-book4-edge/buy/galaxy-book4-edge-16-qualcomm-snapdragon-x-elite-1tb-sapphire-blue-sku-np960xmb-kb1us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "5",
+        "pickYn": "N",
+        "representativeModel": "NP960XMB-KB1US",
+        "familyName": "Galaxy Book4 Edge 15.6 X Plus 42",
+        "id": "573060",
+        "marketingName": "Galaxy Book4 Edge"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c8d3df",
+          "fmyChipName": "Sapphire Blue",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP960XMB-KB1US",
+          "modelName": "NP960XMBA-EXP",
+          "id": "NP960XMB-KB1US",
+          "group_id": "FMY_ID_573060",
+          "pdpURL": "/us/computing/galaxy-books/galaxy-book4-edge/buy/galaxy-book4-edge-16-qualcomm-snapdragon-x-elite-1tb-sapphire-blue-sku-np960xmb-kb1us",
+          "consumerUrl": "/us/computing/galaxy-books/galaxy-book4-edge/buy/galaxy-book4-edge-16-qualcomm-snapdragon-x-elite-1tb-sapphire-blue-sku-np960xmb-kb1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "5",
+            "pickYn": "N",
+            "representativeModel": "NP960XMB-KB1US",
+            "familyName": "Galaxy Book4 Edge 15.6 X Plus 42",
+            "id": "573060",
+            "marketingName": "Galaxy Book4 Edge"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c8d3df",
+              "fmyChipName": "Sapphire Blue",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP750XQB-KA2US",
+          "modelName": "NP750XQBB-EXP",
+          "id": "NP750XQB-KA2US",
+          "group_id": "FMY_ID_573060",
+          "pdpURL": "/us/computing/galaxy-books/galaxy-book4-edge/buy/galaxy-book4-edge-15-6-qualcomm-snapdragon-x-512gb-sapphire-blue-a-copilot-pc-sku-np750xqb-ka2us",
+          "consumerUrl": "/us/computing/galaxy-books/galaxy-book4-edge/buy/galaxy-book4-edge-15-6-qualcomm-snapdragon-x-512gb-sapphire-blue-a-copilot-pc-sku-np750xqb-ka2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "5",
+            "pickYn": "N",
+            "representativeModel": "NP960XMB-KB1US",
+            "familyName": "Galaxy Book4 Edge 15.6 X Plus 42",
+            "id": "573060",
+            "marketingName": "Galaxy Book4 Edge"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c8d3df",
+              "fmyChipName": "Sapphire Blue",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP760XJG-KG2US",
+      "modelName": "NP760XJGF-EXP",
+      "id": "NP760XJG-KG2US",
+      "group_id": "FMY_ID_591431",
+      "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-355-512gb-gray-sku-np760xjg-kg2us",
+      "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-355-512gb-gray-sku-np760xjg-kg2us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "2",
+        "pickYn": "N",
+        "representativeModel": "NP760XJG-KG2US",
+        "familyName": "Galaxy Book6 16 16 GB a Copilot+ PC",
+        "id": "591431",
+        "marketingName": "Galaxy Book6"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "512 GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP760XJG-KG2US",
+          "modelName": "NP760XJGF-EXP",
+          "id": "NP760XJG-KG2US",
+          "group_id": "FMY_ID_591431",
+          "pdpURL": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-355-512gb-gray-sku-np760xjg-kg2us",
+          "consumerUrl": "/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-7-355-512gb-gray-sku-np760xjg-kg2us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "2",
+            "pickYn": "N",
+            "representativeModel": "NP760XJG-KG2US",
+            "familyName": "Galaxy Book6 16 16 GB a Copilot+ PC",
+            "id": "591431",
+            "marketingName": "Galaxy Book6"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960QHA-KG1US",
+      "modelName": "NP960QHAA-EXP",
+      "id": "NP960QHA-KG1US",
+      "group_id": "FMY_ID_584442",
+      "pdpURL": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-pro-360-16-intel-core-ultra-7-1tb-gray-sku-np960qha-kg1us",
+      "consumerUrl": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-pro-360-16-intel-core-ultra-7-1tb-gray-sku-np960qha-kg1us",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "9",
+        "pickYn": "N",
+        "representativeModel": "NP960QHA-KG1US",
+        "familyName": "Galaxy Book5 Pro 360",
+        "id": "584442",
+        "marketingName": "Galaxy Book5 Pro 360"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#808080",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "1 TB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP960QHA-KG1US",
+          "modelName": "NP960QHAA-EXP",
+          "id": "NP960QHA-KG1US",
+          "group_id": "FMY_ID_584442",
+          "pdpURL": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-pro-360-16-intel-core-ultra-7-1tb-gray-sku-np960qha-kg1us",
+          "consumerUrl": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-pro-360-16-intel-core-ultra-7-1tb-gray-sku-np960qha-kg1us",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "N",
+            "representativeModel": "NP960QHA-KG1US",
+            "familyName": "Galaxy Book5 Pro 360",
+            "id": "584442",
+            "marketingName": "Galaxy Book5 Pro 360"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP750QHA-KA1US",
+      "modelName": "NP750QHAA-EXP",
+      "id": "NP750QHA-KA1US",
+      "group_id": "FMY_ID_587868",
+      "pdpURL": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-360-15-6-intel-core-ultra-7-512gb-gray-sku-np750qha-ka1us",
+      "consumerUrl": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-360-15-6-intel-core-ultra-7-512gb-gray-sku-np750qha-ka1us",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "7",
+        "pickYn": "N",
+        "representativeModel": "NP750QHA-KA1US",
+        "familyName": "Galaxy Book5 360 15",
+        "id": "587868",
+        "marketingName": "Galaxy Book5 360 15\""
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#808080",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP750QHA-KA1US",
+          "modelName": "NP750QHAA-EXP",
+          "id": "NP750QHA-KA1US",
+          "group_id": "FMY_ID_587868",
+          "pdpURL": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-360-15-6-intel-core-ultra-7-512gb-gray-sku-np750qha-ka1us",
+          "consumerUrl": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-360-15-6-intel-core-ultra-7-512gb-gray-sku-np750qha-ka1us",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "NP750QHA-KA1US",
+            "familyName": "Galaxy Book5 360 15",
+            "id": "587868",
+            "marketingName": "Galaxy Book5 360 15\""
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#808080",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP750XHD-KB1US",
+      "modelName": "NP750XHDA-EXP",
+      "id": "NP750XHD-KB1US",
+      "group_id": "FMY_ID_587574",
+      "pdpURL": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-15-6-intel-core-ultra-7-512gb-silver-sku-np750xhd-kb1us",
+      "consumerUrl": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-15-6-intel-core-ultra-7-512gb-silver-sku-np750xhd-kb1us",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "6",
+        "pickYn": "N",
+        "representativeModel": "NP750XHD-KB1US",
+        "familyName": "Galaxy Book5 15.6",
+        "id": "587574",
+        "marketingName": "Galaxy Book5 15.6\""
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c7c8ca",
+          "fmyChipName": "Silver",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP750XHD-KB1US",
+          "modelName": "NP750XHDA-EXP",
+          "id": "NP750XHD-KB1US",
+          "group_id": "FMY_ID_587574",
+          "pdpURL": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-15-6-intel-core-ultra-7-512gb-silver-sku-np750xhd-kb1us",
+          "consumerUrl": "/us/computing/galaxy-books/galaxy-book5-series/buy/galaxy-book5-15-6-intel-core-ultra-7-512gb-silver-sku-np750xhd-kb1us",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "NP750XHD-KB1US",
+            "familyName": "Galaxy Book5 15.6",
+            "id": "587574",
+            "marketingName": "Galaxy Book5 15.6\""
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NP960XGL-XG2US",
+      "modelName": "NP960XGLZ-EXP",
+      "id": "NP960XGL-XG2US",
+      "group_id": "FMY_ID_572925",
+      "pdpURL": "/us/computing/galaxy-books/galaxy-book4-series/buy/galaxy-book4-ultra-16-inch-ultra-7-16gb-1tb-sku-np960xgl-xg2us",
+      "consumerUrl": "/us/computing/galaxy-books/galaxy-book4-series/buy/galaxy-book4-ultra-16-inch-ultra-7-16gb-1tb-sku-np960xgl-xg2us",
+      "ecomFlag": "Y",
+      "stockFlag": "N",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "4",
+        "pickYn": "N",
+        "representativeModel": "NP960XGL-XG2US",
+        "familyName": "Galaxy Book4 Ultra 16",
+        "id": "572925",
+        "marketingName": "Galaxy Book4 Ultra"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#606e81",
+          "fmyChipName": "Moonstone Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "1 TB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NP960XGL-XG2US",
+          "modelName": "NP960XGLZ-EXP",
+          "id": "NP960XGL-XG2US",
+          "group_id": "FMY_ID_572925",
+          "pdpURL": "/us/computing/galaxy-books/galaxy-book4-series/buy/galaxy-book4-ultra-16-inch-ultra-7-16gb-1tb-sku-np960xgl-xg2us",
+          "consumerUrl": "/us/computing/galaxy-books/galaxy-book4-series/buy/galaxy-book4-ultra-16-inch-ultra-7-16gb-1tb-sku-np960xgl-xg2us",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "NP960XGL-XG2US",
+            "familyName": "Galaxy Book4 Ultra 16",
+            "id": "572925",
+            "marketingName": "Galaxy Book4 Ultra"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#606e81",
+              "fmyChipName": "Moonstone Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "NP960XGL-XG1US",
+          "modelName": "NP960XGLZ-EXP",
+          "id": "NP960XGL-XG1US",
+          "group_id": "FMY_ID_572925",
+          "pdpURL": "/us/computing/galaxy-books/galaxy-book4-series/buy/galaxy-book4-ultra-16-inch-ultra-9-32gb-1tb-sku-np960xgl-xg1us",
+          "consumerUrl": "/us/computing/galaxy-books/galaxy-book4-series/buy/galaxy-book4-ultra-16-inch-ultra-9-32gb-1tb-sku-np960xgl-xg1us",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "NP960XGL-XG2US",
+            "familyName": "Galaxy Book4 Ultra 16",
+            "id": "572925",
+            "marketingName": "Galaxy Book4 Ultra"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#606e81",
+              "fmyChipName": "Moonstone Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

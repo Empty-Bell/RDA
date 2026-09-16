@@ -32,6 +32,32 @@ def project_bridge(data):
     }
 
 
+def project_computer_specs(data):
+    """Observed buy-page Specs-only array; absent Support is not document absence."""
+    if not isinstance(data, list) or not data:
+        raise ValueError('Missing computer Specs array')
+    for item in data:
+        if not isinstance(item, dict) or not item.get('modelCode') or not isinstance(item.get('fullSpecs'), list):
+            raise ValueError('Computer Specs record drifted')
+        for group in item['fullSpecs']:
+            if not isinstance(group.get('specList'), list):
+                raise ValueError('Computer specList drifted')
+    return {'Specs': [{'modelCode': x['modelCode'],
+                      'fullSpecs': [{'groupName': g.get('groupName'),
+                                     'specList': [{'name': s.get('name'), 'value': s.get('value')}
+                                                  for s in g['specList']]} for g in x['fullSpecs']]}
+                     for x in data], 'document_collection_status': 'NOT_EVALUATED'}
+
+
+def computer_selection(data, target):
+    controls = data.get('selected_controls', [])
+    if not controls or any((x.get('sku') or '').upper() != target.upper() for x in controls):
+        raise ValueError('Selected computer configuration missing or differs from target SKU')
+    if not data.get('continue_visible') or (data.get('continue_sku') or '').upper() != target.upper():
+        raise ValueError('Computer purchase control does not corroborate selected SKU')
+    return {'exact_sku': target, 'identity_basis': 'selected configuration and visible purchase control; no purchase made'}
+
+
 def pf_page(data):
     if not isinstance(data, dict):
         raise ValueError('pf_search root must be object')
@@ -91,13 +117,14 @@ def pdp_facts(data, target, family='refrigerator'):
     if family not in names:
         raise ValueError('Unknown PDP family contract')
     energy_name, capacity_name = names[family]
-    if not isinstance(data, dict) or not isinstance(data.get('Specs'), list) or not isinstance(data.get('Support'), list):
+    specs_only = family == 'computer' and data.get('document_collection_status') == 'NOT_EVALUATED'
+    if not isinstance(data, dict) or not isinstance(data.get('Specs'), list) or (not specs_only and not isinstance(data.get('Support'), list)):
         raise ValueError('Missing Specs/Support bridge-data contract')
     specs = [x for x in data['Specs'] if x.get('modelCode') == target]
-    support = [x for x in data['Support'] if x.get('modelCode') == target]
-    if len(specs) != 1 or len(support) != 1:
+    support = [x for x in data.get('Support', []) if x.get('modelCode') == target]
+    if len(specs) != 1 or (not specs_only and len(support) != 1):
         raise ValueError('Target exact SKU missing or duplicated in Specs/Support')
-    if not isinstance(specs[0].get('fullSpecs'), list) or not isinstance(support[0].get('supports'), list):
+    if not isinstance(specs[0].get('fullSpecs'), list) or (not specs_only and not isinstance(support[0].get('supports'), list)):
         raise ValueError('Missing specification/document collection')
     fields = []
     for group in specs[0]['fullSpecs']:
@@ -105,7 +132,7 @@ def pdp_facts(data, target, family='refrigerator'):
             raise ValueError('Missing specList')
         for item in group['specList']:
             fields.append({'group': group.get('groupName'), 'name': item.get('name'), 'value': item.get('value')})
-    documents = [x for x in support[0]['supports'] if re.fullmatch(r'energy\s*guide', x.get('name', ''), re.I)]
+    documents = [] if specs_only else [x for x in support[0]['supports'] if re.fullmatch(r'energy\s*guide', x.get('name', ''), re.I)]
     return {'exact_sku': target,
             'spec_fields_raw': fields,
             'energy_consumption_raw': [x for x in fields if energy_name is not None and x['name'] == energy_name],
@@ -116,6 +143,10 @@ def pdp_facts(data, target, family='refrigerator'):
             'resolution_raw': [x for x in fields if x['name'] == 'Resolution'],
             'charging_power_raw': [x for x in fields if 'Charging Power' in (x['name'] or '')],
             'power_supply_raw': [x for x in fields if x['name'] == 'Power Supply'],
+            'battery_capacity_raw': [x for x in fields if x['name'] == 'Battery Capacity (Typical, Wh)'],
+            'adapter_rating_raw': [x for x in fields if x['name'] == 'AC Adapter'],
+            'computer_configuration_raw': [x for x in fields if x['name'] in ('CPU', 'GPU', 'Memory Capacity', 'Storage Capacity', 'Operating System')],
+            'document_collection_status': 'NOT_EVALUATED' if specs_only else 'OBSERVED',
             'power_consumption_raw': [x for x in fields if (x['name'] or '').startswith('Power Consumption (')],
             'fuel_type_raw': [x for x in fields if x['name'] == 'Fuel Type'],
             'cooktop_type_raw': [x for x in fields if x['name'] == 'Cooktop Type'],
