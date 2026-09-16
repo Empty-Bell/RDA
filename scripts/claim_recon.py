@@ -39,6 +39,39 @@ def project_nested_claim_fields(payload):
             'root_sections': [key for key in payload if not private.search(key)] if isinstance(payload, dict) else ['ARRAY' if isinstance(payload, list) else 'SCALAR']}
 
 
+def project_inline_product_claims(payload):
+    """Observed NEXT_DATA product array only; never traverse unrelated page props."""
+    try:
+        products = payload['props']['pageProps']['productData']['products']
+    except (KeyError, TypeError):
+        raise ValueError('Observed inline product array path drifted')
+    if not isinstance(products, list) or not products:
+        raise ValueError('Inline product array unavailable/empty')
+    fields = []
+    records = []
+    for index, product in enumerate(products):
+        if not isinstance(product, dict):
+            raise ValueError('Inline product record drifted')
+        identity = {key: product[key] for key in ('modelCode','modelcode','model_code','sku')
+                    if isinstance(product.get(key), str) and product[key]}
+        if not identity:
+            raise ValueError('Inline product identity missing')
+        record = {'identifiers': identity, 'energy_star_field_present': 'energyStarFlag' in product}
+        if 'energyStarFlag' in product:
+            value = product['energyStarFlag']
+            if value is not None and not isinstance(value, (str, bool, int, float)):
+                raise ValueError('Inline energyStarFlag scalar drifted')
+            record['energyStarFlag'] = value
+            fields.append({'path': f'$.props.pageProps.productData.products[{index}].energyStarFlag',
+                           'identifiers_raw': list(identity.values()),
+                           'identity_basis': 'explicit identifiers on observed inline product record',
+                           'name': 'energyStarFlag', 'value': value})
+        records.append(record)
+    return {'fields': fields, 'truncated': False,
+            'root_sections': ['props.pageProps.productData.products'],
+            'product_claim_records': records}
+
+
 def badge_attribution(snapshot, exact_jsonld, target):
     attributed = []
     if len(exact_jsonld) != 1 or len(snapshot['product_jsonld']) != 1:

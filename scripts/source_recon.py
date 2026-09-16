@@ -13,7 +13,7 @@ from urllib.parse import urljoin, urlsplit, parse_qs, urlencode
 from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason
 from browser_runtime import desktop_context
-from claim_recon import project_claim_records, project_nested_claim_fields, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
+from claim_recon import project_claim_records, project_nested_claim_fields, project_inline_product_claims, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
 
 OUT = Path('runtime/source-recon')
 FAMILIES = {
@@ -366,8 +366,10 @@ def main():
             inline_scripts = page.locator('script#__NEXT_DATA__').all_text_contents()
             for inline in inline_scripts:
                 try:
-                    structured_claim_probes.append({**project_nested_claim_fields(json.loads(inline)),
-                        'source_url': safe_url(page.url), 'source_kind': 'public inline NEXT_DATA', 'status': response.status})
+                    inline_projection = project_inline_product_claims(json.loads(inline))
+                    save('fixtures/inline-product-claims.json', inline_projection)
+                    structured_claim_probes.append({**inline_projection,
+                        'source_url': safe_url(page.url), 'source_kind': 'public inline NEXT_DATA product array', 'status': response.status})
                 except Exception as exc:
                     structured_claim_errors.append({'source_url': safe_url(page.url), 'source_kind': 'public inline NEXT_DATA',
                                                     'error_type': type(exc).__name__})

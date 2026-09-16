@@ -1,7 +1,7 @@
 import unittest
 import json
 from pathlib import Path
-from scripts.claim_recon import project_nested_claim_fields, claim_facts
+from scripts.claim_recon import project_nested_claim_fields, project_inline_product_claims, claim_facts
 
 class ClaimAttributionContract(unittest.TestCase):
     def setUp(self):
@@ -91,3 +91,22 @@ class ClaimAttributionContract(unittest.TestCase):
         result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
         self.assertEqual(result['structured_probe_status'],'BOUNDED_PROJECTION_TRUNCATED')
         self.assertEqual(result['pdp_structured_claim_status'],'NOT_EVALUATED')
+
+    def test_inline_product_array_ignores_large_unrelated_page_props(self):
+        payload={'props':{'pageProps':{'productData':{'products':[{'modelCode':'SKU','energyStarFlag':'Y'}]},
+                                     'exchangeDevices':[{'private':'ignored'}]*30000}}}
+        probe=project_inline_product_claims(payload)
+        self.assertFalse(probe['truncated'])
+        self.assertEqual(probe['fields'][0]['value'],'Y')
+        self.assertNotIn('private',str(probe))
+
+    def test_inline_product_path_or_identity_drift_is_failure(self):
+        for payload in ({},{'props':{'pageProps':{'productData':{'products':[]}}}},
+                        {'props':{'pageProps':{'productData':{'products':[{'energyStarFlag':'Y'}]}}}}):
+            with self.assertRaises(ValueError): project_inline_product_claims(payload)
+
+    def test_missing_inline_flag_is_distinct_from_negative_value(self):
+        payload={'props':{'pageProps':{'productData':{'products':[{'sku':'SKU'}, {'sku':'OTHER','energyStarFlag':'N'}]}}}}
+        probe=project_inline_product_claims(payload)
+        self.assertFalse(probe['product_claim_records'][0]['energy_star_field_present'])
+        self.assertEqual(probe['fields'][0]['value'],'N')
