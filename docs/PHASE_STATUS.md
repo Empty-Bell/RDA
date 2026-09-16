@@ -85,8 +85,16 @@ metadata/schema/sample verified. Mixed-case Energy Star Certification now retain
 UNKNOWN where no verified spec exists. Earlier refrigerator duplicate pagination failure
 run 35108542847 preserved; final source snapshot passed. See DRYER_SOURCE_CONTRACT.md.
 
-Next bounded task: Ventilating Hood EPA-focused source-contract reconnaissance.
-Other 4 families and remaining claim/quality semantics are not complete.
+Ventilating Hood EPA-focused reconnaissance PASS: run 35110234760, job 104841727946,
+commit a5b4494b39fed2992aa7503d6e4d673a749e06d5. 79 tests and four hood source checks
+passed; all eight family jobs succeeded. 6 API groups = 6 rendered groups, 16 exact
+SKUs; NK30CB700WCGAA sample PDP plus 8dv7-nngq metadata/three generic rows verified.
+Raw CFM range, power W, noise dBA/sones and venting type remain separate; bathroom
+fan sample is not hood certification matching. EnergyGuide is OUT_OF_RECON_SCOPE.
+See HOOD_SOURCE_CONTRACT.md and docs/evidence/hood-source-recon.json.
+
+Next bounded task: Monitor / Display EPA-focused source-contract reconnaissance.
+Other 3 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;

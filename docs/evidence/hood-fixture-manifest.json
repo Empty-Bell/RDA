@@ -1,0 +1,22 @@
+[
+  {
+    "file": "tests/fixtures/hood/bridge-specs-support.json",
+    "sha256": "4cb03f57e1ef056b0b3e5f7e912e07c644a0ae3903cebcc9a24e113a3ec8c098",
+    "source_run_id": 35109754946
+  },
+  {
+    "file": "tests/fixtures/hood/epa-metadata.projected.json",
+    "sha256": "ebc61c6194f02038253c2cffa31f9785f960997c450b11dac655ef12f3e898b8",
+    "source_run_id": 35109754946
+  },
+  {
+    "file": "tests/fixtures/hood/epa-sample.projected.json",
+    "sha256": "3c5b62350f749fcdc48ea0a77f55c4dc437070b5445f85da97e9d5ac0dd50c0b",
+    "source_run_id": 35109754946
+  },
+  {
+    "file": "tests/fixtures/hood/pf-page-0.json",
+    "sha256": "39cabdb806013e41b0577260d9efb36d81442e9d0610015cdb376c54deadd053",
+    "source_run_id": 35109754946
+  }
+]

@@ -12,6 +12,7 @@ fact collection, EPA certification matching or compliance PASS.
 | Range | 58 | 1 electric | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 | Cooktop | 20 | 2 (gas/radiant electric) | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 | Clothes Dryer | 54 | 2 (combo/standalone) | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
+| Ventilating Hood | 16 | 1 | OUT_OF_RECON_SCOPE (EPA-only) | metadata + 3 generic sample rows |
 
 Listing snapshots include source variants and source-backed PDP URLs; they do not
 mean that each linked PDP has been visited. Counts are historical observations,

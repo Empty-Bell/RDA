@@ -78,3 +78,7 @@ Fixtures: epa-metadata.projected.json, epa-sample.projected.json.
 Schema tests distinguish dataset access from certification lookup and reject missing
 required columns or an empty/error sample without creating a no-candidate conclusion.
 Certification matching is NOT_EVALUATED.
+
+Ventilating Hood discovery: official Certified Ventilating Fans dataset 8dv7-nngq;
+see HOOD_SOURCE_CONTRACT.md for URLs, observed fields and type/measurement limitations.
+The generic sample includes bathroom/utility fans; no Samsung SKU lookup is implied.

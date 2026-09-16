@@ -1,0 +1,498 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35110234760",
+  "job_id": 104841727946,
+  "artifact_id": 10452375797,
+  "artifact_size_bytes": 11510,
+  "artifact_zip_sha256": "28ae71ff42692a2898d76216561625698d1330d7f3954acfe429e6fde2d8432a",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T14:42:00.534499+00:00",
+    "run_id": "35110234760",
+    "attempt": "1",
+    "git_sha": "a5b4494b39fed2992aa7503d6e4d673a749e06d5",
+    "scope": "hood source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "15",
+          "category_code": "08080000",
+          "taxonomy_code": "08080400",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "39cabdb806013e41b0577260d9efb36d81442e9d0610015cdb376c54deadd053",
+        "page_count": 6
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/cooking-appliances/range-hoods/",
+          "api_total": 6
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 6,
+          "exact_skus": 16,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 6,
+              "expected_groups": 6
+            }
+          ],
+          "rendered_representative_link_count": 2,
+          "rendered_tile_count": 6,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "NK30CB700WCGAA",
+          "url": "https://www.samsung.com/us/cooking-appliances/range-hoods/wall-mounted-30-bespoke-smart-hood-with-lcd-display-in-clean-grey-sku-nk30cb700wcgaa/",
+          "json_endpoints": 1,
+          "energyguide_metadata_count": 0,
+          "energyguide_probe": "OUT_OF_RECON_SCOPE",
+          "certification_matching": "NOT_EVALUATED"
+        }
+      },
+      {
+        "name": "epa_hood_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "8dv7-nngq",
+          "column_count": 42,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "pdp_facts": {
+    "exact_sku": "NK30CB700WCGAA",
+    "spec_fields_raw": [
+      {
+        "group": "Weights/Dimensions",
+        "name": "Product Width",
+        "value": "30\""
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Product Dimensions",
+        "value": "29 7/8\" x 25 7/16\" x 19 11/16\""
+      },
+      {
+        "group": "Weights/Dimensions",
+        "name": "Product Weight",
+        "value": "35.7"
+      },
+      {
+        "group": "Key Features",
+        "name": "ADA Compliant",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Wi-Fi Connectivity",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "SmartThings",
+        "value": "Yes"
+      },
+      {
+        "group": "Design",
+        "name": "Color",
+        "value": "Clean Grey Panel-Stainless Steel Duct"
+      },
+      {
+        "group": "Design",
+        "name": "General Feature",
+        "value": "Ventilation"
+      },
+      {
+        "group": "Design",
+        "name": "Hood Size",
+        "value": "30\""
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Venting Type",
+        "value": "Exterior & Recirculating Capable"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Hood Type",
+        "value": "Wall Mount Chimney"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "CFM",
+        "value": "390-630"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Lighting",
+        "value": "LED Bar"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Number of Fan Speeds",
+        "value": "4 (3 step + booster)"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Filter Type",
+        "value": "Baffle"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Removable Filter",
+        "value": "Yes"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Control Type",
+        "value": "Touch"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Noise Level",
+        "value": "50 dBA (1.0 sones)"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Power",
+        "value": "210W"
+      },
+      {
+        "group": "Hood Performance",
+        "name": "Rated Voltage",
+        "value": "120V / 60 Hz"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Height (decimal)",
+        "value": "25.44"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Width (decimal)",
+        "value": "29.88"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Depth (decimal)",
+        "value": "19.69"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Width (extra)",
+        "value": "+ 3 inches for open door"
+      },
+      {
+        "group": "Dimensions",
+        "name": "Height (extra)",
+        "value": "+ 2 inches for ventillation"
+      }
+    ],
+    "energy_consumption_raw": [],
+    "capacity_raw": [],
+    "screen_size_raw": [],
+    "power_consumption_raw": [],
+    "fuel_type_raw": [],
+    "cooktop_type_raw": [],
+    "oven_capacity_raw": [],
+    "hood_type_raw": [
+      {
+        "group": "Hood Performance",
+        "name": "Hood Type",
+        "value": "Wall Mount Chimney"
+      }
+    ],
+    "venting_type_raw": [
+      {
+        "group": "Hood Performance",
+        "name": "Venting Type",
+        "value": "Exterior & Recirculating Capable"
+      }
+    ],
+    "airflow_raw": [
+      {
+        "group": "Hood Performance",
+        "name": "CFM",
+        "value": "390-630"
+      }
+    ],
+    "noise_raw": [
+      {
+        "group": "Hood Performance",
+        "name": "Noise Level",
+        "value": "50 dBA (1.0 sones)"
+      }
+    ],
+    "hood_power_raw": [
+      {
+        "group": "Hood Performance",
+        "name": "Power",
+        "value": "210W"
+      }
+    ],
+    "energy_star_spec_claim_raw": [],
+    "energy_star_structured_claim": null,
+    "energyguide_documents": []
+  },
+  "epa": {
+    "dataset_id": "8dv7-nngq",
+    "name": "ENERGY STAR Certified Ventilating Fans",
+    "rows_updated_at": 1789563715,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "type": "text"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_name",
+        "name": "Model Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "unit_type",
+        "name": "Type",
+        "type": "text"
+      },
+      {
+        "field": "merv_of_in_line_fan_filter",
+        "name": "MERV of In-line Fan Filter",
+        "type": "number"
+      },
+      {
+        "field": "number_of_speeds",
+        "name": "Number of Speeds",
+        "type": "text"
+      },
+      {
+        "field": "duct_size",
+        "name": "Duct Size",
+        "type": "text"
+      },
+      {
+        "field": "sound_level_sones",
+        "name": "Sound Level (sones)",
+        "type": "text"
+      },
+      {
+        "field": "bathroom_and_utility_room_sound_level_sones_at_0_25_in_w_g",
+        "name": "Bathroom and Utility Room Sound Level (sones) at 0.25 in. w.g.",
+        "type": "number"
+      },
+      {
+        "field": "bathroom_and_utility_room_airflow_at_0_25_in_w_g",
+        "name": "Bathroom and Utility Room Airflow at 0.25 in. w.g.",
+        "type": "text"
+      },
+      {
+        "field": "shipped_with_energy_star_lamp_s",
+        "name": "Shipped with ENERGY STAR Lamp(s)",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_lamp_esuid",
+        "name": "ENERGY STAR Lamp ESUID",
+        "type": "number"
+      },
+      {
+        "field": "alternate_energy_star_lamps_esuids",
+        "name": "Alternate ENERGY STAR Lamps ESUIDs",
+        "type": "number"
+      },
+      {
+        "field": "energy_star_lamp_partner",
+        "name": "ENERGY STAR Lamp Partner",
+        "type": "text"
+      },
+      {
+        "field": "lamp_model_number",
+        "name": "Lamp Model Number",
+        "type": "text"
+      },
+      {
+        "field": "lighting_technology_used",
+        "name": "Lighting Technology",
+        "type": "text"
+      },
+      {
+        "field": "light_output_lumens",
+        "name": "Total Light Output (lumens)",
+        "type": "number"
+      },
+      {
+        "field": "total_input_power_watts",
+        "name": "Total Input Power (Watts)",
+        "type": "number"
+      },
+      {
+        "field": "luminaire_efficacy",
+        "name": "Energy Efficiency - Measured Outside the Fixture (lm/W)",
+        "type": "number"
+      },
+      {
+        "field": "power_factor",
+        "name": "Power Factor",
+        "type": "number"
+      },
+      {
+        "field": "correlated_color_temperature_kelvin",
+        "name": "Light Color Appearance (CCT)",
+        "type": "text"
+      },
+      {
+        "field": "color_rendering_index_cri",
+        "name": "Light Color Quality (CRI)",
+        "type": "number"
+      },
+      {
+        "field": "life_source_life_hours",
+        "name": "Light Source Life (Hours)",
+        "type": "number"
+      },
+      {
+        "field": "special_features_dimming_motion_sensing_etc",
+        "name": "Special Features (Dimming, Motion Sensing, etc.)",
+        "type": "text"
+      },
+      {
+        "field": "notes",
+        "name": "Notes",
+        "type": "text"
+      },
+      {
+        "field": "lighting",
+        "name": "Lighting",
+        "type": "text"
+      },
+      {
+        "field": "airflow_1_cfm",
+        "name": "Airflow 1 (cfm)",
+        "type": "number"
+      },
+      {
+        "field": "airflow_2_cfm",
+        "name": "Airflow 2 (cfm)",
+        "type": "number"
+      },
+      {
+        "field": "airflow_3_cfm",
+        "name": "Airflow 3 (cfm)",
+        "type": "number"
+      },
+      {
+        "field": "efficacy_1_cfm_w",
+        "name": "Efficacy 1 (cfm/Watt)",
+        "type": "number"
+      },
+      {
+        "field": "efficacy_2_cfm_w",
+        "name": "Efficacy 2 (cfm/Watt)",
+        "type": "number"
+      },
+      {
+        "field": "efficacy_3_cfm_w",
+        "name": "Efficacy 3 (cfm/Watt)",
+        "type": "number"
+      },
+      {
+        "field": "ventilating_fan_features",
+        "name": "Ventilating Fan Features",
+        "type": "text"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available On Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_qualified",
+        "name": "Date Qualified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "type": "text"
+      },
+      {
+        "field": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "certification_matching": "NOT_EVALUATED",
+  "energyguide_probe": "OUT_OF_RECON_SCOPE",
+  "coverage": "listing plus one sample PDP; generic EPA schema sample"
+}

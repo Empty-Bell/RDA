@@ -44,6 +44,13 @@ measurement/rounding contract before capacity can corroborate OCR identity.
 D09 remains OPEN: dataset schema is verified but current/withdrawn status and
 wildcard/UPC matching semantics are not inferred from availability or date_qualified.
 
+Hood reconnaissance: 8dv7-nngq includes Bathroom/Utility Room products; generic EPA
+sample availability does not establish hood applicability or Samsung certification (D09).
+PDP Exterior & Recirculating Capable needs a ducted/recirculating applicability contract.
+Preserve 390-630 CFM, 210W and 50 dBA (1.0 sones) verbatim. Numbered EPA speed,
+pressure and sound measurements require compatible test bases before comparison (D01).
+Do not infer dBA/sones equivalence, annual kWh, or fan power from lighting power.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |
