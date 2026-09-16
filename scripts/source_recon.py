@@ -45,6 +45,9 @@ FAMILIES = {
     'chromebook': {'plp': 'https://www.samsung.com/us/computers/chromebook/',
                    'dataset': 'rxdj-2c88', 'dataset_name': 'ENERGY STAR Certified Computers V9.0',
                    'recon_domain': 'EPA_ONLY'},
+    'tablet': {'plp': 'https://www.samsung.com/us/tablets/all-tablets/',
+               'dataset': 'rxdj-2c88', 'dataset_name': 'ENERGY STAR Certified Computers V9.0',
+               'recon_domain': 'EPA_ONLY'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
@@ -123,7 +126,7 @@ def main():
 
         def observe(response):
             url = response.url
-            if family in ('computer', 'chromebook') and response.request.resource_type in ('xhr', 'fetch'):
+            if family in ('computer', 'chromebook', 'tablet') and response.request.resource_type in ('xhr', 'fetch'):
                 parsed_url = urlsplit(url)
                 if parsed_url.path.endswith('/ecom-data'):
                     computer_group_ids.extend(parse_qs(parsed_url.query).get('group_id', []))
@@ -160,7 +163,7 @@ def main():
                     if 'json' not in response.headers.get('content-type', ''):
                         return
                     raw_data = response.json()
-                    data = project_computer_specs(raw_data) if family in ('computer', 'chromebook') and isinstance(raw_data, list) else project_bridge(raw_data)
+                    data = project_computer_specs(raw_data) if family in ('computer', 'chromebook', 'tablet') and isinstance(raw_data, list) else project_bridge(raw_data)
                     paths = profile(data)
                     if paths and len(pdp_json) < 12:
                         index = len(pdp_json)
@@ -280,11 +283,11 @@ def main():
                 sampling_source = 'previous hosted fixture; independent source diagnosis, not population'
             target = product['modelCode']
             url = urljoin('https://www.samsung.com', product['pdpURL'])
-            if family in ('computer', 'chromebook'):
+            if family in ('computer', 'chromebook', 'tablet'):
                 computer_group_ids.clear()
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
             page.wait_for_timeout(10000)
-            if family in ('computer', 'chromebook'):
+            if family in ('computer', 'chromebook', 'tablet'):
                 # Current selected controls plus exact backend Specs corroborate SKU.
                 try:
                     page.locator('[data-modelcode][aria-checked="true"]').first.wait_for(state='visible', timeout=30000)
@@ -324,14 +327,14 @@ def main():
                                          'rendered_target_present': target.lower() in text.lower(),
                                          'energyguide_links': documents, 'bridge_snippets': bridge_snippets[:8],
                                          'json_endpoints': pdp_json})
-            if family in ('computer', 'chromebook'):
+            if family in ('computer', 'chromebook', 'tablet'):
                 save('computer-spec-endpoints.json', computer_spec_endpoints)
             assert response and response.status < 400, 'PDP HTTP access failed'
-            if family not in ('computer', 'chromebook'):
+            if family not in ('computer', 'chromebook', 'tablet'):
                 assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
             assert pdp_json, 'Specs/Support bridge-data endpoint was not observed'
             source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))
-            facts = pdp_facts(source, target, family='computer' if family == 'chromebook' else family)
+            facts = pdp_facts(source, target, family='computer' if family in ('chromebook', 'tablet') else family)
             save('pdp-facts.json', facts)
             if config.get('recon_domain') == 'EPA_ONLY':
                 return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
