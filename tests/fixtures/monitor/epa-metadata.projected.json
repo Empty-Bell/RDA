@@ -1,0 +1,227 @@
+{
+  "id": "qbg3-d468",
+  "name": "ENERGY STAR Certified Displays",
+  "rowsUpdatedAt": 1789564667,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "energy_star_partner",
+      "name": "ENERGY STAR Partner",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_name",
+      "name": "Model Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "display_type",
+      "name": "Product Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "panel_type",
+      "name": "Panel Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "native_resolution_pixels",
+      "name": "Native Resolution (pixels)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "total_native_resolution",
+      "name": "Total Native Resolution (megapixels)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "screen_size_inches",
+      "name": "Screen Size (inches)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "screen_area_square_inches",
+      "name": "Screen Area (square inches)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_features",
+      "name": "Model Features",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "features_enabled_in_default",
+      "name": "Features Enabled in Default On Mode",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "features_enabled_in_default_1",
+      "name": "Features Enabled in Default Sleep Mode",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "signal_or_data_interfaces",
+      "name": "Signal or Data Interfaces",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "power_source",
+      "name": "Power Source",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "on_mode_power_watts",
+      "name": "On Mode Power (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "maximum_on_mode_power_limit",
+      "name": "Maximum On Mode Power Limit for Signage Certification (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "sleep_mode_power_watts",
+      "name": "Sleep Mode Power (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "maximum_sleep_mode_power",
+      "name": "Maximum Sleep Mode Power Limit for Signage Certification (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "off_mode_power_watts",
+      "name": "Off Mode Power (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "on_mode_power_at_12_lux_at_115_volts_w",
+      "name": "On Mode Power at 12 Lux at 115 Volts (W)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "on_mode_power_at_300_lux",
+      "name": "On Mode Power at 300 Lux (watts)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "monitor_total_energy",
+      "name": "Monitor Total Energy Consumption at 115 Volts (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "maximum_total_energy",
+      "name": "Maximum Total Energy Consumption Limit for Monitor Certification (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "maximum_luminance_candelas",
+      "name": "Maximum Luminance (candelas per square meter)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "enhanced_performance_display",
+      "name": "Enhanced-Performance Display?",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "color_gamut",
+      "name": "Color Gamut",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "color_spaces_supported",
+      "name": "Color Spaces Supported",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "high_dynamic_range_hdr",
+      "name": "High Dynamic Range (HDR)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "display_contrast_ratio_at",
+      "name": "Display Contrast Ratio  at 0 deg. Horiz. Viewing Angle",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "reported_contrast_ratio_at",
+      "name": "Reported Contrast Ratio at -85 Degrees (Left) Horizontal Viewing Angle",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "reported_contrast_ratio_at_1",
+      "name": "Reported Contrast Ratio at +85 Degrees (Right) Horizontal Viewing Angle",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "usb_c_with_power_delivery",
+      "name": "USB-C with Power Delivery Supported",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "maximum_power_delivery_w",
+      "name": "Maximum Power Delivery (W)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "tiled_display_system",
+      "name": "Tiled Display System",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "maximum_tiled_configuration",
+      "name": "Maximum Tiled Configuration",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available On Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_certified",
+      "name": "Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "CB Model Identifier",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "meets_most_efficient_criteria",
+      "name": "Meets Most Efficient 2025 Criteria",
+      "dataTypeName": "text"
+    }
+  ]
+}

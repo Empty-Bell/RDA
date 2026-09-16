@@ -1,0 +1,1218 @@
+{
+  "searchTotalCount": 56,
+  "hasMoreResults": true,
+  "searchResults": [
+    {
+      "modelCode": "LS40H850TANXZA",
+      "modelName": "S40H850TAN",
+      "id": "LS40H850TANXZA",
+      "group_id": "FMY_ID_589938",
+      "pdpURL": "/us/monitors/high-resolution/40-inch-viewfinity-s8-s85th-5k-high-resolution-monitor-sku-ls40h850tanxza",
+      "consumerUrl": "/us/monitors/high-resolution/40-inch-viewfinity-s8-s85th-5k-high-resolution-monitor-sku-ls40h850tanxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "261",
+        "pickYn": "N",
+        "representativeModel": "LS40H850TANXZA",
+        "familyName": "ViewFinity S8 S85TH 5K2K WUHD Monitor",
+        "id": "589938",
+        "marketingName": "ViewFinity S8 S85TH 5K2K WUHD Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "40\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS40H850TANXZA",
+          "modelName": "S40H850TAN",
+          "id": "LS40H850TANXZA",
+          "group_id": "FMY_ID_589938",
+          "pdpURL": "/us/monitors/high-resolution/40-inch-viewfinity-s8-s85th-5k-high-resolution-monitor-sku-ls40h850tanxza",
+          "consumerUrl": "/us/monitors/high-resolution/40-inch-viewfinity-s8-s85th-5k-high-resolution-monitor-sku-ls40h850tanxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "261",
+            "pickYn": "N",
+            "representativeModel": "LS40H850TANXZA",
+            "familyName": "ViewFinity S8 S85TH 5K2K WUHD Monitor",
+            "id": "589938",
+            "marketingName": "ViewFinity S8 S85TH 5K2K WUHD Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "40\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS27H802UANXZA",
+      "modelName": "S27H802UAN",
+      "id": "LS27H802UANXZA",
+      "group_id": "FMY_ID_597542",
+      "pdpURL": "/us/monitors/high-resolution/27-inch-viewfinity-s8-s80uh-4k-sku-ls27h802uanxza",
+      "consumerUrl": "/us/monitors/high-resolution/27-inch-viewfinity-s8-s80uh-4k-sku-ls27h802uanxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "260",
+        "pickYn": "N",
+        "representativeModel": "LS27H802UANXZA",
+        "familyName": "2732 ViewFinity S8 S80UH 4K UHD Monitor",
+        "id": "597542",
+        "marketingName": "27\"/32\" ViewFinity S8 S80UH 4K UHD Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "27\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS27H802UANXZA",
+          "modelName": "S27H802UAN",
+          "id": "LS27H802UANXZA",
+          "group_id": "FMY_ID_597542",
+          "pdpURL": "/us/monitors/high-resolution/27-inch-viewfinity-s8-s80uh-4k-sku-ls27h802uanxza",
+          "consumerUrl": "/us/monitors/high-resolution/27-inch-viewfinity-s8-s80uh-4k-sku-ls27h802uanxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "260",
+            "pickYn": "N",
+            "representativeModel": "LS27H802UANXZA",
+            "familyName": "2732 ViewFinity S8 S80UH 4K UHD Monitor",
+            "id": "597542",
+            "marketingName": "27\"/32\" ViewFinity S8 S80UH 4K UHD Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "27\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "LS32H802UANXZA",
+          "modelName": "S32H802UAN",
+          "id": "LS32H802UANXZA",
+          "group_id": "FMY_ID_597542",
+          "pdpURL": "/us/monitors/high-resolution/32-inch-viewfinity-s8-s80uh-4k-sku-ls32h802uanxza",
+          "consumerUrl": "/us/monitors/high-resolution/32-inch-viewfinity-s8-s80uh-4k-sku-ls32h802uanxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "260",
+            "pickYn": "N",
+            "representativeModel": "LS27H802UANXZA",
+            "familyName": "2732 ViewFinity S8 S80UH 4K UHD Monitor",
+            "id": "597542",
+            "marketingName": "27\"/32\" ViewFinity S8 S80UH 4K UHD Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS32H704EANXZA",
+      "modelName": "S32H704EAN",
+      "id": "LS32H704EANXZA",
+      "group_id": "FMY_ID_594057",
+      "pdpURL": "/us/monitors/high-resolution/32-inch-viewfinity-s7-s70h-4k-high-res-monitor-sku-ls32h704eanxza",
+      "consumerUrl": "/us/monitors/high-resolution/32-inch-viewfinity-s7-s70h-4k-high-res-monitor-sku-ls32h704eanxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "259",
+        "pickYn": "N",
+        "representativeModel": "LS32H704EANXZA",
+        "familyName": "27 32 ViewFinity S7 S70H 4K UHD Monitor",
+        "id": "594057",
+        "marketingName": "27\"/ 32\" ViewFinity S7 S70H 4K UHD Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS32H704EANXZA",
+          "modelName": "S32H704EAN",
+          "id": "LS32H704EANXZA",
+          "group_id": "FMY_ID_594057",
+          "pdpURL": "/us/monitors/high-resolution/32-inch-viewfinity-s7-s70h-4k-high-res-monitor-sku-ls32h704eanxza",
+          "consumerUrl": "/us/monitors/high-resolution/32-inch-viewfinity-s7-s70h-4k-high-res-monitor-sku-ls32h704eanxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "259",
+            "pickYn": "N",
+            "representativeModel": "LS32H704EANXZA",
+            "familyName": "27 32 ViewFinity S7 S70H 4K UHD Monitor",
+            "id": "594057",
+            "marketingName": "27\"/ 32\" ViewFinity S7 S70H 4K UHD Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "LS27H70DEANXZA",
+          "modelName": "S27H70DEAN",
+          "id": "LS27H70DEANXZA",
+          "group_id": "FMY_ID_594057",
+          "pdpURL": "/us/monitors/high-resolution/27-inch-viewfinity-s7-s70h-4k-high-res-monitor-sku-ls27h70deanxza",
+          "consumerUrl": "/us/monitors/high-resolution/27-inch-viewfinity-s7-s70h-4k-high-res-monitor-sku-ls27h70deanxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "259",
+            "pickYn": "N",
+            "representativeModel": "LS32H704EANXZA",
+            "familyName": "27 32 ViewFinity S7 S70H 4K UHD Monitor",
+            "id": "594057",
+            "marketingName": "27\"/ 32\" ViewFinity S7 S70H 4K UHD Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "27\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS49DG956SNXGO",
+      "modelName": "S49DG956SN",
+      "id": "LS49DG956SNXGO",
+      "group_id": "FMY_ID_586749",
+      "pdpURL": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g95sd-dual-qhd-240hz-03ms-g-sync-sku-ls49dg956snxgo",
+      "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g95sd-dual-qhd-240hz-03ms-g-sync-sku-ls49dg956snxgo",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "258",
+        "pickYn": "N",
+        "representativeModel": "LS49DG956SNXGO",
+        "familyName": "Odyssey OLED G9 G95SD DQHD",
+        "id": "586749",
+        "marketingName": "Odyssey OLED G9 G95SD DQHD"
+      },
+      "chips": [
+        {
+          "fmyChipName": "49\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS49DG956SNXGO",
+          "modelName": "S49DG956SN",
+          "id": "LS49DG956SNXGO",
+          "group_id": "FMY_ID_586749",
+          "pdpURL": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g95sd-dual-qhd-240hz-03ms-g-sync-sku-ls49dg956snxgo",
+          "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g95sd-dual-qhd-240hz-03ms-g-sync-sku-ls49dg956snxgo",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "258",
+            "pickYn": "N",
+            "representativeModel": "LS49DG956SNXGO",
+            "familyName": "Odyssey OLED G9 G95SD DQHD",
+            "id": "586749",
+            "marketingName": "Odyssey OLED G9 G95SD DQHD"
+          },
+          "chips": [
+            {
+              "fmyChipName": "49\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS57CG952NNXZA",
+      "modelName": "S57CG952NN",
+      "id": "LS57CG952NNXZA",
+      "group_id": "FMY_ID_586902",
+      "pdpURL": "/us/monitors/gaming/57-inch-odyssey-neo-g9-dual-4k-uhd-quantum-mini-led-240hz-1ms-hdr-1000-curved-gaming-monitor-sku-ls57cg952nnxza",
+      "consumerUrl": "/us/monitors/gaming/57-inch-odyssey-neo-g9-dual-4k-uhd-quantum-mini-led-240hz-1ms-hdr-1000-curved-gaming-monitor-sku-ls57cg952nnxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "257",
+        "pickYn": "N",
+        "representativeModel": "LS57CG952NNXZA",
+        "familyName": "Odyssey Neo G9 G95NC",
+        "id": "586902",
+        "marketingName": "Odyssey Neo G9 G95NC"
+      },
+      "chips": [],
+      "groupedProductList": [
+        {
+          "modelCode": "LS57CG952NNXZA",
+          "modelName": "S57CG952NN",
+          "id": "LS57CG952NNXZA",
+          "group_id": "FMY_ID_586902",
+          "pdpURL": "/us/monitors/gaming/57-inch-odyssey-neo-g9-dual-4k-uhd-quantum-mini-led-240hz-1ms-hdr-1000-curved-gaming-monitor-sku-ls57cg952nnxza",
+          "consumerUrl": "/us/monitors/gaming/57-inch-odyssey-neo-g9-dual-4k-uhd-quantum-mini-led-240hz-1ms-hdr-1000-curved-gaming-monitor-sku-ls57cg952nnxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "257",
+            "pickYn": "N",
+            "representativeModel": "LS57CG952NNXZA",
+            "familyName": "Odyssey Neo G9 G95NC",
+            "id": "586902",
+            "marketingName": "Odyssey Neo G9 G95NC"
+          },
+          "chips": []
+        }
+      ]
+    },
+    {
+      "modelCode": "LS43FM70YUNXZA",
+      "modelName": "S43FM70YUN",
+      "id": "LS43FM70YUNXZA",
+      "group_id": "FMY_ID_590709",
+      "pdpURL": "/us/monitors/smart/43-inch-the-movingstyle-essential-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls43fm70yunxza",
+      "consumerUrl": "/us/monitors/smart/43-inch-the-movingstyle-essential-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls43fm70yunxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "255",
+        "pickYn": "N",
+        "representativeModel": "LS43FM70YUNXZA",
+        "familyName": "43 inch Smart Monitor M7 M70F 4K Samsung Vision AI",
+        "id": "590709",
+        "marketingName": "43 inch Smart Monitor M7 M70F 4K Samsung Vision AI"
+      },
+      "chips": [
+        {
+          "fmyChipName": "43\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS43FM70YUNXZA",
+          "modelName": "S43FM70YUN",
+          "id": "LS43FM70YUNXZA",
+          "group_id": "FMY_ID_590709",
+          "pdpURL": "/us/monitors/smart/43-inch-the-movingstyle-essential-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls43fm70yunxza",
+          "consumerUrl": "/us/monitors/smart/43-inch-the-movingstyle-essential-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls43fm70yunxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "255",
+            "pickYn": "N",
+            "representativeModel": "LS43FM70YUNXZA",
+            "familyName": "43 inch Smart Monitor M7 M70F 4K Samsung Vision AI",
+            "id": "590709",
+            "marketingName": "43 inch Smart Monitor M7 M70F 4K Samsung Vision AI"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS49FG910ENXZA",
+      "modelName": "S49FG910EN",
+      "id": "LS49FG910ENXZA",
+      "group_id": "FMY_ID_586720",
+      "pdpURL": "/us/monitors/gaming/49-inch-odyssey-g9-g91f-dqhd-144hz-gaming-monitor-sku-ls49fg910enxza",
+      "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-g9-g91f-dqhd-144hz-gaming-monitor-sku-ls49fg910enxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "254",
+        "pickYn": "N",
+        "representativeModel": "LS49FG910ENXZA",
+        "familyName": "Odyssey G9 G91F DQHD 144Hz Gaming Monitor",
+        "id": "586720",
+        "marketingName": "Odyssey G9 G91F DQHD 144Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "49\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS49FG910ENXZA",
+          "modelName": "S49FG910EN",
+          "id": "LS49FG910ENXZA",
+          "group_id": "FMY_ID_586720",
+          "pdpURL": "/us/monitors/gaming/49-inch-odyssey-g9-g91f-dqhd-144hz-gaming-monitor-sku-ls49fg910enxza",
+          "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-g9-g91f-dqhd-144hz-gaming-monitor-sku-ls49fg910enxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "254",
+            "pickYn": "N",
+            "representativeModel": "LS49FG910ENXZA",
+            "familyName": "Odyssey G9 G91F DQHD 144Hz Gaming Monitor",
+            "id": "586720",
+            "marketingName": "Odyssey G9 G91F DQHD 144Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "49\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS49DG910SNXZA",
+      "modelName": "S49DG910SN",
+      "id": "LS49DG910SNXZA",
+      "group_id": "FMY_ID_586754",
+      "pdpURL": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g91sd-dual-qhd-144hz-03ms-g-sync-sku-ls49dg910snxza",
+      "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g91sd-dual-qhd-144hz-03ms-g-sync-sku-ls49dg910snxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "253",
+        "pickYn": "N",
+        "representativeModel": "LS49DG910SNXZA",
+        "familyName": "Odyssey OLED G9 G91SD DQHD",
+        "id": "586754",
+        "marketingName": "Odyssey OLED G9 G91SD DQHD"
+      },
+      "chips": [
+        {
+          "fmyChipName": "49\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS49DG910SNXZA",
+          "modelName": "S49DG910SN",
+          "id": "LS49DG910SNXZA",
+          "group_id": "FMY_ID_586754",
+          "pdpURL": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g91sd-dual-qhd-144hz-03ms-g-sync-sku-ls49dg910snxza",
+          "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-oled-g9-g91sd-dual-qhd-144hz-03ms-g-sync-sku-ls49dg910snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "253",
+            "pickYn": "N",
+            "representativeModel": "LS49DG910SNXZA",
+            "familyName": "Odyssey OLED G9 G91SD DQHD",
+            "id": "586754",
+            "marketingName": "Odyssey OLED G9 G91SD DQHD"
+          },
+          "chips": [
+            {
+              "fmyChipName": "49\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS32FM701UNXZA",
+      "modelName": "S32FM701UN",
+      "id": "LS32FM701UNXZA",
+      "group_id": "FMY_ID_581245",
+      "pdpURL": "/us/monitors/smart/movingstyle-m7-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls32fm701unxza",
+      "consumerUrl": "/us/monitors/smart/movingstyle-m7-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls32fm701unxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "252",
+        "pickYn": "N",
+        "representativeModel": "LS32FM701UNXZA",
+        "familyName": "Smart Monitor M7 M70F 4K Samsung Vision AI",
+        "id": "581245",
+        "marketingName": "Smart Monitor M7 M70F 4K Samsung Vision AI"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS32FM701UNXZA",
+          "modelName": "S32FM701UN",
+          "id": "LS32FM701UNXZA",
+          "group_id": "FMY_ID_581245",
+          "pdpURL": "/us/monitors/smart/movingstyle-m7-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls32fm701unxza",
+          "consumerUrl": "/us/monitors/smart/movingstyle-m7-4k-uhd-smart-monitor-with-adjustable-rolling-stand-sku-ls32fm701unxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "252",
+            "pickYn": "N",
+            "representativeModel": "LS32FM701UNXZA",
+            "familyName": "Smart Monitor M7 M70F 4K Samsung Vision AI",
+            "id": "581245",
+            "marketingName": "Smart Monitor M7 M70F 4K Samsung Vision AI"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS49CG954ENXZA",
+      "modelName": "S49CG954EN",
+      "id": "LS49CG954ENXZA",
+      "group_id": "FMY_ID_586978",
+      "pdpURL": "/us/monitors/gaming/49-inch-odyssey-g9-dqhd-240hz-1ms-gtg-displayhdr-1000-gaming-monitor-sku-ls49cg954enxza",
+      "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-g9-dqhd-240hz-1ms-gtg-displayhdr-1000-gaming-monitor-sku-ls49cg954enxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "251",
+        "pickYn": "N",
+        "representativeModel": "LS49CG954ENXZA",
+        "familyName": "Odyssey G9 G95C",
+        "id": "586978",
+        "marketingName": "Odyssey G9 G95C"
+      },
+      "chips": [
+        {
+          "fmyChipName": "49\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS49CG954ENXZA",
+          "modelName": "S49CG954EN",
+          "id": "LS49CG954ENXZA",
+          "group_id": "FMY_ID_586978",
+          "pdpURL": "/us/monitors/gaming/49-inch-odyssey-g9-dqhd-240hz-1ms-gtg-displayhdr-1000-gaming-monitor-sku-ls49cg954enxza",
+          "consumerUrl": "/us/monitors/gaming/49-inch-odyssey-g9-dqhd-240hz-1ms-gtg-displayhdr-1000-gaming-monitor-sku-ls49cg954enxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "251",
+            "pickYn": "N",
+            "representativeModel": "LS49CG954ENXZA",
+            "familyName": "Odyssey G9 G95C",
+            "id": "586978",
+            "marketingName": "Odyssey G9 G95C"
+          },
+          "chips": [
+            {
+              "fmyChipName": "49\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS27FG500SNXZA",
+      "modelName": "S27FG500SN",
+      "id": "LS27FG500SNXZA",
+      "group_id": "FMY_ID_586878",
+      "pdpURL": "/us/monitors/gaming/27-inch-odyssey-oled-g5-g50sf-qhd-180hz-gaming-monitor-sku-ls27fg500snxza",
+      "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-oled-g5-g50sf-qhd-180hz-gaming-monitor-sku-ls27fg500snxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "247",
+        "pickYn": "N",
+        "representativeModel": "LS27FG500SNXZA",
+        "familyName": "Odyssey OLED G5 G50SF QHD 180Hz Gaming Monitor",
+        "id": "586878",
+        "marketingName": "Odyssey OLED G5 G50SF QHD 180Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "27\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS27FG500SNXZA",
+          "modelName": "S27FG500SN",
+          "id": "LS27FG500SNXZA",
+          "group_id": "FMY_ID_586878",
+          "pdpURL": "/us/monitors/gaming/27-inch-odyssey-oled-g5-g50sf-qhd-180hz-gaming-monitor-sku-ls27fg500snxza",
+          "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-oled-g5-g50sf-qhd-180hz-gaming-monitor-sku-ls27fg500snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "247",
+            "pickYn": "N",
+            "representativeModel": "LS27FG500SNXZA",
+            "familyName": "Odyssey OLED G5 G50SF QHD 180Hz Gaming Monitor",
+            "id": "586878",
+            "marketingName": "Odyssey OLED G5 G50SF QHD 180Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "27\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS34DG856SNXZA",
+      "modelName": "S34DG856SN",
+      "id": "LS34DG856SNXZA",
+      "group_id": "FMY_ID_586760",
+      "pdpURL": "/us/monitors/gaming/34-inch-odyssey-oled-g8-g85sd-ultra-wqhd-175hz-03ms-g-sync-sku-ls34dg856snxza",
+      "consumerUrl": "/us/monitors/gaming/34-inch-odyssey-oled-g8-g85sd-ultra-wqhd-175hz-03ms-g-sync-sku-ls34dg856snxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "246",
+        "pickYn": "N",
+        "representativeModel": "LS34DG856SNXZA",
+        "familyName": "Odyssey OLED G8 G85SD Ultra WQHD 175Hz Gaming Monitor",
+        "id": "586760",
+        "marketingName": "Odyssey OLED G8 G85SD Ultra WQHD 175Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "34\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS34DG856SNXZA",
+          "modelName": "S34DG856SN",
+          "id": "LS34DG856SNXZA",
+          "group_id": "FMY_ID_586760",
+          "pdpURL": "/us/monitors/gaming/34-inch-odyssey-oled-g8-g85sd-ultra-wqhd-175hz-03ms-g-sync-sku-ls34dg856snxza",
+          "consumerUrl": "/us/monitors/gaming/34-inch-odyssey-oled-g8-g85sd-ultra-wqhd-175hz-03ms-g-sync-sku-ls34dg856snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "246",
+            "pickYn": "N",
+            "representativeModel": "LS34DG856SNXZA",
+            "familyName": "Odyssey OLED G8 G85SD Ultra WQHD 175Hz Gaming Monitor",
+            "id": "586760",
+            "marketingName": "Odyssey OLED G8 G85SD Ultra WQHD 175Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "34\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS27FG60DENXZA",
+      "modelName": "S27FG60DEN",
+      "id": "LS27FG60DENXZA",
+      "group_id": "FMY_ID_586770",
+      "pdpURL": "/us/monitors/gaming/27-inch-odyssey-g6-g60f-qhd-350hz-gaming-monitor-sku-ls27fg60denxza",
+      "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-g6-g60f-qhd-350hz-gaming-monitor-sku-ls27fg60denxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "245",
+        "pickYn": "N",
+        "representativeModel": "LS27FG60DENXZA",
+        "familyName": "Odyssey G6 G60F QHD 350Hz Gaming Monitor",
+        "id": "586770",
+        "marketingName": "Odyssey G6 G60F QHD 350Hz Gaming Monitor"
+      },
+      "chips": [],
+      "groupedProductList": [
+        {
+          "modelCode": "LS27FG60DENXZA",
+          "modelName": "S27FG60DEN",
+          "id": "LS27FG60DENXZA",
+          "group_id": "FMY_ID_586770",
+          "pdpURL": "/us/monitors/gaming/27-inch-odyssey-g6-g60f-qhd-350hz-gaming-monitor-sku-ls27fg60denxza",
+          "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-g6-g60f-qhd-350hz-gaming-monitor-sku-ls27fg60denxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "245",
+            "pickYn": "N",
+            "representativeModel": "LS27FG60DENXZA",
+            "familyName": "Odyssey G6 G60F QHD 350Hz Gaming Monitor",
+            "id": "586770",
+            "marketingName": "Odyssey G6 G60F QHD 350Hz Gaming Monitor"
+          },
+          "chips": []
+        }
+      ]
+    },
+    {
+      "modelCode": "LS55CG970NNXGO",
+      "modelName": "S55CG970NN",
+      "id": "LS55CG970NNXGO",
+      "group_id": "FMY_ID_586753",
+      "pdpURL": "/us/monitors/gaming/55-inch-odyssey-ark-2nd-gen-4k-uhd-165hz-1ms-quantum-mini-led-curved-gaming-screen-sku-ls55cg970nnxgo",
+      "consumerUrl": "/us/monitors/gaming/55-inch-odyssey-ark-2nd-gen-4k-uhd-165hz-1ms-quantum-mini-led-curved-gaming-screen-sku-ls55cg970nnxgo",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "242",
+        "pickYn": "N",
+        "representativeModel": "LS55CG970NNXGO",
+        "familyName": "Odyssey Ark 2supndsup Gen. G97NC",
+        "id": "586753",
+        "marketingName": "Odyssey Ark 2<sup>nd</sup> Gen. G97NC"
+      },
+      "chips": [],
+      "groupedProductList": [
+        {
+          "modelCode": "LS55CG970NNXGO",
+          "modelName": "S55CG970NN",
+          "id": "LS55CG970NNXGO",
+          "group_id": "FMY_ID_586753",
+          "pdpURL": "/us/monitors/gaming/55-inch-odyssey-ark-2nd-gen-4k-uhd-165hz-1ms-quantum-mini-led-curved-gaming-screen-sku-ls55cg970nnxgo",
+          "consumerUrl": "/us/monitors/gaming/55-inch-odyssey-ark-2nd-gen-4k-uhd-165hz-1ms-quantum-mini-led-curved-gaming-screen-sku-ls55cg970nnxgo",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "242",
+            "pickYn": "N",
+            "representativeModel": "LS55CG970NNXGO",
+            "familyName": "Odyssey Ark 2supndsup Gen. G97NC",
+            "id": "586753",
+            "marketingName": "Odyssey Ark 2<sup>nd</sup> Gen. G97NC"
+          },
+          "chips": []
+        }
+      ]
+    },
+    {
+      "modelCode": "LS32FM702UNXZA",
+      "modelName": "S32FM702UN",
+      "id": "LS32FM702UNXZA",
+      "group_id": "FMY_ID_557688",
+      "pdpURL": "/us/monitors/smart/32-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls32fm702unxza",
+      "consumerUrl": "/us/monitors/smart/32-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls32fm702unxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "241",
+        "pickYn": "N",
+        "representativeModel": "LS32FM702UNXZA",
+        "familyName": "32 Smart Monitor M7 M70F Black 4K Samsung Vision AI",
+        "id": "557688",
+        "marketingName": "32\" Smart Monitor M7 M70F (Black) 4K Samsung Vision AI"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS32FM702UNXZA",
+          "modelName": "S32FM702UN",
+          "id": "LS32FM702UNXZA",
+          "group_id": "FMY_ID_557688",
+          "pdpURL": "/us/monitors/smart/32-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls32fm702unxza",
+          "consumerUrl": "/us/monitors/smart/32-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls32fm702unxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "241",
+            "pickYn": "N",
+            "representativeModel": "LS32FM702UNXZA",
+            "familyName": "32 Smart Monitor M7 M70F Black 4K Samsung Vision AI",
+            "id": "557688",
+            "marketingName": "32\" Smart Monitor M7 M70F (Black) 4K Samsung Vision AI"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "LS43FM703UNXZA",
+          "modelName": "S43FM703UN",
+          "id": "LS43FM703UNXZA",
+          "group_id": "FMY_ID_557688",
+          "pdpURL": "/us/monitors/smart/43-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls43fm703unxza",
+          "consumerUrl": "/us/monitors/smart/43-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls43fm703unxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "241",
+            "pickYn": "N",
+            "representativeModel": "LS32FM702UNXZA",
+            "familyName": "32 Smart Monitor M7 M70F Black 4K Samsung Vision AI",
+            "id": "557688",
+            "marketingName": "32\" Smart Monitor M7 M70F (Black) 4K Samsung Vision AI"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "LS32FM703UNXZA",
+          "modelName": "S32FM703UN",
+          "id": "LS32FM703UNXZA",
+          "group_id": "FMY_ID_557688",
+          "pdpURL": "/us/monitors/smart/32-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls32fm703unxza",
+          "consumerUrl": "/us/monitors/smart/32-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls32fm703unxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "241",
+            "pickYn": "N",
+            "representativeModel": "LS32FM702UNXZA",
+            "familyName": "32 Smart Monitor M7 M70F Black 4K Samsung Vision AI",
+            "id": "557688",
+            "marketingName": "32\" Smart Monitor M7 M70F (Black) 4K Samsung Vision AI"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "LS43FM702UNXZA",
+          "modelName": "S43FM702UN",
+          "id": "LS43FM702UNXZA",
+          "group_id": "FMY_ID_557688",
+          "pdpURL": "/us/monitors/smart/43-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls43fm702unxza",
+          "consumerUrl": "/us/monitors/smart/43-inch-smart-monitor-m70f-4k-uhd-vision-ai-monitor-sku-ls43fm702unxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "241",
+            "pickYn": "N",
+            "representativeModel": "LS32FM702UNXZA",
+            "familyName": "32 Smart Monitor M7 M70F Black 4K Samsung Vision AI",
+            "id": "557688",
+            "marketingName": "32\" Smart Monitor M7 M70F (Black) 4K Samsung Vision AI"
+          },
+          "chips": [
+            {
+              "fmyChipName": "43\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS32HG802SNXZA",
+      "modelName": "S32HG802SN",
+      "id": "LS32HG802SNXZA",
+      "group_id": "FMY_ID_589937",
+      "pdpURL": "/us/monitors/gaming/32-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls32hg802snxza",
+      "consumerUrl": "/us/monitors/gaming/32-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls32hg802snxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "240",
+        "pickYn": "N",
+        "representativeModel": "LS32HG802SNXZA",
+        "familyName": "Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor",
+        "id": "589937",
+        "marketingName": "Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS32HG802SNXZA",
+          "modelName": "S32HG802SN",
+          "id": "LS32HG802SNXZA",
+          "group_id": "FMY_ID_589937",
+          "pdpURL": "/us/monitors/gaming/32-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls32hg802snxza",
+          "consumerUrl": "/us/monitors/gaming/32-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls32hg802snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "240",
+            "pickYn": "N",
+            "representativeModel": "LS32HG802SNXZA",
+            "familyName": "Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor",
+            "id": "589937",
+            "marketingName": "Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS32HG802ESXZA",
+      "modelName": "S32HG802ES",
+      "id": "LS32HG802ESXZA",
+      "group_id": "FMY_ID_589871",
+      "pdpURL": "/us/monitors/gaming/32-inch-odyssey-g8-g80hs-6k-gaming-monitor-sku-ls32hg802esxza",
+      "consumerUrl": "/us/monitors/gaming/32-inch-odyssey-g8-g80hs-6k-gaming-monitor-sku-ls32hg802esxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "239",
+        "pickYn": "N",
+        "representativeModel": "LS32HG802ESXZA",
+        "familyName": "Odyssey G8 G80HS 6K 165Hz 3K 330Hz Gaming Monitor",
+        "id": "589871",
+        "marketingName": "Odyssey G8 G80HS 6K 165Hz 3K 330Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS32HG802ESXZA",
+          "modelName": "S32HG802ES",
+          "id": "LS32HG802ESXZA",
+          "group_id": "FMY_ID_589871",
+          "pdpURL": "/us/monitors/gaming/32-inch-odyssey-g8-g80hs-6k-gaming-monitor-sku-ls32hg802esxza",
+          "consumerUrl": "/us/monitors/gaming/32-inch-odyssey-g8-g80hs-6k-gaming-monitor-sku-ls32hg802esxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "239",
+            "pickYn": "N",
+            "representativeModel": "LS32HG802ESXZA",
+            "familyName": "Odyssey G8 G80HS 6K 165Hz 3K 330Hz Gaming Monitor",
+            "id": "589871",
+            "marketingName": "Odyssey G8 G80HS 6K 165Hz 3K 330Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS32HG732SNXZA",
+      "modelName": "S32HG732SN",
+      "id": "LS32HG732SNXZA",
+      "group_id": "FMY_ID_590116",
+      "pdpURL": "/us/monitors/gaming/32-inch-odyssey-oled-g7-g73sh-4k-gaming-monitor-sku-ls32hg732snxza",
+      "consumerUrl": "/us/monitors/gaming/32-inch-odyssey-oled-g7-g73sh-4k-gaming-monitor-sku-ls32hg732snxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "238",
+        "pickYn": "N",
+        "representativeModel": "LS32HG732SNXZA",
+        "familyName": "Odyssey OLED G7 G73SH 4K 165Hz  FHD 330Hz Gaming Monitor",
+        "id": "590116",
+        "marketingName": "Odyssey OLED G7 G73SH 4K 165Hz / FHD 330Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "32\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS32HG732SNXZA",
+          "modelName": "S32HG732SN",
+          "id": "LS32HG732SNXZA",
+          "group_id": "FMY_ID_590116",
+          "pdpURL": "/us/monitors/gaming/32-inch-odyssey-oled-g7-g73sh-4k-gaming-monitor-sku-ls32hg732snxza",
+          "consumerUrl": "/us/monitors/gaming/32-inch-odyssey-oled-g7-g73sh-4k-gaming-monitor-sku-ls32hg732snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "238",
+            "pickYn": "N",
+            "representativeModel": "LS32HG732SNXZA",
+            "familyName": "Odyssey OLED G7 G73SH 4K 165Hz  FHD 330Hz Gaming Monitor",
+            "id": "590116",
+            "marketingName": "Odyssey OLED G7 G73SH 4K 165Hz / FHD 330Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS27FG810SNXZA",
+      "modelName": "S27FG810SN",
+      "id": "LS27FG810SNXZA",
+      "group_id": "FMY_ID_586761",
+      "pdpURL": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g81sf-4k-240hz-gaming-monitor-sku-ls27fg810snxza",
+      "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g81sf-4k-240hz-gaming-monitor-sku-ls27fg810snxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "237",
+        "pickYn": "N",
+        "representativeModel": "LS27FG810SNXZA",
+        "familyName": "Odyssey OLED G8 G81SF 4K 240Hz Gaming Monitor",
+        "id": "586761",
+        "marketingName": "Odyssey OLED G8 G81SF 4K 240Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "27\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS27FG810SNXZA",
+          "modelName": "S27FG810SN",
+          "id": "LS27FG810SNXZA",
+          "group_id": "FMY_ID_586761",
+          "pdpURL": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g81sf-4k-240hz-gaming-monitor-sku-ls27fg810snxza",
+          "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g81sf-4k-240hz-gaming-monitor-sku-ls27fg810snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "237",
+            "pickYn": "N",
+            "representativeModel": "LS27FG810SNXZA",
+            "familyName": "Odyssey OLED G8 G81SF 4K 240Hz Gaming Monitor",
+            "id": "586761",
+            "marketingName": "Odyssey OLED G8 G81SF 4K 240Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "27\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        },
+        {
+          "modelCode": "LS32FG810SNXZA",
+          "modelName": "S32FG810SN",
+          "id": "LS32FG810SNXZA",
+          "group_id": "FMY_ID_586761",
+          "pdpURL": "/us/monitors/gaming/32-inch-odyssey-oled-g8-g81sf-4k-240hz-gaming-monitor-sku-ls32fg810snxza",
+          "consumerUrl": "/us/monitors/gaming/32-inch-odyssey-oled-g8-g81sf-4k-240hz-gaming-monitor-sku-ls32fg810snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "237",
+            "pickYn": "N",
+            "representativeModel": "LS27FG810SNXZA",
+            "familyName": "Odyssey OLED G8 G81SF 4K 240Hz Gaming Monitor",
+            "id": "586761",
+            "marketingName": "Odyssey OLED G8 G81SF 4K 240Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "32\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS27HG802EFXZA",
+      "modelName": "S27HG802EF",
+      "id": "LS27HG802EFXZA",
+      "group_id": "FMY_ID_589869",
+      "pdpURL": "/us/monitors/gaming/27-inch-odyssey-g8-g80hf-5k-gaming-monitor-sku-ls27hg802efxza",
+      "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-g8-g80hf-5k-gaming-monitor-sku-ls27hg802efxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "236",
+        "pickYn": "N",
+        "representativeModel": "LS27HG802EFXZA",
+        "familyName": "Odyssey G8 G80HF 5K 180Hz  QHD 360Hz Gaming Monitor",
+        "id": "589869",
+        "marketingName": "Odyssey G8 G80HF 5K 180Hz / QHD 360Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "27\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS27HG802EFXZA",
+          "modelName": "S27HG802EF",
+          "id": "LS27HG802EFXZA",
+          "group_id": "FMY_ID_589869",
+          "pdpURL": "/us/monitors/gaming/27-inch-odyssey-g8-g80hf-5k-gaming-monitor-sku-ls27hg802efxza",
+          "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-g8-g80hf-5k-gaming-monitor-sku-ls27hg802efxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "236",
+            "pickYn": "N",
+            "representativeModel": "LS27HG802EFXZA",
+            "familyName": "Odyssey G8 G80HF 5K 180Hz  QHD 360Hz Gaming Monitor",
+            "id": "589869",
+            "marketingName": "Odyssey G8 G80HF 5K 180Hz / QHD 360Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "27\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "LS27HG802SNXZA",
+      "modelName": "S27HG802SN",
+      "id": "LS27HG802SNXZA",
+      "group_id": "FMY_ID_590115",
+      "pdpURL": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls27hg802snxza",
+      "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls27hg802snxza",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "235",
+        "pickYn": "N",
+        "representativeModel": "LS27HG802SNXZA",
+        "familyName": "27 Inch Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor",
+        "id": "590115",
+        "marketingName": "27 Inch Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor"
+      },
+      "chips": [
+        {
+          "fmyChipName": "27\"",
+          "fmyChipType": "Size"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "LS27HG802SNXZA",
+          "modelName": "S27HG802SN",
+          "id": "LS27HG802SNXZA",
+          "group_id": "FMY_ID_590115",
+          "pdpURL": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls27hg802snxza",
+          "consumerUrl": "/us/monitors/gaming/27-inch-odyssey-oled-g8-g80sh-4k-gaming-monitor-sku-ls27hg802snxza",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "235",
+            "pickYn": "N",
+            "representativeModel": "LS27HG802SNXZA",
+            "familyName": "27 Inch Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor",
+            "id": "590115",
+            "marketingName": "27 Inch Odyssey OLED G8 G80SH 4K 240Hz Gaming Monitor"
+          },
+          "chips": [
+            {
+              "fmyChipName": "27\"",
+              "fmyChipType": "Size"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

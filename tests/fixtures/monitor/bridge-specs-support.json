@@ -1,0 +1,383 @@
+{
+  "Specs": [
+    {
+      "modelCode": "LS40H850TANXZA",
+      "fullSpecs": [
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Screen Size (Class)",
+              "value": "40"
+            },
+            {
+              "name": "Flat / Curved",
+              "value": "Curved"
+            },
+            {
+              "name": "Active Display Size (HxV)",
+              "value": "36.5 x 15.4 in"
+            },
+            {
+              "name": "Active Display Size (HxV)",
+              "value": "926.8 x 391.0 mm"
+            },
+            {
+              "name": "Screen Curvature",
+              "value": "1000R"
+            },
+            {
+              "name": "Aspect Ratio",
+              "value": "21:9"
+            },
+            {
+              "name": "Panel Type",
+              "value": "VA"
+            },
+            {
+              "name": "Brightness (Typical)",
+              "value": "350 cd/㎡"
+            },
+            {
+              "name": "Brightness (Min)",
+              "value": "280 cd/㎡"
+            },
+            {
+              "name": "Contrast Ratio Static",
+              "value": "3,000:1"
+            },
+            {
+              "name": "HDR(High Dynamic Range)",
+              "value": "HDR10"
+            },
+            {
+              "name": "HDR10+",
+              "value": "HDR10+"
+            },
+            {
+              "name": "Resolution",
+              "value": "WUHD (5120 x 2160)"
+            },
+            {
+              "name": "Response Time (ms)",
+              "value": "4 (GTG)"
+            },
+            {
+              "name": "Viewing Angle (H/V)",
+              "value": "178 / 178"
+            },
+            {
+              "name": "Color Support",
+              "value": "Max 1.07B"
+            },
+            {
+              "name": "Color Gamut (sRGB Coverage)",
+              "value": "99 %"
+            },
+            {
+              "name": "Frame Rate",
+              "value": "Max 144 Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "General Feature",
+          "specList": [
+            {
+              "name": "Energy Saving Solution",
+              "value": "Yes"
+            },
+            {
+              "name": "Eye Saver Mode",
+              "value": "Yes"
+            },
+            {
+              "name": "Flicker Free",
+              "value": "Yes"
+            },
+            {
+              "name": "Picture-In-Picture",
+              "value": "Yes"
+            },
+            {
+              "name": "Picture-By-Picture",
+              "value": "Yes"
+            },
+            {
+              "name": "Image Size",
+              "value": "Yes"
+            },
+            {
+              "name": "Daisy Chain",
+              "value": "Yes"
+            },
+            {
+              "name": "Windows Certification",
+              "value": "Windows11"
+            },
+            {
+              "name": "FreeSync",
+              "value": "FreeSync Premium"
+            },
+            {
+              "name": "Off Timer Plus",
+              "value": "Yes"
+            },
+            {
+              "name": "Auto Source Switch",
+              "value": "Auto Source Switch+"
+            },
+            {
+              "name": "Adaptive Picture",
+              "value": "Yes"
+            },
+            {
+              "name": "KVM Switch",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Interface",
+          "specList": [
+            {
+              "name": "Display Port",
+              "value": "1 EA"
+            },
+            {
+              "name": "Display Port Version",
+              "value": "1.4"
+            },
+            {
+              "name": "HDCP Version (DP)",
+              "value": "2.2"
+            },
+            {
+              "name": "HDMI",
+              "value": "1 EA"
+            },
+            {
+              "name": "HDMI Version",
+              "value": "2.1"
+            },
+            {
+              "name": "HDCP Version (HDMI)",
+              "value": "2.2"
+            },
+            {
+              "name": "Headphone",
+              "value": "1"
+            },
+            {
+              "name": "USB-C Upstream Port (ONLY DATA)",
+              "value": "1"
+            },
+            {
+              "name": "USB Type-A Downstream Port",
+              "value": "5 EA"
+            },
+            {
+              "name": "USB Type-A Downstream Version",
+              "value": "3.2 Gen2, 3.2 Gen1"
+            },
+            {
+              "name": "USB Type-C Downstream Port",
+              "value": "1"
+            },
+            {
+              "name": "USB Type-C Downstream Version",
+              "value": "3.2 Gen2"
+            },
+            {
+              "name": "Thunderbolt Downstream Port (Daisy Chain)",
+              "value": "1"
+            },
+            {
+              "name": "Thunderbolt Downstream Port Charging Power",
+              "value": "15 W"
+            },
+            {
+              "name": "Thunderbolt Input",
+              "value": "1 EA"
+            },
+            {
+              "name": "Thunderbolt Charging Power (Port 1)",
+              "value": "140 W"
+            },
+            {
+              "name": "Version of Thunderbolt",
+              "value": "5.0"
+            },
+            {
+              "name": "HDCP Version (Thunderbolt)",
+              "value": "2.2"
+            },
+            {
+              "name": "Ethernet (LAN)",
+              "value": "1 EA"
+            }
+          ]
+        },
+        {
+          "groupName": "Operation Conditions",
+          "specList": [
+            {
+              "name": "Temperature",
+              "value": "10 ~ 40 ℃"
+            },
+            {
+              "name": "Humidity",
+              "value": "10 ~ 80 (Non-Condensing)"
+            }
+          ]
+        },
+        {
+          "groupName": "Calibration",
+          "specList": [
+            {
+              "name": "Factory Tunning",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Front Color",
+              "value": "Black"
+            },
+            {
+              "name": "Rear Color",
+              "value": "Black"
+            },
+            {
+              "name": "Stand Color",
+              "value": "Black"
+            },
+            {
+              "name": "Stand Type",
+              "value": "HAS"
+            },
+            {
+              "name": "HAS(Height Adjustable Stand)",
+              "value": "120.0(±5.0)"
+            },
+            {
+              "name": "Tilt",
+              "value": "-5˚(±2˚) ~ 20˚(±2˚)"
+            },
+            {
+              "name": "Swivel",
+              "value": "-20˚(±3˚) ~ 20˚(±3˚)"
+            },
+            {
+              "name": "Wall Mount",
+              "value": "100 x 100 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Eco",
+          "specList": [
+            {
+              "name": "TCO Certified",
+              "value": "Yes"
+            },
+            {
+              "name": "EPEAT",
+              "value": "Gold (US, CA)"
+            },
+            {
+              "name": "Recycled Plastic",
+              "value": "50 %"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "Power Supply",
+              "value": "AC 100 - 240 V"
+            },
+            {
+              "name": "Power Consumption (Max)",
+              "value": "340 W"
+            },
+            {
+              "name": "Type",
+              "value": "Internal Power"
+            }
+          ]
+        },
+        {
+          "groupName": "Dimensions",
+          "specList": [
+            {
+              "name": "Set Dimension with Stand (WxHxD)",
+              "value": "36.56 x 23.62 x 14.25 inch"
+            },
+            {
+              "name": "Set Dimension without Stand (WxHxD)",
+              "value": "36.56 x 16.65 x 7.83 inch"
+            },
+            {
+              "name": "Package Dimension (WxHxD)",
+              "value": "40.55 x 11.06 x 20.47 inch"
+            }
+          ]
+        },
+        {
+          "groupName": "Weight",
+          "specList": [
+            {
+              "name": "Set Weight with Stand (lb)",
+              "value": "30.87 lb"
+            },
+            {
+              "name": "Set Weight without Stand (lb)",
+              "value": "19.84 lb"
+            },
+            {
+              "name": "Shipping Weight",
+              "value": "38.58 lb"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessory",
+          "specList": [
+            {
+              "name": "Power Cable Length",
+              "value": "4.92 Foot"
+            },
+            {
+              "name": "HDMI Cable",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Yes"
+            },
+            {
+              "name": "Speaker Output",
+              "value": "5 W"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "LS40H850TANXZA",
+      "supports": []
+    }
+  ]
+}
