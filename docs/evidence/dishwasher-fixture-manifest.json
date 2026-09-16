@@ -1,0 +1,22 @@
+[
+  {
+    "file": "tests/fixtures/dishwasher/bridge-specs-support.json",
+    "sha256": "fb44f2afb6a93b64feeeff337fd9af605d76c20be7fa80e4101b32c97c8a0936",
+    "source_run_id": 35102983525
+  },
+  {
+    "file": "tests/fixtures/dishwasher/epa-metadata.projected.json",
+    "sha256": "270fdbb42833317c92ef931a21b3cc7e65b2620e03d7e04936c382f895515f35",
+    "source_run_id": 35102983525
+  },
+  {
+    "file": "tests/fixtures/dishwasher/epa-sample.projected.json",
+    "sha256": "a64927ca27ec25ddda076ea4e04024eaa0b7f3e2c973d996bb90268195195e85",
+    "source_run_id": 35103320640
+  },
+  {
+    "file": "tests/fixtures/dishwasher/pf-page-0.json",
+    "sha256": "b5014a480e724b4e37b596f099104741f4893f5e983a318f66fcd39a10adcba3",
+    "source_run_id": 35102983525
+  }
+]

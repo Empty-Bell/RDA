@@ -1,0 +1,341 @@
+{
+  "hosted_run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35103320640",
+  "artifact_id": 10449725058,
+  "artifact_zip_sha256": "cdcd8366a559ef32f6650d3bb8df421a776208e56013a804e762cd6b0213ba68",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T13:40:16.055908+00:00",
+    "run_id": "35103320640",
+    "attempt": "1",
+    "git_sha": "ac7d3a877a1ce57a7e46ad2fb9dca982abd88db8",
+    "scope": "dishwasher source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "14",
+          "category_code": "08090000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "b5014a480e724b4e37b596f099104741f4893f5e983a318f66fcd39a10adcba3",
+        "page_count": 9
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/dishwashers/all-dishwashers/",
+          "api_total": 9
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 9,
+          "exact_skus": 21,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 9,
+              "expected_groups": 9
+            }
+          ],
+          "rendered_representative_link_count": 6,
+          "rendered_tile_count": 9,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "DW90F89P0USRAA",
+          "url": "https://www.samsung.com/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa/",
+          "json_endpoints": 1,
+          "energyguide_link_count": 0,
+          "energyguide_pdf_valid": true
+        }
+      },
+      {
+        "name": "epa_dishwasher_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "q8py-6w3f",
+          "column_count": 29,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "energyguide": {
+    "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89p0usraa/energyguide/us-energyguide-dw90f89p0usraa-554563789.pdf",
+    "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89p0usraa/energyguide/us-energyguide-dw90f89p0usraa-554563789.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "size_bytes": 982370,
+    "sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+    "embedded_text": "",
+    "extraction_engine": "RapidOCR",
+    "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+    "ocr_raw_texts": [
+      "U.S. Government",
+      "Federal law prohibits removal of this label before consumer purchase.",
+      "Canadã",
+      "ENERGYGUIDE",
+      "ENERGUIDE",
+      "Capacity: Standard",
+      "Dishwasher",
+      "Models DW90F8**0***",
+      "Samsung",
+      "Energy consumption / Consommation énergétique",
+      "Estimated Yearly Energy Cost",
+      "225",
+      "(when used with an elēctric water heater)",
+      "$32",
+      "kWh",
+      "per year/ par année",
+      "This model / Ce modèle",
+      "$21",
+      "$41",
+      "200 kWh",
+      "307 kWh ",
+      "Cost Range of Similar Models",
+      "Uses least energy/",
+      "Uses most energy /",
+      "Consomme le moins",
+      "Consomme le plus",
+      "d’énergie",
+      "d’énergie",
+      "225",
+      "$22",
+      "Similar models",
+      "compared",
+      "Standard / Ordinaires",
+      "Built-in / Encastrés",
+      "Modèles similairęs",
+      "comparés",
+      "kWh",
+      "Model number",
+      "DW90F8**0***",
+      "Numéro du modèle",
+      "Estimated Yearly Electricity Use",
+      "Estimated Yearly Energy Cost",
+      "(when used with a natural gas water heater)",
+      "Enlever cette étiquette avan le premier achat au détail constitue une infraction (L.C. 1992, ch. 36).",
+      "Removal of this label before first retail purchase is an offence (S.C. 1992. c. 36).",
+      "Your cost will depend on your utility rates and use.",
+      "DD68-00152Q-00",
+      "The ENERGY STAR® mark on this EnerGuide label signifies that this",
+      "is an energy-efficient appliance. Its energy performance meets or",
+      "DD68-00152Q-00",
+      "lnergy",
+      "exceeds the Government of Canada's high efficiency levels. Use the",
+      "● Cost range based only on standard capacity models.",
+      "similar models.",
+      "● For more informaticn, visit www.ftc.govlenergy",
+      "● Estimated energy cost based on four wash loads a week and",
+      "a national average electricity cost of 13 cents per kWh and",
+      "natural gas cost of $0.15 per them",
+      "ENERGY STAR",
+      "ENERGY STAR",
+      "HIGH EFFICIENCY",
+      "HAUTE EFFICACITÉ",
+      "La marque ENERGY STAR® sur cette étiquette ÉnerGuide signifie",
+      "satisfait ou dépasse les nivegiux de haute efficacité du gouvernement",
+      "[REMARK]",
+      "1. Size : W140 x H198 mm (Double-sided printing)",
+      "2. Metarial : Pound paper 180 gram"
+    ],
+    "ocr_scale": 2,
+    "field_parser_contract": "NOT_EVALUATED"
+  },
+  "epa": {
+    "dataset_id": "q8py-6w3f",
+    "name": "ENERGY STAR Certified Residential Dishwashers",
+    "rows_updated_at": 1789564310,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "type",
+        "name": "Type",
+        "type": "text"
+      },
+      {
+        "field": "width_inches",
+        "name": "Width (inches)",
+        "type": "number"
+      },
+      {
+        "field": "depth_inches",
+        "name": "Depth (inches)",
+        "type": "number"
+      },
+      {
+        "field": "capacity_maximum_number_of_place_settings",
+        "name": "Capacity - Maximum Number of Place Settings",
+        "type": "number"
+      },
+      {
+        "field": "soil_sensing_capability",
+        "name": "Soil-Sensing Capability",
+        "type": "text"
+      },
+      {
+        "field": "tub_material",
+        "name": "Tub Material",
+        "type": "text"
+      },
+      {
+        "field": "drying_method",
+        "name": "Drying Method",
+        "type": "text"
+      },
+      {
+        "field": "additional_product_features",
+        "name": "Additional Product Features",
+        "type": "text"
+      },
+      {
+        "field": "annual_energy_use_kwh_year",
+        "name": "Annual Energy Use (kWh/yr)",
+        "type": "number"
+      },
+      {
+        "field": "us_federal_standard_kwh_year",
+        "name": "US Federal Standard (kWh/yr)",
+        "type": "number"
+      },
+      {
+        "field": "better_than_us_federal_standard_kwh_year",
+        "name": "% Better than US Federal Standard (kWh/yr)",
+        "type": "number"
+      },
+      {
+        "field": "water_use_gallons_cycle",
+        "name": "Water Use (gallons/cycle)",
+        "type": "number"
+      },
+      {
+        "field": "us_federal_standard_gallons_cycle",
+        "name": "US Federal Standard (gallons/cycle)",
+        "type": "number"
+      },
+      {
+        "field": "better_than_us_federal_standard_gallons_cycle",
+        "name": "% Better than US Federal Standard (gallons/cycle)",
+        "type": "number"
+      },
+      {
+        "field": "connected_capable",
+        "name": "Connected Capable",
+        "type": "text"
+      },
+      {
+        "field": "connects_using",
+        "name": "Connects Using",
+        "type": "text"
+      },
+      {
+        "field": "communication_hardware_architecture",
+        "name": "Communication Hardware Architecture",
+        "type": "text"
+      },
+      {
+        "field": "dr_protocol",
+        "name": "DR Protocol",
+        "type": "text"
+      },
+      {
+        "field": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "type": "text"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available On Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_certified",
+        "name": " Date Certified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "type": "text"
+      },
+      {
+        "field": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "manual_render_observation": {
+    "us_label_region": "left yellow EnergyGuide",
+    "model": "DW90F8**0***",
+    "annual_electricity_kwh": 225,
+    "capacity_category": "Standard",
+    "mixed_region_pdf": true,
+    "automated_field_parser": "NOT_EVALUATED"
+  }
+}

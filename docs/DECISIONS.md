@@ -2,6 +2,13 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+Dishwasher reconnaissance: mixed US EnergyGuide + Canadian EnerGuide in one PDF
+requires US-region selection with OCR coordinates (D07); whole-page text order is
+insufficient. PDP 16 place settings and label Standard capacity category are distinct
+quantities. No numeric discrepancy or wildcard identity conclusion is inferred.
+EPA date_certified replaces refrigerator date_qualified but neither alone establishes
+current certification (D09). These are source gaps, not new audit issue codes.
+
 Refrigerator reconnaissance note (2026-09-16): D08's count grain is empirically
 resolved for this product group: 41 API groups = 41 rendered cards, 75 exact SKUs.
 PLP grouping ID and PDP bridge request group_id are different namespaces.

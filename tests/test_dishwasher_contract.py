@@ -3,10 +3,7 @@ import copy
 import json
 import unittest
 from pathlib import Path
-import sys
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from source_contract import pf_population, pdp_facts
+from scripts.source_contract import pf_population, pdp_facts, epa_contract
 
 ROOT = Path(__file__).parent / 'fixtures' / 'dishwasher'
 
@@ -40,3 +37,34 @@ class DishwasherContract(unittest.TestCase):
         self.bridge['Support'] = [x for x in self.bridge['Support'] if x['modelCode'] != 'DW90F89P0USRAA']
         with self.assertRaises(ValueError):
             pdp_facts(self.bridge, 'DW90F89P0USRAA', family='dishwasher')
+
+
+class DishwasherEpaContract(unittest.TestCase):
+    def setUp(self):
+        self.metadata = json.loads((ROOT / 'epa-metadata.projected.json').read_text(encoding='utf-8'))
+        self.rows = json.loads((ROOT / 'epa-sample.projected.json').read_text(encoding='utf-8'))
+
+    def test_observed_schema_preserves_units_without_certification_match(self):
+        result = epa_contract(self.metadata, self.rows, dataset='q8py-6w3f')
+        self.assertEqual(result['certification_matching'], 'NOT_EVALUATED')
+        self.assertEqual(self.rows[0]['annual_energy_use_kwh_year'], '234')
+        self.assertEqual(self.rows[0]['water_use_gallons_cycle'], '3.00')
+        self.assertEqual(self.rows[0]['capacity_maximum_number_of_place_settings'], '15')
+
+    def test_refrigerator_schema_cannot_substitute_for_dishwasher(self):
+        for column in self.metadata['columns']:
+            if column['fieldName'] == 'date_certified':
+                column['fieldName'] = 'date_qualified'
+        with self.assertRaises(ValueError):
+            epa_contract(self.metadata, self.rows, dataset='q8py-6w3f')
+
+    def test_wrong_dataset_and_empty_sample_are_errors(self):
+        with self.assertRaises(ValueError):
+            epa_contract(self.metadata, self.rows)
+        with self.assertRaises(ValueError):
+            epa_contract(self.metadata, [], dataset='q8py-6w3f')
+
+    def test_optional_upc_row_absence_is_not_no_candidate(self):
+        for row in self.rows:
+            row.pop('upc', None)
+        self.assertEqual(epa_contract(self.metadata, self.rows, dataset='q8py-6w3f')['sample_rows'], 3)
