@@ -270,6 +270,7 @@ def main():
             if family == 'computer':
                 # Buy configurator mounts selected SKU and lazy Specs after hydration.
                 # Retain the same rendered exact-SKU gate; URL alone is insufficient.
+                page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
                 try:
                     page.wait_for_function('(sku) => document.body.innerText.toLowerCase().includes(sku.toLowerCase())',
                                            arg=target, timeout=30000)
