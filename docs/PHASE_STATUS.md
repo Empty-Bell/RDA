@@ -1,6 +1,6 @@
 # Phase status
 
-Phase 0: RUNNING — first hosted runtime/source-sample probe PASSED.
+Phase 0: RUNNING — bounded refrigerator source reconnaissance PASSED on hosted Ubuntu.
 Phases 1–7: NOT_STARTED.
 
 Hosted evidence:
@@ -16,9 +16,21 @@ Hosted evidence:
 Full G0 acceptance is NOT_EVALUATED. Initial probe is deliberately bounded to runtime
 and a refrigerator source sample. No compliance decisions implemented.
 
-Next bounded task: review Samsung/EPA artifact fields and freeze refrigerator
-pf_search pagination/SKU/PDP/EnergyGuide contract with fixture-backed tests.
-Then repeat source-contract validation for the remaining 10 families.
+Refrigerator source evidence:
+- Run https://github.com/Empty-Bell/RDA/actions/runs/35101976503, success
+- Commit 4c0193c06f921af4b38b8d895d78a953a838ff0e, attempt 1, job 104813390799
+- API groups = rendered cards = Results text = 41; 75 unique exact SKUs
+- 20 tests passed on hosted runner, including schema drift and missing/duplicate identity controls
+- Exact sample PDP Specs/Support and live image-only EnergyGuide PDF verified
+- PyMuPDF→RapidOCR 2x fallback; label RF29DB9900**, 700 kWh, 28.6 cu.ft. visually checked
+- EPA p5st-her9 metadata/schema/sample verified; certification matching NOT_EVALUATED
+- Artifact 10448527895, SHA256 35bd70c32cc77e398f507a3701bbc2d7c6cfbdc43449eef19eb552fa46c27d2c
+- Partial 403 run 35101447985 preserved as access-health evidence, not missing product/certification
+
+Next bounded task: repeat source-contract reconnaissance for Dishwasher using the
+existing workflow/collector; discover endpoint/category/dataset from actual page/catalog.
+Other 10 families and remaining refrigerator claim/quality semantics are not complete.
+Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;
 replace older Node20 Actions pins with verified current releases (runner currently upgrades

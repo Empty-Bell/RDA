@@ -1,0 +1,181 @@
+{
+  "run": {
+    "captured_at": "2026-09-16T13:27:40.181111+00:00",
+    "run_id": "35101976503",
+    "attempt": "1",
+    "git_sha": "4c0193c06f921af4b38b8d895d78a953a838ff0e",
+    "scope": "Refrigerator source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "14",
+          "category_code": "08030000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "82815e0050fa0462b468402ee98ab00641d67106eef7c3d6ed25698157cb1c30",
+        "page_count": 14
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "14",
+          "requestCount": "16",
+          "category_code": "08030000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "fixture": "fixtures/pf-1.json",
+        "fixture_sha256": "3047d2980142501ba66b029ebbf35fd79f7092c1a8f0c6e8a7e3239907c82f02",
+        "page_count": 16
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "30",
+          "requestCount": "16",
+          "category_code": "08030000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "fixture": "fixtures/pf-2.json",
+        "fixture_sha256": "316b96bb5dcdc8d683a6e7616ab39569ef740e1c387665330883a46400f703fb",
+        "page_count": 11
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/refrigerators/all-refrigerators/",
+          "api_total": 41
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 41,
+          "exact_skus": 75,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 14,
+              "expected_groups": 41
+            },
+            {
+              "round": 1,
+              "groups": 41,
+              "expected_groups": 41
+            }
+          ],
+          "rendered_representative_link_count": 29,
+          "rendered_tile_count": 41,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "RF29DB9900QDAA",
+          "url": "https://www.samsung.com/us/refrigerators/french-door/bespoke-4-door-flex-refrigerator-29-cu-ft-with-family-hub-32-and-ai-vision-in-stainless-steel-sku-rf29db9900qdaa/",
+          "json_endpoints": 1,
+          "energyguide_link_count": 0,
+          "energyguide_pdf_valid": true
+        }
+      },
+      {
+        "name": "epa_refrigerator_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "p5st-her9",
+          "column_count": 32,
+          "sample_rows": 3
+        }
+      }
+    ]
+  },
+  "label": {
+    "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/rf29db9900qdaa/energyguide/us-energyguide-rf29db9900qdaa-550480754.pdf",
+    "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/rf29db9900qdaa/energyguide/us-energyguide-rf29db9900qdaa-550480754.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "size_bytes": 92496,
+    "sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+    "embedded_text": " \n",
+    "extraction_engine": "RapidOCR",
+    "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+    "ocr_raw_texts": [
+      "U.S. Government",
+      "Federal law prohibits removal of this label before consumer purchase.",
+      "ENERGYGUIDE",
+      "Refrigerator-Freezer",
+      "Samsung",
+      "Automatic Defrost",
+      "Model RF29DB9900**",
+      "Bottom-Mounted Freezer",
+      "Capacity: 28.6 Cubic Feet",
+      "No Through-the-Door Ice",
+      "Compare ONLY to other labels with yellow numbers.",
+      "Labels with yellow numbers are based on the same test procedures.",
+      "Estimated Yearly Energy Cost",
+      "$98",
+      "Cost Ranges",
+      "Models with",
+      "$91 $101",
+      "similar features",
+      "$84",
+      "$124",
+      "All models",
+      "700",
+      "kWh",
+      "Estimated Yearly Electricity Use",
+      "Your cost will depend on your utility rates and use.",
+      "Both cost ranges based on models of similar size capacity.",
+      "Models with similar features have automatic defrost, bottom-mounted",
+      "freezer, and no through-the-door ice.",
+      "Estimated energy cost based on a national average electricity cost",
+      "of 14 cents per kWh.",
+      "ftc.gov/energy",
+      "ENERGY STAR"
+    ],
+    "ocr_scale": 2,
+    "field_parser_contract": "NOT_EVALUATED"
+  },
+  "artifact_id": 10448527895,
+  "visual_label_review": {
+    "model": "RF29DB9900**",
+    "annual_energy_kwh": 700,
+    "capacity_cuft": 28.6,
+    "basis": "visual inspection of original PDF 2x page image",
+    "automatic_final_legal_conclusion": false
+  }
+}

@@ -2,6 +2,14 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+Refrigerator reconnaissance note (2026-09-16): D08's count grain is empirically
+resolved for this product group: 41 API groups = 41 rendered cards, 75 exact SKUs.
+PLP grouping ID and PDP bridge request group_id are different namespaces.
+D07 remains OPEN: PDP capacity 29 cu.ft. vs label 28.6 cu.ft. needs an approved
+measurement/rounding contract before capacity can corroborate OCR identity.
+D09 remains OPEN: dataset schema is verified but current/withdrawn status and
+wildcard/UPC matching semantics are not inferred from availability or date_qualified.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |
