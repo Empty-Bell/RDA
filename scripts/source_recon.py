@@ -110,6 +110,7 @@ def main():
     computer_spec_endpoints = []
     computer_group_ids = []
     structured_claim_records = []
+    structured_claim_errors = []
 
     def check(name, fn):
         try:
@@ -132,10 +133,13 @@ def main():
             if parsed_claim_url.hostname == 'www.samsung.com' and parsed_claim_url.path in (
                     '/us/gapi/v1/bridge/cacheable/bridge-data', '/us/gapi/v1/bridge/cacheable/ecom-data'):
                 try:
+                    if response.status >= 400:
+                        raise ValueError('Public product endpoint HTTP error')
                     for record in project_claim_records(response.json()):
                         structured_claim_records.append({**record, 'source_url': safe_url(url), 'status': response.status})
-                except Exception:
-                    pass  # Unobserved structured flags stay NOT_EVALUATED, never false.
+                except Exception as exc:
+                    structured_claim_errors.append({'source_url': safe_url(url), 'status': response.status,
+                                                    'error_type': type(exc).__name__})
             if family in ('computer', 'chromebook', 'tablet') and response.request.resource_type in ('xhr', 'fetch'):
                 parsed_url = urlsplit(url)
                 if parsed_url.path.endswith('/ecom-data'):
@@ -296,6 +300,7 @@ def main():
             target = product['modelCode']
             url = urljoin('https://www.samsung.com', product['pdpURL'])
             structured_claim_records.clear()
+            structured_claim_errors.clear()
             if family in ('computer', 'chromebook', 'tablet'):
                 computer_group_ids.clear()
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
@@ -327,6 +332,8 @@ def main():
                     # Identity mismatch is never relaxed or retried as a matching SKU.
                     computer_group_ids.clear()
                     structured_claim_records.clear()
+                    save('structured-claim-retry-errors.json', list(structured_claim_errors))
+                    structured_claim_errors.clear()
                     pdp_json.clear()
                     response = page.reload(wait_until='domcontentloaded', timeout=60000)
                     page.wait_for_timeout(10000)
@@ -345,7 +352,8 @@ def main():
                                  'fixture': fixture_name, 'fixture_sha256': digest,
                                  'sampling_source': 'observed Specs pattern; current ecom-data group and selected SKU'})
             snapshot = {'target_sku': target, 'final_url': safe_url(page.url), **page.evaluate(DOM_SNAPSHOT),
-                        'structured_records': list(structured_claim_records)}
+                        'structured_records': list(structured_claim_records),
+                        'structured_errors': list(structured_claim_errors)}
             save('fixtures/public-claim-snapshot.json', snapshot)
             text = page.locator('body').inner_text()
             html = page.content()
@@ -414,6 +422,7 @@ def main():
             facts = json.loads((OUT / 'public-claim-facts.json').read_text(encoding='utf-8'))
             assert facts['exact_sku'] == snapshot['target_sku'], 'Claim snapshot SKU differs'
             assert snapshot['jsonld_parse_errors'] == 0, 'Product JSON-LD observation has parse errors'
+            assert not snapshot['structured_errors'], 'Public structured endpoint access/parsing failed'
             return {'target_sku': facts['exact_sku'], 'exact_product_jsonld_records': len(facts['pdp_exact_jsonld_raw']),
                     'structured_claim_status': facts['pdp_structured_claim_status'],
                     'rendered_candidates': len(facts['rendered_page_candidates_raw']),
