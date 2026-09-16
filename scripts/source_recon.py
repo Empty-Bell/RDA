@@ -123,7 +123,7 @@ def main():
 
         def observe(response):
             url = response.url
-            if family == 'computer' and response.request.resource_type in ('xhr', 'fetch'):
+            if family in ('computer', 'chromebook') and response.request.resource_type in ('xhr', 'fetch'):
                 parsed_url = urlsplit(url)
                 if parsed_url.path.endswith('/ecom-data'):
                     computer_group_ids.extend(parse_qs(parsed_url.query).get('group_id', []))
@@ -160,7 +160,7 @@ def main():
                     if 'json' not in response.headers.get('content-type', ''):
                         return
                     raw_data = response.json()
-                    data = project_computer_specs(raw_data) if family == 'computer' and isinstance(raw_data, list) else project_bridge(raw_data)
+                    data = project_computer_specs(raw_data) if family in ('computer', 'chromebook') and isinstance(raw_data, list) else project_bridge(raw_data)
                     paths = profile(data)
                     if paths and len(pdp_json) < 12:
                         index = len(pdp_json)
@@ -280,11 +280,11 @@ def main():
                 sampling_source = 'previous hosted fixture; independent source diagnosis, not population'
             target = product['modelCode']
             url = urljoin('https://www.samsung.com', product['pdpURL'])
-            if family == 'computer':
+            if family in ('computer', 'chromebook'):
                 computer_group_ids.clear()
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
             page.wait_for_timeout(10000)
-            if family == 'computer':
+            if family in ('computer', 'chromebook'):
                 # Current selected controls plus exact backend Specs corroborate SKU.
                 try:
                     page.locator('[data-modelcode][aria-checked="true"]').first.wait_for(state='visible', timeout=30000)
@@ -324,10 +324,10 @@ def main():
                                          'rendered_target_present': target.lower() in text.lower(),
                                          'energyguide_links': documents, 'bridge_snippets': bridge_snippets[:8],
                                          'json_endpoints': pdp_json})
-            if family == 'computer':
+            if family in ('computer', 'chromebook'):
                 save('computer-spec-endpoints.json', computer_spec_endpoints)
             assert response and response.status < 400, 'PDP HTTP access failed'
-            if family != 'computer':
+            if family not in ('computer', 'chromebook'):
                 assert target.lower() in text.lower(), 'Exact SKU not supported by rendered PDP text'
             assert pdp_json, 'Specs/Support bridge-data endpoint was not observed'
             source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))

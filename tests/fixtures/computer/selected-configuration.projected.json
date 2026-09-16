@@ -1,0 +1,17 @@
+{
+  "target_sku": "NP960UJH-XG7US",
+  "final_url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us/",
+  "rendered_target_present": false,
+  "selected_controls": [
+    {
+      "sku": "np960ujh-xg7us",
+      "label": "Galaxy Book6 Ultra"
+    },
+    {
+      "sku": "np960ujh-xg7us",
+      "label": "64 GB"
+    }
+  ],
+  "continue_sku": "np960ujh-xg7us",
+  "continue_visible": true
+}

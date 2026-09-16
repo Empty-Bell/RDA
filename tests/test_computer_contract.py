@@ -68,12 +68,11 @@ class ComputerContract(unittest.TestCase):
         with self.assertRaises(ValueError): project_computer_specs([{'modelCode':'SKU','fullSpecs':[{}]}])
 
     def test_selected_sku_and_visible_purchase_control_required(self):
-        # Synthetic mutations of the observed configurator control structure.
-        data={'selected_controls':[{'sku':'sku','label':'64 GB'}],
-              'continue_sku':'SKU','continue_visible':True}
-        self.assertEqual(computer_selection(data,'SKU')['exact_sku'],'SKU')
+        data=json.loads((ROOT/'selected-configuration.projected.json').read_text(encoding='utf-8'))
+        target='NP960UJH-XG7US'
+        self.assertEqual(computer_selection(data,target)['exact_sku'],target)
         data['continue_visible']=False
-        with self.assertRaises(ValueError): computer_selection(data,'SKU')
+        with self.assertRaises(ValueError): computer_selection(data,target)
 
     def test_mixed_configuration_cannot_pass_on_one_matching_sku(self):
         data={'selected_controls':[{'sku':'SKU'},{'sku':'OTHER'}],
