@@ -1,0 +1,923 @@
+{
+  "searchTotalCount": 9,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "NA30N6555TS/AA",
+      "modelName": "NA30N6555TS/AA",
+      "id": "NA30N6555TS/AA",
+      "group_id": "MULTI_GROUP_ID_601737",
+      "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555ts-aa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555ts-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "54",
+        "pickYn": "N",
+        "representativeModel": "NA30N6555TS/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-20",
+        "id": "601737"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#dbdbdb",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NA30N6555TS/AA",
+          "modelName": "NA30N6555TS/AA",
+          "id": "NA30N6555TS/AA",
+          "group_id": "MULTI_GROUP_ID_601737",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555ts-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555ts-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "54",
+            "pickYn": "N",
+            "representativeModel": "NA30N6555TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-20",
+            "id": "601737"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NA30N6555TG/AA",
+          "modelName": "NA30N6555TG/AA",
+          "id": "NA30N6555TG/AA",
+          "group_id": "MULTI_GROUP_ID_601737",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555tg-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555tg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "54",
+            "pickYn": "N",
+            "representativeModel": "NA30N6555TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-20",
+            "id": "601737"
+          },
+          "chips": [
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NA36N6555TS/AA",
+          "modelName": "NA36N6555TS/AA",
+          "id": "NA36N6555TS/AA",
+          "group_id": "MULTI_GROUP_ID_601737",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-gas-cooktop-2018-sku-na36n6555ts-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-gas-cooktop-2018-sku-na36n6555ts-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "54",
+            "pickYn": "N",
+            "representativeModel": "NA30N6555TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-20",
+            "id": "601737"
+          },
+          "chips": [
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NA36N6555TG/AA",
+          "modelName": "NA36N6555TG/AA",
+          "id": "NA36N6555TG/AA",
+          "group_id": "MULTI_GROUP_ID_601737",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-gas-cooktop-2018-sku-na36n6555tg-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-gas-cooktop-2018-sku-na36n6555tg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "54",
+            "pickYn": "N",
+            "representativeModel": "NA30N6555TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-20",
+            "id": "601737"
+          },
+          "chips": [
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NZ30K7570RS/AA",
+      "modelName": "NZ30K7570RS/AA",
+      "id": "NZ30K7570RS/AA",
+      "group_id": "MULTI_GROUP_ID_601741",
+      "pdpURL": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-with-rapid-boil-sku-nz30k7570rs-aa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-with-rapid-boil-sku-nz30k7570rs-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "53",
+        "pickYn": "N",
+        "representativeModel": "NZ30K7570RS/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-21",
+        "id": "601741"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NZ30K7570RS/AA",
+          "modelName": "NZ30K7570RS/AA",
+          "id": "NZ30K7570RS/AA",
+          "group_id": "MULTI_GROUP_ID_601741",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-with-rapid-boil-sku-nz30k7570rs-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-with-rapid-boil-sku-nz30k7570rs-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "53",
+            "pickYn": "N",
+            "representativeModel": "NZ30K7570RS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-21",
+            "id": "601741"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NZ36K7570RS/AA",
+          "modelName": "NZ36K7570RS/AA",
+          "id": "NZ36K7570RS/AA",
+          "group_id": "MULTI_GROUP_ID_601741",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-built-in-electric-cooktop-with-rapid-boil-sku-nz36k7570rs-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-built-in-electric-cooktop-with-rapid-boil-sku-nz36k7570rs-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "53",
+            "pickYn": "N",
+            "representativeModel": "NZ30K7570RS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-21",
+            "id": "601741"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NZ30K7880US/AA",
+      "modelName": "NZ30K7880US/AA",
+      "id": "NZ30K7880US/AA",
+      "group_id": "MULTI_GROUP_ID_601744",
+      "pdpURL": "/us/cooking-appliances/cooktops/induction-30-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz30k7880us-aa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/induction-30-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz30k7880us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "52",
+        "pickYn": "N",
+        "representativeModel": "NZ30K7880US/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-22",
+        "id": "601744"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#c7c8ca",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NZ30K7880US/AA",
+          "modelName": "NZ30K7880US/AA",
+          "id": "NZ30K7880US/AA",
+          "group_id": "MULTI_GROUP_ID_601744",
+          "pdpURL": "/us/cooking-appliances/cooktops/induction-30-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz30k7880us-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/induction-30-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz30k7880us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "52",
+            "pickYn": "N",
+            "representativeModel": "NZ30K7880US/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-22",
+            "id": "601744"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NA30N7755TS/AA",
+      "modelName": "NA30N7755TS/AA",
+      "id": "NA30N7755TS/AA",
+      "group_id": "MULTI_GROUP_ID_601758",
+      "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na30n7755ts-aa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na30n7755ts-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "48",
+        "pickYn": "N",
+        "representativeModel": "NA30N7755TS/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-26",
+        "id": "601758"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#dbdbdb",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NA30N7755TS/AA",
+          "modelName": "NA30N7755TS/AA",
+          "id": "NA30N7755TS/AA",
+          "group_id": "MULTI_GROUP_ID_601758",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na30n7755ts-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na30n7755ts-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "48",
+            "pickYn": "N",
+            "representativeModel": "NA30N7755TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-26",
+            "id": "601758"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NA36N7755TG/AA",
+          "modelName": "NA36N7755TG/AA",
+          "id": "NA36N7755TG/AA",
+          "group_id": "MULTI_GROUP_ID_601758",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na36n7755tg-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na36n7755tg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "48",
+            "pickYn": "N",
+            "representativeModel": "NA30N7755TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-26",
+            "id": "601758"
+          },
+          "chips": [
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "NA30N7755TG/AA",
+          "modelName": "NA30N7755TG/AA",
+          "id": "NA30N7755TG/AA",
+          "group_id": "MULTI_GROUP_ID_601758",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na30n7755tg-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na30n7755tg-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "48",
+            "pickYn": "N",
+            "representativeModel": "NA30N7755TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-26",
+            "id": "601758"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NA36N7755TS/AA",
+          "modelName": "NA36N7755TS/AA",
+          "id": "NA36N7755TS/AA",
+          "group_id": "MULTI_GROUP_ID_601758",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na36n7755ts-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-gas-cooktop-with-22k-btu-true-dual-power-burner-2018-sku-na36n7755ts-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "48",
+            "pickYn": "N",
+            "representativeModel": "NA30N7755TS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-26",
+            "id": "601758"
+          },
+          "chips": [
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NA30R5310FS/AA",
+      "modelName": "NA30R5310FS/AA",
+      "id": "NA30R5310FS/AA",
+      "group_id": "MULTI_GROUP_ID_601762",
+      "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-sku-na30r5310fs-aa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-sku-na30r5310fs-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "47",
+        "pickYn": "N",
+        "representativeModel": "NA30R5310FS/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-27",
+        "id": "601762"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#828284",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NA30R5310FS/AA",
+          "modelName": "NA30R5310FS/AA",
+          "id": "NA30R5310FS/AA",
+          "group_id": "MULTI_GROUP_ID_601762",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-gas-cooktop-sku-na30r5310fs-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-gas-cooktop-sku-na30r5310fs-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "47",
+            "pickYn": "N",
+            "representativeModel": "NA30R5310FS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-27",
+            "id": "601762"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#828284",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NA36R5310FS/AA",
+          "modelName": "NA36R5310FS/AA",
+          "id": "NA36R5310FS/AA",
+          "group_id": "MULTI_GROUP_ID_601762",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-gas-cooktop-sku-na36r5310fs-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-gas-cooktop-sku-na36r5310fs-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "47",
+            "pickYn": "N",
+            "representativeModel": "NA30R5310FS/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-27",
+            "id": "601762"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NZ36FG5332RKAA",
+      "modelName": "NZ36FG5332RKAA",
+      "id": "NZ36FG5332RKAA",
+      "group_id": "MULTI_GROUP_ID_601768",
+      "pdpURL": "/us/cooking-appliances/cooktops/36-electric-energy-star-certified-cooktop-with-5-elements-in-black-sku-nz36fg5332rkaa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/36-electric-energy-star-certified-cooktop-with-5-elements-in-black-sku-nz36fg5332rkaa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "46",
+        "pickYn": "N",
+        "representativeModel": "NZ36FG5332RKAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-29",
+        "id": "601768"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Black",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "36\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NZ36FG5332RKAA",
+          "modelName": "NZ36FG5332RKAA",
+          "id": "NZ36FG5332RKAA",
+          "group_id": "MULTI_GROUP_ID_601768",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-electric-energy-star-certified-cooktop-with-5-elements-in-black-sku-nz36fg5332rkaa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-electric-energy-star-certified-cooktop-with-5-elements-in-black-sku-nz36fg5332rkaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "46",
+            "pickYn": "N",
+            "representativeModel": "NZ36FG5332RKAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-29",
+            "id": "601768"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NZ30FG5332RKAA",
+          "modelName": "NZ30FG5332RKAA",
+          "id": "NZ30FG5332RKAA",
+          "group_id": "MULTI_GROUP_ID_601768",
+          "pdpURL": "/us/cooking-appliances/cooktops/electric-30-energy-star-certified-cooktop-with-4-elements-in-black-sku-nz30fg5332rkaa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/electric-30-energy-star-certified-cooktop-with-4-elements-in-black-sku-nz30fg5332rkaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "46",
+            "pickYn": "N",
+            "representativeModel": "NZ36FG5332RKAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-29",
+            "id": "601768"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NZ36K7880US/AA",
+      "modelName": "NZ36K7880US/AA",
+      "id": "NZ36K7880US/AA",
+      "group_id": "MULTI_GROUP_ID_601770",
+      "pdpURL": "/us/cooking-appliances/cooktops/induction-36-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz36k7880us-aa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/induction-36-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz36k7880us-aa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "45",
+        "pickYn": "N",
+        "representativeModel": "NZ36K7880US/AA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-30",
+        "id": "601770"
+      },
+      "chips": [
+        {
+          "fmyChipName": "36\"",
+          "fmyChipType": "Width"
+        },
+        {
+          "fmyChipCode": "#dbdbdb",
+          "fmyChipName": "Stainless Steel",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NZ36K7880US/AA",
+          "modelName": "NZ36K7880US/AA",
+          "id": "NZ36K7880US/AA",
+          "group_id": "MULTI_GROUP_ID_601770",
+          "pdpURL": "/us/cooking-appliances/cooktops/induction-36-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz36k7880us-aa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/induction-36-built-in-induction-cooktop-with-flex-cookzone-in-stainless-steel-sku-nz36k7880us-aa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "45",
+            "pickYn": "N",
+            "representativeModel": "NZ36K7880US/AA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-30",
+            "id": "601770"
+          },
+          "chips": [
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#dbdbdb",
+              "fmyChipName": "Stainless Steel",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "CC70F36S2DAA",
+      "modelName": "CC70F36S2DAA",
+      "id": "CC70F36S2DAA",
+      "group_id": "MULTI_GROUP_ID_601773",
+      "pdpURL": "/us/cooking-appliances/cooktops/36-induction-cooktop-with-anti-scratch-matte-glass-and-sync-burners-in-black-sku-cc70f36s2daa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/36-induction-cooktop-with-anti-scratch-matte-glass-and-sync-burners-in-black-sku-cc70f36s2daa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "44",
+        "pickYn": "N",
+        "representativeModel": "CC70F36S2DAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-31",
+        "id": "601773"
+      },
+      "chips": [
+        {
+          "fmyChipName": "36\"",
+          "fmyChipType": "Width"
+        },
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Black",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "CC70F36S2DAA",
+          "modelName": "CC70F36S2DAA",
+          "id": "CC70F36S2DAA",
+          "group_id": "MULTI_GROUP_ID_601773",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-induction-cooktop-with-anti-scratch-matte-glass-and-sync-burners-in-black-sku-cc70f36s2daa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-induction-cooktop-with-anti-scratch-matte-glass-and-sync-burners-in-black-sku-cc70f36s2daa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "44",
+            "pickYn": "N",
+            "representativeModel": "CC70F36S2DAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-31",
+            "id": "601773"
+          },
+          "chips": [
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            },
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "CC70F30S2DAA",
+          "modelName": "CC70F30S2DAA",
+          "id": "CC70F30S2DAA",
+          "group_id": "MULTI_GROUP_ID_601773",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-induction-cooktop-with-anti-scratch-matte-glass-and-sync-burners-in-black-sku-cc70f30s2daa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-induction-cooktop-with-anti-scratch-matte-glass-and-sync-burners-in-black-sku-cc70f30s2daa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "44",
+            "pickYn": "N",
+            "representativeModel": "CC70F36S2DAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-31",
+            "id": "601773"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NZ30FG6332RKAA",
+      "modelName": "NZ30FG6332RKAA",
+      "id": "NZ30FG6332RKAA",
+      "group_id": "MULTI_GROUP_ID_601790",
+      "pdpURL": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-energy-star-certified-electric-cooktop-with-illuminated-knobs-sku-nz30fg6332rkaa",
+      "consumerUrl": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-energy-star-certified-electric-cooktop-with-illuminated-knobs-sku-nz30fg6332rkaa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "40",
+        "pickYn": "N",
+        "representativeModel": "NZ30FG6332RKAA",
+        "taxonomyId": "08080000",
+        "isPrimary": "Y",
+        "familyName": "Cooking-Appliances-PF-35",
+        "id": "601790"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#000000",
+          "fmyChipName": "Black",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "30\"",
+          "fmyChipType": "Width"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "NZ30FG6332RKAA",
+          "modelName": "NZ30FG6332RKAA",
+          "id": "NZ30FG6332RKAA",
+          "group_id": "MULTI_GROUP_ID_601790",
+          "pdpURL": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-energy-star-certified-electric-cooktop-with-illuminated-knobs-sku-nz30fg6332rkaa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-energy-star-certified-electric-cooktop-with-illuminated-knobs-sku-nz30fg6332rkaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "NZ30FG6332RKAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-35",
+            "id": "601790"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "30\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        },
+        {
+          "modelCode": "NZ36FG6432RKAA",
+          "modelName": "NZ36FG6432RKAA",
+          "id": "NZ36FG6432RKAA",
+          "group_id": "MULTI_GROUP_ID_601790",
+          "pdpURL": "/us/cooking-appliances/cooktops/36-built-in-electric-cooktop-energy-star-certified-electric-cooktop-with-illuminated-knobs-sku-nz36fg6432rkaa",
+          "consumerUrl": "/us/cooking-appliances/cooktops/36-built-in-electric-cooktop-energy-star-certified-electric-cooktop-with-illuminated-knobs-sku-nz36fg6432rkaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "40",
+            "pickYn": "N",
+            "representativeModel": "NZ30FG6332RKAA",
+            "taxonomyId": "08080000",
+            "isPrimary": "Y",
+            "familyName": "Cooking-Appliances-PF-35",
+            "id": "601790"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#000000",
+              "fmyChipName": "Black",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "36\"",
+              "fmyChipType": "Width"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

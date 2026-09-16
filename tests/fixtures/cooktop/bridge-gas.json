@@ -1,0 +1,361 @@
+{
+  "Specs": [
+    {
+      "modelCode": "NA30N6555TG/AA",
+      "fullSpecs": [
+        {
+          "groupName": "Features",
+          "specList": [
+            {
+              "name": "Fingerprint Resistant",
+              "value": "Yes"
+            },
+            {
+              "name": "Sealed Burners",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Burner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Materials/Finishes",
+          "specList": [
+            {
+              "name": "Cooktop Type",
+              "value": "Gas"
+            },
+            {
+              "name": "Knob Lighting",
+              "value": "Backlit and Indicator"
+            },
+            {
+              "name": "Controls for Cooktop",
+              "value": "Weighted Knob"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Left Rear",
+              "value": "9.5K BTU"
+            },
+            {
+              "name": "Right Front",
+              "value": "13K BTU"
+            },
+            {
+              "name": "Right Rear",
+              "value": "5K BTU (Simmer)"
+            },
+            {
+              "name": "Center",
+              "value": "19K BTU (Dual)"
+            },
+            {
+              "name": "Left Front",
+              "value": "9.5K BTU"
+            }
+          ]
+        },
+        {
+          "groupName": "Cooktop",
+          "specList": [
+            {
+              "name": "Total Power",
+              "value": "56K"
+            },
+            {
+              "name": "Total Number of Burners",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Griddle",
+              "value": "Aluminum"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart",
+          "specList": [
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weights & Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "5.5"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "30"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "22.33"
+            },
+            {
+              "name": "Product Weight",
+              "value": "66.4 lbs."
+            },
+            {
+              "name": "Cut-Out Dimensions",
+              "value": "28 1/2\" W x 3 1/8\" H x 19 5/8\" D"
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "30\" W x 5 1/2\" H x 22 1/3\" D"
+            },
+            {
+              "name": "Product Width",
+              "value": "30\""
+            }
+          ]
+        },
+        {
+          "groupName": "Awards and Certificates",
+          "specList": [
+            {
+              "name": "J.D. Power Awards",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Illuminated Knobs",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Standard Features",
+          "specList": [
+            {
+              "name": "Wok Grate",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Fingerprint Resistant Black<br>Stainless Steel"
+            },
+            {
+              "name": "General Feature",
+              "value": "Gas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "NA30N6555TS/AA",
+      "fullSpecs": [
+        {
+          "groupName": "Features",
+          "specList": [
+            {
+              "name": "Sealed Burners",
+              "value": "Yes"
+            },
+            {
+              "name": "Power Burner",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Materials/Finishes",
+          "specList": [
+            {
+              "name": "Cooktop Type",
+              "value": "Gas"
+            },
+            {
+              "name": "Knob Lighting",
+              "value": "Backlit and Indicator"
+            },
+            {
+              "name": "Controls for Cooktop",
+              "value": "Weighted Knob"
+            }
+          ]
+        },
+        {
+          "groupName": "Power/Ratings",
+          "specList": [
+            {
+              "name": "Left Rear",
+              "value": "9.5K BTU"
+            },
+            {
+              "name": "Right Front",
+              "value": "13K BTU"
+            },
+            {
+              "name": "Right Rear",
+              "value": "5K BTU (Simmer)"
+            },
+            {
+              "name": "Center",
+              "value": "19K BTU (Dual)"
+            },
+            {
+              "name": "Left Front",
+              "value": "9.5K BTU"
+            }
+          ]
+        },
+        {
+          "groupName": "Cooktop",
+          "specList": [
+            {
+              "name": "Total Power",
+              "value": "56K BTU"
+            },
+            {
+              "name": "Total Number of Burners",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "groupName": "Accessories",
+          "specList": [
+            {
+              "name": "Griddle",
+              "value": "Aluminum"
+            }
+          ]
+        },
+        {
+          "groupName": "Smart",
+          "specList": [
+            {
+              "name": "Wi-Fi Connectivity",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Weights & Dimensions",
+          "specList": [
+            {
+              "name": "Height (decimal)",
+              "value": "5.5"
+            },
+            {
+              "name": "Height (extra)",
+              "value": "+ 2 inches for ventillation"
+            },
+            {
+              "name": "Width (decimal)",
+              "value": "30"
+            },
+            {
+              "name": "Width (extra)",
+              "value": "+ 3 inches for open door"
+            },
+            {
+              "name": "Depth (decimal)",
+              "value": "22.33"
+            },
+            {
+              "name": "Product Weight",
+              "value": "64.8 lbs."
+            },
+            {
+              "name": "Cut-Out Dimensions",
+              "value": "28 1/2\" W x 3 1/8\" H x 19 5/8\" D"
+            },
+            {
+              "name": "Product Dimensions",
+              "value": "30\" W x 5 1/2\" H x 22 1/3\" D"
+            },
+            {
+              "name": "Product Width",
+              "value": "30\""
+            }
+          ]
+        },
+        {
+          "groupName": "Awards and Certificates",
+          "specList": [
+            {
+              "name": "J.D. Power Awards",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Key Features",
+          "specList": [
+            {
+              "name": "ADA Compliant",
+              "value": "Yes"
+            },
+            {
+              "name": "Illuminated Knobs",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Design",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Stainless Steel"
+            },
+            {
+              "name": "General Feature",
+              "value": "Gas"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Support": [
+    {
+      "modelCode": "NA30N6555TG/AA",
+      "supports": []
+    },
+    {
+      "modelCode": "NA30N6555TS/AA",
+      "supports": []
+    }
+  ]
+}

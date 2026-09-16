@@ -236,7 +236,7 @@ def main():
         def pdp(sample_product=None):
             if sample_product is not None:
                 product = sample_product
-                sampling_source = 'current pf_search; additional standalone-path diagnostic sample'
+                sampling_source = 'current pf_search; additional source-backed diagnostic sample'
             elif captured_pf:
                 product = captured_pf[0][0]['searchResults'][0]
                 sampling_source = 'current pf_search response'
@@ -319,6 +319,18 @@ def main():
                 assert candidates, 'No source-backed standalone-path sample'
                 return pdp(candidates[0])
             check('standalone_washer_pdp_and_documents', standalone)
+            OUT = base_out
+
+        if family == 'cooktop':
+            candidates = [x for data, _, _ in captured_pf for x in data['searchResults']
+                          if 'electric-cooktop' in x.get('pdpURL', '')]
+            base_out = OUT
+            OUT = base_out / 'electric'
+            pdp_json.clear()
+            def electric():
+                assert candidates, 'No source-backed electric-path sample'
+                return pdp(candidates[0])
+            check('electric_cooktop_pdp_contract', electric)
             OUT = base_out
 
         def epa():
