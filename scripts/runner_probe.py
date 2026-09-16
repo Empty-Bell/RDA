@@ -12,7 +12,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 OUT = Path('runtime')
-SENSITIVE = re.compile(r'cookie|authorization|token|secret|password|email|session', re.I)
+SENSITIVE = re.compile(r'cookie|authorization|token|secret|password|email|session|feedbackParam|metricsParam|userId|visitorId', re.I)
 
 
 def safe_url(url):

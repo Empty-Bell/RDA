@@ -1,0 +1,38 @@
+name: Phase 0 refrigerator source contracts
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/source_recon.py', '.github/workflows/source-recon.yml']
+permissions:
+  contents: read
+concurrency:
+  group: source-recon-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  recon:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Bootstrap
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Observe refrigerator source contracts
+        run: python scripts/source_recon.py
+      - name: Preserve observations
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: source-recon-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/
+          retention-days: 14
+          if-no-files-found: error

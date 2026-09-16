@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['.github/workflows/runner-probe.yml', 'scripts/**', 'tests/**', 'requirements-probe.txt']
+    paths: ['.github/workflows/runner-probe.yml', 'scripts/runner_probe.py', 'scripts/bootstrap.sh', 'requirements-probe.txt']
 
 permissions:
   contents: read
