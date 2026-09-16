@@ -13,6 +13,7 @@ from urllib.parse import urljoin, urlsplit, parse_qs, urlencode
 from runner_probe import safe_url, sanitize
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason
 from browser_runtime import desktop_context
+from claim_recon import project_claim_records, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
 
 OUT = Path('runtime/source-recon')
 FAMILIES = {
@@ -108,6 +109,7 @@ def main():
     pdp_json = []
     computer_spec_endpoints = []
     computer_group_ids = []
+    structured_claim_records = []
 
     def check(name, fn):
         try:
@@ -126,6 +128,14 @@ def main():
 
         def observe(response):
             url = response.url
+            parsed_claim_url = urlsplit(url)
+            if parsed_claim_url.hostname == 'www.samsung.com' and parsed_claim_url.path in (
+                    '/us/gapi/v1/bridge/cacheable/bridge-data', '/us/gapi/v1/bridge/cacheable/ecom-data'):
+                try:
+                    for record in project_claim_records(response.json()):
+                        structured_claim_records.append({**record, 'source_url': safe_url(url), 'status': response.status})
+                except Exception:
+                    pass  # Unobserved structured flags stay NOT_EVALUATED, never false.
             if family in ('computer', 'chromebook', 'tablet') and response.request.resource_type in ('xhr', 'fetch'):
                 parsed_url = urlsplit(url)
                 if parsed_url.path.endswith('/ecom-data'):
@@ -251,6 +261,8 @@ def main():
                                    arg=total, timeout=20000)
             tiles = page.locator('.pd21-product-card__name').evaluate_all(
                 '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),url:e.href}))')
+            save('plp-claim-observation.json', {'cards': page.evaluate(PLP_SNAPSHOT),
+                 'attribution': 'rendered card SKU only; no offscreen/variant absence inference'})
             tile_groups = []
             for tile in tiles:
                 matching = {r['family_id'] for r in population['records'] if r['exact_sku'] == tile['sku']}
@@ -283,6 +295,7 @@ def main():
                 sampling_source = 'previous hosted fixture; independent source diagnosis, not population'
             target = product['modelCode']
             url = urljoin('https://www.samsung.com', product['pdpURL'])
+            structured_claim_records.clear()
             if family in ('computer', 'chromebook', 'tablet'):
                 computer_group_ids.clear()
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
@@ -316,6 +329,9 @@ def main():
                 pdp_json.append({'url': safe_url(spec_url), 'method': 'GET', 'status': spec_response.status,
                                  'fixture': fixture_name, 'fixture_sha256': digest,
                                  'sampling_source': 'observed Specs pattern; current ecom-data group and selected SKU'})
+            snapshot = {'target_sku': target, 'final_url': safe_url(page.url), **page.evaluate(DOM_SNAPSHOT),
+                        'structured_records': list(structured_claim_records)}
+            save('fixtures/public-claim-snapshot.json', snapshot)
             text = page.locator('body').inner_text()
             html = page.content()
             links = page.locator('a[href]').evaluate_all('(els) => els.map(e => ({text:e.textContent,url:e.href}))')
@@ -336,6 +352,7 @@ def main():
             source = json.loads((OUT / pdp_json[0]['fixture']).read_text(encoding='utf-8'))
             facts = pdp_facts(source, target, family='computer' if family == 'chromebook' else family)
             save('pdp-facts.json', facts)
+            save('public-claim-facts.json', claim_facts(snapshot, target, product, facts))
             if config.get('recon_domain') == 'EPA_ONLY':
                 return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
                         'energyguide_metadata_count': None if facts['document_collection_status'] == 'NOT_EVALUATED' else len(facts['energyguide_documents']),
@@ -376,6 +393,18 @@ def main():
                     'energyguide_link_count': len(documents), 'energyguide_pdf_valid': True}
 
         check('pdp_identity_and_documents', pdp)
+
+        def claims():
+            snapshot = json.loads((OUT / 'fixtures/public-claim-snapshot.json').read_text(encoding='utf-8'))
+            facts = json.loads((OUT / 'public-claim-facts.json').read_text(encoding='utf-8'))
+            assert facts['exact_sku'] == snapshot['target_sku'], 'Claim snapshot SKU differs'
+            assert snapshot['jsonld_parse_errors'] == 0, 'Product JSON-LD observation has parse errors'
+            return {'target_sku': facts['exact_sku'], 'exact_product_jsonld_records': len(facts['pdp_exact_jsonld_raw']),
+                    'structured_claim_status': facts['pdp_structured_claim_status'],
+                    'rendered_candidates': len(facts['rendered_page_candidates_raw']),
+                    'claim_consistency': 'NOT_EVALUATED'}
+
+        check('public_claim_identity_observation', claims)
 
         if family in {'washer', 'dryer'}:
             # Observed standalone listing paths provide a second diagnostic sample;
