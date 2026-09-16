@@ -200,7 +200,13 @@ def main():
                 if len(all_products) == total:
                     break
                 before = len(captured_pf)
-                page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+                # Jumping to an early document bottom can skip or precede lazy sections.
+                # Walk the viewport through configuration/summary, bounded to 12 steps.
+                for _ in range(12):
+                    if target.lower() in page.locator('body').inner_text().lower():
+                        break
+                    page.evaluate('window.scrollBy(0, window.innerHeight * 0.75)')
+                    page.wait_for_timeout(750)
                 page.wait_for_timeout(3500)
                 if len(captured_pf) > before:
                     continue  # scrolling may already trigger the next page
