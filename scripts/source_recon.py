@@ -36,6 +36,9 @@ FAMILIES = {
     'hood': {'plp': 'https://www.samsung.com/us/cooking-appliances/range-hoods/',
              'dataset': '8dv7-nngq', 'dataset_name': 'ENERGY STAR Certified Ventilating Fans',
              'recon_domain': 'EPA_ONLY'},
+    'monitor': {'plp': 'https://www.samsung.com/us/monitors/all-monitors/',
+                'dataset': 'qbg3-d468', 'dataset_name': 'ENERGY STAR Certified Displays',
+                'recon_domain': 'EPA_ONLY'},
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')

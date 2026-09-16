@@ -85,6 +85,7 @@ def pdp_facts(data, target, family='refrigerator'):
         'cooktop': (None, None),  # same dataset does not imply identical PDP specs
         'dryer': (None, 'Drying Capacity (cu.ft)'),  # observed standalone name, not combo washer capacity
         'hood': (None, None),  # preserve airflow/efficiency/noise as distinct raw spec pairs
+        'monitor': (None, None),  # discover display size/power names without annual-energy inference
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')
@@ -155,6 +156,8 @@ def epa_contract(metadata, rows, dataset='p5st-her9'):
         't9u7-4d2j': {'product_type', 'type', 'drum_capacity_cu_ft', 'combined_energy_factor_cef',
                       'estimated_annual_energy_use_kwh_yr', 'date_qualified'},
         '8dv7-nngq': {'unit_type', 'airflow_1_cfm', 'efficacy_1_cfm_w', 'sound_level_sones', 'date_qualified'},
+        'qbg3-d468': {'display_type', 'screen_size_inches', 'on_mode_power_watts',
+                      'sleep_mode_power_watts', 'off_mode_power_watts', 'monitor_total_energy', 'date_certified'},
     }
     if dataset not in columns:
         raise ValueError('Unknown EPA dataset contract')
