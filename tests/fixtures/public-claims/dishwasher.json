@@ -1,0 +1,221 @@
+{
+  "snapshot": {
+    "target_sku": "DW90F89P0USRAA",
+    "final_url": "https://www.samsung.com/us/dishwashers/freestanding/38-dba-bespoke-auto-open-door-dishwasher-with-3rd-rack-washing-system-in-fingerprint-resistant-stainless-steel-sku-dw90f89p0usraa/",
+    "headings": [
+      "Bespoke AI Smart DishwasherAI Wash & 3rd Rack Wash System | AutoRelease™ Door | 38dBA"
+    ],
+    "product_jsonld": [
+      {
+        "sku": "DW90F89P0USRAA",
+        "mpn": null,
+        "name": "Bespoke AI Smart Dishwasher AI Wash & 3rd Rack Wash System | AutoRelease™ Door 38dBA",
+        "availability": [
+          "https://schema.org/InStock"
+        ],
+        "additionalProperty": []
+      }
+    ],
+    "jsonld_parse_errors": 0,
+    "energy_candidates": [
+      {
+        "tag": "IMG",
+        "text": "",
+        "alt": null,
+        "label": null,
+        "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+      }
+    ],
+    "observation_scope": "current mounted DOM; visible page candidates are not attributed to target SKU",
+    "structured_records": [
+      {
+        "section": "Support",
+        "modelCode": "DW90F89P0USRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "DW90F89T0U12AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "DW90F89T0UMTAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "DW90F89T0USRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "DW90H89TETEAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Support",
+        "modelCode": "DW90H89TETRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "DW90F89P0USRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "DW90F89T0U12AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "DW90F89T0UMTAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "DW90F89T0USRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "DW90H89TETEAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "Specs",
+        "modelCode": "DW90H89TETRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=Specs%2CSupport%2CRelatedModels&store_type=B2C&group_id=575427&version=v2",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "DW90F89P0USRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=575427&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "DW90F89T0U12AA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=575427&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "DW90F89T0UMTAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=575427&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "DW90F89T0USRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=575427&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "DW90H89TETEAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=575427&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "DW90H89TETRAA",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=575427&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      }
+    ]
+  },
+  "listing": {
+    "modelCode": "DW90F89P0USRAA",
+    "modelName": "DW90F89P0USRAA",
+    "energyStarFlg": "Y",
+    "ecomFlag": "Y",
+    "stockFlag": "Y"
+  },
+  "specs": {
+    "exact_sku": "DW90F89P0USRAA",
+    "energy_star_spec_claim_raw": [
+      {
+        "group": "Energy & Performance",
+        "name": "ENERGY STAR® Certified",
+        "value": "Yes"
+      }
+    ]
+  },
+  "expected": {
+    "exact_sku": "DW90F89P0USRAA",
+    "listing_title_raw": "DW90F89P0USRAA",
+    "pdp_headings_raw": [
+      "Bespoke AI Smart DishwasherAI Wash & 3rd Rack Wash System | AutoRelease™ Door | 38dBA"
+    ],
+    "pdp_exact_jsonld_raw": [
+      {
+        "sku": "DW90F89P0USRAA",
+        "mpn": null,
+        "name": "Bespoke AI Smart Dishwasher AI Wash & 3rd Rack Wash System | AutoRelease™ Door 38dBA",
+        "availability": [
+          "https://schema.org/InStock"
+        ],
+        "additionalProperty": []
+      }
+    ],
+    "listing_commerce_raw": {
+      "ecomFlag": "Y",
+      "stockFlag": "Y"
+    },
+    "plp_energy_star_flag_raw": "Y",
+    "pdp_structured_energy_star_fields_raw": [],
+    "pdp_jsonld_energy_star_properties_raw": [],
+    "pdp_structured_claim_status": "NOT_EVALUATED",
+    "pdp_spec_energy_star_claim_raw": [
+      {
+        "group": "Energy & Performance",
+        "name": "ENERGY STAR® Certified",
+        "value": "Yes"
+      }
+    ],
+    "rendered_page_candidates_raw": [
+      {
+        "tag": "IMG",
+        "text": "",
+        "alt": null,
+        "label": null,
+        "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+      }
+    ],
+    "rendered_claim_attribution": "NOT_EVALUATED",
+    "certification_matching": "NOT_EVALUATED",
+    "claim_consistency": "NOT_EVALUATED"
+  }
+}

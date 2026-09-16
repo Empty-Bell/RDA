@@ -99,7 +99,7 @@ def main():
     family = args.parse_args().family
     config = FAMILIES[family]
     OUT = Path('runtime/source-recon') / family
-    from playwright.sync_api import sync_playwright
+    from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
     OUT.mkdir(parents=True, exist_ok=True)
     report = {'captured_at': datetime.now(timezone.utc).isoformat(),
               'run_id': os.getenv('GITHUB_RUN_ID'), 'attempt': os.getenv('GITHUB_RUN_ATTEMPT'),
@@ -302,19 +302,34 @@ def main():
             page.wait_for_timeout(10000)
             if family in ('computer', 'chromebook', 'tablet'):
                 # Current selected controls plus exact backend Specs corroborate SKU.
-                try:
-                    page.locator('[data-modelcode][aria-checked="true"]').first.wait_for(state='visible', timeout=30000)
-                finally:
-                    save('computer-spec-endpoints.json', computer_spec_endpoints)
-                    purchase_control = page.get_by_role('button', name=re.compile(r'^Continue')).first
-                    selection = {
-                        'target_sku': target, 'final_url': safe_url(page.url),
-                        'rendered_target_present': target.lower() in page.locator('body').inner_text().lower(),
-                        'selected_controls': page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
-                            '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
-                        'continue_sku': purchase_control.get_attribute('data-modelcode') if purchase_control.count() else None,
-                        'continue_visible': purchase_control.is_visible() if purchase_control.count() else False}
-                    save('computer-configurator-observation.json', selection)
+                for identity_attempt in range(2):
+                    timed_out = False
+                    try:
+                        page.locator('[data-modelcode][aria-checked="true"]').first.wait_for(state='visible', timeout=30000)
+                    except PlaywrightTimeoutError:
+                        timed_out = True
+                    finally:
+                        save('computer-spec-endpoints.json', computer_spec_endpoints)
+                        purchase_control = page.get_by_role('button', name=re.compile(r'^Continue')).first
+                        selection = {
+                            'target_sku': target, 'final_url': safe_url(page.url),
+                            'rendered_target_present': target.lower() in page.locator('body').inner_text().lower(),
+                            'selected_controls': page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
+                                '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
+                            'continue_sku': purchase_control.get_attribute('data-modelcode') if purchase_control.count() else None,
+                            'continue_visible': purchase_control.is_visible() if purchase_control.count() else False,
+                            'attempt': identity_attempt + 1, 'selected_control_timeout': timed_out}
+                        save(f'computer-configurator-attempt-{identity_attempt + 1}.json', selection)
+                        save('computer-configurator-observation.json', selection)
+                    if not timed_out or identity_attempt == 1:
+                        break
+                    # Retry a loading timeout once, preserving the failed observation.
+                    # Identity mismatch is never relaxed or retried as a matching SKU.
+                    computer_group_ids.clear()
+                    structured_claim_records.clear()
+                    pdp_json.clear()
+                    response = page.reload(wait_until='domcontentloaded', timeout=60000)
+                    page.wait_for_timeout(10000)
                 computer_selection(selection, target)
                 assert len(set(computer_group_ids)) == 1, 'Missing/ambiguous current ecom-data group provenance'
                 spec_url = 'https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?' + urlencode({

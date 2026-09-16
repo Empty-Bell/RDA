@@ -1,0 +1,17 @@
+[
+  {
+    "file": "tests/fixtures/public-claims/refrigerator.json",
+    "sha256": "df54c4abd73cd69d5776f9b1e4197465be0160446a685e88ee697e6b58054024",
+    "source_run_id": 35160080596
+  },
+  {
+    "file": "tests/fixtures/public-claims/dishwasher.json",
+    "sha256": "677b8ba769421e9e3b0c88fa18a18e9988bce2354f7f3f215ff9096216ebfdd0",
+    "source_run_id": 35160080596
+  },
+  {
+    "file": "tests/fixtures/public-claims/tablet.json",
+    "sha256": "e13911987ff7ce00bd91d155a299c91f51f560a42c622ad30b7dd6341eab6cd9",
+    "source_run_id": 35160080596
+  }
+]

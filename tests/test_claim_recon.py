@@ -1,4 +1,6 @@
 import copy
+import json
+from pathlib import Path
 import unittest
 from scripts.claim_recon import project_claim_records, claim_facts
 
@@ -54,3 +56,27 @@ class ClaimReconContract(unittest.TestCase):
     def test_missing_collection_is_observation_failure(self):
         del self.snapshot['product_jsonld']
         with self.assertRaises(ValueError): self.facts()
+
+    def test_conflicting_jsonld_identifiers_do_not_establish_current_product(self):
+        self.snapshot['product_jsonld']=[{'sku':'SKU','mpn':'OTHER','additionalProperty':[]}]
+        self.assertEqual(self.facts()['pdp_exact_jsonld_raw'],[])
+
+    def test_hosted_exact_product_and_distinct_claim_sources(self):
+        root=Path(__file__).parent/'fixtures'/'public-claims'
+        for family in ('refrigerator','dishwasher','tablet'):
+            with self.subTest(family=family):
+                fixture=json.loads((root/(family+'.json')).read_text(encoding='utf-8'))
+                result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
+                self.assertEqual(result,fixture['expected'])
+                self.assertEqual(result['pdp_exact_jsonld_raw'][0]['sku'],result['exact_sku'])
+                self.assertEqual(result['plp_energy_star_flag_raw'],'Y')
+                self.assertEqual(result['pdp_structured_claim_status'],'NOT_EVALUATED')
+                self.assertIn('energy-star-logo-pdp',result['rendered_page_candidates_raw'][0]['src'])
+
+    def test_tablet_logo_candidate_does_not_invent_spec_or_structured_claim(self):
+        path=Path(__file__).parent/'fixtures'/'public-claims'/'tablet.json'
+        fixture=json.loads(path.read_text(encoding='utf-8'))
+        result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
+        self.assertEqual(result['pdp_spec_energy_star_claim_raw'],[])
+        self.assertEqual(result['pdp_structured_energy_star_fields_raw'],[])
+        self.assertEqual(result['claim_consistency'],'NOT_EVALUATED')

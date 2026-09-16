@@ -1,0 +1,167 @@
+{
+  "snapshot": {
+    "target_sku": "SM-X930NZAAXAR",
+    "final_url": "https://www.samsung.com/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar/",
+    "headings": [
+      "Galaxy Tab S11 Ultra"
+    ],
+    "product_jsonld": [
+      {
+        "sku": "SM-X930NZAAXAR",
+        "mpn": null,
+        "name": "Galaxy Tab S11 Ultra (14.6\")",
+        "availability": [
+          "https://schema.org/InStock"
+        ],
+        "additionalProperty": []
+      }
+    ],
+    "jsonld_parse_errors": 0,
+    "energy_candidates": [
+      {
+        "tag": "IMG",
+        "text": "",
+        "alt": null,
+        "label": null,
+        "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+      }
+    ],
+    "observation_scope": "current mounted DOM; visible page candidates are not attributed to target SKU",
+    "structured_records": [
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X730NZAAXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X730NZAEXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X730NZAIXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X730NZSAXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X730NZSEXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X730NZSIXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X930NZAAXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X930NZAEXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X930NZAIXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X930NZSAXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X930NZSEXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      },
+      {
+        "section": "ROOT",
+        "modelCode": "SM-X930NZSIXAR",
+        "energy_star_fields_raw": [],
+        "source_url": "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?data_type=PricingPromotion&store_type=B2C&group_id=561914&site_id=us&channel_code=Web&version=v2&multistore=us",
+        "status": 200
+      }
+    ]
+  },
+  "listing": {
+    "modelCode": "SM-X930NZAAXAR",
+    "modelName": "SM-X930",
+    "energyStarFlg": "Y",
+    "ecomFlag": "Y",
+    "stockFlag": "Y"
+  },
+  "specs": {
+    "exact_sku": "SM-X930NZAAXAR",
+    "energy_star_spec_claim_raw": []
+  },
+  "expected": {
+    "exact_sku": "SM-X930NZAAXAR",
+    "listing_title_raw": "SM-X930",
+    "pdp_headings_raw": [
+      "Galaxy Tab S11 Ultra"
+    ],
+    "pdp_exact_jsonld_raw": [
+      {
+        "sku": "SM-X930NZAAXAR",
+        "mpn": null,
+        "name": "Galaxy Tab S11 Ultra (14.6\")",
+        "availability": [
+          "https://schema.org/InStock"
+        ],
+        "additionalProperty": []
+      }
+    ],
+    "listing_commerce_raw": {
+      "ecomFlag": "Y",
+      "stockFlag": "Y"
+    },
+    "plp_energy_star_flag_raw": "Y",
+    "pdp_structured_energy_star_fields_raw": [],
+    "pdp_jsonld_energy_star_properties_raw": [],
+    "pdp_structured_claim_status": "NOT_EVALUATED",
+    "pdp_spec_energy_star_claim_raw": [],
+    "rendered_page_candidates_raw": [
+      {
+        "tag": "IMG",
+        "text": "",
+        "alt": null,
+        "label": null,
+        "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$"
+      }
+    ],
+    "rendered_claim_attribution": "NOT_EVALUATED",
+    "certification_matching": "NOT_EVALUATED",
+    "claim_consistency": "NOT_EVALUATED"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35160080596",
+  "artifact_id": 10472955733,
+  "artifact_zip_sha256": "7e97de91826a8f490e5380c6a204555a578bdf019d87fe74b9fae7e45fe6ca4e",
+  "recon": {
+    "captured_at": "2026-09-16T22:57:40.400626+00:00",
+    "run_id": "35160080596",
+    "attempt": "1",
+    "git_sha": "562fbff666d679de087b071fb6897dc40b204bc1",
+    "scope": "computer source contracts only",
+    "status": "FAIL",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "22",
+          "category_code": "03010000",
+          "taxonomy_code": "03010100",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "435c35d73c47ebd3d829c71eff424701902c05fb1dde7b6c483f67be3aed0b8b",
+        "page_count": 11
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/computers/galaxy-book/",
+          "api_total": 11
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 11,
+          "exact_skus": 23,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 11,
+              "expected_groups": 11
+            }
+          ],
+          "rendered_representative_link_count": 11,
+          "rendered_tile_count": 11,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "FAIL",
+        "error": "Locator.wait_for: Timeout 30000ms exceeded."
+      },
+      {
+        "name": "public_claim_identity_observation",
+        "status": "FAIL",
+        "error": "[Errno 2] No such file or directory: 'runtime/source-recon/computer/fixtures/public-claim-snapshot.json'"
+      },
+      {
+        "name": "epa_computer_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "rxdj-2c88",
+          "column_count": 68,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "selection": {
+    "target_sku": "NP960UJH-XG7US",
+    "final_url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-ultra-16-intel-core-ultra-9-2tb-gray-sku-np960ujh-xg7us/",
+    "rendered_target_present": false,
+    "selected_controls": [],
+    "continue_sku": "np960ujh-xg7us",
+    "continue_visible": true
+  },
+  "interpretation": "Selected-control loading timeout; visible purchase SKU alone is insufficient. Dependent claim observation failed because identity stage did not complete. No absence/certification conclusion."
+}

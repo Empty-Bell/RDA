@@ -25,8 +25,10 @@ def claim_facts(snapshot, target, listing, specs):
         raise ValueError('Claim observation lacks exact SKU provenance')
     if not isinstance(snapshot.get('product_jsonld'), list) or not isinstance(snapshot.get('structured_records'), list):
         raise ValueError('Claim observation collections missing')
-    exact_jsonld = [r for r in snapshot['product_jsonld']
-                    if target.upper() in {(r.get('sku') or '').upper(), (r.get('mpn') or '').upper()}]
+    def exact_identifiers(record):
+        identifiers = [record.get(key) for key in ('sku', 'mpn') if record.get(key)]
+        return bool(identifiers) and all(isinstance(value, str) and value.upper() == target.upper() for value in identifiers)
+    exact_jsonld = [r for r in snapshot['product_jsonld'] if exact_identifiers(r)]
     records = [r for r in snapshot['structured_records'] if r.get('modelCode') == target]
     direct = [f for r in records for f in r['energy_star_fields_raw']]
     properties = [p for r in exact_jsonld for p in r.get('additionalProperty', [])
@@ -52,6 +54,7 @@ DOM_SNAPSHOT = r"""() => {
   const candidates = Array.from(document.querySelectorAll('img,[aria-label],p,span,li'))
     .filter(visible).map(e => ({tag:e.tagName, text:(e.children.length ? '' : e.textContent || '').trim(),
       alt:e.getAttribute('alt'), label:e.getAttribute('aria-label'),
+      ancestors:Array.from((function*(){let p=e;for(let i=0;p && i<5;i++,p=p.parentElement) yield {tag:p.tagName,cls:p.className};})()),
       src:e.tagName === 'IMG' ? e.getAttribute('src') : null}))
     .filter(x => energy.test([x.text,x.alt,x.label,x.src].join(' ')))
     .map(x => ({...x,text:x.text.slice(0,400)})).slice(0,40);
