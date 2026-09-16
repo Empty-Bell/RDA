@@ -1,0 +1,1861 @@
+{
+  "searchTotalCount": 11,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "SM-X930NZAAXAR",
+      "modelName": "SM-X930",
+      "id": "SM-X930NZAAXAR",
+      "group_id": "FMY_ID_561658",
+      "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar",
+      "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "11",
+        "pickYn": "N",
+        "representativeModel": "SM-X930NZAAXAR",
+        "familyName": "Galaxy Tab S11 Ultra",
+        "id": "561658",
+        "marketingName": "Galaxy Tab S11 Ultra (14.6\")"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "256 GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X930NZAAXAR",
+          "modelName": "SM-X930",
+          "id": "SM-X930NZAAXAR",
+          "group_id": "FMY_ID_561658",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "SM-X930NZAAXAR",
+            "familyName": "Galaxy Tab S11 Ultra",
+            "id": "561658",
+            "marketingName": "Galaxy Tab S11 Ultra (14.6\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X930NZSAXAR",
+          "modelName": "SM-X930",
+          "id": "SM-X930NZSAXAR",
+          "group_id": "FMY_ID_561658",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-silver-wi-fi-sku-sm-x930nzsaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-silver-wi-fi-sku-sm-x930nzsaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "SM-X930NZAAXAR",
+            "familyName": "Galaxy Tab S11 Ultra",
+            "id": "561658",
+            "marketingName": "Galaxy Tab S11 Ultra (14.6\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X930NZSEXAR",
+          "modelName": "SM-X930",
+          "id": "SM-X930NZSEXAR",
+          "group_id": "FMY_ID_561658",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-512gb-silver-wi-fi-sku-sm-x930nzsexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-512gb-silver-wi-fi-sku-sm-x930nzsexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "SM-X930NZAAXAR",
+            "familyName": "Galaxy Tab S11 Ultra",
+            "id": "561658",
+            "marketingName": "Galaxy Tab S11 Ultra (14.6\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X930NZSIXAR",
+          "modelName": "SM-X930",
+          "id": "SM-X930NZSIXAR",
+          "group_id": "FMY_ID_561658",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-1tb-silver-wi-fi-sku-sm-x930nzsixar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-1tb-silver-wi-fi-sku-sm-x930nzsixar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "SM-X930NZAAXAR",
+            "familyName": "Galaxy Tab S11 Ultra",
+            "id": "561658",
+            "marketingName": "Galaxy Tab S11 Ultra (14.6\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X930NZAIXAR",
+          "modelName": "SM-X930",
+          "id": "SM-X930NZAIXAR",
+          "group_id": "FMY_ID_561658",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-1tb-gray-wi-fi-sku-sm-x930nzaixar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-1tb-gray-wi-fi-sku-sm-x930nzaixar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "SM-X930NZAAXAR",
+            "familyName": "Galaxy Tab S11 Ultra",
+            "id": "561658",
+            "marketingName": "Galaxy Tab S11 Ultra (14.6\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "1 TB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X930NZAEXAR",
+          "modelName": "SM-X930",
+          "id": "SM-X930NZAEXAR",
+          "group_id": "FMY_ID_561658",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-512gb-gray-wi-fi-sku-sm-x930nzaexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-512gb-gray-wi-fi-sku-sm-x930nzaexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "11",
+            "pickYn": "N",
+            "representativeModel": "SM-X930NZAAXAR",
+            "familyName": "Galaxy Tab S11 Ultra",
+            "id": "561658",
+            "marketingName": "Galaxy Tab S11 Ultra (14.6\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X730NZAAXAR",
+      "modelName": "SM-X730",
+      "id": "SM-X730NZAAXAR",
+      "group_id": "FMY_ID_561655",
+      "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-128gb-gray-wi-fi-sku-sm-x730nzaaxar",
+      "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-128gb-gray-wi-fi-sku-sm-x730nzaaxar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "10",
+        "pickYn": "N",
+        "representativeModel": "SM-X730NZAAXAR",
+        "familyName": "Galaxy Tab S11",
+        "id": "561655",
+        "marketingName": "Galaxy Tab S11 (11\")"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "128 GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X730NZAAXAR",
+          "modelName": "SM-X730",
+          "id": "SM-X730NZAAXAR",
+          "group_id": "FMY_ID_561655",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-128gb-gray-wi-fi-sku-sm-x730nzaaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-128gb-gray-wi-fi-sku-sm-x730nzaaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "SM-X730NZAAXAR",
+            "familyName": "Galaxy Tab S11",
+            "id": "561655",
+            "marketingName": "Galaxy Tab S11 (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X730NZSAXAR",
+          "modelName": "SM-X730",
+          "id": "SM-X730NZSAXAR",
+          "group_id": "FMY_ID_561655",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-128gb-silver-wi-fi-sku-sm-x730nzsaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-128gb-silver-wi-fi-sku-sm-x730nzsaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "SM-X730NZAAXAR",
+            "familyName": "Galaxy Tab S11",
+            "id": "561655",
+            "marketingName": "Galaxy Tab S11 (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X730NZAIXAR",
+          "modelName": "SM-X730",
+          "id": "SM-X730NZAIXAR",
+          "group_id": "FMY_ID_561655",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-512gb-gray-wi-fi-sku-sm-x730nzaixar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-512gb-gray-wi-fi-sku-sm-x730nzaixar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "SM-X730NZAAXAR",
+            "familyName": "Galaxy Tab S11",
+            "id": "561655",
+            "marketingName": "Galaxy Tab S11 (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X730NZAEXAR",
+          "modelName": "SM-X730",
+          "id": "SM-X730NZAEXAR",
+          "group_id": "FMY_ID_561655",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-256gb-gray-wi-fi-sku-sm-x730nzaexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-256gb-gray-wi-fi-sku-sm-x730nzaexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "SM-X730NZAAXAR",
+            "familyName": "Galaxy Tab S11",
+            "id": "561655",
+            "marketingName": "Galaxy Tab S11 (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X730NZSIXAR",
+          "modelName": "SM-X730",
+          "id": "SM-X730NZSIXAR",
+          "group_id": "FMY_ID_561655",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-512gb-silver-wi-fi-sku-sm-x730nzsixar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-512gb-silver-wi-fi-sku-sm-x730nzsixar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "SM-X730NZAAXAR",
+            "familyName": "Galaxy Tab S11",
+            "id": "561655",
+            "marketingName": "Galaxy Tab S11 (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X730NZSEXAR",
+          "modelName": "SM-X730",
+          "id": "SM-X730NZSEXAR",
+          "group_id": "FMY_ID_561655",
+          "pdpURL": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-256gb-silver-wi-fi-sku-sm-x730nzsexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-256gb-silver-wi-fi-sku-sm-x730nzsexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "10",
+            "pickYn": "N",
+            "representativeModel": "SM-X730NZAAXAR",
+            "familyName": "Galaxy Tab S11",
+            "id": "561655",
+            "marketingName": "Galaxy Tab S11 (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X820NZAEXAR",
+      "modelName": "SM-X820",
+      "id": "SM-X820NZAEXAR",
+      "group_id": "FMY_ID_572802",
+      "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-512gb-moonstone-gray-wi-fi-sku-sm-x820nzaexar",
+      "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-512gb-moonstone-gray-wi-fi-sku-sm-x820nzaexar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "9",
+        "pickYn": "N",
+        "representativeModel": "SM-X820NZAEXAR",
+        "familyName": "Galaxy Tab S10 Plus",
+        "id": "572802",
+        "marketingName": "Galaxy Tab S10+ (12.4\")"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#606e81",
+          "fmyChipName": "Moonstone Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "512GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X820NZAEXAR",
+          "modelName": "SM-X820",
+          "id": "SM-X820NZAEXAR",
+          "group_id": "FMY_ID_572802",
+          "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-512gb-moonstone-gray-wi-fi-sku-sm-x820nzaexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-512gb-moonstone-gray-wi-fi-sku-sm-x820nzaexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "N",
+            "representativeModel": "SM-X820NZAEXAR",
+            "familyName": "Galaxy Tab S10 Plus",
+            "id": "572802",
+            "marketingName": "Galaxy Tab S10+ (12.4\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#606e81",
+              "fmyChipName": "Moonstone Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X820NZAAXAR",
+          "modelName": "SM-X820",
+          "id": "SM-X820NZAAXAR",
+          "group_id": "FMY_ID_572802",
+          "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-256gb-moonstone-gray-wi-fi-sku-sm-x820nzaaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-256gb-moonstone-gray-wi-fi-sku-sm-x820nzaaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "N",
+            "representativeModel": "SM-X820NZAEXAR",
+            "familyName": "Galaxy Tab S10 Plus",
+            "id": "572802",
+            "marketingName": "Galaxy Tab S10+ (12.4\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#606e81",
+              "fmyChipName": "Moonstone Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X820NZSAXAR",
+          "modelName": "SM-X820",
+          "id": "SM-X820NZSAXAR",
+          "group_id": "FMY_ID_572802",
+          "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-256gb-platinum-silver-wi-fi-sku-sm-x820nzsaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-256gb-platinum-silver-wi-fi-sku-sm-x820nzsaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "N",
+            "representativeModel": "SM-X820NZAEXAR",
+            "familyName": "Galaxy Tab S10 Plus",
+            "id": "572802",
+            "marketingName": "Galaxy Tab S10+ (12.4\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#d0d1cf",
+              "fmyChipName": "Platinum Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X820NZSEXAR",
+          "modelName": "SM-X820",
+          "id": "SM-X820NZSEXAR",
+          "group_id": "FMY_ID_572802",
+          "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-512gb-platinum-silver-wi-fi-sku-sm-x820nzsexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-512gb-platinum-silver-wi-fi-sku-sm-x820nzsexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "9",
+            "pickYn": "N",
+            "representativeModel": "SM-X820NZAEXAR",
+            "familyName": "Galaxy Tab S10 Plus",
+            "id": "572802",
+            "marketingName": "Galaxy Tab S10+ (12.4\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#d0d1cf",
+              "fmyChipName": "Platinum Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "512GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X828UZAAVZW",
+      "modelName": "SM-X828U",
+      "id": "SM-X828UZAAVZW",
+      "group_id": "FMY_ID_596480",
+      "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaavzw",
+      "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaavzw",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "8",
+        "pickYn": "N",
+        "representativeModel": "SM-X828UZAAVZW",
+        "familyName": "Galaxy Tab S10 Plus",
+        "id": "596480",
+        "marketingName": "Galaxy Tab S10+ 5G (12.4\")"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#606e81",
+          "fmyChipName": "Moonstone Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "256GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X828UZAAVZW",
+          "modelName": "SM-X828U",
+          "id": "SM-X828UZAAVZW",
+          "group_id": "FMY_ID_596480",
+          "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaavzw",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaavzw",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "8",
+            "pickYn": "N",
+            "representativeModel": "SM-X828UZAAVZW",
+            "familyName": "Galaxy Tab S10 Plus",
+            "id": "596480",
+            "marketingName": "Galaxy Tab S10+ 5G (12.4\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#606e81",
+              "fmyChipName": "Moonstone Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X828UZAAXAU",
+          "modelName": "SM-X828U",
+          "id": "SM-X828UZAAXAU",
+          "group_id": "FMY_ID_596480",
+          "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaaxau",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaaxau",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "8",
+            "pickYn": "N",
+            "representativeModel": "SM-X828UZAAVZW",
+            "familyName": "Galaxy Tab S10 Plus",
+            "id": "596480",
+            "marketingName": "Galaxy Tab S10+ 5G (12.4\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#606e81",
+              "fmyChipName": "Moonstone Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X828UZAAATT",
+          "modelName": "SM-X828U",
+          "id": "SM-X828UZAAATT",
+          "group_id": "FMY_ID_596480",
+          "pdpURL": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaaatt",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-plus-moonstone-gray-256gb-5g-sku-sm-x828uzaaatt",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "8",
+            "pickYn": "N",
+            "representativeModel": "SM-X828UZAAVZW",
+            "familyName": "Galaxy Tab S10 Plus",
+            "id": "596480",
+            "marketingName": "Galaxy Tab S10+ 5G (12.4\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#606e81",
+              "fmyChipName": "Moonstone Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X620NLBAXAR",
+      "modelName": "SM-X620",
+      "id": "SM-X620NLBAXAR",
+      "group_id": "FMY_ID_543406",
+      "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-blue-128gb-sku-sm-x620nlbaxar",
+      "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-blue-128gb-sku-sm-x620nlbaxar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "7",
+        "pickYn": "N",
+        "representativeModel": "SM-X620NLBAXAR",
+        "familyName": "Galaxy Tab S10 FE+",
+        "id": "543406",
+        "marketingName": "Galaxy Tab S10 FE+ (13.1\")"
+      },
+      "chips": [
+        {
+          "fmyChipName": "128GB",
+          "fmyChipType": "Storage"
+        },
+        {
+          "fmyChipCode": "#aabdd4",
+          "fmyChipName": "Blue",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X620NLBAXAR",
+          "modelName": "SM-X620",
+          "id": "SM-X620NLBAXAR",
+          "group_id": "FMY_ID_543406",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-blue-128gb-sku-sm-x620nlbaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-blue-128gb-sku-sm-x620nlbaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "SM-X620NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE+",
+            "id": "543406",
+            "marketingName": "Galaxy Tab S10 FE+ (13.1\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#aabdd4",
+              "fmyChipName": "Blue",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X620NZAAXAR",
+          "modelName": "SM-X620",
+          "id": "SM-X620NZAAXAR",
+          "group_id": "FMY_ID_543406",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-gray-128gb-sku-sm-x620nzaaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-gray-128gb-sku-sm-x620nzaaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "SM-X620NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE+",
+            "id": "543406",
+            "marketingName": "Galaxy Tab S10 FE+ (13.1\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X620NZSEXAR",
+          "modelName": "SM-X620",
+          "id": "SM-X620NZSEXAR",
+          "group_id": "FMY_ID_543406",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-silver-256gb-sku-sm-x620nzsexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-silver-256gb-sku-sm-x620nzsexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "SM-X620NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE+",
+            "id": "543406",
+            "marketingName": "Galaxy Tab S10 FE+ (13.1\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X620NZAEXAR",
+          "modelName": "SM-X620",
+          "id": "SM-X620NZAEXAR",
+          "group_id": "FMY_ID_543406",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-gray-256gb-sku-sm-x620nzaexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-gray-256gb-sku-sm-x620nzaexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "SM-X620NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE+",
+            "id": "543406",
+            "marketingName": "Galaxy Tab S10 FE+ (13.1\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X620NZSAXAR",
+          "modelName": "SM-X620",
+          "id": "SM-X620NZSAXAR",
+          "group_id": "FMY_ID_543406",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-silver-128gb-sku-sm-x620nzsaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-silver-128gb-sku-sm-x620nzsaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "SM-X620NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE+",
+            "id": "543406",
+            "marketingName": "Galaxy Tab S10 FE+ (13.1\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X620NLBEXAR",
+          "modelName": "SM-X620",
+          "id": "SM-X620NLBEXAR",
+          "group_id": "FMY_ID_543406",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-blue-256gb-sku-sm-x620nlbexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-plus-blue-256gb-sku-sm-x620nlbexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "7",
+            "pickYn": "N",
+            "representativeModel": "SM-X620NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE+",
+            "id": "543406",
+            "marketingName": "Galaxy Tab S10 FE+ (13.1\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#aabdd4",
+              "fmyChipName": "Blue",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X520NLBAXAR",
+      "modelName": "SM-X520",
+      "id": "SM-X520NLBAXAR",
+      "group_id": "FMY_ID_543385",
+      "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-blue-128gb-sku-sm-x520nlbaxar",
+      "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-blue-128gb-sku-sm-x520nlbaxar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "6",
+        "pickYn": "N",
+        "representativeModel": "SM-X520NLBAXAR",
+        "familyName": "Galaxy Tab S10 FE",
+        "id": "543385",
+        "marketingName": "Galaxy Tab S10 FE (10.9\")"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#aabdd4",
+          "fmyChipName": "Blue",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "128GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X520NLBAXAR",
+          "modelName": "SM-X520",
+          "id": "SM-X520NLBAXAR",
+          "group_id": "FMY_ID_543385",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-blue-128gb-sku-sm-x520nlbaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-blue-128gb-sku-sm-x520nlbaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "SM-X520NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543385",
+            "marketingName": "Galaxy Tab S10 FE (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#aabdd4",
+              "fmyChipName": "Blue",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X520NZSAXAR",
+          "modelName": "SM-X520",
+          "id": "SM-X520NZSAXAR",
+          "group_id": "FMY_ID_543385",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-silver-128gb-sku-sm-x520nzsaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-silver-128gb-sku-sm-x520nzsaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "SM-X520NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543385",
+            "marketingName": "Galaxy Tab S10 FE (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X520NZAAXAR",
+          "modelName": "SM-X520",
+          "id": "SM-X520NZAAXAR",
+          "group_id": "FMY_ID_543385",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-gray-128gb-sku-sm-x520nzaaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-gray-128gb-sku-sm-x520nzaaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "SM-X520NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543385",
+            "marketingName": "Galaxy Tab S10 FE (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X520NLBEXAR",
+          "modelName": "SM-X520",
+          "id": "SM-X520NLBEXAR",
+          "group_id": "FMY_ID_543385",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-blue-256gb-sku-sm-x520nlbexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-blue-256gb-sku-sm-x520nlbexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "SM-X520NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543385",
+            "marketingName": "Galaxy Tab S10 FE (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#aabdd4",
+              "fmyChipName": "Blue",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X520NZSEXAR",
+          "modelName": "SM-X520",
+          "id": "SM-X520NZSEXAR",
+          "group_id": "FMY_ID_543385",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-silver-256gb-sku-sm-x520nzsexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-silver-256gb-sku-sm-x520nzsexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "SM-X520NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543385",
+            "marketingName": "Galaxy Tab S10 FE (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X520NZAEXAR",
+          "modelName": "SM-X520",
+          "id": "SM-X520NZAEXAR",
+          "group_id": "FMY_ID_543385",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-gray-256gb-sku-sm-x520nzaexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-gray-256gb-sku-sm-x520nzaexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "6",
+            "pickYn": "N",
+            "representativeModel": "SM-X520NLBAXAR",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543385",
+            "marketingName": "Galaxy Tab S10 FE (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "256GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X528UZAAATT",
+      "modelName": "SM-X528U",
+      "id": "SM-X528UZAAATT",
+      "group_id": "FMY_ID_543393",
+      "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaaatt",
+      "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaaatt",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "N",
+      "globalFeaturedSortOrder": {
+        "orderNo": "5",
+        "pickYn": "N",
+        "representativeModel": "SM-X528UZAAATT",
+        "familyName": "Galaxy Tab S10 FE",
+        "id": "543393",
+        "marketingName": "Galaxy Tab S10 FE 5G (10.9\")"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "128GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X528UZAAATT",
+          "modelName": "SM-X528U",
+          "id": "SM-X528UZAAATT",
+          "group_id": "FMY_ID_543393",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaaatt",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaaatt",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "5",
+            "pickYn": "N",
+            "representativeModel": "SM-X528UZAAATT",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543393",
+            "marketingName": "Galaxy Tab S10 FE 5G (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X528UZAAXAU",
+          "modelName": "SM-X528U",
+          "id": "SM-X528UZAAXAU",
+          "group_id": "FMY_ID_543393",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaaxau",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaaxau",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "5",
+            "pickYn": "N",
+            "representativeModel": "SM-X528UZAAATT",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543393",
+            "marketingName": "Galaxy Tab S10 FE 5G (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X528UZAAVZW",
+          "modelName": "SM-X528U",
+          "id": "SM-X528UZAAVZW",
+          "group_id": "FMY_ID_543393",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaavzw",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-fe/buy/galaxy-tab-s10-fe-5g-gray-128gb-sku-sm-x528uzaavzw",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "N",
+          "globalFeaturedSortOrder": {
+            "orderNo": "5",
+            "pickYn": "N",
+            "representativeModel": "SM-X528UZAAATT",
+            "familyName": "Galaxy Tab S10 FE",
+            "id": "543393",
+            "marketingName": "Galaxy Tab S10 FE 5G (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X400NZRAXAR",
+      "modelName": "SM-X400",
+      "id": "SM-X400NZRAXAR",
+      "group_id": "FMY_ID_560781",
+      "pdpURL": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-coral-red-wi-fi-sku-sm-x400nzraxar",
+      "consumerUrl": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-coral-red-wi-fi-sku-sm-x400nzraxar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "4",
+        "pickYn": "N",
+        "representativeModel": "SM-X400NZAAXAR",
+        "familyName": "Galaxy Tab S10 Lite",
+        "id": "560781",
+        "marketingName": "Galaxy Tab S10 Lite (10.9\")"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#d85f67",
+          "fmyChipName": "CoralRed",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "128 GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X400NZRAXAR",
+          "modelName": "SM-X400",
+          "id": "SM-X400NZRAXAR",
+          "group_id": "FMY_ID_560781",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-coral-red-wi-fi-sku-sm-x400nzraxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-coral-red-wi-fi-sku-sm-x400nzraxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "SM-X400NZAAXAR",
+            "familyName": "Galaxy Tab S10 Lite",
+            "id": "560781",
+            "marketingName": "Galaxy Tab S10 Lite (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#d85f67",
+              "fmyChipName": "CoralRed",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X400NZAAXAR",
+          "modelName": "SM-X400",
+          "id": "SM-X400NZAAXAR",
+          "group_id": "FMY_ID_560781",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-gray-wi-fi-sku-sm-x400nzaaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-gray-wi-fi-sku-sm-x400nzaaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "SM-X400NZAAXAR",
+            "familyName": "Galaxy Tab S10 Lite",
+            "id": "560781",
+            "marketingName": "Galaxy Tab S10 Lite (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X400NZSEXAR",
+          "modelName": "SM-X400",
+          "id": "SM-X400NZSEXAR",
+          "group_id": "FMY_ID_560781",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-256gb-silver-wi-fi-sku-sm-x400nzsexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-256gb-silver-wi-fi-sku-sm-x400nzsexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "SM-X400NZAAXAR",
+            "familyName": "Galaxy Tab S10 Lite",
+            "id": "560781",
+            "marketingName": "Galaxy Tab S10 Lite (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X400NZSAXAR",
+          "modelName": "SM-X400",
+          "id": "SM-X400NZSAXAR",
+          "group_id": "FMY_ID_560781",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-silver-wi-fi-sku-sm-x400nzsaxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-128gb-silver-wi-fi-sku-sm-x400nzsaxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "SM-X400NZAAXAR",
+            "familyName": "Galaxy Tab S10 Lite",
+            "id": "560781",
+            "marketingName": "Galaxy Tab S10 Lite (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X400NZAEXAR",
+          "modelName": "SM-X400",
+          "id": "SM-X400NZAEXAR",
+          "group_id": "FMY_ID_560781",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-256gb-gray-wi-fi-sku-sm-x400nzaexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-256gb-gray-wi-fi-sku-sm-x400nzaexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "SM-X400NZAAXAR",
+            "familyName": "Galaxy Tab S10 Lite",
+            "id": "560781",
+            "marketingName": "Galaxy Tab S10 Lite (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X400NZREXAR",
+          "modelName": "SM-X400",
+          "id": "SM-X400NZREXAR",
+          "group_id": "FMY_ID_560781",
+          "pdpURL": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-256gb-coral-red-wi-fi-sku-sm-x400nzrexar",
+          "consumerUrl": "/us/tablets/galaxy-tab-s10-lite/buy/galaxy-tab-s10-lite-256gb-coral-red-wi-fi-sku-sm-x400nzrexar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "4",
+            "pickYn": "N",
+            "representativeModel": "SM-X400NZAAXAR",
+            "familyName": "Galaxy Tab S10 Lite",
+            "id": "560781",
+            "marketingName": "Galaxy Tab S10 Lite (10.9\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#d85f67",
+              "fmyChipName": "CoralRed",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X230NZAIXAR",
+      "modelName": "SM-X230",
+      "id": "SM-X230NZAIXAR",
+      "group_id": "FMY_ID_571617",
+      "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-128gb-gray-wi-fi-sku-sm-x230nzaixar",
+      "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-128gb-gray-wi-fi-sku-sm-x230nzaixar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "3",
+        "pickYn": "N",
+        "representativeModel": "SM-X230NZAIXAR",
+        "familyName": "Galaxy Tab A11+",
+        "id": "571617",
+        "marketingName": "Galaxy Tab A11+ (11\")"
+      },
+      "chips": [
+        {
+          "fmyChipName": "128 GB",
+          "fmyChipType": "Storage"
+        },
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X230NZAIXAR",
+          "modelName": "SM-X230",
+          "id": "SM-X230NZAIXAR",
+          "group_id": "FMY_ID_571617",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-128gb-gray-wi-fi-sku-sm-x230nzaixar",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-128gb-gray-wi-fi-sku-sm-x230nzaixar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "3",
+            "pickYn": "N",
+            "representativeModel": "SM-X230NZAIXAR",
+            "familyName": "Galaxy Tab A11+",
+            "id": "571617",
+            "marketingName": "Galaxy Tab A11+ (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X230NZATXAR",
+          "modelName": "SM-X230",
+          "id": "SM-X230NZATXAR",
+          "group_id": "FMY_ID_571617",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-256gb-gray-wi-fi-sku-sm-x230nzatxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-256gb-gray-wi-fi-sku-sm-x230nzatxar",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "3",
+            "pickYn": "N",
+            "representativeModel": "SM-X230NZAIXAR",
+            "familyName": "Galaxy Tab A11+",
+            "id": "571617",
+            "marketingName": "Galaxy Tab A11+ (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X230NZSTXAR",
+          "modelName": "SM-X230",
+          "id": "SM-X230NZSTXAR",
+          "group_id": "FMY_ID_571617",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-256gb-silver-wi-fi-sku-sm-x230nzstxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-256gb-silver-wi-fi-sku-sm-x230nzstxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "3",
+            "pickYn": "N",
+            "representativeModel": "SM-X230NZAIXAR",
+            "familyName": "Galaxy Tab A11+",
+            "id": "571617",
+            "marketingName": "Galaxy Tab A11+ (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "256 GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X230NZSIXAR",
+          "modelName": "SM-X230",
+          "id": "SM-X230NZSIXAR",
+          "group_id": "FMY_ID_571617",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-128gb-silver-wi-fi-sku-sm-x230nzsixar",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-128gb-silver-wi-fi-sku-sm-x230nzsixar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "3",
+            "pickYn": "N",
+            "representativeModel": "SM-X230NZAIXAR",
+            "familyName": "Galaxy Tab A11+",
+            "id": "571617",
+            "marketingName": "Galaxy Tab A11+ (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#c7c8ca",
+              "fmyChipName": "Silver",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X238UZAAXAA",
+      "modelName": "SM-X238U1",
+      "id": "SM-X238UZAAXAA",
+      "group_id": "FMY_ID_574009",
+      "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaxaa",
+      "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaxaa",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "2",
+        "pickYn": "N",
+        "representativeModel": "SM-X238UZAAXAA",
+        "familyName": "Galaxy Tab A11+",
+        "id": "574009",
+        "marketingName": "Galaxy Tab A11+ 5G (11\")"
+      },
+      "chips": [
+        {
+          "fmyChipName": "128 GB",
+          "fmyChipType": "Storage"
+        },
+        {
+          "fmyChipCode": "#75787b",
+          "fmyChipName": "Gray",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X238UZAAXAA",
+          "modelName": "SM-X238U1",
+          "id": "SM-X238UZAAXAA",
+          "group_id": "FMY_ID_574009",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaxaa",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaxaa",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "2",
+            "pickYn": "N",
+            "representativeModel": "SM-X238UZAAXAA",
+            "familyName": "Galaxy Tab A11+",
+            "id": "574009",
+            "marketingName": "Galaxy Tab A11+ 5G (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X238UZAAXAU",
+          "modelName": "SM-X238U",
+          "id": "SM-X238UZAAXAU",
+          "group_id": "FMY_ID_574009",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaxau",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaxau",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "2",
+            "pickYn": "N",
+            "representativeModel": "SM-X238UZAAXAA",
+            "familyName": "Galaxy Tab A11+",
+            "id": "574009",
+            "marketingName": "Galaxy Tab A11+ 5G (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X238UZAAVZW",
+          "modelName": "SM-X238U",
+          "id": "SM-X238UZAAVZW",
+          "group_id": "FMY_ID_574009",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaavzw",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaavzw",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "2",
+            "pickYn": "N",
+            "representativeModel": "SM-X238UZAAXAA",
+            "familyName": "Galaxy Tab A11+",
+            "id": "574009",
+            "marketingName": "Galaxy Tab A11+ 5G (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            },
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X238UZAAATT",
+          "modelName": "SM-X238U",
+          "id": "SM-X238UZAAATT",
+          "group_id": "FMY_ID_574009",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaatt",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-5g-128gb-gray-sku-sm-x238uzaaatt",
+          "ecomFlag": "Y",
+          "stockFlag": "N",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "2",
+            "pickYn": "N",
+            "representativeModel": "SM-X238UZAAXAA",
+            "familyName": "Galaxy Tab A11+",
+            "id": "574009",
+            "marketingName": "Galaxy Tab A11+ 5G (11\")"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#75787b",
+              "fmyChipName": "Gray",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X230NZAVXAR",
+      "modelName": "SM-X230",
+      "id": "SM-X230NZAVXAR",
+      "group_id": "MULTI_GROUP_ID_603786",
+      "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-kids-edition-128gb-blue-wi-fi-sku-sm-x230nzavxar",
+      "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-kids-edition-128gb-blue-wi-fi-sku-sm-x230nzavxar",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "1",
+        "pickYn": "N",
+        "representativeModel": "SM-X230NZAVXAR",
+        "taxonomyId": "01020000",
+        "isPrimary": "Y",
+        "familyName": "galaxy-kids-edition",
+        "id": "603786"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#0f5eb9",
+          "fmyChipName": "Blue",
+          "fmyChipType": "Color"
+        },
+        {
+          "fmyChipName": "128 GB",
+          "fmyChipType": "Storage"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "SM-X230NZAVXAR",
+          "modelName": "SM-X230",
+          "id": "SM-X230NZAVXAR",
+          "group_id": "MULTI_GROUP_ID_603786",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-kids-edition-128gb-blue-wi-fi-sku-sm-x230nzavxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-kids-edition-128gb-blue-wi-fi-sku-sm-x230nzavxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "1",
+            "pickYn": "N",
+            "representativeModel": "SM-X230NZAVXAR",
+            "taxonomyId": "01020000",
+            "isPrimary": "Y",
+            "familyName": "galaxy-kids-edition",
+            "id": "603786"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#0f5eb9",
+              "fmyChipName": "Blue",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        },
+        {
+          "modelCode": "SM-X230NZALXAR",
+          "modelName": "SM-X230",
+          "id": "SM-X230NZALXAR",
+          "group_id": "MULTI_GROUP_ID_603786",
+          "pdpURL": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-kids-edition-128gb-red-wi-fi-sku-sm-x230nzalxar",
+          "consumerUrl": "/us/tablets/galaxy-tab-a11-plus/buy/galaxy-tab-a11-plus-kids-edition-128gb-red-wi-fi-sku-sm-x230nzalxar",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "1",
+            "pickYn": "N",
+            "representativeModel": "SM-X230NZAVXAR",
+            "taxonomyId": "01020000",
+            "isPrimary": "Y",
+            "familyName": "galaxy-kids-edition",
+            "id": "603786"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#cc5953",
+              "fmyChipName": "Red",
+              "fmyChipType": "Color"
+            },
+            {
+              "fmyChipName": "128 GB",
+              "fmyChipType": "Storage"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "tests/fixtures/tablet/epa-metadata.projected.json",
+    "sha256": "c2b10aacd35c4c14593e07ed75d69c63c77de1882a4dae969ab2b8fb20e83e5c",
+    "source_run_id": 35158772571
+  },
+  {
+    "file": "tests/fixtures/tablet/epa-sample.projected.json",
+    "sha256": "01a2dd5fb9d8d72ccb9fa3088d3df6d29a880dfcc973047a7f39b4b6abcd1d8a",
+    "source_run_id": 35158772571
+  },
+  {
+    "file": "tests/fixtures/tablet/pf-page-0.json",
+    "sha256": "b7d9ed42a1c7eb935c2bcdefb95293d3a4b3d87852a84c25e14c9ed747844a5f",
+    "source_run_id": 35158772571
+  },
+  {
+    "file": "tests/fixtures/tablet/selected-configuration.projected.json",
+    "sha256": "bbe24c15ca70183b43a429f845436bf7daba1b54d0b3e00eb129c50d62547a49",
+    "source_run_id": 35158772571
+  },
+  {
+    "file": "tests/fixtures/tablet/specs-only.projected.json",
+    "sha256": "d297f6f098cc88f988365a11d5c19f1307ba6cfc35eaa224fcc0b0df89fe2d5a",
+    "source_run_id": 35158772571
+  }
+]

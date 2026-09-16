@@ -1,0 +1,3085 @@
+{
+  "Specs": [
+    {
+      "modelCode": "SM-X730NZAAXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "11.0\" (278.1mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "278.1mm (11.0\" full rectangle) / 276.2mm (10.9\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2560 x 1600 (WQXGA)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "128"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "96.9"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, HE160, MIMO, 1024-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "165.3 x 253.8 x 5.5"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "469"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 18"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "8400"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X730NZAEXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "11.0\" (278.1mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "278.1mm (11.0\" full rectangle) / 276.2mm (10.9\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2560 x 1600 (WQXGA)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "256"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "224.4"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, HE160, MIMO, 1024-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "165.3 x 253.8 x 5.5"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "469"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 18"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "8400"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X730NZAIXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "11.0\" (278.1mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "278.1mm (11.0\" full rectangle) / 276.2mm (10.9\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2560 x 1600 (WQXGA)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "512"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "475.9"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, HE160, MIMO, 1024-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "165.3 x 253.8 x 5.5"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "469"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 18"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "8400"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X730NZSAXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "11.0\" (278.1mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "278.1mm (11.0\" full rectangle) / 276.2mm (10.9\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2560 x 1600 (WQXGA)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "128"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "96.9"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, HE160, MIMO, 1024-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "165.3 x 253.8 x 5.5"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "469"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 18"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "8400"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X730NZSEXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "11.0\" (278.1mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "278.1mm (11.0\" full rectangle) / 276.2mm (10.9\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2560 x 1600 (WQXGA)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "256"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "224.4"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, HE160, MIMO, 1024-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "165.3 x 253.8 x 5.5"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "469"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 18"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "8400"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X730NZSIXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "11.0\" (278.1mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "278.1mm (11.0\" full rectangle) / 276.2mm (10.9\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2560 x 1600 (WQXGA)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "512"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "475.9"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax 2.4GHz+5GHz+6GHz, HE160, MIMO, 1024-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "165.3 x 253.8 x 5.5"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "469"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 18"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "8400"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X930NZAAXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "14.6\" (369.9mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "369.9mm (14.6\" full rectangle) / 367.2mm (14.5\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2960 x 1848 (WQXGA+)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP + 8.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "256"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "227.9"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, EHT320, MIMO, 4096-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Gray"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "208.5 x 326.3 x 5.1"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "692"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 23"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "11600"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X930NZAEXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "14.6\" (369.9mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "369.9mm (14.6\" full rectangle) / 367.2mm (14.5\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2960 x 1848 (WQXGA+)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP + 8.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "512"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "483.0"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, EHT320, MIMO, 4096-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "208.5 x 326.3 x 5.1"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "692"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 23"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "11600"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X930NZAIXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "14.6\" (369.9mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "369.9mm (14.6\" full rectangle) / 367.2mm (14.5\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2960 x 1848 (WQXGA+)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP + 8.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "16"
+            },
+            {
+              "name": "Storage (TB)",
+              "value": "1"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "993.4"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, EHT320, MIMO, 4096-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "208.5 x 326.3 x 5.1"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "692"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 23"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "11600"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X930NZSAXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "14.6\" (369.9mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "369.9mm (14.6\" full rectangle) / 367.2mm (14.5\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2960 x 1848 (WQXGA+)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP + 8.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "256"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "227.9"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, EHT320, MIMO, 4096-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "208.5 x 326.3 x 5.1"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "692"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 23"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "11600"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X930NZSEXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "14.6\" (369.9mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "369.9mm (14.6\" full rectangle) / 367.2mm (14.5\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2960 x 1848 (WQXGA+)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP + 8.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "12"
+            },
+            {
+              "name": "Storage (GB)",
+              "value": "512"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "483.0"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, EHT320, MIMO, 4096-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "208.5 x 326.3 x 5.1"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "692"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 23"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "11600"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelCode": "SM-X930NZSIXAR",
+      "fullSpecs": [
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU Speed",
+              "value": "3.73GHz, 3.3GHz, 2.4GHz"
+            },
+            {
+              "name": "CPU Type",
+              "value": "Octa-Core"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (Main Display)",
+              "value": "14.6\" (369.9mm)"
+            },
+            {
+              "name": "Size (Main_Display)",
+              "value": "369.9mm (14.6\" full rectangle) / 367.2mm (14.5\" rounded corners)"
+            },
+            {
+              "name": "Resolution (Main Display)",
+              "value": "2960 x 1848 (WQXGA+)"
+            },
+            {
+              "name": "Technology (Main Display)",
+              "value": "Dynamic AMOLED 2X"
+            },
+            {
+              "name": "Color Depth (Main Display)",
+              "value": "16M"
+            }
+          ]
+        },
+        {
+          "groupName": "S Pen Support",
+          "specList": [
+            {
+              "name": "S Pen Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Camera",
+          "specList": [
+            {
+              "name": "Rear Camera - Resolution",
+              "value": "13.0 MP + 8.0 MP"
+            },
+            {
+              "name": "Rear Camera - Auto Focus",
+              "value": "Yes"
+            },
+            {
+              "name": "Front Camera - Resolution",
+              "value": "12.0 MP"
+            },
+            {
+              "name": "Rear Camera - Flash",
+              "value": "Yes"
+            },
+            {
+              "name": "Video Recording Resolution",
+              "value": "UHD 4K (3840 x 2160)@30fps"
+            }
+          ]
+        },
+        {
+          "groupName": "Storage/Memory",
+          "specList": [
+            {
+              "name": "Memory_(GB)",
+              "value": "16"
+            },
+            {
+              "name": "Storage (TB)",
+              "value": "1"
+            },
+            {
+              "name": "Available Storage (GB)",
+              "value": "993.4"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD (Up to 2TB)"
+            }
+          ]
+        },
+        {
+          "groupName": "Connectivity",
+          "specList": [
+            {
+              "name": "USB Version",
+              "value": "USB 3.2 Gen 1"
+            },
+            {
+              "name": "Location Technology",
+              "value": "GPS, Glonass, Beidou, Galileo, QZSS"
+            },
+            {
+              "name": "Earjack",
+              "value": "USB Type-C"
+            },
+            {
+              "name": "MHL",
+              "value": "No"
+            },
+            {
+              "name": "Wi-Fi",
+              "value": "802.11a/b/g/n/ac/ax/be 2.4GHz+5GHz+6GHz, EHT320, MIMO, 4096-QAM"
+            },
+            {
+              "name": "Wi-Fi Direct",
+              "value": "Yes"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.4"
+            },
+            {
+              "name": "NFC",
+              "value": "No"
+            },
+            {
+              "name": "Bluetooth Profiles",
+              "value": "A2DP, AVRCP, DI, HAP, HFP, HID, HOGP, HSP, OPP, PAN, PBAP, PBP, TMAP"
+            },
+            {
+              "name": "PC Sync.",
+              "value": "Smart Switch (PC version)"
+            }
+          ]
+        },
+        {
+          "groupName": "OS",
+          "specList": [
+            {
+              "name": "OS",
+              "value": "Android"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Form Factor",
+              "value": "Tablet"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensors",
+          "specList": [
+            {
+              "name": "Sensors",
+              "value": "Accelerometer, Fingerprint Sensor, Gyro Sensor, Geomagnetic Sensor, Hall Sensor, Light Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (HxWxD, mm)",
+              "value": "208.5 x 326.3 x 5.1"
+            },
+            {
+              "name": "Weight (g)",
+              "value": "692"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Video Playback Time (Hours, Wireless)",
+              "value": "Up to 23"
+            },
+            {
+              "name": "Battery Capacity (mAh, Typical)",
+              "value": "11600"
+            },
+            {
+              "name": "Removable",
+              "value": "No"
+            },
+            {
+              "name": "Battery Chemistry",
+              "value": "Lithium-ion (Li-ion)"
+            }
+          ]
+        },
+        {
+          "groupName": "Audio and Video",
+          "specList": [
+            {
+              "name": "Video Playing Format",
+              "value": "MP4, M4V, 3GP, 3G2, AVI, FLV, MKV, WEBM"
+            },
+            {
+              "name": "Video Playing Resolution",
+              "value": "UHD 8K (7680 x 4320)@60fps"
+            },
+            {
+              "name": "Audio Playing Format",
+              "value": "MP3, M4A, 3GA, AAC, OGG, OGA, WAV, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA"
+            }
+          ]
+        },
+        {
+          "groupName": "Services and Applications",
+          "specList": [
+            {
+              "name": "Gear Support",
+              "value": "Galaxy Buds Core, Galaxy Buds3 Pro, Galaxy Buds2 Pro, Galaxy Buds Pro, Galaxy Buds Live, Galaxy Buds+, Galaxy Buds3, Galaxy Buds2, Galaxy Buds, Galaxy Buds3 FE, Galaxy Buds FE"
+            },
+            {
+              "name": "Mobile TV",
+              "value": "No"
+            },
+            {
+              "name": "SmartThings Support",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Software Support",
+          "specList": [
+            {
+              "name": "Security Update Period (Valid until)",
+              "value": "30 September 2032"
+            }
+          ]
+        },
+        {
+          "groupName": "Carrier",
+          "specList": [
+            {
+              "name": "Type",
+              "value": "Wi-fi"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "document_collection_status": "NOT_EVALUATED"
+}

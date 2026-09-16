@@ -1,0 +1,17 @@
+{
+  "target_sku": "SM-X930NZAAXAR",
+  "final_url": "https://www.samsung.com/us/tablets/galaxy-tab-s11/buy/galaxy-tab-s11-ultra-256gb-gray-wi-fi-sku-sm-x930nzaaxar/",
+  "rendered_target_present": false,
+  "selected_controls": [
+    {
+      "sku": "sm-x930nzaaxar",
+      "label": "Galaxy Tab S11 Ultra"
+    },
+    {
+      "sku": "sm-x930nzaaxar",
+      "label": "256 GB"
+    }
+  ],
+  "continue_sku": "sm-x930nzaaxar",
+  "continue_visible": true
+}

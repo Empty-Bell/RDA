@@ -1,0 +1,101 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35158772571",
+  "job_id": 105004393320,
+  "artifact_id": 10471884658,
+  "artifact_zip_sha256": "0c3e60029ffe0b5f3725e1217308a9cf1b2c2ee277de246da6ca77b155a5846e",
+  "recon": {
+    "captured_at": "2026-09-16T22:40:43.984152+00:00",
+    "run_id": "35158772571",
+    "attempt": "1",
+    "git_sha": "7327d88f53ea6488eedb11668f241e895ab00094",
+    "scope": "chromebook source contracts only",
+    "status": "FAIL",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "24",
+          "category_code": "03010000",
+          "taxonomy_code": "03010500",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "88fea7c23966aea5cac31c379f3e8424756f23418ae09cd897bc125f11a5605b",
+        "page_count": 1
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/computers/chromebook/",
+          "api_total": 1
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 1,
+          "exact_skus": 1,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 1,
+              "expected_groups": 1
+            }
+          ],
+          "rendered_representative_link_count": 1,
+          "rendered_tile_count": 1,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "FAIL",
+        "error": "Locator.wait_for: Timeout 30000ms exceeded."
+      },
+      {
+        "name": "epa_chromebook_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "rxdj-2c88",
+          "column_count": 68,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "selection": {
+    "target_sku": "XE550XGA-KC1US",
+    "final_url": "https://www.samsung.com/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us/",
+    "rendered_target_present": false,
+    "selected_controls": [],
+    "continue_sku": "xe550xga-kc1us",
+    "continue_visible": true
+  },
+  "interpretation": "Selected configuration controls not loaded within bounded wait; visible Continue SKU alone does not pass identity. No Samsung source or certification absence inferred."
+}

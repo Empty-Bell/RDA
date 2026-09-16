@@ -113,11 +113,12 @@ def pdp_facts(data, target, family='refrigerator'):
         'hood': (None, None),  # preserve airflow/efficiency/noise as distinct raw spec pairs
         'monitor': (None, None),  # discover display size/power names without annual-energy inference
         'computer': (None, None),  # battery capacity and adapter rating are not annual consumption
+        'tablet': (None, None),  # mAh and playback duration are not Wh or annual consumption
     }
     if family not in names:
         raise ValueError('Unknown PDP family contract')
     energy_name, capacity_name = names[family]
-    specs_only = family == 'computer' and data.get('document_collection_status') == 'NOT_EVALUATED'
+    specs_only = family in ('computer', 'tablet') and data.get('document_collection_status') == 'NOT_EVALUATED'
     if not isinstance(data, dict) or not isinstance(data.get('Specs'), list) or (not specs_only and not isinstance(data.get('Support'), list)):
         raise ValueError('Missing Specs/Support bridge-data contract')
     specs = [x for x in data['Specs'] if x.get('modelCode') == target]
@@ -144,6 +145,11 @@ def pdp_facts(data, target, family='refrigerator'):
             'charging_power_raw': [x for x in fields if 'Charging Power' in (x['name'] or '')],
             'power_supply_raw': [x for x in fields if x['name'] == 'Power Supply'],
             'battery_capacity_raw': [x for x in fields if x['name'] == 'Battery Capacity (Typical, Wh)'],
+            'battery_capacity_mah_raw': [x for x in fields if x['name'] == 'Battery Capacity (mAh, Typical)'],
+            'tablet_configuration_raw': [x for x in fields if x['name'] in ('CPU Speed', 'CPU Type', 'Memory_(GB)', 'Storage (GB)', 'OS', 'Form Factor', 'Color')],
+            'tablet_display_raw': [x for x in fields if x['name'] in ('Size (Main Display)', 'Size (Main_Display)', 'Resolution (Main Display)', 'Technology (Main Display)')],
+            'connectivity_type_raw': [x for x in fields if x['group'] == 'Carrier' and x['name'] == 'Type'],
+            'playback_duration_raw': [x for x in fields if x['name'] == 'Video Playback Time (Hours, Wireless)'],
             'adapter_rating_raw': [x for x in fields if x['name'] == 'AC Adapter'],
             'computer_configuration_raw': [x for x in fields if x['name'] in ('CPU', 'GPU', 'Memory Capacity', 'Storage Capacity', 'Operating System')],
             'document_collection_status': 'NOT_EVALUATED' if specs_only else 'OBSERVED',
