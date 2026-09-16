@@ -1,0 +1,204 @@
+{
+  "Specs": [
+    {
+      "modelCode": "XE550XGA-KC1US",
+      "fullSpecs": [
+        {
+          "groupName": "Operating System",
+          "specList": [
+            {
+              "name": "Operating System",
+              "value": "Chrome OS"
+            }
+          ]
+        },
+        {
+          "groupName": "Processor",
+          "specList": [
+            {
+              "name": "CPU",
+              "value": "Intel® Core™ 3 Processor 100U (1.2 GHz up to 4.7 GHz 10 MB Smart Cache)"
+            },
+            {
+              "name": "GPU",
+              "value": "Intel® Graphics"
+            },
+            {
+              "name": "GPU Type",
+              "value": "Shared"
+            }
+          ]
+        },
+        {
+          "groupName": "Memory",
+          "specList": [
+            {
+              "name": "Memory Capacity",
+              "value": "8 GB"
+            },
+            {
+              "name": "Memory",
+              "value": "LPDDR5X (On Board)"
+            },
+            {
+              "name": "Storage Capacity",
+              "value": "256 GB"
+            },
+            {
+              "name": "Storage Type",
+              "value": "eUFS"
+            }
+          ]
+        },
+        {
+          "groupName": "General Information",
+          "specList": [
+            {
+              "name": "Color",
+              "value": "Neptune Blue"
+            },
+            {
+              "name": "Form Factor",
+              "value": "Laptop"
+            }
+          ]
+        },
+        {
+          "groupName": "Multimedia",
+          "specList": [
+            {
+              "name": "Speaker",
+              "value": "Stereo Speakers"
+            },
+            {
+              "name": "Mic",
+              "value": "Digital Mic"
+            },
+            {
+              "name": "Camera",
+              "value": "2.0 MP"
+            }
+          ]
+        },
+        {
+          "groupName": "Network",
+          "specList": [
+            {
+              "name": "Wi-Fi",
+              "value": "Wi-Fi 6E, 802.11 ax 2x2"
+            },
+            {
+              "name": "Bluetooth Version",
+              "value": "Bluetooth v5.3"
+            }
+          ]
+        },
+        {
+          "groupName": "Ports",
+          "specList": [
+            {
+              "name": "HDMI",
+              "value": "1 HDMI 1.4"
+            },
+            {
+              "name": "USB",
+              "value": "2 USB Type-C, 1 USB3.2"
+            },
+            {
+              "name": "External Storage Support",
+              "value": "MicroSD"
+            },
+            {
+              "name": "Earjack",
+              "value": "1 Headphone out/Mic-in Combo"
+            }
+          ]
+        },
+        {
+          "groupName": "Input",
+          "specList": [
+            {
+              "name": "Keyboard",
+              "value": "Pro Keyboard with Numeric key"
+            },
+            {
+              "name": "Keyboard Backlit",
+              "value": "Yes"
+            },
+            {
+              "name": "Touchpad",
+              "value": "Clickpad"
+            }
+          ]
+        },
+        {
+          "groupName": "Security",
+          "specList": [
+            {
+              "name": "TPM",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "groupName": "Sensor",
+          "specList": [
+            {
+              "name": "Sensor",
+              "value": "Accelerometer Sensor"
+            }
+          ]
+        },
+        {
+          "groupName": "Physical specification",
+          "specList": [
+            {
+              "name": "Dimension (WxDxH, mm)",
+              "value": "355.4 x 225.8 x 11.8 mm (13.99\" x 8.89\" x 0.46\")"
+            },
+            {
+              "name": "Weight (kg)",
+              "value": "1.17 kg (2.58 lbs)"
+            }
+          ]
+        },
+        {
+          "groupName": "Battery",
+          "specList": [
+            {
+              "name": "Battery Capacity (Typical, Wh)",
+              "value": "68.0"
+            }
+          ]
+        },
+        {
+          "groupName": "Display",
+          "specList": [
+            {
+              "name": "Size (inch)",
+              "value": "15.6\""
+            },
+            {
+              "name": "Resolution",
+              "value": "1920 x 1080 (FHD)"
+            },
+            {
+              "name": "Type",
+              "value": "AMLOED"
+            }
+          ]
+        },
+        {
+          "groupName": "Power",
+          "specList": [
+            {
+              "name": "AC Adapter",
+              "value": "45 W USB Type-C Adapter"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "document_collection_status": "NOT_EVALUATED"
+}

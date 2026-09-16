@@ -1,0 +1,60 @@
+{
+  "searchTotalCount": 1,
+  "hasMoreResults": false,
+  "searchResults": [
+    {
+      "modelCode": "XE550XGA-KC1US",
+      "modelName": "XE550XGAA-EXP",
+      "id": "XE550XGA-KC1US",
+      "group_id": "FMY_ID_540209",
+      "pdpURL": "/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us",
+      "consumerUrl": "/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us",
+      "ecomFlag": "Y",
+      "stockFlag": "Y",
+      "energyStarFlg": "Y",
+      "globalFeaturedSortOrder": {
+        "orderNo": "1",
+        "pickYn": "N",
+        "representativeModel": "XE550XGA-KC1US",
+        "familyName": "Galaxy Chromebook Plus 15.6 Core35 8GB",
+        "id": "540209",
+        "marketingName": "Galaxy Chromebook Plus"
+      },
+      "chips": [
+        {
+          "fmyChipCode": "#4d6995",
+          "fmyChipName": "Neptune Blue",
+          "fmyChipType": "Color"
+        }
+      ],
+      "groupedProductList": [
+        {
+          "modelCode": "XE550XGA-KC1US",
+          "modelName": "XE550XGAA-EXP",
+          "id": "XE550XGA-KC1US",
+          "group_id": "FMY_ID_540209",
+          "pdpURL": "/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us",
+          "consumerUrl": "/us/computing/chromebooks/galaxy-chromebook-plus/buy/galaxy-chromebook-plus-15-6-intel-core-3-256gb-neptune-blue-sku-xe550xga-kc1us",
+          "ecomFlag": "Y",
+          "stockFlag": "Y",
+          "energyStarFlg": "Y",
+          "globalFeaturedSortOrder": {
+            "orderNo": "1",
+            "pickYn": "N",
+            "representativeModel": "XE550XGA-KC1US",
+            "familyName": "Galaxy Chromebook Plus 15.6 Core35 8GB",
+            "id": "540209",
+            "marketingName": "Galaxy Chromebook Plus"
+          },
+          "chips": [
+            {
+              "fmyChipCode": "#4d6995",
+              "fmyChipName": "Neptune Blue",
+              "fmyChipType": "Color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

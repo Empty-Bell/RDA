@@ -22,6 +22,15 @@ class ComputerContract(unittest.TestCase):
         self.page['hasMoreResults']=True
         with self.assertRaises(ValueError): pf_population([self.page])
 
+    def test_chromebook_is_separate_and_union_retains_all_skus(self):
+        page=json.loads((ROOT/'pf-chromebook-page-0.json').read_text(encoding='utf-8'))
+        galaxy=pf_population([self.page])
+        chrome=pf_population([page])
+        self.assertEqual(chrome['total_groups'],1)
+        union={r['exact_sku'] for p in (galaxy,chrome) for r in p['records']}
+        self.assertEqual(len(union),24)
+        self.assertIn('XE550XGA-KC1US',union)
+
     def test_generic_android_desktop_does_not_establish_tablet_matching(self):
         result=epa_contract(self.metadata,self.rows,dataset='rxdj-2c88')
         self.assertEqual(self.rows[0]['type'],'Integrated Desktop')
@@ -59,6 +68,15 @@ class ComputerContract(unittest.TestCase):
         data=json.loads((ROOT/'specs-only.projected.json').read_text(encoding='utf-8'))
         self.assertNotEqual(data['Specs'][0]['modelCode'],'NP960UJH-XG7US')
         with self.assertRaises(ValueError): pdp_facts(data,'UNKNOWN',family='computer')
+
+    def test_chromebook_does_not_borrow_windows_configuration(self):
+        data=json.loads((ROOT/'specs-chromebook.projected.json').read_text(encoding='utf-8'))
+        facts=pdp_facts(data,'XE550XGA-KC1US',family='computer')
+        self.assertEqual(facts['battery_capacity_raw'][0]['value'],'68.0')
+        self.assertEqual(facts['adapter_rating_raw'][0]['value'],'45 W USB Type-C Adapter')
+        self.assertEqual(next(x['value'] for x in facts['computer_configuration_raw'] if x['name']=='Operating System'),'Chrome OS')
+        self.assertEqual(facts['energy_consumption_raw'],[])
+        self.assertEqual(facts['document_collection_status'],'NOT_EVALUATED')
 
     def test_specs_only_does_not_relax_other_family_support_gate(self):
         data=json.loads((ROOT/'specs-only.projected.json').read_text(encoding='utf-8'))
