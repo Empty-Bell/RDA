@@ -110,3 +110,16 @@ class ClaimAttributionContract(unittest.TestCase):
         probe=project_inline_product_claims(payload)
         self.assertFalse(probe['product_claim_records'][0]['energy_star_field_present'])
         self.assertEqual(probe['fields'][0]['value'],'N')
+
+    def test_hosted_inline_product_flags_retain_exact_sku_and_raw_value(self):
+        root=Path(__file__).parent/'fixtures'/'claim-attribution'
+        for family,target,value in [('computer','NP960UJH-XG7US','Y'),('tv','MRN75R95HAFXZA','N')]:
+            fixture=json.loads((root/('inline-'+family+'.json')).read_text(encoding='utf-8'))
+            products=[{**r['identifiers'],**({'energyStarFlag':r['energyStarFlag']} if r['energy_star_field_present'] else {})}
+                      for r in fixture['product_claim_records']]
+            probe=project_inline_product_claims({'props':{'pageProps':{'productData':{'products':products}}}})
+            self.assertEqual(probe,fixture)
+            current=[f for f in probe['fields'] if f['identifiers_raw'] and all(x.upper()==target for x in f['identifiers_raw'])]
+            self.assertEqual(len(current),1)
+            self.assertEqual(current[0]['value'],value)
+            self.assertFalse(probe['truncated'])

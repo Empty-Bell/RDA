@@ -1,0 +1,250 @@
+{
+  "fields": [
+    {
+      "path": "$.props.pageProps.productData.products[0].energyStarFlag",
+      "identifiers_raw": [
+        "NP740VJG-KA1US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[1].energyStarFlag",
+      "identifiers_raw": [
+        "NP740VJG-KG2US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[2].energyStarFlag",
+      "identifiers_raw": [
+        "NP760VJG-KA1US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[3].energyStarFlag",
+      "identifiers_raw": [
+        "NP760VJG-KG2US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[4].energyStarFlag",
+      "identifiers_raw": [
+        "NP760XJG-KG2US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[5].energyStarFlag",
+      "identifiers_raw": [
+        "NP940XJG-KG1US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[6].energyStarFlag",
+      "identifiers_raw": [
+        "NP940XJG-KG2US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[7].energyStarFlag",
+      "identifiers_raw": [
+        "NP960UJG-KG2US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[8].energyStarFlag",
+      "identifiers_raw": [
+        "NP960UJH-XG2US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[9].energyStarFlag",
+      "identifiers_raw": [
+        "NP960UJH-XG3US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[10].energyStarFlag",
+      "identifiers_raw": [
+        "NP960UJH-XG7US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[11].energyStarFlag",
+      "identifiers_raw": [
+        "NP960UJH-XG8US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[12].energyStarFlag",
+      "identifiers_raw": [
+        "NP960XJG-KA1US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[13].energyStarFlag",
+      "identifiers_raw": [
+        "NP960XJG-KA2US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[14].energyStarFlag",
+      "identifiers_raw": [
+        "NP960XJG-KG1US"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "Y"
+    }
+  ],
+  "truncated": false,
+  "root_sections": [
+    "props.pageProps.productData.products"
+  ],
+  "product_claim_records": [
+    {
+      "identifiers": {
+        "modelCode": "NP740VJG-KA1US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP740VJG-KG2US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP760VJG-KA1US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP760VJG-KG2US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP760XJG-KG2US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP940XJG-KG1US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP940XJG-KG2US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960UJG-KG2US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960UJH-XG2US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960UJH-XG3US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960UJH-XG7US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960UJH-XG8US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960XJG-KA1US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960XJG-KA2US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    },
+    {
+      "identifiers": {
+        "modelCode": "NP960XJG-KG1US"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "Y"
+    }
+  ]
+}

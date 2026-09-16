@@ -1,0 +1,154 @@
+{
+  "fields": [
+    {
+      "path": "$.props.pageProps.productData.products[0].energyStarFlag",
+      "identifiers_raw": [
+        "MRN100R85HFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[1].energyStarFlag",
+      "identifiers_raw": [
+        "MRN115MR95FXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[2].energyStarFlag",
+      "identifiers_raw": [
+        "MRN55R85HAFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[3].energyStarFlag",
+      "identifiers_raw": [
+        "MRN65R85HAFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[4].energyStarFlag",
+      "identifiers_raw": [
+        "MRN65R95HAFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[5].energyStarFlag",
+      "identifiers_raw": [
+        "MRN75R85HAFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[6].energyStarFlag",
+      "identifiers_raw": [
+        "MRN75R95HAFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[7].energyStarFlag",
+      "identifiers_raw": [
+        "MRN85R85HAFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    },
+    {
+      "path": "$.props.pageProps.productData.products[8].energyStarFlag",
+      "identifiers_raw": [
+        "MRN85R95HAFXZA"
+      ],
+      "identity_basis": "explicit identifiers on observed inline product record",
+      "name": "energyStarFlag",
+      "value": "N"
+    }
+  ],
+  "truncated": false,
+  "root_sections": [
+    "props.pageProps.productData.products"
+  ],
+  "product_claim_records": [
+    {
+      "identifiers": {
+        "modelCode": "MRN100R85HFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN115MR95FXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN55R85HAFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN65R85HAFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN65R95HAFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN75R85HAFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN75R95HAFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN85R85HAFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    },
+    {
+      "identifiers": {
+        "modelCode": "MRN85R95HAFXZA"
+      },
+      "energy_star_field_present": true,
+      "energyStarFlag": "N"
+    }
+  ]
+}

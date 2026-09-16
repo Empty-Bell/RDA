@@ -1,0 +1,12 @@
+[
+  {
+    "file": "tests/fixtures/claim-attribution/inline-computer.json",
+    "sha256": "bbf499eb67c5058307714a64d43cc108116ec2b991456dd07339a4fbdd65335c",
+    "source_run_id": 35161814700
+  },
+  {
+    "file": "tests/fixtures/claim-attribution/inline-tv.json",
+    "sha256": "49b0e7e2440b5137f3a685bbd6fe5c5db6d691eefeeb32629f5ab4f7a2e8f09b",
+    "source_run_id": 35161814700
+  }
+]
