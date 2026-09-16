@@ -10,7 +10,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 
 from runner_probe import safe_url, sanitize
-from source_contract import pf_page, pdp_facts, project_bridge
+from source_contract import pf_page, pf_population, pdp_facts, project_bridge
 
 OUT = Path('runtime/source-recon')
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
@@ -116,8 +116,13 @@ def main():
 
         def plp():
             url = 'https://www.samsung.com/us/home-appliances/refrigerators/all-refrigerators/'
-            response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
-            page.wait_for_timeout(8000)
+            for attempt in range(3):
+                response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
+                page.wait_for_timeout(8000)
+                if captured_pf:
+                    break
+                if attempt < 2:
+                    page.wait_for_timeout(3000 * (2 ** attempt))
             assert response and response.status < 400, 'PLP HTTP access failed'
             assert captured_pf, 'pf_search response was not captured'
             text = page.locator('body').inner_text()
@@ -159,6 +164,16 @@ def main():
                 pf_page(project_pf(data))
                 for product in data['searchResults']:
                     all_products[product['group_id']] = product
+            # Repeated requests are not additional population pages; require identical
+            # projection for a repeated offset, then validate all unique page offsets.
+            unique_pages = {}
+            for data, _, body in captured_pf:
+                offset = int(body['startIndex'])
+                projected = project_pf(data)
+                if offset in unique_pages and unique_pages[offset] != projected:
+                    raise ValueError('Same pagination offset returned different products')
+                unique_pages[offset] = projected
+            population = pf_population([unique_pages[i] for i in sorted(unique_pages)])
             exact = {v['modelCode'] for item in all_products.values()
                      for v in [item] + item.get('groupedProductList', [])}
             rendered = page.locator('[data-modelcode]').evaluate_all('(els) => els.map(e => ({tag:e.tagName, cls:e.className, sku:e.getAttribute("data-modelcode")}))')
@@ -176,8 +191,14 @@ def main():
         check('pagination_observation', pagination)
 
         def pdp():
-            assert captured_pf, 'No population source'
-            product = captured_pf[0][0]['searchResults'][0]
+            if captured_pf:
+                product = captured_pf[0][0]['searchResults'][0]
+                sampling_source = 'current pf_search response'
+            else:
+                # Historical fixture is a diagnostic sample only, never current population.
+                fixture = Path('tests/fixtures/refrigerator/pf-page-0.json')
+                product = json.loads(fixture.read_text(encoding='utf-8'))['searchResults'][0]
+                sampling_source = 'previous hosted fixture; independent source diagnosis, not population'
             target = product['modelCode']
             url = urljoin('https://www.samsung.com', product['pdpURL'])
             response = page.goto(url, wait_until='domcontentloaded', timeout=60000)
@@ -188,6 +209,7 @@ def main():
             documents = [x for x in links if re.search(r'energy\s*guide', x['text'] or '', re.I)]
             bridge_snippets = re.findall(r'.{0,100}bridge_data.{0,150}', html, re.I)
             save('pdp-observation.json', {'target_sku': target, 'source_url': url, 'final_url': safe_url(page.url),
+                                         'sampling_source': sampling_source,
                                          'http_status': response.status if response else None,
                                          'rendered_target_present': target.lower() in text.lower(),
                                          'energyguide_links': documents, 'bridge_snippets': bridge_snippets[:8],
