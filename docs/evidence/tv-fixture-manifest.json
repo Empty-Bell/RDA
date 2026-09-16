@@ -1,0 +1,32 @@
+[
+  {
+    "file": "tests/fixtures/tv/bridge-specs-support.json",
+    "sha256": "a48a0d978f71249396df0ef8322763a492f04f3ddaa0dd04e220e89b1d618830",
+    "source_run_id": 35105336825
+  },
+  {
+    "file": "tests/fixtures/tv/energyguide-observation.json",
+    "sha256": "a1bacf38c792f67d5a1d2e84b778c73c5a3a6a8afd662d6120b1bc1ac014963d",
+    "source_run_id": 35105336825
+  },
+  {
+    "file": "tests/fixtures/tv/epa-metadata.projected.json",
+    "sha256": "5db5ccbbde6f665613f67577dbbc806f7c68d6b002286dae9837c42c5936096c",
+    "source_run_id": 35105336825
+  },
+  {
+    "file": "tests/fixtures/tv/epa-sample.projected.json",
+    "sha256": "6559c3c45060654db1bd71b939294b5f958157ce02ce830f22580d3c084d1f29",
+    "source_run_id": 35105336825
+  },
+  {
+    "file": "tests/fixtures/tv/pf-page-0.json",
+    "sha256": "655adf52bbefadf373baa89a3b55cde9d3a3d35fb2182d2cdb034ebffea95e0f",
+    "source_run_id": 35105336825
+  },
+  {
+    "file": "tests/fixtures/tv/pf-page-1.json",
+    "sha256": "5a43032874e249dc4f0bd0941854d691377b672247b391cf15cd05e19c498510",
+    "source_run_id": 35105336825
+  }
+]

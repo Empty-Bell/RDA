@@ -2,6 +2,13 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+TV reconnaissance: Typical/Max/Stand-by power W and annual label/EPA energy kWh
+must remain distinct (D01). Sample label assumes 5 hours/day and 16 cents/kWh;
+PDP Typical 208 W cannot be treated as label 390 yearly kWh. OCR reading order puts
+cost range $155 before product $62; coordinates/semantic regions are required (D07).
+Label MRN75R95HAF versus PDP MRN75R95HAFXZA needs an approved suffix identity
+contract; do not normalize away XZA to force a match. Claim absence is UNKNOWN.
+
 Washer reconnaissance: the listing includes standalone, stacked and all-in-one PDPs.
 Combo WD90F53AVBUS has a Clothes Washer EnergyGuide, not a combined wash/dry metric.
 Catalog routing to bghd-e2wd versus separate combo dataset 9jai-gs6t remains OPEN

@@ -1,4 +1,4 @@
-# EPA source contracts — refrigerator, dishwasher and washer datasets identified
+# EPA source contracts — refrigerator, dishwasher, washer and TV datasets identified
 
 Catalog reachability does not establish a certification match.
 Each of 11 families requires dataset ID/endpoint, brand/model/UPC, energy unit,
@@ -16,6 +16,13 @@ Annual water, IMEF and IWF are distinct quantities. Separate all-in-one dataset
 9jai-gs6t applicability is not verified; do not force every washer listing SKU into
 the standalone dataset. See [WASHER_SOURCE_CONTRACT.md](WASHER_SOURCE_CONTRACT.md).
 Other 8 families remain UNKNOWN. Certification matching is NOT_EVALUATED.
+
+TV pd96-rr3d schema/sample passed in run 35105667331. Annual energy is
+reported_annual_energy_consumption_kwh, Date Certified is date_qualified. Certification
+on-mode power and federal-test on-mode power are distinct W fields. Neither power
+field substitutes for annual kWh; missing UPC in individual rows does not establish
+a missing certification. See [TV_SOURCE_CONTRACT.md](TV_SOURCE_CONTRACT.md).
+Other 7 families remain UNKNOWN. No Samsung model certification lookup performed.
 
 ## Refrigerator v0.1
 

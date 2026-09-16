@@ -1,0 +1,359 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35105667331",
+  "job_id": 104826096860,
+  "artifact_id": 10449812938,
+  "artifact_size_bytes": 236899,
+  "artifact_zip_sha256": "094b9a290acb3b2f6b40694088c5783cf46536d2ebf88f51e5893b01cae1f7be",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T14:01:46.488229+00:00",
+    "run_id": "35105667331",
+    "attempt": "1",
+    "git_sha": "8af4267b3c8309dc70ec032afe2d2080fd4441bc",
+    "scope": "tv source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "21",
+          "category_code": "04010000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "655adf52bbefadf373baa89a3b55cde9d3a3d35fb2182d2cdb034ebffea95e0f",
+        "page_count": 21
+      },
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "21",
+          "requestCount": "24",
+          "category_code": "04010000",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-1.json",
+        "fixture_sha256": "5a43032874e249dc4f0bd0941854d691377b672247b391cf15cd05e19c498510",
+        "page_count": 20
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/tvs/all-tvs/",
+          "api_total": 41
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 41,
+          "exact_skus": 167,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 21,
+              "expected_groups": 41
+            },
+            {
+              "round": 1,
+              "groups": 41,
+              "expected_groups": 41
+            }
+          ],
+          "rendered_representative_link_count": 41,
+          "rendered_tile_count": 41,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "MRN75R95HAFXZA",
+          "url": "https://www.samsung.com/us/tvs/micro-rgb/75-inch-micro-rgb-4k-tv-r95h-sku-mrn75r95hafxza/",
+          "json_endpoints": 1,
+          "energyguide_link_count": 0,
+          "energyguide_pdf_valid": true
+        }
+      },
+      {
+        "name": "epa_tv_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "pd96-rr3d",
+          "column_count": 35,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "energyguide": {
+    "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn75r95hafxza/energyguide/us-energyguide-mrn75r95hafxza-551652054.pdf",
+    "final_url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn75r95hafxza/energyguide/us-energyguide-mrn75r95hafxza-551652054.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "size_bytes": 67874,
+    "sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+    "embedded_text": "",
+    "extraction_engine": "RapidOCR",
+    "fallback_reason": "EMPTY_EMBEDDED_TEXT",
+    "ocr_raw_texts": [
+      "Federal law prohibits removal of this",
+      "label before consumer purchase.",
+      "ENERGY",
+      "GUIDE",
+      "Television",
+      "Samsung Electronics",
+      "MRN75R95HAF",
+      "Estimated Yearly",
+      "Energy Cost",
+      "$155",
+      "$62",
+      "Cost Range of",
+      "Similar Models",
+      "(69.5\" or greater)",
+      "$32",
+      "• Based on 16 cents per kWh",
+      "and 5 hours use per day",
+      "• Estimated yearly electricity",
+      "use of this model: 390kWh",
+      "• Your cost depends on",
+      "your utility rates and use.",
+      "Visit ftc.gov/energy"
+    ],
+    "ocr_scale": 2,
+    "field_parser_contract": "NOT_EVALUATED"
+  },
+  "epa": {
+    "dataset_id": "pd96-rr3d",
+    "name": "ENERGY STAR Certified Televisions",
+    "rows_updated_at": 1789565099,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "type": "text"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_name",
+        "name": "Model Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "product_type",
+        "name": "Product Type",
+        "type": "text"
+      },
+      {
+        "field": "application",
+        "name": "Application",
+        "type": "text"
+      },
+      {
+        "field": "display_type",
+        "name": "Display Type",
+        "type": "text"
+      },
+      {
+        "field": "backlight_technology_type",
+        "name": "Backlight Technology Type",
+        "type": "text"
+      },
+      {
+        "field": "diagonal_viewable_screen_size_inches",
+        "name": "Diagonal Viewable Screen Size (in.)",
+        "type": "number"
+      },
+      {
+        "field": "screen_area_square_inches",
+        "name": "Screen Area (sq. in.)",
+        "type": "number"
+      },
+      {
+        "field": "native_horizontal_resolution_pixels",
+        "name": "Native Horizontal Resolution (pixels)",
+        "type": "text"
+      },
+      {
+        "field": "native_vertical_resolution_pixels",
+        "name": "Native Vertical Resolution (pixels)",
+        "type": "text"
+      },
+      {
+        "field": "resolution_format",
+        "name": "Resolution Format",
+        "type": "text"
+      },
+      {
+        "field": "high_contrast_ratio_hcr_display",
+        "name": "High Contrast Ratio (HCR) Display",
+        "type": "text"
+      },
+      {
+        "field": "physical_data_ports_available",
+        "name": "Physical Data Ports Available",
+        "type": "text"
+      },
+      {
+        "field": "ethernet_supported",
+        "name": "Ethernet Supported",
+        "type": "text"
+      },
+      {
+        "field": "low_power_wireless_technologies_supported",
+        "name": "Low Power Wireless Technologies Supported",
+        "type": "text"
+      },
+      {
+        "field": "features",
+        "name": "Features",
+        "type": "text"
+      },
+      {
+        "field": "automatic_brightness_control",
+        "name": "Automatic Brightness Control",
+        "type": "text"
+      },
+      {
+        "field": "is_automatic_brightness_control_enabled_by_default_when_television_is_shipped",
+        "name": "Is Automatic Brightness Control Enabled by Default in the Default SDR Preset Picture Setting When Television is Shipped?",
+        "type": "text"
+      },
+      {
+        "field": "power_consumption_in_on_mode_watts",
+        "name": "Average On Mode Power Consumption for Certification (watts)",
+        "type": "number"
+      },
+      {
+        "field": "maximum_on_mode_power_for_certification_watts",
+        "name": "Maximum Average On Mode Power for Certification (watts)",
+        "type": "number"
+      },
+      {
+        "field": "reported_on_mode_power_per_the_federal_test_procedure_watts",
+        "name": "Reported On Mode Power (per the Federal Test Procedure) (watts)",
+        "type": "number"
+      },
+      {
+        "field": "reported_annual_energy_consumption_kwh",
+        "name": "Reported Annual Energy Consumption (kWh)",
+        "type": "number"
+      },
+      {
+        "field": "measured_standby_mode_power_w",
+        "name": "Measured Standby Mode Power (Watts)",
+        "type": "number"
+      },
+      {
+        "field": "power_consumption_in_standby_mode_when_network_not_connected_watts",
+        "name": "Power Consumption in Standby Mode when Not Connected to a Network (watts)",
+        "type": "number"
+      },
+      {
+        "field": "power_consumption_in_standby_mode_when_network_connected_watts",
+        "name": "Power Consumption in Standby Mode when Connected to a Network (watts)",
+        "type": "number"
+      },
+      {
+        "field": "reported_standby_active_low_mode_power_watts",
+        "name": "Reported Standby-Active, Low Mode Power (watts)",
+        "type": "number"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available On Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_qualified",
+        "name": "Date Certified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "manual_label_observation": {
+    "model": "MRN75R95HAF",
+    "annual_electricity_kwh": 390,
+    "estimated_yearly_energy_cost_usd": 62,
+    "similar_model_cost_range_usd": [
+      32,
+      155
+    ],
+    "comparison_size_class": "69.5 inches or greater",
+    "usage_hours_per_day": 5,
+    "electricity_cents_per_kwh": 16
+  },
+  "identity_and_certification_matching": "NOT_EVALUATED"
+}

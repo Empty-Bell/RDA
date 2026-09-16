@@ -1,9 +1,10 @@
-# Samsung source contracts — refrigerator, dishwasher and washer reconnaissance
+# Samsung source contracts — refrigerator, dishwasher, washer and TV reconnaissance
 
 Observed on GitHub-hosted Ubuntu 24.04 x64, 2026-09-16. Refrigerator contracts below;
 Dishwasher contracts: [DISHWASHER_SOURCE_CONTRACT.md](DISHWASHER_SOURCE_CONTRACT.md).
 Washer contracts: [WASHER_SOURCE_CONTRACT.md](WASHER_SOURCE_CONTRACT.md).
-Other 8 product groups remain UNKNOWN. No compliance semantics implemented.
+TV contracts: [TV_SOURCE_CONTRACT.md](TV_SOURCE_CONTRACT.md).
+Other 7 product groups remain UNKNOWN. No compliance semantics implemented.
 
 ## PLP / pf_search
 

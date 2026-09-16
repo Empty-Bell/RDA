@@ -1,6 +1,6 @@
 # Phase status
 
-Phase 0: RUNNING — bounded refrigerator, dishwasher and washer source reconnaissance PASSED on hosted Ubuntu.
+Phase 0: RUNNING — bounded refrigerator, dishwasher, washer and TV source reconnaissance PASSED on hosted Ubuntu.
 Phases 1–7: NOT_STARTED.
 
 Desktop User-Agent validation (commit 434f5af6b99d83e99306e3b51b61344a61f4b896):
@@ -52,8 +52,16 @@ Run 35104431554 refrigerator pagination failed due to repeated group across offs
 preserved as source-health failure, not corrected into PASS. Final snapshot passed.
 See WASHER_SOURCE_CONTRACT.md and docs/evidence/washer-source-recon.json.
 
-Next bounded task: Television source-contract reconnaissance using the family workflow.
-Other 8 families and remaining claim/quality semantics are not complete.
+TV bounded source reconnaissance PASS: run 35105667331, job 104826096860,
+commit 8af4267b3c8309dc70ec032afe2d2080fd4441bc; 47 tests and all four source checks passed.
+All four family jobs in this final hosted run concluded success.
+41 API groups = 41 rendered tile groups; 167 exact SKUs; sample MRN75R95HAFXZA
+PDP/PDF and pd96-rr3d EPA schema/sample verified. Preserve power W versus annual
+kWh and product $62 versus cost range $32–$155; identity suffix matching is open.
+See TV_SOURCE_CONTRACT.md and docs/evidence/tv-source-recon.json.
+
+Next bounded task: Range EPA-focused source-contract reconnaissance.
+Other 7 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;
