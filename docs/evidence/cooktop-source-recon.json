@@ -1,0 +1,661 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35107565285",
+  "job_id": 104832622093,
+  "artifact_id": 10450499421,
+  "artifact_size_bytes": 16047,
+  "artifact_zip_sha256": "42739e7c6a2955370372ac7592ba7176642f144287caf4d61bc58457edd109f8",
+  "artifact_expiry": "2026-09-30",
+  "recon": {
+    "captured_at": "2026-09-16T14:18:40.863055+00:00",
+    "run_id": "35107565285",
+    "attempt": "1",
+    "git_sha": "d6fb2a490e363f24c00df29d9e05f648d4b18f1f",
+    "scope": "cooktop source contracts only",
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "observations": [
+      {
+        "url": "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search",
+        "method": "POST",
+        "status": 200,
+        "request_body": {
+          "clientCode": "b2c",
+          "clientName": "scom_pf",
+          "firstSearchYN": "true",
+          "countryCode": "us",
+          "storeID": "us",
+          "startIndex": "0",
+          "requestCount": "14",
+          "category_code": "08080000",
+          "taxonomy_code": "08080300",
+          "filters": "[]",
+          "sort": "recommended"
+        },
+        "request_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "fixture": "fixtures/pf-0.json",
+        "fixture_sha256": "c26c6ef99091deb6bf9c094975fc659409e4fa02ea38782f70b1b57552d71d4d",
+        "page_count": 9
+      }
+    ],
+    "checks": [
+      {
+        "name": "plp_request_contract",
+        "status": "PASS",
+        "details": {
+          "url": "https://www.samsung.com/us/cooking-appliances/cooktops/",
+          "api_total": 9
+        }
+      },
+      {
+        "name": "pagination_observation",
+        "status": "PASS",
+        "details": {
+          "groups": 9,
+          "exact_skus": 20,
+          "rounds": [
+            {
+              "round": 0,
+              "groups": 9,
+              "expected_groups": 9
+            }
+          ],
+          "rendered_representative_link_count": 3,
+          "rendered_tile_count": 9,
+          "strict_tile_count_gate": "PASS"
+        }
+      },
+      {
+        "name": "pdp_identity_and_documents",
+        "status": "PASS",
+        "details": {
+          "target_sku": "NA30N6555TS/AA",
+          "url": "https://www.samsung.com/us/cooking-appliances/cooktops/30-gas-cooktop-2018-sku-na30n6555ts-aa/",
+          "json_endpoints": 1,
+          "energyguide_metadata_count": 0,
+          "energyguide_probe": "OUT_OF_RECON_SCOPE",
+          "certification_matching": "NOT_EVALUATED"
+        }
+      },
+      {
+        "name": "electric_cooktop_pdp_contract",
+        "status": "PASS",
+        "details": {
+          "target_sku": "NZ30K7570RS/AA",
+          "url": "https://www.samsung.com/us/cooking-appliances/cooktops/30-built-in-electric-cooktop-with-rapid-boil-sku-nz30k7570rs-aa/",
+          "json_endpoints": 1,
+          "energyguide_metadata_count": 0,
+          "energyguide_probe": "OUT_OF_RECON_SCOPE",
+          "certification_matching": "NOT_EVALUATED"
+        }
+      },
+      {
+        "name": "epa_cooktop_dataset_contract",
+        "status": "PASS",
+        "details": {
+          "dataset_id": "m6gi-ng33",
+          "column_count": 40,
+          "sample_rows": 3
+        }
+      }
+    ],
+    "browser_identity": {
+      "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+      "browser_version": "153.0.8010.12",
+      "locale": "en-US",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profile": "desktop-linux-chromium"
+    }
+  },
+  "gas_pdp_facts": {
+    "exact_sku": "NA30N6555TS/AA",
+    "spec_fields_raw": [
+      {
+        "group": "Features",
+        "name": "Sealed Burners",
+        "value": "Yes"
+      },
+      {
+        "group": "Features",
+        "name": "Power Burner",
+        "value": "Yes"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Cooktop Type",
+        "value": "Gas"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Knob Lighting",
+        "value": "Backlit and Indicator"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Controls for Cooktop",
+        "value": "Weighted Knob"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Left Rear",
+        "value": "9.5K BTU"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Right Front",
+        "value": "13K BTU"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Right Rear",
+        "value": "5K BTU (Simmer)"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Center",
+        "value": "19K BTU (Dual)"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Left Front",
+        "value": "9.5K BTU"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Total Power",
+        "value": "56K BTU"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Total Number of Burners",
+        "value": "5"
+      },
+      {
+        "group": "Accessories",
+        "name": "Griddle",
+        "value": "Aluminum"
+      },
+      {
+        "group": "Smart",
+        "name": "Wi-Fi Connectivity",
+        "value": "Yes"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Height (decimal)",
+        "value": "5.5"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Height (extra)",
+        "value": "+ 2 inches for ventillation"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Width (decimal)",
+        "value": "30"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Width (extra)",
+        "value": "+ 3 inches for open door"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Depth (decimal)",
+        "value": "22.33"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Product Weight",
+        "value": "64.8 lbs."
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Cut-Out Dimensions",
+        "value": "28 1/2\" W x 3 1/8\" H x 19 5/8\" D"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Product Dimensions",
+        "value": "30\" W x 5 1/2\" H x 22 1/3\" D"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Product Width",
+        "value": "30\""
+      },
+      {
+        "group": "Awards and Certificates",
+        "name": "J.D. Power Awards",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "ADA Compliant",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Illuminated Knobs",
+        "value": "Yes"
+      },
+      {
+        "group": "Design",
+        "name": "Color",
+        "value": "Stainless Steel"
+      },
+      {
+        "group": "Design",
+        "name": "General Feature",
+        "value": "Gas"
+      }
+    ],
+    "energy_consumption_raw": [],
+    "capacity_raw": [],
+    "screen_size_raw": [],
+    "power_consumption_raw": [],
+    "fuel_type_raw": [],
+    "cooktop_type_raw": [
+      {
+        "group": "Materials/Finishes",
+        "name": "Cooktop Type",
+        "value": "Gas"
+      }
+    ],
+    "oven_capacity_raw": [],
+    "energy_star_spec_claim_raw": [],
+    "energy_star_structured_claim": null,
+    "energyguide_documents": []
+  },
+  "electric_pdp_facts": {
+    "exact_sku": "NZ30K7570RS/AA",
+    "spec_fields_raw": [
+      {
+        "group": "Features",
+        "name": "Wi-Fi & Bluetooth Connected",
+        "value": "Yes"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Cooktop Type",
+        "value": "Radiant"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Cooktop Type",
+        "value": "Radiant"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Control Type",
+        "value": "Touch Control with Magnetic Knob"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Flexible Cooktop",
+        "value": "Yes"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Left Rear",
+        "value": "7\" - 1500W (Sync)"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Right Front",
+        "value": "8\"/5\" - 2000W"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Right Rear",
+        "value": "6\" - 1200W (Melt)"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Center",
+        "value": "9\"/6\" - 3300W with Rapid Boil"
+      },
+      {
+        "group": "Power/Ratings",
+        "name": "Left Front",
+        "value": "7\" - 1500W (Sync)"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Total Number of Elements",
+        "value": "5"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Total Power",
+        "value": "9.5 kW"
+      },
+      {
+        "group": "Cooktop",
+        "name": "Sync Control",
+        "value": "Yes"
+      },
+      {
+        "group": "Smart",
+        "name": "Wi-Fi Connectivity",
+        "value": "Yes + Hood Connection"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Height (decimal)",
+        "value": "5.1"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Height (extra)",
+        "value": "+ 2 inches for ventillation"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Width (decimal)",
+        "value": "30"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Width (extra)",
+        "value": "+ 3 inches for open door"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Depth (decimal)",
+        "value": "21.25"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Product Weight",
+        "value": "35.7 lbs."
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Cut-Out Dimensions",
+        "value": "28 1/2\" W x 5 1/10\" H x 19 4/7\" D"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Product Dimensions",
+        "value": "30\" W x 5 1/10\" H x 21 1/4\" D"
+      },
+      {
+        "group": "Weights & Dimensions",
+        "name": "Product Width",
+        "value": "30\""
+      },
+      {
+        "group": "Awards and Certificates",
+        "name": "J.D. Power Awards",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "ADA Compliant",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Glass Ceramic Surface",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Sync Burner",
+        "value": "Yes"
+      },
+      {
+        "group": "Key Features",
+        "name": "Bluetooth®",
+        "value": "Yes"
+      },
+      {
+        "group": "Design",
+        "name": "Color",
+        "value": "Stainless Steel"
+      },
+      {
+        "group": "Design",
+        "name": "General Feature",
+        "value": "Electric Radiant"
+      }
+    ],
+    "energy_consumption_raw": [],
+    "capacity_raw": [],
+    "screen_size_raw": [],
+    "power_consumption_raw": [],
+    "fuel_type_raw": [],
+    "cooktop_type_raw": [
+      {
+        "group": "Materials/Finishes",
+        "name": "Cooktop Type",
+        "value": "Radiant"
+      },
+      {
+        "group": "Materials/Finishes",
+        "name": "Cooktop Type",
+        "value": "Radiant"
+      }
+    ],
+    "oven_capacity_raw": [],
+    "energy_star_spec_claim_raw": [],
+    "energy_star_structured_claim": null,
+    "energyguide_documents": []
+  },
+  "epa": {
+    "dataset_id": "m6gi-ng33",
+    "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+    "rows_updated_at": 1789564327,
+    "columns": [
+      {
+        "field": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "type": "number"
+      },
+      {
+        "field": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "type": "text"
+      },
+      {
+        "field": "brand_name",
+        "name": "Brand Name",
+        "type": "text"
+      },
+      {
+        "field": "model_name",
+        "name": "Model Name",
+        "type": "text"
+      },
+      {
+        "field": "model_number",
+        "name": "Model Number",
+        "type": "text"
+      },
+      {
+        "field": "additional_model_information",
+        "name": "Additional Model Information",
+        "type": "text"
+      },
+      {
+        "field": "upc",
+        "name": "UPC",
+        "type": "text"
+      },
+      {
+        "field": "product_type",
+        "name": "Product Type",
+        "type": "text"
+      },
+      {
+        "field": "installation_type",
+        "name": "Installation Type",
+        "type": "text"
+      },
+      {
+        "field": "cooking_top_technology",
+        "name": "Cooking Top Technology",
+        "type": "text"
+      },
+      {
+        "field": "width_inches",
+        "name": "Width (inches)",
+        "type": "number"
+      },
+      {
+        "field": "height_inches",
+        "name": "Height (inches)",
+        "type": "number"
+      },
+      {
+        "field": "depth_inches",
+        "name": "Depth (inches)",
+        "type": "number"
+      },
+      {
+        "field": "number_of_cooking_zones",
+        "name": "Number of Cooking Zones",
+        "type": "number"
+      },
+      {
+        "field": "control_type",
+        "name": "Control Type",
+        "type": "text"
+      },
+      {
+        "field": "voltage_volts",
+        "name": "Voltage (volts)",
+        "type": "text"
+      },
+      {
+        "field": "amperage_amps",
+        "name": "Amperage (amps)",
+        "type": "text"
+      },
+      {
+        "field": "specialty_zones",
+        "name": "Specialty Zones",
+        "type": "text"
+      },
+      {
+        "field": "smart_capabilities",
+        "name": "Smart Capabilities",
+        "type": "text"
+      },
+      {
+        "field": "additional_product_features",
+        "name": "Additional Product Features",
+        "type": "text"
+      },
+      {
+        "field": "annual_energy_consumption_kwh_yr",
+        "name": "Annual Energy Consumption (kWh/year)",
+        "type": "number"
+      },
+      {
+        "field": "low_power_mode_energy_consumption_oven_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Oven Component (kWh/year)",
+        "type": "number"
+      },
+      {
+        "field": "low_power_mode_energy_consumption_cooking_top_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Cooking Top (kWh/year)",
+        "type": "number"
+      },
+      {
+        "field": "average_cooking_zone_time_minutes",
+        "name": "Average Cooking Zone Time (minutes)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_1_size_inches",
+        "name": "Cooking Zone #1 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_2_size_inches",
+        "name": "Cooking Zone #2 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_3_size_inches",
+        "name": "Cooking Zone #3 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_4_size_inches",
+        "name": "Cooking Zone #4 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_5_size_inches",
+        "name": "Cooking Zone #5 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_6_size_inches",
+        "name": "Cooking Zone #6 Size (inches)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_1_wattage_watts",
+        "name": "Cooking Zone #1 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_2_wattage_watts",
+        "name": "Cooking Zone #2 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_3_wattage_watts",
+        "name": "Cooking Zone #3 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_4_wattage_watts",
+        "name": "Cooking Zone #4 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_5_wattage_watts",
+        "name": "Cooking Zone #5 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "cooking_zone_6_wattage_watts",
+        "name": "Cooking Zone #6 Wattage (watts)",
+        "type": "number"
+      },
+      {
+        "field": "date_available_on_market",
+        "name": "Date Available On Market",
+        "type": "calendar_date"
+      },
+      {
+        "field": "date_certified",
+        "name": " Date Certified",
+        "type": "calendar_date"
+      },
+      {
+        "field": "markets",
+        "name": "Markets",
+        "type": "text"
+      },
+      {
+        "field": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "type": "text"
+      }
+    ],
+    "sample_rows": 3,
+    "certification_matching": "NOT_EVALUATED"
+  },
+  "certification_matching": "NOT_EVALUATED",
+  "coverage": "listing population plus two PDP samples; EPA generic schema sample only"
+}

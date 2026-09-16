@@ -68,8 +68,16 @@ Fuel/product-type applicability and Samsung certification matching remain open.
 EnergyGuide PDF probe is OUT_OF_RECON_SCOPE under the master plan's EPA-only scope.
 See RANGE_SOURCE_CONTRACT.md and docs/evidence/range-source-recon.json.
 
-Next bounded task: Cooktop EPA-focused source-contract reconnaissance.
-Other 6 families and remaining claim/quality semantics are not complete.
+Cooktop EPA-focused reconnaissance PASS: run 35107565285, job 104832622093,
+commit d6fb2a490e363f24c00df29d9e05f648d4b18f1f. 62 tests and five source checks passed.
+All six family jobs in this final hosted run concluded success.
+9 API groups = 9 rendered tile groups; 20 exact SKUs; gas NA30N6555TS/AA and
+radiant electric NZ30K7570RS/AA sample Specs/Support plus m6gi-ng33 schema/sample
+verified. EnergyGuide is OUT_OF_RECON_SCOPE under EPA-only scope. No EPA SKU lookup.
+See COOKTOP_SOURCE_CONTRACT.md and SOURCE_COVERAGE.md for actual coverage limits.
+
+Next bounded task: Clothes Dryer EPA-focused source-contract reconnaissance.
+Other 5 families and remaining claim/quality semantics are not complete.
 Do not advance to Phase 1 until full G0 is verified.
 
 Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;

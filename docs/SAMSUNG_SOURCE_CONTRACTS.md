@@ -5,7 +5,9 @@ Dishwasher contracts: [DISHWASHER_SOURCE_CONTRACT.md](DISHWASHER_SOURCE_CONTRACT
 Washer contracts: [WASHER_SOURCE_CONTRACT.md](WASHER_SOURCE_CONTRACT.md).
 TV contracts: [TV_SOURCE_CONTRACT.md](TV_SOURCE_CONTRACT.md).
 Range contracts: [RANGE_SOURCE_CONTRACT.md](RANGE_SOURCE_CONTRACT.md).
-Other 6 product groups remain UNKNOWN. No compliance semantics implemented.
+Cooktop contracts: [COOKTOP_SOURCE_CONTRACT.md](COOKTOP_SOURCE_CONTRACT.md).
+Actual collection coverage: [SOURCE_COVERAGE.md](SOURCE_COVERAGE.md).
+Other 5 product groups remain UNKNOWN. No compliance semantics implemented.
 
 ## PLP / pf_search
 

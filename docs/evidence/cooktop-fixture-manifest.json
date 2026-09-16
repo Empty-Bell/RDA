@@ -1,0 +1,22 @@
+[
+  {
+    "file": "tests/fixtures/cooktop/bridge-gas.json",
+    "sha256": "ee62c3de408ec5ca79ffa86810cf0abf167f091255e560bec599882773166d4e",
+    "source_run_id": 35107226599
+  },
+  {
+    "file": "tests/fixtures/cooktop/epa-metadata.projected.json",
+    "sha256": "18742b751d81ab2050ef470c06a8b521944f253ca3255bc19cb74ea24ba75487",
+    "source_run_id": 35107226599
+  },
+  {
+    "file": "tests/fixtures/cooktop/epa-sample.projected.json",
+    "sha256": "f2367ef2362da3389304d30e26bac6d731ba337be698e9dc68e2d19587bdf263",
+    "source_run_id": 35107226599
+  },
+  {
+    "file": "tests/fixtures/cooktop/pf-page-0.json",
+    "sha256": "491645834f07959f026f1b12cfe477d85d06ce65ce01c8e28913a9a69373d609",
+    "source_run_id": 35107226599
+  }
+]

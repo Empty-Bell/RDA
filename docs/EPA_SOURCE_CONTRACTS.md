@@ -31,6 +31,12 @@ electric cooktops nt9t-yxu3 must not substitute. Gas/dual-fuel applicability rem
 open. See [RANGE_SOURCE_CONTRACT.md](RANGE_SOURCE_CONTRACT.md).
 Other 6 families remain UNKNOWN; certification matching NOT_EVALUATED.
 
+Cooktop independently revalidated m6gi-ng33 schema/sample in hosted run 35107565285.
+Sales population includes gas/radiant/induction source URLs; generic EPA sample
+does not imply a Samsung gas or electric candidate match. See
+[COOKTOP_SOURCE_CONTRACT.md](COOKTOP_SOURCE_CONTRACT.md) and SOURCE_COVERAGE.md.
+Other 5 families remain UNKNOWN. No per-SKU certification matching performed.
+
 ## Refrigerator v0.1
 
 Dataset `p5st-her9`, `ENERGY STAR Certified Residential Refrigerators`, identified
