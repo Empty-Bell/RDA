@@ -7,7 +7,8 @@ from pathlib import Path
 import unittest
 
 from regaudit.facts import TYPES
-from regaudit.report import summarize_bundle
+from regaudit.contracts import ContractError
+from regaudit.report import summarize_bundle, verify_report_source_observations
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -69,4 +70,8 @@ class ReportSourceObservationTests(unittest.TestCase):
         self.assertEqual(source[0]["evidence_ids"], ["e1"])
         self.assertEqual(report["counts"]["finding_count"], 0)
         self.assertFalse(report["assessment_enabled"])
+        verify_report_source_observations(bundle, report)
+        report["rows"][0]["energyguide_source_observations"][0]["capacity"]["value"]["amount"] = 99
+        with self.assertRaisesRegex(ContractError, "do not replay"):
+            verify_report_source_observations(bundle, report)
         self.assertEqual(bundle, before)
