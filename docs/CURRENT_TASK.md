@@ -159,7 +159,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   identifier; it retains the Index row hash and raw certification date. Missing
   or mismatched keys remain `NOT_EVALUATED`; assessment remains disabled. Next:
   preserve and validate a raw disqualified-list source capture only, without an
-  XLSX matcher or any negative inference. Recommended model: Terra medium.
+  XLSX matcher or any negative inference. This is implemented as the manual
+  `G2 EPA disqualified-list capture` workflow: it preserves the EPA Integrity
+  page and the single linked XLSX as raw bytes, records their hashes and replays
+  link/hash/container identity. Its manifest keeps matching, disqualification
+  state and assessment `NOT_EVALUATED`. See
+  G2_EPA_DISQUALIFIED_CAPTURE_CONTRACT.md. Next: run the hosted manual capture
+  and verify its artifact; recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
