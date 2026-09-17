@@ -3,10 +3,13 @@
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
 Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI accepted 2026-09-17.
 Phase 2 / G2: RUNNING — observational refrigerator pilot (listing, one PDP/PDF, EPA brand snapshot).
-Source measurement/claim normalization helper offline checkpoint PASS:
-run 35174268354 / 55f2f4a, each Python passed 94 fixtures + 15 quality checks,
-zero skipped fixture cases. See docs/evidence/g2-normalization-recon.json.
-Live pilot integration and expanded collection remain next work.
+Source measurement/claim normalization is integrated into the live pilot:
+run 35174846442 / bd19bfd passed on ubuntu-24.04. PDP facts now retain normalized
+source observations with same-run bridge/raw/derived evidence references; no
+comparison or certification decision is enabled. The separate offline adapter gate
+35174728382 passed six fixture cases on Python 3.11 and 3.12. See
+docs/evidence/g2-normalization-integration-recon.json. Expanded PDP collection
+remains next work.
 Phases 3–7: NOT_STARTED.
 No G2 gate is accepted yet; pilot collection success is not whole-SKU coverage or assessment PASS.
 Per-SKU PDP identity/coverage checkpoint PASS: run 35173796328 / code 21b621a.

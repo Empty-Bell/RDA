@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scope": "G2 PDP source-normalization integration; no comparison, certification or assessment",
+  "phase_gate": "NOT_EVALUATED",
+  "integration_commit": "bd19bfdf2eee7ebe5fb2287c9541e1b975f6601c",
+  "hosted_pilot": {
+    "run_id": 35174846442,
+    "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35174846442",
+    "job_id": 105054216250,
+    "runner": "ubuntu-24.04",
+    "job_conclusion": "success",
+    "artifact_id": 10477889439,
+    "artifact_name": "g2-pilot-35174846442-1",
+    "artifact_digest": "sha256:47195e9a897f5293339b6aa6e61a344653b3729e426d85c9ee0bacd63b30bcaf",
+    "artifact_expires_at": "2026-10-01T02:35:24Z",
+    "validated_steps": [
+      "Population adapter regression",
+      "Collect and validate unevaluated pilot package",
+      "Preserve pilot and source evidence"
+    ]
+  },
+  "offline_contract_gate": {
+    "run_id": 35174728382,
+    "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35174728382",
+    "commit": "6ac294d0382eef7ecca6c89467e826dae6e1c0b3",
+    "runner": "ubuntu-24.04",
+    "python_versions": ["3.11", "3.12"],
+    "tests_per_job": 6,
+    "conclusion": "success"
+  },
+  "integration_contract": [
+    "PDP facts retain five normalized source observations without rule evaluation",
+    "The original PDP fact references bridge, raw PDP/claim/snapshot and derived normalization evidence from its own run",
+    "Additional verified PDP samples retain normalized measurements; uncollected claim channels remain NOT_OBSERVED",
+    "validate_bundle and verify_evidence_files complete before the pilot reports PASS"
+  ],
+  "limitations": [
+    "No EPA SKU certification match or FTC comparison",
+    "No tolerance, label-field selection or OCR correction policy",
+    "PDP coverage remains bounded; failed and unattempted SKUs are not success"
+  ]
+}

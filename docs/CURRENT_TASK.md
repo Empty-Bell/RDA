@@ -19,14 +19,19 @@ on every next-step prompt. Same-task model changes should continue existing work
   Unknown/ambiguous/conflicting encodings do not become false or findings.
 - Normalization checkpoint 35174268354 / 55f2f4a: Python 3.11/3.12 each passed
   94 fixtures + 15 quality checks, zero skipped. Evidence: g2-normalization-recon.json.
-- Checks: checks/g1/test_normalization.py, CI workflow ci.yml. Normalization helper
-  is not yet wired into live pilot facts. The pilot still preserves raw observations.
-- Next: wire normalized source observations with same-run raw/evidence references;
-  verify from saved source fixtures first. Expand PDP collection only after that.
+- Normalization integration checkpoint: compact fixture gate 35174728382 at
+  6ac294d passed six adapter cases on hosted Python 3.11/3.12. Live pilot run
+  35174846442 at bd19bfd passed on ubuntu-24.04, retaining five normalized PDP
+  source channels with same-run bridge/raw/derived evidence references. See
+  docs/evidence/g2-normalization-integration-recon.json.
+- Next: plan the bounded PDP-coverage expansion using the normalized fact evidence;
+  retain failed/unattempted coverage separately. Do not infer claim/certification
+  validity or OCR correction from normalization.
   Do not infer claim/certification validity or OCR correction from normalization.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
-- Token economy: default Terra medium for bounded implementation; Luna low for
-  simple docs/fixture edits; Sol medium only for unresolved OCR/rule-boundary review.
+- Token economy: default Terra medium for bounded source integration/collection;
+  Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
+  for unresolved OCR/rule-boundary review.
   This is a recommendation, not an automatic model-setting change.
 - Separate cheap offline schema/normalization CI from expensive live collectors.
   Never rerun live collectors for docs-only or pure normalization changes.
