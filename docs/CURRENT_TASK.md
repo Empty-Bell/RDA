@@ -167,9 +167,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   G2_EPA_DISQUALIFIED_CAPTURE_CONTRACT.md. Hosted raw capture 35216830202
   passed on ubuntu-24.04; artifact 10495336944 ZIP SHA-256 is
   78f40271db8dad87c6ebf11c8bf3f854245da47117a15f2ba9cefe3b38738ffd.
-  It establishes raw source/replay evidence only. Next: isolated XLSX schema
-  review proposal, with no row parser, model matching or negative inference;
-  recommended model: Sol medium for source-meaning boundary review.
+  It establishes raw source/replay evidence only. Read-only XLSX schema review
+  is complete in G2_EPA_DISQUALIFIED_SCHEMA_REVIEW.md and its compact evidence
+  JSON. The artifact ZIP hash was independently checked after download. Source
+  interval is 2018-01-01 through 2026-05-15; 2,997 value-bearing data rows,
+  inflated worksheet dimensions, numeric model cells and trailing category
+  spaces were observed. No production row parser or matching was enabled.
+  Next: implement bounded source-row observation with exact header/provenance
+  checks and sanitized failure fixtures, keeping all product identity and
+  assessment states NOT_EVALUATED. Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
