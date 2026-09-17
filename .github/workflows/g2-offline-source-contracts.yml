@@ -2,9 +2,9 @@ name: G2 offline source contracts
 on:
   push:
     branches: [main]
-    paths: ['scripts/g2_epa_wildcard_capture.py', 'scripts/g2_samsung_pair_capture.py', 'scripts/g2_samsung_suffix.py', 'scripts/g2_model_diagnostic_report.py', 'checks/g2/test_epa_wildcard_capture.py', 'checks/g2/test_samsung_pair_capture.py', 'checks/g2/test_samsung_suffix.py', 'checks/g2/test_model_diagnostic_report.py', 'tests/fixtures/g2-epa-wildcard/**', 'tests/fixtures/g2-samsung-pair/**', '.github/workflows/g2-offline-source-contracts.yml']
+    paths: ['scripts/g2_epa_wildcard_capture.py', 'scripts/g2_epa_current_index_capture.py', 'scripts/g2_samsung_pair_capture.py', 'scripts/g2_samsung_suffix.py', 'scripts/g2_model_diagnostic_report.py', 'checks/g2/test_epa_wildcard_capture.py', 'checks/g2/test_epa_current_index_capture.py', 'checks/g2/test_samsung_pair_capture.py', 'checks/g2/test_samsung_suffix.py', 'checks/g2/test_model_diagnostic_report.py', 'tests/fixtures/g2-epa-wildcard/**', 'tests/fixtures/g2-samsung-pair/**', '.github/workflows/g2-offline-source-contracts.yml']
   pull_request:
-    paths: ['scripts/g2_epa_wildcard_capture.py', 'scripts/g2_samsung_pair_capture.py', 'scripts/g2_samsung_suffix.py', 'scripts/g2_model_diagnostic_report.py', 'checks/g2/test_epa_wildcard_capture.py', 'checks/g2/test_samsung_pair_capture.py', 'checks/g2/test_samsung_suffix.py', 'checks/g2/test_model_diagnostic_report.py', 'tests/fixtures/g2-epa-wildcard/**', 'tests/fixtures/g2-samsung-pair/**', '.github/workflows/g2-offline-source-contracts.yml']
+    paths: ['scripts/g2_epa_wildcard_capture.py', 'scripts/g2_epa_current_index_capture.py', 'scripts/g2_samsung_pair_capture.py', 'scripts/g2_samsung_suffix.py', 'scripts/g2_model_diagnostic_report.py', 'checks/g2/test_epa_wildcard_capture.py', 'checks/g2/test_epa_current_index_capture.py', 'checks/g2/test_samsung_pair_capture.py', 'checks/g2/test_samsung_suffix.py', 'checks/g2/test_model_diagnostic_report.py', 'tests/fixtures/g2-epa-wildcard/**', 'tests/fixtures/g2-samsung-pair/**', '.github/workflows/g2-offline-source-contracts.yml']
 permissions: {contents: read}
 jobs:
   contract:
@@ -15,7 +15,7 @@ jobs:
         with: {persist-credentials: false}
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with: {python-version: '${{ matrix.python }}'}
-      - run: python -m unittest checks/g2/test_epa_wildcard_capture.py checks/g2/test_samsung_pair_capture.py checks/g2/test_samsung_suffix.py checks/g2/test_model_diagnostic_report.py -v
+      - run: python -m unittest checks/g2/test_epa_wildcard_capture.py checks/g2/test_epa_current_index_capture.py checks/g2/test_samsung_pair_capture.py checks/g2/test_samsung_suffix.py checks/g2/test_model_diagnostic_report.py -v
       - run: python scripts/g2_model_diagnostic_report.py
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
