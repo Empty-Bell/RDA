@@ -39,6 +39,14 @@ def select_annual_energy(candidates: dict[str, Any], layout: dict[str, Any], rev
         return unavailable("MULTIPLE_OR_INCONSISTENT_LAYOUT_PROPOSALS")
     if type(review.get("page")) is not int or associated[0].get("page") != review["page"]:
         return unavailable("REVIEWED_PANEL_PAGE_DOES_NOT_MATCH")
+    reviewed_detections = {
+        "caption_detection": associated[0].get("caption_detection"),
+        "number_detection": proposal.get("number_detection") if isinstance(proposal, dict) else None,
+        "unit_detection": proposal.get("unit_detection") if isinstance(proposal, dict) else None,
+    }
+    if any(type(review.get(name)) is not int or review[name] != actual
+           for name, actual in reviewed_detections.items()):
+        return unavailable("REVIEWED_DETECTIONS_DO_NOT_MATCH")
     if annual[0].get("unit_raw") != "kWh":
         return unavailable("EXPLICIT_KWH_UNIT_REQUIRED")
     if not isinstance(proposal, dict) or proposal.get("value_raw") != annual[0].get("value_raw"):

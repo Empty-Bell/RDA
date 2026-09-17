@@ -18,8 +18,13 @@ class LabelSelectionTests(unittest.TestCase):
         self.candidates = label_candidates("\n".join(source["ocr_raw_texts"]), source["extraction_engine"], source["sha256"])
         self.layout = annual_layout_candidates(spans, source["sha256"])
         # Supplied review context is a test boundary input, not expanded-corpus approval.
+        layout = self.layout["annual_layout_candidates"][0]
+        proposal = layout["nearest_proposal_raw"]
         self.review = {"pdf_sha256": source["sha256"], "document_count": 1,
-                       "all_pages_reviewed": True, "us_panel_verified": True, "page": 0}
+                       "all_pages_reviewed": True, "us_panel_verified": True, "page": 0,
+                       "caption_detection": layout["caption_detection"],
+                       "number_detection": proposal["number_detection"],
+                       "unit_detection": proposal["unit_detection"]}
 
     def test_refrigerator_unique_annual_candidate_is_selected(self):
         selected = select_annual_energy(self.candidates, self.layout, self.review)
@@ -65,3 +70,8 @@ class LabelSelectionTests(unittest.TestCase):
             review = dict(self.review, **{field: value})
             with self.subTest(field=field):
                 self.assertEqual(select_annual_energy(self.candidates, self.layout, review)["observation"]["state"], "NOT_OBSERVED")
+
+    def test_reviewed_detection_mismatch_remains_unobserved(self):
+        review = dict(self.review, number_detection=self.review["number_detection"] + 1)
+        result = select_annual_energy(self.candidates, self.layout, review)
+        self.assertEqual(result["observation"]["state"], "NOT_OBSERVED")

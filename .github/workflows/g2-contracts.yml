@@ -9,6 +9,7 @@ on:
       - 'scripts/g2_normalized.py'
       - 'scripts/g2_label_plan.py'
       - 'scripts/g2_label_selection.py'
+      - 'scripts/g2_label_replay.py'
       - 'checks/g2/test_normalized_pdp.py'
       - 'checks/g2/test_label_plan.py'
       - 'checks/g2/test_label_selection.py'

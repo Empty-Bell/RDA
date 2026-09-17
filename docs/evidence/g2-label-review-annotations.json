@@ -1,0 +1,50 @@
+{
+  "contract": "MANUAL_VISUAL_REVIEW_BINDING_ONLY",
+  "source": {
+    "github_run_id": 35176346751,
+    "artifact_id": 10478339474,
+    "artifact_zip_sha256": "6c16c394b39837c30e4c5f7d1b0b6aab34ac051394aebc67062836072531a599",
+    "bundle_sha256": "2b9c79bb80e94184f6e2c2f917a93201362c50dd9b4211a3b246360e6709e332"
+  },
+  "annotations": [
+    {
+      "exact_skus": ["RF18A5101MT/AA", "RF18A5101S9/AA", "RF18A5101SR/AA"],
+      "pdf_sha256": "06b0115817b51c47ee4ac28bd3993ba5a1b97aa25251b31c6715a4ec469fd2fd",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 23, "number_detection": 21, "unit_detection": 22,
+      "expected_observation": {"state": "VALUE", "amount": 540.0}
+    },
+    {
+      "exact_skus": ["RF22A4111SR/AA"],
+      "pdf_sha256": "7a173cd4228415d307a7d17ccdf419db9879cecec103e1e83b1e38dbcf4298cf",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "NOT_OBSERVED", "reason": "MULTIPLE_TEXT_CANDIDATES_INCLUDING_UNMARKED_COST_ENDPOINT"}
+    },
+    {
+      "exact_skus": ["RF22A4221SR/AA"],
+      "pdf_sha256": "ce9984ffca8b989a05e41bed9bc6085499e06123f1328c94d19d01d8bb4c3f82",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 585.0}
+    },
+    {
+      "exact_skus": ["RF23BB860012AA", "RF23BB86004MAA", "RF23BB8600QLAA"],
+      "pdf_sha256": "b46d5dfd1de0746e7918ccf0d520cf63feffc972e63b70f31b86e716560e6e42",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 621.0}
+    },
+    {
+      "exact_skus": ["RF23DB9600QLAA"],
+      "pdf_sha256": "fd2b82f6416177d8d7f564d36110b8e6659d418ae7a11245b64b7d745dbb0924",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 634.0}
+    }
+  ],
+  "limitations": [
+    "Annotations bind only the preserved PDF, page, and OCR detection identifiers.",
+    "They do not correct OCR, resolve model wildcards, establish SKU applicability beyond the collected source document, or enable a regulatory comparison."
+  ]
+}

@@ -37,7 +37,16 @@ the preserved 2x render, not an independent second OCR engine.
 Strengthened fixture gate run 35179047280 at 234dfd2 passed on hosted Python
 3.11/3.12 (18 contracts). No live canonical selector was enabled.
 
-Remaining work: bind review annotations to PDF/page/region and detection records,
-then replay every saved candidate against the
-selector on hosted Ubuntu. Capacity, wildcard identity, OCR corrections and
-regulatory comparisons remain open. This review does not close G2.
+Review annotations in `docs/evidence/g2-label-review-annotations.json` bind each
+rendered PDF hash to its page, caption, number, and unit detection IDs. They are
+limited to the saved artifact and cannot enable a comparison. The selector checks
+those IDs before yielding a value.
+
+Offline replay recorded in `docs/evidence/g2-label-corpus-replay.json` PASSed all
+nine reviewed SKU records: eight unique observations were retained and
+RF22A4111SR/AA remained `NOT_OBSERVED`. The latter outcome preserves the $109 / 585
+OCR ambiguity rather than treating visual review as an OCR correction.
+
+Remaining work: replay every saved candidate against the selector on hosted
+Ubuntu. Capacity, wildcard identity, OCR corrections and regulatory comparisons
+remain open. This review does not close G2.
