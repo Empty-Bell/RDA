@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from energyguide_fields import annual_layout_candidates, label_candidates
-from g2_label_activation import load_review_annotations, select_live_reviewed_energy
+from g2_label_activation import load_review_annotations, select_live_reviewed_energy, summarize_selection_outcomes
 
 
 class LabelActivationTests(unittest.TestCase):
@@ -40,3 +40,12 @@ class LabelActivationTests(unittest.TestCase):
         reviews = load_review_annotations(ROOT / "docs/evidence/g2-label-review-annotations.json")
         self.assertEqual(len(reviews), 9)
         self.assertIn("RF22A4111SR/AA", reviews)
+
+    def test_summary_is_observation_only_and_rejects_duplicate_document(self):
+        selection = select_live_reviewed_energy("SKU", self.result, self.candidates, self.layout, {"SKU": self.review})
+        record = {"exact_sku": "SKU", "source_document_index": 0, "pdf_sha256": self.result["sha256"], "selection": selection}
+        summary = summarize_selection_outcomes([record])
+        self.assertEqual(summary["contract"], "REVIEW_BOUND_LIVE_OBSERVATION_ONLY")
+        self.assertEqual(summary["counts"], {"VALUE": 1, "NOT_OBSERVED": 0})
+        with self.assertRaisesRegex(ValueError, "Duplicate"):
+            summarize_selection_outcomes([record, record])

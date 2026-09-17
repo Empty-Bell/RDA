@@ -20,7 +20,7 @@ from source_recon import FAMILIES
 from g2_pdp import select_sample, collect_samples, coverage, verify_identity
 from g2_normalized import normalize_source_pdp
 from g2_label_collect import collect_energyguide_documents
-from g2_label_activation import load_review_annotations, select_live_reviewed_energy
+from g2_label_activation import load_review_annotations, select_live_reviewed_energy, summarize_selection_outcomes
 
 
 def main():
@@ -50,6 +50,7 @@ def main():
         products,parsed=population_records([pages[i] for i in ordered],run_id,FAMILIES['refrigerator']['plp'])
         config,config_hash=load_configuration(ROOT)
         label_reviews=load_review_annotations(ROOT/'docs/evidence/g2-label-review-annotations.json')
+        label_selection_outcomes=[]
         bundle={'manifest':{'schema_version':'draft-1','run_id':run_id,'started_at':started,'completed_at':None,
             'git_sha':os.environ['GITHUB_SHA'],'config_hash':config_hash,'rule_version':None,
             'source_contract_version':config['sources']['contract_version'],'python_version':sys.version.split()[0],
@@ -103,6 +104,9 @@ def main():
         original_selection_id,_=evidence(dumps({'selection_contract':'REVIEW_BOUND_LIVE_OBSERVATION_ONLY',
             'exact_sku':sku,'pdf_sha256':label_hash,'selection':original_selection}).encode(),label['requested_url'],sku,
             'review-bound-label-selection')
+        # The original source_recon collector retrieves its single declared document.
+        label_selection_outcomes.append({'exact_sku':sku,'source_document_index':0,
+            'pdf_sha256':label_hash,'selection':original_selection})
         fact('ENERGYGUIDE',{'document_url':observation(label['requested_url']),'document_sha256':observation(label_hash),
              'document_status':observation('SOURCE_PDF_PARSED'),'extraction_engine':observation(label['extraction_engine']),
              'embedded_text':observation(label['embedded_text']),'ocr_raw_text':observation('\n'.join(label['ocr_raw_texts'])),
@@ -167,6 +171,8 @@ def main():
             selection_ref,_=evidence(dumps({'selection_contract':'REVIEW_BOUND_LIVE_OBSERVATION_ONLY',
                 'exact_sku':result['exact_sku'],'pdf_sha256':label_hash,'selection':selection}).encode(),result['final_url'],
                 result['exact_sku'],'review-bound-label-selection',result['captured_at'])
+            label_selection_outcomes.append({'exact_sku':result['exact_sku'],
+                'source_document_index':result['source_document_index'],'pdf_sha256':label_hash,'selection':selection})
             label_fact_inputs.setdefault(result['exact_sku'],[]).append((result,label_hash,
                 [label_id,observation_id,*candidate_refs,selection_ref],selection['observation']))
         for label_sku,inputs in label_fact_inputs.items():
@@ -179,6 +185,7 @@ def main():
                  'annual_energy_kwh':annual_energy,
                  'fallback_reason':observation(result['fallback_reason']),'ocr_scale':observation(result['ocr_scale'])},refs,label_sku)
         pdp_coverage=coverage(products,samples)
+        label_selection_summary=summarize_selection_outcomes(label_selection_outcomes)
         with (out/'pdp-coverage.json').open('x',encoding='utf-8',newline='\n') as stream:stream.write(dumps(pdp_coverage))
         bundle['manifest']['completed_at']=datetime.now(timezone.utc).isoformat()
         validate_bundle(bundle);verify_evidence_files(bundle,out)
@@ -189,6 +196,7 @@ def main():
             attempted_pdp_skus=[r['exact_sku'] for r in samples],pdp_coverage_counts=pdp_coverage['counts'],
             pdp_coverage_sha256=hashlib.sha256((out/'pdp-coverage.json').read_bytes()).hexdigest(),
             collected_label_skus=sorted({sku,*[result['exact_sku'] for result in labels]}),epa_brand_scan=epa_recon['brand_scan'],
+            label_selection_summary=label_selection_summary,
             sku_certification_matching='NOT_EVALUATED',bundle_sha256=hashlib.sha256((out/'bundle.json').read_bytes()).hexdigest())
     except Exception as error:
         checkpoint['error_class']=type(error).__name__
