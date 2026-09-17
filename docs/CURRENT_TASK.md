@@ -36,8 +36,10 @@ on every next-step prompt. Same-task model changes should continue existing work
   on hosted ubuntu-24.04. Extra bounded PDP labels retain original PDF bytes,
   extraction observations and unselected field/layout candidates; multiple Support
   PDFs remain evidence-only. No canonical value, OCR correction or assessment exists.
-- Next: inspect the resulting candidate corpus and prepare a decision proposal for
-  label-field selection without enabling it.
+- Label selection proposal: docs/G2_LABEL_SELECTION_PROPOSAL.md is REVIEW_REQUIRED.
+  Reviewed committed refrigerator text/layout corpus; expanded artifact individual
+  files still require replay/review. No selector is enabled. Obtain approval for the
+  proposed extraction contract before implementing canonical field selection.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
