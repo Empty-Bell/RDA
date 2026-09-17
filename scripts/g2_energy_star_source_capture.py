@@ -208,6 +208,7 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                     raise ValueError("PDP session did not request a Specs bridge response")
                 candidates = []
                 expected_skus = {variant.get("modelCode") for variant in group["groupedProductList"]}
+                observed_sets = []
                 for source_response in responses:
                     if source_response.status != 200 or "json" not in source_response.headers.get("content-type", "").lower():
                         continue
@@ -215,6 +216,7 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                     try:
                         bridge = project_bridge(_json(body, "PDP session bridge"))
                         observed_skus = {entry.get("modelCode") for entry in bridge["Specs"]}
+                        observed_sets.append(sorted(observed_skus))
                         # Bridge legitimately includes related models outside the
                         # PF family.  Every PF SKU must appear exactly once; extra
                         # source rows are neither borrowed nor interpreted.
@@ -226,7 +228,12 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                         continue
                     candidates.append((source_response, body))
                 if not candidates:
-                    raise ValueError("No exact-SKU Specs/Support bridge response for PF group")
+                    raise ValueError(
+                        "No exact-SKU Specs/Support bridge response; expected="
+                        + ",".join(sorted(expected_skus))
+                        + "; observed="
+                        + "|".join(",".join(skus) for skus in observed_sets)
+                    )
                 if len({hashlib.sha256(body).hexdigest() for _, body in candidates}) != 1:
                     raise ValueError("Multiple nonidentical exact-SKU bridge responses")
                 source_response, body = candidates[0]
