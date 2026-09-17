@@ -189,9 +189,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   the pilot artifact. Artifact `g2-pilot-35227238209-1` has GitHub digest
   `e83145ee8aaa9297db0dc4faffc656b5fe401a1cbf3f385882699dc3ee4d7021`.
   Assessment remains disabled until collection definitions and coverage are
-  complete. Next: same-run p5st-her9 raw-row capture for compatible pattern
-  candidates, then apply the existing four-key bridge to those candidates only.
-  Recommended model: Terra medium.
+  complete. Same-run p5st-her9 raw-row capture is now integrated for compatible
+  pattern candidates only. Hosted refrigerator run 35228688716 PASSed at a639e42
+  on ubuntu-24.04 in 3m33s; its `g2-pilot-35228688716-1` artifact is 3,522,140
+  bytes. The run preserved p5st metadata and exact PD_ID responses, then applied
+  the four-key bridge only to compatible candidates. This remains candidate-only,
+  with current certification and assessment NOT_EVALUATED. Next: add the
+  three independent Samsung publication-point collectors (PLP logo, PDP logo and
+  visible Spec certification) with target attribution and PRESENT/ABSENT/UNKNOWN
+  boundaries. Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
