@@ -1,5 +1,14 @@
 # Open semantic decisions
 
+Latest D09 DQPL subtask: G2_DQPL_REFERENCE_POLICY_PROPOSAL.md is a DRAFT for
+refrigerator-only literal category/brand/model source references and dated-list
+absence observations. It explicitly proposes reuse of approved Samsung-side
+terminal-AA normalization while leaving DQPL text untouched. No matching policy
+or assessment is enabled by the draft. Parser-integrity prerequisites are listed
+before live v2 acceptance. Earlier chronological notes below do not supersede
+the approved suffix, US-market or current-index observation contracts recorded
+in CURRENT_TASK.md and their dedicated review documents.
+
 Corpus diagnostic review: G2_EPA_DIAGNOSTIC_CORPUS_REVIEW.md confirms all nine
 read-only diagnostics withheld identity (five unsupported `/AA` forms, four
 length mismatches). It supplies no basis for suffix stripping or wildcard

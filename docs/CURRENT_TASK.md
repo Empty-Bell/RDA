@@ -178,7 +178,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   The captured artifact replayed all 2,997 rows; values, OOXML types/styles and
   cell addresses remain raw. All product identity, disqualification and
   assessment states remain NOT_EVALUATED. Next: propose a separate identifier,
-  category and time-scope matching policy; recommended model: Sol medium.
+  category and time-scope matching policy. The concrete DRAFT is now
+  G2_DQPL_REFERENCE_POLICY_PROPOSAL.md: literal refrigerator category/Samsung
+  brand, literal raw or approved Samsung-normalized target equality, preserved
+  dated-list scope and all candidate evidence. Source-reference states do not
+  assess product identity or certification. Approval is pending. Before live v2
+  acceptance, verify saved observations.json bytes, reject duplicate XML
+  coordinates and preserve formula/number-format metadata with expanded tests.
+  Next model: Terra medium for these integrity fixes and, after policy approval,
+  bounded observation implementation. No compliance assessment is authorized.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
