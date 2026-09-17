@@ -198,6 +198,17 @@ on every next-step prompt. Same-task model changes should continue existing work
   three independent Samsung publication-point collectors (PLP logo, PDP logo and
   visible Spec certification) with target attribution and PRESENT/ABSENT/UNKNOWN
   boundaries. Recommended model: Terra medium.
+
+  The first implementation now records the three points separately in each live
+  refrigerator pilot artifact. A PLP point accepts only an Energy Star image in
+  the exact model card. A PDP point accepts only the existing exact-identity,
+  primary-surface image attribution. A Spec point accepts only affirmative text
+  in a visible rendered Spec row; raw `energyStarFlg` and bridge-data fields are
+  never treated as a visual point. Unknown layouts remain UNKNOWN. This is a
+  collection gate only: no PASS/LOW/HIGH rule is activated until the hosted run
+  and real captured DOM output are reviewed. Next: inspect that hosted artifact,
+  then define the safe complete-Spec-table absence boundary. Recommended model:
+  Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

@@ -11,11 +11,15 @@ on:
       - 'scripts/g2_current_index_candidate_projection.py'
       - 'scripts/g2_refrigerator_pattern_bridge.py'
       - 'scripts/g2_refrigerator_pattern_capture.py'
+      - 'scripts/g2_energy_star_publication_points.py'
+      - 'scripts/claim_recon.py'
+      - 'scripts/source_recon.py'
       - 'scripts/g2_label_activation.py'
       - 'checks/g2/test_population.py'
       - 'checks/g2/test_pdp.py'
       - 'checks/g2/test_refrigerator_pattern_bridge.py'
       - 'checks/g2/test_refrigerator_pattern_capture.py'
+      - 'checks/g2/test_energy_star_publication_points.py'
       - '.github/workflows/g2-smoke.yml'
 permissions:
   contents: read

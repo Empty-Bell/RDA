@@ -33,6 +33,7 @@ from g2_label_activation import (
 from g2_current_index_candidate_projection import load_replayed_rows
 from g2_refrigerator_pattern_bridge import project_same_run_refrigerator_candidates
 from g2_refrigerator_pattern_capture import capture_pattern_rows
+from g2_energy_star_publication_points import collect_publication_points
 
 
 def main():
@@ -382,6 +383,30 @@ def main():
             current_index_projection["candidate_projection"],
             execution_id=run_id,
         )
+        plp_observation_path = source / "plp-claim-observation.json"
+        plp_observation = json.loads(plp_observation_path.read_bytes())
+        cards = plp_observation.get("cards")
+        if not isinstance(cards, list):
+            raise ValueError("PLP visual observation has invalid cards")
+        visual_snapshots = {sku: snapshot}
+        for result in samples[1:]:
+            for entry in result.get("observations", []):
+                if Path(entry.get("path", "")).name == "snapshot.json":
+                    visual_snapshots[result["exact_sku"]] = json.loads(
+                        Path(entry["path"]).read_bytes()
+                    )
+        publication_points = collect_publication_points(cards, samples, visual_snapshots)
+        (out / "energy-star-publication-points.json").write_text(
+            dumps(publication_points), encoding="utf-8"
+        )
+        # Preserve the unmodified PLP DOM observation independently of its three-point projection.
+        for result in samples:
+            evidence(
+                plp_observation_path.read_bytes(),
+                page_sources[ordered[0]],
+                result["exact_sku"],
+                "plp-visual-publication-observation",
+            )
         for result in samples[1:]:
             refs = {}
             for entry in result["responses"] + result["observations"]:
@@ -618,6 +643,11 @@ def main():
                 "states": [
                     bridge["pattern_candidate_state"] for bridge in pattern_bridge["bridges"]
                 ],
+            },
+            energy_star_publication_points={
+                "sampled_sku_count": len(publication_points["records"]),
+                "point_states": publication_points["states"],
+                "assessment_status": "NOT_EVALUATED",
             },
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),
         )

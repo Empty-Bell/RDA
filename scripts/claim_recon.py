@@ -177,8 +177,19 @@ DOM_SNAPSHOT = r"""() => {
   document.querySelectorAll('script[type="application/ld+json"]').forEach(e => {
     try { visit(JSON.parse(e.textContent)); } catch { errors++; }
   });
+  const specRows = Array.from(document.querySelectorAll('table tr, dl > div, [role="row"]'))
+    .filter(visible).map(e => ({tag:e.tagName, text:(e.innerText || '').trim().replace(/\s+/g,' ').slice(0,800),
+      cells:Array.from(e.querySelectorAll('th,td,dt,dd,[role="cell"],[role="columnheader"]')).filter(visible)
+        .map(x => (x.innerText || '').trim().replace(/\s+/g,' ').slice(0,300)).filter(Boolean)}))
+    .filter(x => energy.test(x.text)).slice(0,40);
+  const galleryCount = document.querySelectorAll('[class*="Gallery_outerContainer__"]').length;
+  const relationCount = document.querySelectorAll('.q6b6RelationContainer').length;
+  const primaryLogoInspection = galleryCount === 1 || (galleryCount === 0 && relationCount === 1)
+    ? 'SUPPORTED_PRIMARY_SURFACE_COMPLETE' : 'UNSUPPORTED_OR_AMBIGUOUS_PRIMARY_SURFACE';
   return {headings:Array.from(document.querySelectorAll('h1')).filter(visible).map(e => e.textContent.trim().slice(0,300)),
     product_jsonld:products, jsonld_parse_errors:errors, energy_candidates:candidates,
+    primary_logo_inspection:primaryLogoInspection, visible_spec_energy_star_rows:specRows,
+    spec_surface_inspection:'OBSERVED_VISIBLE_ROWS_ONLY',
     observation_scope:'current mounted DOM; visible page candidates are not attributed to target SKU'};
 }"""
 
@@ -187,7 +198,9 @@ PLP_SNAPSHOT = r"""() => Array.from(document.querySelectorAll('.pd21-product-car
   const visible = x => !!x.getClientRects().length && getComputedStyle(x).visibility !== 'hidden';
   const energy = /energy[\s_-]*star/i;
   return {sku:e.getAttribute('data-modelcode'), title:e.textContent.trim().slice(0,300),
-    card_scope_found:!!card, energy_candidates:card ? Array.from(card.querySelectorAll('img,[aria-label],span,p'))
+    card_scope_found:!!card,
+    logo_inspection:card ? 'SUPPORTED_CARD_COMPLETE' : 'UNSUPPORTED_CARD_SCOPE',
+    energy_candidates:card ? Array.from(card.querySelectorAll('img,[aria-label],span,p'))
       .filter(visible).map(x => ({tag:x.tagName, text:(x.children.length ? '' : x.textContent || '').trim().slice(0,400),
         alt:x.getAttribute('alt'),label:x.getAttribute('aria-label'),src:x.tagName === 'IMG' ? x.getAttribute('src') : null}))
       .filter(x => energy.test([x.text,x.alt,x.label,x.src].join(' '))).slice(0,10) : []};
