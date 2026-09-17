@@ -1,0 +1,229 @@
+{
+  "status": "PASS",
+  "run_id": "35169376748",
+  "git_sha": "b6e6f13c76041d8aa0034d04243060646a0abb65",
+  "captured_at": "2026-09-17T01:08:24.452724+00:00",
+  "phase_gate": "NOT_EVALUATED",
+  "sku_applicability": "NOT_EVALUATED",
+  "compliance": "NOT_EVALUATED",
+  "responses": [
+    {
+      "name": "ecfr-titles",
+      "url": "https://www.ecfr.gov/api/versioner/v1/titles.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "content_encoding": "gzip",
+      "wire_sha256": "f8c2dd43c6f2db347462ae71f6ddce884b3b91c6d642d876d75f8f9c0fd032d6",
+      "wire_size": 1264,
+      "body_sha256": "d84f46de37431ee563a66f7fa25a84edb1500b7b1417204afb627d818c4fb520",
+      "body_size": 8033
+    },
+    {
+      "name": "part305",
+      "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-08-31/title-16.xml?chapter=I&subchapter=C&part=305",
+      "status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "content_encoding": "gzip",
+      "wire_sha256": "867936c672a98f8559e8cab3f4089c374a60aaefa1bb812007bdaf9b548e9711",
+      "wire_size": 43328,
+      "body_sha256": "f4b8e3f5de23681e4a4989574e201a29fb902199fb22fa378ead4e35991065fd",
+      "body_size": 264014
+    },
+    {
+      "name": "ecfr-titles-after",
+      "url": "https://www.ecfr.gov/api/versioner/v1/titles.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "content_encoding": "gzip",
+      "wire_sha256": "f8c2dd43c6f2db347462ae71f6ddce884b3b91c6d642d876d75f8f9c0fd032d6",
+      "wire_size": 1264,
+      "body_sha256": "d84f46de37431ee563a66f7fa25a84edb1500b7b1417204afb627d818c4fb520",
+      "body_size": 8033
+    },
+    {
+      "name": "clothes_washers",
+      "url": "https://www.energystar.gov/products/clothes_washers/key_product_criteria",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_encoding": "gzip",
+      "wire_sha256": "6759475a1af6a964e012e5831b8b7b4b3bb28aefd81a6831ba94baacfffd19c9",
+      "wire_size": 7893,
+      "body_sha256": "88e2bf5e84297fbb64828a4f685e5720266132ce1249f3aaa17f2f33cf416de7",
+      "body_size": 38714
+    },
+    {
+      "name": "clothes_dryers",
+      "url": "https://www.energystar.gov/products/clothes_dryers/key_product_criteria",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_encoding": "gzip",
+      "wire_sha256": "6982995a51fab86f9f3a9ac31e260e925bfa1da8b19e8c2d877388fe11e52a8a",
+      "wire_size": 7159,
+      "body_sha256": "11a9cae105ae9cc25a14ed1521145b90545859495d6077c1b4709b7713dae98f",
+      "body_size": 35935
+    },
+    {
+      "name": "bghd-e2wd-types",
+      "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=special_type%2Ccount%28%2A%29+as+row_count&%24group=special_type&%24order=special_type&%24limit=100",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "content_encoding": "gzip",
+      "wire_sha256": "114771bbff5d60f2f51478661a7b3e98f60be193fc33367a7afa3ce4914e1990",
+      "wire_size": 119,
+      "body_sha256": "ef80edb7b3885b3e918962ab55788a47f24fc30ed0359f84be0f4ebf032a2ac1",
+      "body_size": 144
+    },
+    {
+      "name": "t9u7-4d2j-types",
+      "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=special_type%2Ccount%28%2A%29+as+row_count&%24group=special_type&%24order=special_type&%24limit=100",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "content_encoding": "gzip",
+      "wire_sha256": "efb81be70333bade49e3675096957e7e3e8503cdfd51100f9ed28485d3ed812a",
+      "wire_size": 119,
+      "body_sha256": "61a811939b90adffd79ee6afb33bdd3abbe027e156333692cc3c6fb5eca0bee4",
+      "body_size": 144
+    }
+  ],
+  "ecfr_version": {
+    "number": 16,
+    "name": "Commercial Practices",
+    "latest_issue_date": "2026-08-31",
+    "latest_amended_on": "2026-08-29",
+    "up_to_date_as_of": "2026-09-15"
+  },
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35169376748",
+  "attempt": 1,
+  "job_id": 105037485756,
+  "runner_name": "GitHub Actions 1000001482",
+  "runner_target": "ubuntu-24.04 x64",
+  "contract_tests": 12,
+  "artifact_id": 10476197911,
+  "artifact_zip_sha256": "bacf9e5d0d05a17b6635cb7b17e936b0624dd119c022ea96a629ce253c32a2fe",
+  "artifact_expires_at": "2026-10-01T01:08:26Z",
+  "report_sha256": "4da115e2862ef4f304de271d6cfe51cb90ce4b165f2166c1c5a7145f33ae5611",
+  "ftc_sections": [
+    {
+      "section": "305.2",
+      "heading": "§ 305.2 Definitions.",
+      "paragraph_count": 66,
+      "paragraphs_sha256": "41a0682d7ad2d2bfc0b8ad7a2f70cdc2b4b43accfabb07e8b95de8a9b1181733"
+    },
+    {
+      "section": "305.3",
+      "heading": "§ 305.3 Description of appliances and consumer electronics.",
+      "paragraph_count": 19,
+      "paragraphs_sha256": "76b3d0075c4292280d680c588893c374f32c10118913b49628624fd42a61e634"
+    },
+    {
+      "section": "305.9",
+      "heading": "§ 305.9 Duty to provide labels on websites.",
+      "paragraph_count": 1,
+      "paragraphs_sha256": "f322839bf06c4f70756884448ead44c668c930220cddfa3a45f2feb407ec8945"
+    },
+    {
+      "section": "305.13",
+      "heading": "§ 305.13 Layout, format, and placement of labels for refrigerators, refrigerator-freezers, freezers, dishwashers, clothes washers, water heaters, room air conditioners, portable air conditioners, and pool heaters.",
+      "paragraph_count": 10,
+      "paragraphs_sha256": "3fa1f7e7d99e1963d5f50d0cbffff8d6dd1fb7b6fdd3db919ed54cc4fc6c7739"
+    },
+    {
+      "section": "305.14",
+      "heading": "§ 305.14 Label content for refrigerators, refrigerator-freezers, and freezers.",
+      "paragraph_count": 32,
+      "paragraphs_sha256": "86cd89ce949415095445f567921f37713c5f3911351b03c471253959cb73be1f"
+    },
+    {
+      "section": "305.15",
+      "heading": "§ 305.15 Label content for clothes washers.",
+      "paragraph_count": 15,
+      "paragraphs_sha256": "bf52387e9660781484a14e251ba1c8fadd92de5c4de221f4b540a1baea1964ed"
+    },
+    {
+      "section": "305.16",
+      "heading": "§ 305.16 Label content for dishwashers.",
+      "paragraph_count": 14,
+      "paragraphs_sha256": "b20e349e09e6f24cb9d22d9559e9c7776ccf4b9d6cd6bfc749f3539d4eded96a"
+    },
+    {
+      "section": "305.25",
+      "heading": "§ 305.25 Television labeling.",
+      "paragraph_count": 23,
+      "paragraphs_sha256": "7e2adc16563e4577f5ade4cc9d45d96e0c05458ca5a391b0213d05acf9dfed9a"
+    },
+    {
+      "section": "305.27",
+      "heading": "§ 305.27 Paper catalogs and websites.",
+      "paragraph_count": 17,
+      "paragraphs_sha256": "4ea1df7560982b7a0d575ed517e1195ea5edf63de1bcc14cefcf95e70d1e451f"
+    }
+  ],
+  "laundry_criteria": {
+    "clothes_washers": {
+      "title": "Clothes Washers Key Product Criteria",
+      "selector": "main; script/style excluded",
+      "text": "Clothes Washers Key Product Criteria The ENERGY STAR criteria for clothes washers was changed on April 22, 2021 and is as follows: Clothes Washer Efficiency Requirements Product Type Current Criteria Levels (as of April 22, 2021) ENERGY STAR Residential Clothes Washers, Front-loading (> 2.5 cu-ft) IMEF ≥ 2.76 IWF ≤ 3.2 ENERGY STAR Residential Clothes Washers, Top-loading (> 2.5 cu-ft) IMEF ≥ 2.06 IWF ≤ 4.3 ENERGY STAR Residential Clothes Washers (≤ 2.5 cu-ft) IMEF ≥ 2.07 IWF ≤ 4.2 ENERGY STAR Commercial Clothes Washers MEF J2 ≥ 2.20 IWF ≤ 4.0 ENERGY STAR Combination All-in-One Washer-Dryer Meets IMEF, IWF and the current ENERGY STAR requirements for clothes dryers (except the time requirements) for the closest product type ENERGY STAR Qualified Clothes Washer Eligibility Only front and top-loading clothes washers with capacities greater than 1.6 ft3 and less than 8.0 ft3; and are not defined as Residential Clothes Washers with Heated Drying Functionality, or top-loading commercial clothes washers are eligible for ENERGY STAR Certification. Energy Performance Metrics Modified Energy Factor, MEF J2 , is the energy performance metric for ENERGY STAR certified commercial clothes washers as of February 5, 2018. MEF J2 is the quotient of the capacity of the clothes container, C , divided by the total clothes washer energy consumption per cycle, with such energy consumption expressed as the sum of the machine electrical energy consumption, M , the hot water energy consumption, E , and the energy required for removal of the remaining moisture in the wash load, D . The higher the value, the more efficient the clothes washer is. The equation is shown below and the metric units are ft3/kWh/cycle: MEF J2 = C M + E + D Integrated Modified Energy Factor, IMEF , is the energy performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015. IMEF is the quotient of the capacity of the clothes container, C , divided by the total clothes washer energy consumption per cycle, with such energy consumption expressed as the sum of the machine electrical energy consumption, M , the hot water energy consumption, E , the energy required for removal of the remaining moisture in the wash load, D and the combined low-power mode energy consumption, L . The higher the value, the more efficient the clothes washer is. The equation is shown below and the metric units are ft3/kWh/cycle: IMEF = C M + E + D + L Integrated Water Factor, IWF, is the water performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015 and ENERGY STAR certified commercial clothes washers as of February 5, 2018. It allows the comparison of clothes washer water consumption independent of clothes washer capacity. Manufacturers must submit their water consumption factors with their ENERGY STAR certified residential clothes washers. IWF is the quotient of the total weighted per-cycle water consumption for all wash cycles, Q A , divided by the capacity of the clothes washer, C . The lower the value, the more water efficient the clothes washer is. The equation is shown below: IWF = Q A C The federal EnergyGuide label on residential clothes washers shows annual energy consumption and cost. These figures use the IMEF/MEF J2 , average cycles per year, and the average cost of energy to make the energy and cost estimates. The Integrated Modified Energy Factor, or Integrated Water Factor may not appear on the EnergyGuide label."
+    },
+    "clothes_dryers": {
+      "title": "Clothes Dryers Key Product Criteria",
+      "selector": "main; script/style excluded",
+      "text": "Clothes Dryers Key Product Criteria The ENERGY STAR criteria for clothes dryers were established on May 19, 2014. The ENERGY STAR criteria will require that products meet the following efficiency and cycle time requirements: Efficiency Requirements Product type Combined Energy Factor (lbs/kWh) Vented Gas 3.48 Ventless or Vented Electric, Standard (4.4 cu-ft or greater capacity) 3.93 Ventless or Vented Electric, Compact (120V) (less than 4.4 cu-ft capacity) 3.80 Vented Electric, Compact (240V) (less than 4.4 cu-ft capacity) 3.45 Ventless Electric, Compact (240V) (less than 4.4 cu-ft capacity) 2.68 Cycle Time Requirement Maximum Test Cycle Time 80 minutes ENERGY STAR Certified Clothes Dryer Eligibility Only gas, electric, and compact clothes dryers meeting the ENERGY STAR definitions for an electric or gas clothes dryers are eligible to earn ENERGY STAR certification. For information on combination all-in-one washer-dryers, please see Clothes Washers Key Product Criteria page. Energy Performance Metrics Combined Energy Factor ( CEF ) is the quotient of the test load size, 8.45 lbs for standard dryers and 3 lbs for compact dryers, C , divided by the sum of the machine electric energy use during standby and operational cycles. The equation is shown here: CEF = C (lbs) E on + E standb y The units are pounds per kWh. The higher the value, the more efficient the clothes dryer is."
+    }
+  },
+  "laundry_types": {
+    "bghd-e2wd": {
+      "where": "upper(brand_name) = 'SAMSUNG'",
+      "group": "special_type",
+      "rows": [
+        {
+          "special_type": "Combination All-in-One Washer/Dryer",
+          "row_count": "3"
+        },
+        {
+          "special_type": "Laundry Center",
+          "row_count": "7"
+        },
+        {
+          "row_count": "56"
+        }
+      ],
+      "scope": "observed grouped brand query; not SKU routing or atomic snapshot"
+    },
+    "t9u7-4d2j": {
+      "where": "upper(brand_name) = 'SAMSUNG'",
+      "group": "special_type",
+      "rows": [
+        {
+          "special_type": "Combination All-in-One Washer/Dryer",
+          "row_count": "3"
+        },
+        {
+          "special_type": "Laundry Center",
+          "row_count": "7"
+        },
+        {
+          "row_count": "94"
+        }
+      ],
+      "scope": "observed grouped brand query; not SKU routing or atomic snapshot"
+    }
+  },
+  "fixture_integrity": {
+    "status": "PASS",
+    "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35169376791",
+    "attempt": 1,
+    "job_id": 105037485719,
+    "checks": 99,
+    "byte_source": "checkout files",
+    "artifact_id": 10476096902,
+    "artifact_zip_sha256": "62eb26fa80a9de2fdd0a046f8fec817e860c50dde3be18559e4055763b5a555f",
+    "artifact_expires_at": "2026-10-01T01:08:27Z",
+    "report_sha256": "73de8e2576192da604e1d0683c929d763b4ec618b12448392fd54264cccf3ed8"
+  },
+  "local_diagnostic": {
+    "missing_compression_header_http_status": 406,
+    "source_message": "This endpoint requires response compression. Send an Accept-Encoding header that permits compression.",
+    "resolution": "Accept-Encoding: gzip with separately bounded wire/decoded bodies; no TLS bypass",
+    "scope": "local orchestration diagnostic; hosted probe passed first execution"
+  }
+}

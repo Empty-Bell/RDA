@@ -44,8 +44,10 @@ Actions are pinned; image/system libraries remain hosted inputs. Controlled-copy
 recovery is separate from generic source/WAF recovery. Consolidated G0 review is
 now recorded in G0_REVIEW.md; full G0 remains NOT_EVALUATED. Official EPA source
 advertisement/specification status and alternate combo observations passed hosted
-run 35168707877; see EPA_ROUTING_SOURCE_CONTRACT.md. Next: official FTC/EPA family
-applicability provenance and remaining stacked/per-configuration boundaries.
+run 35168707877; see EPA_ROUTING_SOURCE_CONTRACT.md. Official FTC/EPA family
+applicability evidence and laundry/configuration boundaries are recorded in
+APPLICABILITY_EVIDENCE.md; authority run 35169376748 and fixture run 35169376791
+passed. Next: final G0 contract/fixture coverage closure and explicit deferrals.
 Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate

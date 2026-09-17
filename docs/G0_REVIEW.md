@@ -49,8 +49,14 @@ and cross-brand Range Hood rows are retained in EPA_ROUTING_SOURCE_CONTRACT.md.
 This closes the advertisement and alternate-view observation gaps, while exclusive
 version, stacked/per-configuration routing and individual applicability remain open.
 
-Next bounded task: item 2, the official FTC/EPA family applicability evidence table,
-including remaining stacked/per-configuration source boundaries. No compliance rule or Phase 1 code is
+Item 2 bounded evidence collection passed hosted run 35169376748: declared eCFR
+Title 16 version/Part 305 clauses, EPA laundry criteria and grouped special_type
+observations are retained. The 11-family matrix and configuration boundaries are
+in APPLICABILITY_EVIDENCE.md; exact SKU applicability and all decisions stay open.
+Fixture integrity run 35169376791 verifies 99 references on Ubuntu.
+
+Next bounded task: item 3, final G0 source-contract/fixture coverage closure and
+explicit phase-specific deferrals. No compliance rule or Phase 1 code is
 needed to collect these official source observations. Ask only if a semantic
 choice becomes necessary to close a route; existing deferred decisions stay open.
 

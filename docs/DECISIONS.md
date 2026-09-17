@@ -2,6 +2,15 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+2026-09-17 official applicability follow-up: APPLICABILITY_EVIDENCE.md records
+dated eCFR clauses and EPA program/configuration scope. Both washer and dryer
+Samsung queries expose Laundry Center, all-in-one and unspecified special_type;
+equal grouped counts do not establish bundle/component identity. The earlier
+combo-route UNKNOWN note is historical: alternate-view/parent identity observations
+are now documented in EPA_ROUTING_SOURCE_CONTRACT.md. Individual routing,
+applicability, market/current certification and comparison policies remain OPEN
+(D01/D07/D08/D09/D11); no parser fact constitutes decision approval.
+
 EPA bounded query reconnaissance: complete literal Samsung-brand scans expose
 non-US market strings, missing UPC and distinct Notebook/Slate-Tablet, cooking,
 combo/laundry-center types. Fan 0 rows proves only that declared query's observed

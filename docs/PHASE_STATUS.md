@@ -213,8 +213,16 @@ separate washer/dryer energy fields and actual fan unit_type/Range Hood rows are
 preserved. Two failed probes and corrections remain in the failure history.
 See EPA_ROUTING_SOURCE_CONTRACT.md and docs/evidence/epa-routing-recon.json.
 No production route, matching, applicability or compliance policy was changed.
-Next bounded task: official FTC/EPA family applicability provenance, including
-stacked and per-configuration boundaries. All family discovery and
+Official applicability evidence bounded PASS: run 35169376748, code
+b6e6f13c76041d8aa0034d04243060646a0abb65, attempt 1, job 105037485756;
+12 authority contract tests passed. Actual dated eCFR XML yields nine required
+sections; source dates and before/after stability are retained. EPA criteria and
+literal Samsung special_type queries expose combo/center/unspecified distinctions.
+Independent fixture run 35169376791 passed 99 references on Ubuntu. No applicability
+or compliance policy was activated. See APPLICABILITY_EVIDENCE.md and
+docs/evidence/applicability-recon.json. Remaining milestone gates: MILESTONES.md.
+Next bounded task: final G0 source-contract/fixture coverage closure and explicit
+phase-specific deferrals. All family discovery and
 bounded common claim/quality/runtime probes are complete; full G0 is not promoted.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
