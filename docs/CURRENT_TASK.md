@@ -128,9 +128,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   unchanged. Official suffix research is recorded in
   G2_SAMSUNG_SUFFIX_SOURCE_REVIEW.md: Samsung US displays
   `RF23DB9600QL / RF23DB9600QLAA` together, but no general suffix deletion or
-  EPA identity rule was established. Next: capture this source-declared paired
-  field with raw/hash provenance and actual offline fixtures, separating cheap
-  hosted 3.11/3.12 checks from live capture; recommended model Terra medium.
+  EPA identity rule was established. Hosted run 35202527763 captured the
+  source-declared pair and replayed its raw hash successfully; see
+  G2_SAMSUNG_SUFFIX_SOURCE_REVIEW.md. Next: retain it as one observational
+  pair and investigate explicit EPA additional-model mappings or D09 policy,
+  without broad suffix normalization; recommended model Sol medium for the
+  policy boundary, Terra medium for a bounded source query.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

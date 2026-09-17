@@ -66,3 +66,21 @@ Ubuntu Python 3.11 and 3.12 for relevant code and fixture changes. The live
 Samsung capture is manual-only in `g2-samsung-pair-capture.yml`, so a cheap
 contract edit does not make an external request. Its artifact remains the
 required evidence before this observation can be treated as source-captured.
+
+## Hosted capture checkpoint
+
+GitHub Actions run [35202527763](https://github.com/Empty-Bell/RDA/actions/runs/35202527763)
+passed on `ubuntu-24.04` at commit `1767639`. The uploaded artifact
+`g2-samsung-pair-35202527763-1` has SHA-256
+`1b0746f1016f262dcc78f5e522fe1ba577140333620edef818390ae52d808296`.
+Its downloaded ZIP matched that digest.
+
+The preserved Samsung response was HTTP 200, `text/html; charset=utf-8`,
+797,788 bytes, SHA-256
+`f80ae3467d0247f356824a239d1d7b83d228fa872bb0747836014dca992e0b25`.
+The raw declared field was `RF23DB9600QL /  RF23DB9600QLAA` (two spaces after
+the slash); projection preserved this raw text and separately recorded literal
+left `RF23DB9600QL` and right `RF23DB9600QLAA` tokens. Replay completed in the
+hosted collector before artifact upload. This is manufacturer source evidence
+for this one displayed pair only. It neither strips `AA`/`/AA` elsewhere nor
+sets EPA identity, certification status, market applicability, or assessment.
