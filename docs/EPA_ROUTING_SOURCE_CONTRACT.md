@@ -1,7 +1,9 @@
 # Official EPA source-routing reconnaissance
 
-Phase 0 only. Hosted validation pending; G0 and compliance NOT_EVALUATED.
-Official references observed 2026-09-17; fresh hosted evidence will be appended.
+Phase 0 only. Bounded hosted extraction PASS in
+[run 35168707877](https://github.com/Empty-Bell/RDA/actions/runs/35168707877), commit
+cfac061e4cb81314b031c60b1febbe905b6c75cd, attempt 1, job 105035493022.
+G0 and compliance NOT_EVALUATED. Official references observed 2026-09-17.
 
 ## Active-source advertisement
 
@@ -93,6 +95,35 @@ Always-upload diagnostic reports remain FAIL on errors. Source identity/schema
 and combo energy-component field drift are rejected. Artifact retention is 14 days.
 Sanitized fixture manifests use committed LF byte hashes and the G0 checker also
 accepts the new restricted fixture directory. This validates extraction only.
+
+## Hosted observations
+
+Sixteen dedicated routing tests and twelve existing query-boundary tests passed.
+The official DCAT feed has 54 projected entries; all nine main configured sources
+and the Model Index are advertised Active Specifications. The spec table provides
+all nine required In Effect rows and official version/effective-date PDF links.
+This is official advertisement/status evidence, not exclusive-version proof.
+
+The combo and parent-filtered Samsung scans each have three rows, with observed
+stable metadata/counts, terminal pages and equal identity multisets. Raw model
+patterns are WD53DBA9**H*, WD80H53*H* and WD90F53*V*. Their washer annual-energy
+field is 103 kWh; their separately named estimated dryer annual-energy field is
+319, 319 and 608 kWh respectively. These are raw EPA quantities, not an approved
+retail SKU match or comparison to EnergyGuide. Preserve wildcard counts.
+
+The fan dataset's actual type field is `unit_type`. The cross-brand type probe
+returned three Air King Range Hood rows. This confirms that this source contains
+hood records; it does not establish a Samsung candidate or all hood applicability.
+The first probe incorrectly used generic `product_type` and received HTTP 400.
+A second run reached combo paging but failed because SoQL star selections must
+start the select list. Explicit observed metadata fields now replace `*`; raw
+failures and corrections are retained in epa-routing-failure-history.json.
+
+Actual metadata/table/catalog/cohort/hood projections and response/ZIP/report hashes
+are in docs/evidence/epa-routing-recon.json. No production source route was changed.
+The separate [fixture integrity run](https://github.com/Empty-Bell/RDA/actions/runs/35168643898)
+checks the four routing fixtures with existing repository fixtures independently
+of this source extraction gate.
 
 Next closure work: official FTC/EPA family applicability evidence table, stacked/
 laundry-center and per-configuration observations, then explicit G0 review. D09

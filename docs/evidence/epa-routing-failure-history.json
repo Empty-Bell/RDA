@@ -24,5 +24,29 @@
     "correction": "Use fixture-backed unit_type contract before request; preserve original HTTP 400 bytes",
     "phase_gate": "NOT_EVALUATED",
     "compliance": "NOT_EVALUATED"
+  },
+  {
+    "status": "FAIL",
+    "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35168643896",
+    "code_commit": "27364c3457b970751c777d7d9639669b834d5ed3",
+    "job_id": 105035293901,
+    "routing_tests": 15,
+    "query_tests": 12,
+    "artifact_id": 10476326309,
+    "artifact_zip_sha256": "89cfa9a2f5794ec35c4a79ece4a2a4b7d7843c314e58b201d3f5d62a928154c9",
+    "artifact_expires_at": "2026-10-01T00:57:52Z",
+    "failure_response": {
+      "name": "9jai-gs6t-page-0",
+      "url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2C%2A&%24order=%3Aid&%24limit=100&%24offset=0",
+      "final_url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2C%2A&%24order=%3Aid&%24limit=100&%24offset=0",
+      "status": 400,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 442,
+      "body_sha256": "64eaa1c741cb4011eb5acccb6aeeac03a5a2b3bc8480c80a2438dfeb3dd643b2"
+    },
+    "cause": "SoQL star selections must start select-list; :id as source_row_id,* is invalid",
+    "correction": "Select explicit observed metadata columns alongside source row ID; limited local public query verified",
+    "phase_gate": "NOT_EVALUATED",
+    "compliance": "NOT_EVALUATED"
   }
 ]

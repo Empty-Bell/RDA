@@ -1,5 +1,12 @@
 # EPA source contracts — all product-family discovery and bounded query observations
 
+Official source-routing follow-up: [EPA_ROUTING_SOURCE_CONTRACT.md](EPA_ROUTING_SOURCE_CONTRACT.md).
+Bounded hosted run 35168707877 verifies Active Specifications advertisement for all
+nine main configured sources, In Effect specification links, three Samsung combo
+records shared by the alternate view and parent-filtered query, and Range Hood
+type rows. Earlier alternate-combo UNKNOWN notes remain historical; individual
+applicability, exclusive active version and certification matching remain open.
+
 The family notes below are chronological discovery snapshots; their earlier
 remaining-UNKNOWN counts are historical, not current coverage. All 11 product
 groups now have hosted metadata/generic-sample evidence for nine distinct datasets.

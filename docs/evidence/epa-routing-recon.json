@@ -1,0 +1,3568 @@
+{
+  "status": "PASS",
+  "captured_at": "2026-09-17T00:58:40.912849+00:00",
+  "run_id": "35168707877",
+  "git_sha": "cfac061e4cb81314b031c60b1febbe905b6c75cd",
+  "phase_gate": "NOT_EVALUATED",
+  "compliance": "NOT_EVALUATED",
+  "responses": [
+    {
+      "name": "dcat",
+      "url": "https://data.energystar.gov/data.json",
+      "final_url": "https://data.energystar.gov/data.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 92238,
+      "body_sha256": "7a9625fe1c1b339e225da3f3dac45d48ead45f6c6e70c8870815eb64b040abe9"
+    },
+    {
+      "name": "specifications",
+      "url": "https://www.energystar.gov/products/spec",
+      "final_url": "https://www.energystar.gov/products/spec",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "size_bytes": 136586,
+      "body_sha256": "67dced5bc7c826e1dc757795fe71042163977d190c70d5a09389ca6e122cedc8"
+    },
+    {
+      "name": "p5st-her9-route",
+      "url": "https://data.energystar.gov/api/views/p5st-her9.json",
+      "final_url": "https://data.energystar.gov/api/views/p5st-her9.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 54466,
+      "body_sha256": "48fa3512ce099f6cf0210df4f4fb8ce01edc7fd3636e73b263e1bd53203cd445"
+    },
+    {
+      "name": "q8py-6w3f-route",
+      "url": "https://data.energystar.gov/api/views/q8py-6w3f.json",
+      "final_url": "https://data.energystar.gov/api/views/q8py-6w3f.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 48319,
+      "body_sha256": "5dde86a05aafbdc390fd94f7dce2747e3b2782546605d694e81165e0721b54ce"
+    },
+    {
+      "name": "bghd-e2wd-route",
+      "url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+      "final_url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 64263,
+      "body_sha256": "8bd93d0df1b57ffa332e623c0e55214f4141d6ed1bfc778a923079d257dec927"
+    },
+    {
+      "name": "pd96-rr3d-route",
+      "url": "https://data.energystar.gov/api/views/pd96-rr3d.json",
+      "final_url": "https://data.energystar.gov/api/views/pd96-rr3d.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 20892,
+      "body_sha256": "2b923a1de55850d975e4536bbfb088ec46ee47b981c5c19f3838978e60aab9f0"
+    },
+    {
+      "name": "m6gi-ng33-route",
+      "url": "https://data.energystar.gov/api/views/m6gi-ng33.json",
+      "final_url": "https://data.energystar.gov/api/views/m6gi-ng33.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 70158,
+      "body_sha256": "369f36014b10bcbf1e97f136088689e05a2feff930f59b173e1043fe83f89ac8"
+    },
+    {
+      "name": "t9u7-4d2j-route",
+      "url": "https://data.energystar.gov/api/views/t9u7-4d2j.json",
+      "final_url": "https://data.energystar.gov/api/views/t9u7-4d2j.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 63772,
+      "body_sha256": "b515a41930f742a0ad09fcfddd89586766fd3abf05f76722fc8e4edece70a805"
+    },
+    {
+      "name": "8dv7-nngq-route",
+      "url": "https://data.energystar.gov/api/views/8dv7-nngq.json",
+      "final_url": "https://data.energystar.gov/api/views/8dv7-nngq.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 70494,
+      "body_sha256": "3d1cd552e26fb546663e0e09e54f76075a737f700c0dab5d5aa80a0504e257ea"
+    },
+    {
+      "name": "8dv7-nngq-range-hood-type",
+      "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=unit_type+%3D+%27Range+Hood%27&%24limit=3",
+      "final_url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=unit_type+%3D+%27Range+Hood%27&%24limit=3",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 2441,
+      "body_sha256": "e1b16e67d4cc25437d0758d2285f84c0d0bb4917fdcbcb55db48a021f731de9f"
+    },
+    {
+      "name": "qbg3-d468-route",
+      "url": "https://data.energystar.gov/api/views/qbg3-d468.json",
+      "final_url": "https://data.energystar.gov/api/views/qbg3-d468.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 81944,
+      "body_sha256": "ebe110dfd32106b9a82c8167bd409189dcca08060a79f27e814d8e2cfd345fab"
+    },
+    {
+      "name": "rxdj-2c88-route",
+      "url": "https://data.energystar.gov/api/views/rxdj-2c88.json",
+      "final_url": "https://data.energystar.gov/api/views/rxdj-2c88.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 113268,
+      "body_sha256": "2fab4c39376fc28ee79aa2199bc79ba02868db756adf6fb11b76b1a1b988c7be"
+    },
+    {
+      "name": "9jai-gs6t-before",
+      "url": "https://data.energystar.gov/api/views/9jai-gs6t.json",
+      "final_url": "https://data.energystar.gov/api/views/9jai-gs6t.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 47244,
+      "body_sha256": "37c809d8efa16ff8a2405f493ce79053339a4dd89f157cc109f9b79804a06965"
+    },
+    {
+      "name": "9jai-gs6t-count-before",
+      "url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+      "final_url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 20,
+      "body_sha256": "20d78119e9287b0867cccb8c49ca509cebfa33df441aa266c9bd6dee2d383e0f"
+    },
+    {
+      "name": "9jai-gs6t-page-0",
+      "url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cload_configuration%2Cspecial_type%2Cadditional_washer_features%2Cintended_market%2Cvolume_cubic_feet%2Cheight_inches%2Cwidth_inches%2Cdepth_inches%2Cintegrated_modified_energy_factor_imef%2Cus_federal_standard_imef%2Cannual_energy_use_kwh_year%2Cintegrated_water_factor_iwf%2Cus_federal_standard_iwf%2Cannual_water_use_gallons_year%2Cdrum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cheat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccombined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cenergy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccalculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cadditional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cconnected%2Cconnects_using%2Ccommunication_standard_application_layer%2Cdirect_on_premises_open_standard_based_interconnection%2Cpaired_energy_star_clothes_dryer_available%2Cpaired_energy_star_clothes_dryer_energy_star_model_identifier%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets%2Cenergy_star_model_identifier%2Cmeets_most_efficient_criteria&%24order=%3Aid&%24limit=100&%24offset=0",
+      "final_url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cload_configuration%2Cspecial_type%2Cadditional_washer_features%2Cintended_market%2Cvolume_cubic_feet%2Cheight_inches%2Cwidth_inches%2Cdepth_inches%2Cintegrated_modified_energy_factor_imef%2Cus_federal_standard_imef%2Cannual_energy_use_kwh_year%2Cintegrated_water_factor_iwf%2Cus_federal_standard_iwf%2Cannual_water_use_gallons_year%2Cdrum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cheat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccombined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cenergy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccalculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cadditional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cconnected%2Cconnects_using%2Ccommunication_standard_application_layer%2Cdirect_on_premises_open_standard_based_interconnection%2Cpaired_energy_star_clothes_dryer_available%2Cpaired_energy_star_clothes_dryer_energy_star_model_identifier%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets%2Cenergy_star_model_identifier%2Cmeets_most_efficient_criteria&%24order=%3Aid&%24limit=100&%24offset=0",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 4901,
+      "body_sha256": "10ab6335b07b949b7d57f39e903c6db1c1d18db7ec9ebe0888efdc912e29c785"
+    },
+    {
+      "name": "9jai-gs6t-count-after",
+      "url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+      "final_url": "https://data.energystar.gov/resource/9jai-gs6t.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 20,
+      "body_sha256": "20d78119e9287b0867cccb8c49ca509cebfa33df441aa266c9bd6dee2d383e0f"
+    },
+    {
+      "name": "9jai-gs6t-after",
+      "url": "https://data.energystar.gov/api/views/9jai-gs6t.json",
+      "final_url": "https://data.energystar.gov/api/views/9jai-gs6t.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 47244,
+      "body_sha256": "37c809d8efa16ff8a2405f493ce79053339a4dd89f157cc109f9b79804a06965"
+    },
+    {
+      "name": "bghd-e2wd-before",
+      "url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+      "final_url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 64263,
+      "body_sha256": "8bd93d0df1b57ffa332e623c0e55214f4141d6ed1bfc778a923079d257dec927"
+    },
+    {
+      "name": "bghd-e2wd-count-before",
+      "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+special_type+%3D+%27Combination+All-in-One+Washer%2FDryer%27&%24select=count%28%2A%29+as+row_count",
+      "final_url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+special_type+%3D+%27Combination+All-in-One+Washer%2FDryer%27&%24select=count%28%2A%29+as+row_count",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 20,
+      "body_sha256": "20d78119e9287b0867cccb8c49ca509cebfa33df441aa266c9bd6dee2d383e0f"
+    },
+    {
+      "name": "bghd-e2wd-page-0",
+      "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+special_type+%3D+%27Combination+All-in-One+Washer%2FDryer%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cload_configuration%2Cspecial_type%2Cadditional_washer_features%2Cintended_market%2Cvolume_cubic_feet%2Cheight_inches%2Cwidth_inches%2Cdepth_inches%2Cintegrated_modified_energy_factor_imef%2Cus_federal_standard_imef%2Cannual_energy_use_kwh_year%2Cintegrated_water_factor_iwf%2Cus_federal_standard_iwf%2Cannual_water_use_gallons_year%2Cdrum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cheat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccombined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cenergy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccalculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cadditional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cconnected%2Cconnects_using%2Ccommunication_standard_application_layer%2Cdirect_on_premises_open_standard_based_interconnection%2Cpaired_energy_star_clothes_dryer_available%2Cpaired_energy_star_clothes_dryer_energy_star_model_identifier%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets%2Cenergy_star_model_identifier%2Cmeets_most_efficient_criteria&%24order=%3Aid&%24limit=100&%24offset=0",
+      "final_url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+special_type+%3D+%27Combination+All-in-One+Washer%2FDryer%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cload_configuration%2Cspecial_type%2Cadditional_washer_features%2Cintended_market%2Cvolume_cubic_feet%2Cheight_inches%2Cwidth_inches%2Cdepth_inches%2Cintegrated_modified_energy_factor_imef%2Cus_federal_standard_imef%2Cannual_energy_use_kwh_year%2Cintegrated_water_factor_iwf%2Cus_federal_standard_iwf%2Cannual_water_use_gallons_year%2Cdrum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cheat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccombined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cestimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cenergy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Ccalculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cadditional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer%2Cconnected%2Cconnects_using%2Ccommunication_standard_application_layer%2Cdirect_on_premises_open_standard_based_interconnection%2Cpaired_energy_star_clothes_dryer_available%2Cpaired_energy_star_clothes_dryer_energy_star_model_identifier%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets%2Cenergy_star_model_identifier%2Cmeets_most_efficient_criteria&%24order=%3Aid&%24limit=100&%24offset=0",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 4901,
+      "body_sha256": "10ab6335b07b949b7d57f39e903c6db1c1d18db7ec9ebe0888efdc912e29c785"
+    },
+    {
+      "name": "bghd-e2wd-count-after",
+      "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+special_type+%3D+%27Combination+All-in-One+Washer%2FDryer%27&%24select=count%28%2A%29+as+row_count",
+      "final_url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+special_type+%3D+%27Combination+All-in-One+Washer%2FDryer%27&%24select=count%28%2A%29+as+row_count",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 20,
+      "body_sha256": "20d78119e9287b0867cccb8c49ca509cebfa33df441aa266c9bd6dee2d383e0f"
+    },
+    {
+      "name": "bghd-e2wd-after",
+      "url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+      "final_url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 64263,
+      "body_sha256": "8bd93d0df1b57ffa332e623c0e55214f4141d6ed1bfc778a923079d257dec927"
+    }
+  ],
+  "combo_observation": {
+    "combo_rows": 3,
+    "parent_filtered_rows": 3,
+    "identity_multisets_equal": true,
+    "relation_scope": "observed literal Samsung query only; metadata description and flags retained",
+    "routing_policy": "NOT_APPROVED",
+    "energy_comparison": "NOT_EVALUATED"
+  },
+  "catalog_observation": {
+    "entry_count": 54,
+    "configured_sources": "ADVERTISED_ACTIVE",
+    "combo_in_dcat": false,
+    "exclusive_active_version": "NOT_EVALUATED",
+    "per_model_currency": "NOT_EVALUATED"
+  },
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35168707877",
+  "run_attempt": 1,
+  "job_id": 105035493022,
+  "runner_name": "GitHub Actions 1000001480",
+  "runner_target": "ubuntu-24.04 x64",
+  "routing_tests": 16,
+  "query_boundary_tests": 12,
+  "artifact_id": 10476176058,
+  "artifact_zip_sha256": "f0953e4bf58b7c94d6200d07a3f89aa1dba06c8998b55c609793aeb1f17a57e9",
+  "artifact_expires_at": "2026-10-01T00:58:46Z",
+  "report_sha256": "716724a48f2b29c760994b5e8fdbe9f97c09e4974428cc45530c702508089ff7",
+  "specifications": [
+    {
+      "product": "Consumer Refrigeration",
+      "cells": [
+        {
+          "text": "Appliances",
+          "links": []
+        },
+        {
+          "text": "Consumer Refrigeration",
+          "links": [
+            "https://www.energystar.gov/products/refrigerators/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "5.1 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/ENERGY%20STAR%20Version%205.1%20Consumer%20Refrigeration%20Products%20Final%20Specification_0.pdf"
+          ]
+        },
+        {
+          "text": "09/15/2014",
+          "links": []
+        },
+        {
+          "text": "N/A",
+          "links": []
+        }
+      ]
+    },
+    {
+      "product": "Dishwashers",
+      "cells": [
+        {
+          "text": "Appliances",
+          "links": []
+        },
+        {
+          "text": "Dishwashers",
+          "links": [
+            "https://www.energystar.gov/products/dishwashers/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "7.0 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/ENERGY%20STAR%20Version%207.0%20Residential%20Dishwasher%20Final%20Specification.pdf"
+          ]
+        },
+        {
+          "text": "07/19/2023",
+          "links": []
+        },
+        {
+          "text": "N/A",
+          "links": []
+        }
+      ]
+    },
+    {
+      "product": "Clothes Washers",
+      "cells": [
+        {
+          "text": "Appliances",
+          "links": []
+        },
+        {
+          "text": "Clothes Washers",
+          "links": [
+            "https://www.energystar.gov/products/clothes_washers/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "8.1 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/ENERGY%20STAR%20Version%208.1%20Clothes%20Washer%20Final%20Specification%20-%20Partner%20Commitments%20and%20Eligibility%20Criteria.pdf"
+          ]
+        },
+        {
+          "text": "02/05/2018",
+          "links": []
+        },
+        {
+          "text": "View the Version 9.0 Development Process",
+          "links": [
+            "https://www.energystar.gov/clothes-washer-specification-version-9"
+          ]
+        }
+      ]
+    },
+    {
+      "product": "Televisions",
+      "cells": [
+        {
+          "text": "Electronics and Office Equipment",
+          "links": []
+        },
+        {
+          "text": "Televisions",
+          "links": [
+            "https://www.energystar.gov/products/televisions/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "9.1 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/2024-08/ENERGY%20STAR%20Version%209.1%20Televisions%20Specification.pdf"
+          ]
+        },
+        {
+          "text": "10/20/2022",
+          "links": []
+        },
+        {
+          "text": "N/A",
+          "links": []
+        }
+      ]
+    },
+    {
+      "product": "Residential Electric Cooking Products",
+      "cells": [
+        {
+          "text": "Appliances",
+          "links": []
+        },
+        {
+          "text": "Residential Electric Cooking Products",
+          "links": [
+            "https://www.energystar.gov/products/electric_cooking_products/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "1.0 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/2024-08/ENERGY%20STAR%20Residential%20Electric%20Cooking%20Products%20V1.0%20Final%20Specification%20Rev.%20October%20-%202023.pdf"
+          ]
+        },
+        {
+          "text": "09/25/2023",
+          "links": []
+        },
+        {
+          "text": "N/A",
+          "links": []
+        }
+      ]
+    },
+    {
+      "product": "Clothes Dryers",
+      "cells": [
+        {
+          "text": "Appliances",
+          "links": []
+        },
+        {
+          "text": "Clothes Dryers",
+          "links": [
+            "https://www.energystar.gov/products/clothes_dryers/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "1.1 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/2024-10/ENERGY%20STAR%20Version%201.1%20Clothes%20Dryers%20Specification%20-%20Rev.%20October-2024_0.pdf"
+          ]
+        },
+        {
+          "text": "05/05/2017",
+          "links": []
+        },
+        {
+          "text": "View the Version 2.0 Development Process .",
+          "links": [
+            "https://www.energystar.gov/products/clothes_dryers/clothes_dryer_products_website_version_2_0"
+          ]
+        }
+      ]
+    },
+    {
+      "product": "Fans, Ventilating",
+      "cells": [
+        {
+          "text": "Lighting & Fans",
+          "links": []
+        },
+        {
+          "text": "Fans, Ventilating",
+          "links": [
+            "https://www.energystar.gov/products/ventilation_fans/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "4.2 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/ENERGY%20STAR%20Ventilating%20Fans%20Specification%20Version%204.2.pdf"
+          ]
+        },
+        {
+          "text": "08/01/2023",
+          "links": []
+        },
+        {
+          "text": "N/A",
+          "links": []
+        }
+      ]
+    },
+    {
+      "product": "Displays",
+      "cells": [
+        {
+          "text": "Electronics and Office Equipment",
+          "links": []
+        },
+        {
+          "text": "Displays",
+          "links": [
+            "https://www.energystar.gov/products/monitors/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "8.0 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/Displays%20Version%208.0%20Program%20Requirements%20Rev.%20Nov-2021.pdf"
+          ]
+        },
+        {
+          "text": "01/28/2020",
+          "links": []
+        },
+        {
+          "text": "N/A",
+          "links": []
+        }
+      ]
+    },
+    {
+      "product": "Computers",
+      "cells": [
+        {
+          "text": "Electronics and Office Equipment",
+          "links": []
+        },
+        {
+          "text": "Computers",
+          "links": [
+            "https://www.energystar.gov/products/computers/partners"
+          ]
+        },
+        {
+          "text": "In Effect",
+          "links": []
+        },
+        {
+          "text": "9.0 PDF",
+          "links": [
+            "https://www.energystar.gov/sites/default/files/2025-04/ENERGY%20STAR%20Computers%20Version%209.0%20Final%20Specification.pdf"
+          ]
+        },
+        {
+          "text": "10/27/2025",
+          "links": []
+        },
+        {
+          "text": "View the version 9.0 development process.",
+          "links": [
+            "https://www.energystar.gov/products/computers_specification_version_9_0"
+          ]
+        }
+      ]
+    }
+  ],
+  "catalog_entries": [
+    {
+      "dataset_id": "2te3-nmxp",
+      "title": "ENERGY STAR Certified Ceiling Fans",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/2te3-nmxp"
+    },
+    {
+      "dataset_id": "3393-mxju",
+      "title": "ENERGY STAR Certified Commercial Boilers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/3393-mxju"
+    },
+    {
+      "dataset_id": "3uec-2gqf",
+      "title": "ENERGY STAR Certified Data Center Storage - Block I/O",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/3uec-2gqf"
+    },
+    {
+      "dataset_id": "5jwe-c8xm",
+      "title": "ENERGY STAR Certified Electric Vehicle Supply Equipment - AC-Output",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/5jwe-c8xm"
+    },
+    {
+      "dataset_id": "5xn2-dv4h",
+      "title": "ENERGY STAR Certified Room Air Conditioners",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/5xn2-dv4h"
+    },
+    {
+      "dataset_id": "6rww-hpns",
+      "title": "ENERGY STAR Certified Boilers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/6rww-hpns"
+    },
+    {
+      "dataset_id": "6xa2-5c2t",
+      "title": "ENERGY STAR Certified Commercial Coffee Brewers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/6xa2-5c2t"
+    },
+    {
+      "dataset_id": "7p2p-wkbf",
+      "title": "ENERGY STAR Certified Smart Thermostats",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/7p2p-wkbf"
+    },
+    {
+      "dataset_id": "83eb-xbyy",
+      "title": "ENERGY STAR Certified Heat Pumps",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/83eb-xbyy"
+    },
+    {
+      "dataset_id": "8dv7-nngq",
+      "title": "ENERGY STAR Certified Ventilating Fans",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/8dv7-nngq"
+    },
+    {
+      "dataset_id": "8edu-y555",
+      "title": "ENERGY STAR Certified Products  UPC Codes",
+      "theme": null,
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/8edu-y555"
+    },
+    {
+      "dataset_id": "8t9c-g3tn",
+      "title": "ENERGY STAR Certified Residential Freezers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/8t9c-g3tn"
+    },
+    {
+      "dataset_id": "8wj2-sec8",
+      "title": "ENERGY STAR Model Index",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/8wj2-sec8"
+    },
+    {
+      "dataset_id": "9g6r-cpdt",
+      "title": "ENERGY STAR Certified Commercial Clothes Washers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/9g6r-cpdt"
+    },
+    {
+      "dataset_id": "acvd-5wvz",
+      "title": "ENERGY STAR Certified Geothermal Heat Pumps",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/acvd-5wvz"
+    },
+    {
+      "dataset_id": "bghd-e2wd",
+      "title": "ENERGY STAR Certified Residential Clothes Washers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/bghd-e2wd"
+    },
+    {
+      "dataset_id": "bpzy-9tg8",
+      "title": "ENERGY STAR Certified Telephones",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/bpzy-9tg8"
+    },
+    {
+      "dataset_id": "c8av-ccf7",
+      "title": "ENERGY STAR Certified Commercial Ovens",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/c8av-ccf7"
+    },
+    {
+      "dataset_id": "e4mh-a2u3",
+      "title": "ENERGY STAR Certified Light Commercial HVAC",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/e4mh-a2u3"
+    },
+    {
+      "dataset_id": "edi8-b5vk",
+      "title": "ENERGY STAR Certified Commercial Fryers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/edi8-b5vk"
+    },
+    {
+      "dataset_id": "ej6d-wb4c",
+      "title": "ENERGY STAR Certified Light Fixtures - Downlights",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/ej6d-wb4c"
+    },
+    {
+      "dataset_id": "g242-ysjw",
+      "title": "ENERGY STAR Certified Laboratory Grade Refrigerators and Freezers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/g242-ysjw"
+    },
+    {
+      "dataset_id": "gaa3-swy6",
+      "title": "ENERGY STAR Certified Room Air Cleaners V3.0",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/gaa3-swy6"
+    },
+    {
+      "dataset_id": "i97v-e8au",
+      "title": "ENERGY STAR Certified Furnaces",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/i97v-e8au"
+    },
+    {
+      "dataset_id": "ifxy-2uty",
+      "title": "ENERGY STAR Certified Uninterruptible Power Supplies",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/ifxy-2uty"
+    },
+    {
+      "dataset_id": "j624-u8ux",
+      "title": "ENERGY STAR Certified Vending Machines",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/j624-u8ux"
+    },
+    {
+      "dataset_id": "kphf-22jd",
+      "title": "ENERGY STAR Certified Insulation",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2025-05-28",
+      "identifier": "https://data.energystar.gov/api/views/kphf-22jd"
+    },
+    {
+      "dataset_id": "m6gi-ng33",
+      "title": "ENERGY STAR Certified Residential Electric Cooking Products",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/m6gi-ng33"
+    },
+    {
+      "dataset_id": "m8cf-pkii",
+      "title": "ENERGY STAR Certified Pool Pumps",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/m8cf-pkii"
+    },
+    {
+      "dataset_id": "me9a-5y43",
+      "title": "ENERGY STAR Developer Resources",
+      "theme": null,
+      "modified": "2017-02-03",
+      "identifier": "https://data.energystar.gov/api/views/me9a-5y43"
+    },
+    {
+      "dataset_id": "mgiu-hu4z",
+      "title": "ENERGY STAR Certified Dehumidifiers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/mgiu-hu4z"
+    },
+    {
+      "dataset_id": "n8cx-m62r",
+      "title": "ENERGY STAR Certified Large Network Equipment",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/n8cx-m62r"
+    },
+    {
+      "dataset_id": "nak5-fsjf",
+      "title": "ENERGY STAR Certified Commercial Ice Machines",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/nak5-fsjf"
+    },
+    {
+      "dataset_id": "nt9t-yxu3",
+      "title": "ENERGY STAR Certified Commercial Electric Cooktops",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/nt9t-yxu3"
+    },
+    {
+      "dataset_id": "nw5s-r5ca",
+      "title": "ENERGY STAR Certified Commercial Griddles",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/nw5s-r5ca"
+    },
+    {
+      "dataset_id": "p5st-her9",
+      "title": "ENERGY STAR Certified Residential Refrigerators",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/p5st-her9"
+    },
+    {
+      "dataset_id": "pbpq-swnu",
+      "title": "ENERGY STAR Certified Water Heaters",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/pbpq-swnu"
+    },
+    {
+      "dataset_id": "pd96-rr3d",
+      "title": "ENERGY STAR Certified Televisions",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/pd96-rr3d"
+    },
+    {
+      "dataset_id": "pk8q-dim8",
+      "title": "ENERGY STAR Certified Commercial Dishwashers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/pk8q-dim8"
+    },
+    {
+      "dataset_id": "put7-uu67",
+      "title": "ENERGY STAR Certified Data Center Storage - File I/O",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/put7-uu67"
+    },
+    {
+      "dataset_id": "q8py-6w3f",
+      "title": "ENERGY STAR Certified Residential Dishwashers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/q8py-6w3f"
+    },
+    {
+      "dataset_id": "qaxz-ikcb",
+      "title": "ENERGY STAR Certified Storm Windows",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/qaxz-ikcb"
+    },
+    {
+      "dataset_id": "qbg3-d468",
+      "title": "ENERGY STAR Certified Displays",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/qbg3-d468"
+    },
+    {
+      "dataset_id": "qifb-fcj2",
+      "title": "ENERGY STAR Certified Enterprise Servers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/qifb-fcj2"
+    },
+    {
+      "dataset_id": "qsc8-7f7k",
+      "title": "ENERGY STAR Certified Water Coolers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/qsc8-7f7k"
+    },
+    {
+      "dataset_id": "rxdj-2c88",
+      "title": "ENERGY STAR Certified Computers V9.0",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/rxdj-2c88"
+    },
+    {
+      "dataset_id": "t2v6-g4nf",
+      "title": "ENERGY STAR Certified Imaging Equipment",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/t2v6-g4nf"
+    },
+    {
+      "dataset_id": "t3a6-mkxz",
+      "title": "ENERGY STAR Certified Electric Vehicle Supply Equipment - DC-Output",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/t3a6-mkxz"
+    },
+    {
+      "dataset_id": "t9u7-4d2j",
+      "title": "ENERGY STAR Certified Residential Clothes Dryers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/t9u7-4d2j"
+    },
+    {
+      "dataset_id": "vtsv-aq9u",
+      "title": "ENERGY STAR Certified Commercial Steam Cookers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/vtsv-aq9u"
+    },
+    {
+      "dataset_id": "wati-2tfp",
+      "title": "ENERGY STAR Certified Commercial Refrigerators and Freezers",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/wati-2tfp"
+    },
+    {
+      "dataset_id": "wjtt-3zwd",
+      "title": "ENERGY STAR Certified Medical Imaging Equipment",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/wjtt-3zwd"
+    },
+    {
+      "dataset_id": "wyw6-sr4d",
+      "title": "ENERGY STAR Certified Commercial Hot Food Holding Cabinet",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/wyw6-sr4d"
+    },
+    {
+      "dataset_id": "xmq6-bm79",
+      "title": "ENERGY STAR Certified Commercial Water Heaters",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "identifier": "https://data.energystar.gov/api/views/xmq6-bm79"
+    }
+  ],
+  "dataset_metadata": {
+    "8dv7-nngq": {
+      "id": "8dv7-nngq",
+      "name": "ENERGY STAR Certified Ventilating Fans",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 4.0 ENERGY STAR Program Requirements for Ventilating Fans that were effective as of October 1, 2015 or the Version 4.1 requirements that are effective as of July 24, 2018. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/heating_cooling/fans_ventilating/key_product_criteria .",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789563715,
+      "viewLastModified": 1739912079,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_star_partner",
+          "name": "ENERGY STAR Partner",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_name",
+          "name": "Model Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "unit_type",
+          "name": "Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "merv_of_in_line_fan_filter",
+          "name": "MERV of In-line Fan Filter",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "number_of_speeds",
+          "name": "Number of Speeds",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "duct_size",
+          "name": "Duct Size",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "sound_level_sones",
+          "name": "Sound Level (sones)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "bathroom_and_utility_room_sound_level_sones_at_0_25_in_w_g",
+          "name": "Bathroom and Utility Room Sound Level (sones) at 0.25 in. w.g.",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "bathroom_and_utility_room_airflow_at_0_25_in_w_g",
+          "name": "Bathroom and Utility Room Airflow at 0.25 in. w.g.",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "shipped_with_energy_star_lamp_s",
+          "name": "Shipped with ENERGY STAR Lamp(s)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_lamp_esuid",
+          "name": "ENERGY STAR Lamp ESUID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "alternate_energy_star_lamps_esuids",
+          "name": "Alternate ENERGY STAR Lamps ESUIDs",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_star_lamp_partner",
+          "name": "ENERGY STAR Lamp Partner",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "lamp_model_number",
+          "name": "Lamp Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "lighting_technology_used",
+          "name": "Lighting Technology",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "light_output_lumens",
+          "name": "Total Light Output (lumens)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "total_input_power_watts",
+          "name": "Total Input Power (Watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "luminaire_efficacy",
+          "name": "Energy Efficiency - Measured Outside the Fixture (lm/W)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "power_factor",
+          "name": "Power Factor",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "correlated_color_temperature_kelvin",
+          "name": "Light Color Appearance (CCT)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "color_rendering_index_cri",
+          "name": "Light Color Quality (CRI)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "life_source_life_hours",
+          "name": "Light Source Life (Hours)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "special_features_dimming_motion_sensing_etc",
+          "name": "Special Features (Dimming, Motion Sensing, etc.)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "notes",
+          "name": "Notes",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "lighting",
+          "name": "Lighting",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "airflow_1_cfm",
+          "name": "Airflow 1 (cfm)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "airflow_2_cfm",
+          "name": "Airflow 2 (cfm)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "airflow_3_cfm",
+          "name": "Airflow 3 (cfm)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "efficacy_1_cfm_w",
+          "name": "Efficacy 1 (cfm/Watt)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "efficacy_2_cfm_w",
+          "name": "Efficacy 2 (cfm/Watt)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "efficacy_3_cfm_w",
+          "name": "Efficacy 3 (cfm/Watt)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "ventilating_fan_features",
+          "name": "Ventilating Fan Features",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_qualified",
+          "name": "Date Qualified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "meets_most_efficient_criteria",
+          "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "bghd-e2wd": {
+      "id": "bghd-e2wd",
+      "name": "ENERGY STAR Certified Residential Clothes Washers",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 8.0 and Version 8.1 ENERGY STAR Program Requirements for Clothes Washers that are effective as of February 5, 2018. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/clothes_washers/key_product_criteria",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789564819,
+      "viewLastModified": 1739912065,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "load_configuration",
+          "name": "Load Configuration",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "special_type",
+          "name": "Special Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_washer_features",
+          "name": "Additional Washer Features",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "intended_market",
+          "name": "Intended Market",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "volume_cubic_feet",
+          "name": "Volume (cu. ft.)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "height_inches",
+          "name": "Height (inches)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "width_inches",
+          "name": "Width (inches)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "depth_inches",
+          "name": "Depth (inches)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "integrated_modified_energy_factor_imef",
+          "name": "Integrated Modified Energy Factor (IMEF)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "us_federal_standard_imef",
+          "name": "US Federal Standard (IMEF)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "annual_energy_use_kwh_year",
+          "name": "Annual Energy Use (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "integrated_water_factor_iwf",
+          "name": "Integrated Water Factor (IWF)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "us_federal_standard_iwf",
+          "name": "US Federal Standard (IWF)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "annual_water_use_gallons_year",
+          "name": "Annual Water Use (gallons/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Drum Capacity for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Heat Pump Technology for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Combined Energy Factor (CEF) for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Estimated Annual Energy Use (kWh/yr) for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Estimated Energy Test Cycle Time (min) for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Energy Test Cycle Information for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh) for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+          "name": "Additional Dryer Features for the dryer in a Combination All-in-One Washer-Dryer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connected",
+          "name": "Connected",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connects_using",
+          "name": "Connects Using",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "communication_standard_application_layer",
+          "name": "Communication Standard Application Layer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "direct_on_premises_open_standard_based_interconnection",
+          "name": "Direct on-premises Open-standard Based Interconnection",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "paired_energy_star_clothes_dryer_available",
+          "name": "Paired ENERGY STAR Clothes Dryer Available",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "paired_energy_star_clothes_dryer_energy_star_model_identifier",
+          "name": "Paired ENERGY STAR Clothes Dryer ENERGY STAR Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_qualified",
+          "name": "Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "ENERGY STAR Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "meets_most_efficient_criteria",
+          "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "m6gi-ng33": {
+      "id": "m6gi-ng33",
+      "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 1.0 ENERGY STAR Program Requirements for Residential Electric Cooking Products that are effective as of September 25, 2023. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/electric_cooking_products/key_product_criteria",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789564327,
+      "viewLastModified": 1739912245,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_star_partner",
+          "name": "ENERGY STAR Partner",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_name",
+          "name": "Model Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "product_type",
+          "name": "Product Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "installation_type",
+          "name": "Installation Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "cooking_top_technology",
+          "name": "Cooking Top Technology",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "width_inches",
+          "name": "Width (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "height_inches",
+          "name": "Height (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "depth_inches",
+          "name": "Depth (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "number_of_cooking_zones",
+          "name": "Number of Cooking Zones",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "control_type",
+          "name": "Control Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "voltage_volts",
+          "name": "Voltage (volts)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "amperage_amps",
+          "name": "Amperage (amps)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "specialty_zones",
+          "name": "Specialty Zones",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "smart_capabilities",
+          "name": "Smart Capabilities",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_product_features",
+          "name": "Additional Product Features",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "annual_energy_consumption_kwh_yr",
+          "name": "Annual Energy Consumption (kWh/year)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "low_power_mode_energy_consumption_oven_kwh_yr",
+          "name": "Low-Power Mode Energy Consumption for Oven Component (kWh/year)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "low_power_mode_energy_consumption_cooking_top_kwh_yr",
+          "name": "Low-Power Mode Energy Consumption for Cooking Top (kWh/year)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "average_cooking_zone_time_minutes",
+          "name": "Average Cooking Zone Time (minutes)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_1_size_inches",
+          "name": "Cooking Zone #1 Size (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_2_size_inches",
+          "name": "Cooking Zone #2 Size (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_3_size_inches",
+          "name": "Cooking Zone #3 Size (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_4_size_inches",
+          "name": "Cooking Zone #4 Size (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_5_size_inches",
+          "name": "Cooking Zone #5 Size (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_6_size_inches",
+          "name": "Cooking Zone #6 Size (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_1_wattage_watts",
+          "name": "Cooking Zone #1 Wattage (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_2_wattage_watts",
+          "name": "Cooking Zone #2 Wattage (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_3_wattage_watts",
+          "name": "Cooking Zone #3 Wattage (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_4_wattage_watts",
+          "name": "Cooking Zone #4 Wattage (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_5_wattage_watts",
+          "name": "Cooking Zone #5 Wattage (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cooking_zone_6_wattage_watts",
+          "name": "Cooking Zone #6 Wattage (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_certified",
+          "name": " Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "p5st-her9": {
+      "id": "p5st-her9",
+      "name": "ENERGY STAR Certified Residential Refrigerators",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 5.0 ENERGY STAR Program Requirements for Residential Refrigerators and Freezers that are effective as of September 15, 2014 or the Version 5.1 Program Requirements that are effective as of August 5, 2021. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/refrigerators/key_product_criteria",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789565211,
+      "viewLastModified": 1739912067,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "type",
+          "name": "Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "product_class",
+          "name": "Product Class",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "defrost_type",
+          "name": "Defrost Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "compact",
+          "name": "Compact",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "built_in",
+          "name": "Built-in",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "thru_the_door_dispenser",
+          "name": "Thru the Door Dispenser",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "ice_maker",
+          "name": "Ice Maker",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "standard_or_counter_depth",
+          "name": "Counter Depth",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "height_in",
+          "name": "Height (in)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "width_in",
+          "name": "Width (in)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "capacity_total_volume_ft3",
+          "name": "Capacity (Total Volume) (ft3)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "adjusted_volume_ft3",
+          "name": "Adjusted Volume (ft3)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "annual_energy_use_kwh_yr",
+          "name": "Annual Energy Use (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "us_federal_standard_kwh_yr",
+          "name": "US Federal Standard (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "percent_less_energy_use_than_us_federal_standard",
+          "name": "Percent Less Energy Use than US Federal Standard",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "refrigerant_type",
+          "name": "Refrigerant Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "refrigerant_with_gwp",
+          "name": "Refrigerant with GWP",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connected_functionality",
+          "name": "Connected Functionality",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connects_using",
+          "name": "Connects Using",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connected_functionality_tested",
+          "name": "Connected Functionality Tested",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "communication_standard_application_layer",
+          "name": "Communication Standard Application Layer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "direct_on_premises_open_standard_based_interconnection",
+          "name": "Direct on-premises Open-standard Based Interconnection",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_qualified",
+          "name": "Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "meets_most_efficient_criteria",
+          "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "pd96-rr3d": {
+      "id": "pd96-rr3d",
+      "name": "ENERGY STAR Certified Televisions",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 9.0 ENERGY STAR Program Requirements for Televisions that are effective as of October 20, 2022 or the Version 9.1 Program Requirements that are effective as of April 14, 2023. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/electronics/televisions/key_product_criteria.",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789565099,
+      "viewLastModified": 1739912176,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_star_partner",
+          "name": "ENERGY STAR Partner",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_name",
+          "name": "Model Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "product_type",
+          "name": "Product Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "application",
+          "name": "Application",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "display_type",
+          "name": "Display Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "backlight_technology_type",
+          "name": "Backlight Technology Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "diagonal_viewable_screen_size_inches",
+          "name": "Diagonal Viewable Screen Size (in.)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "screen_area_square_inches",
+          "name": "Screen Area (sq. in.)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "native_horizontal_resolution_pixels",
+          "name": "Native Horizontal Resolution (pixels)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "native_vertical_resolution_pixels",
+          "name": "Native Vertical Resolution (pixels)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "resolution_format",
+          "name": "Resolution Format",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "high_contrast_ratio_hcr_display",
+          "name": "High Contrast Ratio (HCR) Display",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "physical_data_ports_available",
+          "name": "Physical Data Ports Available",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "ethernet_supported",
+          "name": "Ethernet Supported",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "low_power_wireless_technologies_supported",
+          "name": "Low Power Wireless Technologies Supported",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "features",
+          "name": "Features",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "automatic_brightness_control",
+          "name": "Automatic Brightness Control",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "is_automatic_brightness_control_enabled_by_default_when_television_is_shipped",
+          "name": "Is Automatic Brightness Control Enabled by Default in the Default SDR Preset Picture Setting When Television is Shipped?",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "power_consumption_in_on_mode_watts",
+          "name": "Average On Mode Power Consumption for Certification (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "maximum_on_mode_power_for_certification_watts",
+          "name": "Maximum Average On Mode Power for Certification (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "reported_on_mode_power_per_the_federal_test_procedure_watts",
+          "name": "Reported On Mode Power (per the Federal Test Procedure) (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "reported_annual_energy_consumption_kwh",
+          "name": "Reported Annual Energy Consumption (kWh)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "measured_standby_mode_power_w",
+          "name": "Measured Standby Mode Power (Watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "power_consumption_in_standby_mode_when_network_not_connected_watts",
+          "name": "Power Consumption in Standby Mode when Not Connected to a Network (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "power_consumption_in_standby_mode_when_network_connected_watts",
+          "name": "Power Consumption in Standby Mode when Connected to a Network (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "reported_standby_active_low_mode_power_watts",
+          "name": "Reported Standby-Active, Low Mode Power (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_qualified",
+          "name": "Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "q8py-6w3f": {
+      "id": "q8py-6w3f",
+      "name": "ENERGY STAR Certified Residential Dishwashers",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 7.0 ENERGY STAR Program Requirements for Residential Dishwashers that are effective as of July 19, 2023. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/dishwashers/key_product_criteria",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789564310,
+      "viewLastModified": 1739912213,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "type",
+          "name": "Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "width_inches",
+          "name": "Width (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "depth_inches",
+          "name": "Depth (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "capacity_maximum_number_of_place_settings",
+          "name": "Capacity - Maximum Number of Place Settings",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "soil_sensing_capability",
+          "name": "Soil-Sensing Capability",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "tub_material",
+          "name": "Tub Material",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "drying_method",
+          "name": "Drying Method",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_product_features",
+          "name": "Additional Product Features",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "annual_energy_use_kwh_year",
+          "name": "Annual Energy Use (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "us_federal_standard_kwh_year",
+          "name": "US Federal Standard (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "better_than_us_federal_standard_kwh_year",
+          "name": "% Better than US Federal Standard (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "water_use_gallons_cycle",
+          "name": "Water Use (gallons/cycle)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "us_federal_standard_gallons_cycle",
+          "name": "US Federal Standard (gallons/cycle)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "better_than_us_federal_standard_gallons_cycle",
+          "name": "% Better than US Federal Standard (gallons/cycle)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "connected_capable",
+          "name": "Connected Capable",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connects_using",
+          "name": "Connects Using",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "communication_hardware_architecture",
+          "name": "Communication Hardware Architecture",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "dr_protocol",
+          "name": "DR Protocol",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "direct_on_premises_open_standard_based_interconnection",
+          "name": "Direct on-premises Open-standard Based Interconnection",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_certified",
+          "name": " Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "meets_most_efficient_criteria",
+          "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "qbg3-d468": {
+      "id": "qbg3-d468",
+      "name": "ENERGY STAR Certified Displays",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 8.0 ENERGY STAR Program Requirements for Displays that came into effect on January 28, 2020. A detailed listing of key efficiency criteria are available at: https://www.energystar.gov/products/office_equipment/displays/displays_key_product_criteria",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789564667,
+      "viewLastModified": 1739912114,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_star_partner",
+          "name": "ENERGY STAR Partner",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_name",
+          "name": "Model Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "display_type",
+          "name": "Product Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "panel_type",
+          "name": "Panel Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "native_resolution_pixels",
+          "name": "Native Resolution (pixels)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "total_native_resolution",
+          "name": "Total Native Resolution (megapixels)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "screen_size_inches",
+          "name": "Screen Size (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "screen_area_square_inches",
+          "name": "Screen Area (square inches)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_features",
+          "name": "Model Features",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "features_enabled_in_default",
+          "name": "Features Enabled in Default On Mode",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "features_enabled_in_default_1",
+          "name": "Features Enabled in Default Sleep Mode",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "signal_or_data_interfaces",
+          "name": "Signal or Data Interfaces",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "power_source",
+          "name": "Power Source",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "on_mode_power_watts",
+          "name": "On Mode Power (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "maximum_on_mode_power_limit",
+          "name": "Maximum On Mode Power Limit for Signage Certification (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "sleep_mode_power_watts",
+          "name": "Sleep Mode Power (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "maximum_sleep_mode_power",
+          "name": "Maximum Sleep Mode Power Limit for Signage Certification (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "off_mode_power_watts",
+          "name": "Off Mode Power (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "on_mode_power_at_12_lux_at_115_volts_w",
+          "name": "On Mode Power at 12 Lux at 115 Volts (W)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "on_mode_power_at_300_lux",
+          "name": "On Mode Power at 300 Lux (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "monitor_total_energy",
+          "name": "Monitor Total Energy Consumption at 115 Volts (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "maximum_total_energy",
+          "name": "Maximum Total Energy Consumption Limit for Monitor Certification (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "maximum_luminance_candelas",
+          "name": "Maximum Luminance (candelas per square meter)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "enhanced_performance_display",
+          "name": "Enhanced-Performance Display?",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "color_gamut",
+          "name": "Color Gamut",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "color_spaces_supported",
+          "name": "Color Spaces Supported",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "high_dynamic_range_hdr",
+          "name": "High Dynamic Range (HDR)",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "display_contrast_ratio_at",
+          "name": "Display Contrast Ratio  at 0 deg. Horiz. Viewing Angle",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "reported_contrast_ratio_at",
+          "name": "Reported Contrast Ratio at -85 Degrees (Left) Horizontal Viewing Angle",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "reported_contrast_ratio_at_1",
+          "name": "Reported Contrast Ratio at +85 Degrees (Right) Horizontal Viewing Angle",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "usb_c_with_power_delivery",
+          "name": "USB-C with Power Delivery Supported",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "maximum_power_delivery_w",
+          "name": "Maximum Power Delivery (W)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "tiled_display_system",
+          "name": "Tiled Display System",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "maximum_tiled_configuration",
+          "name": "Maximum Tiled Configuration",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_certified",
+          "name": "Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "meets_most_efficient_criteria",
+          "name": "Meets Most Efficient 2025 Criteria",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "rxdj-2c88": {
+      "id": "rxdj-2c88",
+      "name": "ENERGY STAR Certified Computers V9.0",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 9.0 Requirements that are effective as of October 27, 2025.",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789564401,
+      "viewLastModified": 1761593011,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_star_partner",
+          "name": "ENERGY STAR Partner",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_name",
+          "name": "Model Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "type",
+          "name": "Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "integrated_desktop_category",
+          "name": "Integrated Desktop Category",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "product_marketed_as_a_workstation",
+          "name": "Product Marketed as a Workstation",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "installed_npu",
+          "name": "Installed NPU",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "motherboard_form_factor",
+          "name": "Motherboard Form Factor",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "product_dimm_count",
+          "name": "Product DIMM Count",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "operating_system_name",
+          "name": "Operating System Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "processor_brand",
+          "name": "Processor Brand",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "processor_name",
+          "name": "Processor Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "physical_cpu_cores_count",
+          "name": "Physical CPU Cores (count)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cpu_packages_count",
+          "name": "CPU Packages (count)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cpu_base_clock_speed_ghz",
+          "name": "CPU Base Clock Speed (GHz) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "cpu_maximum_clock_speed_ghz",
+          "name": "CPU Maximum Clock Speed (GHz) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "system_memory_ram_gb",
+          "name": "System Memory (GB)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "multi_channel_memory_support",
+          "name": "Multi-Channel Memory Support",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "capable_of_switchable_graphics",
+          "name": "Capable of Switchable Graphics",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "switchable_graphics_enabled_by_default_in_ac_mode",
+          "name": "Switchable Graphics Enabled by Default in AC Mode ",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "discrete_graphics_frame_buffer_bandwidth_gb_s",
+          "name": "Discrete Graphics Frame Buffer Bandwidth (GB/s) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "discrete_graphics_frame_buffer_data_width_bits",
+          "name": "Discrete Graphics Frame Buffer Data Width (bits) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "fast_ethernet_ports_count",
+          "name": "Fast Ethernet Ports (count)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "gigabit_ethernet_ports_count",
+          "name": "Gigabit Ethernet Ports (count) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "gigabit_10_ethernet_ports_count",
+          "name": "10 Gigabit Ethernet Ports (count)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_efficient_ethernet_eee",
+          "name": "Energy Efficient Ethernet (EEE) ",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "number_of_installed_storage_drives",
+          "name": "Number of Installed Storage Drives ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "number_of_integrated_displays_count",
+          "name": "Number of Integrated Displays (count) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "integrated_display_resolution_megapixels",
+          "name": "Integrated Display Resolution (megapixels) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "integrated_display_viewable_screen_area_sq_in",
+          "name": "Integrated Display Viewable Screen Area (sq in) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "enhanced_performance_display_present",
+          "name": "Enhanced Performance Display Present ",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "integrated_display_diagonal_screen_size_in",
+          "name": "Integrated Display Diagonal Screen Size (in)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "internal_power_supply_efficiency_at_10_load",
+          "name": "Internal Power Supply Efficiency at 10% Load",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "internal_power_supply_efficiency_at_20_load",
+          "name": "Internal Power Supply Efficiency at 20% Load",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "internal_power_supply_efficiency_at_50_load",
+          "name": "Internal Power Supply Efficiency at 50% Load",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "internal_power_supply_efficiency_at_100_load",
+          "name": "Internal Power Supply Efficiency at 100% Load",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "category_i1_1_internal_power_supply_efficiency_at_50_load",
+          "name": "Category I1/1 Internal Power Supply Efficiency at 50% Load",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "category_i1_1_internal_power_supply_efficiency_at_100_load",
+          "name": "Category I1/1 Internal Power Supply Efficiency at 100% Load",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "external_power_supply_rated_power_w",
+          "name": "External Power Supply Rated Power (W)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "internal_power_supply_rated_power_w",
+          "name": "Internal Power Supply Rated Power (W)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "mux_device",
+          "name": "MUX Device",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "storage_technology",
+          "name": "Storage Technology",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "total_battery_capacity_watt_hours",
+          "name": "Total Battery Capacity (watt-hours)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "default_low_power_mode",
+          "name": "Default Low-power Mode",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "long_idle_power_used_for_sleep_mode",
+          "name": "Long Idle Power Used for Sleep Mode",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "off_mode_watts",
+          "name": "Off Mode (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "sleep_mode_watts",
+          "name": "Sleep Mode (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "long_idle_watts",
+          "name": "Long Idle (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "short_idle_watts",
+          "name": "Short Idle (watts)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "additional_measured_power_in_short_idle_at_115v__",
+          "name": "Additional Measured Power in Short Idle at 115V (W) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "base_tec_allowance_kwh",
+          "name": "Base TEC Allowance (kWh)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "functional_adder_allowances_kwh",
+          "name": "Functional Adder Allowances (kWh)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "tec_of_model_kwh",
+          "name": "TEC of Model (kWh)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "maximum_tec_requirements_etec_max_kwh",
+          "name": "Maximum TEC Requirements (Etec max) (kWh) ",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "ethernet_capability",
+          "name": "Ethernet Capability",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "touch_screen",
+          "name": "Touch Screen",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "sleep_mode_default_time_upon_shipment_min",
+          "name": "Sleep Mode Default Time Upon Shipment (min.)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "display_sleep_mode_default_time_upon_shipment_min",
+          "name": "Display Sleep Mode Default Time Upon Shipment (min.)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "wol_wake_on_lan_from_sleep",
+          "name": "WOL (Wake on LAN) From Sleep",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "will_the_speed_of_any_active_1_gb_s_or_higher_ethernet_network_links_be_reduced_to_less_than_1_gb_s_when_transitioning_to_sleep_or_off_mode",
+          "name": "Will the Speed of Any Active 1 GB/s or Higher Ethernet Network Links be Reduced to Less Than 1 GB/s When Transitioning to Sleep or Off Mode?",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available On Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_certified",
+          "name": "Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        }
+      ]
+    },
+    "t9u7-4d2j": {
+      "id": "t9u7-4d2j",
+      "name": "ENERGY STAR Certified Residential Clothes Dryers",
+      "description": "Certified dryers and combination all-in-one washer-dryers that meet all ENERGY STAR requirements as listed in the Version 1.1 ENERGY STAR Program Requirements for Clothes Dryers that are effective as of January 1, 2015. Combination all-in-one washer-dryers also meet the Version 8.1 ENERGY STAR Program Requirements for Clothes Washers that are effective as of February 5, 2018. A detailed listing of key efficiency criteria are available at: https://www.energystar.gov/products/appliances/clothes_dryers/key_product_criteria",
+      "category": "Active Specifications",
+      "provenance": "official",
+      "publicationStage": "published",
+      "viewType": "tabular",
+      "displayType": "table",
+      "flags": [
+        "default",
+        "ownerMayBeContacted",
+        "restorable",
+        "restorePossibleForType"
+      ],
+      "parentViewId": null,
+      "rowsUpdatedAt": 1789563703,
+      "viewLastModified": 1739912075,
+      "columns": [
+        {
+          "fieldName": "pd_id",
+          "name": "ENERGY STAR Unique ID",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "brand_name",
+          "name": "Brand Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_name",
+          "name": "Model Name",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "model_number",
+          "name": "Model Number",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_model_information",
+          "name": "Additional Model Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "upc",
+          "name": "UPC",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "product_type",
+          "name": "Product Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "type",
+          "name": "Fuel Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "special_type",
+          "name": "Special Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "heat_pump_technology",
+          "name": "Heat Pump Technology",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "voltage",
+          "name": "Voltage (V)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "drum_capacity_cu_ft",
+          "name": "Drum Capacity (cu-ft)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "height_inches",
+          "name": "Height (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "width_inches",
+          "name": "Width (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "depth_inches",
+          "name": "Depth (inches)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "combined_energy_factor_cef",
+          "name": "Combined Energy Factor (CEF)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "estimated_annual_energy_use_kwh_yr",
+          "name": "Estimated Annual Energy Use (kWh/yr)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "estimated_energy_test_cycle_time_min",
+          "name": "Estimated Energy Test Cycle Time (min)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "energy_test_cycle_information",
+          "name": "Energy Test Cycle Information",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "additional_dryer_features",
+          "name": "Additional Dryer Features",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "vented_or_ventless",
+          "name": "Vented or Ventless",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "refrigerant_type",
+          "name": "Refrigerant Type",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "refrigerant_with_gwp",
+          "name": "Refrigerant with GWP",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connected",
+          "name": "Connected",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "connected_demand_response_functionality_tested",
+          "name": "Connects Using",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "communication_standard_application_layer",
+          "name": "Communication Standard - Application Layer",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "direct_on_premises_open_standard_based_interconnection",
+          "name": "Direct on-premises Open-standard Based Interconnection",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh",
+          "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh)",
+          "dataTypeName": "number"
+        },
+        {
+          "fieldName": "paired_energy_star_clothes_washer_available",
+          "name": "Paired ENERGY STAR Clothes Washer Available",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "paired_energy_star_clothes_washer_energy_star_model_identifier",
+          "name": "Paired ENERGY STAR Clothes Washer ENERGY STAR Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "date_available_on_market",
+          "name": "Date Available on Market",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "date_qualified",
+          "name": "Date Certified",
+          "dataTypeName": "calendar_date"
+        },
+        {
+          "fieldName": "markets",
+          "name": "Markets",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "energy_star_model_identifier",
+          "name": "CB Model Identifier",
+          "dataTypeName": "text"
+        },
+        {
+          "fieldName": "meets_most_efficient_criteria",
+          "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+          "dataTypeName": "text"
+        }
+      ]
+    }
+  },
+  "combo_view_metadata": {
+    "id": "9jai-gs6t",
+    "name": "ENERGY STAR Certified Res-Combo-Washer-Dryer",
+    "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 8.0 and Version 8.1 ENERGY STAR Program Requirements for Clothes Washers that are effective as of February 5, 2018. This view includes Combination All-in-One Washer/Dryer only. See the source dataset for complete listing of all product types certified under the Residential Clothes Washers specification. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/clothes_washers/key_product_criteria",
+    "category": "Active Specifications",
+    "provenance": "official",
+    "publicationStage": "published",
+    "viewType": "tabular",
+    "displayType": "table",
+    "flags": [
+      "calculatedView",
+      "ownerMayBeContacted",
+      "restorable",
+      "restorePossibleForType",
+      "soqlBasedView"
+    ],
+    "parentViewId": null,
+    "rowsUpdatedAt": 1789564819,
+    "viewLastModified": 1739912249,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "load_configuration",
+        "name": "Load Configuration",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "special_type",
+        "name": "Special Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_washer_features",
+        "name": "Additional Washer Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "intended_market",
+        "name": "Intended Market",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "volume_cubic_feet",
+        "name": "Volume (cu. ft.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "height_inches",
+        "name": "Height (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "integrated_modified_energy_factor_imef",
+        "name": "Integrated Modified Energy Factor (IMEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_imef",
+        "name": "US Federal Standard (IMEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "annual_energy_use_kwh_year",
+        "name": "Annual Energy Use (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "integrated_water_factor_iwf",
+        "name": "Integrated Water Factor (IWF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_iwf",
+        "name": "US Federal Standard (IWF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "annual_water_use_gallons_year",
+        "name": "Annual Water Use (gallons/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Drum Capacity for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Heat Pump Technology for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Combined Energy Factor (CEF) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Annual Energy Use (kWh/yr) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Energy Test Cycle Time (min) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Energy Test Cycle Information for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Additional Dryer Features for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connected",
+        "name": "Connected",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connects_using",
+        "name": "Connects Using",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "communication_standard_application_layer",
+        "name": "Communication Standard Application Layer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_dryer_available",
+        "name": "Paired ENERGY STAR Clothes Dryer Available",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_dryer_energy_star_model_identifier",
+        "name": "Paired ENERGY STAR Clothes Dryer ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "combo_scan": {
+    "where": "upper(brand_name) = 'SAMSUNG'",
+    "health": {
+      "query_completeness": "COMPLETE_OBSERVED_QUERY",
+      "row_count": 3,
+      "candidate_absence": "NOT_EVALUATED",
+      "certification_matching": "NOT_EVALUATED",
+      "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+    },
+    "rows": [
+      {
+        "source_row_id": "row-r4fw-fgv5.ieuf",
+        "pd_id": "3387758",
+        "brand_name": "Samsung",
+        "model_number": "WD53DBA9**H*",
+        "upc": "887276824949",
+        "load_configuration": "Front Load",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "additional_washer_features": "Steam Cycle",
+        "intended_market": "Residential",
+        "volume_cubic_feet": "5.30",
+        "height_inches": "43.70",
+        "width_inches": "27.0",
+        "depth_inches": "34.40",
+        "integrated_modified_energy_factor_imef": "2.92",
+        "us_federal_standard_imef": "1.84",
+        "annual_energy_use_kwh_year": "103",
+        "integrated_water_factor_iwf": "2.9",
+        "us_federal_standard_iwf": "4.7",
+        "annual_water_use_gallons_year": "4500",
+        "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "5.3",
+        "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Heat Pump",
+        "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "7.50",
+        "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "319",
+        "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "80",
+        "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Normal cycle, Dryness level 3",
+        "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "8.18",
+        "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Wrinkle prevention option",
+        "connected": "No",
+        "paired_energy_star_clothes_dryer_available": "No",
+        "date_available_on_market": "2024-03-08T00:00:00.000",
+        "date_qualified": "2024-01-19T00:00:00.000",
+        "markets": "United States, Canada",
+        "energy_star_model_identifier": "ES_1023593_WD53DBA9**H*_01252024110111_80198007",
+        "meets_most_efficient_criteria": "No"
+      },
+      {
+        "source_row_id": "row-jhwg_quah-un4n",
+        "pd_id": "4576676",
+        "brand_name": "Samsung",
+        "model_number": "WD80H53*H*",
+        "upc": "198957290022",
+        "load_configuration": "Front Load",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "additional_washer_features": "Steam Cycle",
+        "intended_market": "Residential",
+        "volume_cubic_feet": "5.30",
+        "height_inches": "43.70",
+        "width_inches": "27.0",
+        "depth_inches": "34.40",
+        "integrated_modified_energy_factor_imef": "2.92",
+        "us_federal_standard_imef": "1.84",
+        "annual_energy_use_kwh_year": "103",
+        "integrated_water_factor_iwf": "2.9",
+        "us_federal_standard_iwf": "4.7",
+        "annual_water_use_gallons_year": "4500",
+        "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "5.3",
+        "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "7.50",
+        "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "319",
+        "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Normal (default) cycle / Dryness level: 3 / Option: None",
+        "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "8.16",
+        "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Wrinkle prevention option",
+        "connected": "No",
+        "paired_energy_star_clothes_dryer_available": "No",
+        "date_available_on_market": "2026-04-24T00:00:00.000",
+        "date_qualified": "2026-03-11T00:00:00.000",
+        "markets": "United States, Canada",
+        "energy_star_model_identifier": "ES_1023593_WD80H53*H*_03112026111230_80291371",
+        "meets_most_efficient_criteria": "No"
+      },
+      {
+        "source_row_id": "row-5xdq~iard-jqxa",
+        "pd_id": "3998322",
+        "brand_name": "Samsung",
+        "model_number": "WD90F53*V*",
+        "upc": "887276989174",
+        "load_configuration": "Front Load",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "additional_washer_features": "Steam Cycle",
+        "intended_market": "Residential",
+        "volume_cubic_feet": "5.30",
+        "height_inches": "43.70",
+        "width_inches": "27.0",
+        "depth_inches": "34.40",
+        "integrated_modified_energy_factor_imef": "2.92",
+        "us_federal_standard_imef": "1.84",
+        "annual_energy_use_kwh_year": "103",
+        "integrated_water_factor_iwf": "2.9",
+        "us_federal_standard_iwf": "4.7",
+        "annual_water_use_gallons_year": "4500",
+        "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "5.3",
+        "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "3.93",
+        "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "608",
+        "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Normal cycle / Normal dryness level / Option: Eco Dry Default \"On\"",
+        "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "8.18",
+        "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Wrinkle prevention option",
+        "connected": "No",
+        "paired_energy_star_clothes_dryer_available": "No",
+        "date_available_on_market": "2025-03-14T00:00:00.000",
+        "date_qualified": "2025-02-18T00:00:00.000",
+        "markets": "United States, Canada",
+        "energy_star_model_identifier": "ES_1023593_WD90F53*V*_02192025100218_80243947",
+        "meets_most_efficient_criteria": "No"
+      }
+    ]
+  },
+  "parent_filtered_scan": {
+    "where": "upper(brand_name) = 'SAMSUNG' AND special_type = 'Combination All-in-One Washer/Dryer'",
+    "health": {
+      "query_completeness": "COMPLETE_OBSERVED_QUERY",
+      "row_count": 3,
+      "candidate_absence": "NOT_EVALUATED",
+      "certification_matching": "NOT_EVALUATED",
+      "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+    },
+    "rows": [
+      {
+        "source_row_id": "row-r4fw-fgv5.ieuf",
+        "pd_id": "3387758",
+        "brand_name": "Samsung",
+        "model_number": "WD53DBA9**H*",
+        "upc": "887276824949",
+        "load_configuration": "Front Load",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "additional_washer_features": "Steam Cycle",
+        "intended_market": "Residential",
+        "volume_cubic_feet": "5.30",
+        "height_inches": "43.70",
+        "width_inches": "27.0",
+        "depth_inches": "34.40",
+        "integrated_modified_energy_factor_imef": "2.92",
+        "us_federal_standard_imef": "1.84",
+        "annual_energy_use_kwh_year": "103",
+        "integrated_water_factor_iwf": "2.9",
+        "us_federal_standard_iwf": "4.7",
+        "annual_water_use_gallons_year": "4500",
+        "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "5.3",
+        "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Heat Pump",
+        "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "7.50",
+        "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "319",
+        "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "80",
+        "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Normal cycle, Dryness level 3",
+        "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "8.18",
+        "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Wrinkle prevention option",
+        "connected": "No",
+        "paired_energy_star_clothes_dryer_available": "No",
+        "date_available_on_market": "2024-03-08T00:00:00.000",
+        "date_qualified": "2024-01-19T00:00:00.000",
+        "markets": "United States, Canada",
+        "energy_star_model_identifier": "ES_1023593_WD53DBA9**H*_01252024110111_80198007",
+        "meets_most_efficient_criteria": "No"
+      },
+      {
+        "source_row_id": "row-jhwg_quah-un4n",
+        "pd_id": "4576676",
+        "brand_name": "Samsung",
+        "model_number": "WD80H53*H*",
+        "upc": "198957290022",
+        "load_configuration": "Front Load",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "additional_washer_features": "Steam Cycle",
+        "intended_market": "Residential",
+        "volume_cubic_feet": "5.30",
+        "height_inches": "43.70",
+        "width_inches": "27.0",
+        "depth_inches": "34.40",
+        "integrated_modified_energy_factor_imef": "2.92",
+        "us_federal_standard_imef": "1.84",
+        "annual_energy_use_kwh_year": "103",
+        "integrated_water_factor_iwf": "2.9",
+        "us_federal_standard_iwf": "4.7",
+        "annual_water_use_gallons_year": "4500",
+        "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "5.3",
+        "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "7.50",
+        "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "319",
+        "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Normal (default) cycle / Dryness level: 3 / Option: None",
+        "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "8.16",
+        "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Wrinkle prevention option",
+        "connected": "No",
+        "paired_energy_star_clothes_dryer_available": "No",
+        "date_available_on_market": "2026-04-24T00:00:00.000",
+        "date_qualified": "2026-03-11T00:00:00.000",
+        "markets": "United States, Canada",
+        "energy_star_model_identifier": "ES_1023593_WD80H53*H*_03112026111230_80291371",
+        "meets_most_efficient_criteria": "No"
+      },
+      {
+        "source_row_id": "row-5xdq~iard-jqxa",
+        "pd_id": "3998322",
+        "brand_name": "Samsung",
+        "model_number": "WD90F53*V*",
+        "upc": "887276989174",
+        "load_configuration": "Front Load",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "additional_washer_features": "Steam Cycle",
+        "intended_market": "Residential",
+        "volume_cubic_feet": "5.30",
+        "height_inches": "43.70",
+        "width_inches": "27.0",
+        "depth_inches": "34.40",
+        "integrated_modified_energy_factor_imef": "2.92",
+        "us_federal_standard_imef": "1.84",
+        "annual_energy_use_kwh_year": "103",
+        "integrated_water_factor_iwf": "2.9",
+        "us_federal_standard_iwf": "4.7",
+        "annual_water_use_gallons_year": "4500",
+        "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "5.3",
+        "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "3.93",
+        "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "608",
+        "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Normal cycle / Normal dryness level / Option: Eco Dry Default \"On\"",
+        "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "8.18",
+        "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer": "Wrinkle prevention option",
+        "connected": "No",
+        "paired_energy_star_clothes_dryer_available": "No",
+        "date_available_on_market": "2025-03-14T00:00:00.000",
+        "date_qualified": "2025-02-18T00:00:00.000",
+        "markets": "United States, Canada",
+        "energy_star_model_identifier": "ES_1023593_WD90F53*V*_02192025100218_80243947",
+        "meets_most_efficient_criteria": "No"
+      }
+    ]
+  },
+  "range_hood_rows": [
+    {
+      "pd_id": "2369802",
+      "energy_star_partner": "Air-King, Ltd.",
+      "brand_name": "Air King",
+      "model_name": "Air King",
+      "model_number": "ESQZ2303",
+      "unit_type": "Range Hood",
+      "number_of_speeds": "2",
+      "duct_size": "3.25 inch depth X 10 inch width",
+      "sound_level_sones": "1.5 - 1.5",
+      "shipped_with_energy_star_lamp_s": "Yes",
+      "energy_star_lamp_esuid": "2339458",
+      "total_input_power_watts": "0",
+      "luminaire_efficacy": "88.9",
+      "lighting": "Yes",
+      "airflow_1_cfm": "100",
+      "airflow_2_cfm": "120",
+      "efficacy_1_cfm_w": "6.1",
+      "efficacy_2_cfm_w": "7.9",
+      "date_available_on_market": "2020-11-20T00:00:00.000",
+      "date_qualified": "2020-11-20T00:00:00.000",
+      "markets": "United States, Canada",
+      "energy_star_model_identifier": "ES_30227_ESQZ2303_11202020000000_4506760",
+      "meets_most_efficient_criteria": "No"
+    },
+    {
+      "pd_id": "2408961",
+      "energy_star_partner": "Air-King, Ltd.",
+      "brand_name": "Air King",
+      "model_name": "Air King",
+      "model_number": "ESQZ2306",
+      "upc": "83162628824",
+      "unit_type": "Range Hood",
+      "number_of_speeds": "2",
+      "duct_size": "3.25 inch depth X 10.00 inch width",
+      "sound_level_sones": "1.5 - 1.5",
+      "shipped_with_energy_star_lamp_s": "Yes",
+      "energy_star_lamp_esuid": "2371772",
+      "total_input_power_watts": "8.50",
+      "luminaire_efficacy": "94.1",
+      "correlated_color_temperature_kelvin": "3000K",
+      "color_rendering_index_cri": "93",
+      "life_source_life_hours": "15000",
+      "special_features_dimming_motion_sensing_etc": "Continuous Dimming",
+      "lighting": "Yes",
+      "airflow_1_cfm": "100",
+      "airflow_2_cfm": "120",
+      "efficacy_1_cfm_w": "6.1",
+      "efficacy_2_cfm_w": "7.9",
+      "date_available_on_market": "2023-02-10T00:00:00.000",
+      "date_qualified": "2023-02-24T00:00:00.000",
+      "markets": "United States, Canada",
+      "energy_star_model_identifier": "ES_30227_ESQZ2306_02242023000000_4508098",
+      "meets_most_efficient_criteria": "No"
+    },
+    {
+      "pd_id": "2369804",
+      "energy_star_partner": "Air-King, Ltd.",
+      "brand_name": "Air King",
+      "model_name": "Air King",
+      "model_number": "ESQZ2308",
+      "unit_type": "Range Hood",
+      "number_of_speeds": "2",
+      "duct_size": "3.25 inch depth X 10 inch width",
+      "sound_level_sones": "1.5 - 1.5",
+      "shipped_with_energy_star_lamp_s": "Yes",
+      "energy_star_lamp_esuid": "2339458",
+      "total_input_power_watts": "0",
+      "luminaire_efficacy": "88.9",
+      "lighting": "Yes",
+      "airflow_1_cfm": "120",
+      "airflow_2_cfm": "100",
+      "efficacy_1_cfm_w": "7.9",
+      "efficacy_2_cfm_w": "6.1",
+      "date_available_on_market": "2020-11-20T00:00:00.000",
+      "date_qualified": "2020-11-20T00:00:00.000",
+      "markets": "United States, Canada",
+      "energy_star_model_identifier": "ES_30227_ESQZ2308_11202020000000_4506761",
+      "meets_most_efficient_criteria": "No"
+    }
+  ],
+  "fixture_integrity_run": "https://github.com/Empty-Bell/RDA/actions/runs/35168643898",
+  "fixture_integrity_scope": "96 fixture references including four new routing fixtures; actual Ubuntu checkout bytes",
+  "fixture_integrity": {
+    "status": "PASS",
+    "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35168643898",
+    "code_commit": "27364c3457b970751c777d7d9639669b834d5ed3",
+    "checks": 96,
+    "byte_source": "checkout files",
+    "artifact_id": 10476191664,
+    "artifact_zip_sha256": "fd421ec7f628c692b49741f2da9295adf8b660771380d6c1e3101cca13cca0c0",
+    "artifact_expires_at": "2026-10-01T00:57:56Z",
+    "report_sha256": "c9d4bb034be8df4ea5c7d1213ce7e2d3bf122b66c46f5ff4b7b0ee4df37e77a6"
+  }
+}

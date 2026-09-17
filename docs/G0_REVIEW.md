@@ -42,7 +42,15 @@ files without that option. Report errors remain FAIL and cannot promote G0.
    Require hosted parser contracts for any new route and update this review with
    PASS/FAIL/BLOCKED evidence. Do not silently select an unresolved route.
 
-Start with item 1 as the next bounded task. No compliance rule or Phase 1 code is
+Item 1 bounded follow-up passed hosted run 35168707877: all nine main sources are
+advertised Active Specifications in the official DCAT feed; all nine In Effect
+specification rows are observed. Combo view metadata/three-row identity relation
+and cross-brand Range Hood rows are retained in EPA_ROUTING_SOURCE_CONTRACT.md.
+This closes the advertisement and alternate-view observation gaps, while exclusive
+version, stacked/per-configuration routing and individual applicability remain open.
+
+Next bounded task: item 2, the official FTC/EPA family applicability evidence table,
+including remaining stacked/per-configuration source boundaries. No compliance rule or Phase 1 code is
 needed to collect these official source observations. Ask only if a semantic
 choice becomes necessary to close a route; existing deferred decisions stay open.
 

@@ -205,8 +205,16 @@ Hosted integrity review PASS: run 35167790999, commit
 All 92 fixture references match actual Ubuntu checkout bytes. Archive/report
 hashes and expiry are recorded in docs/evidence/g0-integrity-review.json.
 Local changed-byte, missing-file and traversal checks reject invalid evidence.
-Next bounded task: official EPA active-version and alternate product-type routing
-evidence, followed by family applicability provenance. All family discovery and
+Official EPA source-routing bounded PASS: run 35168707877, code
+cfac061e4cb81314b031c60b1febbe905b6c75cd, attempt 1, job 105035493022;
+16 dedicated routing and 12 query-boundary tests passed. Official DCAT advertisement
+and specification status, combo-view/parent-filtered three-row identity relation,
+separate washer/dryer energy fields and actual fan unit_type/Range Hood rows are
+preserved. Two failed probes and corrections remain in the failure history.
+See EPA_ROUTING_SOURCE_CONTRACT.md and docs/evidence/epa-routing-recon.json.
+No production route, matching, applicability or compliance policy was changed.
+Next bounded task: official FTC/EPA family applicability provenance, including
+stacked and per-configuration boundaries. All family discovery and
 bounded common claim/quality/runtime probes are complete; full G0 is not promoted.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.

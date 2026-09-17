@@ -42,8 +42,10 @@ EPA 35166865352 and runner probe 35166865316 passed. See RUNTIME_FREEZE_CONTRACT
 and runtime-freeze-recon.json. Hashed package/build/model resources and Node24
 Actions are pinned; image/system libraries remain hosted inputs. Controlled-copy
 recovery is separate from generic source/WAF recovery. Consolidated G0 review is
-now recorded in G0_REVIEW.md; full G0 remains NOT_EVALUATED. Next: official EPA
-active-version and alternate product-type source-routing evidence.
+now recorded in G0_REVIEW.md; full G0 remains NOT_EVALUATED. Official EPA source
+advertisement/specification status and alternate combo observations passed hosted
+run 35168707877; see EPA_ROUTING_SOURCE_CONTRACT.md. Next: official FTC/EPA family
+applicability provenance and remaining stacked/per-configuration boundaries.
 Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate
