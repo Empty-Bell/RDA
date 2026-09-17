@@ -14,7 +14,9 @@ are implemented as drafts. Hosted run 35171015637 (code 25ee7d8) executed 66 tes
 on each Python 3.11.16 / 3.12.14 with zero skips/failures/errors. Downloaded reports
 and ZIP hashes are archived in docs/evidence/g1-typed-contract-recon.json.
 Approved population merge and one-SKU/multi-assessment count implementation
-are awaiting this extension's hosted checkpoint. G1 inventory/review remains. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
+passed hosted run 35171608893 (code 4206b79): 80 tests per Python 3.11.16 and
+3.12.14, zero skips/failures/errors. See g1-population-report-recon.json.
+G1 remains RUNNING: static lint/type, installed CLI and full acceptance review. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
 
 Final hosted combined checkpoint 35169843199 tested code
 6069bed296dde8bc418619af4888925fce30f118, attempt 1, job 105038925672:

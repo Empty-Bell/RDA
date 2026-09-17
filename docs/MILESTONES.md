@@ -23,7 +23,9 @@
 사용자의 다음 단계 요청으로 AGENTS.md 범위를 G1까지 확장했다.
 초안 계약·CLI·fixture CI와 PDP/라벨/EPA 세부 관측·설정 검증을 구현했다.
 Hosted run 35171015637에서 Python 3.11/3.12 각각 66개 테스트 전부 통과했다.
-제품/집계 기준 승인과 G1 필드·coverage 대조 및 종료 검토가 남았다.
+제품/집계/ID 기준은 사용자가 승인했고, 정확한 SKU 병합·다중 finding 집계를 구현했다.
+G1_FIELD_INVENTORY.md에 필드 대조를 기록했다. 정적 lint/type 검사, 설치된 CLI
+검증과 전체 G1 종료 검토는 남아 있다.
 실제 판정과 공개 배포는 후속 단계다.
 G1 미완료 항목과 승인 제안은 DATA_CONTRACTS.md / G1_DECISION_PROPOSAL.md를 참조한다.
 각 종료 기록은 PASS/FAIL/BLOCKED와 실제 hosted Actions run/commit/attempt/

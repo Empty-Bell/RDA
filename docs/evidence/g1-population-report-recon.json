@@ -1,0 +1,66 @@
+{
+  "api_verified_conclusion": "success",
+  "approval": "2026-09-17 user approved the three explained G1 identity/count/ID criteria",
+  "artifacts": [
+    {
+      "artifact_id": 10476872268,
+      "expires_at": "2026-10-01T01:42:51Z",
+      "job_id": 105044272527,
+      "report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "4206b794f8d4940c00bcdeba0ed15b5fa66308d5",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.11.16",
+        "run_attempt": "1",
+        "run_id": "35171608893",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 80
+      },
+      "report_sha256": "aba653e93f013583417b574c2ec69bd15823d6756ef2264431d90532bc9d777f",
+      "zip_sha256": "7508b0173bc52574d6d409d7dbe95f304d8fb3660369e9866f7ab1ffdcdd1b20"
+    },
+    {
+      "artifact_id": 10476857258,
+      "expires_at": "2026-10-01T01:42:49Z",
+      "job_id": 105044272638,
+      "report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "4206b794f8d4940c00bcdeba0ed15b5fa66308d5",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14",
+        "run_attempt": "1",
+        "run_id": "35171608893",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 80
+      },
+      "report_sha256": "99b4e98625e9aea121aba3d421c1a2132dcd44202d8f6eb89a88f3dba0cfd6d7",
+      "zip_sha256": "82bbeb333af56594e3eeee20c61f212c68051bc390c554a81d4d95586b409b44"
+    }
+  ],
+  "git_sha": "4206b794f8d4940c00bcdeba0ed15b5fa66308d5",
+  "limitations": [
+    "Synthetic finding transport/count fixture only; no evaluated production assessments",
+    "Other semantic portions remain OPEN"
+  ],
+  "phase_gate": "NOT_EVALUATED",
+  "remaining": [
+    "Static lint/type checks",
+    "Installed CLI entrypoint verification",
+    "Full G1 acceptance review"
+  ],
+  "run_attempt": 1,
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35171608893",
+  "runner_label": "ubuntu-24.04",
+  "scope": "Approved G1 exact SKU identity and independent finding counts",
+  "status": "PASS"
+}
