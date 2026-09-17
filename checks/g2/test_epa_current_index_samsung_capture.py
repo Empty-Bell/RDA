@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from g2_epa_current_index_samsung_capture import (  # noqa: E402
     metadata_projection,
+    page_query_params,
     page_rows,
     replay_capture,
     scan_projection,
@@ -38,6 +39,11 @@ def row(number: str, source_id: str) -> dict:
 
 
 class SamsungScopeTests(unittest.TestCase):
+    def test_page_query_uses_socrata_select_order(self):
+        self.assertEqual(page_query_params(0)["$select"], "*,:id as source_row_id")
+        with self.assertRaisesRegex(ValueError, "offset"):
+            page_query_params(1)
+
     def test_complete_scan_preserves_duplicate_candidate_keys(self):
         before = metadata_projection(json.dumps(metadata()).encode())
         pages = [

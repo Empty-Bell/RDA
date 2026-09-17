@@ -59,6 +59,19 @@ def duplicate_candidate_key_count(rows: list[dict]) -> int:
     return len(keys) - len(set(keys))
 
 
+def page_query_params(offset: int) -> dict:
+    if offset < 0 or offset % PAGE_SIZE:
+        raise ValueError("EPA page offset invalid")
+    # Socrata permits `*` only at the beginning of a select list.
+    return {
+        "$where": BRAND_WHERE,
+        "$select": "*,:id as source_row_id",
+        "$order": ":id",
+        "$limit": PAGE_SIZE,
+        "$offset": offset,
+    }
+
+
 def scan_projection(
     pages: list[list[dict]],
     count_before: int,
@@ -165,16 +178,7 @@ def main() -> None:
         count_before = row_count(decoded_rows(records[-1], count_before_body))
         pages: list[list[dict]] = []
         for index in range((count_before // PAGE_SIZE) + 1):
-            page_url = query_url(
-                DATASET,
-                {
-                    "$where": BRAND_WHERE,
-                    "$select": ":id as source_row_id,*",
-                    "$order": ":id",
-                    "$limit": PAGE_SIZE,
-                    "$offset": index * PAGE_SIZE,
-                },
-            )
+            page_url = query_url(DATASET, page_query_params(index * PAGE_SIZE))
             name = f"page-{index:04d}"
             pages.append(page_rows(fetch(name, page_url)))
             if len(pages[-1]) < PAGE_SIZE:
