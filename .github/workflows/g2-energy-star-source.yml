@@ -1,0 +1,52 @@
+name: G2 Energy Star direct source capture
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g2_energy_star_source_capture.py'
+      - 'scripts/g2_epa_current_index_samsung_capture.py'
+      - 'scripts/source_contract.py'
+      - 'checks/g2/test_energy_star_source_capture.py'
+      - '.github/workflows/g2-energy-star-source.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: g2-energy-star-source-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Bootstrap locked Samsung session collector
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Direct-source contract regression
+        run: python -m unittest checks/g2/test_energy_star_source_capture.py -v
+      - name: Capture current Samsung PF population
+        run: python scripts/source_recon.py --family refrigerator
+      - name: Capture browserless Samsung and EPA source declarations
+        run: python scripts/g2_energy_star_source_capture.py --pf-source runtime/source-recon/refrigerator
+      - name: Preserve direct-source evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g2-energy-star-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g2-energy-star-source/
+          retention-days: 14
+          if-no-files-found: error
