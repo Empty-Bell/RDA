@@ -172,10 +172,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   `g2-epa-current-index-samsung-35224820966-1` is 56,566 bytes. The scope is
   `upper(brand_name) = 'SAMSUNG'` without a guessed refrigerator filter. This
   establishes complete source-query evidence only, not an individual SKU result
-  or assessment. Next: exact-target candidate projection that preserves every
-  matching/current-scope candidate and distinguishes match, complete no-match and
-  unresolved comparison. Assessment remains disabled until collection definitions
-  and coverage are complete. Recommended model: Terra medium.
+  or assessment. Exact-target candidate projection is now implemented and hosted
+  contract CI run 35225714504 PASSed at 1899c91. It requires same-run verified
+  PDP targets, preserves every raw/approved-normalized literal candidate and
+  withholds a no-match result while any EPA pattern encoding remains unresolved.
+  See G2_CURRENT_INDEX_CANDIDATE_PROJECTION.md. Next: define the same-run
+  refrigerator target feed and strict p5st-her9 four-key provenance bridge needed
+  to resolve approved positional-pattern candidates. Assessment remains disabled
+  until collection definitions and coverage are complete. Recommended model:
+  Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
