@@ -1,0 +1,31 @@
+name: Phase 0 runtime freeze and recovery
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/runtime_discovery.py', '.github/workflows/runtime-freeze.yml']
+permissions:
+  contents: read
+jobs:
+  discovery:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 / node24
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0 / node24
+        with:
+          python-version: '3.12'
+      - name: Bootstrap observed baseline
+        run: bash scripts/bootstrap.sh
+      - name: Propose locks and model inventory
+        run: python scripts/runtime_discovery.py
+      - name: Preserve inventory
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1 / node24
+        with:
+          name: runtime-freeze-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/
+          retention-days: 14
+          if-no-files-found: error
