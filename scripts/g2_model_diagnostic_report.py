@@ -6,7 +6,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from g2_epa_wildcard_capture import positional_diagnostic
+from g2_epa_wildcard_capture import positional_diagnostic  # noqa: E402
+from g2_samsung_suffix import normalize_terminal_aa  # noqa: E402
 
 
 def build_report() -> dict:
@@ -17,19 +18,27 @@ def build_report() -> dict:
     records = []
     for item in review["records"]:
         for sku in item["exact_skus"]:
+            normalized = normalize_terminal_aa(sku)
             records.append(
                 {
                     "exact_sku": sku,
+                    "terminal_suffix_normalization": normalized,
                     "pdf_sha256": item["pdf_sha256"],
                     "label_model_raw": item["model_token_raw"],
                     "epa_pattern_raw": "RF23D*9600**",
-                    "diagnostic": positional_diagnostic(
+                    "full_sku_diagnostic": positional_diagnostic(
                         "RF23D*9600**", sku, dataset_id="p5st-her9", metadata_sha256=metadata_hash
+                    ),
+                    "normalized_identifier_diagnostic": positional_diagnostic(
+                        "RF23D*9600**",
+                        normalized["normalized_identifier"],
+                        dataset_id="p5st-her9",
+                        metadata_sha256=metadata_hash,
                     ),
                 }
             )
     return {
-        "contract": "G2_MODEL_DIAGNOSTIC_SOURCE_OBSERVATION_ONLY_V1",
+        "contract": "G2_MODEL_DIAGNOSTIC_SOURCE_OBSERVATION_ONLY_V2",
         "identity_state": "NOT_EVALUATED",
         "correction_state": "NOT_APPLIED",
         "records": records,
