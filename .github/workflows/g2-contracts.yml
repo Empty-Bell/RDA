@@ -8,8 +8,10 @@ on:
       - 'src/regaudit/normalization.py'
       - 'scripts/g2_normalized.py'
       - 'scripts/g2_label_plan.py'
+      - 'scripts/g2_label_selection.py'
       - 'checks/g2/test_normalized_pdp.py'
       - 'checks/g2/test_label_plan.py'
+      - 'checks/g2/test_label_selection.py'
       - 'checks/g2/run_contracts.py'
       - '.github/workflows/g2-contracts.yml'
 
