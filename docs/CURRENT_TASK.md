@@ -181,11 +181,17 @@ on every next-step prompt. Same-task model changes should continue existing work
   contract CI run 35226584964 PASSed at debd8e4. Only verified PDP SKUs enter the
   feed; a pattern diagnostic runs only after its Current Index and refrigerator
   rows match on PD_ID, brand, model pattern and CB identifier. This remains a
-  candidate-only result. See G2_REFRIGERATOR_PATTERN_BRIDGE.md. Next: integrate
-  this contract into one bounded live refrigerator execution, preserving the
-  same-run target and EPA raw evidence before any candidate projection.
+  candidate-only result. See G2_REFRIGERATOR_PATTERN_BRIDGE.md. It is now
+  integrated in one bounded live refrigerator execution: hosted run 35227238209
+  PASSed at f2efd97 on ubuntu-24.04 in 3m33s. The run verified PDP targets,
+  captured the complete Samsung Current Model Index snapshot under the same UUID,
+  replayed raw EPA evidence and wrote the target feed/candidate projection into
+  the pilot artifact. Artifact `g2-pilot-35227238209-1` has GitHub digest
+  `e83145ee8aaa9297db0dc4faffc656b5fe401a1cbf3f385882699dc3ee4d7021`.
   Assessment remains disabled until collection definitions and coverage are
-  complete. Recommended model: Terra medium.
+  complete. Next: same-run p5st-her9 raw-row capture for compatible pattern
+  candidates, then apply the existing four-key bridge to those candidates only.
+  Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
