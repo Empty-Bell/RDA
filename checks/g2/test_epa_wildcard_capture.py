@@ -7,10 +7,37 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from g2_epa_wildcard_capture import project_source, replay_capture, source_record
+from g2_epa_wildcard_capture import (
+    positional_diagnostic,
+    project_source,
+    replay_capture,
+    source_record,
+)
 
 
 class EpaWildcardCaptureTests(unittest.TestCase):
+    def test_positional_diagnostic_is_provenance_bound_and_non_identity(self):
+        kwargs = {"dataset_id": "p5st-her9", "metadata_sha256": "a" * 64}
+        self.assertEqual(
+            positional_diagnostic("RF23D*9600**", "RF23DB9600QL", **kwargs)["diagnostic"],
+            "POSITIONAL_COMPATIBLE_DIAGNOSTIC_ONLY",
+        )
+        self.assertEqual(
+            positional_diagnostic("RF23D*9600**", "RF23DB9600QLAA", **kwargs)["diagnostic"],
+            "WITHHELD_LENGTH_MISMATCH",
+        )
+        self.assertEqual(
+            positional_diagnostic("RF23D*9600**", "RF23D89600QL", **kwargs)["diagnostic"],
+            "POSITIONAL_INCOMPATIBLE_DIAGNOSTIC_ONLY",
+        )
+        self.assertEqual(
+            positional_diagnostic("ABC##", "ABC/01", **kwargs)["diagnostic"],
+            "WITHHELD_UNSUPPORTED_SYNTAX",
+        )
+        self.assertEqual(
+            positional_diagnostic("ABC##", "ABC01", **kwargs)["identity_state"], "NOT_EVALUATED"
+        )
+
     def test_html_shell_does_not_establish_product_observation(self):
         self.assertEqual(
             project_source("refrigerator-record-2839420", b"<div id='main'></div>")[

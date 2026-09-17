@@ -7,6 +7,46 @@ from datetime import datetime, timezone
 from pathlib import Path
 import urllib.request
 import urllib.error
+import re
+
+HEX64 = re.compile(r"[0-9a-f]{64}")
+
+
+def positional_diagnostic(
+    pattern: str, target: str, *, dataset_id: str, metadata_sha256: str
+) -> dict:
+    """Offline dataset-scoped diagnostic; never establishes identity or certification."""
+    if (
+        dataset_id != "p5st-her9"
+        or not isinstance(metadata_sha256, str)
+        or not HEX64.fullmatch(metadata_sha256)
+    ):
+        raise ValueError("Dataset grammar provenance is invalid")
+    result = {
+        "pattern_raw": pattern,
+        "target_raw": target,
+        "dataset_id": dataset_id,
+        "identity_state": "NOT_EVALUATED",
+        "correction_state": "NOT_APPLIED",
+    }
+    if not re.fullmatch(r"[A-Z0-9*#]+", pattern) or not re.fullmatch(r"[A-Z0-9]+", target):
+        result["diagnostic"] = "WITHHELD_UNSUPPORTED_SYNTAX"
+        return result
+    if len(pattern) != len(target):
+        result["diagnostic"] = "WITHHELD_LENGTH_MISMATCH"
+        return result
+    for expected, actual in zip(pattern, target):
+        if expected == "*" and not ("A" <= actual <= "Z"):
+            result["diagnostic"] = "POSITIONAL_INCOMPATIBLE_DIAGNOSTIC_ONLY"
+            return result
+        if expected == "#" and not actual.isdigit():
+            result["diagnostic"] = "POSITIONAL_INCOMPATIBLE_DIAGNOSTIC_ONLY"
+            return result
+        if expected not in "*#" and expected != actual:
+            result["diagnostic"] = "POSITIONAL_INCOMPATIBLE_DIAGNOSTIC_ONLY"
+            return result
+    result["diagnostic"] = "POSITIONAL_COMPATIBLE_DIAGNOSTIC_ONLY"
+    return result
 
 
 SOURCES = {
