@@ -51,6 +51,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   recorded only when the newly collected exact-SKU PDF hash and reviewed detection
   IDs match. Assessment, comparison and EPA matching remain disabled. See
   G2_CORPUS_REVIEW.md and g2-label-corpus-replay.json.
+- Live observation-summary checkpoint: run 35180415335 at 4f505fb PASSed on
+  ubuntu-24.04. The checkpoint now exposes one review-bound result per collected
+  label document (SKU, document index, PDF hash, observation state and reason) and
+  `VALUE`/`NOT_OBSERVED` counts without producing an assessment. Artifact 10479947693
+  ZIP digest: 79e5514b656a16529b149974ffa77d1318ea386eb3b830a3eceb7a6f7b0fd4ec.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

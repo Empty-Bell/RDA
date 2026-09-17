@@ -56,6 +56,12 @@ records `NOT_OBSERVED` while preserving raw source evidence. Artifact
 `bffd5d342f7a2f2f930f9a4f126562632b8fc99d217bd2832bd2e9c4eb9dc9a8`.
 Assessments, comparison and EPA matching remain disabled.
 
+The structured checkpoint summary was added and verified by the next hosted run
+35180415335 at 4f505fb. It records one row per collected label document with exact
+SKU, source-document index, PDF SHA256, observation state and selection reason,
+plus `VALUE`/`NOT_OBSERVED` counts. The preserved artifact is 10479947693 with ZIP
+digest `79e5514b656a16529b149974ffa77d1318ea386eb3b830a3eceb7a6f7b0fd4ec`.
+
 Remaining work: replay every saved candidate against the selector on hosted
 Ubuntu. Capacity, wildcard identity, OCR corrections and regulatory comparisons
 remain open. This review does not close G2.
