@@ -348,6 +348,7 @@ def main():
                 "exact_sku": sku,
                 "status": "VERIFIED_EXACT_IDENTITY",
                 "bridge": {"url": bridge["url"], "sha256": bridge_hash},
+                "pdp_facts_raw": parsed_pdp,
             }
         ]
         samples.extend(
@@ -395,7 +396,25 @@ def main():
                     visual_snapshots[result["exact_sku"]] = json.loads(
                         Path(entry["path"]).read_bytes()
                     )
-        publication_points = collect_publication_points(cards, samples, visual_snapshots)
+        # Keep direct PF/Bridge declarations distinct from the three visual points.
+        # These values can later be collected without a browser, but they do not by
+        # themselves assert that a logo or a rendered table was visible.
+        source_declarations = {
+            record["exact_sku"]: {
+                "plp_energy_star_flag_raw": record.get("plp_energy_star_claim_raw"),
+            }
+            for record in parsed.get("records", [])
+            if isinstance(record.get("exact_sku"), str)
+        }
+        for result in samples:
+            declaration = source_declarations.setdefault(result["exact_sku"], {})
+            facts = result.get("pdp_facts_raw")
+            declaration["pdp_energy_star_spec_rows_raw"] = (
+                facts.get("energy_star_spec_claim_raw", []) if isinstance(facts, dict) else []
+            )
+        publication_points = collect_publication_points(
+            cards, samples, visual_snapshots, source_declarations
+        )
         (out / "energy-star-publication-points.json").write_text(
             dumps(publication_points), encoding="utf-8"
         )

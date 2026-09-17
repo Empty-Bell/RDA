@@ -149,10 +149,15 @@ def claim_facts(snapshot, target, listing, specs):
 DOM_SNAPSHOT = r"""() => {
   const visible = e => !!e.getClientRects().length && getComputedStyle(e).visibility !== 'hidden';
   const energy = /energy[\s_-]*star/i;
-  const candidates = Array.from(document.querySelectorAll('img,[aria-label],p,span,li'))
+  // Samsung supplied one PDP selector.  Keep the stable structure, rather than
+  // the deployment-specific class suffix or absolute XPath:
+  // #leftColumnInMainContent > ...Gallery_energyStarContainer__*... > img
+  const pdpLogoSelector = '#leftColumnInMainContent [class*="Gallery_energyStarContainer"] img[src*="energy-star-logo-pdp"]';
+  const candidates = Array.from(document.querySelectorAll(pdpLogoSelector))
     .filter(visible).map(e => ({tag:e.tagName, text:(e.children.length ? '' : e.textContent || '').trim(),
       alt:e.getAttribute('alt'), label:e.getAttribute('aria-label'),
       ancestors:Array.from((function*(){let p=e;for(let i=0;p && i<5;i++,p=p.parentElement) yield {tag:p.tagName,cls:p.className};})()),
+      selector_contract:'PDP_ENERGY_STAR_GALLERY_IMAGE_V1', selector:pdpLogoSelector,
       product_surface:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? 'CURRENT_GALLERY' : e.closest('.q6b6RelationContainer') ? 'BUY_CONFIGURATOR_RELATION' : null,
       surface_count:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? document.querySelectorAll('[class*="Gallery_outerContainer__"]').length : e.closest('.q6b6RelationContainer') ? document.querySelectorAll('.q6b6RelationContainer').length : 0,
       src:e.tagName === 'IMG' ? e.getAttribute('src') : null}))
@@ -188,6 +193,7 @@ DOM_SNAPSHOT = r"""() => {
     ? 'SUPPORTED_PRIMARY_SURFACE_COMPLETE' : 'UNSUPPORTED_OR_AMBIGUOUS_PRIMARY_SURFACE';
   return {headings:Array.from(document.querySelectorAll('h1')).filter(visible).map(e => e.textContent.trim().slice(0,300)),
     product_jsonld:products, jsonld_parse_errors:errors, energy_candidates:candidates,
+    pdp_logo_selector_contract:'PDP_ENERGY_STAR_GALLERY_IMAGE_V1', pdp_logo_selector:pdpLogoSelector,
     primary_logo_inspection:primaryLogoInspection, visible_spec_energy_star_rows:specRows,
     spec_surface_inspection:specRoot && specRows.length ? 'SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE' : 'SPEC_TABLE_NOT_MOUNTED_OR_SCHEMA_UNSUPPORTED',
     observation_scope:'current mounted DOM; visible page candidates are not attributed to target SKU'};
@@ -196,12 +202,16 @@ DOM_SNAPSHOT = r"""() => {
 PLP_SNAPSHOT = r"""() => Array.from(document.querySelectorAll('.pd21-product-card__name')).map(e => {
   const card = e.closest('.pd21-product-card');
   const visible = x => !!x.getClientRects().length && getComputedStyle(x).visibility !== 'hidden';
-  const energy = /energy[\s_-]*star/i;
+  // Samsung supplied the product-card path.  This relative selector deliberately
+  // omits the card's nth-child position and absolute XPath, so each card is
+  // inspected independently even when the listing order changes.
+  const plpLogoSelector = '[class*="energy-star-label-wrap"] img[src*="energy-star-logo"]';
   return {sku:e.getAttribute('data-modelcode'), title:e.textContent.trim().slice(0,300),
     card_scope_found:!!card,
     logo_inspection:card ? 'SUPPORTED_CARD_COMPLETE' : 'UNSUPPORTED_CARD_SCOPE',
-    energy_candidates:card ? Array.from(card.querySelectorAll('img,[aria-label],span,p'))
+    plp_logo_selector_contract:'PLP_ENERGY_STAR_CARD_IMAGE_V1', plp_logo_selector:plpLogoSelector,
+    energy_candidates:card ? Array.from(card.querySelectorAll(plpLogoSelector))
       .filter(visible).map(x => ({tag:x.tagName, text:(x.children.length ? '' : x.textContent || '').trim().slice(0,400),
-        alt:x.getAttribute('alt'),label:x.getAttribute('aria-label'),src:x.tagName === 'IMG' ? x.getAttribute('src') : null}))
-      .filter(x => energy.test([x.text,x.alt,x.label,x.src].join(' '))).slice(0,10) : []};
+        alt:x.getAttribute('alt'),label:x.getAttribute('aria-label'),src:x.getAttribute('src'),
+        selector_contract:'PLP_ENERGY_STAR_CARD_IMAGE_V1',selector:plpLogoSelector})).slice(0,10) : []};
 })"""

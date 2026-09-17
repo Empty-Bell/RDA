@@ -216,6 +216,17 @@ on every next-step prompt. Same-task model changes should continue existing work
   actual observed example `ENERGY STAR® Certified | Yes`. Next: activate that
   tab in the hosted collector and review the resulting complete visible table.
   Recommended model: Terra medium.
+
+  User-provided PDP/PLP selector paths are now being hardened for the live
+  collector: retain the stable PDP `#leftColumnInMainContent`, gallery-label
+  class fragment and Energy Star image filename; retain the PLP card's
+  energy-star-label wrapper but never its ordinal card position or absolute
+  XPath.  Raw PF `energyStarFlg` and exact-SKU Bridge Spec rows are retained as
+  separate source declarations on each publication record. They do not replace
+  visual points or activate a rule. Next: verify this selector/declaration
+  contract on ubuntu-24.04 and then replace broad browser collection with
+  direct-source collection plus bounded template checks. Recommended model:
+  Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

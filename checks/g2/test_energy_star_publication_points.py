@@ -43,6 +43,23 @@ class PublicationPointTests(unittest.TestCase):
         self.assertEqual(result["records"][0]["pdp_logo"]["state"], UNKNOWN)
         self.assertEqual(result["records"][0]["pdp_spec_certification"]["state"], UNKNOWN)
 
+    def test_source_declarations_are_preserved_but_do_not_replace_visual_points(self):
+        declarations = {
+            "SKU": {
+                "plp_energy_star_flag_raw": "Y",
+                "pdp_energy_star_spec_rows_raw": [
+                    {"name": "ENERGY STAR Certified", "value": "Yes"}
+                ],
+            }
+        }
+        result = collect_publication_points(
+            [], [{"exact_sku": "SKU", "status": "VERIFIED_EXACT_IDENTITY"}], {}, declarations
+        )
+        record = result["records"][0]
+        self.assertEqual(record["source_declarations_raw"], declarations["SKU"])
+        self.assertEqual(record["pdp_logo"]["state"], UNKNOWN)
+        self.assertEqual(record["pdp_spec_certification"]["state"], UNKNOWN)
+
 
 if __name__ == "__main__":
     unittest.main()

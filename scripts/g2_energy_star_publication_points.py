@@ -67,18 +67,25 @@ def spec_certification_point(snapshot: dict[str, Any], exact_sku: str, identity_
 
 
 def collect_publication_points(
-    cards: list[dict[str, Any]], samples: list[dict[str, Any]], snapshots: dict[str, dict[str, Any]]
+    cards: list[dict[str, Any]], samples: list[dict[str, Any]], snapshots: dict[str, dict[str, Any]],
+    source_declarations: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
+    source_declarations = source_declarations or {}
     records = []
     for sample in samples:
         sku = sample["exact_sku"]
+        declaration = source_declarations.get(sku, {})
+        if not isinstance(declaration, dict):
+            raise ValueError("Publication source declaration must be keyed by exact SKU")
         snapshot = snapshots.get(sku)
         if not isinstance(snapshot, dict):
             unknown = _point(UNKNOWN, [], "No PDP visual snapshot was captured")
-            records.append({"exact_sku": sku, "plp_logo": plp_logo_point(cards, sku), "pdp_logo": unknown, "pdp_spec_certification": unknown})
+            records.append({"exact_sku": sku, "source_declarations_raw": declaration,
+                            "plp_logo": plp_logo_point(cards, sku), "pdp_logo": unknown, "pdp_spec_certification": unknown})
             continue
         records.append({
             "exact_sku": sku,
+            "source_declarations_raw": declaration,
             "plp_logo": plp_logo_point(cards, sku),
             "pdp_logo": pdp_logo_point(snapshot, sku, sample.get("status", "FAILED")),
             "pdp_spec_certification": spec_certification_point(snapshot, sku, sample.get("status", "FAILED")),
@@ -87,4 +94,4 @@ def collect_publication_points(
     for record in records:
         for name in ("plp_logo", "pdp_logo", "pdp_spec_certification"):
             states[record[name]["state"]] += 1
-    return {"scope": "three independent observed Samsung publication points; no rule evaluation", "records": records, "states": states}
+    return {"scope": "three independent observed Samsung publication points plus separate raw source declarations; no rule evaluation", "records": records, "states": states}
