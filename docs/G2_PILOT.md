@@ -1,6 +1,14 @@
 # G2 refrigerator observational pilot
 
-Status: implementation checkpoint, G2 RUNNING; no G2a–e acceptance yet.
+Status: first observational checkpoint PASS, G2 RUNNING; no G2a–e acceptance yet.
+Hosted run 35173368182, tested code 59d973f, attempt 1, job 105049619026.
+Listing snapshot: 41 groups / 75 exact SKUs; selected RF29DB9900QDAA PDP and
+original EnergyGuide; complete observed Samsung-brand EPA scan: 101 rows.
+93 evidence records/file hashes verified after downloading the artifact. Bundle
+execution remains PARTIAL and assessments NOT_EVALUATED. Population/report SKU
+sets match; mixed-run mutation rejected. See docs/evidence/g2-pilot-recon.json
+for checkpoint, ZIP hash, expiry and limited-scope acceptance. These observed
+counts are a snapshot, not production constants.
 The user authorized Phase 2 after G1 PASS. This first increment reuses the tested
 source_recon and epa_recon collectors; runtime/model costs are unchanged and
 there are no LLM/API inference calls.

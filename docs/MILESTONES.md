@@ -53,3 +53,9 @@ DECISIONS.md의 D01–D12는 전부 OPEN이다. 관측 사실은 이미 수집�
 
 현재 근거: PHASE_STATUS.md, SOURCE_COVERAGE.md, G0_REVIEW.md,
 APPLICABILITY_EVIDENCE.md와 docs/evidence의 hosted 기록.
+
+G2 첫 관측 checkpoint: hosted run 35173368182 PASS. 목록 41그룹/75 SKU를
+제품 레코드로 연결하고 RF29DB9900QDAA PDP·원본 라벨 1건과 EPA 브랜드 조회
+101행을 보존했다. 증거 93개 hash·run 참조와 보고서 SKU 집합을 검증했다.
+현재 PARTIAL/NOT_EVALUATED이며, 다음은 SKU별 PDP coverage/identity 검증과
+측정량·claim 정규화 계약이다. G2 전체 종료와 다른 군 확장은 아직 불가하다.
