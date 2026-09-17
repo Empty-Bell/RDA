@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scope": "G2 bounded refrigerator PDP identity collection expansion; no assessment",
+  "phase_gate": "NOT_EVALUATED",
+  "commit": "d884b4c3a6a7fc13ae004d0b25fcff7e3e6c759c",
+  "selection_contract": {
+    "maximum_pdp_attempts": 10,
+    "order": [
+      "existing EnergyGuide sample",
+      "one other representative",
+      "one variant",
+      "remaining exact SKUs in sorted order"
+    ],
+    "coverage_states": ["VERIFIED_EXACT_IDENTITY", "FAILED", "NOT_ATTEMPTED"],
+    "failure_behavior": "Any selected FAILED identity makes the pilot checkpoint fail; unattempted SKUs remain explicit coverage rows"
+  },
+  "local_regression": {
+    "tests": 37,
+    "status": "PASS"
+  },
+  "hosted_pilot": {
+    "run_id": 35175307189,
+    "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35175307189",
+    "job_id": 105055602446,
+    "runner": "ubuntu-24.04",
+    "job_conclusion": "success",
+    "artifact_id": 10477679289,
+    "artifact_name": "g2-pilot-35175307189-1",
+    "artifact_digest": "sha256:d9535dc851732635dd615aeb5c2d2ddcbad77e928c0bf4f7537378af894d0d2e",
+    "artifact_expires_at": "2026-10-01T02:43:32Z",
+    "validated_steps": [
+      "Population adapter regression",
+      "Collect and validate unevaluated pilot package",
+      "Preserve pilot and source evidence"
+    ]
+  },
+  "limitations": [
+    "A ten-SKU sample is not complete PDP population coverage",
+    "Only the original EnergyGuide label remains collected",
+    "No label-field selection, OCR correction, EPA SKU match, FTC comparison or compliance conclusion"
+  ]
+}

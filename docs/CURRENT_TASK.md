@@ -24,10 +24,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   35174846442 at bd19bfd passed on ubuntu-24.04, retaining five normalized PDP
   source channels with same-run bridge/raw/derived evidence references. See
   docs/evidence/g2-normalization-integration-recon.json.
-- Next: plan the bounded PDP-coverage expansion using the normalized fact evidence;
-  retain failed/unattempted coverage separately. Do not infer claim/certification
-  validity or OCR correction from normalization.
-  Do not infer claim/certification validity or OCR correction from normalization.
+- PDP coverage expansion checkpoint: run 35175307189 at d884b4c passed on hosted
+  ubuntu-24.04 with a deterministic maximum of ten PDP attempts. A selected
+  identity failure would fail the workflow; this result does not mean complete
+  population, label or EPA coverage. See
+  docs/evidence/g2-pdp-coverage-expansion-recon.json.
+- Next: retain source-backed EnergyGuide field/coordinate observations for the
+  expanded PDP set, fixture-first. Do not select canonical label values, correct
+  OCR, or infer claim/certification validity.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

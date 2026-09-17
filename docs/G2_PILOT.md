@@ -70,7 +70,7 @@ No rule or new issue code is approved by collection success.
 
 ## Per-SKU PDP increment
 
-The next pilot selects up to five population SKUs deterministically: existing
+The current pilot selects up to ten population SKUs deterministically: existing
 PDF sample, one other representative, one variant, then remaining sorted SKUs.
 The cap is a request budget, not a hardcoded population size or full coverage.
 Each additional SKU gets a fresh page in the shared desktop Chromium context.
@@ -103,3 +103,14 @@ Samples RF29DB9900QDAA, RF18A5101SR/AA (representative), RF18A5101MT/AA
 and population/coverage/report SKU sets verified; additional sample identity
 replayed from copied raw observations. See docs/evidence/g2-pdp-coverage-recon.json.
 These snapshot counts are not runtime constants; this does not close G2a.
+
+## Expanded bounded PDP coverage checkpoint
+
+The deterministic PDP budget increased from five to ten after normalized source
+observations were connected to typed PDP facts. Hosted run 35175307189 at
+d884b4c passed on an ubuntu-24.04 runner: all fixture regressions, collection,
+bundle/evidence validation and artifact preservation succeeded. The collector exits
+nonzero when any selected SKU has FAILED identity, so this success establishes no
+failure among the selected bounded sample. It does not establish full population
+coverage, label coverage beyond the original SKU, EPA certification matching or a
+regulatory outcome. See docs/evidence/g2-pdp-coverage-expansion-recon.json.

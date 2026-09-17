@@ -9,7 +9,9 @@ source observations with same-run bridge/raw/derived evidence references; no
 comparison or certification decision is enabled. The separate offline adapter gate
 35174728382 passed six fixture cases on Python 3.11 and 3.12. See
 docs/evidence/g2-normalization-integration-recon.json. Expanded PDP collection
-remains next work.
+is now bounded to ten deterministic SKUs: run 35175307189 / d884b4c passed on
+ubuntu-24.04 with no selected identity failure; full-population coverage and
+assessment remain next work. See docs/evidence/g2-pdp-coverage-expansion-recon.json.
 Phases 3–7: NOT_STARTED.
 No G2 gate is accepted yet; pilot collection success is not whole-SKU coverage or assessment PASS.
 Per-SKU PDP identity/coverage checkpoint PASS: run 35173796328 / code 21b621a.
