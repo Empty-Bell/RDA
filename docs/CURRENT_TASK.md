@@ -119,7 +119,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   PASSed at 6c43029 with 7 tests; artifact 10483914100 ZIP SHA256:
   23f308a90d76685e5206539a7f2fe65f568645394dbacb1464fc57c3125f259d. Next:
   review diagnostic outputs against the refrigerator corpus; no live matching or
-  assessment. Recommended model: Luna low.
+  assessment. This is now PASSed: hosted run 35195946960 applied the diagnostic
+  to 9 saved SKU observations. Artifact 10486160033 ZIP SHA256:
+  8b766e3c94b2e7bc557be6323fdfe52b877a0e6fc55ac7aa387d0c256ebfa20c. All raw
+  strings remain preserved and identity/correction states remain disabled. Next:
+  review corpus patterns for human tuning; recommended model Luna low.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

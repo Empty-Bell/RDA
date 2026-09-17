@@ -108,3 +108,9 @@ Live use, certification selection and suffix mappings require later review.
 Implementation checkpoint: hosted run 35191030514 at `6c43029` passed the seven
 source-capture/diagnostic tests on ubuntu-24.04. Artifact 10483914100 has ZIP
 digest `23f308a90d76685e5206539a7f2fe65f568645394dbacb1464fc57c3125f259d`.
+
+Corpus read-only checkpoint: run 35195946960 at `20ae644` applied the diagnostic
+to nine saved refrigerator SKU observations. The artifact is 10486160033 with
+ZIP digest `8b766e3c94b2e7bc557be6323fdfe52b877a0e6fc55ac7aa387d0c256ebfa20c`.
+The report retained all raw SKU/model strings; slash-containing full SKUs were
+withheld as unsupported syntax. No record received identity or correction state.
