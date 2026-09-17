@@ -1,0 +1,18 @@
+{
+  "scope": "Projection of actual hosted candidate records; not corrected OCR",
+  "run_id": "35176346751",
+  "pdf_sha256": "7a173cd4228415d307a7d17ccdf419db9879cecec103e1e83b1e38dbcf4298cf",
+  "candidates": {
+    "pdf_sha256": "7a173cd4228415d307a7d17ccdf419db9879cecec103e1e83b1e38dbcf4298cf",
+    "energy_candidates_raw": [
+      {"line_start": 20, "line_end": 23, "value_raw": "109", "unit_raw": "kWh", "matched_text": "109 kWh", "role": "ANNUAL_CAPTION_CONTEXT", "unit_association": "NEARBY_ORDER_CANDIDATE"},
+      {"line_start": 22, "line_end": 23, "value_raw": "585", "unit_raw": "kWh", "matched_text": "585 kWh", "role": "ANNUAL_CAPTION_CONTEXT", "unit_association": "ADJACENT_LINE_PAIR"}
+    ]
+  },
+  "layout": {
+    "pdf_sha256": "7a173cd4228415d307a7d17ccdf419db9879cecec103e1e83b1e38dbcf4298cf",
+    "annual_layout_candidates": [
+      {"page": 0, "caption_detection": 24, "caption_raw": "Estimated Yearly Electricity Use", "nearest_proposal_raw": {"distance_pdf_points": 40.0, "number_detection": 22, "unit_detection": 23, "value_raw": "585"}, "proposals_raw": [{"distance_pdf_points": 40.0, "number_detection": 22, "unit_detection": 23, "value_raw": "585"}]}
+    ]
+  }
+}

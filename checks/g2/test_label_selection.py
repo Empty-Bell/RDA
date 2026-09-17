@@ -17,9 +17,12 @@ class LabelSelectionTests(unittest.TestCase):
         spans = json.loads((ROOT / "tests/fixtures/energyguide-fields/refrigerator-layout.json").read_text(encoding="utf-8"))["spans"]
         self.candidates = label_candidates("\n".join(source["ocr_raw_texts"]), source["extraction_engine"], source["sha256"])
         self.layout = annual_layout_candidates(spans, source["sha256"])
+        # Supplied review context is a test boundary input, not expanded-corpus approval.
+        self.review = {"pdf_sha256": source["sha256"], "document_count": 1,
+                       "all_pages_reviewed": True, "us_panel_verified": True, "page": 0}
 
     def test_refrigerator_unique_annual_candidate_is_selected(self):
-        selected = select_annual_energy(self.candidates, self.layout)
+        selected = select_annual_energy(self.candidates, self.layout, self.review)
         self.assertEqual(selected["observation"]["state"], "VALUE")
         self.assertEqual(selected["observation"]["value"]["amount"], 700.0)
         self.assertEqual(selected["observation"]["value"]["unit"], "kWh/year")
@@ -27,13 +30,13 @@ class LabelSelectionTests(unittest.TestCase):
     def test_multiple_annual_candidates_remain_unobserved(self):
         candidates = copy.deepcopy(self.candidates)
         candidates["energy_candidates_raw"].append(copy.deepcopy(candidates["energy_candidates_raw"][0]))
-        selected = select_annual_energy(candidates, self.layout)
+        selected = select_annual_energy(candidates, self.layout, self.review)
         self.assertEqual(selected["observation"]["state"], "NOT_OBSERVED")
 
     def test_layout_disagreement_remains_unobserved(self):
         layout = copy.deepcopy(self.layout)
         layout["annual_layout_candidates"][0]["nearest_proposal_raw"]["value_raw"] = "701"
-        selected = select_annual_energy(self.candidates, layout)
+        selected = select_annual_energy(self.candidates, layout, self.review)
         self.assertEqual(selected["observation"]["state"], "NOT_OBSERVED")
 
     def test_pdf_provenance_mismatch_is_rejected(self):
@@ -41,3 +44,24 @@ class LabelSelectionTests(unittest.TestCase):
         layout["pdf_sha256"] = "0" * 64
         with self.assertRaisesRegex(ValueError, "provenance"):
             select_annual_energy(self.candidates, layout)
+
+    def test_without_panel_review_never_selects(self):
+        self.assertEqual(select_annual_energy(self.candidates, self.layout)["observation"]["state"], "NOT_OBSERVED")
+
+    def test_actual_rf22a4111_cost_candidate_contamination_is_not_selected(self):
+        source = json.loads((ROOT / "tests/fixtures/energyguide-fields/rf22a4111-selection-projection.json").read_text(encoding="utf-8"))
+        review = dict(self.review, pdf_sha256=source["pdf_sha256"])
+        result = select_annual_energy(source["candidates"], source["layout"], review)
+        self.assertEqual(result["observation"]["state"], "NOT_OBSERVED")
+
+    def test_nearest_of_multiple_proposals_never_selects(self):
+        layout = copy.deepcopy(self.layout)
+        layout["annual_layout_candidates"][0]["proposals_raw"].append({"value_raw": "701"})
+        self.assertEqual(select_annual_energy(self.candidates, layout, self.review)["observation"]["state"], "NOT_OBSERVED")
+
+    def test_review_must_cover_document_and_panel(self):
+        for field, value in (("document_count", 2), ("all_pages_reviewed", False),
+                             ("us_panel_verified", False), ("page", 1)):
+            review = dict(self.review, **{field: value})
+            with self.subTest(field=field):
+                self.assertEqual(select_annual_energy(self.candidates, self.layout, review)["observation"]["state"], "NOT_OBSERVED")

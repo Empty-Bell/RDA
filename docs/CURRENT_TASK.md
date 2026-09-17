@@ -44,6 +44,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   hosted Python 3.11/3.12. It selects only the unique 700 kWh refrigerator fixture
   candidate and leaves multiplicity, disagreement and provenance mismatch unobserved.
   It is not wired into live canonical facts pending saved-corpus review.
+- Expanded corpus downloaded via GitHub connector, ZIP verified, 166 evidence
+  hashes/20 facts validated. See G2_CORPUS_REVIEW.md. RF22A4111 cost 109 enters
+  annual text candidates alongside 585; selector abstains. Review gate/proposal
+  uniqueness checks strengthened after discovering omissions in the first selector.
+  Next: complete PDF-bound visual annotations and offline saved-corpus replay.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
