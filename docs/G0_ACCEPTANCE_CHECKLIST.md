@@ -25,7 +25,12 @@ Bounded controlled low-resolution/model-like ROI probes passed in run 3516483130
 energyguide-quality-recon.json. Color and grayscale/Otsu retries retain independent
 outputs; wildcard disagreement is never silently corrected. Naturally degraded
 source PDFs, the complete glyph/wrong-model matrix and approved corroboration
-semantics remain open. Next: EPA query/type/current-source contract.
+semantics remain open. Bounded EPA query/catalog/type/update extraction passed in
+run 35165687365 (nine datasets, 12 query tests); full source regression run
+35165687343 passed 177 tests and 12 source legs. See EPA_QUERY_SOURCE_CONTRACT.md
+and epa-query-recon.json. Declared query completeness is separate from full EPA
+coverage, type/market applicability, active-version exclusivity and current
+certification. D09 remains OPEN. Next: hosted runtime freeze and recovery contract.
 Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate

@@ -1,6 +1,6 @@
 # EPA query, type and update source contract
 
-Status: query discovery PASS in run 35165385059; catalog/fixture regression pending.
+Status: bounded query/catalog/type/update extraction PASS in run 35165687365.
 Phase 0 RUNNING; D09 remains OPEN.
 
 An anonymous, standard-library-only ubuntu-24.04 job probes each of the nine
@@ -77,3 +77,20 @@ require approved semantics. Current source advertisement is separately probed.
 The local editing Python failed TLS trust verification for api.us.socrata.com;
 no certificate-verification bypass was used. Catalog acceptance requires actual
 hosted evidence, where OS trust roots and network are the target environment.
+
+Final code 6c72dfd3cd5cfbd409456d15b82580619274292a passed nine EPA jobs with
+12 query tests in run 35165687365; full source run 35165687343 passed 177 tests
+and all 12 source legs on ubuntu-24.04 x64. The source workflow supplies OpenCV
+for the existing image-fixture test; the local full suite has one expected skip.
+Request body hashes, artifact ZIP hashes/expiry, metadata fingerprints, raw
+type/market values, literal query parameters and job IDs are retained in
+docs/evidence/epa-query-recon.json. Replay needs raw count/page responses as well
+as metadata projections; binary artifacts expire after 14 days.
+
+Catalog searches are relevance-ranked and return unrelated entries; do not treat
+returned entries as a complete product-family/version inventory. A null publication
+stage or result-set-size projection does not mean retired or complete. The configured
+dataset's official-domain advertisement is observed, while sole active version,
+deprecated-source routing and per-model certification currency remain OPEN.
+No full cross-brand snapshot, retail-SKU candidate matching or compliance decision
+was performed. Next bounded work: hosted dependency/model/Actions runtime freeze.

@@ -2,6 +2,15 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+EPA bounded query reconnaissance: complete literal Samsung-brand scans expose
+non-US market strings, missing UPC and distinct Notebook/Slate-Tablet, cooking,
+combo/laundry-center types. Fan 0 rows proves only that declared query's observed
+result, not hood nonapplicability or certification absence. Official-domain catalog
+advertisement and unchanged update metadata do not establish sole current version,
+active model certification or a transactionally atomic snapshot. Equality to a raw
+EPA model string with stars is not a wildcard/PDP match (D09/D11). Source projection,
+query boundaries and fixture evidence are documented in EPA_QUERY_SOURCE_CONTRACT.md.
+
 EnergyGuide quality reconnaissance: controlled 36/72-DPI renders of actual labels
 show digit substitution, missing model/annual captions and repeated-wildcard loss;
 3x model-like ROIs independently retain the observed original strings. Raw string

@@ -1,4 +1,14 @@
-# EPA source contracts — refrigerator, dishwasher, washer and TV datasets identified
+# EPA source contracts — all product-family discovery and bounded query observations
+
+The family notes below are chronological discovery snapshots; their earlier
+remaining-UNKNOWN counts are historical, not current coverage. All 11 product
+groups now have hosted metadata/generic-sample evidence for nine distinct datasets.
+Bounded Samsung literal-brand pagination and official-domain advertisement passed
+in run 35165687365, with full source regression 35165687343. See
+EPA_QUERY_SOURCE_CONTRACT.md and docs/evidence/epa-query-recon.json for observed
+types, markets, UPC omission, update metadata and error/empty-response boundaries.
+Per-retail-SKU matching, current certification and cross-version completeness remain
+NOT_EVALUATED. Catalog advertisement and a complete brand query never approve D09.
 
 Catalog reachability does not establish a certification match.
 Each of 11 families requires dataset ID/endpoint, brand/model/UPC, energy unit,

@@ -1,0 +1,3739 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35165687365",
+  "source_regression_run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35165687343",
+  "code_commit": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+  "status": "PASS",
+  "scope": "declared literal Samsung brand query, observed catalog/type/update boundaries",
+  "epa_query_tests": 12,
+  "full_suite_tests": 177,
+  "epa_jobs": 9,
+  "source_jobs": 12,
+  "candidate_absence": "NOT_EVALUATED",
+  "current_certification": "NOT_EVALUATED",
+  "certification_matching": "NOT_EVALUATED",
+  "us_market_applicability": "NOT_EVALUATED",
+  "phase_gate": "NOT_EVALUATED",
+  "jobs": [
+    {
+      "id": 105026135567,
+      "name": "epa (dishwasher)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135641,
+      "name": "epa (dryer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135702,
+      "name": "epa (monitor)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135714,
+      "name": "epa (refrigerator)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135718,
+      "name": "epa (range)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135721,
+      "name": "epa (washer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135724,
+      "name": "epa (tv)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135749,
+      "name": "epa (hood)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135788,
+      "name": "epa (computer)",
+      "conclusion": "success"
+    }
+  ],
+  "source_regression_jobs": [
+    {
+      "id": 105026135487,
+      "name": "recon (range)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135586,
+      "name": "recon (tv)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135602,
+      "name": "recon (cooktop)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135604,
+      "name": "recon (dishwasher)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135626,
+      "name": "recon (monitor)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135666,
+      "name": "recon (tablet)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135672,
+      "name": "recon (chromebook)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135680,
+      "name": "recon (hood)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135693,
+      "name": "recon (computer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135733,
+      "name": "recon (dryer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135762,
+      "name": "recon (washer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105026135809,
+      "name": "recon (refrigerator)",
+      "conclusion": "success"
+    }
+  ],
+  "catalog_entries": {
+    "m6gi-ng33": {
+      "id": "m6gi-ng33",
+      "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "bghd-e2wd": {
+      "id": "bghd-e2wd",
+      "name": "ENERGY STAR Certified Residential Clothes Washers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "acvd-5wvz": {
+      "id": "acvd-5wvz",
+      "name": "ENERGY STAR Certified Geothermal Heat Pumps",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "tzuf-wwcc": {
+      "id": "tzuf-wwcc",
+      "name": "Tax Credit Eligible ENERGY STAR Certified Air-Source Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "rfi2-nr6k": {
+      "id": "rfi2-nr6k",
+      "name": "Ovens",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "nw5s-r5ca": {
+      "id": "nw5s-r5ca",
+      "name": "ENERGY STAR Certified Commercial Griddles",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "p5st-her9": {
+      "id": "p5st-her9",
+      "name": "ENERGY STAR Certified Residential Refrigerators",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "vtsv-aq9u": {
+      "id": "vtsv-aq9u",
+      "name": "ENERGY STAR Certified Commercial Steam Cookers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "c8av-ccf7": {
+      "id": "c8av-ccf7",
+      "name": "ENERGY STAR Certified Commercial Ovens",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "t9u7-4d2j": {
+      "id": "t9u7-4d2j",
+      "name": "ENERGY STAR Certified Residential Clothes Dryers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "83eb-xbyy": {
+      "id": "83eb-xbyy",
+      "name": "ENERGY STAR Certified Heat Pumps",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "bfxp-wkhy": {
+      "id": "bfxp-wkhy",
+      "name": "Tax Credit Eligible ENERGY STAR Certified Central and Mini-Split Air Conditioners",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "8t9c-g3tn": {
+      "id": "8t9c-g3tn",
+      "name": "ENERGY STAR Certified Residential Freezers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "d36s-eh9f": {
+      "id": "d36s-eh9f",
+      "name": "ENERGY STAR Most Efficient Clothes Washers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "w7cv-9xjt": {
+      "id": "w7cv-9xjt",
+      "name": "ENERGY STAR Certified Air-Source Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "8ac2-2j4q": {
+      "id": "8ac2-2j4q",
+      "name": "ENERGY STAR Most Efficient Air-Source Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "8dv7-nngq": {
+      "id": "8dv7-nngq",
+      "name": "ENERGY STAR Certified Ventilating Fans",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "hgxv-ux9b": {
+      "id": "hgxv-ux9b",
+      "name": "ENERGY STAR Most Efficient Residential Refrigerators",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "edi8-b5vk": {
+      "id": "edi8-b5vk",
+      "name": "ENERGY STAR Certified Commercial Fryers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "4c82-7ysy": {
+      "id": "4c82-7ysy",
+      "name": "ENERGY STAR Most Efficient Geothermal Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "6rww-hpns": {
+      "id": "6rww-hpns",
+      "name": "ENERGY STAR Certified Boilers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "8wj2-sec8": {
+      "id": "8wj2-sec8",
+      "name": "ENERGY STAR Model Index",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "9g6r-cpdt": {
+      "id": "9g6r-cpdt",
+      "name": "ENERGY STAR Certified Commercial Clothes Washers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "nt9t-yxu3": {
+      "id": "nt9t-yxu3",
+      "name": "ENERGY STAR Certified Commercial Electric Cooktops",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "7p2p-wkbf": {
+      "id": "7p2p-wkbf",
+      "name": "ENERGY STAR Certified Smart Thermostats",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "xmq6-bm79": {
+      "id": "xmq6-bm79",
+      "name": "ENERGY STAR Certified Commercial Water Heaters",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "ga9m-7gtz": {
+      "id": "ga9m-7gtz",
+      "name": "ENERGY STAR Most Efficient Ventilating Fans",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "teze-bgsr": {
+      "id": "teze-bgsr",
+      "name": "ENERGY STAR Most Efficient Residential Freezers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "t2v6-g4nf": {
+      "id": "t2v6-g4nf",
+      "name": "ENERGY STAR Certified Imaging Equipment",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "ty3c-qr7r": {
+      "id": "ty3c-qr7r",
+      "name": "Grills",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "v7jr-74b4": {
+      "id": "v7jr-74b4",
+      "name": "ENERGY STAR Certified Heat Pump Water Heaters",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "q8py-6w3f": {
+      "id": "q8py-6w3f",
+      "name": "ENERGY STAR Certified Residential Dishwashers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "xgv7-5e6b": {
+      "id": "xgv7-5e6b",
+      "name": "ENERGY STAR Most Efficient Clothes Dryers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "wyw6-sr4d": {
+      "id": "wyw6-sr4d",
+      "name": "ENERGY STAR Certified Commercial Hot Food Holding Cabinet",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "butk-3ni4": {
+      "id": "butk-3ni4",
+      "name": "ENERGY STAR Most Efficient Dishwashers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "i97v-e8au": {
+      "id": "i97v-e8au",
+      "name": "ENERGY STAR Certified Furnaces",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "pbpq-swnu": {
+      "id": "pbpq-swnu",
+      "name": "ENERGY STAR Certified Water Heaters",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "fcwx-wu8j": {
+      "id": "fcwx-wu8j",
+      "name": "Steam Cookers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "8edu-y555": {
+      "id": "8edu-y555",
+      "name": "ENERGY STAR Certified Products  UPC Codes",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "pk8q-dim8": {
+      "id": "pk8q-dim8",
+      "name": "ENERGY STAR Certified Commercial Dishwashers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "9jai-gs6t": {
+      "id": "9jai-gs6t",
+      "name": "ENERGY STAR Certified Res-Combo-Washer-Dryer",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "3m3x-a2hy": {
+      "id": "3m3x-a2hy",
+      "name": "ENERGY STAR Certified Ducted Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "e4mh-a2u3": {
+      "id": "e4mh-a2u3",
+      "name": "ENERGY STAR Certified Light Commercial HVAC",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "qsc8-7f7k": {
+      "id": "qsc8-7f7k",
+      "name": "ENERGY STAR Certified Water Coolers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "89xy-ifdv": {
+      "id": "89xy-ifdv",
+      "name": "Fryers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "5xn2-dv4h": {
+      "id": "5xn2-dv4h",
+      "name": "ENERGY STAR Certified Room Air Conditioners",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "mgiu-hu4z": {
+      "id": "mgiu-hu4z",
+      "name": "ENERGY STAR Certified Dehumidifiers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "g242-ysjw": {
+      "id": "g242-ysjw",
+      "name": "ENERGY STAR Certified Laboratory Grade Refrigerators and Freezers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "m8cf-pkii": {
+      "id": "m8cf-pkii",
+      "name": "ENERGY STAR Certified Pool Pumps",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "nak5-fsjf": {
+      "id": "nak5-fsjf",
+      "name": "ENERGY STAR Certified Commercial Ice Machines",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "ej6d-wb4c": {
+      "id": "ej6d-wb4c",
+      "name": "ENERGY STAR Certified Light Fixtures - Downlights",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "akti-mt5s": {
+      "id": "akti-mt5s",
+      "name": "ENERGY STAR Certified Mini-Split Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "6xa2-5c2t": {
+      "id": "6xa2-5c2t",
+      "name": "ENERGY STAR Certified Commercial Coffee Brewers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "bpzy-9tg8": {
+      "id": "bpzy-9tg8",
+      "name": "ENERGY STAR Certified Telephones",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "3393-mxju": {
+      "id": "3393-mxju",
+      "name": "ENERGY STAR Certified Commercial Boilers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "qaxz-ikcb": {
+      "id": "qaxz-ikcb",
+      "name": "ENERGY STAR Certified Storm Windows",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "2te3-nmxp": {
+      "id": "2te3-nmxp",
+      "name": "ENERGY STAR Certified Ceiling Fans",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "tyr2-hhgu": {
+      "id": "tyr2-hhgu",
+      "name": "ENERGY STAR Certified Central Air Conditioners",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "wati-2tfp": {
+      "id": "wati-2tfp",
+      "name": "ENERGY STAR Certified Commercial Refrigerators and Freezers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "j624-u8ux": {
+      "id": "j624-u8ux",
+      "name": "ENERGY STAR Certified Vending Machines",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "fbwy-abps": {
+      "id": "fbwy-abps",
+      "name": "ENERGY STAR Most Efficient Mini-Split Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "kphf-22jd": {
+      "id": "kphf-22jd",
+      "name": "ENERGY STAR Certified Insulation",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "6sbi-yuk2": {
+      "id": "6sbi-yuk2",
+      "name": "ENERGY STAR Certified Gas (Storage and Tankless) Water Heaters",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "b88x-mifp": {
+      "id": "b88x-mifp",
+      "name": "ENERGY STAR Most Efficient Dehumidifiers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "qj64-j3bn": {
+      "id": "qj64-j3bn",
+      "name": "ENERGY STAR Certified Mini-Split Air Conditioners",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "a8vq-hx7n": {
+      "id": "a8vq-hx7n",
+      "name": "ENERGY STAR Connected Ceiling Fans",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "ufj6-xsix": {
+      "id": "ufj6-xsix",
+      "name": "ENERGY STAR Most Efficient Ceiling Fans",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "dsuw-rfiv": {
+      "id": "dsuw-rfiv",
+      "name": "ENERGY STAR Most Efficient Ducted Heat Pumps",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "qbg3-d468": {
+      "id": "qbg3-d468",
+      "name": "ENERGY STAR Certified Displays",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "xs5y-vwyz": {
+      "id": "xs5y-vwyz",
+      "name": "ENERGY STAR Certified Solar Water Heaters",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "gaa3-swy6": {
+      "id": "gaa3-swy6",
+      "name": "ENERGY STAR Certified Room Air Cleaners V3.0",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "5jwe-c8xm": {
+      "id": "5jwe-c8xm",
+      "name": "ENERGY STAR Certified Electric Vehicle Supply Equipment - AC-Output",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "irdz-jn2s": {
+      "id": "irdz-jn2s",
+      "name": "ENERGY STAR Most Efficient Room Air Conditioners",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "pd96-rr3d": {
+      "id": "pd96-rr3d",
+      "name": "ENERGY STAR Certified Televisions",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "5tzz-d4ju": {
+      "id": "5tzz-d4ju",
+      "name": "ENERGY STAR Connected Light Fixtures",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "x6va-j82u": {
+      "id": "x6va-j82u",
+      "name": "ENERGY STAR Most Efficient Room Air Cleaners",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "bpgg-26hr": {
+      "id": "bpgg-26hr",
+      "name": "Hot Food Holding",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "u2ib-w3dm": {
+      "id": "u2ib-w3dm",
+      "name": "Refrig - Freezers",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "msj5-kqfv": {
+      "id": "msj5-kqfv",
+      "name": "ENERGY STAR Connected Light Bulbs",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "a437-vvgv": {
+      "id": "a437-vvgv",
+      "name": "ENERGY STAR Most Efficient Displays",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "ifxy-2uty": {
+      "id": "ifxy-2uty",
+      "name": "ENERGY STAR Certified Uninterruptible Power Supplies",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "4d38-uxse": {
+      "id": "4d38-uxse",
+      "name": "Ice Machines",
+      "type": "filter",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "wjtt-3zwd": {
+      "id": "wjtt-3zwd",
+      "name": "ENERGY STAR Certified Medical Imaging Equipment",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "rxdj-2c88": {
+      "id": "rxdj-2c88",
+      "name": "ENERGY STAR Certified Computers V9.0",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "n8cx-m62r": {
+      "id": "n8cx-m62r",
+      "name": "ENERGY STAR Certified Large Network Equipment",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "qifb-fcj2": {
+      "id": "qifb-fcj2",
+      "name": "ENERGY STAR Certified Enterprise Servers",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "3uec-2gqf": {
+      "id": "3uec-2gqf",
+      "name": "ENERGY STAR Certified Data Center Storage - Block I/O",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "t3a6-mkxz": {
+      "id": "t3a6-mkxz",
+      "name": "ENERGY STAR Certified Electric Vehicle Supply Equipment - DC-Output",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "put7-uu67": {
+      "id": "put7-uu67",
+      "name": "ENERGY STAR Certified Data Center Storage - File I/O",
+      "type": "dataset",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    },
+    "me9a-5y43": {
+      "id": "me9a-5y43",
+      "name": "ENERGY STAR Developer Resources",
+      "type": "story",
+      "domain": "data.energystar.gov",
+      "publication_stage": null
+    }
+  },
+  "datasets": {
+    "m6gi-ng33": {
+      "artifact": {
+        "id": 10475340067,
+        "name": "epa-query-range-35165687365-1",
+        "expires_at": "2026-10-01T00:14:13Z"
+      },
+      "artifact_zip_sha256": "00c7ff39a48f993927179628195c027c332859835842c9892429c219b2e8cc13",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "m6gi-ng33",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:14:07.149137+00:00",
+        "source_routes": [
+          "range",
+          "cooktop"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Residential+Electric+Cooking+Products&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "8d36a4583106eac69de3efa2a09460ccb785a61eb0238d5800a7a39c132d8159",
+            "size_bytes": 1700811
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/m6gi-ng33.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "99456d0ea0dc5b7618ca110213c29fd921a2eaf7d5a3a6ab8875a177c43bb4fe",
+            "size_bytes": 70158
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "c61a54f2cb3d70897e1ef3b4e1e198997f4716ac0968172d414b5f5bb5f8f960",
+            "size_bytes": 4169
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "5b98ced9b1beff3967fad14d68c112d14dcca517d250158966fbd612e45750a8",
+            "size_bytes": 21
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cproduct_type%2Cinstallation_type%2Ccontrol_type%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "9eb9b74dbc80f945d39271b90dd2b003635830738481d32a7d2057af6d4bad18",
+            "size_bytes": 7835
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "5b98ced9b1beff3967fad14d68c112d14dcca517d250158966fbd612e45750a8",
+            "size_bytes": 21
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27NSI6D%2A99%2A%2A%2A%2A%2A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27NSI6D%2A99%2A%2A%2A%2A%2A%2A%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cproduct_type%2Cinstallation_type%2Ccontrol_type%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "503ddb8a7ad80cc9908f4146df7ba2aa27ec6b1a7a0c8575790637c537947789",
+            "size_bytes": 398
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27NSI6D%2A99%2A%2A%2A%2A%2A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/m6gi-ng33.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/m6gi-ng33.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "99456d0ea0dc5b7618ca110213c29fd921a2eaf7d5a3a6ab8875a177c43bb4fe",
+            "size_bytes": 70158
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "m6gi-ng33",
+            "bghd-e2wd",
+            "acvd-5wvz",
+            "tzuf-wwcc",
+            "rfi2-nr6k",
+            "nw5s-r5ca",
+            "p5st-her9",
+            "vtsv-aq9u",
+            "c8av-ccf7",
+            "t9u7-4d2j",
+            "83eb-xbyy",
+            "bfxp-wkhy",
+            "8t9c-g3tn",
+            "d36s-eh9f",
+            "w7cv-9xjt",
+            "8ac2-2j4q",
+            "8dv7-nngq",
+            "hgxv-ux9b",
+            "edi8-b5vk",
+            "4c82-7ysy",
+            "6rww-hpns",
+            "8wj2-sec8",
+            "9g6r-cpdt",
+            "nt9t-yxu3",
+            "7p2p-wkbf",
+            "xmq6-bm79",
+            "ga9m-7gtz",
+            "teze-bgsr",
+            "t2v6-g4nf",
+            "ty3c-qr7r",
+            "v7jr-74b4",
+            "q8py-6w3f",
+            "xgv7-5e6b",
+            "wyw6-sr4d",
+            "butk-3ni4",
+            "i97v-e8au",
+            "pbpq-swnu",
+            "fcwx-wu8j",
+            "8edu-y555",
+            "pk8q-dim8",
+            "9jai-gs6t",
+            "3m3x-a2hy",
+            "e4mh-a2u3",
+            "qsc8-7f7k",
+            "89xy-ifdv",
+            "5xn2-dv4h",
+            "mgiu-hu4z",
+            "g242-ysjw",
+            "m8cf-pkii",
+            "nak5-fsjf",
+            "ej6d-wb4c",
+            "akti-mt5s",
+            "6xa2-5c2t",
+            "bpzy-9tg8",
+            "3393-mxju",
+            "qaxz-ikcb",
+            "2te3-nmxp",
+            "tyr2-hhgu",
+            "wati-2tfp",
+            "j624-u8ux",
+            "fbwy-abps",
+            "kphf-22jd",
+            "6sbi-yuk2",
+            "b88x-mifp",
+            "qj64-j3bn",
+            "a8vq-hx7n",
+            "ufj6-xsix",
+            "dsuw-rfiv",
+            "qbg3-d468",
+            "xs5y-vwyz",
+            "gaa3-swy6",
+            "5jwe-c8xm",
+            "irdz-jn2s",
+            "pd96-rr3d",
+            "5tzz-d4ju",
+            "x6va-j82u",
+            "bpgg-26hr",
+            "u2ib-w3dm",
+            "msj5-kqfv",
+            "a437-vvgv",
+            "ifxy-2uty",
+            "4d38-uxse",
+            "wjtt-3zwd",
+            "rxdj-2c88",
+            "n8cx-m62r",
+            "qifb-fcj2",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 23,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "NSI6D*99******",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'NSI6D*99******'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "product_type": [
+            "Cooktop",
+            "Range"
+          ],
+          "installation_type": [
+            "Built-in/Slide-in",
+            "Freestanding"
+          ],
+          "control_type": [
+            "Knobs",
+            "Touch Control"
+          ],
+          "markets": [
+            "United States, Canada"
+          ]
+        },
+        "omitted_upc_rows": 18,
+        "literal_wildcard_rows": 23,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789564327,
+          "viewLastModified": 1739912245,
+          "publicationDate": 1697732785
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "m6gi-ng33",
+        "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+        "rowsUpdatedAt": 1789564327,
+        "viewLastModified": 1739912245,
+        "publicationDate": 1697732785,
+        "schema_sha256": "102f94e4589dd1100184ffd26927d02d336c2dfee674499c13ca6b5eb3c289cc",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "product_type",
+            "name": "Product Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "installation_type",
+            "name": "Installation Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "control_type",
+            "name": "Control Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_certified",
+            "name": " Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "m6gi-ng33",
+        "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+        "rowsUpdatedAt": 1789564327,
+        "viewLastModified": 1739912245,
+        "publicationDate": 1697732785,
+        "schema_sha256": "102f94e4589dd1100184ffd26927d02d336c2dfee674499c13ca6b5eb3c289cc"
+      }
+    },
+    "p5st-her9": {
+      "artifact": {
+        "id": 10475235781,
+        "name": "epa-query-refrigerator-35165687365-1",
+        "expires_at": "2026-10-01T00:13:58Z"
+      },
+      "artifact_zip_sha256": "beeb19ee067a2a7a643aa6e6a0ea2f610551c70c9c9d54fea3a1fad6113a966e",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "p5st-her9",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:13:52.272877+00:00",
+        "source_routes": [
+          "refrigerator"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Residential+Refrigerators&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "fa2ceca3d986dfc775356adcd895e3f1d495f29e3f8dbb728b5dd54eee5b4a06",
+            "size_bytes": 1700812
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/p5st-her9.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "d5aacd0fd24705e7d0a61d9fadd7a9835dd7261c6d23557f754c5b2a424029a6",
+            "size_bytes": 54466
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "600c5a0fda0e76acd498f398bfd7618b3ff7d2edb048cdf317748825bd0afc63",
+            "size_bytes": 2922
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "d347dd5994ff7ad4eed54dc4993387e13672e265f14343cdb073a27e18a4565a",
+            "size_bytes": 22
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Ctype%2Cdefrost_type%2Crefrigerant_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "113f975e21d577ea37b2a801a59accd6c90b6c1a30b75e9dffb271fc1887ed7c",
+            "size_bytes": 35097
+          },
+          {
+            "name": "brand-page-1",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Ctype%2Cdefrost_type%2Crefrigerant_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "ce5da2a2df051c4ec0a9edf11e93abb46340dbbe256a848e706f73d86c5721b8",
+            "size_bytes": 317
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "d347dd5994ff7ad4eed54dc4993387e13672e265f14343cdb073a27e18a4565a",
+            "size_bytes": 22
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27BRB106003%2A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27BRB106003%2A%2A%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Ctype%2Cdefrost_type%2Crefrigerant_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "3bcf02c891c27546ee0b2eda2f6a06deb454008b478977b061573d0d9e4d75d4",
+            "size_bytes": 341
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27BRB106003%2A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/p5st-her9.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/p5st-her9.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "d5aacd0fd24705e7d0a61d9fadd7a9835dd7261c6d23557f754c5b2a424029a6",
+            "size_bytes": 54466
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "p5st-her9",
+            "hgxv-ux9b",
+            "8t9c-g3tn",
+            "83eb-xbyy",
+            "tzuf-wwcc",
+            "g242-ysjw",
+            "acvd-5wvz",
+            "wati-2tfp",
+            "teze-bgsr",
+            "w7cv-9xjt",
+            "t9u7-4d2j",
+            "8ac2-2j4q",
+            "j624-u8ux",
+            "mgiu-hu4z",
+            "b88x-mifp",
+            "nak5-fsjf",
+            "3m3x-a2hy",
+            "qsc8-7f7k",
+            "u2ib-w3dm",
+            "6rww-hpns",
+            "5xn2-dv4h",
+            "tyr2-hhgu",
+            "v7jr-74b4",
+            "akti-mt5s",
+            "bghd-e2wd",
+            "e4mh-a2u3",
+            "qj64-j3bn",
+            "d36s-eh9f",
+            "8wj2-sec8",
+            "fbwy-abps",
+            "7p2p-wkbf",
+            "6sbi-yuk2",
+            "bfxp-wkhy",
+            "pbpq-swnu",
+            "dsuw-rfiv",
+            "q8py-6w3f",
+            "8dv7-nngq",
+            "i97v-e8au",
+            "irdz-jn2s",
+            "4c82-7ysy",
+            "9g6r-cpdt",
+            "8edu-y555",
+            "pk8q-dim8",
+            "m6gi-ng33",
+            "vtsv-aq9u",
+            "butk-3ni4",
+            "wyw6-sr4d",
+            "xgv7-5e6b",
+            "edi8-b5vk",
+            "ga9m-7gtz",
+            "2te3-nmxp",
+            "6xa2-5c2t",
+            "3393-mxju",
+            "qaxz-ikcb",
+            "ufj6-xsix",
+            "nw5s-r5ca",
+            "xmq6-bm79",
+            "9jai-gs6t",
+            "kphf-22jd",
+            "qbg3-d468",
+            "5tzz-d4ju",
+            "bpzy-9tg8",
+            "pd96-rr3d",
+            "m8cf-pkii",
+            "t2v6-g4nf",
+            "a8vq-hx7n",
+            "ej6d-wb4c",
+            "bpgg-26hr",
+            "gaa3-swy6",
+            "5jwe-c8xm",
+            "fcwx-wu8j",
+            "nt9t-yxu3",
+            "rfi2-nr6k",
+            "4d38-uxse",
+            "c8av-ccf7",
+            "89xy-ifdv",
+            "x6va-j82u",
+            "a437-vvgv",
+            "ty3c-qr7r",
+            "msj5-kqfv",
+            "xs5y-vwyz",
+            "wjtt-3zwd",
+            "rxdj-2c88",
+            "ifxy-2uty",
+            "n8cx-m62r",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "qifb-fcj2",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 101,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "BRB106003**",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'BRB106003**'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "type": [
+            "Bottom Freezer",
+            "Side-by-Side",
+            "Top Freezer"
+          ],
+          "defrost_type": [
+            "Automatic"
+          ],
+          "refrigerant_type": [
+            "R-600a"
+          ],
+          "markets": [
+            "Canada",
+            "United States, Canada"
+          ]
+        },
+        "omitted_upc_rows": 11,
+        "literal_wildcard_rows": 101,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789565211,
+          "viewLastModified": 1739912067,
+          "publicationDate": 1638805136
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "p5st-her9",
+        "name": "ENERGY STAR Certified Residential Refrigerators",
+        "rowsUpdatedAt": 1789565211,
+        "viewLastModified": 1739912067,
+        "publicationDate": 1638805136,
+        "schema_sha256": "362912b19cf8910a8fa8f9b9d706bc525163f9a993a3c07629a868c822d6cc0e",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "type",
+            "name": "Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "defrost_type",
+            "name": "Defrost Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "refrigerant_type",
+            "name": "Refrigerant Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_qualified",
+            "name": "Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "p5st-her9",
+        "name": "ENERGY STAR Certified Residential Refrigerators",
+        "rowsUpdatedAt": 1789565211,
+        "viewLastModified": 1739912067,
+        "publicationDate": 1638805136,
+        "schema_sha256": "362912b19cf8910a8fa8f9b9d706bc525163f9a993a3c07629a868c822d6cc0e"
+      }
+    },
+    "t9u7-4d2j": {
+      "artifact": {
+        "id": 10474942035,
+        "name": "epa-query-dryer-35165687365-1",
+        "expires_at": "2026-10-01T00:14:09Z"
+      },
+      "artifact_zip_sha256": "4d88a485b0a8fcfae072a034b6c3acacbb56de6b296f8ce73bf11a925f3eae21",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "t9u7-4d2j",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:14:05.790016+00:00",
+        "source_routes": [
+          "dryer"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Residential+Clothes+Dryers&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "0dc726c1197894556f5cc4ddbc0eb70317fc10c01c57059cfcca67f6e6dcc5f2",
+            "size_bytes": 1700812
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/t9u7-4d2j.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "023f8ec6ca2d4c605c603dc876b3ec82d32dd5bc76d5a7e095d053342b7c4e71",
+            "size_bytes": 63772
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "c6631485abb5e65609b8144698b11e1939b70e1366eb93dc1a180fbb450332c6",
+            "size_bytes": 2693
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "568ee98d70899ffc334ffb92f65a3210dc76eb21db982e0fd8cde28311adcac6",
+            "size_bytes": 22
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cproduct_type%2Ctype%2Cspecial_type%2Crefrigerant_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "9c5ba9b4b9a567244c5c278f231fe94be0ca3ca43e5365973f6852dbd7c21a84",
+            "size_bytes": 31934
+          },
+          {
+            "name": "brand-page-1",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cproduct_type%2Ctype%2Cspecial_type%2Crefrigerant_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "a2ced35dab88e5720454047f147e77fa53199ac175604e461f60ce0ec23a4402",
+            "size_bytes": 1280
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "568ee98d70899ffc334ffb92f65a3210dc76eb21db982e0fd8cde28311adcac6",
+            "size_bytes": 22
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27DV52J870%2AE%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27DV52J870%2AE%2A%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cproduct_type%2Ctype%2Cspecial_type%2Crefrigerant_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "621b8b553de2e4b6a34fea5aa7ea7ad5ad773771182824c475fe3de710baaa67",
+            "size_bytes": 322
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27DV52J870%2AE%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/t9u7-4d2j.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/t9u7-4d2j.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "023f8ec6ca2d4c605c603dc876b3ec82d32dd5bc76d5a7e095d053342b7c4e71",
+            "size_bytes": 63772
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "t9u7-4d2j",
+            "bghd-e2wd",
+            "d36s-eh9f",
+            "xgv7-5e6b",
+            "9jai-gs6t",
+            "9g6r-cpdt",
+            "p5st-her9",
+            "acvd-5wvz",
+            "6rww-hpns",
+            "8t9c-g3tn",
+            "hgxv-ux9b",
+            "tzuf-wwcc",
+            "8wj2-sec8",
+            "83eb-xbyy",
+            "teze-bgsr",
+            "7p2p-wkbf",
+            "w7cv-9xjt",
+            "bfxp-wkhy",
+            "q8py-6w3f",
+            "8ac2-2j4q",
+            "8dv7-nngq",
+            "i97v-e8au",
+            "4c82-7ysy",
+            "8edu-y555",
+            "pk8q-dim8",
+            "m6gi-ng33",
+            "vtsv-aq9u",
+            "butk-3ni4",
+            "wyw6-sr4d",
+            "g242-ysjw",
+            "wati-2tfp",
+            "edi8-b5vk",
+            "ga9m-7gtz",
+            "2te3-nmxp",
+            "6xa2-5c2t",
+            "3393-mxju",
+            "j624-u8ux",
+            "qaxz-ikcb",
+            "ufj6-xsix",
+            "nw5s-r5ca",
+            "nak5-fsjf",
+            "xmq6-bm79",
+            "mgiu-hu4z",
+            "kphf-22jd",
+            "3m3x-a2hy",
+            "qbg3-d468",
+            "5tzz-d4ju",
+            "bpzy-9tg8",
+            "pd96-rr3d",
+            "b88x-mifp",
+            "5xn2-dv4h",
+            "qsc8-7f7k",
+            "m8cf-pkii",
+            "t2v6-g4nf",
+            "a8vq-hx7n",
+            "tyr2-hhgu",
+            "v7jr-74b4",
+            "akti-mt5s",
+            "ej6d-wb4c",
+            "qj64-j3bn",
+            "bpgg-26hr",
+            "fbwy-abps",
+            "e4mh-a2u3",
+            "gaa3-swy6",
+            "pbpq-swnu",
+            "5jwe-c8xm",
+            "fcwx-wu8j",
+            "dsuw-rfiv",
+            "6sbi-yuk2",
+            "nt9t-yxu3",
+            "rfi2-nr6k",
+            "4d38-uxse",
+            "u2ib-w3dm",
+            "c8av-ccf7",
+            "89xy-ifdv",
+            "x6va-j82u",
+            "a437-vvgv",
+            "irdz-jn2s",
+            "ty3c-qr7r",
+            "xs5y-vwyz",
+            "msj5-kqfv",
+            "wjtt-3zwd",
+            "rxdj-2c88",
+            "ifxy-2uty",
+            "n8cx-m62r",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "qifb-fcj2",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 104,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "DV52J870*E*",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'DV52J870*E*'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "product_type": [
+            "Electric Compact Ventless 240V",
+            "Electric Standard Vented",
+            "Electric Standard Ventless",
+            "Gas Standard Vented"
+          ],
+          "type": [
+            "Electric",
+            "Gas"
+          ],
+          "special_type": [
+            "Combination All-in-One Washer/Dryer",
+            "Laundry Center"
+          ],
+          "refrigerant_type": [
+            "R-134a"
+          ],
+          "markets": [
+            "Canada",
+            "United States, Canada"
+          ]
+        },
+        "omitted_upc_rows": 4,
+        "literal_wildcard_rows": 104,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789563703,
+          "viewLastModified": 1739912075,
+          "publicationDate": 1644255339
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "t9u7-4d2j",
+        "name": "ENERGY STAR Certified Residential Clothes Dryers",
+        "rowsUpdatedAt": 1789563703,
+        "viewLastModified": 1739912075,
+        "publicationDate": 1644255339,
+        "schema_sha256": "591c9c224cd4677b222556668b9b1a47f88a5dbd122bd8db80598ea06cfaafda",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "product_type",
+            "name": "Product Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "type",
+            "name": "Fuel Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "special_type",
+            "name": "Special Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "refrigerant_type",
+            "name": "Refrigerant Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available on Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_qualified",
+            "name": "Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "t9u7-4d2j",
+        "name": "ENERGY STAR Certified Residential Clothes Dryers",
+        "rowsUpdatedAt": 1789563703,
+        "viewLastModified": 1739912075,
+        "publicationDate": 1644255339,
+        "schema_sha256": "591c9c224cd4677b222556668b9b1a47f88a5dbd122bd8db80598ea06cfaafda"
+      }
+    },
+    "qbg3-d468": {
+      "artifact": {
+        "id": 10474892234,
+        "name": "epa-query-monitor-35165687365-1",
+        "expires_at": "2026-10-01T00:14:23Z"
+      },
+      "artifact_zip_sha256": "1764d201705fa043f752d0800d46581e2d50a6d81be1b2780d5cc2a9390db518",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "qbg3-d468",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:14:19.014071+00:00",
+        "source_routes": [
+          "monitor"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Displays&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "d91326cd9ed38b0afa31d12f38c60eae3d70a9104b7a41680a1c50916b6079f8",
+            "size_bytes": 1703104
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/qbg3-d468.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "980665a827b24dedae07bf0573b899359b4603f62cb8802d9a01fe071e41a5f1",
+            "size_bytes": 81944
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "bfb20abf72e983b984491486ba73c01393a4c8b154481fa3c63e39b15dd11f0a",
+            "size_bytes": 4392
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "827b717505c545b94dca5edb1323830a2c90015ef203bc24af6ab61217460321",
+            "size_bytes": 22
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cdisplay_type%2Cpanel_type%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "28a0ec533a9041b3eaea0ce507eadfc4ab57827d77a9efb71dca37be6ae6533b",
+            "size_bytes": 61529
+          },
+          {
+            "name": "brand-page-1",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cdisplay_type%2Cpanel_type%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "11c5e995e27d3da39080ceb1de01699ab51d02e97cc5ce7fcc63aa0be2352f96",
+            "size_bytes": 45563
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "827b717505c545b94dca5edb1323830a2c90015ef203bc24af6ab61217460321",
+            "size_bytes": 22
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27F24T450FZN%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27F24T450FZN%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cdisplay_type%2Cpanel_type%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "00d2e69e30e74abb2c2b792c6cba336f6f511305cfc4a4815f97df73b73d31f4",
+            "size_bytes": 605
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27F24T450FZN%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/qbg3-d468.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/qbg3-d468.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "980665a827b24dedae07bf0573b899359b4603f62cb8802d9a01fe071e41a5f1",
+            "size_bytes": 81944
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "qbg3-d468",
+            "tzuf-wwcc",
+            "8wj2-sec8",
+            "83eb-xbyy",
+            "acvd-5wvz",
+            "6rww-hpns",
+            "7p2p-wkbf",
+            "w7cv-9xjt",
+            "bghd-e2wd",
+            "bfxp-wkhy",
+            "p5st-her9",
+            "8ac2-2j4q",
+            "d36s-eh9f",
+            "i97v-e8au",
+            "wati-2tfp",
+            "t9u7-4d2j",
+            "pd96-rr3d",
+            "8edu-y555",
+            "hgxv-ux9b",
+            "pk8q-dim8",
+            "8dv7-nngq",
+            "a437-vvgv",
+            "j624-u8ux",
+            "vtsv-aq9u",
+            "bpzy-9tg8",
+            "8t9c-g3tn",
+            "wyw6-sr4d",
+            "g242-ysjw",
+            "xgv7-5e6b",
+            "xmq6-bm79",
+            "6xa2-5c2t",
+            "4c82-7ysy",
+            "edi8-b5vk",
+            "2te3-nmxp",
+            "9g6r-cpdt",
+            "3393-mxju",
+            "teze-bgsr",
+            "qaxz-ikcb",
+            "nw5s-r5ca",
+            "ufj6-xsix",
+            "nak5-fsjf",
+            "5jwe-c8xm",
+            "ga9m-7gtz",
+            "kphf-22jd",
+            "mgiu-hu4z",
+            "3m3x-a2hy",
+            "rxdj-2c88",
+            "q8py-6w3f",
+            "b88x-mifp",
+            "5xn2-dv4h",
+            "qsc8-7f7k",
+            "m6gi-ng33",
+            "me9a-5y43",
+            "m8cf-pkii",
+            "t2v6-g4nf",
+            "a8vq-hx7n",
+            "tyr2-hhgu",
+            "9jai-gs6t",
+            "akti-mt5s",
+            "ej6d-wb4c",
+            "butk-3ni4",
+            "qj64-j3bn",
+            "5tzz-d4ju",
+            "bpgg-26hr",
+            "wjtt-3zwd",
+            "v7jr-74b4",
+            "fbwy-abps",
+            "e4mh-a2u3",
+            "gaa3-swy6",
+            "fcwx-wu8j",
+            "dsuw-rfiv",
+            "6sbi-yuk2",
+            "rfi2-nr6k",
+            "nt9t-yxu3",
+            "c8av-ccf7",
+            "4d38-uxse",
+            "u2ib-w3dm",
+            "89xy-ifdv",
+            "x6va-j82u",
+            "irdz-jn2s",
+            "pbpq-swnu",
+            "ty3c-qr7r",
+            "xs5y-vwyz",
+            "msj5-kqfv",
+            "ifxy-2uty",
+            "n8cx-m62r",
+            "t3a6-mkxz",
+            "3uec-2gqf",
+            "qifb-fcj2",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 146,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "F24T450FZN",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'F24T450FZN'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "display_type": [
+            "Monitor",
+            "Signage Display"
+          ],
+          "panel_type": [
+            "ADS",
+            "ADS LCD",
+            "ADS-LCD",
+            "IPS LCD",
+            "PLS",
+            "TFT LCD",
+            "TFT-LCD",
+            "TN LCD",
+            "VA LCD",
+            "VA LCD, IPS LCD"
+          ],
+          "markets": [
+            "United States, Canada, Taiwan",
+            "United States, Japan, Canada, Switzerland",
+            "United States, Japan, Canada, Taiwan",
+            "United States, Japan, Canada, Taiwan, Switzerland",
+            "United States, Switzerland, Taiwan, Japan, Canada",
+            "United States, Taiwan, Canada",
+            "United States, Taiwan, Japan, Canada"
+          ]
+        },
+        "omitted_upc_rows": 142,
+        "literal_wildcard_rows": 9,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789564667,
+          "viewLastModified": 1739912114,
+          "publicationDate": 1645114916
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "qbg3-d468",
+        "name": "ENERGY STAR Certified Displays",
+        "rowsUpdatedAt": 1789564667,
+        "viewLastModified": 1739912114,
+        "publicationDate": 1645114916,
+        "schema_sha256": "a65bea844f71ec8cdb589bab0297d30c38c47f03b13e4f8540d00d9f93f09952",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "display_type",
+            "name": "Product Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "panel_type",
+            "name": "Panel Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_certified",
+            "name": "Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "qbg3-d468",
+        "name": "ENERGY STAR Certified Displays",
+        "rowsUpdatedAt": 1789564667,
+        "viewLastModified": 1739912114,
+        "publicationDate": 1645114916,
+        "schema_sha256": "a65bea844f71ec8cdb589bab0297d30c38c47f03b13e4f8540d00d9f93f09952"
+      }
+    },
+    "8dv7-nngq": {
+      "artifact": {
+        "id": 10474792423,
+        "name": "epa-query-hood-35165687365-1",
+        "expires_at": "2026-10-01T00:14:18Z"
+      },
+      "artifact_zip_sha256": "9f1d9ccbb71b853b9bae27ecd3ac8db4db297027ebb951747ab1316a8fff7dbf",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "8dv7-nngq",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:14:15.632715+00:00",
+        "source_routes": [
+          "hood"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Ventilating+Fans&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "dae255d4bc756cf847550243ee566e5d1f1e851a7a2012303dd29fe201edfb3d",
+            "size_bytes": 1700812
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/8dv7-nngq.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "0b8edcf420f279acc2d41b82838df8e03d1ced649f2169adda5be38af1393586",
+            "size_bytes": 70494
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "261e664493691ac2421dfc6dd23322a9bbc22e01e66bbbc36f675deea93a848f",
+            "size_bytes": 2197
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "5ae780f2b5ffcaa949b1e4080a0dbfcf2df1bda89b19ad5bdb83e66ac63b156b",
+            "size_bytes": 20
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cunit_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "5ae780f2b5ffcaa949b1e4080a0dbfcf2df1bda89b19ad5bdb83e66ac63b156b",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/8dv7-nngq.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "0b8edcf420f279acc2d41b82838df8e03d1ced649f2169adda5be38af1393586",
+            "size_bytes": 70494
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "8dv7-nngq",
+            "ga9m-7gtz",
+            "2te3-nmxp",
+            "ufj6-xsix",
+            "a8vq-hx7n",
+            "83eb-xbyy",
+            "tzuf-wwcc",
+            "w7cv-9xjt",
+            "bfxp-wkhy",
+            "8ac2-2j4q",
+            "7p2p-wkbf",
+            "8wj2-sec8",
+            "acvd-5wvz",
+            "6rww-hpns",
+            "p5st-her9",
+            "i97v-e8au",
+            "j624-u8ux",
+            "d36s-eh9f",
+            "bghd-e2wd",
+            "3m3x-a2hy",
+            "mgiu-hu4z",
+            "xmq6-bm79",
+            "hgxv-ux9b",
+            "8edu-y555",
+            "5tzz-d4ju",
+            "8t9c-g3tn",
+            "pk8q-dim8",
+            "tyr2-hhgu",
+            "b88x-mifp",
+            "t9u7-4d2j",
+            "akti-mt5s",
+            "vtsv-aq9u",
+            "4c82-7ysy",
+            "wyw6-sr4d",
+            "9g6r-cpdt",
+            "g242-ysjw",
+            "q8py-6w3f",
+            "edi8-b5vk",
+            "wati-2tfp",
+            "3393-mxju",
+            "6xa2-5c2t",
+            "qj64-j3bn",
+            "xgv7-5e6b",
+            "teze-bgsr",
+            "qaxz-ikcb",
+            "e4mh-a2u3",
+            "fbwy-abps",
+            "nak5-fsjf",
+            "nw5s-r5ca",
+            "rfi2-nr6k",
+            "gaa3-swy6",
+            "butk-3ni4",
+            "kphf-22jd",
+            "dsuw-rfiv",
+            "x6va-j82u",
+            "qbg3-d468",
+            "5xn2-dv4h",
+            "bpzy-9tg8",
+            "pd96-rr3d",
+            "c8av-ccf7",
+            "qsc8-7f7k",
+            "m6gi-ng33",
+            "t2v6-g4nf",
+            "m8cf-pkii",
+            "ej6d-wb4c",
+            "9jai-gs6t",
+            "bpgg-26hr",
+            "v7jr-74b4",
+            "5jwe-c8xm",
+            "6sbi-yuk2",
+            "fcwx-wu8j",
+            "89xy-ifdv",
+            "nt9t-yxu3",
+            "4d38-uxse",
+            "u2ib-w3dm",
+            "a437-vvgv",
+            "irdz-jn2s",
+            "ty3c-qr7r",
+            "pbpq-swnu",
+            "xs5y-vwyz",
+            "wjtt-3zwd",
+            "msj5-kqfv",
+            "rxdj-2c88",
+            "ifxy-2uty",
+            "n8cx-m62r",
+            "qifb-fcj2",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 0,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "status": "NOT_OBSERVED_NO_BRAND_ROWS"
+        },
+        "raw_field_values": {
+          "brand_name": [],
+          "unit_type": [],
+          "markets": []
+        },
+        "omitted_upc_rows": 0,
+        "literal_wildcard_rows": 0,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789563715,
+          "viewLastModified": 1739912079,
+          "publicationDate": 1631040141
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "8dv7-nngq",
+        "name": "ENERGY STAR Certified Ventilating Fans",
+        "rowsUpdatedAt": 1789563715,
+        "viewLastModified": 1739912079,
+        "publicationDate": 1631040141,
+        "schema_sha256": "cbddd72f6b2b3eb4930b92f395fa9bb01c59c99bdd56d2b3b4bc9026a2e4220f",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "unit_type",
+            "name": "Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_qualified",
+            "name": "Date Qualified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "8dv7-nngq",
+        "name": "ENERGY STAR Certified Ventilating Fans",
+        "rowsUpdatedAt": 1789563715,
+        "viewLastModified": 1739912079,
+        "publicationDate": 1631040141,
+        "schema_sha256": "cbddd72f6b2b3eb4930b92f395fa9bb01c59c99bdd56d2b3b4bc9026a2e4220f"
+      }
+    },
+    "q8py-6w3f": {
+      "artifact": {
+        "id": 10474772470,
+        "name": "epa-query-dishwasher-35165687365-1",
+        "expires_at": "2026-10-01T00:13:57Z"
+      },
+      "artifact_zip_sha256": "c3536ab8a386be3d07b4894aa977fb03447ff7985c5360033eb376c2496b80ac",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "q8py-6w3f",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:13:51.729222+00:00",
+        "source_routes": [
+          "dishwasher"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Residential+Dishwashers&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "82e55cdf5be1e8f16e9e5a8dedeb2bf23ca9a986ffe3b30e3c829b6b0556c86b",
+            "size_bytes": 1700812
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/q8py-6w3f.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3f244cb30eb56e5274808e1928948cdbb33e1d0c1b0385a9ef68b3bb6e44eb7a",
+            "size_bytes": 48319
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "762a7373e963726dc9bea9360a2a28404483a95d185d0ee6386965e9a31406be",
+            "size_bytes": 2644
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "533d0a92af8e3a72ee5563a0be242ada21d1d2bed2bf792c31fff815fb9ff006",
+            "size_bytes": 21
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Ctype%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "4c1fcd8fda600d98052554ce873b59b913d6bcd2ac7f8b1764c23bccc1616c2b",
+            "size_bytes": 6983
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "533d0a92af8e3a72ee5563a0be242ada21d1d2bed2bf792c31fff815fb9ff006",
+            "size_bytes": 21
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27DW50T6060%2A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27DW50T6060%2A%2A%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Ctype%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "4992bcdfeae8dafdbfb00db02d9e06618ceb0b34bad07c3ad41160065cbfa58b",
+            "size_bytes": 372
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27DW50T6060%2A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/q8py-6w3f.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/q8py-6w3f.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3f244cb30eb56e5274808e1928948cdbb33e1d0c1b0385a9ef68b3bb6e44eb7a",
+            "size_bytes": 48319
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "q8py-6w3f",
+            "butk-3ni4",
+            "pk8q-dim8",
+            "p5st-her9",
+            "acvd-5wvz",
+            "6rww-hpns",
+            "8t9c-g3tn",
+            "hgxv-ux9b",
+            "bghd-e2wd",
+            "tzuf-wwcc",
+            "t9u7-4d2j",
+            "d36s-eh9f",
+            "8wj2-sec8",
+            "bfxp-wkhy",
+            "83eb-xbyy",
+            "teze-bgsr",
+            "7p2p-wkbf",
+            "w7cv-9xjt",
+            "8dv7-nngq",
+            "8ac2-2j4q",
+            "i97v-e8au",
+            "4c82-7ysy",
+            "9g6r-cpdt",
+            "8edu-y555",
+            "m6gi-ng33",
+            "vtsv-aq9u",
+            "wyw6-sr4d",
+            "xgv7-5e6b",
+            "g242-ysjw",
+            "wati-2tfp",
+            "edi8-b5vk",
+            "ga9m-7gtz",
+            "2te3-nmxp",
+            "6xa2-5c2t",
+            "3393-mxju",
+            "j624-u8ux",
+            "qaxz-ikcb",
+            "xmq6-bm79",
+            "ufj6-xsix",
+            "nw5s-r5ca",
+            "nak5-fsjf",
+            "mgiu-hu4z",
+            "9jai-gs6t",
+            "kphf-22jd",
+            "3m3x-a2hy",
+            "qbg3-d468",
+            "5tzz-d4ju",
+            "bpzy-9tg8",
+            "v7jr-74b4",
+            "pd96-rr3d",
+            "b88x-mifp",
+            "5xn2-dv4h",
+            "qsc8-7f7k",
+            "m8cf-pkii",
+            "t2v6-g4nf",
+            "a8vq-hx7n",
+            "tyr2-hhgu",
+            "akti-mt5s",
+            "ej6d-wb4c",
+            "pbpq-swnu",
+            "e4mh-a2u3",
+            "fbwy-abps",
+            "qj64-j3bn",
+            "bpgg-26hr",
+            "dsuw-rfiv",
+            "gaa3-swy6",
+            "irdz-jn2s",
+            "5jwe-c8xm",
+            "fcwx-wu8j",
+            "6sbi-yuk2",
+            "nt9t-yxu3",
+            "rfi2-nr6k",
+            "4d38-uxse",
+            "u2ib-w3dm",
+            "c8av-ccf7",
+            "89xy-ifdv",
+            "x6va-j82u",
+            "a437-vvgv",
+            "ty3c-qr7r",
+            "msj5-kqfv",
+            "xs5y-vwyz",
+            "wjtt-3zwd",
+            "rxdj-2c88",
+            "ifxy-2uty",
+            "n8cx-m62r",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "qifb-fcj2",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 22,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "DW50T6060**",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'DW50T6060**'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "type": [
+            "Standard"
+          ],
+          "markets": [
+            "United States, Canada"
+          ]
+        },
+        "omitted_upc_rows": 1,
+        "literal_wildcard_rows": 20,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789564310,
+          "viewLastModified": 1739912213,
+          "publicationDate": 1681262384
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "q8py-6w3f",
+        "name": "ENERGY STAR Certified Residential Dishwashers",
+        "rowsUpdatedAt": 1789564310,
+        "viewLastModified": 1739912213,
+        "publicationDate": 1681262384,
+        "schema_sha256": "72092e98e1d695f60902a2a57275e85d169e450fff10ee639314f6d0a5d8338a",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "type",
+            "name": "Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_certified",
+            "name": " Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "q8py-6w3f",
+        "name": "ENERGY STAR Certified Residential Dishwashers",
+        "rowsUpdatedAt": 1789564310,
+        "viewLastModified": 1739912213,
+        "publicationDate": 1681262384,
+        "schema_sha256": "72092e98e1d695f60902a2a57275e85d169e450fff10ee639314f6d0a5d8338a"
+      }
+    },
+    "pd96-rr3d": {
+      "artifact": {
+        "id": 10474767681,
+        "name": "epa-query-tv-35165687365-1",
+        "expires_at": "2026-10-01T00:14:10Z"
+      },
+      "artifact_zip_sha256": "38b29e4119e27ee28bfee0d56046cf320efe8d8d28bd3a0cbbc432b0e1a90c0a",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "pd96-rr3d",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:14:04.083207+00:00",
+        "source_routes": [
+          "tv"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Televisions&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "f8f6dad1ebb8fa39c1fb46aed9744272a815fd1f181a480e45cd90a69ca1fad5",
+            "size_bytes": 1703105
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/pd96-rr3d.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "4f80fb5740c252378e1bdd72d539e79e758bf24a07af220db4196f75f3a2f42c",
+            "size_bytes": 20892
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "96fab1baa914fc310683fdd2701011db693ce5f43f19369e91763d87bedcb456",
+            "size_bytes": 4952
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "182a080d5e85423680374027e6b901315220f320ffb87392e105b6d67c69aa20",
+            "size_bytes": 21
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cproduct_type%2Cdisplay_type%2Cbacklight_technology_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "f252746b45f884afb37ab61d93528de8718b80637d4c6302cf84fed398417f3e",
+            "size_bytes": 27462
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "182a080d5e85423680374027e6b901315220f320ffb87392e105b6d67c69aa20",
+            "size_bytes": 21
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27QN115QN90FF%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27QN115QN90FF%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cproduct_type%2Cdisplay_type%2Cbacklight_technology_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "c8ae647d5fa06420b67c98d489b256744e9a95f68fd541a504afd36f52a82687",
+            "size_bytes": 342
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27QN115QN90FF%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/pd96-rr3d.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/pd96-rr3d.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "4f80fb5740c252378e1bdd72d539e79e758bf24a07af220db4196f75f3a2f42c",
+            "size_bytes": 20892
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "pd96-rr3d",
+            "tzuf-wwcc",
+            "8wj2-sec8",
+            "acvd-5wvz",
+            "83eb-xbyy",
+            "bfxp-wkhy",
+            "bghd-e2wd",
+            "7p2p-wkbf",
+            "w7cv-9xjt",
+            "6rww-hpns",
+            "i97v-e8au",
+            "8ac2-2j4q",
+            "p5st-her9",
+            "d36s-eh9f",
+            "wyw6-sr4d",
+            "t9u7-4d2j",
+            "8edu-y555",
+            "pk8q-dim8",
+            "8dv7-nngq",
+            "hgxv-ux9b",
+            "8t9c-g3tn",
+            "edi8-b5vk",
+            "2te3-nmxp",
+            "6xa2-5c2t",
+            "vtsv-aq9u",
+            "4c82-7ysy",
+            "mgiu-hu4z",
+            "3393-mxju",
+            "9g6r-cpdt",
+            "g242-ysjw",
+            "qaxz-ikcb",
+            "wati-2tfp",
+            "xmq6-bm79",
+            "j624-u8ux",
+            "nw5s-r5ca",
+            "teze-bgsr",
+            "xgv7-5e6b",
+            "kphf-22jd",
+            "m8cf-pkii",
+            "ufj6-xsix",
+            "a8vq-hx7n",
+            "nak5-fsjf",
+            "3m3x-a2hy",
+            "b88x-mifp",
+            "bpzy-9tg8",
+            "ga9m-7gtz",
+            "ej6d-wb4c",
+            "5xn2-dv4h",
+            "qsc8-7f7k",
+            "qbg3-d468",
+            "q8py-6w3f",
+            "me9a-5y43",
+            "t2v6-g4nf",
+            "butk-3ni4",
+            "tyr2-hhgu",
+            "m6gi-ng33",
+            "akti-mt5s",
+            "v7jr-74b4",
+            "e4mh-a2u3",
+            "fbwy-abps",
+            "9jai-gs6t",
+            "qj64-j3bn",
+            "5tzz-d4ju",
+            "dsuw-rfiv",
+            "irdz-jn2s",
+            "5jwe-c8xm",
+            "bpgg-26hr",
+            "pbpq-swnu",
+            "gaa3-swy6",
+            "6sbi-yuk2",
+            "rfi2-nr6k",
+            "nt9t-yxu3",
+            "u2ib-w3dm",
+            "c8av-ccf7",
+            "fcwx-wu8j",
+            "a437-vvgv",
+            "x6va-j82u",
+            "89xy-ifdv",
+            "4d38-uxse",
+            "ty3c-qr7r",
+            "xs5y-vwyz",
+            "msj5-kqfv",
+            "wjtt-3zwd",
+            "ifxy-2uty",
+            "rxdj-2c88",
+            "n8cx-m62r",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "qifb-fcj2",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 59,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "QN115QN90FF",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'QN115QN90FF'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "product_type": [
+            "Television (TV)"
+          ],
+          "display_type": [
+            "OLED",
+            "QD-LED (QLED)"
+          ],
+          "backlight_technology_type": [
+            "Direct-lit LED",
+            "OLED"
+          ],
+          "markets": [
+            "United States"
+          ]
+        },
+        "omitted_upc_rows": 57,
+        "literal_wildcard_rows": 0,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789565099,
+          "viewLastModified": 1739912176,
+          "publicationDate": 1713450219
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "pd96-rr3d",
+        "name": "ENERGY STAR Certified Televisions",
+        "rowsUpdatedAt": 1789565099,
+        "viewLastModified": 1739912176,
+        "publicationDate": 1713450219,
+        "schema_sha256": "d0ce8a3117d4d6619fe8fadaadb6b5a6273241cada6043ad383019719731bb61",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "product_type",
+            "name": "Product Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "display_type",
+            "name": "Display Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "backlight_technology_type",
+            "name": "Backlight Technology Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_qualified",
+            "name": "Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "pd96-rr3d",
+        "name": "ENERGY STAR Certified Televisions",
+        "rowsUpdatedAt": 1789565099,
+        "viewLastModified": 1739912176,
+        "publicationDate": 1713450219,
+        "schema_sha256": "d0ce8a3117d4d6619fe8fadaadb6b5a6273241cada6043ad383019719731bb61"
+      }
+    },
+    "bghd-e2wd": {
+      "artifact": {
+        "id": 10474609252,
+        "name": "epa-query-washer-35165687365-1",
+        "expires_at": "2026-10-01T00:13:55Z"
+      },
+      "artifact_zip_sha256": "34cec797970bb5b50adbd70fed1fbb496cf5cb9c09019a49d9fd116ca0917eaf",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "bghd-e2wd",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:13:51.044563+00:00",
+        "source_routes": [
+          "washer"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Residential+Clothes+Washers&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "1f3ef11290afe56072f0b50f5d17a417026bbd5f273420f43044e88439f88ffe",
+            "size_bytes": 1700811
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "8e34a55d10741fa6f283c87f20f0b886ff940092fdbe1749b3a94dd239400ccb",
+            "size_bytes": 64263
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "2035adcf9055305d569d390524e74b4aad01c3a0a624b6512b6afcfe8122f1a3",
+            "size_bytes": 2757
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "8192d8101e319d84e39a030d573e829b252d3cc525522c21a41bd5281d3fb9db",
+            "size_bytes": 21
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cspecial_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "620a15535de936c0f22f05e5ff98f2edfa457978574f7bd3cced28ee0c35673b",
+            "size_bytes": 17636
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "8192d8101e319d84e39a030d573e829b252d3cc525522c21a41bd5281d3fb9db",
+            "size_bytes": 21
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27WA49B5205A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27WA49B5205A%2A%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Cspecial_type%2Cdate_available_on_market%2Cdate_qualified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "9d10d437a34ce7e170fca38bad75b6c2031113d8c5248a181adf70f8078b5a79",
+            "size_bytes": 262
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27WA49B5205A%2A%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/bghd-e2wd.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/bghd-e2wd.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "8e34a55d10741fa6f283c87f20f0b886ff940092fdbe1749b3a94dd239400ccb",
+            "size_bytes": 64263
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "bghd-e2wd",
+            "d36s-eh9f",
+            "9g6r-cpdt",
+            "t9u7-4d2j",
+            "9jai-gs6t",
+            "xgv7-5e6b",
+            "p5st-her9",
+            "acvd-5wvz",
+            "6rww-hpns",
+            "8t9c-g3tn",
+            "hgxv-ux9b",
+            "tzuf-wwcc",
+            "8wj2-sec8",
+            "bfxp-wkhy",
+            "83eb-xbyy",
+            "teze-bgsr",
+            "7p2p-wkbf",
+            "w7cv-9xjt",
+            "8dv7-nngq",
+            "q8py-6w3f",
+            "8ac2-2j4q",
+            "i97v-e8au",
+            "4c82-7ysy",
+            "butk-3ni4",
+            "8edu-y555",
+            "pk8q-dim8",
+            "m6gi-ng33",
+            "vtsv-aq9u",
+            "wyw6-sr4d",
+            "g242-ysjw",
+            "wati-2tfp",
+            "edi8-b5vk",
+            "ga9m-7gtz",
+            "2te3-nmxp",
+            "6xa2-5c2t",
+            "3393-mxju",
+            "j624-u8ux",
+            "qaxz-ikcb",
+            "xmq6-bm79",
+            "ufj6-xsix",
+            "nw5s-r5ca",
+            "nak5-fsjf",
+            "mgiu-hu4z",
+            "kphf-22jd",
+            "3m3x-a2hy",
+            "qbg3-d468",
+            "5tzz-d4ju",
+            "bpzy-9tg8",
+            "v7jr-74b4",
+            "pd96-rr3d",
+            "b88x-mifp",
+            "5xn2-dv4h",
+            "qsc8-7f7k",
+            "m8cf-pkii",
+            "t2v6-g4nf",
+            "a8vq-hx7n",
+            "tyr2-hhgu",
+            "akti-mt5s",
+            "ej6d-wb4c",
+            "pbpq-swnu",
+            "e4mh-a2u3",
+            "fbwy-abps",
+            "qj64-j3bn",
+            "bpgg-26hr",
+            "dsuw-rfiv",
+            "gaa3-swy6",
+            "irdz-jn2s",
+            "5jwe-c8xm",
+            "fcwx-wu8j",
+            "6sbi-yuk2",
+            "nt9t-yxu3",
+            "rfi2-nr6k",
+            "4d38-uxse",
+            "u2ib-w3dm",
+            "c8av-ccf7",
+            "89xy-ifdv",
+            "x6va-j82u",
+            "a437-vvgv",
+            "ty3c-qr7r",
+            "msj5-kqfv",
+            "xs5y-vwyz",
+            "wjtt-3zwd",
+            "rxdj-2c88",
+            "ifxy-2uty",
+            "n8cx-m62r",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "qifb-fcj2",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 66,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "WA49B5205A*",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'WA49B5205A*'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "special_type": [
+            "Combination All-in-One Washer/Dryer",
+            "Laundry Center"
+          ],
+          "markets": [
+            "United States, Canada"
+          ]
+        },
+        "omitted_upc_rows": 0,
+        "literal_wildcard_rows": 66,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789564819,
+          "viewLastModified": 1739912065,
+          "publicationDate": 1623071472
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "bghd-e2wd",
+        "name": "ENERGY STAR Certified Residential Clothes Washers",
+        "rowsUpdatedAt": 1789564819,
+        "viewLastModified": 1739912065,
+        "publicationDate": 1623071472,
+        "schema_sha256": "7664d845414284ef1155dddb6834c249d82f8f32a0d61d15decf0e66e2d43ce4",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "special_type",
+            "name": "Special Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_qualified",
+            "name": "Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "bghd-e2wd",
+        "name": "ENERGY STAR Certified Residential Clothes Washers",
+        "rowsUpdatedAt": 1789564819,
+        "viewLastModified": 1739912065,
+        "publicationDate": 1623071472,
+        "schema_sha256": "7664d845414284ef1155dddb6834c249d82f8f32a0d61d15decf0e66e2d43ce4"
+      }
+    },
+    "rxdj-2c88": {
+      "artifact": {
+        "id": 10474562273,
+        "name": "epa-query-computer-35165687365-1",
+        "expires_at": "2026-10-01T00:14:29Z"
+      },
+      "artifact_zip_sha256": "e499106e65ec902597cef69bbc78878d1b9c60c0055c4196f7aeb666ab7240a3",
+      "recon": {
+        "status": "PASS",
+        "dataset_id": "rxdj-2c88",
+        "run_id": "35165687365",
+        "git_sha": "6c72dfd3cd5cfbd409456d15b82580619274292a",
+        "captured_at": "2026-09-17T00:14:23.977872+00:00",
+        "source_routes": [
+          "computer",
+          "chromebook",
+          "tablet"
+        ],
+        "brand_condition": "upper(brand_name) = 'SAMSUNG'",
+        "certification_matching": "NOT_EVALUATED",
+        "candidate_absence": "NOT_EVALUATED",
+        "current_certification": "NOT_EVALUATED",
+        "us_market_applicability": "NOT_EVALUATED",
+        "responses": [
+          {
+            "name": "catalog",
+            "url": "https://api.us.socrata.com/api/catalog/v1?domains=data.energystar.gov&search_context=data.energystar.gov&q=ENERGY+STAR+Certified+Computers&limit=100",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "3273740aed557f346d2a6dc6f297b12bb51be641f32b67eace91414155596e7c",
+            "size_bytes": 1703104
+          },
+          {
+            "name": "metadata-before",
+            "url": "https://data.energystar.gov/api/views/rxdj-2c88.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "2866cb38ad2308a7ca068c0be0125bb3de43f0be8c9d7bcd7a5b66025532203a",
+            "size_bytes": 113268
+          },
+          {
+            "name": "generic-sample",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24limit=3&%24order=%3Aid",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "0b19e27eda761794f35f73a678b874cd184dcf9a526f16aa07b87a118d208711",
+            "size_bytes": 5552
+          },
+          {
+            "name": "brand-count-before",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "61dbbab833307476452af0f3581ffd413cc66d13a2507702fabfc6c346f7b8e8",
+            "size_bytes": 21
+          },
+          {
+            "name": "brand-page-0",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Ctype%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "ef8914fb1996062b800f464deef0bf46c9b51fa15760b831ca453cf6769aef74",
+            "size_bytes": 18267
+          },
+          {
+            "name": "brand-count-after",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "61dbbab833307476452af0f3581ffd413cc66d13a2507702fabfc6c346f7b8e8",
+            "size_bytes": 21
+          },
+          {
+            "name": "exact-model-count-before",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27NP740VJK%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "exact-model-page-0",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27NP740VJK%27&%24select=%3Aid+as+source_row_id%2Cpd_id%2Cbrand_name%2Cmodel_number%2Cadditional_model_information%2Cupc%2Ctype%2Cdate_available_on_market%2Cdate_certified%2Cmarkets&%24order=%3Aid&%24limit=100&%24offset=0",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "bd11cf7ee2ffb99fbe485bd30489944b2c1fa0b8a3aa2e3eeb229209b27bd5ca",
+            "size_bytes": 422
+          },
+          {
+            "name": "exact-model-count-after",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=upper%28brand_name%29+%3D+%27SAMSUNG%27+AND+model_number+%3D+%27NP740VJK%27&%24select=count%28%2A%29+as+row_count",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "14cdaf8c5891e5e80941ce0f0b3bf5dc7e47a81e2835f7e65d843649f0a39c97",
+            "size_bytes": 20
+          },
+          {
+            "name": "controlled-empty",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=1%3D0&%24limit=1",
+            "status": 200,
+            "content_type": "application/json;charset=utf-8",
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "size_bytes": 3
+          },
+          {
+            "name": "controlled-invalid-query",
+            "url": "https://data.energystar.gov/resource/rxdj-2c88.json?%24where=%28",
+            "status": 400,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "3842f915e010ee156dda9ebe328bc1190c7d2c6735295f2861b4862abde42579",
+            "size_bytes": 267
+          },
+          {
+            "name": "metadata-after",
+            "url": "https://data.energystar.gov/api/views/rxdj-2c88.json",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "body_sha256": "2866cb38ad2308a7ca068c0be0125bb3de43f0be8c9d7bcd7a5b66025532203a",
+            "size_bytes": 113268
+          }
+        ],
+        "catalog_inventory": {
+          "result_set_size_raw": null,
+          "configured_dataset_observation": "ADVERTISED_IN_OFFICIAL_DOMAIN",
+          "current_certification": "NOT_EVALUATED",
+          "cross_version_completeness": "NOT_EVALUATED",
+          "entry_ids": [
+            "rxdj-2c88",
+            "tzuf-wwcc",
+            "8wj2-sec8",
+            "acvd-5wvz",
+            "83eb-xbyy",
+            "bfxp-wkhy",
+            "bghd-e2wd",
+            "7p2p-wkbf",
+            "w7cv-9xjt",
+            "6rww-hpns",
+            "qbg3-d468",
+            "i97v-e8au",
+            "8ac2-2j4q",
+            "p5st-her9",
+            "d36s-eh9f",
+            "wyw6-sr4d",
+            "t9u7-4d2j",
+            "8edu-y555",
+            "pk8q-dim8",
+            "8dv7-nngq",
+            "hgxv-ux9b",
+            "8t9c-g3tn",
+            "edi8-b5vk",
+            "2te3-nmxp",
+            "6xa2-5c2t",
+            "vtsv-aq9u",
+            "4c82-7ysy",
+            "mgiu-hu4z",
+            "3393-mxju",
+            "9g6r-cpdt",
+            "g242-ysjw",
+            "t2v6-g4nf",
+            "qaxz-ikcb",
+            "wati-2tfp",
+            "a437-vvgv",
+            "xmq6-bm79",
+            "nw5s-r5ca",
+            "j624-u8ux",
+            "teze-bgsr",
+            "xgv7-5e6b",
+            "kphf-22jd",
+            "m8cf-pkii",
+            "ufj6-xsix",
+            "a8vq-hx7n",
+            "nak5-fsjf",
+            "3m3x-a2hy",
+            "b88x-mifp",
+            "bpzy-9tg8",
+            "ga9m-7gtz",
+            "ej6d-wb4c",
+            "5xn2-dv4h",
+            "qsc8-7f7k",
+            "pd96-rr3d",
+            "q8py-6w3f",
+            "me9a-5y43",
+            "butk-3ni4",
+            "tyr2-hhgu",
+            "m6gi-ng33",
+            "akti-mt5s",
+            "v7jr-74b4",
+            "e4mh-a2u3",
+            "fbwy-abps",
+            "9jai-gs6t",
+            "qj64-j3bn",
+            "5tzz-d4ju",
+            "dsuw-rfiv",
+            "irdz-jn2s",
+            "5jwe-c8xm",
+            "bpgg-26hr",
+            "pbpq-swnu",
+            "gaa3-swy6",
+            "6sbi-yuk2",
+            "rfi2-nr6k",
+            "nt9t-yxu3",
+            "u2ib-w3dm",
+            "c8av-ccf7",
+            "fcwx-wu8j",
+            "x6va-j82u",
+            "89xy-ifdv",
+            "4d38-uxse",
+            "ty3c-qr7r",
+            "ifxy-2uty",
+            "xs5y-vwyz",
+            "msj5-kqfv",
+            "qifb-fcj2",
+            "wjtt-3zwd",
+            "n8cx-m62r",
+            "3uec-2gqf",
+            "t3a6-mkxz",
+            "put7-uu67"
+          ]
+        },
+        "controlled_error_boundary": "ERROR_REJECTED_NOT_CANDIDATE_ABSENCE",
+        "brand_scan": {
+          "query_completeness": "COMPLETE_OBSERVED_QUERY",
+          "row_count": 45,
+          "candidate_absence": "NOT_EVALUATED",
+          "certification_matching": "NOT_EVALUATED",
+          "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+        },
+        "exact_model_probe": {
+          "model_literal_raw": "NP740VJK",
+          "where": "upper(brand_name) = 'SAMSUNG' AND model_number = 'NP740VJK'",
+          "scan": {
+            "query_completeness": "COMPLETE_OBSERVED_QUERY",
+            "row_count": 1,
+            "candidate_absence": "NOT_EVALUATED",
+            "certification_matching": "NOT_EVALUATED",
+            "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+          }
+        },
+        "raw_field_values": {
+          "brand_name": [
+            "Samsung"
+          ],
+          "type": [
+            "Notebook",
+            "Slate/Tablet"
+          ],
+          "markets": [
+            "Japan, Canada, Taiwan, Switzerland",
+            "United States",
+            "United States, Canada",
+            "United States, Canada, Switzerland",
+            "United States, Japan, Canada, Taiwan, Switzerland",
+            "United States, Switzerland, Taiwan, Japan, Canada"
+          ]
+        },
+        "omitted_upc_rows": 19,
+        "literal_wildcard_rows": 0,
+        "update_metadata": {
+          "rowsUpdatedAt": 1789564401,
+          "viewLastModified": 1761593011,
+          "publicationDate": 1750949310
+        },
+        "status_meaning": "query extraction contract only; no certification/matching/absence decision"
+      },
+      "metadata_before": {
+        "id": "rxdj-2c88",
+        "name": "ENERGY STAR Certified Computers V9.0",
+        "rowsUpdatedAt": 1789564401,
+        "viewLastModified": 1761593011,
+        "publicationDate": 1750949310,
+        "schema_sha256": "b54781b76e5d82db206444ab7462937ad3f1d9fdc2384c7811a47520fde5a764",
+        "query_identity_type_date_columns": [
+          {
+            "fieldName": "pd_id",
+            "name": "ENERGY STAR Unique ID",
+            "dataTypeName": "number"
+          },
+          {
+            "fieldName": "brand_name",
+            "name": "Brand Name",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "model_number",
+            "name": "Model Number",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "additional_model_information",
+            "name": "Additional Model Information",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "upc",
+            "name": "UPC",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "type",
+            "name": "Type",
+            "dataTypeName": "text"
+          },
+          {
+            "fieldName": "date_available_on_market",
+            "name": "Date Available On Market",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "date_certified",
+            "name": "Date Certified",
+            "dataTypeName": "calendar_date"
+          },
+          {
+            "fieldName": "markets",
+            "name": "Markets",
+            "dataTypeName": "text"
+          }
+        ]
+      },
+      "metadata_after": {
+        "id": "rxdj-2c88",
+        "name": "ENERGY STAR Certified Computers V9.0",
+        "rowsUpdatedAt": 1789564401,
+        "viewLastModified": 1761593011,
+        "publicationDate": 1750949310,
+        "schema_sha256": "b54781b76e5d82db206444ab7462937ad3f1d9fdc2384c7811a47520fde5a764"
+      }
+    }
+  }
+}

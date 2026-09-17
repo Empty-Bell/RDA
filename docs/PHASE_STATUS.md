@@ -170,7 +170,19 @@ See ENERGYGUIDE_QUALITY_CONTRACT.md, energyguide-quality-recon.json and the fixt
 manifest. This is a controlled degradation corpus, not naturally degraded PDF
 coverage, canonical model identity or the complete approved OCR acceptance matrix.
 
-Next bounded task: EPA query/type/current-source contract and error/empty response boundaries.
+EPA query/catalog/type/update bounded extraction PASS: run 35165687365, commit
+6c72dfd3cd5cfbd409456d15b82580619274292a. Nine distinct dataset jobs passed 12
+query tests; full source regression run 35165687343 passed 177 tests and all 12
+source legs. Declared literal Samsung-brand scans preserve terminal pages, before/
+after counts and unchanged metadata; errors and malformed responses are rejected.
+Normal fan 0-row query, missing UPC, non-US market strings, raw types and repeated
+wildcards stay observations. Equality probes seed from EPA rows, not retail SKUs.
+Configured datasets are advertised in the official-domain catalog; search results
+include unrelated entries, so sole current version/certification remain unknown.
+See EPA_QUERY_SOURCE_CONTRACT.md, epa-query-recon.json and the actual fixture manifest.
+No current-certification, applicability, matching or compliance rule was introduced.
+
+Next bounded task: hosted runtime dependency/OCR-model/Actions freeze and recovery contract.
 All family discovery is complete; common claim/quality/runtime acceptance remains.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
@@ -179,6 +191,6 @@ Follow-ups before locking runtime: freeze transitive Python dependencies and OCR
 replace older Node20 Actions pins with verified current releases (runner currently upgrades
 them to Node24; first run succeeded with warnings). No downgrade flag should be enabled.
 
-Token handoff: use Sol medium for the next exploratory EPA query/current-source contract only; Terra medium
+Token handoff: use Sol medium for the next exploratory runtime freeze/recovery contract only; Terra medium
 for repeated adapters after the contract is fixed. Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.
