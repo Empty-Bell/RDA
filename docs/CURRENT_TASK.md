@@ -36,14 +36,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   on hosted ubuntu-24.04. Extra bounded PDP labels retain original PDF bytes,
   extraction observations and unselected field/layout candidates; multiple Support
   PDFs remain evidence-only. No canonical value, OCR correction or assessment exists.
-- Label selection proposal: docs/G2_LABEL_SELECTION_PROPOSAL.md is REVIEW_REQUIRED.
-  Reviewed committed refrigerator text/layout corpus; expanded artifact individual
-  files still require replay/review. No selector is enabled. Obtain approval for the
-  proposed extraction contract before implementing canonical field selection.
+- Label field contract adopted for conservative fixture selection; annual-energy
+  selection is now live only for reviewed byte-identical records. Capacity/model
+  selection and identity/correction policies are not enabled.
 - Fixture selector checkpoint: run 35177064002 at 8e03ee7 passed 14 contracts on
   hosted Python 3.11/3.12. It selects only the unique 700 kWh refrigerator fixture
   candidate and leaves multiplicity, disagreement and provenance mismatch unobserved.
-  It is not wired into live canonical facts pending saved-corpus review.
+  This historical fixture checkpoint was followed by the live binding below.
 - Expanded corpus review/replay is complete. Nine saved extra labels were bound to
   PDF/page/detection annotations; eight select only under that contract and
   RF22A4111 stays unobserved because 109 and 585 occur as raw candidates. Live
@@ -56,6 +55,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   label document (SKU, document index, PDF hash, observation state and reason) and
   `VALUE`/`NOT_OBSERVED` counts without producing an assessment. Artifact 10479947693
   ZIP digest: 79e5514b656a16529b149974ffa77d1318ea386eb3b830a3eceb7a6f7b0fd4ec.
+- Capacity/model boundary review: G2_CAPACITY_MODEL_REVIEW.md and the sanitized
+  g2-capacity-model-review.json preserve five distinct PDF descriptor/box reviews.
+  All nine SKU projections were checked against saved original PDF bytes and raw
+  detection text/boxes. RF18A5101 loses visible stars; RF22A4111 substitutes a
+  quotation mark despite high OCR confidence. Keep raw OCR and visual annotation
+  separate; no model correction, glob/prefix matching or capacity identity rule.
+  Next: fixture-only capacity selection with explicit descriptor/unit and reviewed
+  detection binding; live capacity remains disabled. Recommended model: Luna low.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

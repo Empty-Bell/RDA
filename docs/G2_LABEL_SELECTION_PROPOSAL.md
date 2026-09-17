@@ -1,6 +1,9 @@
 # G2 label-field selection proposal
 
-Status: REVIEW_REQUIRED; no selector or compliance rule enabled.
+Status: conservative fixture contract adopted; review-bound annual-energy
+selection enabled after saved-corpus replay and hosted verification. Capacity/model
+selectors and compliance rules remain disabled. Historical proposal evidence and
+initial checkpoints below describe the state when the proposal was written.
 Scope: refrigerator field extraction only. D01 comparison tolerance, D07 OCR
 correction/corroboration and D09 wildcard identity remain OPEN.
 

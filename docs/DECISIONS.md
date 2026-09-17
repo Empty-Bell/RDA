@@ -1,5 +1,13 @@
 # Open semantic decisions
 
+G2 saved refrigerator corpus boundary review: G2_CAPACITY_MODEL_REVIEW.md records
+five PDF render/descriptor comparisons. RF18A5101 loses the visible trailing stars
+in OCR; RF22A4111 substitutes a quotation mark. High OCR confidence and a token
+without stars do not establish a wildcard-free original. Raw descriptor and visual
+annotation remain separate. Capacity descriptors agree with visible 17.5/22.1/
+22.0/22.8 values, but numerical identity/correction and wildcard semantics stay
+OPEN under D01/D07/D09. No correction or identity policy was enabled.
+
 G1 baseline portions of D02/D04/D08/D11/D12 are APPROVED on 2026-09-17.
 See G1_DECISION_PROPOSAL.md for the exact user authorization and boundaries.
 Remaining portions and assessment/publication/history policies stay OPEN.
