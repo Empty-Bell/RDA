@@ -9,7 +9,10 @@ Both downloaded reports/hashes are archived in docs/evidence/g1-foundation-recon
 This bounded checkpoint is PASS; the full G1 gate remains NOT_EVALUATED.
 G1 is not accepted: explicit baseline decisions and acceptance review remain.
 Specialized PDP/EnergyGuide/EPA observation schemas and strict config validation
-are implemented as drafts; hosted evidence for this extension is pending. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
+are implemented as drafts. Hosted run 35171015637 (code 25ee7d8) executed 66 tests
+on each Python 3.11.16 / 3.12.14 with zero skips/failures/errors. Downloaded reports
+and ZIP hashes are archived in docs/evidence/g1-typed-contract-recon.json.
+Full G1 field/coverage inventory and product/aggregation baseline approval remain. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
 
 Final hosted combined checkpoint 35169843199 tested code
 6069bed296dde8bc418619af4888925fce30f118, attempt 1, job 105038925672:

@@ -21,7 +21,10 @@
 | **G7 Pages — 미착수** | 검증된 동일 run artifact 배포, 링크/필터/mobile QA, 복구 절차 | run/hash 일치와 완전성 gate. 실패 bundle 게시 차단; D06 결정 |
 
 사용자의 다음 단계 요청으로 AGENTS.md 범위를 G1까지 확장했다.
-초안 계약·CLI·fixture CI부터 구현하며, 실제 판정과 공개 배포는 후속 단계다.
+초안 계약·CLI·fixture CI와 PDP/라벨/EPA 세부 관측·설정 검증을 구현했다.
+Hosted run 35171015637에서 Python 3.11/3.12 각각 66개 테스트 전부 통과했다.
+제품/집계 기준 승인과 G1 필드·coverage 대조 및 종료 검토가 남았다.
+실제 판정과 공개 배포는 후속 단계다.
 G1 미완료 항목과 승인 제안은 DATA_CONTRACTS.md / G1_DECISION_PROPOSAL.md를 참조한다.
 각 종료 기록은 PASS/FAIL/BLOCKED와 실제 hosted Actions run/commit/attempt/
 artifact를 갖는다. 위 표는 제품의 법적 적합 판정이나 완료 예정일 보장이 아니다.

@@ -1,0 +1,62 @@
+{
+  "api_verified_conclusion": "success",
+  "artifacts": [
+    {
+      "artifact_id": 10475959070,
+      "expires_at": "2026-10-01T01:33:31Z",
+      "job_id": 105042482695,
+      "report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "25ee7d80ed144318d8721f1163bf90c064a2b651",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.11.16",
+        "run_attempt": "1",
+        "run_id": "35171015637",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 66
+      },
+      "report_sha256": "0b6625c5aa453484c846457620c6f2b1d49a41f4265afc72d9c125f77bb8e02c",
+      "zip_sha256": "8895947b40cbf43e3ce7759d4bddef63cf40e1abc89d771e4a1d99a4eabf370f"
+    },
+    {
+      "artifact_id": 10475684307,
+      "expires_at": "2026-10-01T01:33:31Z",
+      "job_id": 105042482535,
+      "report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "25ee7d80ed144318d8721f1163bf90c064a2b651",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14",
+        "run_attempt": "1",
+        "run_id": "35171015637",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 66
+      },
+      "report_sha256": "ed02a4cf3154836d53c41653a02b4254ba4a8d9ac37c13bbb8fca1882166e49a",
+      "zip_sha256": "a88487bed39dd8e08a08f0157839f1b031647082e10bedbd6230bdf926576352"
+    }
+  ],
+  "decisions": "D01-D12 remain OPEN; G1 baseline confirmation requested but not assumed",
+  "git_sha": "25ee7d80ed144318d8721f1163bf90c064a2b651",
+  "limitations": [
+    "Synthetic transport fixtures, not actual source collection or assessments",
+    "No unit conversion, wildcard matching, OCR correction or certification interpretation",
+    "Full G1 field/coverage inventory and acceptance review remain"
+  ],
+  "phase_gate": "NOT_EVALUATED",
+  "run_attempt": 1,
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35171015637",
+  "runner_label": "ubuntu-24.04",
+  "scope": "G1 specialized source observations and strict offline configs",
+  "status": "PASS"
+}
