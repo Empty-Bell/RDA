@@ -19,6 +19,7 @@ from g2_population import observation, population_records
 from source_recon import FAMILIES
 from g2_pdp import select_sample, collect_samples, coverage, verify_identity
 from g2_normalized import normalize_source_pdp
+from g2_label_collect import collect_energyguide_documents
 
 
 def main():
@@ -133,6 +134,32 @@ def main():
                 fact('PDP',{'pdp_model':observation(result['exact_sku']),'pdp_url':observation(result['final_url']),
                      'source_bridge_hash':observation(digest),**normalized_pdp['observations']},
                      [*dict.fromkeys([ref,*[item[0] for item in refs.values()],normalization_ref])],result['exact_sku'])
+        labels=collect_energyguide_documents(
+            [result for result in samples[1:] if result['status']=='VERIFIED_EXACT_IDENTITY'],
+            out/'energyguide-samples',
+        )
+        if any(result['status']=='FAILED' for result in labels):
+            raise ValueError('Expanded EnergyGuide observation failed')
+        label_fact_inputs={}
+        for result in labels:
+            folder=out/'energyguide-samples'/result['exact_sku']/str(result['source_document_index'])
+            raw=(folder/'energyguide-original.pdf').read_bytes()
+            if hashlib.sha256(raw).hexdigest()!=result['sha256']:raise ValueError('Expanded label bytes changed')
+            label_id,label_hash=evidence(raw,result['final_url'],result['exact_sku'],'original-energyguide-pdf',result['captured_at'])
+            observation_id,_=evidence((folder/'result.json').read_bytes(),result['final_url'],result['exact_sku'],'extraction-observation',result['captured_at'])
+            candidate_refs=[]
+            for name in ('energyguide-field-candidates.json','energyguide-layout-candidates.json'):
+                ref,_=evidence((folder/name).read_bytes(),result['final_url'],result['exact_sku'],'unselected-label-field-candidates',result['captured_at'])
+                candidate_refs.append(ref)
+            label_fact_inputs.setdefault(result['exact_sku'],[]).append((result,label_hash,[label_id,observation_id,*candidate_refs]))
+        for label_sku,inputs in label_fact_inputs.items():
+            # Multiple Support PDFs remain evidence only until a document-selection policy exists.
+            if len(inputs)!=1:continue
+            result,label_hash,refs=inputs[0]
+            fact('ENERGYGUIDE',{'document_url':observation(result['final_url']),'document_sha256':observation(label_hash),
+                 'document_status':observation('SOURCE_PDF_PARSED'),'extraction_engine':observation(result['extraction_engine']),
+                 'embedded_text':observation(result['embedded_text']),'ocr_raw_text':observation('\n'.join(result['ocr_raw_texts'])),
+                 'fallback_reason':observation(result['fallback_reason']),'ocr_scale':observation(result['ocr_scale'])},refs,label_sku)
         pdp_coverage=coverage(products,samples)
         with (out/'pdp-coverage.json').open('x',encoding='utf-8',newline='\n') as stream:stream.write(dumps(pdp_coverage))
         bundle['manifest']['completed_at']=datetime.now(timezone.utc).isoformat()
@@ -143,7 +170,7 @@ def main():
             collected_pdp_skus=[r['exact_sku'] for r in samples if r['status']=='VERIFIED_EXACT_IDENTITY'],
             attempted_pdp_skus=[r['exact_sku'] for r in samples],pdp_coverage_counts=pdp_coverage['counts'],
             pdp_coverage_sha256=hashlib.sha256((out/'pdp-coverage.json').read_bytes()).hexdigest(),
-            collected_label_skus=[sku],epa_brand_scan=epa_recon['brand_scan'],
+            collected_label_skus=sorted({sku,*[result['exact_sku'] for result in labels]}),epa_brand_scan=epa_recon['brand_scan'],
             sku_certification_matching='NOT_EVALUATED',bundle_sha256=hashlib.sha256((out/'bundle.json').read_bytes()).hexdigest())
     except Exception as error:
         checkpoint['error_class']=type(error).__name__
