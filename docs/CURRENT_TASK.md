@@ -79,7 +79,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   same-run bundle; artifact 10481426384 ZIP digest is
   2af6aa68bf3e79d0bf1f1364eff835f03ca9d312e323bdaa69293c2427121677.
   Next: model descriptor source-observation projection only. Recommended model:
-  Luna low.
+  Luna low. This is now complete: `label_model_raw` is copied only from a unique
+  raw field-candidate token with its original evidence references; ambiguity stays
+  NOT_OBSERVED and wildcard correction/SKU matching remain disabled. Hosted G1 CI
+  35184128574, G2 contract CI 35184128573, and live ubuntu-24.04 run 35184128593
+  PASSed at 8d86408. Artifact 10481173998 ZIP digest:
+  096e7a6a99d0c7c629410dd5506f2fc282e338c309db6fe0c454ebf4650dd8a9. See
+  G2_MODEL_SOURCE_OBSERVATIONS.md. Next: draft an explicit wildcard correction and
+  identity-matching policy for human review only; no implementation or matching.
+  Recommended model: Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
