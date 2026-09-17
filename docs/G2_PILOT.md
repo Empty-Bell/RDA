@@ -119,3 +119,8 @@ Before expanding label retrieval, Support-declared document planning passed ten
 fixture contracts on hosted Python 3.11 and 3.12 in run 35175865085. The plan
 retains every exact-SKU HTTPS document candidate and marks a missing Support
 document NOT_OBSERVED; it neither selects a canonical PDF nor parses a value.
+
+Hosted run 35176346751 then retrieved the planned additional PDFs and retained raw
+bytes, extraction observations, and unselected text/layout candidates. A declared
+PDF retrieval, parse, OCR fallback, or numeric-candidate failure fails the pilot.
+Multiple Support PDFs for one SKU remain evidence-only until a selection decision.

@@ -32,9 +32,12 @@ on every next-step prompt. Same-task model changes should continue existing work
 - EnergyGuide document planning checkpoint: run 35175865085 at ed1d994 passed
   ten offline contracts on hosted Python 3.11/3.12. Each verified PDP retains all
   exact-SKU Support-declared HTTPS document candidates; no canonical PDF is chosen.
-- Next: retrieve and retain source-backed EnergyGuide PDF/field/coordinate
-  observations for the bounded PDP set. Do not select canonical label values,
-  correct OCR, or infer claim/certification validity.
+- Expanded EnergyGuide observation checkpoint: run 35176346751 at ddad8ff passed
+  on hosted ubuntu-24.04. Extra bounded PDP labels retain original PDF bytes,
+  extraction observations and unselected field/layout candidates; multiple Support
+  PDFs remain evidence-only. No canonical value, OCR correction or assessment exists.
+- Next: inspect the resulting candidate corpus and prepare a decision proposal for
+  label-field selection without enabling it.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
