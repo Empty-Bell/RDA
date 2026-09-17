@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['src/**', 'configs/**', 'checks/g1/**', 'fixtures/g1/**', 'pyproject.toml', '.python-version', '.github/workflows/ci.yml']
+    paths: ['src/**', 'configs/**', 'checks/g1/**', 'fixtures/g1/**', 'pyproject.toml', 'requirements-g1-tools.lock', '.python-version', '.github/workflows/ci.yml']
   pull_request:
-    paths: ['src/**', 'configs/**', 'checks/g1/**', 'fixtures/g1/**', 'pyproject.toml', '.python-version', '.github/workflows/ci.yml']
+    paths: ['src/**', 'configs/**', 'checks/g1/**', 'fixtures/g1/**', 'pyproject.toml', 'requirements-g1-tools.lock', '.python-version', '.github/workflows/ci.yml']
 permissions:
   contents: read
 jobs:
@@ -23,6 +23,10 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version: ${{ matrix.python }}
+      - name: Install hash-locked CI tools
+        run: python -m pip install --require-hashes --only-binary=:all: --no-cache-dir -r requirements-g1-tools.lock
+      - name: Static checks and installed CLI
+        run: python checks/g1/quality.py
       - name: Validate offline data and evidence contracts
         run: python checks/g1/run.py
       - name: Preserve fixture execution report
@@ -30,6 +34,8 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: g1-fixtures-${{ matrix.python }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: runtime/g1/*.json
+          path: |
+            runtime/g1/*.json
+            runtime/g1/wheels/*.whl
           retention-days: 14
           if-no-files-found: error

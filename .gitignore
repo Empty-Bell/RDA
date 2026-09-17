@@ -3,3 +3,7 @@ __pycache__/
 runtime/
 .env
 *.pyc
+*.egg-info/
+build/
+.mypy_cache/
+.ruff_cache/

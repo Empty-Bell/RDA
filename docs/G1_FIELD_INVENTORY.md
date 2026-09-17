@@ -22,7 +22,7 @@ introduce a versioned assessed bundle contract and rule engine before real findi
 can be consumed. No live collection or dashboard is added by this inventory.
 
 Full G1 acceptance record still requires review of hosted checkpoint coverage.
-The CI verifies runtime field contracts, not a static type checker or package
-installation. Dedicated static lint/type and installed-entrypoint checks are
-not yet implemented; EXECUTION_GUIDE's broader CI quality checklist remains open.
-This inventory does not label those missing checks PASS.
+Static lint/format/type checks and installed wheel CLI checks are now implemented
+in checks/g1/quality.py. See DATA_CONTRACTS.md for exact lint/type scope, dynamic
+JSON boundaries and offline installed smoke checks. Local quality PASS does not
+close the hosted gate; final hosted review is pending.

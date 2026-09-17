@@ -92,8 +92,21 @@ symlink privileges its Linux security case may skip and the report fails;
 hosted ubuntu-24.04 must execute every case. Actions CI separately checks Python
 3.11 compatibility and the audit runtime 3.12.14. Its PASS is limited to these
 draft fixtures, not the G1 acceptance gate or full G0 source suite.
-Setuptools packaging is a conventional optional build path; CI directly uses
-the source tree and downloads no Python packages. Packaging is not yet verified.
+CI now installs only hash-locked development tools (requirements-g1-tools.lock).
+Audit runtime dependencies remain empty. Ruff checks E4/E7/E9/F and formatting
+on all 7 package files. Mypy checks all package functions, requiring complete
+function annotations and checking their bodies; it is not full strict mode.
+Any is confined to dynamic JSON/record data and dictionary envelopes; this static
+check complements required runtime field/type/reference tests. No ignores or
+module exclusions hide type errors.
+
+checks/g1/quality.py builds a wheel using the pinned setuptools backend without
+build isolation, installs it into a fresh venv without network/dependencies, and
+runs regaudit from outside the repository with PYTHONPATH removed. It verifies
+installed import location, help, typed bundle/hash validation, missing evidence
+rejection, summaries, independent run IDs and no overwrite. Wheel and separate
+quality reports are retained as Actions artifacts alongside fixture reports.
+Tool/package setup needs public PyPI; CLI smoke and fixtures are offline.
 
 Artifacts use the existing 14-day review window. This is not approval of durable
 storage, long-term raw retention or D12's future retry/recovery policy.
