@@ -227,6 +227,21 @@ on every next-step prompt. Same-task model changes should continue existing work
   contract on ubuntu-24.04 and then replace broad browser collection with
   direct-source collection plus bounded template checks. Recommended model:
   Terra medium.
+
+  The approved collection boundary has since changed: Energy Star checks use
+  Samsung source declarations rather than visual selector evidence.  The live
+  G2 Energy Star source run captures, for every current exact PF SKU, its own
+  PF `energyStarFlg`, its own PDP Next `energyStarFlag`, and its own Bridge
+  ENERGY STAR Spec rows.  A representative SKU value is never shared with a
+  variant.  Samsung requires a headless session to return PF/Bridge JSON, but
+  the collector performs no selector, image, or visible-UI inspection; Next
+  and EPA calls are ordinary source requests.  Hosted run 35239931659 passed
+  on ubuntu-24.04 at d9c3ee6 in 4m00s. Artifact
+  `g2-energy-star-source-35239931659-1` is 6.82 MB with digest
+  `dbd2a8c6e7f06dbebfc0c75f189630eda1e38088534543ca08d5f84a8f1d9442`.
+  The output is source collection only: EPA comparison and PASS/LOW/HIGH rule
+  activation remain disabled. Next: bind the same-run Current Model Index to
+  these exact-SKU declarations, then review the three-point rule inputs.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
