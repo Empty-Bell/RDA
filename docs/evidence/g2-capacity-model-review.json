@@ -11,6 +11,7 @@
     {
       "pdf_sha256": "06b0115817b51c47ee4ac28bd3993ba5a1b97aa25251b31c6715a4ec469fd2fd",
       "exact_skus": ["RF18A5101MT/AA", "RF18A5101S9/AA", "RF18A5101SR/AA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
       "page": 0,
       "model_detection": 6,
       "model_text_raw": "Model RF18A5101",
@@ -28,6 +29,7 @@
     {
       "pdf_sha256": "7a173cd4228415d307a7d17ccdf419db9879cecec103e1e83b1e38dbcf4298cf",
       "exact_skus": ["RF22A4111SR/AA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
       "page": 0,
       "model_detection": 6,
       "model_text_raw": "Model RF22A4111“",
@@ -45,6 +47,7 @@
     {
       "pdf_sha256": "ce9984ffca8b989a05e41bed9bc6085499e06123f1328c94d19d01d8bb4c3f82",
       "exact_skus": ["RF22A4221SR/AA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
       "page": 0,
       "model_detection": 6,
       "model_text_raw": "Model RF22A4221**",
@@ -62,6 +65,7 @@
     {
       "pdf_sha256": "b46d5dfd1de0746e7918ccf0d520cf63feffc972e63b70f31b86e716560e6e42",
       "exact_skus": ["RF23BB860012AA", "RF23BB86004MAA", "RF23BB8600QLAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
       "page": 0,
       "model_detection": 6,
       "model_text_raw": "Model RF23BB8600**",
@@ -79,6 +83,7 @@
     {
       "pdf_sha256": "fd2b82f6416177d8d7f564d36110b8e6659d418ae7a11245b64b7d745dbb0924",
       "exact_skus": ["RF23DB9600QLAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
       "page": 0,
       "model_detection": 6,
       "model_text_raw": "Model RF23D*9600**",

@@ -48,6 +48,13 @@ Capacity is a source observation, not a PDP/EPA match criterion. No rounding,
 numerical tolerance, discrepancy finding or independent identity corroboration
 is enabled (D01/D07).
 
+Fixture implementation now selects only this descriptor form and only with the
+review's source PDF hash, document/page/panel, detection, polygon and exact raw
+descriptor. It does not yet connect the capacity observation to the live package.
+Offline replay of the saved nine-SKU corpus selected 17.5 for the three RF18A5101
+SKUs, 22.1 for RF22A4111SR/AA, 22.0 for RF22A4221SR/AA and 22.8 for the four
+RF23 SKUs. These are reviewed source observations only.
+
 Model normalization, OCR character replacement and wildcard-to-SKU matching remain
 disabled (D07/D09). Do not treat a star as arbitrary-length glob text, remove /AA
 or AA, restore missing stars from filenames, or accept a prefix as an identity

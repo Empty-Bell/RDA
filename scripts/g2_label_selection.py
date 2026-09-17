@@ -12,6 +12,47 @@ def unavailable(reason: str) -> dict[str, Any]:
     }
 
 
+CAPACITY = re.compile(r"^\s*Capacity\s*:\s*(?P<amount>\d+(?:\.\d+)?)\s+(?P<unit>Cubic\s+Feet)\s*$", re.I)
+
+
+def select_capacity(candidates: dict[str, Any], review: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Select one reviewed, explicit Capacity descriptor without identity matching."""
+    digest = candidates.get("pdf_sha256")
+    if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+        raise ValueError("Candidate PDF provenance is invalid")
+    if review is None:
+        return unavailable("DOCUMENT_AND_PANEL_REVIEW_REQUIRED")
+    if review.get("pdf_sha256") != digest:
+        raise ValueError("Review PDF provenance differs")
+    if review.get("document_count") != 1 or review.get("all_pages_reviewed") is not True or review.get("us_panel_verified") is not True:
+        return unavailable("DOCUMENT_AND_PANEL_REVIEW_REQUIRED")
+    if type(review.get("page")) is not int or type(review.get("capacity_detection")) is not int:
+        return unavailable("REVIEWED_CAPACITY_DETECTION_REQUIRED")
+    box = review.get("capacity_bbox")
+    if not isinstance(box, list) or len(box) != 4 or not all(isinstance(point, list) and len(point) == 2 for point in box):
+        return unavailable("REVIEWED_CAPACITY_DETECTION_REQUIRED")
+    entries = candidates.get("capacity_candidates_raw")
+    if not isinstance(entries, list):
+        raise ValueError("Capacity candidate collection is invalid")
+    explicit = [entry for entry in entries if isinstance(entry, dict) and CAPACITY.fullmatch(str(entry.get("value_raw", "")))]
+    if len(explicit) != 1:
+        return unavailable("MISSING_OR_AMBIGUOUS_EXPLICIT_CAPACITY_DESCRIPTOR")
+    raw = explicit[0]["value_raw"]
+    if review.get("capacity_text_raw") != raw:
+        return unavailable("REVIEWED_CAPACITY_TEXT_DOES_NOT_MATCH")
+    match = CAPACITY.fullmatch(raw)
+    assert match is not None
+    amount = float(match["amount"])
+    if not math.isfinite(amount) or amount < 0:
+        return unavailable("UNSUPPORTED_CAPACITY_NUMBER_ENCODING")
+    return {
+        "observation": {"state": "VALUE", "value": {"amount": amount,
+                        "unit": match["unit"], "raw": raw}, "error": None},
+        "reason": "UNIQUE_EXPLICIT_REVIEWED_CAPACITY_DESCRIPTOR",
+        "candidate": explicit[0],
+    }
+
+
 def select_annual_energy(candidates: dict[str, Any], layout: dict[str, Any], review: dict[str, Any] | None = None) -> dict[str, Any]:
     """Select only a single caption-linked, explicit kWh candidate on one panel."""
     digest = candidates.get("pdf_sha256")

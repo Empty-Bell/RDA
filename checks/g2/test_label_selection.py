@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from energyguide_fields import annual_layout_candidates, label_candidates
-from g2_label_selection import select_annual_energy
+from g2_label_selection import select_annual_energy, select_capacity
 
 
 class LabelSelectionTests(unittest.TestCase):
@@ -75,3 +75,32 @@ class LabelSelectionTests(unittest.TestCase):
         review = dict(self.review, number_detection=self.review["number_detection"] + 1)
         result = select_annual_energy(self.candidates, self.layout, review)
         self.assertEqual(result["observation"]["state"], "NOT_OBSERVED")
+
+    def capacity_review(self, raw="Capacity: 28.6 Cubic Feet"):
+        return {"pdf_sha256": self.candidates["pdf_sha256"], "document_count": 1,
+                "all_pages_reviewed": True, "us_panel_verified": True, "page": 0,
+                "capacity_detection": 8, "capacity_bbox": [[1, 1], [2, 1], [2, 2], [1, 2]],
+                "capacity_text_raw": raw}
+
+    def test_explicit_reviewed_capacity_is_selected_without_using_boilerplate(self):
+        candidates = copy.deepcopy(self.candidates)
+        candidates["capacity_candidates_raw"] = [
+            {"value_raw": "Both cost ranges based on models of similar size capacity.", "line": 1},
+            {"value_raw": "Capacity: 28.6 Cubic Feet", "line": 2},
+        ]
+        selected = select_capacity(candidates, self.capacity_review())
+        self.assertEqual(selected["observation"]["value"],
+                         {"amount": 28.6, "unit": "Cubic Feet", "raw": "Capacity: 28.6 Cubic Feet"})
+
+    def test_capacity_requires_unique_reviewed_explicit_descriptor(self):
+        candidates = copy.deepcopy(self.candidates)
+        candidates["capacity_candidates_raw"] = [{"value_raw": "Capacity: 28.6 Cubic Feet", "line": 2}]
+        for change in (
+            {"capacity_text_raw": "Capacity: 29 Cubic Feet"},
+            {"document_count": 2},
+            {"capacity_bbox": []},
+        ):
+            with self.subTest(change=change):
+                self.assertEqual(select_capacity(candidates, dict(self.capacity_review(), **change))["observation"]["state"], "NOT_OBSERVED")
+        candidates["capacity_candidates_raw"].append({"value_raw": "Capacity: 29 Cubic Feet", "line": 3})
+        self.assertEqual(select_capacity(candidates, self.capacity_review())["observation"]["state"], "NOT_OBSERVED")
