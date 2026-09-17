@@ -1,0 +1,26 @@
+[
+  {
+    "file": "fixtures/applicability/sections.xml",
+    "sha256": "21d229dd17fee3f7e243172a201e07e013c6d59e389415e92f9b81a3633a9719",
+    "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-08-31/title-16.xml?chapter=I&subchapter=C&part=305",
+    "source_body_sha256": "f4b8e3f5de23681e4a4989574e201a29fb902199fb22fa378ead4e35991065fd",
+    "projection": "Actual public authority projection; XML HEAD/P only or normalized main text; no analytics/contact fields",
+    "source_scope": "local diagnostic input; fresh hosted verification required"
+  },
+  {
+    "file": "fixtures/applicability/titles.json",
+    "sha256": "3a8b3d75d0c1c02e3e2e97878917c62b9c79f7190e62c84693dd692e1a26fd4f",
+    "source_url": "https://www.ecfr.gov/api/versioner/v1/titles.json",
+    "source_body_sha256": "d84f46de37431ee563a66f7fa25a84edb1500b7b1417204afb627d818c4fb520",
+    "projection": "Actual public authority projection; XML HEAD/P only or normalized main text; no analytics/contact fields",
+    "source_scope": "local diagnostic input; fresh hosted verification required"
+  },
+  {
+    "file": "fixtures/applicability/washer-main.html",
+    "sha256": "8c9e99e62b6ee42c9fb1075b5e69481ac6fcf8e9b98e7d56a20a52901e938e23",
+    "source_url": "https://www.energystar.gov/products/clothes_washers/key_product_criteria",
+    "source_body_sha256": "88e2bf5e84297fbb64828a4f685e5720266132ce1249f3aaa17f2f33cf416de7",
+    "projection": "Actual public authority projection; XML HEAD/P only or normalized main text; no analytics/contact fields",
+    "source_scope": "local diagnostic input; fresh hosted verification required"
+  }
+]
