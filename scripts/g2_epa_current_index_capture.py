@@ -62,6 +62,24 @@ def source_record(name: str, body: bytes, status: int, content_type: str) -> dic
     }
 
 
+def replay_capture(root: Path) -> dict:
+    manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+    projections = {}
+    for record in manifest["sources"]:
+        body = (root / (record["name"] + ".bin")).read_bytes()
+        if hashlib.sha256(body).hexdigest() != record["body_sha256"]:
+            raise ValueError("EPA current-index source hash does not replay")
+        projections[record["name"]] = project(record["name"], body)
+    if projections != manifest["projections"]:
+        raise ValueError("EPA current-index projection does not replay")
+    if (
+        validate_cross_source(projections["model-index-row"], projections["refrigerator-row"])
+        != manifest["cross_source"]
+    ):
+        raise ValueError("EPA current-index cross-source result does not replay")
+    return manifest
+
+
 def main() -> None:
     out = Path("runtime/g2-epa-current-index-capture")
     out.mkdir(parents=True, exist_ok=True)
@@ -97,6 +115,7 @@ def main() -> None:
             ),
         }
         (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+        replay_capture(out)
     except Exception as error:
         (out / "manifest.json").write_text(
             json.dumps(
