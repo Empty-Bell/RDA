@@ -16,9 +16,9 @@ from regaudit.contracts import dumps, validate_bundle, verify_evidence_files
 from regaudit.facts import TYPES
 from regaudit.report import summarize_bundle
 from g2_population import observation, population_records
-from source_contract import pdp_facts
 from source_recon import FAMILIES
 from g2_pdp import select_sample, collect_samples, coverage, verify_identity
+from g2_normalized import normalize_source_pdp
 
 
 def main():
@@ -74,14 +74,19 @@ def main():
         snapshot=json.loads((source/'fixtures/public-claim-snapshot.json').read_bytes())
         parsed_pdp=verify_identity(sku,pdp['final_url'],snapshot,json.loads(raw))
         bridge_id,bridge_hash=evidence(raw,bridge['url'],sku,'projected-public-bridge-response')
+        source_observations={}
         for name in ('pdp-facts.json','public-claim-facts.json','fixtures/public-claim-snapshot.json'):
-            evidence((source/name).read_bytes(),pdp['final_url'],sku,'uninterpreted-pdp-observation')
+            source_observations[name]=evidence((source/name).read_bytes(),pdp['final_url'],sku,'uninterpreted-pdp-observation')[0]
+        claim_facts=json.loads((source/'public-claim-facts.json').read_bytes())
+        normalized_pdp=normalize_source_pdp(parsed_pdp,claim_facts)
+        normalization_id,_=evidence(dumps(normalized_pdp).encode(),pdp['final_url'],sku,'pdp-source-normalization')
         def fact(kind,values,refs,exact_sku=None):
             observations={f.name:observation() for f in fields(TYPES[kind])};observations.update(values)
             bundle['facts'].append({'fact_id':'f-'+kind+('-'+exact_sku if exact_sku else ''),'run_id':run_id,'product_group':'refrigerator',
                 'exact_sku':exact_sku or sku,'kind':kind,'observations':observations,'evidence_ids':refs})
         fact('PDP',{'pdp_model':observation(sku),'pdp_url':observation(pdp['final_url']),
-             'source_bridge_hash':observation(bridge_hash)},[bridge_id])
+             'source_bridge_hash':observation(bridge_hash),**normalized_pdp['observations']},
+             [bridge_id,*source_observations.values(),normalization_id])
         label=json.loads((source/'energyguide-observation.json').read_bytes());raw=(source/'energyguide-original.pdf').read_bytes()
         if not raw.startswith(b'%PDF-') or hashlib.sha256(raw).hexdigest()!=label['sha256']:raise ValueError('Label bytes mismatch')
         if label['requested_url'] not in {d['url'] for d in parsed_pdp['energyguide_documents']}:raise ValueError('Label outside selected SKU support')
@@ -120,8 +125,11 @@ def main():
             evidence(dumps(result).encode(),result.get('final_url',result['requested_url']),result['exact_sku'],'pdp-collection-result')
             if result['status']=='VERIFIED_EXACT_IDENTITY':
                 ref,digest=refs[result['bridge']['path']]
+                normalized_pdp=normalize_source_pdp(result['pdp_facts_raw'],None)
+                normalization_ref,_=evidence(dumps(normalized_pdp).encode(),result['final_url'],result['exact_sku'],'pdp-source-normalization')
                 fact('PDP',{'pdp_model':observation(result['exact_sku']),'pdp_url':observation(result['final_url']),
-                     'source_bridge_hash':observation(digest)},[ref],result['exact_sku'])
+                     'source_bridge_hash':observation(digest),**normalized_pdp['observations']},
+                     [*dict.fromkeys([ref,*[item[0] for item in refs.values()],normalization_ref])],result['exact_sku'])
         pdp_coverage=coverage(products,samples)
         with (out/'pdp-coverage.json').open('x',encoding='utf-8',newline='\n') as stream:stream.write(dumps(pdp_coverage))
         bundle['manifest']['completed_at']=datetime.now(timezone.utc).isoformat()
