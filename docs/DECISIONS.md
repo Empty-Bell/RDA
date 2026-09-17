@@ -7,7 +7,7 @@ literal-equality approval did not authorize positional compatibility interpretat
 
 D09 reviewed matrix: G2_EPA_MATCHING_MATRIX_PROPOSAL.md records letter/digit
 descriptions from preserved refrigerator metadata and a literal PD_ID API record.
-Hosted run 35191030514 passed its implementation tests. 
+Hosted run 35191030514 passed its implementation tests.
 The original Product Finder HTML was shell-only; follow-up hosted run 35189830486
 validates API projections. Positional wildcard/UPC linkage remains a proposal,
 with suffix, current-certification and label-corrobation decisions still OPEN.
