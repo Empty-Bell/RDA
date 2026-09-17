@@ -67,7 +67,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   detection binding; live capacity remains disabled. The capacity selector and
   nine-SKU saved-corpus replay PASSed; hosted run 35181720506 at 23ba5a1 passed
   27 contracts on Python 3.11/3.12. Next: bind it to fresh live bytes only.
-  Recommended model: Terra medium.
+  Live binding checkpoint 35181903264 at 55a7e20 PASSed on ubuntu-24.04. Fresh
+  bytes must match the saved capacity review; checkpoint records its own capacity
+  observation summary. No identity/comparison/assessment policy changed. Next:
+  expose the joined annual/capacity source observations in the report. Recommended
+  model: Luna low.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

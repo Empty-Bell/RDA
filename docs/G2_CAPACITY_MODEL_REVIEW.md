@@ -58,6 +58,15 @@ RF23 SKUs. These are reviewed source observations only.
 Hosted fixture checkpoint PASS: run 35181720506 at 23ba5a1 passed 27 contracts
 on ubuntu-24.04, Python 3.11/3.12. This does not enable the live capacity field.
 
+Live review-bound integration checkpoint PASS: hosted run 35181903264 at 55a7e20
+records `capacity` only when the newly collected exact-SKU PDF SHA256 matches the
+saved capacity review. Its checkpoint carries a separate capacity observation
+summary with SKU, document index, PDF hash, value/withheld state and reason.
+Artifact 10480404031 has ZIP digest
+`7f969091024a86a5cdb41eea561c5b8ba0f3498dd197d134b1e634f3f427c5f4`.
+This is source observation integration only; no model identity, comparison or
+assessment was enabled.
+
 Model normalization, OCR character replacement and wildcard-to-SKU matching remain
 disabled (D07/D09). Do not treat a star as arbitrary-length glob text, remove /AA
 or AA, restore missing stars from filenames, or accept a prefix as an identity
