@@ -1,9 +1,11 @@
-# G1 decision proposal — review required before stable contracts
+# G1 approved baseline — bounded semantic approval
 
-Technical drafts do not close D01–D12. These proposals are concrete enough to
-review but remain disabled as production policy until explicit approval.
+User approval: 2026-09-17, after explanation of product identity and independent
+finding counts: "그렇지 모두 그렇게 진행해". All three presented criteria
+(product identity, finding/affected-SKU counts, new run IDs/no overwrite) are
+approved. Approval is limited to the G1 baseline below, not assessment rules.
 
-| Decision | Proposed G1 baseline | Deferred scope |
+| Decision | Approved G1 baseline | Deferred scope |
 |---|---|---|
 | D08 | One product record per `(run_id, exact_sku)`; preserve all group/source-family/listing provenance. Preserve exact SKU spelling. No implicit fuzzy or wildcard merge. | EPA model/wildcard matching and individual applicability in G2/G4 |
 | D11 / relevant D02 portion | Product → multiple fact/evidence/assessment records. Preserve FTC and EPA findings independently, each referencing same-run/group/SKU evidence. | Rule priority and single-row display summary in G2 |
@@ -12,9 +14,12 @@ review but remain disabled as production policy until explicit approval.
 
 Approval of these G1 portions would not approve all of D02/D04/D08/D11/D12,
 nor energy tolerances, OCR correction, missing certification, legal applicability,
-publication or history policies. The current synthetic fixture verifies only
-record preservation and graph integrity. Metrics are not yet implemented.
+publication or history policies. Implementation: population.py canonicalizes exact SKU records while preserving
+distinct listing observations; report.py keeps all assessments in one SKU row
+and computes finding/affected-SKU counts. Group findings use each assessment's
+product_group; group product counts use listing membership. Cross-group subtotals
+can overlap and must not be summed to derive global unique products.
+Real evaluated findings remain disabled until G2; synthetic tests validate counts.
 
-No immediate user decision is needed to continue specialized fact schemas,
-config validation and fixture CI. Explicit confirmation of the above baseline
-will be needed before making the product/report contract stable and closing G1.
+No further confirmation of these three criteria is required. G1 field inventory
+and hosted acceptance review remain separate implementation checks.

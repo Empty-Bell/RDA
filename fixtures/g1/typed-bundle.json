@@ -263,22 +263,72 @@
       "exact_sku": "SYNTHETIC-SKU",
       "listings": [
         {
+          "commerce_status": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
+          "ecom_flag": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
           "pdp_url": "https://example.com/pdp",
           "plp_url": "https://example.com/plp",
           "product_group": "washer",
           "representative_sku": "SYNTHETIC-SKU",
           "sku_role": "REPRESENTATIVE",
+          "source_family_code": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
           "source_family_id": "SYNTHETIC-washer",
-          "source_pf_search_hash": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0"
+          "source_pf_search_hash": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0",
+          "stock_flag": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
+          "variant_attributes": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          }
         },
         {
+          "commerce_status": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
+          "ecom_flag": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
           "pdp_url": "https://example.com/pdp",
           "plp_url": "https://example.com/plp",
           "product_group": "dryer",
           "representative_sku": "SYNTHETIC-SKU",
           "sku_role": "REPRESENTATIVE",
+          "source_family_code": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
           "source_family_id": "SYNTHETIC-dryer",
-          "source_pf_search_hash": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0"
+          "source_pf_search_hash": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0",
+          "stock_flag": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          },
+          "variant_attributes": {
+            "error": null,
+            "state": "NOT_OBSERVED",
+            "value": null
+          }
         }
       ],
       "run_id": "synthetic-g1"

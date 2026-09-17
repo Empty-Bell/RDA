@@ -1,6 +1,7 @@
 # G1 draft data contracts
 
-Status: technical draft, not an approved audit or aggregation policy. `draft-1`
+Status: technical draft with approved G1 identity/count/ID baseline; assessment
+policies remain disabled. See G1_DECISION_PROPOSAL.md. `draft-1`
 is deliberately not a stable production schema. G1 is RUNNING, not accepted.
 The contract implementation is `src/regaudit/contracts.py`; fixtures are synthetic.
 
@@ -11,11 +12,16 @@ rule_version is null and no CLI command runs collectors or assessments.
 An empty init-run skeleton is OUTPUT_MISSING, never execution SUCCESS.
 UUID run identifiers avoid reuse; output creation fails rather than overwrites.
 
-Proposed product identity is `(run_id, exact_sku)` without case conversion,
+Approved product identity is `(run_id, exact_sku)` without case conversion,
 wildcard expansion or fuzzy matching. A product keeps an array of listing
 provenance including product_group, source_family_id, representative SKU/role,
-PLP/PDP URL and raw pf_search hash. A washer/dryer combo retains both groups.
-Duplicate product records are rejected rather than silently merged. This draft
+PLP/PDP URL and raw pf_search hash. Each listing also carries observations for
+source family code, commerce status, stock/ecom flags and variant attributes;
+source flag encodings are retained without conversion. A washer/dryer combo
+retains both groups.
+population.canonicalize_products explicitly merges repeated exact SKU records
+and retains every distinct listing observation, including conflicting values.
+The final bundle rejects duplicates rather than silently deduplicating. This draft
 does not infer certification identity or define report coverage denominators.
 
 Evidence carries run/group/SKU, source URL/time, raw SHA256, parser identity,
@@ -58,7 +64,11 @@ The Python validator's synthetic_assessments option is fixture-only: a test
 preserves one synthetic SKU with two existing issue codes across FTC/EPA.
 There is no CLI switch enabling synthetic findings or real audit conclusions.
 The fixture's one-product/two-record assertion tests transport cardinality;
-it does not implement or approve D02/D04's report counting/priority policy.
+report.py now implements approved finding/affected-SKU counting without any
+representative severity or priority policy. One SKU row retains all assessments.
+Zero recorded findings with assessment_enabled=false means unevaluated, not
+compliance PASS. The summarize CLI requires raw hashes and refuses evaluated
+findings until the assessment engine is authorized/implemented in G2.
 
 Five `.yaml` configs use JSON syntax, a YAML 1.2 subset, parsed with the standard
 library only. Canonical JSON of all five contributes to config_hash. Source

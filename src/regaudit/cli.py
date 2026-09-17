@@ -7,6 +7,7 @@ import sys
 import uuid
 from .contracts import validate_bundle, verify_evidence_files, dumps, ContractError
 from .config import load_configuration
+from .report import summarize_bundle
 
 
 def configuration(root):
@@ -18,13 +19,21 @@ def main(argv=None):
     commands = parser.add_subparsers(dest='command', required=True)
     validate = commands.add_parser('validate'); validate.add_argument('bundle', type=Path)
     validate.add_argument('--evidence-root', type=Path, required=True)
+    summary = commands.add_parser('summarize'); summary.add_argument('bundle', type=Path)
+    summary.add_argument('--evidence-root', type=Path, required=True)
+    summary.add_argument('--output', type=Path, required=True)
     init = commands.add_parser('init-run'); init.add_argument('--git-sha', required=True)
     init.add_argument('--project', type=Path, default=Path.cwd()); init.add_argument('--output', type=Path, required=True)
     args = parser.parse_args(argv)
     try:
-        if args.command == 'validate':
+        if args.command in ('validate','summarize'):
             bundle = validate_bundle(json.loads(args.bundle.read_bytes()))
             verify_evidence_files(bundle, args.evidence_root)
+            if args.command == 'summarize':
+                result = summarize_bundle(bundle)
+                args.output.parent.mkdir(parents=True,exist_ok=True)
+                with args.output.open('x',encoding='utf-8',newline='\n') as stream: stream.write(dumps(result))
+                print('CREATED_UNEVALUATED_SUMMARY'); return 0
             print('VALID_DRAFT_BUNDLE'); return 0
         now = datetime.now(timezone.utc).isoformat()
         config, config_hash = load_configuration(args.project)

@@ -131,12 +131,21 @@ class ListingProvenance:
     plp_url: str
     pdp_url: str
     source_pf_search_hash: str
+    source_family_code: Observation
+    commerce_status: Observation
+    stock_flag: Observation
+    ecom_flag: Observation
+    variant_attributes: Observation
 
     def __post_init__(self):
         require(self.product_group in GROUPS and text(self.source_family_id), 'Invalid listing group/namespace')
         require(text(self.representative_sku) and self.sku_role in ('REPRESENTATIVE', 'VARIANT'), 'Invalid listing role')
         require(text(self.plp_url) and text(self.pdp_url) and self.plp_url.startswith('https://') and self.pdp_url.startswith('https://'), 'Listing URL must be HTTPS')
         require(sha(self.source_pf_search_hash), 'Invalid listing source hash')
+        for name in ('source_family_code','commerce_status','stock_flag','ecom_flag','variant_attributes'):
+            value = record(Observation, getattr(self, name))
+            if name == 'variant_attributes' and value.state == ObservationState.VALUE:
+                require(isinstance(value.value, dict), 'Variant attributes must be an object')
 
 
 @dataclass(frozen=True)
@@ -205,13 +214,15 @@ def validate_bundle(data, *, synthetic_assessments=False):
     manifest = record(RunManifest, data['manifest'])
     for key in ('products', 'facts', 'evidence', 'assessments'):
         require(isinstance(data[key], list), 'Bundle collections must be arrays')
-    products = {}
+    products = {}; has_errors = False
     for raw in data['products']:
         product = record(ProductPopulationRecord, raw)
         require(product.run_id == manifest.run_id and text(product.exact_sku), 'Product run/SKU invalid')
         require(product.exact_sku not in products, 'Duplicate product key; no implicit deduplication')
         require(isinstance(product.listings, list) and product.listings, 'Listing provenance missing')
         listings = [record(ListingProvenance, v) for v in product.listings]
+        has_errors |= any(record(Observation,getattr(v,name)).state == ObservationState.ERROR
+                          for v in listings for name in ('source_family_code','commerce_status','stock_flag','ecom_flag','variant_attributes'))
         products[product.exact_sku] = {v.product_group for v in listings}
     evidence = {}
     for raw in data['evidence']:
@@ -226,7 +237,7 @@ def validate_bundle(data, *, synthetic_assessments=False):
             require(key in evidence, 'Missing evidence reference')
             target = evidence[key]
             require(target.run_id == item.run_id and target.sku == item.exact_sku and target.product_group == item.product_group, 'Cross-product evidence reference')
-    seen = set(); has_errors = False
+    seen = set()
     for raw in data['facts']:
         item = record(FactRecord, raw); references(item)
         require(text(item.fact_id) and item.fact_id not in seen, 'Invalid/duplicate fact ID'); seen.add(item.fact_id)

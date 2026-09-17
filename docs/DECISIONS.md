@@ -1,6 +1,12 @@
 # Open semantic decisions
 
-All decisions below are OPEN; no rule approval is implied.
+G1 baseline portions of D02/D04/D08/D11/D12 are APPROVED on 2026-09-17.
+See G1_DECISION_PROPOSAL.md for the exact user authorization and boundaries.
+Remaining portions and assessment/publication/history policies stay OPEN.
+The table below retains each decision's full scope; partial approval does not
+close an entire decision. The approved portions are exact-SKU identity with
+all listing provenance, independent assessments/unique-SKU counting, and new
+run IDs with no overwrite. No compliance rule approval is implied.
 
 2026-09-17 official applicability follow-up: APPLICABILITY_EVIDENCE.md records
 dated eCFR clauses and EPA program/configuration scope. Both washer and dryer
