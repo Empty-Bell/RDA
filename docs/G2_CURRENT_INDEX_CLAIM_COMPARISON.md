@@ -4,39 +4,59 @@
 
 The user selected EPA Current Model Index `8wj2-sec8` as the sole current
 certification source. A verified model present in that list supplies current
-certification evidence. A verified model absent from a successfully completed
-current-list scan, but advertised with an ENERGY STAR claim, is the intended
-claim-consistency failure case. Assessment remains disabled until collection
-definitions and their verification are complete. No new issue code is added.
+certification evidence. The user explicitly approved the three-point publication
+consistency rule: PLP logo, PDP logo and affirmative certification in the visible
+Spec table. The rule and LOW/HIGH severity below supersede the earlier claim-only
+table. Assessment remains disabled until collection definitions and their
+verification are complete. Existing issue codes are reused; no new code is added.
 
 This table documents the intended behavior for later implementation, not a
 currently executing compliance rule:
 
-| Verified target claim | Complete current-index comparison | Intended EPA claim-consistency result |
+| Current-index model result | PLP logo / PDP logo / Spec certification | Approved result |
 |---|---|---|
-| Positive logo or visible certification assertion | Matching current US-market model observed | PASS for this claim check only |
-| Positive logo or visible certification assertion | No matching model in the validated complete scope | FAIL for this claim check only |
-| No positive claim observed on supported inspected surfaces | Matching model or no matching model | No unsupported-certification-claim finding |
-| Unknown target claim, failed identity or failed/incomplete current-index query | Any | NOT_EVALUATED |
-| Positive claim | Ambiguous model syntax, conflicting candidates or unresolved market | NOT_EVALUATED |
+| Registered | All three PRESENT | PASS for this EPA publication check |
+| Registered | At least one confirmed ABSENT, including all three absent | LOW consistency finding: SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT |
+| Registered | No confirmed absence, but at least one UNKNOWN | NOT_EVALUATED; never PASS |
+| Not registered after validated complete search | At least one PRESENT | HIGH critical finding: CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE |
+| Not registered after validated complete search | All three confirmed ABSENT | No ENERGY STAR publication finding |
+| Not registered after validated complete search | No PRESENT, but at least one UNKNOWN | NOT_EVALUATED |
+| Unresolved model or failed/incomplete current-index query | Any | NOT_EVALUATED for these certification-dependent rules |
 
-Certification does not require Samsung to display a logo. Therefore a certified
-model without a logo is not a failure under this check. Other FTC or measurement
-checks are independent; this table cannot produce whole-product compliance PASS.
+The registered-model LOW rule is the user's publication consistency control;
+it is not described as a legal requirement to advertise certification. One
+missing point is sufficient even when the other two are absent. The HIGH rule
+needs only one proven positive publication on an unregistered model. A proven
+LOW/HIGH finding is retained even if another surface is UNKNOWN; incomplete
+collection coverage remains visible separately and cannot yield overall PASS.
+Store all missing/present point evidence in the applicable finding and avoid
+creating three copies of the same rule finding. Other FTC or measurement checks
+are independent; this table cannot produce whole-product compliance PASS.
 
 ## Inputs needed before assessment
 
-### Samsung target and claim
+### Samsung target and three publication points
 
 Require the exact SKU population entry and existing PDP identity gate. Preserve
 the full SKU and the approved uppercase terminal `AA`/`/AA` normalization;
 preserve all preceding characters. The source page must identify that SKU.
 
-Use a visible ENERGY STAR logo attributed to the verified primary product
-surface, or an explicit visible certification assertion in that SKU's supported
-Specs/product surface. Preserve the raw text or image candidate, URL, timestamp,
-evidence hash and target identity. Footer, recommendations, related products,
-ambiguous gallery roots and unbound images cannot become target claims.
+Collect three independent surface observations: `plp_logo`, `pdp_logo` and
+`spec_certification`. Each is PRESENT, confirmed ABSENT or UNKNOWN, with raw
+text/image candidates, URL, capture time, evidence hash and SKU attribution.
+PLP requires the correct listing card and explicit listing-group/SKU provenance;
+a representative card must not silently supply every unrelated variant's state.
+PDP requires the verified primary product surface. Spec requires affirmative
+ENERGY STAR certification text/value in the visible target Spec table. A field
+label with a negative, empty or unresolved value is not affirmative certification.
+Keep its raw label/value and extraction reason. Exact supported label/value
+aliases must be source-reviewed before normalization.
+
+Footer, generic banners, recommendations, related products, ambiguous gallery
+roots and unbound images cannot become target claims. A positive Spec value
+cannot fill in a missing PLP or PDP logo. A PLP logo cannot fill in the Spec point.
+The LOW rule counts absence only after a supported identified surface has been
+successfully inspected; timeout, unrendered content or unsupported layout is UNKNOWN.
 
 Structured flags remain separate source signals. A raw `energyStarFlag=Y` alone
 does not establish a visible logo or advertised assertion. `N` or an absent flag
@@ -99,11 +119,14 @@ makes that boundary explicit.
    category/type metadata and tested pagination/failure boundaries.
 2. Exact-target candidate projection; preserve all row references and distinguish
    matched, complete no-match and unresolved comparisons without assessments.
-3. Same-run target-attributed logo/visible-claim projection with failure and
-   unsupported-surface states; establish full refrigerator collection coverage.
+3. Same-run PLP-logo, PDP-logo and visible Spec-certification projections, each
+   with target attribution and PRESENT/ABSENT/UNKNOWN states; establish full
+   refrigerator collection coverage.
 4. Join the observations by run/SKU/evidence identity and validate replay.
-5. Review collection completeness, then activate the intended decision table
-   with boundary tests. Other unresolved measurement/OCR policies remain separate.
+5. Review collection completeness, then activate the approved decision table.
+   Test all three single-point gaps, all-absent registered models, each single
+   positive point on unregistered models, unknown/error paths and partial coverage.
+   Other unresolved measurement/OCR policies remain separate.
 
 Next recommended model: Terra medium for milestone 1 and its bounded contracts.
 Use Luna low for documentation-only maintenance and Sol medium only when an

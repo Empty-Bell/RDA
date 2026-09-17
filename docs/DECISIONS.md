@@ -1,5 +1,15 @@
 # Open semantic decisions
 
+Latest approved EPA publication rule: G2_CURRENT_INDEX_CLAIM_COMPARISON.md is
+authoritative for the user's three-point PLP-logo/PDP-logo/Spec-certification
+control. Registered plus all three present gives PASS for this check; registered
+plus any confirmed missing point gives LOW source consistency, including all
+three absent. Unregistered after complete valid search plus any positive point
+gives HIGH eligibility finding. Use existing issue codes. Collection failures
+remain UNKNOWN/NOT_EVALUATED, and activation waits for collection definitions.
+This approval supersedes the earlier claim-only decision table, not unresolved
+measurement, OCR or global summary policies.
+
 Latest D09 scope: use the EPA Current Model Index as the sole EPA certification
 comparison source. Earlier chronological notes below do not supersede the
 approved suffix, US-market or current-index observation contracts recorded in

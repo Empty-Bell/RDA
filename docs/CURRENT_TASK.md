@@ -159,8 +159,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   identifier; it retains the Index row hash and raw certification date. Missing
   or mismatched keys remain `NOT_EVALUATED`; assessment remains disabled. The
   EPA Current Model Index is the sole EPA certification comparison source.
-  G2_CURRENT_INDEX_CLAIM_COMPARISON.md documents the user-directed claim versus
-  current-list decision table and the prerequisite collection-definition gates.
+  G2_CURRENT_INDEX_CLAIM_COMPARISON.md documents the approved three-point rule:
+  registered plus PLP logo/PDP logo/affirmative Spec certification all present
+  yields PASS for this check; any confirmed missing point yields LOW consistency.
+  Unregistered after complete valid search plus any positive point yields HIGH.
+  Existing issue codes are reused; runtime activation waits for collection gates.
   The saved diagnostic now marks current_index_observation_scope=EPA_ROW_ONLY:
   a nonincluded SKU is not certified or uncertified by the compared row. Next:
   hosted complete Current Model Index Samsung-scope capture/replay with actual

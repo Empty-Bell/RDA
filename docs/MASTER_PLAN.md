@@ -690,11 +690,19 @@ Preserve this rule priority:
 6. label inaccessible/unreadable  
    HIGH → `ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE`
 
-7. ENERGY STAR claim + no current EPA candidate  
+7. PLP logo, PDP logo or affirmative Spec certification + no matching model
+   in the successfully completed Current Model Index scope
    HIGH → `CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE`
 
-8. Samsung ENERGY STAR source conflict  
+8. Current Model Index registered model with a confirmed missing PLP logo,
+   PDP logo or affirmative Spec certification, including all three missing
    LOW → `SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT`
+
+For this EPA publication check, PASS requires a registered model and all three
+publication points present. A collection error/unsupported surface is UNKNOWN,
+not confirmed absence. Keep any proven finding alongside separate incomplete
+coverage; never infer overall PASS from partial collection. These publication
+rules are user-approved, but activation follows completed collection definitions.
 
 9. claim + unresolved EPA variant identity  
    MEDIUM → `ENERGY_STAR_VARIANT_IDENTITY_REVIEW`
@@ -728,11 +736,10 @@ EPA status does not decide whether the EnergyGuide label itself is correct.
 
 ## EPA / ENERGY STAR
 Use:
-- Samsung public claim,
-- current EPA certified-product data,
-- model/UPC/prefix matching,
-- compatible energy field,
-- source consistency.
+- target-attributed PLP logo, PDP logo and visible Spec-table certification,
+- EPA Current Model Index as the sole current-certification source,
+- approved exact/normalized model and dataset-bound pattern comparison,
+- three-point publication consistency and collection-completeness evidence.
 
 EnergyGuide OCR failure does not become EPA failure.
 
