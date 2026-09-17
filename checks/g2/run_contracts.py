@@ -18,7 +18,7 @@ def main() -> int:
     loader = unittest.defaultTestLoader
     suite = unittest.TestSuite(
         loader.discover(str(ROOT / "checks/g2"), pattern=pattern)
-        for pattern in ("test_normalized_pdp.py", "test_label_plan.py", "test_label_selection.py")
+        for pattern in ("test_normalized_pdp.py", "test_label_plan.py", "test_label_selection.py", "test_label_activation.py")
     )
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     report = {

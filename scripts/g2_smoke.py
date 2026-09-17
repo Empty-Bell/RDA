@@ -20,6 +20,7 @@ from source_recon import FAMILIES
 from g2_pdp import select_sample, collect_samples, coverage, verify_identity
 from g2_normalized import normalize_source_pdp
 from g2_label_collect import collect_energyguide_documents
+from g2_label_activation import load_review_annotations, select_live_reviewed_energy
 
 
 def main():
@@ -48,6 +49,7 @@ def main():
         ordered=sorted(pages)
         products,parsed=population_records([pages[i] for i in ordered],run_id,FAMILIES['refrigerator']['plp'])
         config,config_hash=load_configuration(ROOT)
+        label_reviews=load_review_annotations(ROOT/'docs/evidence/g2-label-review-annotations.json')
         bundle={'manifest':{'schema_version':'draft-1','run_id':run_id,'started_at':started,'completed_at':None,
             'git_sha':os.environ['GITHUB_SHA'],'config_hash':config_hash,'rule_version':None,
             'source_contract_version':config['sources']['contract_version'],'python_version':sys.version.split()[0],
@@ -93,12 +95,19 @@ def main():
         if label['requested_url'] not in {d['url'] for d in parsed_pdp['energyguide_documents']}:raise ValueError('Label outside selected SKU support')
         label_id,label_hash=evidence(raw,label['requested_url'],sku,'original-energyguide-pdf')
         extraction_id,_=evidence((source/'energyguide-observation.json').read_bytes(),label['requested_url'],sku,'extraction-observation')
+        original_candidates=json.loads((source/'energyguide-field-candidates.json').read_bytes())
+        original_layout=json.loads((source/'energyguide-layout-candidates.json').read_bytes())
         for name in ('energyguide-field-candidates.json','energyguide-layout-candidates.json'):
             evidence((source/name).read_bytes(),label['requested_url'],sku,'unselected-label-field-candidates')
+        original_selection=select_live_reviewed_energy(sku,label,original_candidates,original_layout,label_reviews)
+        original_selection_id,_=evidence(dumps({'selection_contract':'REVIEW_BOUND_LIVE_OBSERVATION_ONLY',
+            'exact_sku':sku,'pdf_sha256':label_hash,'selection':original_selection}).encode(),label['requested_url'],sku,
+            'review-bound-label-selection')
         fact('ENERGYGUIDE',{'document_url':observation(label['requested_url']),'document_sha256':observation(label_hash),
              'document_status':observation('SOURCE_PDF_PARSED'),'extraction_engine':observation(label['extraction_engine']),
              'embedded_text':observation(label['embedded_text']),'ocr_raw_text':observation('\n'.join(label['ocr_raw_texts'])),
-             'fallback_reason':observation(label['fallback_reason']),'ocr_scale':observation(label['ocr_scale'])},[label_id,extraction_id])
+             'annual_energy_kwh':original_selection['observation'],
+             'fallback_reason':observation(label['fallback_reason']),'ocr_scale':observation(label['ocr_scale'])},[label_id,extraction_id,original_selection_id])
         # Dataset-query context is not evidence of a product certification match.
         for entry in epa_recon['responses']:
             path=epa/(entry['name']+'-response.bin')
@@ -148,17 +157,26 @@ def main():
             label_id,label_hash=evidence(raw,result['final_url'],result['exact_sku'],'original-energyguide-pdf',result['captured_at'])
             observation_id,_=evidence((folder/'result.json').read_bytes(),result['final_url'],result['exact_sku'],'extraction-observation',result['captured_at'])
             candidate_refs=[]
+            candidate_documents={}
             for name in ('energyguide-field-candidates.json','energyguide-layout-candidates.json'):
+                candidate_documents[name]=json.loads((folder/name).read_bytes())
                 ref,_=evidence((folder/name).read_bytes(),result['final_url'],result['exact_sku'],'unselected-label-field-candidates',result['captured_at'])
                 candidate_refs.append(ref)
-            label_fact_inputs.setdefault(result['exact_sku'],[]).append((result,label_hash,[label_id,observation_id,*candidate_refs]))
+            selection=select_live_reviewed_energy(result['exact_sku'],result,
+                candidate_documents['energyguide-field-candidates.json'],candidate_documents['energyguide-layout-candidates.json'],label_reviews)
+            selection_ref,_=evidence(dumps({'selection_contract':'REVIEW_BOUND_LIVE_OBSERVATION_ONLY',
+                'exact_sku':result['exact_sku'],'pdf_sha256':label_hash,'selection':selection}).encode(),result['final_url'],
+                result['exact_sku'],'review-bound-label-selection',result['captured_at'])
+            label_fact_inputs.setdefault(result['exact_sku'],[]).append((result,label_hash,
+                [label_id,observation_id,*candidate_refs,selection_ref],selection['observation']))
         for label_sku,inputs in label_fact_inputs.items():
             # Multiple Support PDFs remain evidence only until a document-selection policy exists.
             if len(inputs)!=1:continue
-            result,label_hash,refs=inputs[0]
+            result,label_hash,refs,annual_energy=inputs[0]
             fact('ENERGYGUIDE',{'document_url':observation(result['final_url']),'document_sha256':observation(label_hash),
                  'document_status':observation('SOURCE_PDF_PARSED'),'extraction_engine':observation(result['extraction_engine']),
                  'embedded_text':observation(result['embedded_text']),'ocr_raw_text':observation('\n'.join(result['ocr_raw_texts'])),
+                 'annual_energy_kwh':annual_energy,
                  'fallback_reason':observation(result['fallback_reason']),'ocr_scale':observation(result['ocr_scale'])},refs,label_sku)
         pdp_coverage=coverage(products,samples)
         with (out/'pdp-coverage.json').open('x',encoding='utf-8',newline='\n') as stream:stream.write(dumps(pdp_coverage))
