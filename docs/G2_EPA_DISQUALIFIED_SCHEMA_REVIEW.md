@@ -77,7 +77,18 @@ The p5st-her9 wildcard and Samsung terminal-AA policies do not automatically
 become DQPL matching rules. Absence from this dated list cannot establish that a
 product has never been disqualified or is currently certified.
 
-Review status: COMPLETE for this source snapshot. Production observation parser
-and matching policy remain unimplemented. G2 acceptance remains pending.
-Next recommended model: Terra medium for the bounded observation parser and
-failure-path fixtures; reserve Sol medium for identifier/scope policy decisions.
+## Implemented row-observation boundary
+
+`g2_epa_disqualified_observations.py` now implements the proposed observation
+contract. It validates the raw XLSX hash, exact sheet name and headers, source
+interval and all B:F fields before emitting one raw observation per value-bearing
+row. Each observation retains the original cell address, value, OOXML type and
+style plus the capture provenance. It rejects changed hashes, changed headers
+and incomplete rows. The captured artifact replayed 2,997 observations through
+this implementation.
+
+Every emitted record has `identity_matching`, `disqualification_state` and
+`assessment` set to `NOT_EVALUATED`. No model comparison exists. G2 acceptance
+remains pending. Next recommended model: Sol medium for identifier, category and
+time-scope matching policy review; Terra medium for any later bounded rule
+implementation.

@@ -173,9 +173,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   interval is 2018-01-01 through 2026-05-15; 2,997 value-bearing data rows,
   inflated worksheet dimensions, numeric model cells and trailing category
   spaces were observed. No production row parser or matching was enabled.
-  Next: implement bounded source-row observation with exact header/provenance
-  checks and sanitized failure fixtures, keeping all product identity and
-  assessment states NOT_EVALUATED. Recommended model: Terra medium.
+  Bounded source-row observation is now implemented: exact raw XLSX hash,
+  sheet/header and B:F-field validation precede emission of source-bound rows.
+  The captured artifact replayed all 2,997 rows; values, OOXML types/styles and
+  cell addresses remain raw. All product identity, disqualification and
+  assessment states remain NOT_EVALUATED. Next: propose a separate identifier,
+  category and time-scope matching policy; recommended model: Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

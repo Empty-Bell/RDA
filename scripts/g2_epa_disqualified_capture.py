@@ -10,6 +10,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin
 
+from g2_epa_disqualified_observations import observe_rows
+
 INTEGRITY_URL = (
     "https://www.energystar.gov/partner-resources/products_partner_resources/products_integrity"
 )
@@ -53,7 +55,7 @@ def project_source(name: str, body: bytes) -> dict:
     if name == "disqualified-list":
         if not body.startswith(b"PK\x03\x04"):
             raise ValueError("EPA disqualified-list is not an XLSX ZIP container")
-        return {"content_state": "XLSX_BYTES_ONLY_NOT_PARSED"}
+        return {"content_state": "XLSX_CONTAINER_VALIDATED"}
     raise ValueError("Unknown EPA disqualified source")
 
 
@@ -98,6 +100,14 @@ def replay_capture(root: Path) -> dict:
         != records["disqualified-list"]["requested_url"]
     ):
         raise ValueError("EPA disqualified XLSX URL does not replay from integrity page")
+    observations = observe_rows(
+        (root / "disqualified-list.bin").read_bytes(),
+        source_body_sha256=records["disqualified-list"]["body_sha256"],
+        captured_at=manifest["captured_at"],
+    )
+    encoded = json.dumps(observations, indent=2).encode() + b"\n"
+    if hashlib.sha256(encoded).hexdigest() != manifest["observations_sha256"]:
+        raise ValueError("EPA disqualified row observations do not replay")
     return manifest
 
 
@@ -123,14 +133,23 @@ def main() -> None:
         records.append(record)
         projections["disqualified-list"] = project_source("disqualified-list", xlsx)
 
+        captured_at = datetime.now(timezone.utc).isoformat()
+        observations = observe_rows(
+            xlsx, source_body_sha256=record["body_sha256"], captured_at=captured_at
+        )
+        encoded_observations = json.dumps(observations, indent=2) + "\n"
+        (out / "observations.json").write_text(encoded_observations, encoding="utf-8")
+
         manifest = {
-            "contract": "G2_EPA_DISQUALIFIED_SOURCE_CAPTURE_ONLY_V1",
+            "contract": "G2_EPA_DISQUALIFIED_SOURCE_CAPTURE_AND_ROW_OBSERVATION_V2",
             "status": "PASS",
-            "captured_at": datetime.now(timezone.utc).isoformat(),
+            "captured_at": captured_at,
             "run_id": os.getenv("GITHUB_RUN_ID"),
             "git_sha": os.getenv("GITHUB_SHA"),
             "sources": records,
             "projections": projections,
+            "observations_sha256": hashlib.sha256(encoded_observations.encode()).hexdigest(),
+            "observation_count": observations["observation_count"],
             "identity_matching": "NOT_EVALUATED",
             "disqualification_state": "NOT_EVALUATED",
             "assessment": "NOT_EVALUATED",
@@ -141,7 +160,7 @@ def main() -> None:
         (out / "manifest.json").write_text(
             json.dumps(
                 {
-                    "contract": "G2_EPA_DISQUALIFIED_SOURCE_CAPTURE_ONLY_V1",
+                    "contract": "G2_EPA_DISQUALIFIED_SOURCE_CAPTURE_AND_ROW_OBSERVATION_V2",
                     "status": "FAIL",
                     "error": str(error),
                     "sources": records,

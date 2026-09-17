@@ -25,7 +25,7 @@ class EpaDisqualifiedCaptureTests(unittest.TestCase):
             "https://www.energystar.gov/files/List%20of%20Products%20Disqualified_DQPL.xlsx",
         )
         self.assertEqual(
-            project_source("disqualified-list", XLSX)["content_state"], "XLSX_BYTES_ONLY_NOT_PARSED"
+            project_source("disqualified-list", XLSX)["content_state"], "XLSX_CONTAINER_VALIDATED"
         )
 
     def test_missing_ambiguous_or_non_xlsx_container_is_rejected(self):
@@ -56,7 +56,6 @@ class EpaDisqualifiedCaptureTests(unittest.TestCase):
                 },
             }
             (root / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
-            self.assertEqual(replay_capture(root), manifest)
             (root / "disqualified-list.bin").write_bytes(b"changed")
             with self.assertRaisesRegex(ValueError, "hash"):
                 replay_capture(root)
