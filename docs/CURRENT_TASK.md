@@ -151,7 +151,10 @@ on every next-step prompt. Same-task model changes should continue existing work
   8wj2-sec8, explicitly described as currently certified models. Read-only PD_ID
   2839420 query matched brand/model/CB identifier; not hosted evidence yet.
   See G2_EPA_CURRENT_STATUS_RECON.md. Next: manual hosted raw/hash metadata and
-  PD_ID capture with exact-key fixture validation; recommended model Terra medium.
+  PD_ID capture with exact-key fixture validation. Hosted capture 35208691273
+  and replay contract 35210140588 passed. Current snapshot-state proposal is in
+  G2_EPA_CURRENT_STATUS_RECON.md. Next: user approval of
+  OBSERVED_CURRENT_CERTIFIED_INDEX only; recommended model Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

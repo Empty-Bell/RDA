@@ -52,3 +52,25 @@ No XLSX parser, disqualified-list matching, finding or assessment is added in th
 step. This research completes the source-discovery subtask, not the G2 gate.
 Next model: Terra medium for bounded hosted capture/fixture integration; Sol
 medium only for adopting the snapshot-state and conflict/refresh policy.
+
+## Hosted evidence and approval proposal
+
+Hosted run [35208691273](https://github.com/Empty-Bell/RDA/actions/runs/35208691273)
+captured the three source responses on `ubuntu-24.04`; its artifact ZIP digest is
+`8b7f7022ef172f67210990989c171b76d38b550e5a6878729524d6a43cc7e111`.
+The Model Index metadata, Model Index PD_ID row and refrigerator PD_ID row were
+all HTTP 200. Their Model Index row/refrigerator row values agreed on PD_ID,
+brand, model pattern and CB identifier. The latter raw body SHA-256 is the
+previously preserved `dfcc3c3c8a27447b114e75a8b43ec39318ad11fa36311707d4a760cb3872e3f3`.
+Hosted run [35210140588](https://github.com/Empty-Bell/RDA/actions/runs/35210140588)
+passed the replay-tamper contract on Python 3.11 and 3.12.
+
+Proposed approval: when a same-run, schema-validated Model Index row and
+category row have one exact match on all four keys, emit
+`current_certification_state=OBSERVED_CURRENT_CERTIFIED_INDEX`. Include the
+capture timestamp, Model Index metadata update timestamp, both raw source hashes
+and the four key values. This means the row appeared in EPA's current-certified
+Model Index at that capture snapshot only. A missing, duplicate, mismatched,
+failed, stale or conflicting source produces `NOT_EVALUATED`; it does not mean
+disqualified, withdrawn or non-certified. The disqualified list is retained as a
+future independent source and is not parsed by this approval.
