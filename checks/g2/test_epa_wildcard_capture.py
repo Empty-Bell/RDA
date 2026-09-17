@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from g2_epa_wildcard_capture import (
+from g2_epa_wildcard_capture import (  # noqa: E402
     positional_diagnostic,
     project_source,
     replay_capture,
