@@ -1,8 +1,10 @@
 # Samsung model suffix source review
 
-Research date: 2026-09-17. Scope: official manufacturer observations, not a
-suffix normalization or EPA identity policy. G2 remains RUNNING; no gate passes
-from this web review and no hosted collector execution is claimed.
+Research date: 2026-09-17. G2 remains RUNNING. The user approved a bounded
+Samsung terminal-suffix normalization: remove only terminal `AA` or `/AA` from
+an uppercase exact SKU, preserving every preceding character and the raw input.
+This approval does not establish EPA identity, certification, current status,
+US applicability, or a compliance assessment.
 
 ## Source observations
 
@@ -25,6 +27,12 @@ explicitly list either Samsung identifier. Applying the approved offline
 diagnostic to the source-displayed short identifier could test positional
 compatibility only. It cannot establish certification identity, current status,
 US applicability, or the absence of conflicting candidates.
+
+The approved rule maps `RF23DB9600QLAA` to `RF23DB9600QL` and
+`RF18A5101SR/AA` to `RF18A5101SR`. It does not remove configuration characters
+such as `QL` or `SR`, repair OCR, accept lower case or embedded suffixes, or
+permit a broader family match. Its output remains an observational normalized
+identifier with `identity_state=NOT_EVALUATED`.
 
 ## Next bounded implementation
 

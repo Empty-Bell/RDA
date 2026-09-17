@@ -131,9 +131,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   EPA identity rule was established. Hosted run 35202527763 captured the
   source-declared pair and replayed its raw hash successfully; see
   G2_SAMSUNG_SUFFIX_SOURCE_REVIEW.md. Next: retain it as one observational
-  pair and investigate explicit EPA additional-model mappings or D09 policy,
-  without broad suffix normalization; recommended model Sol medium for the
-  policy boundary, Terra medium for a bounded source query.
+  pair and investigate explicit EPA additional-model mappings. User approved
+  terminal Samsung `AA`/`/AA` removal only: preserve raw exact SKU and every
+  preceding character; this remains identity/assessment NOT_EVALUATED. Next:
+  apply that bounded observation to the offline positional diagnostic report;
+  recommended model Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
