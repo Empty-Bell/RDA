@@ -15,8 +15,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 
 def main() -> int:
-    suite = unittest.defaultTestLoader.discover(
-        str(ROOT / "checks/g2"), pattern="test_normalized_pdp.py"
+    loader = unittest.defaultTestLoader
+    suite = unittest.TestSuite(
+        loader.discover(str(ROOT / "checks/g2"), pattern=pattern)
+        for pattern in ("test_normalized_pdp.py", "test_label_plan.py")
     )
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     report = {
