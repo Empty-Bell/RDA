@@ -114,3 +114,8 @@ nonzero when any selected SKU has FAILED identity, so this success establishes n
 failure among the selected bounded sample. It does not establish full population
 coverage, label coverage beyond the original SKU, EPA certification matching or a
 regulatory outcome. See docs/evidence/g2-pdp-coverage-expansion-recon.json.
+
+Before expanding label retrieval, Support-declared document planning passed ten
+fixture contracts on hosted Python 3.11 and 3.12 in run 35175865085. The plan
+retains every exact-SKU HTTPS document candidate and marks a missing Support
+document NOT_OBSERVED; it neither selects a canonical PDF nor parses a value.
