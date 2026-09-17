@@ -200,6 +200,11 @@ Consolidated G0 evidence review and phase-specific gap inventory are recorded in
 G0_REVIEW.md. Fixture manifest capture/committed byte distinctions and ambiguous
 refrigerator paths are corrected; a dedicated hosted integrity checkpoint is added.
 No fixture facts, raw ZIP/PDF hashes, decisions or compliance rules were changed.
+Hosted integrity review PASS: run 35167790999, commit
+3e4d5ea3c5ac0947c99e955ef3bac3054dac5302, attempt 1, job 105032662559.
+All 92 fixture references match actual Ubuntu checkout bytes. Archive/report
+hashes and expiry are recorded in docs/evidence/g0-integrity-review.json.
+Local changed-byte, missing-file and traversal checks reject invalid evidence.
 Next bounded task: official EPA active-version and alternate product-type routing
 evidence, followed by family applicability provenance. All family discovery and
 bounded common claim/quality/runtime probes are complete; full G0 is not promoted.

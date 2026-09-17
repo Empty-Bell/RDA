@@ -1,0 +1,578 @@
+{
+  "status": "PASS",
+  "scope": "repository fixture path and byte integrity only",
+  "phase_gate": "NOT_EVALUATED",
+  "compliance": "NOT_EVALUATED",
+  "byte_source": "checkout files",
+  "checks": [
+    {
+      "manifest": "claim-attribution-fixture-manifest.json",
+      "fixture": "tests/fixtures/claim-attribution/tablet.json",
+      "sha256": "3655986da80c74bcbeafb6322f1a8e020f948760b2ad310895a932146dd0adf1",
+      "status": "PASS"
+    },
+    {
+      "manifest": "claim-attribution-fixture-manifest.json",
+      "fixture": "tests/fixtures/claim-attribution/refrigerator.json",
+      "sha256": "95022cc6505f8ce1d07c90a54130f2d05f33d4111b350b5c2c86360ee6620bfd",
+      "status": "PASS"
+    },
+    {
+      "manifest": "computer-fixture-manifest.json",
+      "fixture": "tests/fixtures/computer/epa-metadata.projected.json",
+      "sha256": "c2b10aacd35c4c14593e07ed75d69c63c77de1882a4dae969ab2b8fb20e83e5c",
+      "status": "PASS"
+    },
+    {
+      "manifest": "computer-fixture-manifest.json",
+      "fixture": "tests/fixtures/computer/epa-sample.projected.json",
+      "sha256": "01a2dd5fb9d8d72ccb9fa3088d3df6d29a880dfcc973047a7f39b4b6abcd1d8a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "computer-fixture-manifest.json",
+      "fixture": "tests/fixtures/computer/pf-chromebook-page-0.json",
+      "sha256": "88fea7c23966aea5cac31c379f3e8424756f23418ae09cd897bc125f11a5605b",
+      "status": "PASS"
+    },
+    {
+      "manifest": "computer-fixture-manifest.json",
+      "fixture": "tests/fixtures/computer/pf-page-0.json",
+      "sha256": "9c89ad78a9f7106bca12d5ff363ea1ef2472c1aede9c7dc45666f86abb93bffc",
+      "status": "PASS"
+    },
+    {
+      "manifest": "computer-fixture-manifest.json",
+      "fixture": "tests/fixtures/computer/selected-configuration.projected.json",
+      "sha256": "ae98bf96c5e6f3aca8f91c4c6fa1cf1d7eb869a3ba52e040919ff62515f5cb05",
+      "status": "PASS"
+    },
+    {
+      "manifest": "computer-fixture-manifest.json",
+      "fixture": "tests/fixtures/computer/specs-chromebook.projected.json",
+      "sha256": "e128824c76f1116f6fc154dbb62d6a9cf846c287cc076afc55a66081c23f7c3f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "computer-fixture-manifest.json",
+      "fixture": "tests/fixtures/computer/specs-only.projected.json",
+      "sha256": "8ad1a5e1dbd86821a7becb6ad440c7964f5234162d309af4a7c08bb6bfa88325",
+      "status": "PASS"
+    },
+    {
+      "manifest": "cooktop-fixture-manifest.json",
+      "fixture": "tests/fixtures/cooktop/bridge-gas.json",
+      "sha256": "ee62c3de408ec5ca79ffa86810cf0abf167f091255e560bec599882773166d4e",
+      "status": "PASS"
+    },
+    {
+      "manifest": "cooktop-fixture-manifest.json",
+      "fixture": "tests/fixtures/cooktop/epa-metadata.projected.json",
+      "sha256": "18742b751d81ab2050ef470c06a8b521944f253ca3255bc19cb74ea24ba75487",
+      "status": "PASS"
+    },
+    {
+      "manifest": "cooktop-fixture-manifest.json",
+      "fixture": "tests/fixtures/cooktop/epa-sample.projected.json",
+      "sha256": "f2367ef2362da3389304d30e26bac6d731ba337be698e9dc68e2d19587bdf263",
+      "status": "PASS"
+    },
+    {
+      "manifest": "cooktop-fixture-manifest.json",
+      "fixture": "tests/fixtures/cooktop/pf-page-0.json",
+      "sha256": "491645834f07959f026f1b12cfe477d85d06ce65ce01c8e28913a9a69373d609",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dishwasher-fixture-manifest.json",
+      "fixture": "tests/fixtures/dishwasher/bridge-specs-support.json",
+      "sha256": "fb44f2afb6a93b64feeeff337fd9af605d76c20be7fa80e4101b32c97c8a0936",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dishwasher-fixture-manifest.json",
+      "fixture": "tests/fixtures/dishwasher/epa-metadata.projected.json",
+      "sha256": "270fdbb42833317c92ef931a21b3cc7e65b2620e03d7e04936c382f895515f35",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dishwasher-fixture-manifest.json",
+      "fixture": "tests/fixtures/dishwasher/epa-sample.projected.json",
+      "sha256": "a64927ca27ec25ddda076ea4e04024eaa0b7f3e2c973d996bb90268195195e85",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dishwasher-fixture-manifest.json",
+      "fixture": "tests/fixtures/dishwasher/pf-page-0.json",
+      "sha256": "b5014a480e724b4e37b596f099104741f4893f5e983a318f66fcd39a10adcba3",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dryer-fixture-manifest.json",
+      "fixture": "tests/fixtures/dryer/bridge-combo.json",
+      "sha256": "167247ab35a1c720840152df0e82615e50e584561c883077f351a230b45d4b2f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dryer-fixture-manifest.json",
+      "fixture": "tests/fixtures/dryer/bridge-standalone.json",
+      "sha256": "1a1adfc72f79689329600ac87fdc8434a902bde488605707bfd3c94d5e51082f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dryer-fixture-manifest.json",
+      "fixture": "tests/fixtures/dryer/epa-metadata.projected.json",
+      "sha256": "98537e6c3d6ad6773f01081ae1065c296b253956529d5659632e098bd65cd593",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dryer-fixture-manifest.json",
+      "fixture": "tests/fixtures/dryer/epa-sample.projected.json",
+      "sha256": "6864479da96fbcbaa95a6f5796b1c8f6607372d255ae2ce2db11db7ada31a011",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dryer-fixture-manifest.json",
+      "fixture": "tests/fixtures/dryer/pf-page-0.json",
+      "sha256": "6dccc1a380933e89ddb7c19434a7686e3e9842cba5b2faed2db9904a16fc750f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "dryer-fixture-manifest.json",
+      "fixture": "tests/fixtures/dryer/pf-page-1.json",
+      "sha256": "bf809f9a28a39aa3d8bfe647105bdb8eab4be08589f5da58f1a9bb5a60f7f75a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-field-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/refrigerator.json",
+      "sha256": "2b872702b20535c0b1b3cea286ac2751fa69f6eda9fc92155699328c5a60d9ab",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-field-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/dishwasher.json",
+      "sha256": "950c35e451e239708eb68b5eca8800b83d56b6a36681c9a2e390d830b2612337",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-field-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/washer.json",
+      "sha256": "1712f2aa9660bf0e427c3ccff86c91680f8af1ebacd2e16dc617a649826b714c",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-field-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/washer-standalone.json",
+      "sha256": "b8063924691497473bf61cc31c4f49fcca2c8d8f39d49a9007c9fdaff6396592",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-field-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/tv.json",
+      "sha256": "ba445677f449b9f852463bad928e282b5b4c8b00c8ee683a76119dbc415fe893",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-layout-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/refrigerator-layout.json",
+      "sha256": "9226544d62d80c2138cc7acd439a4f95212dfe75821eb753c423d86461e03d02",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-layout-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/dishwasher-layout.json",
+      "sha256": "e6668ca334f9f4fe4daa7896466cce2913ec4dbaf55ec0cba81aa2386c1f5801",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-layout-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/washer-layout.json",
+      "sha256": "0a32e48966bdf01b0e3ea62912d83000057ec3cc7260cedf876a2ebb00ac14a4",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-layout-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/washer-standalone-layout.json",
+      "sha256": "bfd1961032c858b7d9a1e04b9b4db89574d3a675877fc9939a7843a5c180fc35",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-layout-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-fields/tv-layout.json",
+      "sha256": "dbe97e101dd275d487cf20f4a2e76e85bd14e10baa0a5088e45844d0eb3dee3e",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-quality-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-quality/refrigerator.json",
+      "sha256": "9d1a2b24f46d241a713484008264eb31c84fd05ab2a135149c52aac080be3828",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-quality-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-quality/dishwasher.json",
+      "sha256": "89df2f24e0df341f8e45880821b3ac783eea7c2ebdb8317b16c7f961d33839ec",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-quality-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-quality/washer.json",
+      "sha256": "065528f3c837c5d993983c7c7a6dbde6dc1cc3cc69573664033ef560088c4c6a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-quality-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-quality/washer-standalone.json",
+      "sha256": "f423fb7ed2c3f7242cfa2d8e251d0dfb78be64bffb5feba17feb9fcfa3e51413",
+      "status": "PASS"
+    },
+    {
+      "manifest": "energyguide-quality-fixture-manifest.json",
+      "fixture": "tests/fixtures/energyguide-quality/tv.json",
+      "sha256": "b0c4d5f6e0f2cbfac0dff95aaf5b4a61dfe4aad67894b7b4fb72495a57b5aad5",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/m6gi-ng33.json",
+      "sha256": "e71506fc6c3b1c55186389c315fe97542d7988a220fab7bdc767c33f4db88dba",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/p5st-her9.json",
+      "sha256": "fd32880f71e3e932b035c28eb0f839e7a8bfb1580c8243540614ac8ce3c09069",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/q8py-6w3f.json",
+      "sha256": "124e12876683a42da615c6be6fa7c4debef73eba419c49db32e6458479f3add8",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/qbg3-d468.json",
+      "sha256": "d16869b446537fe7cada50e36f2a1d5e6d8bc39320d5b0d2ac3d44bb8741958f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/t9u7-4d2j.json",
+      "sha256": "e8555748e3027341d571841e1351f6608e9bff721c6e2a652685bfd223a52df0",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/bghd-e2wd.json",
+      "sha256": "07fdc2eee1917a500a9fd957366af1f5e857928f55a7219afe920d53c0d83cf3",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/rxdj-2c88.json",
+      "sha256": "96695730e96606a3add2e33ce0a20e85f38421e16c8d914098dbf38098fce0fd",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/8dv7-nngq.json",
+      "sha256": "40ae6468e7661f3f3a918e7f0e18e9cf6ae79d84aa57af4dd1e778d514b2ff42",
+      "status": "PASS"
+    },
+    {
+      "manifest": "epa-query-fixture-manifest.json",
+      "fixture": "tests/fixtures/epa-query/pd96-rr3d.json",
+      "sha256": "a68b8c5c4a3704f0af48e57ff501fc0d4a2f491b7fc426abb00429209457cf6b",
+      "status": "PASS"
+    },
+    {
+      "manifest": "fixture-manifest.json",
+      "fixture": "tests/fixtures/refrigerator/pf-initial.projected.json",
+      "sha256": "003a0490837981e4b34cca6c043387a2b7d445b39bb81349bcab6835fb089e23",
+      "status": "PASS"
+    },
+    {
+      "manifest": "fixture-manifest.json",
+      "fixture": "tests/fixtures/refrigerator/pf-page-0.json",
+      "sha256": "82815e0050fa0462b468402ee98ab00641d67106eef7c3d6ed25698157cb1c30",
+      "status": "PASS"
+    },
+    {
+      "manifest": "fixture-manifest.json",
+      "fixture": "tests/fixtures/refrigerator/pf-page-1.json",
+      "sha256": "3047d2980142501ba66b029ebbf35fd79f7092c1a8f0c6e8a7e3239907c82f02",
+      "status": "PASS"
+    },
+    {
+      "manifest": "fixture-manifest.json",
+      "fixture": "tests/fixtures/refrigerator/pf-page-2.json",
+      "sha256": "1107f3db5c37f5227eb0fef99141644a51e122d886f919a9333f38d5b25364fd",
+      "status": "PASS"
+    },
+    {
+      "manifest": "fixture-manifest.json",
+      "fixture": "tests/fixtures/refrigerator/bridge-specs-support.json",
+      "sha256": "1db463a3e53eb6e18dee79dcc6ad3b1ce9348716c40f6ad3e71ea54f9e8293a4",
+      "status": "PASS"
+    },
+    {
+      "manifest": "fixture-manifest.json",
+      "fixture": "tests/fixtures/refrigerator/epa-metadata.projected.json",
+      "sha256": "c26e7cc958b24c1dd7e9efae4c0b1b62ec5d46cee22b2263fe31589b7915322a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "fixture-manifest.json",
+      "fixture": "tests/fixtures/refrigerator/epa-sample.projected.json",
+      "sha256": "f39697e7d8a17223b6626604774a43bacb27f1b1feb27b0565d746a5f69daf1f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "hood-fixture-manifest.json",
+      "fixture": "tests/fixtures/hood/bridge-specs-support.json",
+      "sha256": "4cb03f57e1ef056b0b3e5f7e912e07c644a0ae3903cebcc9a24e113a3ec8c098",
+      "status": "PASS"
+    },
+    {
+      "manifest": "hood-fixture-manifest.json",
+      "fixture": "tests/fixtures/hood/epa-metadata.projected.json",
+      "sha256": "ebc61c6194f02038253c2cffa31f9785f960997c450b11dac655ef12f3e898b8",
+      "status": "PASS"
+    },
+    {
+      "manifest": "hood-fixture-manifest.json",
+      "fixture": "tests/fixtures/hood/epa-sample.projected.json",
+      "sha256": "3c5b62350f749fcdc48ea0a77f55c4dc437070b5445f85da97e9d5ac0dd50c0b",
+      "status": "PASS"
+    },
+    {
+      "manifest": "hood-fixture-manifest.json",
+      "fixture": "tests/fixtures/hood/pf-page-0.json",
+      "sha256": "39cabdb806013e41b0577260d9efb36d81442e9d0610015cdb376c54deadd053",
+      "status": "PASS"
+    },
+    {
+      "manifest": "inline-claim-fixture-manifest.json",
+      "fixture": "tests/fixtures/claim-attribution/inline-computer.json",
+      "sha256": "bbf499eb67c5058307714a64d43cc108116ec2b991456dd07339a4fbdd65335c",
+      "status": "PASS"
+    },
+    {
+      "manifest": "inline-claim-fixture-manifest.json",
+      "fixture": "tests/fixtures/claim-attribution/inline-tv.json",
+      "sha256": "49b0e7e2440b5137f3a685bbd6fe5c5db6d691eefeeb32629f5ab4f7a2e8f09b",
+      "status": "PASS"
+    },
+    {
+      "manifest": "monitor-fixture-manifest.json",
+      "fixture": "tests/fixtures/monitor/bridge-specs-support.json",
+      "sha256": "1a6353f5d954f00eee31d18b2ed8303922a90fbffd6680aa165d124655d8e443",
+      "status": "PASS"
+    },
+    {
+      "manifest": "monitor-fixture-manifest.json",
+      "fixture": "tests/fixtures/monitor/epa-metadata.projected.json",
+      "sha256": "1e8fdda7125fc6744e37a1a0f13c53e89f83653da501fed05e1ce158114c9f17",
+      "status": "PASS"
+    },
+    {
+      "manifest": "monitor-fixture-manifest.json",
+      "fixture": "tests/fixtures/monitor/epa-sample.projected.json",
+      "sha256": "a7d7d4657224ce93bd336d6dac12b303e874eab2f66d82b9ba16e0fbc54979d9",
+      "status": "PASS"
+    },
+    {
+      "manifest": "monitor-fixture-manifest.json",
+      "fixture": "tests/fixtures/monitor/pf-page-0.json",
+      "sha256": "25349e68bc8a19810c700fe96be4112c8f9ec53f37da3e189225205db3871bdf",
+      "status": "PASS"
+    },
+    {
+      "manifest": "monitor-fixture-manifest.json",
+      "fixture": "tests/fixtures/monitor/pf-page-1.json",
+      "sha256": "e8ba54f7807d2b3300cc24c2946dd6010e7a35b20b99532aae3a1304b4cf356c",
+      "status": "PASS"
+    },
+    {
+      "manifest": "monitor-fixture-manifest.json",
+      "fixture": "tests/fixtures/monitor/pf-page-2.json",
+      "sha256": "d561b9c8cbbf7740cf5b5faf976be9408faf324e014ae7e64d1f656dcdbbb982",
+      "status": "PASS"
+    },
+    {
+      "manifest": "public-claim-fixture-manifest.json",
+      "fixture": "tests/fixtures/public-claims/refrigerator.json",
+      "sha256": "06c563754383282db2e292bf400261d97edd8dc7bbc432b9341f7f6f00de376d",
+      "status": "PASS"
+    },
+    {
+      "manifest": "public-claim-fixture-manifest.json",
+      "fixture": "tests/fixtures/public-claims/dishwasher.json",
+      "sha256": "c8e2f271d901eedb742544dfea941fd48de6c604c91c0aa72963b7405e1632b4",
+      "status": "PASS"
+    },
+    {
+      "manifest": "public-claim-fixture-manifest.json",
+      "fixture": "tests/fixtures/public-claims/tablet.json",
+      "sha256": "be87c986c1af9436487c542d0a76d0cd98e95affda39728e9950faca364cef2a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "range-fixture-manifest.json",
+      "fixture": "tests/fixtures/range/bridge-specs-support.json",
+      "sha256": "1548c044e32e35a65f317846962f165eb7b90d187ddb23a94ecded1107a6bcb4",
+      "status": "PASS"
+    },
+    {
+      "manifest": "range-fixture-manifest.json",
+      "fixture": "tests/fixtures/range/epa-metadata.projected.json",
+      "sha256": "18742b751d81ab2050ef470c06a8b521944f253ca3255bc19cb74ea24ba75487",
+      "status": "PASS"
+    },
+    {
+      "manifest": "range-fixture-manifest.json",
+      "fixture": "tests/fixtures/range/epa-sample.projected.json",
+      "sha256": "f2367ef2362da3389304d30e26bac6d731ba337be698e9dc68e2d19587bdf263",
+      "status": "PASS"
+    },
+    {
+      "manifest": "range-fixture-manifest.json",
+      "fixture": "tests/fixtures/range/pf-page-0.json",
+      "sha256": "f8d0384eacc7ebeda577beb25b4a27bd4eb6037613c77016dd60aab0db0e9d82",
+      "status": "PASS"
+    },
+    {
+      "manifest": "range-fixture-manifest.json",
+      "fixture": "tests/fixtures/range/pf-page-1.json",
+      "sha256": "828ac38a51b7eb24f6705bbae00ebda75127e2e2a593468a380ea001c72c9a0a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tablet-fixture-manifest.json",
+      "fixture": "tests/fixtures/tablet/epa-metadata.projected.json",
+      "sha256": "c2b10aacd35c4c14593e07ed75d69c63c77de1882a4dae969ab2b8fb20e83e5c",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tablet-fixture-manifest.json",
+      "fixture": "tests/fixtures/tablet/epa-sample.projected.json",
+      "sha256": "01a2dd5fb9d8d72ccb9fa3088d3df6d29a880dfcc973047a7f39b4b6abcd1d8a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tablet-fixture-manifest.json",
+      "fixture": "tests/fixtures/tablet/pf-page-0.json",
+      "sha256": "b7d9ed42a1c7eb935c2bcdefb95293d3a4b3d87852a84c25e14c9ed747844a5f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tablet-fixture-manifest.json",
+      "fixture": "tests/fixtures/tablet/selected-configuration.projected.json",
+      "sha256": "bbe24c15ca70183b43a429f845436bf7daba1b54d0b3e00eb129c50d62547a49",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tablet-fixture-manifest.json",
+      "fixture": "tests/fixtures/tablet/specs-only.projected.json",
+      "sha256": "d297f6f098cc88f988365a11d5c19f1307ba6cfc35eaa224fcc0b0df89fe2d5a",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tv-fixture-manifest.json",
+      "fixture": "tests/fixtures/tv/bridge-specs-support.json",
+      "sha256": "a48a0d978f71249396df0ef8322763a492f04f3ddaa0dd04e220e89b1d618830",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tv-fixture-manifest.json",
+      "fixture": "tests/fixtures/tv/energyguide-observation.json",
+      "sha256": "a1bacf38c792f67d5a1d2e84b778c73c5a3a6a8afd662d6120b1bc1ac014963d",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tv-fixture-manifest.json",
+      "fixture": "tests/fixtures/tv/epa-metadata.projected.json",
+      "sha256": "5db5ccbbde6f665613f67577dbbc806f7c68d6b002286dae9837c42c5936096c",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tv-fixture-manifest.json",
+      "fixture": "tests/fixtures/tv/epa-sample.projected.json",
+      "sha256": "6559c3c45060654db1bd71b939294b5f958157ce02ce830f22580d3c084d1f29",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tv-fixture-manifest.json",
+      "fixture": "tests/fixtures/tv/pf-page-0.json",
+      "sha256": "655adf52bbefadf373baa89a3b55cde9d3a3d35fb2182d2cdb034ebffea95e0f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "tv-fixture-manifest.json",
+      "fixture": "tests/fixtures/tv/pf-page-1.json",
+      "sha256": "5a43032874e249dc4f0bd0941854d691377b672247b391cf15cd05e19c498510",
+      "status": "PASS"
+    },
+    {
+      "manifest": "washer-fixture-manifest.json",
+      "fixture": "tests/fixtures/washer/bridge-combo.json",
+      "sha256": "167247ab35a1c720840152df0e82615e50e584561c883077f351a230b45d4b2f",
+      "status": "PASS"
+    },
+    {
+      "manifest": "washer-fixture-manifest.json",
+      "fixture": "tests/fixtures/washer/bridge-standalone.json",
+      "sha256": "20d901c2855d61f5b5241c698b7055564ad0080d26f651149ded6664c198c185",
+      "status": "PASS"
+    },
+    {
+      "manifest": "washer-fixture-manifest.json",
+      "fixture": "tests/fixtures/washer/epa-metadata.projected.json",
+      "sha256": "d7ee3bb0553ec2e6f6e38b35081c93f806fa310680d7e6cf0bb04594334e4c6c",
+      "status": "PASS"
+    },
+    {
+      "manifest": "washer-fixture-manifest.json",
+      "fixture": "tests/fixtures/washer/epa-sample.projected.json",
+      "sha256": "595e40bd0853022c8ef0883b0c402aa36c2480b80143696609b3bc8c26522494",
+      "status": "PASS"
+    },
+    {
+      "manifest": "washer-fixture-manifest.json",
+      "fixture": "tests/fixtures/washer/partial-text-energyguide.json",
+      "sha256": "8dd075a48acfd950b02589654ae6e17a08971ac45838a795b574b232e802e6e4",
+      "status": "PASS"
+    },
+    {
+      "manifest": "washer-fixture-manifest.json",
+      "fixture": "tests/fixtures/washer/pf-page-0.json",
+      "sha256": "081ecabb0c8d22de5c7f3074cedc3ec237c57f23903d07b8d277b426fd176874",
+      "status": "PASS"
+    },
+    {
+      "manifest": "washer-fixture-manifest.json",
+      "fixture": "tests/fixtures/washer/pf-page-1.json",
+      "sha256": "655081e5c575cb1d6405daf92e7a288109ae123dee15b605e27773dee3d9943f",
+      "status": "PASS"
+    }
+  ],
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35167790999",
+  "code_commit": "3e4d5ea3c5ac0947c99e955ef3bac3054dac5302",
+  "run_attempt": 1,
+  "job_id": 105032662559,
+  "runner_name": "GitHub Actions 1000001475",
+  "runner_target": "ubuntu-24.04 x64",
+  "artifact_id": 10475289304,
+  "artifact_zip_sha256": "0e929edcf7cecd04e4cabd5d10293a950c34273c896645c128e180873defe18d",
+  "artifact_expires_at": "2026-10-01T00:44:46Z",
+  "report_sha256": "0ea54d1f4d07573e42884293747dda1b5a7035d07d933fda0922f4950ec9fb17",
+  "additional_successful_run": "https://github.com/Empty-Bell/RDA/actions/runs/35167789865",
+  "local_boundary_checks": [
+    "Changed bytes FAIL",
+    "Missing fixture raises",
+    "Traversal raises"
+  ],
+  "provenance_note": "Committed LF fixture hashes corrected; historical CRLF capture hashes retained separately. Original raw artifact/PDF hashes unchanged."
+}
