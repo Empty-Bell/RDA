@@ -61,6 +61,8 @@ on every next-step prompt. Same-task model changes should continue existing work
   detection text/boxes. RF18A5101 loses visible stars; RF22A4111 substitutes a
   quotation mark despite high OCR confidence. Keep raw OCR and visual annotation
   separate; no model correction, glob/prefix matching or capacity identity rule.
+  Hosted cheap contract run 35181212977 at 4ba3dd6 PASSed 25 cases on Python
+  3.11/3.12; no live collector was rerun.
   Next: fixture-only capacity selection with explicit descriptor/unit and reviewed
   detection binding; live capacity remains disabled. Recommended model: Luna low.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.

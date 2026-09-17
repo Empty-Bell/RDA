@@ -66,3 +66,7 @@ on hosted Python 3.11/3.12; this review does not accept G2 or introduce a rule.
 Local source-projection verification checked all nine SKU records against their
 saved original PDF bytes and exact model/capacity detection text, page and polygon
 coordinates. All matched. The local cheap contract suite passed 25 cases.
+
+Hosted fixture checkpoint PASS: run 35181212977 at 4ba3dd6 passed the 25-case
+contract suite on ubuntu-24.04, Python 3.11 and 3.12. Only the cheap contract
+workflow was triggered; no live source crawl or assessment was enabled.
