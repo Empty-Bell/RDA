@@ -20,7 +20,12 @@ and unobserved flags remain unknown. Bounded EnergyGuide field/coordinate
 reconnaissance passed in run 35163198471 (154 tests, 12 source legs, five label
 fixtures); see ENERGYGUIDE_FIELD_SOURCE_CONTRACT.md and energyguide-field-recon.json.
 Extraction health is separate from canonical annual selection and identity matching.
-Next: actual low-resolution and wildcard ROI regression evidence.
+Bounded controlled low-resolution/model-like ROI probes passed in run 35164831308
+(165 tests, 12 source legs, five labels); see ENERGYGUIDE_QUALITY_CONTRACT.md and
+energyguide-quality-recon.json. Color and grayscale/Otsu retries retain independent
+outputs; wildcard disagreement is never silently corrected. Naturally degraded
+source PDFs, the complete glyph/wrong-model matrix and approved corroboration
+semantics remain open. Next: EPA query/type/current-source contract.
 Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate

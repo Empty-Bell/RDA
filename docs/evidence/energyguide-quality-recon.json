@@ -1,0 +1,2016 @@
+{
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35164831308",
+  "code_commit": "250dee4665ae9d3bf8c4c0f4142e7f398c74375d",
+  "status": "PASS",
+  "status_meaning": "bounded degradation/ROI probe executed; not label readability or identity acceptance",
+  "hosted_tests": 165,
+  "source_jobs": 12,
+  "product_groups": 11,
+  "scope": "five actual source labels, controlled low DPI renders and model-like ROIs",
+  "naturally_degraded_source_corpus": "NOT_COLLECTED",
+  "wildcard_correction": "NOT_APPLIED",
+  "annual_value_selection": "NOT_EVALUATED",
+  "identity_matching": "NOT_EVALUATED",
+  "compliance": "NOT_EVALUATED",
+  "phase_gate": "NOT_EVALUATED",
+  "jobs": [
+    {
+      "id": 105023471930,
+      "name": "recon (refrigerator)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472090,
+      "name": "recon (computer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472101,
+      "name": "recon (tv)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472104,
+      "name": "recon (washer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472111,
+      "name": "recon (range)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472123,
+      "name": "recon (dryer)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472132,
+      "name": "recon (monitor)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472140,
+      "name": "recon (cooktop)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472152,
+      "name": "recon (hood)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472169,
+      "name": "recon (dishwasher)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472227,
+      "name": "recon (tablet)",
+      "conclusion": "success"
+    },
+    {
+      "id": 105023472272,
+      "name": "recon (chromebook)",
+      "conclusion": "success"
+    }
+  ],
+  "sources": {
+    "refrigerator": {
+      "artifact": {
+        "id": 10474970644,
+        "name": "source-recon-refrigerator-35164831308-1",
+        "expires_at": "2026-10-01T00:03:21Z"
+      },
+      "artifact_zip_sha256": "418b9f4c1741366d5021a43bc7a3ac173ff4a10e28cf98be33156cab377c6245",
+      "captured_at": "2026-09-17T00:02:39.937198+00:00",
+      "labels": {
+        "refrigerator": {
+          "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+          "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/rf29db9900qdaa/energyguide/us-energyguide-rf29db9900qdaa-550480754.pdf",
+          "model_regions_raw": [
+            {
+              "source_detection": 6,
+              "source_text_raw": "Model RF29DB9900**",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "RF29DB9900**",
+                  "line": 0,
+                  "context_raw": "Model RF29DB9900**",
+                  "wildcard_count_status": "NOT_EVALUATED"
+                }
+              ],
+              "clip_pdf_points": [
+                410.5,
+                158.0,
+                553.0,
+                207.5
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "render": {
+                "name": "page-36dpi",
+                "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+                "page": 0,
+                "scale": 0.5,
+                "dpi": 36.0,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  298,
+                  421
+                ],
+                "png_sha256": "0bb779a8457aa53dacec3c382c156c36ca506f46a5a9314734601d8738e5cdfd",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 28,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "RF29DB9900**"
+                ],
+                "observed_candidates_raw": [
+                  "RF290B9900"
+                ],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [
+                {
+                  "value_raw": "700",
+                  "unit_raw": "kWh",
+                  "role": "UNCLASSIFIED",
+                  "line_start": 17,
+                  "line_end": 18,
+                  "matched_text": "700 kWh",
+                  "unit_association": "ADJACENT_LINE_PAIR",
+                  "context_raw": [
+                    "$98",
+                    "$91 $101",
+                    "$124",
+                    "700",
+                    "kWh",
+                    "Estimated Yearly E",
+                    "voe  ss  s     se",
+                    "Both cost sanges based on models of simlar size capacily",
+                    "Models with simlar features have automatic dofrost, bottom inounted"
+                  ]
+                }
+              ],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "aa282982baeb3d04ffc8640b2250b3b407079b0f8857157a67ab18aff4263326",
+              "ocr_spans_sha256": "0308e9d5da83f42094d8b9217020ecbf3b39f9f2d8d8b55155e16dab39bab417"
+            },
+            {
+              "render": {
+                "name": "page-72dpi",
+                "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+                "page": 0,
+                "scale": 1,
+                "dpi": 72,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  596,
+                  842
+                ],
+                "png_sha256": "6be42318bec4f234a7cc1aafd0b745c4f09ef1094ca2af051e07808aba40fcce",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 33,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "RF29DB9900**"
+                ],
+                "observed_candidates_raw": [
+                  "RF29DB9900**"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [
+                {
+                  "value_raw": "700",
+                  "unit_raw": "kWh",
+                  "role": "ANNUAL_CAPTION_CONTEXT",
+                  "line_start": 21,
+                  "line_end": 22,
+                  "matched_text": "700 kWh",
+                  "unit_association": "ADJACENT_LINE_PAIR",
+                  "context_raw": [
+                    "All models",
+                    "$84",
+                    "$124",
+                    "700",
+                    "kWh",
+                    "Estimated Yearly Electricity Use",
+                    "• Your cost will depend on your utility rates and use.",
+                    "● Both cost ranges based on models of similar size capacity.",
+                    "Models with similar features have automatic defrost, bottom-mounted"
+                  ]
+                }
+              ],
+              "annual_layout_candidates": [
+                {
+                  "page": 0,
+                  "caption_detection": 23,
+                  "caption_raw": "Estimated Yearly Electricity Use",
+                  "proposals_raw": [
+                    {
+                      "value_raw": "700",
+                      "number_detection": 21,
+                      "unit_detection": 22,
+                      "distance_pdf_points": 36.0
+                    }
+                  ],
+                  "nearest_proposal_raw": {
+                    "value_raw": "700",
+                    "number_detection": 21,
+                    "unit_detection": 22,
+                    "distance_pdf_points": 36.0
+                  }
+                }
+              ],
+              "raw_ocr_sha256": "ab20b1fe0d71072cd24d39abcdede8d2773ceb167755d24b41630037fffc9cb6",
+              "ocr_spans_sha256": "90a63daf62b797eff2401f7adf727e95f2fe06f47d7565d3118502040b2a64da"
+            },
+            {
+              "render": {
+                "name": "model-roi-0",
+                "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  410.5,
+                  158.0,
+                  553.0,
+                  207.5
+                ],
+                "pixel_origin": [
+                  1231,
+                  474
+                ],
+                "pixel_size": [
+                  428,
+                  149
+                ],
+                "png_sha256": "08d2de4c476f8f3c8aca8849c57c1affc239bd7b79226898d49c854a601bc761",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "RF29DB9900**"
+                ],
+                "observed_candidates_raw": [
+                  "RF29DB9900**"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "6981d98dc67ee20ddea1e5a94279a1b7c9409743bb6773929735d52b43d80252",
+              "ocr_spans_sha256": "d32be530f0d614cdd214a0fe6a14f958fb8b3dc70f0f03b9afee6f845160cfba"
+            },
+            {
+              "render": {
+                "name": "model-roi-0-otsu",
+                "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  410.5,
+                  158.0,
+                  553.0,
+                  207.5
+                ],
+                "pixel_origin": [
+                  1231,
+                  474
+                ],
+                "pixel_size": [
+                  428,
+                  149
+                ],
+                "png_sha256": "ab8f4db98fd738f21ce003244324b88e58176ec94820e1c0cd39040ebd8680a7",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 150.0,
+                  "source_png_sha256": "08d2de4c476f8f3c8aca8849c57c1affc239bd7b79226898d49c854a601bc761",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "RF29DB9900**"
+                ],
+                "observed_candidates_raw": [
+                  "RF29DB9900**"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "f418c5435fd73d23ec37299424ccb30ff510eff9938c801b9131b2d7732a78f6",
+              "ocr_spans_sha256": "3463dfa9a2920e6884f72747f844afee2efb264aa8492f1c29fd650b3c3291d6"
+            }
+          ]
+        }
+      }
+    },
+    "dishwasher": {
+      "artifact": {
+        "id": 10474381636,
+        "name": "source-recon-dishwasher-35164831308-1",
+        "expires_at": "2026-10-01T00:03:20Z"
+      },
+      "artifact_zip_sha256": "018ea893da1a14688b3b738d0df0e9759af11f67e5ed336de7a8502ca58aa13a",
+      "captured_at": "2026-09-17T00:02:37.325046+00:00",
+      "labels": {
+        "dishwasher": {
+          "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+          "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/dw90f89p0usraa/energyguide/us-energyguide-dw90f89p0usraa-554563789.pdf",
+          "model_regions_raw": [
+            {
+              "source_detection": 7,
+              "source_text_raw": "Models DW90F8**0***",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "DW90F8**0***",
+                  "line": 0,
+                  "context_raw": "Models DW90F8**0***",
+                  "wildcard_count_status": "NOT_EVALUATED"
+                }
+              ],
+              "clip_pdf_points": [
+                624.7592163085938,
+                304.51708984375,
+                741.7932739257812,
+                347.65692138671875
+              ]
+            },
+            {
+              "source_detection": 38,
+              "source_text_raw": "DW90F8**0***",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "DW90F8**0***",
+                  "line": 0,
+                  "context_raw": "DW90F8**0***",
+                  "wildcard_count_status": "NOT_EVALUATED"
+                }
+              ],
+              "clip_pdf_points": [
+                1027.9403076171875,
+                566.739990234375,
+                1137.3238525390625,
+                614.955322265625
+              ]
+            },
+            {
+              "source_detection": 46,
+              "source_text_raw": "DD68-00152Q-00",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "DD68-00152Q-00",
+                  "line": 0,
+                  "context_raw": "DD68-00152Q-00",
+                  "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+                }
+              ],
+              "clip_pdf_points": [
+                663.9577026367188,
+                584.5035400390625,
+                794.2640991210938,
+                762.1385498046875
+              ]
+            },
+            {
+              "source_detection": 49,
+              "source_text_raw": "DD68-00152Q-00",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "DD68-00152Q-00",
+                  "line": 0,
+                  "context_raw": "DD68-00152Q-00",
+                  "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+                }
+              ],
+              "clip_pdf_points": [
+                1202.0966186523438,
+                583.65771484375,
+                1335.7864379882812,
+                766.3678588867188
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "render": {
+                "name": "page-36dpi",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 0.5,
+                "dpi": 36.0,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  842,
+                  596
+                ],
+                "png_sha256": "aa4e739cb2864307a5c2077cc1fc719b09281505f5f4e660d97e34b1985a4c21",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 26,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DW90F8**0***",
+                  "DW90F8**0***",
+                  "DD68-00152Q-00",
+                  "DD68-00152Q-00"
+                ],
+                "observed_candidates_raw": [],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [
+                {
+                  "value_raw": "225",
+                  "unit_raw": "kWh",
+                  "role": "REFERENCE_CONTEXT",
+                  "line_start": 7,
+                  "line_end": 8,
+                  "matched_text": "225 kWh",
+                  "unit_association": "ADJACENT_LINE_PAIR",
+                  "context_raw": [
+                    "Estimated Yearly Energy Cost",
+                    "when used with an elest",
+                    "$32",
+                    "225",
+                    "kWh",
+                    "per year / par année",
+                    "t21",
+                    "541",
+                    "Uses least energy /"
+                  ]
+                },
+                {
+                  "value_raw": "200",
+                  "unit_raw": "kWh",
+                  "role": "REFERENCE_CONTEXT",
+                  "line_start": 13,
+                  "line_end": 13,
+                  "matched_text": "200 kWh",
+                  "unit_association": "SAME_TEXT_SPAN",
+                  "context_raw": [
+                    "t21",
+                    "541",
+                    "Uses least energy /",
+                    "200 kWh",
+                    "Uses most energy /",
+                    "Consomme le plus",
+                    "d'énergie",
+                    "307 kW"
+                  ]
+                }
+              ],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "1ad7bddae7001e6936d28d359d55679b7d199f821433d5e9c32e0eaa1439368f",
+              "ocr_spans_sha256": "4df568cc433086845f0d7b0ed1475bd185db72658d6193984ba727668c1f6f3c"
+            },
+            {
+              "render": {
+                "name": "page-72dpi",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 1,
+                "dpi": 72,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  1684,
+                  1191
+                ],
+                "png_sha256": "5d02ae2f60c827cadbd9184d3bc441168f1200ef2ff4d868333f6530ab46c24a",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 64,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DW90F8**0***",
+                  "DW90F8**0***",
+                  "DD68-00152Q-00",
+                  "DD68-00152Q-00"
+                ],
+                "observed_candidates_raw": [
+                  "DW90F8**0**",
+                  "DW90F8**0***",
+                  "DD68-00152Q-00"
+                ],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [
+                {
+                  "value_raw": "225",
+                  "unit_raw": "kWh",
+                  "role": "UNCLASSIFIED",
+                  "line_start": 11,
+                  "line_end": 14,
+                  "matched_text": "225 kWh",
+                  "unit_association": "NEARBY_ORDER_CANDIDATE",
+                  "context_raw": [
+                    "Samsung",
+                    "Energy consumption / Consommation énergétique",
+                    "Estimated Yearly Energy Cost",
+                    "225",
+                    "(when used with an electric water heater)",
+                    "$32",
+                    "kWh",
+                    "per year/ par année",
+                    "This model / Ce modèle",
+                    "$21",
+                    "$41"
+                  ]
+                },
+                {
+                  "value_raw": "200",
+                  "unit_raw": "kWh",
+                  "role": "REFERENCE_CONTEXT",
+                  "line_start": 19,
+                  "line_end": 19,
+                  "matched_text": "200 kWh",
+                  "unit_association": "SAME_TEXT_SPAN",
+                  "context_raw": [
+                    "This model / Ce modèle",
+                    "$21",
+                    "$41",
+                    "200 kWh",
+                    "307 kWh",
+                    "Cost Range of Similar Models",
+                    "Uses least energy/",
+                    "Uses most energy /"
+                  ]
+                },
+                {
+                  "value_raw": "307",
+                  "unit_raw": "kWh",
+                  "role": "REFERENCE_CONTEXT",
+                  "line_start": 20,
+                  "line_end": 20,
+                  "matched_text": "307 kWh",
+                  "unit_association": "SAME_TEXT_SPAN",
+                  "context_raw": [
+                    "$21",
+                    "$41",
+                    "200 kWh",
+                    "307 kWh",
+                    "Cost Range of Similar Models",
+                    "Uses least energy/",
+                    "Uses most energy /",
+                    "Consomme le moins"
+                  ]
+                }
+              ],
+              "annual_layout_candidates": [
+                {
+                  "page": 0,
+                  "caption_detection": 40,
+                  "caption_raw": "Estimated Yearly Electricity Use",
+                  "proposals_raw": [
+                    {
+                      "value_raw": "225",
+                      "number_detection": 28,
+                      "unit_detection": 36,
+                      "distance_pdf_points": 28.5
+                    }
+                  ],
+                  "nearest_proposal_raw": {
+                    "value_raw": "225",
+                    "number_detection": 28,
+                    "unit_detection": 36,
+                    "distance_pdf_points": 28.5
+                  }
+                }
+              ],
+              "raw_ocr_sha256": "d0a47647b77041fe6ae28ebc81626cc0ccc97e656fd098592c43c236d4347c51",
+              "ocr_spans_sha256": "1b290615b9c595fdb451ccd5162498bb9e59d4014bc02698f093db6e179c71c5"
+            },
+            {
+              "render": {
+                "name": "model-roi-0",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  624.7592163085938,
+                  304.51708984375,
+                  741.7932739257812,
+                  347.65692138671875
+                ],
+                "pixel_origin": [
+                  1874,
+                  913
+                ],
+                "pixel_size": [
+                  352,
+                  130
+                ],
+                "png_sha256": "babd964790dc7300a1d73b5330cd3863f0d68d82c0715946665ee7823daf883a",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 2,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "observed_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "06ff056845183da5730383daf3c72d4bfb1d83bd452a32f1f0faa8819ed9e4bd",
+              "ocr_spans_sha256": "57e92586e00e305e744e022802522498d79fabbc2d5b25ba40a17a0c27ce25b0"
+            },
+            {
+              "render": {
+                "name": "model-roi-0-otsu",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  624.7592163085938,
+                  304.51708984375,
+                  741.7932739257812,
+                  347.65692138671875
+                ],
+                "pixel_origin": [
+                  1874,
+                  913
+                ],
+                "pixel_size": [
+                  352,
+                  130
+                ],
+                "png_sha256": "927fc6de7c11b919497bee005ba29fbb2090f678547a23385f4bd97039f50e7e",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 133.0,
+                  "source_png_sha256": "babd964790dc7300a1d73b5330cd3863f0d68d82c0715946665ee7823daf883a",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 2,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "observed_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "9fbea395a99430f710af1ba9af518293a78a695931dd2eacecc2533b0587b228",
+              "ocr_spans_sha256": "a18ba6c7ef72705eced7612eba82ab8668dd7ea7041714c4fd5314cc476b6e0a"
+            },
+            {
+              "render": {
+                "name": "model-roi-1",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  1027.9403076171875,
+                  566.739990234375,
+                  1137.3238525390625,
+                  614.955322265625
+                ],
+                "pixel_origin": [
+                  3083,
+                  1700
+                ],
+                "pixel_size": [
+                  329,
+                  145
+                ],
+                "png_sha256": "7dfff5dfebdecaa91910fbf9e494b0d59d9a9265c136b9b67a9db8058d8898c3",
+                "source_region_index": 1,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "observed_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "49e2d5b088e95dbd687268d13d8da6da03148c829701e268536e409b51f12d84",
+              "ocr_spans_sha256": "2a258ed23e61acd63b6e9c22e6b3ff3807892fef020ccfde6274eab1abac441b"
+            },
+            {
+              "render": {
+                "name": "model-roi-1-otsu",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  1027.9403076171875,
+                  566.739990234375,
+                  1137.3238525390625,
+                  614.955322265625
+                ],
+                "pixel_origin": [
+                  3083,
+                  1700
+                ],
+                "pixel_size": [
+                  329,
+                  145
+                ],
+                "png_sha256": "56c024772a027a548a38f12c4c87a0818946f07699664ee8c6e3e7d3692e929a",
+                "source_region_index": 1,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 152.0,
+                  "source_png_sha256": "7dfff5dfebdecaa91910fbf9e494b0d59d9a9265c136b9b67a9db8058d8898c3",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "observed_candidates_raw": [
+                  "DW90F8**0***"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "7533ca23f4581b3fa3d4643e1e020c00423e1b98abe098d28473039b649c8a74",
+              "ocr_spans_sha256": "4531afcda5c4b11987428399fb1f6673f2e941e5481552f4cbfde7bf012afc74"
+            },
+            {
+              "render": {
+                "name": "model-roi-2",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  663.9577026367188,
+                  584.5035400390625,
+                  794.2640991210938,
+                  762.1385498046875
+                ],
+                "pixel_origin": [
+                  1991,
+                  1753
+                ],
+                "pixel_size": [
+                  392,
+                  534
+                ],
+                "png_sha256": "21c8f4f05a568d58f16021a0dd22006bdd4c263bec388b436ba1cd483381ddf2",
+                "source_region_index": 2,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "observed_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "fa57c89e0b3b9978e28ca98847556e24ed9690d3ebd9db6802259a3bdd58b4dc",
+              "ocr_spans_sha256": "c2ed153953150595171c2174a6767d202c1f617403a3a501ea1ff8b47c4d3ca6"
+            },
+            {
+              "render": {
+                "name": "model-roi-2-otsu",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  663.9577026367188,
+                  584.5035400390625,
+                  794.2640991210938,
+                  762.1385498046875
+                ],
+                "pixel_origin": [
+                  1991,
+                  1753
+                ],
+                "pixel_size": [
+                  392,
+                  534
+                ],
+                "png_sha256": "8ff565da559b90ab22a2a478a945263e141405a8c23b25b09082789f11ca7c5c",
+                "source_region_index": 2,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 134.0,
+                  "source_png_sha256": "21c8f4f05a568d58f16021a0dd22006bdd4c263bec388b436ba1cd483381ddf2",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "observed_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "42bfb91cd2bf0e04b158e40fc31690c62b956b700183d4f20069e9064778c059",
+              "ocr_spans_sha256": "6fc85aacc89be539c2a598c39d6e3d0afe07984f807257138d0449e0f2244520"
+            },
+            {
+              "render": {
+                "name": "model-roi-3",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  1202.0966186523438,
+                  583.65771484375,
+                  1335.7864379882812,
+                  766.3678588867188
+                ],
+                "pixel_origin": [
+                  3606,
+                  1750
+                ],
+                "pixel_size": [
+                  402,
+                  550
+                ],
+                "png_sha256": "131a594183789295bf6f66dbaaf93ee1e000b430dc0c3dc691c9e8a653f241e1",
+                "source_region_index": 3,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 12,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "observed_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "1edd0d4904ced094d53731849ec65c02fa2006d69f2c9ac5a8652490efb173d4",
+              "ocr_spans_sha256": "f0575a51aec9f65b71370241b28847c9c357b48be405368ed8eb4384e8f7f02e"
+            },
+            {
+              "render": {
+                "name": "model-roi-3-otsu",
+                "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  1202.0966186523438,
+                  583.65771484375,
+                  1335.7864379882812,
+                  766.3678588867188
+                ],
+                "pixel_origin": [
+                  3606,
+                  1750
+                ],
+                "pixel_size": [
+                  402,
+                  550
+                ],
+                "png_sha256": "d81c7f753379be70825a50109f06e5cdd6275ef10d3adabaa9927ac473e8e7a3",
+                "source_region_index": 3,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 150.0,
+                  "source_png_sha256": "131a594183789295bf6f66dbaaf93ee1e000b430dc0c3dc691c9e8a653f241e1",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 12,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "observed_candidates_raw": [
+                  "DD68-00152Q-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "b2161f4850ccae414149741398c1bfb62c842c9c926cd6ace8fc32b75270ba7b",
+              "ocr_spans_sha256": "f3e035233cb10e766e453f1f83e8b41da01a94788c66d154fd2aaefcad0a07a9"
+            }
+          ]
+        }
+      }
+    },
+    "washer": {
+      "artifact": {
+        "id": 10474925867,
+        "name": "source-recon-washer-35164831308-1",
+        "expires_at": "2026-10-01T00:03:38Z"
+      },
+      "artifact_zip_sha256": "e79eb8bf32a6463dff14b0039cee44fc46a440d47cd40937c1f4cb554637e854",
+      "captured_at": "2026-09-17T00:02:37.858337+00:00",
+      "labels": {
+        "washer": {
+          "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+          "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wd90f53avbus/energyguide/us-energyguide-wd90f53avbus-550443963.pdf",
+          "model_regions_raw": [
+            {
+              "source_detection": 6,
+              "source_text_raw": "Models WD90F53AV*",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "WD90F53AV*",
+                  "line": 0,
+                  "context_raw": "Models WD90F53AV*",
+                  "wildcard_count_status": "NOT_EVALUATED"
+                }
+              ],
+              "clip_pdf_points": [
+                287.5,
+                84.5,
+                397.0,
+                120.5
+              ]
+            },
+            {
+              "source_detection": 29,
+              "source_text_raw": "DC68-04592A-00",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "DC68-04592A-00",
+                  "line": 0,
+                  "context_raw": "DC68-04592A-00",
+                  "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+                }
+              ],
+              "clip_pdf_points": [
+                261.0,
+                509.0,
+                319.5,
+                534.2949829101562
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "render": {
+                "name": "page-36dpi",
+                "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+                "page": 0,
+                "scale": 0.5,
+                "dpi": 36.0,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  200,
+                  268
+                ],
+                "png_sha256": "0e01504035b4b72bd48f5d82e7e9a21fa525839aa24284cf7e24e3d5914a1f4d",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 15,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WD90F53AV*",
+                  "DC68-04592A-00"
+                ],
+                "observed_candidates_raw": [],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "186319827a33fdd647c6fc31a003fd51741214cca7ed112fb8f8670b15e5ef2a",
+              "ocr_spans_sha256": "26c50d9441fb10fb3dde8caabb73d80dd945c7d105ea4bda6c444e94500a36d5"
+            },
+            {
+              "render": {
+                "name": "page-72dpi",
+                "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+                "page": 0,
+                "scale": 1,
+                "dpi": 72,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  399,
+                  535
+                ],
+                "png_sha256": "36a979ef2b44e61fcf9fff32be0c7d928df9a181fd49d86e92d50c7bd39c600c",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 29,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WD90F53AV*",
+                  "DC68-04592A-00"
+                ],
+                "observed_candidates_raw": [
+                  "WD90F53AV*",
+                  "DC58-04582A-00"
+                ],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [
+                {
+                  "value_raw": "103",
+                  "unit_raw": "kWh",
+                  "role": "ANNUAL_CAPTION_CONTEXT",
+                  "line_start": 16,
+                  "line_end": 18,
+                  "matched_text": "103 kWh",
+                  "unit_association": "NEARBY_ORDER_CANDIDATE",
+                  "context_raw": [
+                    "$4",
+                    "Cost Range of Similar Models",
+                    "$48",
+                    "103",
+                    "$11",
+                    "kWh",
+                    "Estimated Yearly Electricity Use",
+                    "(when used with a natural gas water heater)",
+                    "Estimated Yearly Energy Cost",
+                    " Your cost will depend on your utility rates and use."
+                  ]
+                }
+              ],
+              "annual_layout_candidates": [
+                {
+                  "page": 0,
+                  "caption_detection": 19,
+                  "caption_raw": "Estimated Yearly Electricity Use",
+                  "proposals_raw": [
+                    {
+                      "value_raw": "103",
+                      "number_detection": 16,
+                      "unit_detection": 18,
+                      "distance_pdf_points": 31.0
+                    }
+                  ],
+                  "nearest_proposal_raw": {
+                    "value_raw": "103",
+                    "number_detection": 16,
+                    "unit_detection": 18,
+                    "distance_pdf_points": 31.0
+                  }
+                }
+              ],
+              "raw_ocr_sha256": "276cc704d59741a624acbb2bf3f6c97324471821c955cc01dda4cc94833a5c4d",
+              "ocr_spans_sha256": "87c4e86e634b8796e048eedb55073d2a089ec2bb806942c3e7af32bd2d8f04fc"
+            },
+            {
+              "render": {
+                "name": "model-roi-0",
+                "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  287.5,
+                  84.5,
+                  397.0,
+                  120.5
+                ],
+                "pixel_origin": [
+                  862,
+                  253
+                ],
+                "pixel_size": [
+                  329,
+                  109
+                ],
+                "png_sha256": "c75fff3db9dda22bb0cfa37da2ceea200c8f2e6516c68f039aa346d3e7082a15",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WD90F53AV*"
+                ],
+                "observed_candidates_raw": [
+                  "WD90F53AV*"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "b991702b37db160dc6fdad067574f33600a2a96cbf9182a7aec56a717281f5b5",
+              "ocr_spans_sha256": "f95b701037205fec1e3c1ff93620fcc837e105130560e71253738c33b19efaba"
+            },
+            {
+              "render": {
+                "name": "model-roi-0-otsu",
+                "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  287.5,
+                  84.5,
+                  397.0,
+                  120.5
+                ],
+                "pixel_origin": [
+                  862,
+                  253
+                ],
+                "pixel_size": [
+                  329,
+                  109
+                ],
+                "png_sha256": "fc8e992c87853de6b1e6f09a3b8c84c4c7df700aa5a4c652ec8dca431c4844ce",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 135.0,
+                  "source_png_sha256": "c75fff3db9dda22bb0cfa37da2ceea200c8f2e6516c68f039aa346d3e7082a15",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WD90F53AV*"
+                ],
+                "observed_candidates_raw": [
+                  "WD90F53AV*"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "ec669498f9c08ee08ec84840f667335bc7490526df2fddb4a6e15cc91be22708",
+              "ocr_spans_sha256": "09b60cbcf2b604a06317cff4cced078f6f60f46ab3c25477faa568a0c5ff9908"
+            },
+            {
+              "render": {
+                "name": "model-roi-1",
+                "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  261.0,
+                  509.0,
+                  319.5,
+                  534.2949829101562
+                ],
+                "pixel_origin": [
+                  783,
+                  1527
+                ],
+                "pixel_size": [
+                  176,
+                  76
+                ],
+                "png_sha256": "aadd8944b8e64ca74068a00bcdc817f8a0c46765159c8a07e55f413268a779c2",
+                "source_region_index": 1,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 1,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DC68-04592A-00"
+                ],
+                "observed_candidates_raw": [
+                  "DC68-04592A-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "8794612a63602ccbb333517bb5a1b80f13dd70973b8126bb8d6c302daa921a22",
+              "ocr_spans_sha256": "a8223187166f679727609119e968e66a07dab97f128dba5220cb17732c25ebb0"
+            },
+            {
+              "render": {
+                "name": "model-roi-1-otsu",
+                "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  261.0,
+                  509.0,
+                  319.5,
+                  534.2949829101562
+                ],
+                "pixel_origin": [
+                  783,
+                  1527
+                ],
+                "pixel_size": [
+                  176,
+                  76
+                ],
+                "png_sha256": "cdc07dd9b6da2b6e502790bbb95e707ba597a1643f6e57c6aaedefdfad2e77a8",
+                "source_region_index": 1,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 132.0,
+                  "source_png_sha256": "aadd8944b8e64ca74068a00bcdc817f8a0c46765159c8a07e55f413268a779c2",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 2,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DC68-04592A-00"
+                ],
+                "observed_candidates_raw": [
+                  "DC68-04592A-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "135d770b11dc7192fbccf2f87c1f6d694367a1ce24c422792607e54c56144a76",
+              "ocr_spans_sha256": "d646027782efec4c11f8d8ee72c5957c876ac116f441ebc1de7c7e323a4cdb2f"
+            }
+          ]
+        },
+        "washer-standalone": {
+          "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+          "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/wf90f53adsa5/energyguide/us-energyguide-wf90f53adsa5-554563643.pdf",
+          "model_regions_raw": [
+            {
+              "source_detection": 6,
+              "source_text_raw": "Models WF90F53*D*",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "WF90F53*D*",
+                  "line": 0,
+                  "context_raw": "Models WF90F53*D*",
+                  "wildcard_count_status": "NOT_EVALUATED"
+                }
+              ],
+              "clip_pdf_points": [
+                290.0,
+                83.0,
+                398.5,
+                122.0
+              ]
+            },
+            {
+              "source_detection": 29,
+              "source_text_raw": "DC68-04096U-00",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "DC68-04096U-00",
+                  "line": 0,
+                  "context_raw": "DC68-04096U-00",
+                  "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+                }
+              ],
+              "clip_pdf_points": [
+                259.5,
+                510.0,
+                317.0,
+                534.0
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "render": {
+                "name": "page-36dpi",
+                "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+                "page": 0,
+                "scale": 0.5,
+                "dpi": 36.0,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  200,
+                  268
+                ],
+                "png_sha256": "bbfd18bb43c443b187e2700840c8872c8889f5cdcafa39baeac48899382056bd",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 12,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WF90F53*D*",
+                  "DC68-04096U-00"
+                ],
+                "observed_candidates_raw": [],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "2eb4110efd22a718cce23ddbacba8836474552cb9007daa4637920b5d92d2433",
+              "ocr_spans_sha256": "5d5ab03977d005e9d8ac5b7e2890d7698d1ff18aa0092b4da9178937cf08e114"
+            },
+            {
+              "render": {
+                "name": "page-72dpi",
+                "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+                "page": 0,
+                "scale": 1,
+                "dpi": 72,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  400,
+                  536
+                ],
+                "png_sha256": "3f69cfec3e5b0f834d3cb4c06ebbd46528531300ef8a1c53d71ae56e5f9f8650",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 29,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WF90F53*D*",
+                  "DC68-04096U-00"
+                ],
+                "observed_candidates_raw": [
+                  "WF90F53*D*",
+                  "DC58-04095U-00"
+                ],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [
+                {
+                  "value_raw": "103",
+                  "unit_raw": "kWh",
+                  "role": "ANNUAL_CAPTION_CONTEXT",
+                  "line_start": 16,
+                  "line_end": 18,
+                  "matched_text": "103 kWh",
+                  "unit_association": "NEARBY_ORDER_CANDIDATE",
+                  "context_raw": [
+                    "$4",
+                    "Cost Range of Similar Models",
+                    "$48",
+                    "103",
+                    "$11",
+                    "kWh",
+                    "Estimated Yearly Electricity Use",
+                    "(when used with a natural gas water heater)",
+                    "Estimated Yearly Energy Cost",
+                    "• Your cost will depend on your utility rates and use."
+                  ]
+                }
+              ],
+              "annual_layout_candidates": [
+                {
+                  "page": 0,
+                  "caption_detection": 19,
+                  "caption_raw": "Estimated Yearly Electricity Use",
+                  "proposals_raw": [
+                    {
+                      "value_raw": "103",
+                      "number_detection": 16,
+                      "unit_detection": 18,
+                      "distance_pdf_points": 31.5
+                    }
+                  ],
+                  "nearest_proposal_raw": {
+                    "value_raw": "103",
+                    "number_detection": 16,
+                    "unit_detection": 18,
+                    "distance_pdf_points": 31.5
+                  }
+                }
+              ],
+              "raw_ocr_sha256": "bbedfb3fba202fbb4b839878a036c9fd7ceb0d431fcc19b41882c6897b502832",
+              "ocr_spans_sha256": "f490ccc0a9a58b3f24f741c8cc9f2666f41eb41ea980673247c8839dfa8cec8c"
+            },
+            {
+              "render": {
+                "name": "model-roi-0",
+                "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  290.0,
+                  83.0,
+                  398.5,
+                  122.0
+                ],
+                "pixel_origin": [
+                  870,
+                  249
+                ],
+                "pixel_size": [
+                  326,
+                  117
+                ],
+                "png_sha256": "dd9aee08faecfe16591cc20a8499221f89310f925b9c3fab41e050f34d54672a",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WF90F53*D*"
+                ],
+                "observed_candidates_raw": [
+                  "WF90F53*D*"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "f6caa63cb2b5da87a0d7d08a69429556c6bd78e7c2ba06c39a83a63cd0772d33",
+              "ocr_spans_sha256": "2c59ac8072602943cfaf1546949b4c8219e4ac2e193b2488e659e5094c1aade0"
+            },
+            {
+              "render": {
+                "name": "model-roi-0-otsu",
+                "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  290.0,
+                  83.0,
+                  398.5,
+                  122.0
+                ],
+                "pixel_origin": [
+                  870,
+                  249
+                ],
+                "pixel_size": [
+                  326,
+                  117
+                ],
+                "png_sha256": "66b67fd78a4272ff4acad084a786af31d8ca93efc89162a73c73e4ca68a9b243",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 129.0,
+                  "source_png_sha256": "dd9aee08faecfe16591cc20a8499221f89310f925b9c3fab41e050f34d54672a",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 3,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "WF90F53*D*"
+                ],
+                "observed_candidates_raw": [
+                  "WF90F53*D*"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "e8936db4ce50b88b0d56854a08667236f61c3d244909dd4d79e4802898d475bc",
+              "ocr_spans_sha256": "40f1c3c6de6c4c5d6f7c09def26a7e5f9aa637b7d50e31d0d2953e026484de60"
+            },
+            {
+              "render": {
+                "name": "model-roi-1",
+                "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  259.5,
+                  510.0,
+                  317.0,
+                  534.0
+                ],
+                "pixel_origin": [
+                  778,
+                  1530
+                ],
+                "pixel_size": [
+                  173,
+                  72
+                ],
+                "png_sha256": "417c21e9e5cc64012b71426e4d93fa3b9bfaedd55a7a26349ac39fb5e09ae05b",
+                "source_region_index": 1,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 2,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DC68-04096U-00"
+                ],
+                "observed_candidates_raw": [
+                  "DC68-04096U-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "31ba93c0c79cd10fd06c7f946f13d27bd0b71bc3376b2560ba14eee04050fc01",
+              "ocr_spans_sha256": "211bf749de5ca16c63ce4d232cf19ed3e928710a4f6a9ec2e97c196cc85bde58"
+            },
+            {
+              "render": {
+                "name": "model-roi-1-otsu",
+                "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  259.5,
+                  510.0,
+                  317.0,
+                  534.0
+                ],
+                "pixel_origin": [
+                  778,
+                  1530
+                ],
+                "pixel_size": [
+                  173,
+                  72
+                ],
+                "png_sha256": "e92e7cf189e5ba17e47eac5a62c1f36b08f94d405330ee88c5ff446b2efb05d0",
+                "source_region_index": 1,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 131.0,
+                  "source_png_sha256": "417c21e9e5cc64012b71426e4d93fa3b9bfaedd55a7a26349ac39fb5e09ae05b",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 2,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "DC68-04096U-00"
+                ],
+                "observed_candidates_raw": [
+                  "DC68-04096U-00"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "366a3e86499fed27cfa6655698f51c210a3903027b77bd9fb82ae470d6cd7a2d",
+              "ocr_spans_sha256": "94f07eb169f6d2ea532da441a9502ac1752bc060b13f5a6fb386c221ffbf4daa"
+            }
+          ]
+        }
+      }
+    },
+    "tv": {
+      "artifact": {
+        "id": 10474089232,
+        "name": "source-recon-tv-35164831308-1",
+        "expires_at": "2026-10-01T00:03:12Z"
+      },
+      "artifact_zip_sha256": "28a43208e4db9aaf0476108d9d6ac08dfb67d29b3cf3476c6e65a0ccdb85fbb1",
+      "captured_at": "2026-09-17T00:02:36.012910+00:00",
+      "labels": {
+        "tv": {
+          "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+          "requested_url": "https://images.samsung.com/is/content/samsung/p6pim/us/mrn75r95hafxza/energyguide/us-energyguide-mrn75r95hafxza-551652054.pdf",
+          "model_regions_raw": [
+            {
+              "source_detection": 6,
+              "source_text_raw": "MRN75R95HAF",
+              "model_candidates_raw": [
+                {
+                  "value_raw": "MRN75R95HAF",
+                  "line": 0,
+                  "context_raw": "MRN75R95HAF",
+                  "wildcard_count_status": "NO_WILDCARD_OBSERVED"
+                }
+              ],
+              "clip_pdf_points": [
+                280.0,
+                168.0,
+                378.5,
+                208.5
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "render": {
+                "name": "page-36dpi",
+                "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+                "page": 0,
+                "scale": 0.5,
+                "dpi": 36.0,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  298,
+                  421
+                ],
+                "png_sha256": "00141b47b254fc14d6a661eed9b8c4d0b6fc64c1efd17d566ca8da848be8d7bb",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 18,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "MRN75R95HAF"
+                ],
+                "observed_candidates_raw": [],
+                "raw_set_observation": "DIFFERENT_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "53f6d9967e3b821a8116a44ff9a75588e5794c382ebb55ad9639bce36f09d110",
+              "ocr_spans_sha256": "da34457734b9681972c407fd8be182df38329e2820fd424ab4e91976d688552d"
+            },
+            {
+              "render": {
+                "name": "page-72dpi",
+                "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+                "page": 0,
+                "scale": 1,
+                "dpi": 72,
+                "clip_pdf_points": null,
+                "pixel_origin": [
+                  0,
+                  0
+                ],
+                "pixel_size": [
+                  595,
+                  842
+                ],
+                "png_sha256": "f82b1d4ca10061baf1ba85cda92c4cdf9a28e6cb03e18dca397dec80642f9186",
+                "source_region_index": null,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 23,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "MRN75R95HAF"
+                ],
+                "observed_candidates_raw": [
+                  "MRN75R95HAF"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [
+                {
+                  "value_raw": "390",
+                  "unit_raw": "kWh",
+                  "role": "ANNUAL_CAPTION_CONTEXT",
+                  "line_start": 19,
+                  "line_end": 19,
+                  "matched_text": "390kWh",
+                  "unit_association": "SAME_TEXT_SPAN",
+                  "context_raw": [
+                    "• Based on 16 cents per kWh",
+                    "and 5 hours use per day",
+                    "Estimated yearly electricity",
+                    "use of this model: 390kWh",
+                    "Your cost depends on",
+                    "your utility rates and use.",
+                    "Visit ftc.gov/energy"
+                  ]
+                }
+              ],
+              "annual_layout_candidates": [
+                {
+                  "page": 0,
+                  "caption_detection": 18,
+                  "caption_raw": "Estimated yearly electricity",
+                  "proposals_raw": [
+                    {
+                      "value_raw": "390",
+                      "number_detection": 19,
+                      "unit_detection": 19,
+                      "distance_pdf_points": 13.0
+                    }
+                  ],
+                  "nearest_proposal_raw": {
+                    "value_raw": "390",
+                    "number_detection": 19,
+                    "unit_detection": 19,
+                    "distance_pdf_points": 13.0
+                  }
+                }
+              ],
+              "raw_ocr_sha256": "b568b38dda8303d35970e04c3d38056d0ab9307ef6f04529c5fe5bcd26117ef1",
+              "ocr_spans_sha256": "54eee22a6100de3c543f224d61f344d3c5cceaf37c92c0f318eed4222f3667f3"
+            },
+            {
+              "render": {
+                "name": "model-roi-0",
+                "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  280.0,
+                  168.0,
+                  378.5,
+                  208.5
+                ],
+                "pixel_origin": [
+                  840,
+                  504
+                ],
+                "pixel_size": [
+                  296,
+                  122
+                ],
+                "png_sha256": "7632856198948e10d2ddf860ef654c06013be845618e4611ad6e4808f3553c66",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "NONE"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 2,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "MRN75R95HAF"
+                ],
+                "observed_candidates_raw": [
+                  "MRN75R95HAF"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "f394eece30260597f2d37de1ce4a24dff4c1da05b843e23fc6a8a2c9c4bc6aa1",
+              "ocr_spans_sha256": "9d04cca2a23e243551e351be60c798f571c5e5deb044b51dbdf5759c6cd28ca5"
+            },
+            {
+              "render": {
+                "name": "model-roi-0-otsu",
+                "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
+                "page": 0,
+                "scale": 3,
+                "dpi": 216,
+                "clip_pdf_points": [
+                  280.0,
+                  168.0,
+                  378.5,
+                  208.5
+                ],
+                "pixel_origin": [
+                  840,
+                  504
+                ],
+                "pixel_size": [
+                  296,
+                  122
+                ],
+                "png_sha256": "058f27208b1a43cc115ce5bfd86c0499ee43f51f007b78fd6b89840f26e3db60",
+                "source_region_index": 0,
+                "preprocessing": {
+                  "method": "GRAYSCALE_OTSU",
+                  "threshold_raw": 116.0,
+                  "source_png_sha256": "7632856198948e10d2ddf860ef654c06013be845618e4611ad6e4808f3553c66",
+                  "opencv_version": "5.0.0"
+                },
+                "transformation": "PDF render and recorded preprocessing; no glyph correction"
+              },
+              "ocr_detection_count": 2,
+              "text_observation": "TEXT_OBSERVED",
+              "model_candidate_comparison": {
+                "baseline_candidates_raw": [
+                  "MRN75R95HAF"
+                ],
+                "observed_candidates_raw": [
+                  "MRN75R95HAF"
+                ],
+                "raw_set_observation": "SAME_RAW_CANDIDATE_SET",
+                "wildcard_correction": "NOT_APPLIED",
+                "identity_matching": "NOT_EVALUATED"
+              },
+              "energy_candidates_raw": [],
+              "annual_layout_candidates": [],
+              "raw_ocr_sha256": "0c43660ac796c296b3de762fc929ec11788785cbe153cc68a837aaa6a560a3b0",
+              "ocr_spans_sha256": "b9223750833d2fae7a93eca80d775d0a636d3aee341f410b5c3d69aee20df16a"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

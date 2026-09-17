@@ -2,6 +2,15 @@
 
 All decisions below are OPEN; no rule approval is implied.
 
+EnergyGuide quality reconnaissance: controlled 36/72-DPI renders of actual labels
+show digit substitution, missing model/annual captions and repeated-wildcard loss;
+3x model-like ROIs independently retain the observed original strings. Raw string
+repetition is not identity corroboration. Part numbers are also model-like tokens.
+No confidence threshold, character correction or repeated-star count adjudication
+is approved (D07/D09). Naturally low-resolution source PDFs, the complete glyph
+confusion/wrong-model corpus and independent PDP/EPA corroboration remain open.
+See ENERGYGUIDE_QUALITY_CONTRACT.md; controlled degradation is explicitly labeled.
+
 Dryer reconnaissance: combo WD90F53AVBUS belongs to both washer and dryer listings.
 Future canonical SKU population must retain both listing provenances without creating
 two exact identities (D08/D11). Its 103 kWh label is Clothes Washer energy, not dryer

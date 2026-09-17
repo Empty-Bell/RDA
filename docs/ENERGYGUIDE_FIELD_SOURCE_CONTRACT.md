@@ -52,8 +52,10 @@ fixtures and glyph-error cases. First failed hosted run 35162843284 represents
 shipped failing mixed-order tests, not a Samsung source failure. Corrected candidate
 run 35162912783 passed all 12 source jobs. Its OCR coordinates/confidences are the
 fixture source; no reinterpretation overwrites the original extraction.
-Remaining G0 quality work: actual low-resolution regression and wildcard ROI evidence;
-full production canonical field selection/corroboration follows approved semantics.
+Controlled low-DPI and wildcard ROI reconnaissance is now separately hosted-verified;
+see ENERGYGUIDE_QUALITY_CONTRACT.md. Naturally degraded source PDFs and the complete
+OCR acceptance corpus remain open. Full production canonical field selection and
+corroboration follow approved semantics.
 
 Final ubuntu-24.04 x64 run 35163198471, code commit
 9f577eeb38b95cb49e49be6d1f453a1b8709ff82, passed 154 tests and all 12 source jobs.

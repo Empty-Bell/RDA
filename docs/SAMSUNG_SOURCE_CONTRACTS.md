@@ -170,7 +170,12 @@ Bounded EnergyGuide text/coordinate candidates are hosted-verified for five labe
 see ENERGYGUIDE_FIELD_SOURCE_CONTRACT.md. Original hashes, first-page OCR provenance
 and mixed-panel proposals remain separate from canonical selection and SKU matching.
 
+Bounded controlled low-DPI and 3x color/grayscale-Otsu model-like ROI observations
+are hosted-verified; see ENERGYGUIDE_QUALITY_CONTRACT.md. Raw string differences,
+repeated wildcards and part-number candidates remain unresolved identity evidence.
+
 Remaining: unsupported badge/flag surfaces and exhaustive variant coverage;
-normalized PDP title/commerce mapping; full PDF field-quality parser and low-resolution/wildcard
-regression corpus; stable hosted-source access; EPA matching/currency semantics.
+normalized PDP title/commerce mapping; full PDF field-quality parser, naturally
+degraded source corpus and complete glyph/wrong-model regression matrix;
+stable hosted-source access; EPA matching/currency semantics.
 This closes the bounded refrigerator source reconnaissance, not full Phase 0.

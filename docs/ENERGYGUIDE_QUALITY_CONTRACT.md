@@ -1,6 +1,6 @@
 # EnergyGuide degradation and model-like ROI probe
 
-Status: color-ROI regression PASS in run 35164550504; grayscale/Otsu regression pending.
+Status: bounded degradation/color/grayscale-Otsu reconnaissance PASS in run 35164831308.
 Phase 0 remains RUNNING.
 
 This bounded probe reuses each freshly observed original PDF and matching SHA256.
@@ -59,7 +59,8 @@ SAME_RAW_CANDIDATE_SET means string repetition only; it does not establish accur
 source authenticity or identity. DIFFERENT_RAW_CANDIDATE_SET preserves uncertainty.
 All source detections, including repeated candidates, remain available separately.
 
-Visual review covered refrigerator/dishwasher model ROIs and the degraded TV page;
+Visual review covered refrigerator/dishwasher color and Otsu model ROIs, both washer
+model ROIs, the bilingual 72-DPI dishwasher page and the degraded TV page;
 ROI padding retains neighboring caption/capacity context. Original full-page renders
 remain separate. Naturally low-resolution PDFs, unseen model-region discovery and
 approved corroboration/confidence semantics remain outside this bounded corpus.
@@ -70,4 +71,16 @@ the additional master-plan grayscale/Otsu baseline probe. The actual repeated-st
 dishwasher ROI PNG is a public sanitized preprocessing fixture (7072 bytes;
 SHA256 babd964790dc7300a1d73b5330cd3863f0d68d82c0715946665ee7823daf883a),
 source artifact 10474610375 / run 35164234556. The local OpenCV-specific test is
-skipped because the editing runtime lacks OpenCV; hosted bootstrap must execute it.
+skipped because the editing runtime lacks OpenCV; hosted bootstrap executed the
+165-test suite with OpenCV available and the same actual fixture.
+
+Final ubuntu-24.04 x64 run 35164831308, code commit
+250dee4665ae9d3bf8c4c0f4142e7f398c74375d, passed all 12 source jobs. Five observed
+labels yield 30 variants: 10 low-DPI pages, 10 color ROIs and 10 grayscale/Otsu ROIs.
+Original PDF/PNG/OCR hashes, preprocessing thresholds/versions, actual coordinate
+transforms and raw candidate comparisons are retained in
+docs/evidence/energyguide-quality-recon.json. Color-only final evidence remains in
+energyguide-quality-color-recon.json; earlier fixtures are not overwritten.
+Final raw artifacts expire 2026-10-01 UTC (14-day retention); compact evidence is not a substitute for replay
+inputs. Next bounded work is EPA query/type/current-source reconnaissance. Full G0
+and canonical OCR/corroboration acceptance remain NOT_EVALUATED.

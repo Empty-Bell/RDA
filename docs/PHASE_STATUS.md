@@ -159,7 +159,18 @@ correction, label/SKU matching or compliance decision was introduced. Initial fa
 mixed-order tests and corrected runs remain in the failure history. See
 ENERGYGUIDE_FIELD_SOURCE_CONTRACT.md and energyguide-field-recon.json.
 
-Next bounded task: actual low-resolution EnergyGuide and wildcard ROI regression evidence.
+EnergyGuide degradation/model-like ROI reconnaissance PASS: run 35164831308,
+commit 250dee4665ae9d3bf8c4c0f4142e7f398c74375d. All 12 source jobs succeeded
+with 165 tests, including the actual repeated-star PNG preprocessing fixture.
+Five original labels yield 36/72-DPI controlled page degradations and separate 3x
+color/grayscale-Otsu model-like ROI evidence. Source/PNG/OCR hashes and PDF-space
+coordinates retain provenance. Observed digit substitution, model/caption loss,
+wildcard-count disagreement and part-number confusion remain uncorrected.
+See ENERGYGUIDE_QUALITY_CONTRACT.md, energyguide-quality-recon.json and the fixture
+manifest. This is a controlled degradation corpus, not naturally degraded PDF
+coverage, canonical model identity or the complete approved OCR acceptance matrix.
+
+Next bounded task: EPA query/type/current-source contract and error/empty response boundaries.
 All family discovery is complete; common claim/quality/runtime acceptance remains.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
@@ -168,6 +179,6 @@ Follow-ups before locking runtime: freeze transitive Python dependencies and OCR
 replace older Node20 Actions pins with verified current releases (runner currently upgrades
 them to Node24; first run succeeded with warnings). No downgrade flag should be enabled.
 
-Token handoff: use Sol medium for the next exploratory low-resolution/wildcard ROI contract only; Terra medium
+Token handoff: use Sol medium for the next exploratory EPA query/current-source contract only; Terra medium
 for repeated adapters after the contract is fixed. Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.
