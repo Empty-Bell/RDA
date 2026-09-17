@@ -22,6 +22,19 @@ def observe_us_market(markets, *, source_status: str) -> str:
     return "OBSERVED_US_MARKET" if "United States" in tokens else "NOT_EVALUATED"
 
 
+def observe_current_index(index_row: dict, refrigerator_row: dict) -> dict:
+    """Time-scoped current-list observation from a validated exact-key pair."""
+    keys = ("pd_id", "brand_name", "model_number", "energy_star_model_identifier")
+    if any(not index_row.get(key) or not refrigerator_row.get(key) for key in keys):
+        return {"state": "NOT_EVALUATED", "reason": "MISSING_CROSS_SOURCE_KEY"}
+    if any(index_row[key] != refrigerator_row[key] for key in keys):
+        return {"state": "NOT_EVALUATED", "reason": "CROSS_SOURCE_KEY_MISMATCH"}
+    return {
+        "state": "OBSERVED_CURRENT_CERTIFIED_INDEX",
+        "reason": "EXACT_CURRENT_INDEX_KEY_AGREEMENT",
+    }
+
+
 def build_report() -> dict:
     review = json.loads(
         (ROOT / "docs/evidence/g2-capacity-model-review.json").read_text(encoding="utf-8")
@@ -30,7 +43,13 @@ def build_report() -> dict:
     epa = json.loads(
         (ROOT / "tests/fixtures/g2-epa-wildcard/api-record.json").read_text(encoding="utf-8")
     )
+    index = json.loads(
+        (ROOT / "tests/fixtures/g2-epa-current-index/model-index-row.json").read_text(
+            encoding="utf-8"
+        )
+    )
     source_row = epa["projection"]
+    current_index = observe_current_index(index["projection"], source_row)
     if source_row["brand_name"] != "Samsung" or not source_row["model_number"]:
         raise ValueError("EPA source fixture identity invalid")
     pattern = source_row["model_number"]
@@ -60,7 +79,10 @@ def build_report() -> dict:
                     "epa_source_url": SOURCES[epa["source"]],
                     "epa_pd_id": source_row["pd_id"],
                     "model_pattern_inclusion": inclusion,
-                    "current_certification_state": "NOT_EVALUATED",
+                    "current_certification_state": current_index["state"],
+                    "current_certification_reason": current_index["reason"],
+                    "current_index_source_body_sha256": index["body_sha256"],
+                    "current_index_date_certified_raw": index["projection"].get("date_certified"),
                     "markets_raw": source_row["markets"],
                     "date_qualified_raw": source_row.get("date_qualified"),
                     "us_applicability_state": observe_us_market(
@@ -75,7 +97,7 @@ def build_report() -> dict:
                 }
             )
     return {
-        "contract": "G2_MODEL_PATTERN_INCLUSION_OBSERVATION_ONLY_V3",
+        "contract": "G2_MODEL_PATTERN_AND_CURRENT_INDEX_OBSERVATION_ONLY_V4",
         "scope": "one saved EPA row against review corpus; not exhaustive candidate search",
         "identity_state": "NOT_EVALUATED",
         "correction_state": "NOT_APPLIED",

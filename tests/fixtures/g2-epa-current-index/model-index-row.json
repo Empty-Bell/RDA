@@ -1,0 +1,12 @@
+{
+  "source": "model-index-row",
+  "body_sha256": "399f73bbc78af422ea7276fe6dedb0c61e1edf7090ed1aa1cb23b887e5793a94",
+  "projection": {
+    "pd_id": "2839420",
+    "brand_name": "Samsung",
+    "model_number": "RF23D*9600**",
+    "energy_star_model_identifier": "ES_1023593_RF23D*9600**_12112023144226_80192002",
+    "markets": "United States, Canada",
+    "date_certified": "2023-12-11T00:00:00.000"
+  }
+}

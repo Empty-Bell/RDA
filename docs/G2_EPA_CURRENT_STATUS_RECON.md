@@ -74,3 +74,18 @@ Model Index at that capture snapshot only. A missing, duplicate, mismatched,
 failed, stale or conflicting source produces `NOT_EVALUATED`; it does not mean
 disqualified, withdrawn or non-certified. The disqualified list is retained as a
 future independent source and is not parsed by this approval.
+
+## Approved implementation
+
+The approved rule is implemented in the offline diagnostic report v4. The
+saved Model Index projection from the hosted capture is treated as a snapshot
+source. Only exact equality of `pd_id`, `brand_name`, `model_number` and
+`energy_star_model_identifier` with the saved refrigerator projection emits
+`OBSERVED_CURRENT_CERTIFIED_INDEX`. The report preserves the Model Index raw
+body hash and `date_certified` alongside that observation.
+
+This implementation records a point-in-time source observation only. It does
+not emit a compliance finding, certification PASS, withdrawal, disqualification
+or an inference from absence. Missing or disagreeing keys emit `NOT_EVALUATED`.
+The next independent source step is raw disqualified-list capture and replay;
+it does not include XLSX parsing or matching. Recommended model: Terra medium.

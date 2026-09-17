@@ -152,9 +152,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   2839420 query matched brand/model/CB identifier; not hosted evidence yet.
   See G2_EPA_CURRENT_STATUS_RECON.md. Next: manual hosted raw/hash metadata and
   PD_ID capture with exact-key fixture validation. Hosted capture 35208691273
-  and replay contract 35210140588 passed. Current snapshot-state proposal is in
-  G2_EPA_CURRENT_STATUS_RECON.md. Next: user approval of
-  OBSERVED_CURRENT_CERTIFIED_INDEX only; recommended model Sol medium.
+  and replay contract 35210140588 passed. The user approved the bounded current
+  snapshot observation. Report v4 now emits
+  `OBSERVED_CURRENT_CERTIFIED_INDEX` only when the saved Model Index and
+  refrigerator projections agree exactly on PD_ID, brand, model pattern and CB
+  identifier; it retains the Index row hash and raw certification date. Missing
+  or mismatched keys remain `NOT_EVALUATED`; assessment remains disabled. Next:
+  preserve and validate a raw disqualified-list source capture only, without an
+  XLSX matcher or any negative inference. Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
