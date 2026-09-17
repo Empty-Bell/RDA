@@ -48,6 +48,14 @@ class Coverage(unittest.TestCase):
         sample=select_sample(self.products,'C',3)
         self.assertEqual([p['exact_sku'] for p in sample],['C','A','B'])
     def test_population_smaller_than_bound(self):self.assertEqual(len(select_sample(self.products,'C')),4)
+    def test_expanded_bound_keeps_role_priority_and_unique_skus(self):
+        products=[{'exact_sku':sku,'listings':[{'sku_role':role}]}
+                  for sku,role in [('Z','REPRESENTATIVE'),('B','REPRESENTATIVE'),('C','VARIANT'),
+                                   ('A','VARIANT'),('D','VARIANT'),('E','VARIANT'),('F','VARIANT'),
+                                   ('G','VARIANT'),('H','VARIANT'),('I','VARIANT'),('J','VARIANT')]]
+        sample=select_sample(products,'Z',10)
+        self.assertEqual([p['exact_sku'] for p in sample],['Z','B','A','C','D','E','F','G','H','I'])
+        self.assertEqual(len({p['exact_sku'] for p in sample}),10)
     def test_limit_validated(self):
         for limit in (0,11,False):
             with self.subTest(limit=limit),self.assertRaises(ValueError):select_sample(self.products,'C',limit)

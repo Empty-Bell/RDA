@@ -111,7 +111,10 @@ def main():
                 'assessment_status':'NOT_EVALUATED','severity':None,'issue_code':None,
                 'reason':'Rule evaluation disabled; dataset context does not establish certification match',
                 'expected':None,'observed':None,'evidence_ids':[bridge_id] if domain=='FTC' else [],'automatic_final_legal_conclusion':False})
-        selected=select_sample(products,sku,limit=5)
+        # The collection budget is bounded independently of the observed population.
+        # Coverage still records every unattempted SKU rather than treating this cap as
+        # a population or assessment-completion threshold.
+        selected=select_sample(products,sku,limit=10)
         samples=[{'exact_sku':sku,'status':'VERIFIED_EXACT_IDENTITY'}]
         samples.extend(collect_samples([p for p in selected if p['exact_sku']!=sku],out/'pdp-samples'))
         for result in samples[1:]:
