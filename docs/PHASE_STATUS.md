@@ -3,7 +3,9 @@
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
 Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI accepted 2026-09-17.
 Phase 2 / G2: RUNNING — observational refrigerator pilot (listing, one PDP/PDF, EPA brand snapshot).
-Source measurement/claim normalization helper added; offline hosted verification pending.
+Source measurement/claim normalization helper offline checkpoint PASS:
+run 35174268354 / 55f2f4a, each Python passed 94 fixtures + 15 quality checks,
+zero skipped fixture cases. See docs/evidence/g2-normalization-recon.json.
 Live pilot integration and expanded collection remain next work.
 Phases 3–7: NOT_STARTED.
 No G2 gate is accepted yet; pilot collection success is not whole-SKU coverage or assessment PASS.

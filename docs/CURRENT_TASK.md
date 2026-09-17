@@ -17,6 +17,8 @@ on every next-step prompt. Same-task model changes should continue existing work
 - New source normalization: src/regaudit/normalization.py. Explicit kWh/yr/year
   and source-declared cu ft; three independent claim channels; raw/reason retained.
   Unknown/ambiguous/conflicting encodings do not become false or findings.
+- Normalization checkpoint 35174268354 / 55f2f4a: Python 3.11/3.12 each passed
+  94 fixtures + 15 quality checks, zero skipped. Evidence: g2-normalization-recon.json.
 - Checks: checks/g1/test_normalization.py, CI workflow ci.yml. Normalization helper
   is not yet wired into live pilot facts. The pilot still preserves raw observations.
 - Next: wire normalized source observations with same-run raw/evidence references;

@@ -30,3 +30,8 @@ identity/evidence/CLI regressions stay enabled; normalization alone cannot close
 The offline CI verifies source helpers and static/installed CLI quality on both
 Python versions, without another browser/source scrape. The deployed application
 still has no model/API runtime dependency.
+
+Hosted checkpoint PASS: run 35174268354 at 55f2f4a; Python 3.11.16 and 3.12.14
+each passed 94 fixture cases without skips and 15 quality/installed CLI checks.
+Downloaded reports/wheels verified; docs/evidence/g2-normalization-recon.json
+records hashes and expiry. G2 full gate remains NOT_EVALUATED.
