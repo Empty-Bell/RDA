@@ -99,6 +99,27 @@ def project_group_declarations(group: dict, next_html: bytes, bridge: dict) -> l
     return rows
 
 
+def project_sku_declaration(group: dict, variant: dict, next_html: bytes, bridge: dict) -> dict:
+    """Project one SKU from its own PDP Next and its own Bridge response."""
+    sku = variant.get("modelCode")
+    if not isinstance(sku, str) or not sku:
+        raise ValueError("PF variant exact SKU is missing")
+    next_rows = {row["exact_sku"]: row for row in extract_next_products(next_html)}
+    if sku not in next_rows:
+        raise ValueError("PDP Next response does not declare the requested exact SKU")
+    facts = pdp_facts(project_bridge(bridge), sku, family="refrigerator")
+    return {
+        "exact_sku": sku,
+        "source_family_id": group["group_id"],
+        "representative_sku": group["modelCode"],
+        "sku_role": "REPRESENTATIVE" if sku == group["modelCode"] else "VARIANT",
+        "pdp_url": urljoin("https://www.samsung.com", variant["pdpURL"]),
+        "plp_energy_star_flag_raw": variant.get("energyStarFlg"),
+        "pdp_energy_star_flag_raw": next_rows[sku]["pdp_energy_star_flag_raw"],
+        "pdp_energy_star_spec_rows_raw": facts["energy_star_spec_claim_raw"],
+    }
+
+
 def _request(url: str, *, body: bytes | None = None, accept: str) -> tuple[int, str, bytes]:
     headers = {
         "User-Agent": DESKTOP_USER_AGENT,
@@ -163,7 +184,7 @@ def load_browser_observed_pf(source: Path) -> tuple[list[dict], list[dict]]:
     return [_json(pages[offset], "PF session page") for offset in sorted(pages)], [records[offset] for offset in sorted(records)]
 
 
-def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, dict], dict]:
+def capture_session_bridges(products: list[dict], raw: Path) -> tuple[dict[str, dict], dict]:
     """Capture only Specs/Support JSON from Samsung's required browser session.
 
     The browser is transport for Samsung's session-bound endpoint.  This function
@@ -176,7 +197,8 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
         context, identity = desktop_context(browser)
-        for number, group in enumerate(groups):
+        for number, product in enumerate(products):
+            sku = product["exact_sku"]
             page = context.new_page()
             responses = []
 
@@ -195,7 +217,7 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
             page.on("response", receive)
             try:
                 response = page.goto(
-                    urljoin("https://www.samsung.com", group["pdpURL"]),
+                    product["pdp_url"],
                     wait_until="domcontentloaded", timeout=60000,
                 )
                 if not response or response.status != 200:
@@ -207,7 +229,6 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                 if not responses:
                     raise ValueError("PDP session did not request a Specs bridge response")
                 candidates = []
-                expected_skus = {variant.get("modelCode") for variant in group["groupedProductList"]}
                 observed_sets = []
                 for source_response in responses:
                     if source_response.status != 200 or "json" not in source_response.headers.get("content-type", "").lower():
@@ -217,29 +238,25 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                         bridge = project_bridge(_json(body, "PDP session bridge"))
                         observed_skus = {entry.get("modelCode") for entry in bridge["Specs"]}
                         observed_sets.append(sorted(observed_skus))
-                        # Bridge legitimately includes related models outside the
-                        # PF family.  Every PF SKU must appear exactly once; extra
-                        # source rows are neither borrowed nor interpreted.
-                        if not expected_skus <= observed_skus:
+                        if sku not in observed_skus:
                             continue
-                        for sku in expected_skus:
-                            pdp_facts(bridge, sku, family="refrigerator")
+                        pdp_facts(bridge, sku, family="refrigerator")
                     except ValueError:
                         continue
                     candidates.append((source_response, body))
                 if not candidates:
                     raise ValueError(
                         "No exact-SKU Specs/Support bridge response; expected="
-                        + ",".join(sorted(expected_skus))
+                        + sku
                         + "; observed="
                         + "|".join(",".join(skus) for skus in observed_sets)
                     )
                 if len({hashlib.sha256(body).hexdigest() for _, body in candidates}) != 1:
                     raise ValueError("Multiple nonidentical exact-SKU bridge responses")
                 source_response, body = candidates[0]
-                record = _write_raw(raw, f"bridge/group-{number:02d}.json", body)
+                record = _write_raw(raw, f"bridge/sku-{number:02d}.json", body)
                 record.update({"url": source_response.url, "status": source_response.status})
-                captured[group["group_id"]] = {"body": body, "record": record}
+                captured[sku] = {"body": body, "record": record}
             finally:
                 page.close()
         context.close()
@@ -257,22 +274,31 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         record.update(_write_raw(raw, f"pf/page-{number:02d}.json", source_body))
     population = pf_population(pages)
     groups = [group for page in pages for group in page["searchResults"]]
-    session_bridges, session_identity = capture_session_bridges(groups, raw)
+    products = []
+    for group in groups:
+        for variant in group["groupedProductList"]:
+            products.append({
+                "group": group,
+                "variant": variant,
+                "exact_sku": variant["modelCode"],
+                "pdp_url": urljoin("https://www.samsung.com", variant["pdpURL"]),
+            })
+    session_bridges, session_identity = capture_session_bridges(products, raw)
     declarations, group_records = [], []
-    for number, group in enumerate(groups):
-        session_bridge = session_bridges.get(group["group_id"])
+    for number, product in enumerate(products):
+        group, variant, sku = product["group"], product["variant"], product["exact_sku"]
+        session_bridge = session_bridges.get(sku)
         if session_bridge is None:
-            raise ValueError("PDP session bridge is missing for PF group")
+            raise ValueError("PDP session bridge is missing for exact SKU")
         bridge = _json(session_bridge["body"], "Bridge source")
         bridge_record = session_bridge["record"]
-        representative_url = urljoin("https://www.samsung.com", group["pdpURL"])
-        status, content_type, next_body = _request(representative_url, accept="text/html,application/xhtml+xml,*/*;q=0.8")
+        status, content_type, next_body = _request(product["pdp_url"], accept="text/html,application/xhtml+xml,*/*;q=0.8")
         if status != 200 or "html" not in content_type.lower():
             raise ValueError("PDP Next source unavailable or not HTML")
-        next_record = _write_raw(raw, f"next/group-{number:02d}.html", next_body)
-        next_record.update({"url": representative_url, "status": status})
-        declarations.extend(project_group_declarations(group, next_body, bridge))
-        group_records.append({"source_family_id": group["group_id"], "bridge": bridge_record, "next": next_record})
+        next_record = _write_raw(raw, f"next/sku-{number:02d}.html", next_body)
+        next_record.update({"url": product["pdp_url"], "status": status})
+        declarations.append(project_sku_declaration(group, variant, next_body, bridge))
+        group_records.append({"exact_sku": sku, "source_family_id": group["group_id"], "bridge": bridge_record, "next": next_record})
     if len(declarations) != population["unique_exact_skus"] or len({x["exact_sku"] for x in declarations}) != len(declarations):
         raise ValueError("Exact SKU declaration coverage is incomplete or duplicated")
     result = {

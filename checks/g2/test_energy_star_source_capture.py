@@ -4,7 +4,9 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from g2_energy_star_source_capture import extract_next_products, project_group_declarations  # noqa: E402
+from g2_energy_star_source_capture import (  # noqa: E402
+    extract_next_products, project_group_declarations, project_sku_declaration,
+)
 
 
 def next_html(products):
@@ -59,6 +61,16 @@ class EnergyStarDirectSourceTests(unittest.TestCase):
             group, next_html([{"modelCode": "REP", "energyStarFlag": "Y"}]), bridge(["REP", "RELATED"])
         )
         self.assertEqual([row["exact_sku"] for row in rows], ["REP"])
+
+    def test_single_sku_requires_its_own_next_and_bridge_records(self):
+        group = {"group_id": "MULTI_GROUP_ID_1", "modelCode": "REP", "pdpURL": "/us/x-sku-rep",
+                 "groupedProductList": [{"modelCode": "REP", "pdpURL": "/us/x-sku-rep", "energyStarFlg": "Y"},
+                                        {"modelCode": "VAR", "pdpURL": "/us/x-sku-var", "energyStarFlg": "N"}]}
+        row = project_sku_declaration(
+            group, group["groupedProductList"][1], next_html([{"modelCode": "VAR", "energyStarFlag": "N"}]), bridge(["VAR"])
+        )
+        self.assertEqual(row["exact_sku"], "VAR")
+        self.assertEqual(row["pdp_energy_star_flag_raw"], "N")
 
 
 if __name__ == "__main__":
