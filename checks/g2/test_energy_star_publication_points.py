@@ -22,6 +22,8 @@ class PublicationPointTests(unittest.TestCase):
         self.assertEqual(spec_certification_point(snapshot, "SKU", "VERIFIED_EXACT_IDENTITY")["state"], PRESENT)
         snapshot["visible_spec_energy_star_rows"] = []
         self.assertEqual(spec_certification_point(snapshot, "SKU", "VERIFIED_EXACT_IDENTITY")["state"], UNKNOWN)
+        snapshot["spec_surface_inspection"] = "SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE"
+        self.assertEqual(spec_certification_point(snapshot, "SKU", "VERIFIED_EXACT_IDENTITY")["state"], ABSENT)
 
     def test_pdp_logo_requires_exact_primary_image_and_can_confirm_absence(self):
         snapshot = {

@@ -206,9 +206,16 @@ on every next-step prompt. Same-task model changes should continue existing work
   in a visible rendered Spec row; raw `energyStarFlg` and bridge-data fields are
   never treated as a visual point. Unknown layouts remain UNKNOWN. This is a
   collection gate only: no PASS/LOW/HIGH rule is activated until the hosted run
-  and real captured DOM output are reviewed. Next: inspect that hosted artifact,
-  then define the safe complete-Spec-table absence boundary. Recommended model:
-  Terra medium.
+  and real captured DOM output are reviewed. Hosted run 35229879599 PASSed on
+  ubuntu-24.04 at ce5b0b7 (4m17s; artifact 10500403275; digest
+  05e141a9e1f66d501f9f09f54c618fe007b892640fa665ec97913ce82c818187).
+  It collected 10 exact PDPs: PDP logo PRESENT 10/10, PLP logo PRESENT 4/10
+  (six exact cards not mounted, so UNKNOWN), and Spec UNKNOWN 10/10. Manual
+  source review found the reason: Samsung mounts `#specs` only after pressing
+  the visible `Specs` tab; its row schema is `Specs_subSpecItem__`, with the
+  actual observed example `ENERGY STAR® Certified | Yes`. Next: activate that
+  tab in the hosted collector and review the resulting complete visible table.
+  Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

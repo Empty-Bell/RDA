@@ -177,10 +177,10 @@ DOM_SNAPSHOT = r"""() => {
   document.querySelectorAll('script[type="application/ld+json"]').forEach(e => {
     try { visit(JSON.parse(e.textContent)); } catch { errors++; }
   });
-  const specRows = Array.from(document.querySelectorAll('table tr, dl > div, [role="row"]'))
+  const specRoot = document.querySelector('#specs');
+  const specRows = specRoot ? Array.from(specRoot.querySelectorAll('[class*="Specs_subSpecItem__"]'))
     .filter(visible).map(e => ({tag:e.tagName, text:(e.innerText || '').trim().replace(/\s+/g,' ').slice(0,800),
-      cells:Array.from(e.querySelectorAll('th,td,dt,dd,[role="cell"],[role="columnheader"]')).filter(visible)
-        .map(x => (x.innerText || '').trim().replace(/\s+/g,' ').slice(0,300)).filter(Boolean)}))
+      cells:Array.from(e.children).filter(visible).map(x => (x.innerText || '').trim().replace(/\s+/g,' ').slice(0,300)).filter(Boolean)}))
     .filter(x => energy.test(x.text)).slice(0,40);
   const galleryCount = document.querySelectorAll('[class*="Gallery_outerContainer__"]').length;
   const relationCount = document.querySelectorAll('.q6b6RelationContainer').length;
@@ -189,7 +189,7 @@ DOM_SNAPSHOT = r"""() => {
   return {headings:Array.from(document.querySelectorAll('h1')).filter(visible).map(e => e.textContent.trim().slice(0,300)),
     product_jsonld:products, jsonld_parse_errors:errors, energy_candidates:candidates,
     primary_logo_inspection:primaryLogoInspection, visible_spec_energy_star_rows:specRows,
-    spec_surface_inspection:'OBSERVED_VISIBLE_ROWS_ONLY',
+    spec_surface_inspection:specRoot && specRows.length ? 'SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE' : 'SPEC_TABLE_NOT_MOUNTED_OR_SCHEMA_UNSUPPORTED',
     observation_scope:'current mounted DOM; visible page candidates are not attributed to target SKU'};
 }"""
 

@@ -61,8 +61,9 @@ def spec_certification_point(snapshot: dict[str, Any], exact_sku: str, identity_
             affirmative.append(row)
     if affirmative:
         return _point(PRESENT, affirmative, "Affirmative Energy Star certification text observed in a visible PDP Spec row")
-    # Initial source contract does not yet prove that every rendered Spec row is mounted.
-    return _point(UNKNOWN, [], "Visible Spec rows were sampled; complete Spec-table absence is not yet supported")
+    if snapshot.get("spec_surface_inspection") == "SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE":
+        return _point(ABSENT, [], "Complete visible PDP Spec table was inspected and has no affirmative Energy Star certification row")
+    return _point(UNKNOWN, [], "PDP Spec table was not mounted or its row schema is unsupported")
 
 
 def collect_publication_points(
