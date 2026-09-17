@@ -1,0 +1,16 @@
+{
+  "source": "refrigerator-api-record",
+  "body_sha256": "dfcc3c3c8a27447b114e75a8b43ec39318ad11fa36311707d4a760cb3872e3f3",
+  "projection": {
+    "pd_id": "2839420",
+    "brand_name": "Samsung",
+    "model_number": "RF23D*9600**",
+    "additional_model_information": null,
+    "upc": "887276826820;887276826837;887276826844;887276826905",
+    "markets": "United States, Canada",
+    "date_qualified": "2023-12-11T00:00:00",
+    "energy_star_model_identifier": "ES_1023593_RF23D*9600**_12112023144226_80192002",
+    "annual_energy_use_kwh_yr": "634",
+    "capacity_total_volume_ft3": "22.8"
+  }
+}

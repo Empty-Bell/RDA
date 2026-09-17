@@ -60,3 +60,17 @@ class EpaWildcardCaptureTests(unittest.TestCase):
             (root / "x.bin").write_bytes(b"changed")
             with self.assertRaisesRegex(ValueError, "hash"):
                 replay_capture(root)
+
+    def test_replay_rejects_projection_tampering(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            raw = b"official source"
+            record = {
+                "name": "x",
+                "body_sha256": hashlib.sha256(raw).hexdigest(),
+                "projection": {"value": "source"},
+            }
+            (root / "x.bin").write_bytes(raw)
+            (root / "manifest.json").write_text(json.dumps({"sources": [record]}), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                replay_capture(root)
