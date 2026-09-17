@@ -165,10 +165,17 @@ on every next-step prompt. Same-task model changes should continue existing work
   Unregistered after complete valid search plus any positive point yields HIGH.
   Existing issue codes are reused; runtime activation waits for collection gates.
   The saved diagnostic now marks current_index_observation_scope=EPA_ROW_ONLY:
-  a nonincluded SKU is not certified or uncertified by the compared row. Next:
-  hosted complete Current Model Index Samsung-scope capture/replay with actual
-  metadata, pagination/count/update controls. Assessment remains disabled until
-  collection definitions and coverage are complete. Recommended model: Terra medium.
+  a nonincluded SKU is not certified or uncertified by the compared row. The
+  hosted Samsung-scope Current Model Index capture/replay now PASSed in run
+  35224820966 at ada6ea4 on ubuntu-24.04. It preserved raw metadata, before/after
+  counts and every Samsung page, then replayed each raw hash; artifact
+  `g2-epa-current-index-samsung-35224820966-1` is 56,566 bytes. The scope is
+  `upper(brand_name) = 'SAMSUNG'` without a guessed refrigerator filter. This
+  establishes complete source-query evidence only, not an individual SKU result
+  or assessment. Next: exact-target candidate projection that preserves every
+  matching/current-scope candidate and distinguishes match, complete no-match and
+  unresolved comparison. Assessment remains disabled until collection definitions
+  and coverage are complete. Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
