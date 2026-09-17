@@ -1,6 +1,7 @@
 # Source coverage: reconnaissance versus full collection
 
-Phase 0 is RUNNING. Successful source reconnaissance is not full per-model
+Phase 0 / G0 source reconnaissance is accepted; see G0_ACCEPTANCE_RECORD.md.
+Successful source reconnaissance is not full per-model
 fact collection, EPA certification matching or compliance PASS.
 
 | Product group | Latest verified listing SKU snapshot | Individually verified PDP samples | Label samples | EPA access/schema |

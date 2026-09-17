@@ -1,4 +1,10 @@
-# Phase 0 remaining acceptance work
+# Phase 0 acceptance checklist — closed
+
+Current result: **G0 PASS for source reconnaissance and hosted execution foundation**.
+The final requirement/category evidence and explicit policy deferrals are in
+[G0_ACCEPTANCE_RECORD.md](G0_ACCEPTANCE_RECORD.md), backed by combined hosted
+checkpoint 35169843199 and existing live/cold probes. Phases 1–7 remain NOT_STARTED.
+The remaining-work text below is chronological planning history, not current status.
 
 Consolidated evidence, phase-specific gaps and next bounded work are recorded in
 [G0_REVIEW.md](G0_REVIEW.md). Completed common probes remain bounded PASS;

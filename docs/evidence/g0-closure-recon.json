@@ -1,0 +1,126 @@
+{
+  "reviewed_phase_gate": "PASS",
+  "phase": "Phase 0 / G0",
+  "review_scope": "Source reconnaissance contracts and hosted execution foundation only; deferred assessment policies not approved",
+  "compliance": "NOT_EVALUATED",
+  "phases_1_to_7": "NOT_STARTED",
+  "review_basis": "MASTER_PLAN Phase 0 and EXECUTION_GUIDE G0; source rows verified, unknown per-SKU policies explicitly deferred",
+  "checkpoint": {
+    "status": "PASS",
+    "phase_gate": "NOT_EVALUATED",
+    "compliance": "NOT_EVALUATED",
+    "scope": "combined fixture contracts and recorded evidence consistency; not a new live scan",
+    "run_id": "35169843199",
+    "git_sha": "6069bed296dde8bc418619af4888925fce30f118",
+    "fixture_references": 99,
+    "tests": {
+      "run": 214,
+      "failures": 0,
+      "errors": 0,
+      "skipped": [
+        {
+          "test": "test_energyguide_quality.ActualQualityRegression.test_actual_repeated_wildcard_roi_binarization_preserves_source_and_dimensions",
+          "reason": "Hosted bootstrap provides OpenCV"
+        }
+      ]
+    },
+    "recorded_evidence": {
+      "runtime-freeze-recon.json": {
+        "sha256": "eb2c8fb21452511b740adbab94c80de13e5a5bd23595bec83d5a9e5345d198c3",
+        "status": "PASS",
+        "code_commit": "bf6078724ebda11384860219be82f63bfc82b4de"
+      },
+      "epa-query-recon.json": {
+        "sha256": "2b8c3266a39f127e3077bdb3d7d863c440f5e6987d52043b464908db9ccd0200",
+        "status": "PASS",
+        "code_commit": "6c72dfd3cd5cfbd409456d15b82580619274292a"
+      },
+      "epa-routing-recon.json": {
+        "sha256": "57e4f1b793dd466d6258ee6fc1dc933fefaf2400906dbf5d08fad40fe7b6a66d",
+        "status": "PASS",
+        "code_commit": "cfac061e4cb81314b031c60b1febbe905b6c75cd"
+      },
+      "applicability-recon.json": {
+        "sha256": "ec416647e243ce6c20fd64bfb7fecf84153964a39ad29bdd01d44afaf6856360",
+        "status": "PASS",
+        "code_commit": "b6e6f13c76041d8aa0034d04243060646a0abb65"
+      }
+    }
+  },
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35169843199",
+  "attempt": 1,
+  "job_id": 105038925672,
+  "runner_name": "GitHub Actions 1000001483",
+  "runner_target": "ubuntu-24.04 x64",
+  "artifact_id": 10475429922,
+  "artifact_zip_sha256": "908311deddfca4869f979a8556a2fc59b63b084847d7aca8d05c4e58624f4b8c",
+  "artifact_expires_at": "2026-10-01T01:15:28Z",
+  "report_sha256": "5c421c68e9a56f3e47ccf573d444f1463ec064c1bbaa00a8161bfebbbec2fbff",
+  "api_verified_prerequisite_runs": [
+    {
+      "id": 35166865304,
+      "conclusion": "success",
+      "sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+      "attempt": 1,
+      "url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865304"
+    },
+    {
+      "id": 35166865310,
+      "conclusion": "success",
+      "sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+      "attempt": 1,
+      "url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865310"
+    },
+    {
+      "id": 35166865352,
+      "conclusion": "success",
+      "sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+      "attempt": 1,
+      "url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865352"
+    },
+    {
+      "id": 35166865316,
+      "conclusion": "success",
+      "sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+      "attempt": 1,
+      "url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865316"
+    },
+    {
+      "id": 35168707877,
+      "conclusion": "success",
+      "sha": "cfac061e4cb81314b031c60b1febbe905b6c75cd",
+      "attempt": 1,
+      "url": "https://github.com/Empty-Bell/RDA/actions/runs/35168707877"
+    },
+    {
+      "id": 35169376748,
+      "conclusion": "success",
+      "sha": "b6e6f13c76041d8aa0034d04243060646a0abb65",
+      "attempt": 1,
+      "url": "https://github.com/Empty-Bell/RDA/actions/runs/35169376748"
+    },
+    {
+      "id": 35169376791,
+      "conclusion": "success",
+      "sha": "b6e6f13c76041d8aa0034d04243060646a0abb65",
+      "attempt": 1,
+      "url": "https://github.com/Empty-Bell/RDA/actions/runs/35169376791"
+    }
+  ],
+  "optional_cv_test_basis": "Skipped only in stdlib combined replay; executed in locked bootstrap 180-test suite in both prior cold jobs",
+  "open_decisions": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "D11",
+    "D12"
+  ],
+  "next_phase": "Phase 1 schemas/CLI/fixture CI; no Phase 1 code implemented in this closure"
+}

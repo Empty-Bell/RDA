@@ -1,7 +1,16 @@
 # Phase status
 
-Phase 0: RUNNING — bounded source reconnaissance for all 11 product groups PASSED on hosted Ubuntu; full G0 acceptance NOT_EVALUATED.
+Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
 Phases 1–7: NOT_STARTED.
+
+Final hosted combined checkpoint 35169843199 tested code
+6069bed296dde8bc418619af4888925fce30f118, attempt 1, job 105038925672:
+214 tests (213 successful, one optional OpenCV test skipped) and 99 fixture
+references verified. That OpenCV test executed in both existing cold 180-test
+jobs. Prerequisite live source/runtime/routing/authority runs were independently
+API-verified; see docs/evidence/g0-closure-recon.json. D01–D12 remain OPEN at their
+due gates. Phase 0 stops here; next is G1 schemas/CLI/manifests/fixture CI.
+The notes below retain the chronological progress and failure/success history.
 
 Desktop User-Agent validation (commit 434f5af6b99d83e99306e3b51b61344a61f4b896):
 - Source recon https://github.com/Empty-Bell/RDA/actions/runs/35102481369 — success
@@ -221,11 +230,11 @@ literal Samsung special_type queries expose combo/center/unspecified distinction
 Independent fixture run 35169376791 passed 99 references on Ubuntu. No applicability
 or compliance policy was activated. See APPLICABILITY_EVIDENCE.md and
 docs/evidence/applicability-recon.json. Remaining milestone gates: MILESTONES.md.
-Next bounded task: final G0 source-contract/fixture coverage closure and explicit
-phase-specific deferrals. All family discovery and
-bounded common claim/quality/runtime probes are complete; full G0 is not promoted.
+Final G0 source-contract/fixture coverage closure is now accepted in
+G0_ACCEPTANCE_RECORD.md. All family discovery and bounded common
+claim/quality/runtime/authority probes are complete within reconnaissance scope.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
-Do not advance to Phase 1 until full G0 is verified.
+G0 is verified for Phase 0 scope; Phase 1 implementation remains NOT_STARTED.
 
 Application runtime locking is now hosted-verified. Future updates require reviewed
 lock/model/Actions changes and cold plus full-source regression. Do not enable Node

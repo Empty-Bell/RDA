@@ -1,8 +1,11 @@
 # G0 consolidated review — 2026-09-17
 
-Phase 0 remains RUNNING; full G0 is NOT_EVALUATED. This review does not approve
-audit rules, program applicability or Phase 1 implementation. All D01–D12 remain
-OPEN. Scope follows MASTER_PLAN Phase 0 and EXECUTION_GUIDE G0.
+Final review: Phase 0 / G0 PASS for source reconnaissance and hosted execution
+foundation; see [G0_ACCEPTANCE_RECORD.md](G0_ACCEPTANCE_RECORD.md) and hosted
+combined checkpoint 35169843199. The working-gap inventory below is retained
+with closure annotations. No audit rules or SKU applicability policy is approved;
+Phase 1 implementation remains NOT_STARTED and all D01–D12 remain OPEN.
+Scope follows MASTER_PLAN Phase 0 and EXECUTION_GUIDE G0.
 
 ## Acceptance evidence
 
@@ -55,10 +58,11 @@ observations are retained. The 11-family matrix and configuration boundaries are
 in APPLICABILITY_EVIDENCE.md; exact SKU applicability and all decisions stay open.
 Fixture integrity run 35169376791 verifies 99 references on Ubuntu.
 
-Next bounded task: item 3, final G0 source-contract/fixture coverage closure and
-explicit phase-specific deferrals. No compliance rule or Phase 1 code is
-needed to collect these official source observations. Ask only if a semantic
-choice becomes necessary to close a route; existing deferred decisions stay open.
+Item 3 passed combined hosted checkpoint 35169843199 with the reviewed category
+coverage and phase-specific deferrals in G0_ACCEPTANCE_RECORD.md. The source
+observation gaps are closed; individual assessment policies stay disabled at their
+G1/G2/G4 gates. Next: G1 schemas/CLI/manifests/fixture CI. No Phase 1 code or
+compliance policy was implemented by this review.
 
 ## Later phase work; do not add it to today's completion claim
 
