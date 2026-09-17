@@ -1,0 +1,28 @@
+[
+  {
+    "status": "FAIL",
+    "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35168478796",
+    "code_commit": "01018ad02026a38c96f5bea9a7c127200cf9de24",
+    "job_id": 105034799716,
+    "routing_tests": 12,
+    "query_tests": 12,
+    "source_probe": "FAIL",
+    "artifact_id": 10475791977,
+    "artifact_zip_sha256": "8bb93e89799ffd38d8b86fe46796352da1c87a764a3ca4c52eacde692339104d",
+    "artifact_expires_at": "2026-10-01T00:55:17Z",
+    "log_sha256": "742a3f9eeb38382ad6b1b4f5e2917aad30055ffcdb629a9cff160fcc7d064877",
+    "failure_response": {
+      "name": "8dv7-nngq-range-hood-type",
+      "url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=product_type+%3D+%27Range+Hood%27&%24limit=3",
+      "final_url": "https://data.energystar.gov/resource/8dv7-nngq.json?%24where=product_type+%3D+%27Range+Hood%27&%24limit=3",
+      "status": 400,
+      "content_type": "application/json;charset=utf-8",
+      "size_bytes": 4482,
+      "body_sha256": "9821f0edc25090f3fa514e712afa04f164833ff28f5b2a95ee78d33200050dbd"
+    },
+    "cause": "Unobserved generic product_type used for Ventilating Fans; actual metadata field is unit_type",
+    "correction": "Use fixture-backed unit_type contract before request; preserve original HTTP 400 bytes",
+    "phase_gate": "NOT_EVALUATED",
+    "compliance": "NOT_EVALUATED"
+  }
+]

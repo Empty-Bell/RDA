@@ -3,7 +3,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
-from scripts.epa_routing_contract import catalog_entries, specification_rows, public_metadata
+from scripts.epa_routing_contract import catalog_entries, specification_rows, public_metadata, hood_type_condition, range_hood_rows
 
 FIXTURES = Path(__file__).resolve().parents[1] / 'fixtures/epa-routing'
 
@@ -54,3 +54,17 @@ class RoutingContract(unittest.TestCase):
     def test_missing_combo_component_column(self):
         self.meta['columns'] = [c for c in self.meta['columns'] if c['fieldName'] != 'annual_energy_use_kwh_year']
         with self.assertRaises(ValueError): public_metadata(self.meta, '9jai-gs6t')
+
+    def test_actual_fan_field(self):
+        meta = json.loads((FIXTURES / 'fan-metadata.json').read_text())
+        self.assertEqual(hood_type_condition(meta), "unit_type = 'Range Hood'")
+
+    def test_generic_type_field_cannot_replace_fan_field(self):
+        meta = json.loads((FIXTURES / 'fan-metadata.json').read_text())
+        for column in meta['columns']:
+            if column['fieldName'] == 'unit_type': column['fieldName'] = 'product_type'
+        with self.assertRaises(ValueError): hood_type_condition(meta)
+
+    def test_non_hood_or_empty_rows_rejected(self):
+        for rows in ([], [{'product_type': 'Range Hood'}], [{'unit_type': 'Bathroom Fan'}]):
+            with self.assertRaises(ValueError): range_hood_rows(rows)

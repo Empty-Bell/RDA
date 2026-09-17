@@ -6,7 +6,7 @@ from pathlib import Path
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
-from epa_routing_contract import DATASETS, catalog_entries, specification_rows, public_metadata
+from epa_routing_contract import DATASETS, catalog_entries, specification_rows, public_metadata, hood_type_condition, range_hood_rows
 from epa_queries import BRAND_WHERE, query_url, literal, decode_rows, row_count, complete_scan
 
 OUT = Path('runtime/epa-routing')
@@ -70,9 +70,7 @@ def main():
         for ds in DATASETS:
             meta = metadata(ds, 'route')
             if ds == '8dv7-nngq':
-                result = rows(ds, 'range-hood-type', {'$where': "product_type = 'Range Hood'", '$limit': 3})
-                if not result or any(r.get('product_type') != 'Range Hood' for r in result):
-                    raise ValueError('Range Hood type sample missing/drifted')
+                result = range_hood_rows(rows(ds, 'range-hood-type', {'$where': hood_type_condition(meta), '$limit': 3}))
                 save('range-hood-type', result)
         combo = scan('9jai-gs6t', BRAND_WHERE)
         parent = scan('bghd-e2wd', BRAND_WHERE + ' AND special_type = ' + literal('Combination All-in-One Washer/Dryer'))

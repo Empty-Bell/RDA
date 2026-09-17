@@ -19,5 +19,12 @@
     "source_url": "https://www.energystar.gov/products/spec",
     "projection": "Actual public source projection; contacts/analytics omitted; HTML table reconstruction from observed cells",
     "source_scope": "local reconnaissance input; acceptance requires hosted fresh-source probe"
+  },
+  {
+    "file": "fixtures/epa-routing/fan-metadata.json",
+    "sha256": "f135cbe018d16e3c8d22275408bfc511f8f778eb0b7d43a92e223e747eb4c710",
+    "source_url": "https://data.energystar.gov/api/views/8dv7-nngq.json",
+    "source_run_id": 35168478796,
+    "projection": "Hosted public metadata fields/columns; contacts and account fields omitted"
   }
 ]

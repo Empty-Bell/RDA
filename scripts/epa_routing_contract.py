@@ -10,6 +10,18 @@ DATASETS = ('p5st-her9', 'q8py-6w3f', 'bghd-e2wd', 'pd96-rr3d', 'm6gi-ng33',
             't9u7-4d2j', '8dv7-nngq', 'qbg3-d468', 'rxdj-2c88')
 
 
+def hood_type_condition(metadata):
+    if metadata.get('id') != '8dv7-nngq' or 'unit_type' not in {c.get('fieldName') for c in metadata.get('columns', [])}:
+        raise ValueError('Ventilating Fan unit_type schema missing/drifted')
+    return "unit_type = 'Range Hood'"
+
+
+def range_hood_rows(rows):
+    if not rows or any(r.get('unit_type') != 'Range Hood' for r in rows):
+        raise ValueError('Range Hood type sample missing/drifted')
+    return rows
+
+
 class SpecTable(HTMLParser):
     def __init__(self):
         super().__init__(); self.rows = []; self.row = None; self.cell = None
