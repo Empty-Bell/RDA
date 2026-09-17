@@ -13,7 +13,7 @@ withholding; it did not claim this candidate belongs to every SKU.
 
 The visually matching family is `RF23D*9600**` for label group
 `RF23DB9600QLAA`; its full SKU is longer, so the diagnostic correctly withheld
-it. The four `RF23BB8600...` SKUs also remain length-mismatch observations.
+it. The three `RF23BB8600...` SKUs also remain length-mismatch observations.
 Every output retains `identity_state=NOT_EVALUATED` and
 `correction_state=NOT_APPLIED`.
 

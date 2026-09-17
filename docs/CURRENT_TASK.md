@@ -125,8 +125,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   strings remain preserved and identity/correction states remain disabled. Corpus
   review is recorded in G2_EPA_DIAGNOSTIC_CORPUS_REVIEW.md: five records were
   withheld for `/AA` syntax and four for length; none became compatible. Keep v1
-  unchanged. Next: only investigate a source-backed Samsung suffix observation;
-  recommended model Sol medium.
+  unchanged. Official suffix research is recorded in
+  G2_SAMSUNG_SUFFIX_SOURCE_REVIEW.md: Samsung US displays
+  `RF23DB9600QL / RF23DB9600QLAA` together, but no general suffix deletion or
+  EPA identity rule was established. Next: capture this source-declared paired
+  field with raw/hash provenance and actual offline fixtures, separating cheap
+  hosted 3.11/3.12 checks from live capture; recommended model Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
