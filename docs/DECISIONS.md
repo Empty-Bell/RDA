@@ -1,5 +1,10 @@
 # Open semantic decisions
 
+D09 positional-diagnostic approval request: the concrete offline-only v1 contract
+in G2_EPA_MATCHING_MATRIX_PROPOSAL.md proposes uppercase letter/digit single-slot
+grammar under preserved refrigerator metadata. This remains unapproved; prior
+literal-equality approval did not authorize positional compatibility interpretation.
+
 D09 reviewed matrix: G2_EPA_MATCHING_MATRIX_PROPOSAL.md records letter/digit
 descriptions from preserved refrigerator metadata and a literal PD_ID API record.
 The original Product Finder HTML was shell-only; follow-up hosted run 35189830486

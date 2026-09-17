@@ -65,3 +65,41 @@ source hashes and omitted-versus-present fields. Add projection replay tampering
 and missing/ambiguous PD_ID cases to cheap hosted contracts. This requires no
 matcher, wildcard normalization or new assessment state. Recommended model:
 Luna low. Return to Sol medium only for approval of substantive linkage grammar.
+
+## Concrete approval request: offline positional diagnostic v1
+
+Approve only a fixture-tested diagnostic for preserved `p5st-her9` EPA patterns
+against literal product identifiers. This is a new interpretation rule, beyond
+the previously approved literal-equality diagnostic. It is not label matching,
+current-certification selection, or a live pilot integration authorization.
+
+The proposed contract requires:
+- Dataset ID and reviewed metadata hash identifying the governing grammar.
+  Missing evidence fails input validation; a changed source requires re-review.
+- EPA pattern contains only uppercase ASCII letters, digits, `*`, and `#`.
+  Target contains only uppercase ASCII letters and digits. Lowercase, spaces,
+  slashes, question marks, brackets, pipes and target wildcards are unsupported;
+  preserve the input and withhold interpretation. Uppercase-only is a proposed
+  conservative project restriction, not a claimed universal EPA requirement.
+- Equal full lengths. Every `*` consumes exactly one A–Z letter, every `#`
+  exactly one 0–9 digit. All other positions require literal equality.
+- No suffix removal, whitespace trimming, case folding, OCR substitutions,
+  capacity/energy corroboration, UPC association or inferred wildcard restoration.
+- Result describes only positional compatibility or its withheld reason.
+  `identity_state` remains `NOT_EVALUATED`; correction remains `NOT_APPLIED`.
+  No assessment, issue code, certification PASS or absence conclusion is emitted.
+
+| EPA pattern | Literal target | Proposed result |
+|---|---|---|
+| `RF23D*9600**` | `RF23DB9600QL` | Positional compatible diagnostic only; hypothetical shortened token, not an approved identifier for a retail SKU |
+| `RF23D*9600**` | `RF23DB9600QLAA` | Withheld: unequal length; retain complete retail SKU |
+| `RF23D*9600**` | `RF23D89600QL` | Positional incompatible diagnostic only; digit cannot fill a letter slot |
+| `ABC##` | `ABC01` | Positional compatible diagnostic only; synthetic digit-slot example |
+| `ABC##` | `ABC/01` | Withheld: unsupported syntax |
+
+After approval, implement only an offline helper and compact hosted fixtures on
+Python 3.11/3.12, using Luna low. Load the versioned actual API projection in
+tests; the preceding six-test checkpoint tested the parser with synthetic cases,
+not that fixture's provenance. Add explicit raw-input immutability and source
+binding cases. Neither the hosted fixture job nor the helper may fetch live data.
+Live use, certification selection and suffix mappings require later review.
