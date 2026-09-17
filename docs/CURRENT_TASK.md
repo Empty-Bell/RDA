@@ -176,11 +176,16 @@ on every next-step prompt. Same-task model changes should continue existing work
   contract CI run 35225714504 PASSed at 1899c91. It requires same-run verified
   PDP targets, preserves every raw/approved-normalized literal candidate and
   withholds a no-match result while any EPA pattern encoding remains unresolved.
-  See G2_CURRENT_INDEX_CANDIDATE_PROJECTION.md. Next: define the same-run
-  refrigerator target feed and strict p5st-her9 four-key provenance bridge needed
-  to resolve approved positional-pattern candidates. Assessment remains disabled
-  until collection definitions and coverage are complete. Recommended model:
-  Terra medium.
+  See G2_CURRENT_INDEX_CANDIDATE_PROJECTION.md. The same-run refrigerator target
+  feed and strict p5st-her9 four-key provenance bridge are now defined and hosted
+  contract CI run 35226584964 PASSed at debd8e4. Only verified PDP SKUs enter the
+  feed; a pattern diagnostic runs only after its Current Index and refrigerator
+  rows match on PD_ID, brand, model pattern and CB identifier. This remains a
+  candidate-only result. See G2_REFRIGERATOR_PATTERN_BRIDGE.md. Next: integrate
+  this contract into one bounded live refrigerator execution, preserving the
+  same-run target and EPA raw evidence before any candidate projection.
+  Assessment remains disabled until collection definitions and coverage are
+  complete. Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
