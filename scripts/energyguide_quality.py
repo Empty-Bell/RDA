@@ -64,6 +64,19 @@ def compare_model_candidates(baseline_candidates, observed):
             'wildcard_correction': 'NOT_APPLIED', 'identity_matching': 'NOT_EVALUATED'}
 
 
+def otsu_image(source, destination):
+    import cv2
+    gray = cv2.imread(str(source), cv2.IMREAD_GRAYSCALE)
+    if gray is None:
+        raise ValueError('ROI image unavailable for grayscale/Otsu')
+    threshold, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    if not cv2.imwrite(str(destination), binary):
+        raise ValueError('Otsu image write failed')
+    return {'method': 'GRAYSCALE_OTSU', 'threshold_raw': float(threshold),
+            'source_png_sha256': hashlib.sha256(Path(source).read_bytes()).hexdigest(),
+            'opencv_version': cv2.__version__}
+
+
 def probe(root, engine):
     import pymupdf
     output = root / 'quality'
@@ -88,17 +101,24 @@ def probe(root, engine):
             regions = model_regions(baseline, list(page.rect), digest)
             summary['model_regions_raw'] = regions
             save('model-regions.json', regions)
-            variants = [('page-36dpi', 0.5, None), ('page-72dpi', 1, None)]
-            variants += [('model-roi-' + str(i), 3, r['clip_pdf_points']) for i, r in enumerate(regions)]
-            for name, scale, clip in variants:
+            variants = [('page-36dpi', 0.5, None, None, False), ('page-72dpi', 1, None, None, False)]
+            for i, region in enumerate(regions):
+                variants += [('model-roi-' + str(i), 3, region['clip_pdf_points'], i, False),
+                             ('model-roi-' + str(i) + '-otsu', 3, region['clip_pdf_points'], i, True)]
+            for name, scale, clip, region_index, otsu in variants:
                 pix = page.get_pixmap(matrix=pymupdf.Matrix(scale, scale), clip=pymupdf.Rect(clip) if clip else None)
                 image = output / (name + '.png')
-                pix.save(image)
+                preprocessing = {'method': 'NONE'}
+                if otsu:
+                    preprocessing = otsu_image(output / ('model-roi-' + str(region_index) + '.png'), image)
+                else:
+                    pix.save(image)
                 provenance = {'name': name, 'pdf_sha256': digest, 'page': 0, 'scale': scale,
                               'dpi': scale * 72, 'clip_pdf_points': clip,
                               'pixel_origin': [pix.x, pix.y], 'pixel_size': [pix.width, pix.height],
                               'png_sha256': hashlib.sha256(image.read_bytes()).hexdigest(),
-                              'transformation': 'PDF render at stated scale; no glyph correction'}
+                              'source_region_index': region_index, 'preprocessing': preprocessing,
+                              'transformation': 'PDF render and recorded preprocessing; no glyph correction'}
                 save(name + '-render.json', provenance)
                 result = engine(str(image))
                 texts = [] if result.txts is None else list(result.txts)
@@ -110,7 +130,7 @@ def probe(root, engine):
                 spans = project_detections(texts, boxes, scores, scale, [pix.x / scale, pix.y / scale])
                 save(name + '-spans.json', spans)
                 observed = observation(spans, digest)
-                reference = regions[int(name.rsplit('-', 1)[1])]['model_candidates_raw'] if clip else baseline_models
+                reference = regions[region_index]['model_candidates_raw'] if clip else baseline_models
                 observed['model_candidate_comparison'] = compare_model_candidates(reference, observed)
                 save(name + '-observation.json', observed)
                 summary['variants'].append({'render': provenance, 'observation': observed})

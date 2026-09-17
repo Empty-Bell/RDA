@@ -1,7 +1,10 @@
 import unittest
 import json
+import hashlib
+import importlib.util
+import tempfile
 from pathlib import Path
-from scripts.energyguide_quality import model_regions, project_detections, observation, compare_model_candidates
+from scripts.energyguide_quality import model_regions, project_detections, observation, compare_model_candidates, otsu_image
 
 
 class QualityContract(unittest.TestCase):
@@ -35,6 +38,20 @@ class QualityContract(unittest.TestCase):
 
 
 class ActualQualityRegression(unittest.TestCase):
+    @unittest.skipUnless(importlib.util.find_spec('cv2'), 'Hosted bootstrap provides OpenCV')
+    def test_actual_repeated_wildcard_roi_binarization_preserves_source_and_dimensions(self):
+        import cv2
+        source = Path(__file__).parent / 'fixtures/energyguide-quality/images/dishwasher-model-roi.png'
+        before = source.read_bytes()
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / 'otsu.png'
+            metadata = otsu_image(source, destination)
+            binary = cv2.imread(str(destination), cv2.IMREAD_GRAYSCALE)
+            self.assertEqual(binary.shape, cv2.imread(str(source), cv2.IMREAD_GRAYSCALE).shape)
+            self.assertEqual(set(int(v) for v in binary.ravel()), {0, 255})
+            self.assertEqual(metadata['source_png_sha256'], hashlib.sha256(before).hexdigest())
+            self.assertEqual(source.read_bytes(), before)
+
     def fixture(self, name):
         return json.loads((Path(__file__).parent / 'fixtures/energyguide-quality' / (name + '.json')).read_text(encoding='utf-8'))
 

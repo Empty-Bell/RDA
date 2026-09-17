@@ -1,6 +1,6 @@
 # EnergyGuide degradation and model-like ROI probe
 
-Status: hosted discovery PASS in run 35164234556; final regression pending.
+Status: color-ROI regression PASS in run 35164550504; grayscale/Otsu regression pending.
 Phase 0 remains RUNNING.
 
 This bounded probe reuses each freshly observed original PDF and matching SHA256.
@@ -13,6 +13,11 @@ Propose model-like regions from baseline detections, including part numbers and
 Canadian repeat tokens. Their presence is not validated label/model identity.
 Expand each box by one text height, clamp to the page, render at 216 DPI. At most
 eight regions are permitted; exceeding the bound fails rather than truncating.
+Preserve both the 3x color ROI and its separate grayscale/Otsu image. Record the
+actual threshold, OpenCV version, source PNG hash and output PNG hash. Binarization
+is an image transformation, never character/wildcard correction. Exploration probes
+all observed candidate regions; production targeted retries only when needed remain
+a separate contract. No 300–600 DPI production escalation is introduced.
 A label without baseline model-like detections has ROI status NOT_OBSERVED; do not
 claim exhaustive model-region discovery or introduce filename-based fallback.
 
@@ -58,3 +63,11 @@ Visual review covered refrigerator/dishwasher model ROIs and the degraded TV pag
 ROI padding retains neighboring caption/capacity context. Original full-page renders
 remain separate. Naturally low-resolution PDFs, unseen model-region discovery and
 approved corroboration/confidence semantics remain outside this bounded corpus.
+
+Color-ROI final run 35164550504, commit a5e47330baba5d08fb1c4dbccfe8e2c9cd8ebaa7,
+passed 164 tests and all 12 source jobs. Compact color evidence is preserved before
+the additional master-plan grayscale/Otsu baseline probe. The actual repeated-star
+dishwasher ROI PNG is a public sanitized preprocessing fixture (7072 bytes;
+SHA256 babd964790dc7300a1d73b5330cd3863f0d68d82c0715946665ee7823daf883a),
+source artifact 10474610375 / run 35164234556. The local OpenCV-specific test is
+skipped because the editing runtime lacks OpenCV; hosted bootstrap must execute it.
