@@ -1,17 +1,20 @@
 [
   {
     "file": "tests/fixtures/public-claims/refrigerator.json",
-    "sha256": "df54c4abd73cd69d5776f9b1e4197465be0160446a685e88ee697e6b58054024",
-    "source_run_id": 35160080596
+    "sha256": "06c563754383282db2e292bf400261d97edd8dc7bbc432b9341f7f6f00de376d",
+    "source_run_id": 35160080596,
+    "capture_bytes_sha256": "df54c4abd73cd69d5776f9b1e4197465be0160446a685e88ee697e6b58054024"
   },
   {
     "file": "tests/fixtures/public-claims/dishwasher.json",
-    "sha256": "677b8ba769421e9e3b0c88fa18a18e9988bce2354f7f3f215ff9096216ebfdd0",
-    "source_run_id": 35160080596
+    "sha256": "c8e2f271d901eedb742544dfea941fd48de6c604c91c0aa72963b7405e1632b4",
+    "source_run_id": 35160080596,
+    "capture_bytes_sha256": "677b8ba769421e9e3b0c88fa18a18e9988bce2354f7f3f215ff9096216ebfdd0"
   },
   {
     "file": "tests/fixtures/public-claims/tablet.json",
-    "sha256": "e13911987ff7ce00bd91d155a299c91f51f560a42c622ad30b7dd6341eab6cd9",
-    "source_run_id": 35160080596
+    "sha256": "be87c986c1af9436487c542d0a76d0cd98e95affda39728e9950faca364cef2a",
+    "source_run_id": 35160080596,
+    "capture_bytes_sha256": "e13911987ff7ce00bd91d155a299c91f51f560a42c622ad30b7dd6341eab6cd9"
   }
 ]

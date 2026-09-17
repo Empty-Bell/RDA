@@ -1,12 +1,14 @@
 [
   {
     "file": "tests/fixtures/claim-attribution/tablet.json",
-    "sha256": "be7d395b3d14961f96df6ca41e914c9b56fa39e644cc1999d0c50ec03b34982f",
-    "source_run_id": 35161180701
+    "sha256": "3655986da80c74bcbeafb6322f1a8e020f948760b2ad310895a932146dd0adf1",
+    "source_run_id": 35161180701,
+    "capture_bytes_sha256": "be7d395b3d14961f96df6ca41e914c9b56fa39e644cc1999d0c50ec03b34982f"
   },
   {
     "file": "tests/fixtures/claim-attribution/refrigerator.json",
-    "sha256": "bf1aa902810773ed87ad95ea69ef806bde8519619bdc32bb0f54095d3dc909d2",
-    "source_run_id": 35161180701
+    "sha256": "95022cc6505f8ce1d07c90a54130f2d05f33d4111b350b5c2c86360ee6620bfd",
+    "source_run_id": 35161180701,
+    "capture_bytes_sha256": "bf1aa902810773ed87ad95ea69ef806bde8519619bdc32bb0f54095d3dc909d2"
   }
 ]

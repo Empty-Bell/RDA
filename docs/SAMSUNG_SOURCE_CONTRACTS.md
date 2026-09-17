@@ -1,4 +1,4 @@
-# Samsung source contracts — refrigerator, dishwasher, washer and TV reconnaissance
+# Samsung source contracts — all 11 product-group reconnaissance
 
 Observed on GitHub-hosted Ubuntu 24.04 x64, 2026-09-16. Refrigerator contracts below;
 Dishwasher contracts: [DISHWASHER_SOURCE_CONTRACT.md](DISHWASHER_SOURCE_CONTRACT.md).
@@ -8,7 +8,14 @@ Range contracts: [RANGE_SOURCE_CONTRACT.md](RANGE_SOURCE_CONTRACT.md).
 Cooktop contracts: [COOKTOP_SOURCE_CONTRACT.md](COOKTOP_SOURCE_CONTRACT.md).
 Actual collection coverage: [SOURCE_COVERAGE.md](SOURCE_COVERAGE.md).
 Clothes Dryer contracts: [DRYER_SOURCE_CONTRACT.md](DRYER_SOURCE_CONTRACT.md).
-Other 4 product groups remain UNKNOWN. No compliance semantics implemented.
+Ventilating Hood contracts: [HOOD_SOURCE_CONTRACT.md](HOOD_SOURCE_CONTRACT.md).
+Monitor contracts: [MONITOR_SOURCE_CONTRACT.md](MONITOR_SOURCE_CONTRACT.md).
+Computer / Chromebook contracts: [COMPUTER_SOURCE_CONTRACT.md](COMPUTER_SOURCE_CONTRACT.md).
+Tablet contracts: [TABLET_SOURCE_CONTRACT.md](TABLET_SOURCE_CONTRACT.md).
+All 11 product groups now have bounded hosted discovery contracts. Earlier dated
+sections retain historical observations; their remaining-UNKNOWN counts are not
+current coverage. No full per-SKU collection or compliance semantics implemented.
+Consolidated acceptance boundaries: [G0_REVIEW.md](G0_REVIEW.md).
 
 ## PLP / pf_search
 

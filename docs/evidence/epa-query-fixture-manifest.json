@@ -7,83 +7,92 @@
     {
       "dataset_id": "m6gi-ng33",
       "fixture": "tests/fixtures/epa-query/m6gi-ng33.json",
-      "fixture_sha256": "15e44879d1c012663106e8d0ff4bb708260b48765ff196b22e3ea9c1bf20b8fc",
+      "fixture_sha256": "e71506fc6c3b1c55186389c315fe97542d7988a220fab7bdc767c33f4db88dba",
       "row_count": 23,
       "artifact_id": 10475230246,
       "artifact_zip_sha256": "c717141dc82786804e12e11ec24f27765997e2f2683f13c8e5e2230dcf14345f",
-      "expires_at": "2026-10-01T00:09:56Z"
+      "expires_at": "2026-10-01T00:09:56Z",
+      "capture_bytes_sha256": "15e44879d1c012663106e8d0ff4bb708260b48765ff196b22e3ea9c1bf20b8fc"
     },
     {
       "dataset_id": "p5st-her9",
       "fixture": "tests/fixtures/epa-query/p5st-her9.json",
-      "fixture_sha256": "208febc9dbc4b5093fbbba32e071d9580387e31e05287091aa7238141a32b1e9",
+      "fixture_sha256": "fd32880f71e3e932b035c28eb0f839e7a8bfb1580c8243540614ac8ce3c09069",
       "row_count": 101,
       "artifact_id": 10475190317,
       "artifact_zip_sha256": "61daf400b06301f9056dfd6ba785ac82305f739dabb57e1dcf0cb45785231a80",
-      "expires_at": "2026-10-01T00:09:49Z"
+      "expires_at": "2026-10-01T00:09:49Z",
+      "capture_bytes_sha256": "208febc9dbc4b5093fbbba32e071d9580387e31e05287091aa7238141a32b1e9"
     },
     {
       "dataset_id": "q8py-6w3f",
       "fixture": "tests/fixtures/epa-query/q8py-6w3f.json",
-      "fixture_sha256": "32d81fb072e91269d639fbbbbee04f76a4721302f4178d01ea26bc44485e4b47",
+      "fixture_sha256": "124e12876683a42da615c6be6fa7c4debef73eba419c49db32e6458479f3add8",
       "row_count": 22,
       "artifact_id": 10475170462,
       "artifact_zip_sha256": "6ebe4ea502ba8a5128e395095ddaaf2c4b1b06fd01413ae40b2c8d948320d6ff",
-      "expires_at": "2026-10-01T00:09:43Z"
+      "expires_at": "2026-10-01T00:09:43Z",
+      "capture_bytes_sha256": "32d81fb072e91269d639fbbbbee04f76a4721302f4178d01ea26bc44485e4b47"
     },
     {
       "dataset_id": "qbg3-d468",
       "fixture": "tests/fixtures/epa-query/qbg3-d468.json",
-      "fixture_sha256": "b1560e1f9f0cc04e0dd1eb4a56b5306a94e8b613de131346b0ff3939d5eec805",
+      "fixture_sha256": "d16869b446537fe7cada50e36f2a1d5e6d8bc39320d5b0d2ac3d44bb8741958f",
       "row_count": 146,
       "artifact_id": 10474951548,
       "artifact_zip_sha256": "98fa95dfb264b279301b254b7fda67fcbd847b044fd3dbe0bde6829204f2e8e7",
-      "expires_at": "2026-10-01T00:10:05Z"
+      "expires_at": "2026-10-01T00:10:05Z",
+      "capture_bytes_sha256": "b1560e1f9f0cc04e0dd1eb4a56b5306a94e8b613de131346b0ff3939d5eec805"
     },
     {
       "dataset_id": "t9u7-4d2j",
       "fixture": "tests/fixtures/epa-query/t9u7-4d2j.json",
-      "fixture_sha256": "6b73669b9d52f5154bcafeec817c24537df9f1cee92a73170428559b6dbfbf41",
+      "fixture_sha256": "e8555748e3027341d571841e1351f6608e9bff721c6e2a652685bfd223a52df0",
       "row_count": 104,
       "artifact_id": 10474911794,
       "artifact_zip_sha256": "2546d26a46d3fa6c63d97426e81cb49877f542a32aab06010deb795733b2bf40",
-      "expires_at": "2026-10-01T00:10:05Z"
+      "expires_at": "2026-10-01T00:10:05Z",
+      "capture_bytes_sha256": "6b73669b9d52f5154bcafeec817c24537df9f1cee92a73170428559b6dbfbf41"
     },
     {
       "dataset_id": "bghd-e2wd",
       "fixture": "tests/fixtures/epa-query/bghd-e2wd.json",
-      "fixture_sha256": "9d12e55e75257eb1a3be04e4dead8e25da6904ded5e7aae95d7d6bc08a121b0b",
+      "fixture_sha256": "07fdc2eee1917a500a9fd957366af1f5e857928f55a7219afe920d53c0d83cf3",
       "row_count": 66,
       "artifact_id": 10474806849,
       "artifact_zip_sha256": "54bcca6c2c6dd26f4e2e9689045446a520f675fc3dde42acec27ff3238c5443f",
-      "expires_at": "2026-10-01T00:09:46Z"
+      "expires_at": "2026-10-01T00:09:46Z",
+      "capture_bytes_sha256": "9d12e55e75257eb1a3be04e4dead8e25da6904ded5e7aae95d7d6bc08a121b0b"
     },
     {
       "dataset_id": "rxdj-2c88",
       "fixture": "tests/fixtures/epa-query/rxdj-2c88.json",
-      "fixture_sha256": "c40b4e095cf28d9ab78f21773f405acbf8fc899bcfaa2b3dd4043cb5569dd43b",
+      "fixture_sha256": "96695730e96606a3add2e33ce0a20e85f38421e16c8d914098dbf38098fce0fd",
       "row_count": 45,
       "artifact_id": 10474647626,
       "artifact_zip_sha256": "919ced11abec83115a38d5da024739331c87b890c7b482d4dc678995f7fff728",
-      "expires_at": "2026-10-01T00:10:20Z"
+      "expires_at": "2026-10-01T00:10:20Z",
+      "capture_bytes_sha256": "c40b4e095cf28d9ab78f21773f405acbf8fc899bcfaa2b3dd4043cb5569dd43b"
     },
     {
       "dataset_id": "8dv7-nngq",
       "fixture": "tests/fixtures/epa-query/8dv7-nngq.json",
-      "fixture_sha256": "329546f2f33888fcb41adb541433f3d18fd58950da77c23ec99663f62edc0959",
+      "fixture_sha256": "40ae6468e7661f3f3a918e7f0e18e9cf6ae79d84aa57af4dd1e778d514b2ff42",
       "row_count": 0,
       "artifact_id": 10474626699,
       "artifact_zip_sha256": "f905832810a4790962988f2b82b8ec37a8d04d51f0e1b513d8333e980dc0f4a7",
-      "expires_at": "2026-10-01T00:10:06Z"
+      "expires_at": "2026-10-01T00:10:06Z",
+      "capture_bytes_sha256": "329546f2f33888fcb41adb541433f3d18fd58950da77c23ec99663f62edc0959"
     },
     {
       "dataset_id": "pd96-rr3d",
       "fixture": "tests/fixtures/epa-query/pd96-rr3d.json",
-      "fixture_sha256": "89b398226b2324d77945b8aad5a45034de043d4040f4fc26d53a053450c47d84",
+      "fixture_sha256": "a68b8c5c4a3704f0af48e57ff501fc0d4a2f491b7fc426abb00429209457cf6b",
       "row_count": 59,
       "artifact_id": 10474237202,
       "artifact_zip_sha256": "83babfab4b8fca37effb3d183dfd4148b409ba54b2688219a78c875086144f80",
-      "expires_at": "2026-10-01T00:09:53Z"
+      "expires_at": "2026-10-01T00:09:53Z",
+      "capture_bytes_sha256": "89b398226b2324d77945b8aad5a45034de043d4040f4fc26d53a053450c47d84"
     }
   ]
 }

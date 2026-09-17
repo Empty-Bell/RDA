@@ -196,8 +196,13 @@ RUNTIME_FREEZE_CONTRACT.md and runtime-freeze-recon.json. Image/system libraries
 remain GitHub-managed; arbitrary WAF/network recovery and future reachability are
 not implied by this PASS.
 
-Next bounded task: consolidated G0 evidence review and explicit remaining-gap inventory.
-All family discovery is complete; common claim/quality/runtime acceptance remains.
+Consolidated G0 evidence review and phase-specific gap inventory are recorded in
+G0_REVIEW.md. Fixture manifest capture/committed byte distinctions and ambiguous
+refrigerator paths are corrected; a dedicated hosted integrity checkpoint is added.
+No fixture facts, raw ZIP/PDF hashes, decisions or compliance rules were changed.
+Next bounded task: official EPA active-version and alternate product-type routing
+evidence, followed by family applicability provenance. All family discovery and
+bounded common claim/quality/runtime probes are complete; full G0 is not promoted.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
 
@@ -206,6 +211,6 @@ lock/model/Actions changes and cold plus full-source regression. Do not enable N
 downgrade flags or auto-refresh expected model hashes.
 
 Token handoff: reuse the existing model guidance: Terra medium for the next bounded
-evidence/checklist consolidation; Sol medium only for a specific new unresolved contract.
+evidence/checklist maintenance; Sol medium for the next EPA source-routing contract.
 Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.

@@ -9,52 +9,57 @@
     {
       "label": "refrigerator",
       "fixture": "tests/fixtures/energyguide-quality/refrigerator.json",
-      "fixture_sha256": "a168e6968c1c4c2dba35ca8e339d9c0f6f3728616e01ca1cd58c68ec831cab58",
+      "fixture_sha256": "9d1a2b24f46d241a713484008264eb31c84fd05ab2a135149c52aac080be3828",
       "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
       "variant_count": 3,
       "artifact_id": 10474550428,
       "artifact_expires_at": "2026-09-30T23:54:46Z",
-      "artifact_zip_sha256": "6881d76e6a26ca6b713b53c04f945e7a1a6a536d0c02cd69a0a56c295452fa9c"
+      "artifact_zip_sha256": "6881d76e6a26ca6b713b53c04f945e7a1a6a536d0c02cd69a0a56c295452fa9c",
+      "capture_bytes_sha256": "a168e6968c1c4c2dba35ca8e339d9c0f6f3728616e01ca1cd58c68ec831cab58"
     },
     {
       "label": "dishwasher",
       "fixture": "tests/fixtures/energyguide-quality/dishwasher.json",
-      "fixture_sha256": "fa42470d65c9e5bb8529dba0d7156d5a10f3909204dd27467c63b11a020ca8af",
+      "fixture_sha256": "89df2f24e0df341f8e45880821b3ac783eea7c2ebdb8317b16c7f961d33839ec",
       "pdf_sha256": "fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591",
       "variant_count": 6,
       "artifact_id": 10474610375,
       "artifact_expires_at": "2026-09-30T23:54:57Z",
-      "artifact_zip_sha256": "55c3bcd527e9083f4822632925ccd3e8ea46350a7b1780d4003d3cc32ce64499"
+      "artifact_zip_sha256": "55c3bcd527e9083f4822632925ccd3e8ea46350a7b1780d4003d3cc32ce64499",
+      "capture_bytes_sha256": "fa42470d65c9e5bb8529dba0d7156d5a10f3909204dd27467c63b11a020ca8af"
     },
     {
       "label": "washer",
       "fixture": "tests/fixtures/energyguide-quality/washer.json",
-      "fixture_sha256": "78bcf75132ab194eaa5330b0e5bd6e1e22336c6f7f4dc38440ee0b4455d7f2b1",
+      "fixture_sha256": "065528f3c837c5d993983c7c7a6dbde6dc1cc3cc69573664033ef560088c4c6a",
       "pdf_sha256": "f096d0692929654d41f158a15ebb368095f63b8dd9aa70c24c6e65449d398658",
       "variant_count": 4,
       "artifact_id": 10474380920,
       "artifact_expires_at": "2026-09-30T23:55:10Z",
-      "artifact_zip_sha256": "c5970a6c99f447df52636043f50d795b5003d5fe940bea3de76ee7d397cd5031"
+      "artifact_zip_sha256": "c5970a6c99f447df52636043f50d795b5003d5fe940bea3de76ee7d397cd5031",
+      "capture_bytes_sha256": "78bcf75132ab194eaa5330b0e5bd6e1e22336c6f7f4dc38440ee0b4455d7f2b1"
     },
     {
       "label": "washer-standalone",
       "fixture": "tests/fixtures/energyguide-quality/washer-standalone.json",
-      "fixture_sha256": "eaf43a9563b956835b8952b23e9daab60eeedbda2e02145edadf345343c14185",
+      "fixture_sha256": "f423fb7ed2c3f7242cfa2d8e251d0dfb78be64bffb5feba17feb9fcfa3e51413",
       "pdf_sha256": "349fa031c9f91854532cc39757cc988255565dee2227ed5e7b14c449335f7c6a",
       "variant_count": 4,
       "artifact_id": 10474380920,
       "artifact_expires_at": "2026-09-30T23:55:10Z",
-      "artifact_zip_sha256": "c5970a6c99f447df52636043f50d795b5003d5fe940bea3de76ee7d397cd5031"
+      "artifact_zip_sha256": "c5970a6c99f447df52636043f50d795b5003d5fe940bea3de76ee7d397cd5031",
+      "capture_bytes_sha256": "eaf43a9563b956835b8952b23e9daab60eeedbda2e02145edadf345343c14185"
     },
     {
       "label": "tv",
       "fixture": "tests/fixtures/energyguide-quality/tv.json",
-      "fixture_sha256": "66877bd7bb4341c7318153fd97dd7ed128812d311f3888441a3964c2c5c83764",
+      "fixture_sha256": "b0c4d5f6e0f2cbfac0dff95aaf5b4a61dfe4aad67894b7b4fb72495a57b5aad5",
       "pdf_sha256": "791734f108ea20ad2366e79f7a7f0ba2e85020da6a6631c0bc60d2cfe8e174ed",
       "variant_count": 3,
       "artifact_id": 10474211037,
       "artifact_expires_at": "2026-09-30T23:54:42Z",
-      "artifact_zip_sha256": "d97dfe40083a14b740a5fab1d11a6abd24712cbdec6101a9ad4a98e49e8f1fc9"
+      "artifact_zip_sha256": "d97dfe40083a14b740a5fab1d11a6abd24712cbdec6101a9ad4a98e49e8f1fc9",
+      "capture_bytes_sha256": "66877bd7bb4341c7318153fd97dd7ed128812d311f3888441a3964c2c5c83764"
     }
   ]
 }

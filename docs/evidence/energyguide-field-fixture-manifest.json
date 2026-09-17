@@ -1,27 +1,32 @@
 [
   {
     "file": "tests/fixtures/energyguide-fields/refrigerator.json",
-    "sha256": "d54553ac8b579974e841792de04a8cd3e6ec1cd96eeb0b50abf7674a34762fec",
-    "source_run_id": 35162114501
+    "sha256": "2b872702b20535c0b1b3cea286ac2751fa69f6eda9fc92155699328c5a60d9ab",
+    "source_run_id": 35162114501,
+    "capture_bytes_sha256": "d54553ac8b579974e841792de04a8cd3e6ec1cd96eeb0b50abf7674a34762fec"
   },
   {
     "file": "tests/fixtures/energyguide-fields/dishwasher.json",
-    "sha256": "fb8fdc9211fbdf5e85176435fe6d464b3a15706a5729540dcdca3ac770eafbdc",
-    "source_run_id": 35162114501
+    "sha256": "950c35e451e239708eb68b5eca8800b83d56b6a36681c9a2e390d830b2612337",
+    "source_run_id": 35162114501,
+    "capture_bytes_sha256": "fb8fdc9211fbdf5e85176435fe6d464b3a15706a5729540dcdca3ac770eafbdc"
   },
   {
     "file": "tests/fixtures/energyguide-fields/washer.json",
-    "sha256": "5c079d4b86540194342a5f0f9589b3fc3dbed5fb04e4913e45e3b9e98f734dd0",
-    "source_run_id": 35162114501
+    "sha256": "1712f2aa9660bf0e427c3ccff86c91680f8af1ebacd2e16dc617a649826b714c",
+    "source_run_id": 35162114501,
+    "capture_bytes_sha256": "5c079d4b86540194342a5f0f9589b3fc3dbed5fb04e4913e45e3b9e98f734dd0"
   },
   {
     "file": "tests/fixtures/energyguide-fields/washer-standalone.json",
-    "sha256": "9c15af56ae535e4625f5ad263d606b9f45ae8b8cea93c80eca7ec5c86ef21c06",
-    "source_run_id": 35162114501
+    "sha256": "b8063924691497473bf61cc31c4f49fcca2c8d8f39d49a9007c9fdaff6396592",
+    "source_run_id": 35162114501,
+    "capture_bytes_sha256": "9c15af56ae535e4625f5ad263d606b9f45ae8b8cea93c80eca7ec5c86ef21c06"
   },
   {
     "file": "tests/fixtures/energyguide-fields/tv.json",
-    "sha256": "0e59288ad815822c9a778083d7f6f9cc3e2267019e7b4d9b3343158b98d12f79",
-    "source_run_id": 35162114501
+    "sha256": "ba445677f449b9f852463bad928e282b5b4c8b00c8ee683a76119dbc415fe893",
+    "source_run_id": 35162114501,
+    "capture_bytes_sha256": "0e59288ad815822c9a778083d7f6f9cc3e2267019e7b4d9b3343158b98d12f79"
   }
 ]

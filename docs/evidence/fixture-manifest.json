@@ -3,46 +3,51 @@
   "source_artifact_id": 10448091149,
   "source_fixture_sha256": "29ca1d7f5b1bf3d15ad1e7c895bcf49822df5d04278c1bfdd634cb5a9fb368d0",
   "projection": "identity/url/commerce/claim fields, all page products and grouped variants preserved; analytics omitted",
-  "projected_sha256": "17a756fd324fbf976130c86677707a43d8de0be92d47bcef1c591f15d076c462",
+  "projected_sha256": "003a0490837981e4b34cca6c043387a2b7d445b39bb81349bcab6835fb089e23",
   "additional_fixtures": [
     {
-      "file": "pf-page-0.json",
+      "file": "tests/fixtures/refrigerator/pf-page-0.json",
       "sha256": "82815e0050fa0462b468402ee98ab00641d67106eef7c3d6ed25698157cb1c30",
       "source_run_id": 35100922262,
       "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
     },
     {
-      "file": "pf-page-1.json",
+      "file": "tests/fixtures/refrigerator/pf-page-1.json",
       "sha256": "3047d2980142501ba66b029ebbf35fd79f7092c1a8f0c6e8a7e3239907c82f02",
       "source_run_id": 35100922262,
       "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
     },
     {
-      "file": "pf-page-2.json",
+      "file": "tests/fixtures/refrigerator/pf-page-2.json",
       "sha256": "1107f3db5c37f5227eb0fef99141644a51e122d886f919a9333f38d5b25364fd",
       "source_run_id": 35100922262,
       "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
     },
     {
-      "file": "bridge-specs-support.json",
-      "sha256": "7ef9bd53096fb1d259abd6d61d762e1ee0258bb21b2c824cd17fa69a3c50a9a7",
+      "file": "tests/fixtures/refrigerator/bridge-specs-support.json",
+      "sha256": "1db463a3e53eb6e18dee79dcc6ad3b1ce9348716c40f6ad3e71ea54f9e8293a4",
       "source_run_id": 35100922262,
-      "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only"
+      "projection": "product identity/URL/commerce/claim fields only; bridge Specs name/value and EnergyGuide metadata only",
+      "capture_bytes_sha256": "7ef9bd53096fb1d259abd6d61d762e1ee0258bb21b2c824cd17fa69a3c50a9a7"
     },
     {
-      "file": "epa-metadata.projected.json",
-      "sha256": "f890484b54b9ecfc816b019a8b36f5af6eb1d4de41453dc2489df650940d2c8f",
+      "file": "tests/fixtures/refrigerator/epa-metadata.projected.json",
+      "sha256": "c26e7cc958b24c1dd7e9efae4c0b1b62ec5d46cee22b2263fe31589b7915322a",
       "source_run_id": 35101447985,
       "source_artifact_id": 10448810950,
-      "projection": "official dataset columns and public certification row fields only"
+      "projection": "official dataset columns and public certification row fields only",
+      "capture_bytes_sha256": "f890484b54b9ecfc816b019a8b36f5af6eb1d4de41453dc2489df650940d2c8f"
     },
     {
-      "file": "epa-sample.projected.json",
-      "sha256": "c63f8d54a3966e8f2d349a3fdf00cab2c94003b1fbbd88a3cdbc0e34bb33bc5c",
+      "file": "tests/fixtures/refrigerator/epa-sample.projected.json",
+      "sha256": "f39697e7d8a17223b6626604774a43bacb27f1b1feb27b0565d746a5f69daf1f",
       "source_run_id": 35101447985,
       "source_artifact_id": 10448810950,
-      "projection": "official dataset columns and public certification row fields only"
+      "projection": "official dataset columns and public certification row fields only",
+      "capture_bytes_sha256": "c63f8d54a3966e8f2d349a3fdf00cab2c94003b1fbbd88a3cdbc0e34bb33bc5c"
     }
   ],
-  "note": "Initial broad recon artifact 10448302141 was deleted; product-only projected fixtures retained, tested against subsequent hosted observations."
+  "note": "Initial broad recon artifact 10448302141 was deleted; product-only projected fixtures retained, tested against subsequent hosted observations.",
+  "projected_fixture": "tests/fixtures/refrigerator/pf-initial.projected.json",
+  "projected_capture_bytes_sha256": "17a756fd324fbf976130c86677707a43d8de0be92d47bcef1c591f15d076c462"
 }
