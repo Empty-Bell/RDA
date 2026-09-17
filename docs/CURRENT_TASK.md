@@ -106,8 +106,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   Artifact 10483857141 ZIP SHA256:
   8a799f87f8f9e0d1698e37c559f810ba4b810bc93f2eb1f37473601131cb1fd2.
   G2_EPA_MATCHING_MATRIX_PROPOSAL.md records reviewed scope; grammar remains draft.
-  Next: small actual-source fixtures and projection replay tampering contracts,
-  no matcher/assessment. Recommended model: Luna low.
+  Small actual-source projection fixture and tampering contracts are now PASSed in
+  hosted run 35190205775 at b283074 (6 tests). Artifact 10483347557 ZIP SHA256:
+  2fd920e4c8419fa1a90d7abfb0bb98bfb576b5410bac3a44aa72cac55d748aca. Next:
+  decide whether to approve a dataset-scoped positional diagnostic; no automatic
+  matcher or assessment. Recommended model: Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

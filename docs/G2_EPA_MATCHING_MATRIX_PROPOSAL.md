@@ -28,6 +28,13 @@ PD_ID 2839420 returns Samsung `RF23D*9600**`, raw UPC string
 `additional_model_information` is omitted (projected as null). That omission is
 not proof that no additional models are represented by the certification.
 
+The sanitized API projection is versioned at
+`tests/fixtures/g2-epa-wildcard/api-record.json`. Hosted run 35190205775 at
+`b283074` passed the six source-capture tests, including projection tampering,
+ambiguous PD_ID response, malformed metadata and Product Finder shell handling.
+Artifact 10483347557 has ZIP digest
+`2fd920e4c8419fa1a90d7abfb0bb98bfb576b5410bac3a44aa72cac55d748aca`.
+
 ## Proposed matrix for later approval
 
 | Condition | Candidate-linkage proposal | Remaining gates |
