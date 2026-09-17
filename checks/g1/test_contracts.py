@@ -50,10 +50,10 @@ class Contracts(unittest.TestCase):
     def test_duplicate_reference(self): self.invalid(lambda b: b['facts'][0].update(evidence_ids=['e1','e1']))
     def test_duplicate_evidence(self): self.invalid(lambda b: b['evidence'].append(copy.deepcopy(b['evidence'][0])))
     def test_source_error_not_success(self):
-        self.invalid(lambda b: b['facts'][0]['observations'].update(claim={'state':'ERROR','value':None,'error':'HTTP 403'}))
+        self.invalid(lambda b: b['facts'][0]['observations'].update(plp_energy_star_claim={'state':'ERROR','value':None,'error':'HTTP 403'}))
     def test_source_error_partial_has_no_findings(self):
         self.bundle['manifest']['overall_execution_status'] = 'PARTIAL'
-        self.bundle['facts'][0]['observations']['claim'] = {'state':'ERROR','value':None,'error':'HTTP 403'}
+        self.bundle['facts'][0]['observations']['plp_energy_star_claim'] = {'state':'ERROR','value':None,'error':'HTTP 403'}
         validate_bundle(self.bundle)
         self.assertEqual(self.bundle['assessments'], [])
     def test_synthetic_findings_retained_without_running_rules(self):

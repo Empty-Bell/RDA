@@ -30,10 +30,27 @@ Absent states require null value/error; ERROR requires null value and an error.
 NaN is rejected. Source errors cannot produce execution SUCCESS or evaluated
 assessments in this draft. This conservative boundary is not D10's final rule.
 
-FactRecord is a generic draft transport with PDP/ENERGYGUIDE/EPA kind and named
-observations. It does not yet implement the MASTER_PLAN's specialized
-PdpFactRecord, EnergyGuideExtractionRecord and EpaRecord field/unit contracts.
-Those are remaining G1 work before any normalization or comparison engine.
+FactRecord retains common run/group/SKU/evidence identity. Its observations now
+require the exact fields of PdpFactRecord, EnergyGuideExtractionRecord or EpaRecord
+in src/regaudit/facts.py. Required fields may explicitly be NOT_OBSERVED rather
+than omitted. The draft evolves in place; previously generic fixture fields are
+no longer accepted. No stable production bundles have been emitted.
+
+| Kind | Required source observation fields | Typed boundaries |
+|---|---|---|
+| PDP | model, URL/title, annual energy/capacity, label URL, three independent claim channels, bridge hash | Boolean claims reject strings/numbers; hash belongs to referenced raw evidence |
+| EnergyGuide | document URL/hash/status, extraction engine, embedded/OCR text, raw/normalized model, energy/capacity, confusion flags/reasons, fallback reason, OCR scale/ROI | Raw OCR text may be empty; scale finite/positive; ROI records zero-based page, increasing box extents and coordinate unit |
+| EPA | dataset/row identity, model, UPC, annual energy, markets, certification source status, retrieval time/hash | Markets remain source string arrays; timestamps require timezone; missing UPC never infers failed certification |
+
+Annual-energy VALUE is `{amount, unit, raw}` with finite numeric amount (zero
+allowed, boolean rejected), unit `kWh/year` and nonempty raw source text.
+Capacity uses the same envelope while retaining its explicit source unit. No
+conversion or physical-range rule is applied. Ambiguous or unparsed measures
+remain NOT_OBSERVED/ERROR; source raw files are preserved separately.
+Source status strings are retained without interpreting active/certified status.
+Raw and normalized models are separate observations; validation runs no OCR
+correction or model matching. Synthetic typed-bundle.json exercises all kinds
+without claiming actual document readability or regulatory applicability.
 
 AssessmentRecord preserves individual FTC/EPA records and same-product evidence
 links. The CLI accepts only NOT_EVALUATED with null rule/issue/severity.
@@ -46,8 +63,11 @@ it does not implement or approve D02/D04's report counting/priority policy.
 Five `.yaml` configs use JSON syntax, a YAML 1.2 subset, parsed with the standard
 library only. Canonical JSON of all five contributes to config_hash. Source
 routes are copied from G0 observations, not eligibility rules. Assessment and
-presentation enablement are rejected by the CLI. Rich config schema validation
-remains G1 work. No model, API key, browser or third-party package is needed.
+presentation enablement are rejected by the CLI. Strict config validation now
+rejects missing/unknown fields, duplicate source legs, missing product groups,
+malformed dataset IDs, runtime lock mismatches and silent decision closure.
+Source metadata changes alter config_hash; formatting alone does not.
+No model, API key, browser or third-party package is needed.
 
 Run locally from repository root:
 

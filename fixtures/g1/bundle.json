@@ -23,30 +23,59 @@
       "fact_id": "f1",
       "kind": "PDP",
       "observations": {
-        "annual_energy": {
-          "error": null,
-          "state": "VALUE",
-          "value": 0
-        },
-        "claim": {
-          "error": null,
-          "state": "VALUE",
-          "value": false
-        },
-        "inapplicable": {
-          "error": null,
-          "state": "NOT_APPLICABLE",
-          "value": null
-        },
-        "missing": {
+        "energyguide_url": {
           "error": null,
           "state": "MISSING",
           "value": null
         },
-        "unobserved": {
+        "pdp_annual_energy_kwh": {
+          "error": null,
+          "state": "VALUE",
+          "value": {
+            "amount": 0,
+            "raw": "0 kWh/year",
+            "unit": "kWh/year"
+          }
+        },
+        "pdp_capacity": {
+          "error": null,
+          "state": "NOT_APPLICABLE",
+          "value": null
+        },
+        "pdp_model": {
+          "error": null,
+          "state": "VALUE",
+          "value": "SYNTHETIC-SKU"
+        },
+        "pdp_spec_energy_star_claim": {
           "error": null,
           "state": "NOT_OBSERVED",
           "value": null
+        },
+        "pdp_structured_energy_star_claim": {
+          "error": null,
+          "state": "NOT_OBSERVED",
+          "value": null
+        },
+        "pdp_url": {
+          "error": null,
+          "state": "VALUE",
+          "value": "https://example.com/pdp"
+        },
+        "plp_energy_star_claim": {
+          "error": null,
+          "state": "VALUE",
+          "value": false
+        },
+        "product_title": {
+          "error": null,
+          "state": "VALUE",
+          "value": "Synthetic product"
+        },
+        "source_bridge_hash": {
+          "error": null,
+          "state": "VALUE",
+          "value": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0"
         }
       },
       "product_group": "washer",

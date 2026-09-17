@@ -7,8 +7,9 @@ G1 draft foundation checkpoint: hosted run 35170618251, code bc57842,
 Python 3.11.16 and 3.12.14 each executed 28 tests, zero skips/failures/errors.
 Both downloaded reports/hashes are archived in docs/evidence/g1-foundation-recon.json.
 This bounded checkpoint is PASS; the full G1 gate remains NOT_EVALUATED.
-G1 is not accepted: specialized fact/unit contracts, rich config validation and
-explicit baseline decisions remain. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
+G1 is not accepted: explicit baseline decisions and acceptance review remain.
+Specialized PDP/EnergyGuide/EPA observation schemas and strict config validation
+are implemented as drafts; hosted evidence for this extension is pending. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
 
 Final hosted combined checkpoint 35169843199 tested code
 6069bed296dde8bc418619af4888925fce30f118, attempt 1, job 105038925672:

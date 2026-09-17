@@ -1,23 +1,16 @@
 """Offline draft CLI: validate envelopes or create an unevaluated skeleton."""
 import argparse
 from datetime import datetime, timezone
-import hashlib
 import json
 from pathlib import Path
 import sys
 import uuid
 from .contracts import validate_bundle, verify_evidence_files, dumps, ContractError
+from .config import load_configuration
 
 
 def configuration(root):
-    names = ('families', 'sources', 'controls', 'presentation', 'runtime')
-    content = {name: json.loads((root / 'configs' / (name + '.yaml')).read_bytes()) for name in names}
-    if (content['controls'].get('assessment_enabled') is not False
-            or content['controls'].get('rule_version') is not None
-            or content['presentation'].get('enabled') is not False):
-        raise ContractError('Unapproved assessment configuration')
-    canonical = json.dumps(content, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()
-    return hashlib.sha256(canonical).hexdigest()
+    return load_configuration(root)[1]
 
 
 def main(argv=None):
@@ -34,9 +27,10 @@ def main(argv=None):
             verify_evidence_files(bundle, args.evidence_root)
             print('VALID_DRAFT_BUNDLE'); return 0
         now = datetime.now(timezone.utc).isoformat()
+        config, config_hash = load_configuration(args.project)
         bundle = {'manifest': {'schema_version': 'draft-1', 'run_id': uuid.uuid4().hex, 'started_at': now,
-            'completed_at': None, 'git_sha': args.git_sha, 'config_hash': configuration(args.project),
-            'rule_version': None, 'source_contract_version': 'g0-2026-09-17',
+            'completed_at': None, 'git_sha': args.git_sha, 'config_hash': config_hash,
+            'rule_version': None, 'source_contract_version': config['sources']['contract_version'],
             'python_version': sys.version.split()[0], 'playwright_version': None,
             'runner': 'offline-skeleton', 'overall_execution_status': 'OUTPUT_MISSING', 'assessment_enabled': False},
             'products': [], 'facts': [], 'evidence': [], 'assessments': []}

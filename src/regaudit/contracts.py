@@ -200,6 +200,7 @@ class AssessmentRecord:
 
 
 def validate_bundle(data, *, synthetic_assessments=False):
+    from .facts import validate_observations
     require(isinstance(data, dict) and set(data) == {'manifest', 'products', 'facts', 'evidence', 'assessments'}, 'Invalid bundle envelope')
     manifest = record(RunManifest, data['manifest'])
     for key in ('products', 'facts', 'evidence', 'assessments'):
@@ -232,7 +233,8 @@ def validate_bundle(data, *, synthetic_assessments=False):
         FactKind(item.kind)
         require(isinstance(item.observations, dict) and item.observations, 'Fact observations missing')
         require(all(text(k) for k in item.observations), 'Observation name missing')
-        observations = [record(Observation, v) for v in item.observations.values()]
+        observations = validate_observations(item.kind, item.observations,
+                        {evidence[key].sha256 for key in item.evidence_ids})
         has_errors |= any(v.state == ObservationState.ERROR for v in observations)
     seen = set()
     for raw in data['assessments']:
