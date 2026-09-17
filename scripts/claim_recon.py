@@ -181,7 +181,7 @@ DOM_SNAPSHOT = r"""() => {
   const specRows = specRoot ? Array.from(specRoot.querySelectorAll('[class*="Specs_subSpecItem__"]'))
     .filter(visible).map(e => ({tag:e.tagName, text:(e.innerText || '').trim().replace(/\s+/g,' ').slice(0,800),
       cells:Array.from(e.children).filter(visible).map(x => (x.innerText || '').trim().replace(/\s+/g,' ').slice(0,300)).filter(Boolean)}))
-    .filter(x => energy.test(x.text)).slice(0,40);
+    .filter(x => energy.test(x.text)).slice(0,40) : [];
   const galleryCount = document.querySelectorAll('[class*="Gallery_outerContainer__"]').length;
   const relationCount = document.querySelectorAll('.q6b6RelationContainer').length;
   const primaryLogoInspection = galleryCount === 1 || (galleryCount === 0 && relationCount === 1)
