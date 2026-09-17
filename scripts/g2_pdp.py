@@ -95,7 +95,14 @@ def collect_samples(products, output):
                 try:
                     specs=page.get_by_role('button',name=re.compile(r'^Specs$',re.I))
                     if specs.count()!=1:raise ValueError('PDP Specs navigation is missing or ambiguous')
-                    specs.click(timeout=10000)
+                    try:
+                        specs.click(timeout=5000)
+                    except Exception as click_error:
+                        # Samsung's fixed page chrome can cover the otherwise visible
+                        # tab on a hosted headless viewport.  Retry the same unique
+                        # control once; surface contents are still verified below.
+                        if type(click_error).__name__!='TimeoutError':raise
+                        specs.click(timeout=3000,force=True)
                     page.wait_for_timeout(1000)
                     spec_root=page.locator('#specs')
                     if spec_root.count()!=1:raise ValueError('PDP Specs surface did not mount')
