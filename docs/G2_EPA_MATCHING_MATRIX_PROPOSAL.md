@@ -42,7 +42,8 @@ Artifact 10483347557 has ZIP digest
 |---|---|---|
 | Exact full Samsung model equals EPA model | Literal equality diagnostic under the existing approved contract | Brand, US market, current-version/certification and query completeness |
 | Same-length literal retail model against EPA `*`/`#` pattern | Future positional diagnostic only: one ASCII letter per `*`, one ASCII digit per `#`; preserve raw strings | Governing grammar approval; literal-position agreement; no retail wildcards; no correction |
-| Extra suffix, slash, space, case difference or different length | Withhold linkage; no stripping, folding or wildcard expansion | Explicit manufacturer identifier mapping |
+| Approved terminal Samsung `AA` or `/AA` suffix | Preserve full SKU and remove only the terminal suffix for an observational normalized identifier | Approved source-backed suffix contract; no removal of preceding configuration characters |
+| Other extra suffix, space, case difference or different length | Withhold linkage; no folding or wildcard expansion | Explicit manufacturer identifier mapping |
 | Damaged label token or uncertain wildcard count | Withhold label identity independently of EPA candidate diagnostics | Reviewed label evidence and approved D07 corroboration |
 | Exact verified Samsung UPC found in EPA UPC field | Future association diagnostic, keeping every PD_ID and UPC as strings | Approved separator grammar, exact PDP attribution, no contradictory identifiers |
 | Brackets, pipes, question marks or unsupported syntax | Withhold pattern interpretation | Separate source-scoped grammar contract |
@@ -50,9 +51,10 @@ Artifact 10483347557 has ZIP digest
 | Query/parser/access error | Fail source check; unknown linkage | Valid complete-query evidence; never absence/PASS |
 
 For example `RF23DB9600QLAA` has two more positions than `RF23D*9600**`.
-The proposed strict grammar would withhold that full-SKU linkage. Removing `AA`
-to obtain a fit requires a separate approved mapping; energy/capacity agreement
-cannot supply it. Similar reasoning applies to slash-containing SKUs.
+The full SKU remains preserved and does not fit directly. Under the approved
+terminal `AA`/`/AA` observation, normalized `RF23DB9600QL` fits this pattern.
+This records pattern inclusion only; energy/capacity agreement does not supply
+other mappings, and no preceding configuration characters are removed.
 
 The public dataset has no explicit certification-status column in the reviewed
 column inventory. A date_qualified value, US market membership, or availability
