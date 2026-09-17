@@ -59,7 +59,7 @@ candidate records instead of selecting the first or latest certification date.
   UPC association can be tested. Missing UPC remains unknown. UPC association may
   return multiple records and is not itself a current-certification decision.
 - Supported additional-model structures, US market tokens, specification versions,
-  withdrawn/disqualified handling and complete-query gates still require contracts.
+  status-change handling and complete-query gates still require contracts.
 
 ## Next bounded work: source capture, no matcher
 

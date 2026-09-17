@@ -157,36 +157,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   `OBSERVED_CURRENT_CERTIFIED_INDEX` only when the saved Model Index and
   refrigerator projections agree exactly on PD_ID, brand, model pattern and CB
   identifier; it retains the Index row hash and raw certification date. Missing
-  or mismatched keys remain `NOT_EVALUATED`; assessment remains disabled. Next:
-  preserve and validate a raw disqualified-list source capture only, without an
-  XLSX matcher or any negative inference. This is implemented as the manual
-  `G2 EPA disqualified-list capture` workflow: it preserves the EPA Integrity
-  page and the single linked XLSX as raw bytes, records their hashes and replays
-  link/hash/container identity. Its manifest keeps matching, disqualification
-  state and assessment `NOT_EVALUATED`. See
-  G2_EPA_DISQUALIFIED_CAPTURE_CONTRACT.md. Hosted raw capture 35216830202
-  passed on ubuntu-24.04; artifact 10495336944 ZIP SHA-256 is
-  78f40271db8dad87c6ebf11c8bf3f854245da47117a15f2ba9cefe3b38738ffd.
-  It establishes raw source/replay evidence only. Read-only XLSX schema review
-  is complete in G2_EPA_DISQUALIFIED_SCHEMA_REVIEW.md and its compact evidence
-  JSON. The artifact ZIP hash was independently checked after download. Source
-  interval is 2018-01-01 through 2026-05-15; 2,997 value-bearing data rows,
-  inflated worksheet dimensions, numeric model cells and trailing category
-  spaces were observed. No production row parser or matching was enabled.
-  Bounded source-row observation is now implemented: exact raw XLSX hash,
-  sheet/header and B:F-field validation precede emission of source-bound rows.
-  The captured artifact replayed all 2,997 rows; values, OOXML types/styles and
-  cell addresses remain raw. All product identity, disqualification and
-  assessment states remain NOT_EVALUATED. Next: propose a separate identifier,
-  category and time-scope matching policy. The concrete DRAFT is now
-  G2_DQPL_REFERENCE_POLICY_PROPOSAL.md: literal refrigerator category/Samsung
-  brand, literal raw or approved Samsung-normalized target equality, preserved
-  dated-list scope and all candidate evidence. Source-reference states do not
-  assess product identity or certification. Approval is pending. Before live v2
-  acceptance, verify saved observations.json bytes, reject duplicate XML
-  coordinates and preserve formula/number-format metadata with expanded tests.
-  Next model: Terra medium for these integrity fixes and, after policy approval,
-  bounded observation implementation. No compliance assessment is authorized.
+  or mismatched keys remain `NOT_EVALUATED`; assessment remains disabled. The
+  EPA Current Model Index is the sole EPA certification comparison source. Next:
+  define the product-page logo/claim versus current-index assessment inputs once
+  complete collection coverage and freshness requirements are ready. Recommended
+  model: Sol medium for that policy decision, then Terra medium for implementation.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

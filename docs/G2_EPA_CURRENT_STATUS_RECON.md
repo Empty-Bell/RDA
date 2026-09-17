@@ -19,15 +19,6 @@ Refrigerators or Refrigerator-Freezers, United States/Canada and CB identifier
 CB identifier agree with the saved refrigerator row. This is promising evidence,
 but this research query is not a hosted raw/hash capture or an implemented join.
 
-[EPA disqualification procedures](https://www.energystar.gov/sites/default/files/asset/document/Disqualification_Procedures_0.pdf),
-updated February 2018, state that EPA directs certification withdrawal after
-disqualification and posts the model on its disqualified list after QPL removal.
-[The integrity page](https://www.energystar.gov/partner-resources/products_partner_resources/products_integrity)
-links current disqualified-product downloads; the linked XLSX URL has a May 2026
-update label. It is not assumed current through the audit date merely because
-it is the latest linked download. Disqualification and other reasons for
-delisting must not be treated as interchangeable.
-
 ## Next capture and validation contract
 
 On standard hosted Ubuntu, preserve Model Index metadata and literal PD_ID
@@ -44,12 +35,10 @@ Separate manual live capture from cheap fixture CI.
 After capture validation, propose a time-scoped
 `OBSERVED_CURRENT_CERTIFIED_INDEX` state with the snapshot's source timestamps.
 It must never mean perpetual certification or absence of later withdrawal.
-Absence from the index alone must not become `DISQUALIFIED`, and stale/missing
-or conflicting snapshots cannot produce certification PASS. Preserve every
-candidate rather than selecting the latest date automatically.
-
-No XLSX parser, disqualified-list matching, finding or assessment is added in this
-step. This research completes the source-discovery subtask, not the G2 gate.
+Absence from the index alone cannot produce certification PASS; stale, missing or
+conflicting snapshots cannot either. Preserve every candidate rather than
+selecting the latest date automatically. This research completes the
+source-discovery subtask, not the G2 gate.
 Next model: Terra medium for bounded hosted capture/fixture integration; Sol
 medium only for adopting the snapshot-state and conflict/refresh policy.
 
@@ -71,9 +60,7 @@ category row have one exact match on all four keys, emit
 capture timestamp, Model Index metadata update timestamp, both raw source hashes
 and the four key values. This means the row appeared in EPA's current-certified
 Model Index at that capture snapshot only. A missing, duplicate, mismatched,
-failed, stale or conflicting source produces `NOT_EVALUATED`; it does not mean
-disqualified, withdrawn or non-certified. The disqualified list is retained as a
-future independent source and is not parsed by this approval.
+failed, stale or conflicting source produces `NOT_EVALUATED`.
 
 ## Approved implementation
 
@@ -85,7 +72,6 @@ source. Only exact equality of `pd_id`, `brand_name`, `model_number` and
 body hash and `date_certified` alongside that observation.
 
 This implementation records a point-in-time source observation only. It does
-not emit a compliance finding, certification PASS, withdrawal, disqualification
-or an inference from absence. Missing or disagreeing keys emit `NOT_EVALUATED`.
-The next independent source step is raw disqualified-list capture and replay;
-it does not include XLSX parsing or matching. Recommended model: Terra medium.
+not emit a compliance finding, certification PASS or an inference from absence.
+Missing or disagreeing keys emit `NOT_EVALUATED`. The Current Model Index is the
+sole EPA certification comparison source. Recommended model: Terra medium.
