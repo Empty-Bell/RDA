@@ -1,0 +1,13 @@
+{
+  "review": {
+    "contract": "MODEL_VISUAL_REVIEW_EVIDENCE_V1",
+    "pdf_sha256": "06b0115817b51c47ee4ac28bd3993ba5a1b97aa25251b31c6715a4ec469fd2fd",
+    "render_sha256": "7d41b0f10d4ce9fbaf16bb02ef53e6c2dcb0cb62d459bd4c62aa318c05f31790",
+    "reviewer_id": "g2-fixture-reviewer",
+    "reviewed_at": "2026-09-17T05:10:00Z",
+    "page": 0,
+    "box": [450.0, 162.5, 552.5, 177.0],
+    "raw_token": "RF18A5101",
+    "visual_transcription": "RF18A5101**"
+  }
+}
