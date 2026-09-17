@@ -1,9 +1,6 @@
 name: G2 EPA wildcard source capture
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['scripts/g2_epa_wildcard_capture.py', 'checks/g2/test_epa_wildcard_capture.py', '.github/workflows/g2-epa-wildcard-capture.yml']
 permissions:
   contents: read
 jobs:

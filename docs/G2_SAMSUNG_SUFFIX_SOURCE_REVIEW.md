@@ -51,3 +51,18 @@ Do not report a G2 acceptance until its wider gate requirements are met.
 Recommended next model: Terra medium for this bounded collector integration;
 Luna low for subsequent fixture-only or documentation changes. Sol medium is
 reserved for a substantive identity-policy decision. No runtime LLM is needed.
+
+## Implemented capture boundary
+
+`g2_samsung_pair_capture.py` implements the bounded capture described above.
+It accepts exactly one literal `RF23DB9600QL / RF23DB9600QLAA` field from the
+official PDP response and preserves the raw response before projecting it. A
+missing or repeated field, failed response, hash change, or changed projection
+fails. The parser does not apply to `/AA` SKU text, nor does it construct a
+short identifier by deleting characters.
+
+`g2-offline-source-contracts.yml` runs the sanitized fixture contracts on hosted
+Ubuntu Python 3.11 and 3.12 for relevant code and fixture changes. The live
+Samsung capture is manual-only in `g2-samsung-pair-capture.yml`, so a cheap
+contract edit does not make an external request. Its artifact remains the
+required evidence before this observation can be treated as source-captured.
