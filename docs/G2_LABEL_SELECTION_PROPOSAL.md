@@ -66,3 +66,9 @@ observation schema without inventing a compliance issue code.
 Approval requested: adopt this conservative field-selection contract for a
 fixture-only selector implementation. Activation remains dependent on saved-corpus
 review and hosted verification. D01/D07/D09 decisions are not approved by this scope.
+
+Fixture implementation checkpoint PASS: run 35177064002 at 8e03ee7 passed 14
+offline contracts on Ubuntu-hosted Python 3.11 and 3.12. The selector accepts the
+unique refrigerator 700 kWh candidate and rejects multiplicity, text/layout
+disagreement and PDF provenance mismatch. It remains disconnected from live
+canonical EnergyGuide facts until the saved expanded corpus is reviewed.

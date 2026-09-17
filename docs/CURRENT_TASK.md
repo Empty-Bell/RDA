@@ -40,6 +40,10 @@ on every next-step prompt. Same-task model changes should continue existing work
   Reviewed committed refrigerator text/layout corpus; expanded artifact individual
   files still require replay/review. No selector is enabled. Obtain approval for the
   proposed extraction contract before implementing canonical field selection.
+- Fixture selector checkpoint: run 35177064002 at 8e03ee7 passed 14 contracts on
+  hosted Python 3.11/3.12. It selects only the unique 700 kWh refrigerator fixture
+  candidate and leaves multiplicity, disagreement and provenance mismatch unobserved.
+  It is not wired into live canonical facts pending saved-corpus review.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
