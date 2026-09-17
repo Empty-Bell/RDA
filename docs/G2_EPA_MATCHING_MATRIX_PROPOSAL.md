@@ -1,6 +1,7 @@
 # Refrigerator EPA candidate-linkage matrix proposal
 
-Status: review draft, no matching semantics approved or enabled. Scope is
+Status: offline positional diagnostic v1 approved and implemented; no matching
+semantics or certification identity is enabled. Scope is
 `p5st-her9`, not Samsung EnergyGuide pattern interpretation.
 
 ## Reviewed evidence
@@ -68,7 +69,7 @@ Luna low. Return to Sol medium only for approval of substantive linkage grammar.
 
 ## Concrete approval request: offline positional diagnostic v1
 
-Approve only a fixture-tested diagnostic for preserved `p5st-her9` EPA patterns
+Approved only a fixture-tested diagnostic for preserved `p5st-her9` EPA patterns
 against literal product identifiers. This is a new interpretation rule, beyond
 the previously approved literal-equality diagnostic. It is not label matching,
 current-certification selection, or a live pilot integration authorization.
@@ -103,3 +104,7 @@ tests; the preceding six-test checkpoint tested the parser with synthetic cases,
 not that fixture's provenance. Add explicit raw-input immutability and source
 binding cases. Neither the hosted fixture job nor the helper may fetch live data.
 Live use, certification selection and suffix mappings require later review.
+
+Implementation checkpoint: hosted run 35191030514 at `6c43029` passed the seven
+source-capture/diagnostic tests on ubuntu-24.04. Artifact 10483914100 has ZIP
+digest `23f308a90d76685e5206539a7f2fe65f568645394dbacb1464fc57c3125f259d`.
