@@ -32,6 +32,7 @@ from g2_label_activation import (
 )
 from g2_current_index_candidate_projection import load_replayed_rows
 from g2_refrigerator_pattern_bridge import project_same_run_refrigerator_candidates
+from g2_refrigerator_pattern_capture import capture_pattern_rows
 
 
 def main():
@@ -375,6 +376,12 @@ def main():
         (out / "current-index-candidates.json").write_text(
             dumps(current_index_projection["candidate_projection"]), encoding="utf-8"
         )
+        pattern_bridge = capture_pattern_rows(
+            out / "epa-refrigerator-pattern-bridge",
+            current_index_projection["target_feed"],
+            current_index_projection["candidate_projection"],
+            execution_id=run_id,
+        )
         for result in samples[1:]:
             refs = {}
             for entry in result["responses"] + result["observations"]:
@@ -601,6 +608,15 @@ def main():
                 "states": [
                     record["candidate_projection_state"]
                     for record in current_index_projection["candidate_projection"]["records"]
+                ],
+            },
+            current_index_pattern_bridge={
+                "compatible_pattern_candidate_count": pattern_bridge[
+                    "compatible_pattern_candidate_count"
+                ],
+                "bridge_count": len(pattern_bridge["bridges"]),
+                "states": [
+                    bridge["pattern_candidate_state"] for bridge in pattern_bridge["bridges"]
                 ],
             },
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),

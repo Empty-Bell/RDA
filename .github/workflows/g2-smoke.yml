@@ -10,10 +10,12 @@ on:
       - 'scripts/g2_epa_current_index_samsung_capture.py'
       - 'scripts/g2_current_index_candidate_projection.py'
       - 'scripts/g2_refrigerator_pattern_bridge.py'
+      - 'scripts/g2_refrigerator_pattern_capture.py'
       - 'scripts/g2_label_activation.py'
       - 'checks/g2/test_population.py'
       - 'checks/g2/test_pdp.py'
       - 'checks/g2/test_refrigerator_pattern_bridge.py'
+      - 'checks/g2/test_refrigerator_pattern_capture.py'
       - '.github/workflows/g2-smoke.yml'
 permissions:
   contents: read
