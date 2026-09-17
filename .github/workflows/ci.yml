@@ -1,0 +1,35 @@
+name: G1 offline draft fixture CI
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['src/**', 'configs/**', 'checks/g1/**', 'fixtures/g1/**', 'pyproject.toml', '.python-version', '.github/workflows/ci.yml']
+  pull_request:
+    paths: ['src/**', 'configs/**', 'checks/g1/**', 'fixtures/g1/**', 'pyproject.toml', '.python-version', '.github/workflows/ci.yml']
+permissions:
+  contents: read
+jobs:
+  fixtures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12.14']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Validate offline data and evidence contracts
+        run: python checks/g1/run.py
+      - name: Preserve fixture execution report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g1-fixtures-${{ matrix.python }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g1/*.json
+          retention-days: 14
+          if-no-files-found: error

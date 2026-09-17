@@ -1,7 +1,10 @@
 # Phase status
 
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
-Phases 1–7: NOT_STARTED.
+Phase 1 / G1: RUNNING — draft envelopes, offline CLI/config and hosted fixture CI.
+Phases 2–7: NOT_STARTED.
+G1 is not accepted: specialized fact/unit contracts, rich config validation and
+explicit baseline decisions remain. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
 
 Final hosted combined checkpoint 35169843199 tested code
 6069bed296dde8bc418619af4888925fce30f118, attempt 1, job 105038925672:

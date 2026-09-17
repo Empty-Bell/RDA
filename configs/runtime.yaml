@@ -1,0 +1,9 @@
+{
+  "architecture": "x64",
+  "audit_python": "3.12.14",
+  "compatibility_python": "3.11",
+  "external_collection_enabled": false,
+  "hosted_runner": "ubuntu-24.04",
+  "llm_enabled": false,
+  "schema_version": "draft-1"
+}

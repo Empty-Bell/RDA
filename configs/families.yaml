@@ -1,0 +1,78 @@
+{
+  "individual_applicability": "NOT_EVALUATED",
+  "routes": [
+    {
+      "epa_dataset_id": "p5st-her9",
+      "plp_url": "https://www.samsung.com/us/home-appliances/refrigerators/all-refrigerators/",
+      "product_group": "refrigerator",
+      "source_leg": "refrigerator"
+    },
+    {
+      "epa_dataset_id": "q8py-6w3f",
+      "plp_url": "https://www.samsung.com/us/dishwashers/all-dishwashers/",
+      "product_group": "dishwasher",
+      "source_leg": "dishwasher"
+    },
+    {
+      "epa_dataset_id": "bghd-e2wd",
+      "plp_url": "https://www.samsung.com/us/laundry/washers/",
+      "product_group": "washer",
+      "source_leg": "washer"
+    },
+    {
+      "epa_dataset_id": "pd96-rr3d",
+      "plp_url": "https://www.samsung.com/us/televisions-home-theater/tvs/all-tvs/",
+      "product_group": "tv",
+      "source_leg": "tv"
+    },
+    {
+      "epa_dataset_id": "m6gi-ng33",
+      "plp_url": "https://www.samsung.com/us/cooking-appliances/ranges/",
+      "product_group": "range",
+      "source_leg": "range"
+    },
+    {
+      "epa_dataset_id": "m6gi-ng33",
+      "plp_url": "https://www.samsung.com/us/cooking-appliances/cooktops/",
+      "product_group": "cooktop",
+      "source_leg": "cooktop"
+    },
+    {
+      "epa_dataset_id": "t9u7-4d2j",
+      "plp_url": "https://www.samsung.com/us/laundry/dryers/",
+      "product_group": "dryer",
+      "source_leg": "dryer"
+    },
+    {
+      "epa_dataset_id": "8dv7-nngq",
+      "plp_url": "https://www.samsung.com/us/cooking-appliances/range-hoods/",
+      "product_group": "hood",
+      "source_leg": "hood"
+    },
+    {
+      "epa_dataset_id": "qbg3-d468",
+      "plp_url": "https://www.samsung.com/us/monitors/all-monitors/",
+      "product_group": "monitor",
+      "source_leg": "monitor"
+    },
+    {
+      "epa_dataset_id": "rxdj-2c88",
+      "plp_url": "https://www.samsung.com/us/computers/galaxy-book/",
+      "product_group": "computer",
+      "source_leg": "computer"
+    },
+    {
+      "epa_dataset_id": "rxdj-2c88",
+      "plp_url": "https://www.samsung.com/us/computers/chromebook/",
+      "product_group": "computer",
+      "source_leg": "chromebook"
+    },
+    {
+      "epa_dataset_id": "rxdj-2c88",
+      "plp_url": "https://www.samsung.com/us/tablets/all-tablets/",
+      "product_group": "tablet",
+      "source_leg": "tablet"
+    }
+  ],
+  "schema_version": "draft-1"
+}

@@ -1,0 +1,138 @@
+{
+  "assessments": [
+    {
+      "assessment_id": "a-FTC",
+      "assessment_status": "FINDING",
+      "automatic_final_legal_conclusion": false,
+      "control_id": "synthetic-FTC",
+      "evidence_ids": [
+        "e1"
+      ],
+      "exact_sku": "SYNTHETIC-SKU",
+      "expected": null,
+      "issue_code": "ENERGYGUIDE_DOCUMENT_MISSING_CANDIDATE",
+      "observed": null,
+      "product_group": "washer",
+      "reason": "Synthetic transport fixture; no evaluation executed",
+      "regulatory_domain": "FTC",
+      "rule_id": "synthetic",
+      "rule_version": "synthetic",
+      "run_id": "synthetic-g1",
+      "severity": "HIGH"
+    },
+    {
+      "assessment_id": "a-EPA",
+      "assessment_status": "FINDING",
+      "automatic_final_legal_conclusion": false,
+      "control_id": "synthetic-EPA",
+      "evidence_ids": [
+        "e1"
+      ],
+      "exact_sku": "SYNTHETIC-SKU",
+      "expected": null,
+      "issue_code": "ENERGY_STAR_VARIANT_IDENTITY_REVIEW",
+      "observed": null,
+      "product_group": "washer",
+      "reason": "Synthetic transport fixture; no evaluation executed",
+      "regulatory_domain": "EPA",
+      "rule_id": "synthetic",
+      "rule_version": "synthetic",
+      "run_id": "synthetic-g1",
+      "severity": "MEDIUM"
+    }
+  ],
+  "evidence": [
+    {
+      "captured_at": "2026-09-17T00:00:00+00:00",
+      "evidence_id": "e1",
+      "evidence_type": "synthetic-json",
+      "parser_version": "synthetic-1",
+      "product_group": "washer",
+      "relative_path": "raw/source.json",
+      "run_id": "synthetic-g1",
+      "sha256": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0",
+      "sku": "SYNTHETIC-SKU",
+      "source_url": "https://example.com/source"
+    }
+  ],
+  "facts": [
+    {
+      "evidence_ids": [
+        "e1"
+      ],
+      "exact_sku": "SYNTHETIC-SKU",
+      "fact_id": "f1",
+      "kind": "PDP",
+      "observations": {
+        "annual_energy": {
+          "error": null,
+          "state": "VALUE",
+          "value": 0
+        },
+        "claim": {
+          "error": null,
+          "state": "VALUE",
+          "value": false
+        },
+        "inapplicable": {
+          "error": null,
+          "state": "NOT_APPLICABLE",
+          "value": null
+        },
+        "missing": {
+          "error": null,
+          "state": "MISSING",
+          "value": null
+        },
+        "unobserved": {
+          "error": null,
+          "state": "NOT_OBSERVED",
+          "value": null
+        }
+      },
+      "product_group": "washer",
+      "run_id": "synthetic-g1"
+    }
+  ],
+  "manifest": {
+    "assessment_enabled": false,
+    "completed_at": "2026-09-17T00:00:00+00:00",
+    "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "git_sha": "0000000000000000000000000000000000000000",
+    "overall_execution_status": "SUCCESS",
+    "playwright_version": null,
+    "python_version": "3.11",
+    "rule_version": null,
+    "run_id": "synthetic-g1",
+    "runner": "synthetic",
+    "schema_version": "draft-1",
+    "source_contract_version": "synthetic-g1",
+    "started_at": "2026-09-17T00:00:00+00:00"
+  },
+  "products": [
+    {
+      "exact_sku": "SYNTHETIC-SKU",
+      "listings": [
+        {
+          "pdp_url": "https://example.com/pdp",
+          "plp_url": "https://example.com/plp",
+          "product_group": "washer",
+          "representative_sku": "SYNTHETIC-SKU",
+          "sku_role": "REPRESENTATIVE",
+          "source_family_id": "SYNTHETIC-washer",
+          "source_pf_search_hash": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0"
+        },
+        {
+          "pdp_url": "https://example.com/pdp",
+          "plp_url": "https://example.com/plp",
+          "product_group": "dryer",
+          "representative_sku": "SYNTHETIC-SKU",
+          "sku_role": "REPRESENTATIVE",
+          "source_family_id": "SYNTHETIC-dryer",
+          "source_pf_search_hash": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0"
+        }
+      ],
+      "run_id": "synthetic-g1"
+    }
+  ]
+}

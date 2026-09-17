@@ -1,0 +1,7 @@
+{
+  "contract_version": "g0-2026-09-17",
+  "epa_catalog_url": "https://data.energystar.gov/data.json",
+  "provenance": "docs/G0_ACCEPTANCE_RECORD.md",
+  "schema_version": "draft-1",
+  "source_routes_are_eligibility_rules": false
+}
