@@ -1,0 +1,54 @@
+# EPA current certification source reconnaissance
+
+Research date: 2026-09-17. Documentation and read-only API reconnaissance only;
+no runtime certification rule or G2 acceptance is activated by this record.
+
+## Official source meaning
+
+[EPA Model Index catalog](https://catalog.data.gov/dataset/energy-star-model-index)
+and [EPA metadata](https://data.energystar.gov/api/views/8wj2-sec8.json) describe
+dataset `8wj2-sec8` as a list of currently certified models across product
+categories. It has `pd_id`, brand, product category/type, model number, markets,
+date certified and CB model identifier. It can provide a current-list snapshot
+observation that the category dataset's certification date alone cannot provide.
+
+The read-only query `pd_id=2839420`, limit 2, returned one Model Index row:
+Samsung, `RF23D*9600**`, Consumer Refrigeration Products,
+Refrigerators or Refrigerator-Freezers, United States/Canada and CB identifier
+`ES_1023593_RF23D*9600**_12112023144226_80192002`. The PD_ID, brand, model and
+CB identifier agree with the saved refrigerator row. This is promising evidence,
+but this research query is not a hosted raw/hash capture or an implemented join.
+
+[EPA disqualification procedures](https://www.energystar.gov/sites/default/files/asset/document/Disqualification_Procedures_0.pdf),
+updated February 2018, state that EPA directs certification withdrawal after
+disqualification and posts the model on its disqualified list after QPL removal.
+[The integrity page](https://www.energystar.gov/partner-resources/products_partner_resources/products_integrity)
+links current disqualified-product downloads; the linked XLSX URL has a May 2026
+update label. It is not assumed current through the audit date merely because
+it is the latest linked download. Disqualification and other reasons for
+delisting must not be treated as interchangeable.
+
+## Next capture and validation contract
+
+On standard hosted Ubuntu, preserve Model Index metadata and literal PD_ID
+query bytes before parsing. Record capture time, metadata row-update time,
+response hash, requested/final URL and HTTP status. Validate dataset ID and
+required fields; require exactly one queried PD_ID row and exact brand/model/CB
+identifier agreement with the separately preserved category row. A mismatch,
+duplicate, empty response or source failure must withhold a positive observation.
+
+Use sanitized actual fixtures and offline 3.11/3.12 tests for matching keys,
+changed model/brand/CB identifier, missing row, duplicates and failed capture.
+Separate manual live capture from cheap fixture CI.
+
+After capture validation, propose a time-scoped
+`OBSERVED_CURRENT_CERTIFIED_INDEX` state with the snapshot's source timestamps.
+It must never mean perpetual certification or absence of later withdrawal.
+Absence from the index alone must not become `DISQUALIFIED`, and stale/missing
+or conflicting snapshots cannot produce certification PASS. Preserve every
+candidate rather than selecting the latest date automatically.
+
+No XLSX parser, disqualified-list matching, finding or assessment is added in this
+step. This research completes the source-discovery subtask, not the G2 gate.
+Next model: Terra medium for bounded hosted capture/fixture integration; Sol
+medium only for adopting the snapshot-state and conflict/refresh policy.

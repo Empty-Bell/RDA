@@ -147,8 +147,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   and current certification remain independent. User authorized bounded
   `OBSERVED_US_MARKET`; offline report records literal US tokens with
   EPA_ROW_ONLY scope, raw markets/date and source URL/hash. Current certification
-  remains NOT_EVALUATED. Next: investigate EPA public-list current/withdrawn
-  semantics before proposing certification currency; recommended model Sol medium.
+  remains NOT_EVALUATED. Current-status source research found EPA Model Index
+  8wj2-sec8, explicitly described as currently certified models. Read-only PD_ID
+  2839420 query matched brand/model/CB identifier; not hosted evidence yet.
+  See G2_EPA_CURRENT_STATUS_RECON.md. Next: manual hosted raw/hash metadata and
+  PD_ID capture with exact-key fixture validation; recommended model Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
