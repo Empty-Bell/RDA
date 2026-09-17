@@ -52,6 +52,14 @@ class EnergyStarDirectSourceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "exact SKU set"):
             project_group_declarations(group, next_html([{"modelCode": "OTHER", "energyStarFlag": "Y"}]), bridge(["REP"]))
 
+    def test_bridge_related_sku_does_not_replace_exact_sku_rows(self):
+        group = {"group_id": "MULTI_GROUP_ID_1", "modelCode": "REP", "pdpURL": "/us/x-sku-rep",
+                 "groupedProductList": [{"modelCode": "REP", "pdpURL": "/us/x-sku-rep", "energyStarFlg": "Y"}]}
+        rows = project_group_declarations(
+            group, next_html([{"modelCode": "REP", "energyStarFlag": "Y"}]), bridge(["REP", "RELATED"])
+        )
+        self.assertEqual([row["exact_sku"] for row in rows], ["REP"])
+
 
 if __name__ == "__main__":
     unittest.main()

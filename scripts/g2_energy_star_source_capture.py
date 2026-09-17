@@ -215,7 +215,10 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                     try:
                         bridge = project_bridge(_json(body, "PDP session bridge"))
                         observed_skus = {entry.get("modelCode") for entry in bridge["Specs"]}
-                        if observed_skus != expected_skus:
+                        # Bridge legitimately includes related models outside the
+                        # PF family.  Every PF SKU must appear exactly once; extra
+                        # source rows are neither borrowed nor interpreted.
+                        if not expected_skus <= observed_skus:
                             continue
                         for sku in expected_skus:
                             pdp_facts(bridge, sku, family="refrigerator")
