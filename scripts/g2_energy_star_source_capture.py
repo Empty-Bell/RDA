@@ -177,10 +177,6 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
         browser = playwright.chromium.launch(headless=True)
         context, identity = desktop_context(browser)
         for number, group in enumerate(groups):
-            group_match = GROUP_ID.fullmatch(str(group.get("group_id", "")))
-            if not group_match:
-                raise ValueError("PF group_id is not a supported bridge identifier")
-            bridge_id = group_match.group(1)
             page = context.new_page()
             responses = []
 
@@ -192,8 +188,7 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                     parsed.scheme == "https"
                     and parsed.hostname == "www.samsung.com"
                     and parsed.path == "/us/gapi/v1/bridge/cacheable/bridge-data"
-                    and query.get("group_id") == [bridge_id]
-                    and {"Specs", "Support"} <= data_types
+                    and "Specs" in data_types
                 ):
                     responses.append(response)
 
@@ -210,19 +205,30 @@ def capture_session_bridges(groups: list[dict], raw: Path) -> tuple[dict[str, di
                         break
                     page.wait_for_timeout(1000)
                 if not responses:
-                    raise ValueError("PDP session did not request Specs/Support bridge data")
-                bodies = []
+                    raise ValueError("PDP session did not request a Specs bridge response")
+                candidates = []
+                expected_skus = {variant.get("modelCode") for variant in group["groupedProductList"]}
                 for source_response in responses:
                     if source_response.status != 200 or "json" not in source_response.headers.get("content-type", "").lower():
-                        raise ValueError("PDP session bridge response is unavailable")
+                        continue
                     body = source_response.body()
-                    project_bridge(_json(body, "PDP session bridge"))
-                    bodies.append(body)
-                if len({hashlib.sha256(body).hexdigest() for body in bodies}) != 1:
-                    raise ValueError("PDP session bridge response changed during collection")
-                body = bodies[0]
+                    try:
+                        bridge = project_bridge(_json(body, "PDP session bridge"))
+                        observed_skus = {entry.get("modelCode") for entry in bridge["Specs"]}
+                        if observed_skus != expected_skus:
+                            continue
+                        for sku in expected_skus:
+                            pdp_facts(bridge, sku, family="refrigerator")
+                    except ValueError:
+                        continue
+                    candidates.append((source_response, body))
+                if not candidates:
+                    raise ValueError("No exact-SKU Specs/Support bridge response for PF group")
+                if len({hashlib.sha256(body).hexdigest() for _, body in candidates}) != 1:
+                    raise ValueError("Multiple nonidentical exact-SKU bridge responses")
+                source_response, body = candidates[0]
                 record = _write_raw(raw, f"bridge/group-{number:02d}.json", body)
-                record.update({"url": responses[0].url, "status": responses[0].status})
+                record.update({"url": source_response.url, "status": source_response.status})
                 captured[group["group_id"]] = {"body": body, "record": record}
             finally:
                 page.close()
