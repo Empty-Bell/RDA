@@ -18,6 +18,7 @@ def _energyguide_source_observations(bundle: dict[str, Any]) -> dict[str, list[d
                 "document_url": copy.deepcopy(observations["document_url"]),
                 "document_sha256": copy.deepcopy(observations["document_sha256"]),
                 "document_status": copy.deepcopy(observations["document_status"]),
+                "label_model_raw": copy.deepcopy(observations["label_model_raw"]),
                 "annual_energy_kwh": copy.deepcopy(observations["annual_energy_kwh"]),
                 "capacity": copy.deepcopy(observations["capacity"]),
                 "evidence_ids": copy.deepcopy(fact["evidence_ids"]),

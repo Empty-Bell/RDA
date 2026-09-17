@@ -34,6 +34,11 @@ class ReportSourceObservationTests(unittest.TestCase):
                     "error": None,
                 },
                 "document_status": {"state": "VALUE", "value": "SOURCE_PDF_PARSED", "error": None},
+                "label_model_raw": {
+                    "state": "VALUE",
+                    "value": "RF23D*9600**",
+                    "error": None,
+                },
                 "annual_energy_kwh": {
                     "state": "VALUE",
                     "value": {"amount": 585.0, "unit": "kWh/year", "raw": "585 kWh"},
@@ -67,6 +72,7 @@ class ReportSourceObservationTests(unittest.TestCase):
         self.assertEqual(len(source), 1)
         self.assertEqual(source[0]["annual_energy_kwh"], observations["annual_energy_kwh"])
         self.assertEqual(source[0]["capacity"], observations["capacity"])
+        self.assertEqual(source[0]["label_model_raw"], observations["label_model_raw"])
         self.assertEqual(source[0]["evidence_ids"], ["e1"])
         self.assertEqual(report["counts"]["finding_count"], 0)
         self.assertFalse(report["assessment_enabled"])

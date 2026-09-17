@@ -8,6 +8,26 @@ from typing import Any
 from g2_label_selection import select_annual_energy, select_capacity, unavailable
 
 
+def observe_raw_model(candidates: dict[str, Any]) -> dict[str, Any]:
+    """Project one parser token only; never normalize, correct, or match identity."""
+    digest = candidates.get("pdf_sha256")
+    if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+        raise ValueError("Invalid raw model candidate PDF hash")
+    models = candidates.get("model_candidates_raw")
+    if not isinstance(models, list):
+        raise ValueError("Invalid raw model candidates")
+    if len(models) != 1 or not isinstance(models[0], dict):
+        return unavailable("MISSING_OR_AMBIGUOUS_RAW_MODEL_CANDIDATE")
+    value = models[0].get("value_raw")
+    if not isinstance(value, str) or not value:
+        return unavailable("MISSING_OR_AMBIGUOUS_RAW_MODEL_CANDIDATE")
+    return {
+        "observation": {"state": "VALUE", "value": value, "error": None},
+        "reason": "UNIQUE_RAW_MODEL_CANDIDATE_NO_IDENTITY_MATCHING",
+        "candidate": models[0],
+    }
+
+
 def load_review_annotations(path: Path) -> dict[str, dict[str, Any]]:
     document = json.loads(path.read_text(encoding="utf-8"))
     if document.get("contract") != "MANUAL_VISUAL_REVIEW_BINDING_ONLY":
@@ -78,10 +98,16 @@ def summarize_selection_outcomes(outcomes: list[dict[str, Any]]) -> dict[str, An
         index = outcome.get("source_document_index")
         digest = outcome.get("pdf_sha256")
         selection = outcome.get("selection")
-        if (not isinstance(sku, str) or not sku or type(index) is not int
-                or not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest)
-                or not isinstance(selection, dict) or not isinstance(selection.get("observation"), dict)
-                or not isinstance(selection.get("reason"), str)):
+        if (
+            not isinstance(sku, str)
+            or not sku
+            or type(index) is not int
+            or not isinstance(digest, str)
+            or not re.fullmatch(r"[0-9a-f]{64}", digest)
+            or not isinstance(selection, dict)
+            or not isinstance(selection.get("observation"), dict)
+            or not isinstance(selection.get("reason"), str)
+        ):
             raise ValueError("Invalid label selection summary input")
         key = (sku, index)
         if key in seen:
@@ -91,12 +117,22 @@ def summarize_selection_outcomes(outcomes: list[dict[str, Any]]) -> dict[str, An
         state = observation.get("state")
         if state not in {"VALUE", "NOT_OBSERVED"}:
             raise ValueError("Unexpected label selection observation state")
-        records.append({"exact_sku": sku, "source_document_index": index, "pdf_sha256": digest,
-                        "annual_energy_observation": observation, "selection_reason": selection["reason"]})
+        records.append(
+            {
+                "exact_sku": sku,
+                "source_document_index": index,
+                "pdf_sha256": digest,
+                "annual_energy_observation": observation,
+                "selection_reason": selection["reason"],
+            }
+        )
     records.sort(key=lambda item: (item["exact_sku"], item["source_document_index"]))
     selected = sum(item["annual_energy_observation"]["state"] == "VALUE" for item in records)
-    return {"contract": "REVIEW_BOUND_LIVE_OBSERVATION_ONLY", "records": records,
-            "counts": {"VALUE": selected, "NOT_OBSERVED": len(records) - selected}}
+    return {
+        "contract": "REVIEW_BOUND_LIVE_OBSERVATION_ONLY",
+        "records": records,
+        "counts": {"VALUE": selected, "NOT_OBSERVED": len(records) - selected},
+    }
 
 
 def summarize_capacity_selection_outcomes(outcomes: list[dict[str, Any]]) -> dict[str, Any]:
@@ -104,12 +140,20 @@ def summarize_capacity_selection_outcomes(outcomes: list[dict[str, Any]]) -> dic
     records = []
     seen = set()
     for outcome in outcomes:
-        sku, index, digest, selection = (outcome.get(name) for name in
-            ("exact_sku", "source_document_index", "pdf_sha256", "selection"))
-        if (not isinstance(sku, str) or not sku or type(index) is not int
-                or not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest)
-                or not isinstance(selection, dict) or not isinstance(selection.get("observation"), dict)
-                or not isinstance(selection.get("reason"), str)):
+        sku, index, digest, selection = (
+            outcome.get(name)
+            for name in ("exact_sku", "source_document_index", "pdf_sha256", "selection")
+        )
+        if (
+            not isinstance(sku, str)
+            or not sku
+            or type(index) is not int
+            or not isinstance(digest, str)
+            or not re.fullmatch(r"[0-9a-f]{64}", digest)
+            or not isinstance(selection, dict)
+            or not isinstance(selection.get("observation"), dict)
+            or not isinstance(selection.get("reason"), str)
+        ):
             raise ValueError("Invalid capacity selection summary input")
         key = (sku, index)
         if key in seen:
@@ -118,9 +162,19 @@ def summarize_capacity_selection_outcomes(outcomes: list[dict[str, Any]]) -> dic
         observation = selection["observation"]
         if observation.get("state") not in {"VALUE", "NOT_OBSERVED"}:
             raise ValueError("Unexpected capacity selection observation state")
-        records.append({"exact_sku": sku, "source_document_index": index, "pdf_sha256": digest,
-                        "capacity_observation": observation, "selection_reason": selection["reason"]})
+        records.append(
+            {
+                "exact_sku": sku,
+                "source_document_index": index,
+                "pdf_sha256": digest,
+                "capacity_observation": observation,
+                "selection_reason": selection["reason"],
+            }
+        )
     records.sort(key=lambda item: (item["exact_sku"], item["source_document_index"]))
     selected = sum(item["capacity_observation"]["state"] == "VALUE" for item in records)
-    return {"contract": "REVIEW_BOUND_LIVE_CAPACITY_OBSERVATION_ONLY", "records": records,
-            "counts": {"VALUE": selected, "NOT_OBSERVED": len(records) - selected}}
+    return {
+        "contract": "REVIEW_BOUND_LIVE_CAPACITY_OBSERVATION_ONLY",
+        "records": records,
+        "counts": {"VALUE": selected, "NOT_OBSERVED": len(records) - selected},
+    }

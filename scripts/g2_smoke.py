@@ -24,6 +24,7 @@ from g2_label_collect import collect_energyguide_documents
 from g2_label_activation import (
     load_capacity_review_annotations,
     load_review_annotations,
+    observe_raw_model,
     select_live_reviewed_capacity,
     select_live_reviewed_energy,
     summarize_capacity_selection_outcomes,
@@ -223,13 +224,16 @@ def main():
             (source / "energyguide-field-candidates.json").read_bytes()
         )
         original_layout = json.loads((source / "energyguide-layout-candidates.json").read_bytes())
+        original_candidate_refs = []
         for name in ("energyguide-field-candidates.json", "energyguide-layout-candidates.json"):
-            evidence(
+            ref, _ = evidence(
                 (source / name).read_bytes(),
                 label["requested_url"],
                 sku,
                 "unselected-label-field-candidates",
             )
+            original_candidate_refs.append(ref)
+        original_model_observation = observe_raw_model(original_candidates)
         original_selection = select_live_reviewed_energy(
             sku, label, original_candidates, original_layout, label_reviews
         )
@@ -288,12 +292,19 @@ def main():
                 "extraction_engine": observation(label["extraction_engine"]),
                 "embedded_text": observation(label["embedded_text"]),
                 "ocr_raw_text": observation("\n".join(label["ocr_raw_texts"])),
+                "label_model_raw": original_model_observation["observation"],
                 "annual_energy_kwh": original_selection["observation"],
                 "capacity": original_capacity_selection["observation"],
                 "fallback_reason": observation(label["fallback_reason"]),
                 "ocr_scale": observation(label["ocr_scale"]),
             },
-            [label_id, extraction_id, original_selection_id, original_capacity_selection_id],
+            [
+                label_id,
+                extraction_id,
+                *original_candidate_refs,
+                original_selection_id,
+                original_capacity_selection_id,
+            ],
         )
         # Dataset-query context is not evidence of a product certification match.
         for entry in epa_recon["responses"]:
@@ -434,6 +445,9 @@ def main():
                 candidate_documents["energyguide-field-candidates.json"],
                 capacity_reviews,
             )
+            model_observation = observe_raw_model(
+                candidate_documents["energyguide-field-candidates.json"]
+            )
             selection_ref, _ = evidence(
                 dumps(
                     {
@@ -491,13 +505,14 @@ def main():
                     ],
                     selection["observation"],
                     capacity_selection["observation"],
+                    model_observation["observation"],
                 )
             )
         for label_sku, inputs in label_fact_inputs.items():
             # Multiple Support PDFs remain evidence only until a document-selection policy exists.
             if len(inputs) != 1:
                 continue
-            result, label_hash, refs, annual_energy, capacity = inputs[0]
+            result, label_hash, refs, annual_energy, capacity, label_model_raw = inputs[0]
             fact(
                 "ENERGYGUIDE",
                 {
@@ -507,6 +522,7 @@ def main():
                     "extraction_engine": observation(result["extraction_engine"]),
                     "embedded_text": observation(result["embedded_text"]),
                     "ocr_raw_text": observation("\n".join(result["ocr_raw_texts"])),
+                    "label_model_raw": label_model_raw,
                     "annual_energy_kwh": annual_energy,
                     "capacity": capacity,
                     "fallback_reason": observation(result["fallback_reason"]),
