@@ -1,0 +1,1232 @@
+{
+  "dataset_id": "rxdj-2c88",
+  "metadata_before": {
+    "id": "rxdj-2c88",
+    "name": "ENERGY STAR Certified Computers V9.0",
+    "rowsUpdatedAt": 1789564401,
+    "viewLastModified": 1761593011,
+    "publicationDate": 1750949310,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "type",
+        "name": "Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "integrated_desktop_category",
+        "name": "Integrated Desktop Category",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_marketed_as_a_workstation",
+        "name": "Product Marketed as a Workstation",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "installed_npu",
+        "name": "Installed NPU",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "motherboard_form_factor",
+        "name": "Motherboard Form Factor",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_dimm_count",
+        "name": "Product DIMM Count",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "operating_system_name",
+        "name": "Operating System Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "processor_brand",
+        "name": "Processor Brand",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "processor_name",
+        "name": "Processor Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "physical_cpu_cores_count",
+        "name": "Physical CPU Cores (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cpu_packages_count",
+        "name": "CPU Packages (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cpu_base_clock_speed_ghz",
+        "name": "CPU Base Clock Speed (GHz) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cpu_maximum_clock_speed_ghz",
+        "name": "CPU Maximum Clock Speed (GHz) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "system_memory_ram_gb",
+        "name": "System Memory (GB)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "multi_channel_memory_support",
+        "name": "Multi-Channel Memory Support",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "capable_of_switchable_graphics",
+        "name": "Capable of Switchable Graphics",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "switchable_graphics_enabled_by_default_in_ac_mode",
+        "name": "Switchable Graphics Enabled by Default in AC Mode ",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "discrete_graphics_frame_buffer_bandwidth_gb_s",
+        "name": "Discrete Graphics Frame Buffer Bandwidth (GB/s) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "discrete_graphics_frame_buffer_data_width_bits",
+        "name": "Discrete Graphics Frame Buffer Data Width (bits) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "fast_ethernet_ports_count",
+        "name": "Fast Ethernet Ports (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "gigabit_ethernet_ports_count",
+        "name": "Gigabit Ethernet Ports (count) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "gigabit_10_ethernet_ports_count",
+        "name": "10 Gigabit Ethernet Ports (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_efficient_ethernet_eee",
+        "name": "Energy Efficient Ethernet (EEE) ",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "number_of_installed_storage_drives",
+        "name": "Number of Installed Storage Drives ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "number_of_integrated_displays_count",
+        "name": "Number of Integrated Displays (count) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "integrated_display_resolution_megapixels",
+        "name": "Integrated Display Resolution (megapixels) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "integrated_display_viewable_screen_area_sq_in",
+        "name": "Integrated Display Viewable Screen Area (sq in) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "enhanced_performance_display_present",
+        "name": "Enhanced Performance Display Present ",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "integrated_display_diagonal_screen_size_in",
+        "name": "Integrated Display Diagonal Screen Size (in)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_10_load",
+        "name": "Internal Power Supply Efficiency at 10% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_20_load",
+        "name": "Internal Power Supply Efficiency at 20% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_50_load",
+        "name": "Internal Power Supply Efficiency at 50% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_100_load",
+        "name": "Internal Power Supply Efficiency at 100% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "category_i1_1_internal_power_supply_efficiency_at_50_load",
+        "name": "Category I1/1 Internal Power Supply Efficiency at 50% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "category_i1_1_internal_power_supply_efficiency_at_100_load",
+        "name": "Category I1/1 Internal Power Supply Efficiency at 100% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "external_power_supply_rated_power_w",
+        "name": "External Power Supply Rated Power (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_rated_power_w",
+        "name": "Internal Power Supply Rated Power (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "mux_device",
+        "name": "MUX Device",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "storage_technology",
+        "name": "Storage Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "total_battery_capacity_watt_hours",
+        "name": "Total Battery Capacity (watt-hours)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "default_low_power_mode",
+        "name": "Default Low-power Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "long_idle_power_used_for_sleep_mode",
+        "name": "Long Idle Power Used for Sleep Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "off_mode_watts",
+        "name": "Off Mode (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "sleep_mode_watts",
+        "name": "Sleep Mode (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "long_idle_watts",
+        "name": "Long Idle (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "short_idle_watts",
+        "name": "Short Idle (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "additional_measured_power_in_short_idle_at_115v__",
+        "name": "Additional Measured Power in Short Idle at 115V (W) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "base_tec_allowance_kwh",
+        "name": "Base TEC Allowance (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "functional_adder_allowances_kwh",
+        "name": "Functional Adder Allowances (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "tec_of_model_kwh",
+        "name": "TEC of Model (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_tec_requirements_etec_max_kwh",
+        "name": "Maximum TEC Requirements (Etec max) (kWh) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "ethernet_capability",
+        "name": "Ethernet Capability",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "touch_screen",
+        "name": "Touch Screen",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "sleep_mode_default_time_upon_shipment_min",
+        "name": "Sleep Mode Default Time Upon Shipment (min.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "display_sleep_mode_default_time_upon_shipment_min",
+        "name": "Display Sleep Mode Default Time Upon Shipment (min.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "wol_wake_on_lan_from_sleep",
+        "name": "WOL (Wake on LAN) From Sleep",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "will_the_speed_of_any_active_1_gb_s_or_higher_ethernet_network_links_be_reduced_to_less_than_1_gb_s_when_transitioning_to_sleep_or_off_mode",
+        "name": "Will the Speed of Any Active 1 GB/s or Higher Ethernet Network Links be Reduced to Less Than 1 GB/s When Transitioning to Sleep or Off Mode?",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "rxdj-2c88",
+    "name": "ENERGY STAR Certified Computers V9.0",
+    "rowsUpdatedAt": 1789564401,
+    "viewLastModified": 1761593011,
+    "publicationDate": 1750949310,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "type",
+        "name": "Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "integrated_desktop_category",
+        "name": "Integrated Desktop Category",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_marketed_as_a_workstation",
+        "name": "Product Marketed as a Workstation",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "installed_npu",
+        "name": "Installed NPU",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "motherboard_form_factor",
+        "name": "Motherboard Form Factor",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_dimm_count",
+        "name": "Product DIMM Count",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "operating_system_name",
+        "name": "Operating System Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "processor_brand",
+        "name": "Processor Brand",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "processor_name",
+        "name": "Processor Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "physical_cpu_cores_count",
+        "name": "Physical CPU Cores (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cpu_packages_count",
+        "name": "CPU Packages (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cpu_base_clock_speed_ghz",
+        "name": "CPU Base Clock Speed (GHz) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cpu_maximum_clock_speed_ghz",
+        "name": "CPU Maximum Clock Speed (GHz) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "system_memory_ram_gb",
+        "name": "System Memory (GB)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "multi_channel_memory_support",
+        "name": "Multi-Channel Memory Support",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "capable_of_switchable_graphics",
+        "name": "Capable of Switchable Graphics",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "switchable_graphics_enabled_by_default_in_ac_mode",
+        "name": "Switchable Graphics Enabled by Default in AC Mode ",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "discrete_graphics_frame_buffer_bandwidth_gb_s",
+        "name": "Discrete Graphics Frame Buffer Bandwidth (GB/s) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "discrete_graphics_frame_buffer_data_width_bits",
+        "name": "Discrete Graphics Frame Buffer Data Width (bits) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "fast_ethernet_ports_count",
+        "name": "Fast Ethernet Ports (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "gigabit_ethernet_ports_count",
+        "name": "Gigabit Ethernet Ports (count) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "gigabit_10_ethernet_ports_count",
+        "name": "10 Gigabit Ethernet Ports (count)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_efficient_ethernet_eee",
+        "name": "Energy Efficient Ethernet (EEE) ",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "number_of_installed_storage_drives",
+        "name": "Number of Installed Storage Drives ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "number_of_integrated_displays_count",
+        "name": "Number of Integrated Displays (count) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "integrated_display_resolution_megapixels",
+        "name": "Integrated Display Resolution (megapixels) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "integrated_display_viewable_screen_area_sq_in",
+        "name": "Integrated Display Viewable Screen Area (sq in) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "enhanced_performance_display_present",
+        "name": "Enhanced Performance Display Present ",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "integrated_display_diagonal_screen_size_in",
+        "name": "Integrated Display Diagonal Screen Size (in)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_10_load",
+        "name": "Internal Power Supply Efficiency at 10% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_20_load",
+        "name": "Internal Power Supply Efficiency at 20% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_50_load",
+        "name": "Internal Power Supply Efficiency at 50% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_efficiency_at_100_load",
+        "name": "Internal Power Supply Efficiency at 100% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "category_i1_1_internal_power_supply_efficiency_at_50_load",
+        "name": "Category I1/1 Internal Power Supply Efficiency at 50% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "category_i1_1_internal_power_supply_efficiency_at_100_load",
+        "name": "Category I1/1 Internal Power Supply Efficiency at 100% Load",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "external_power_supply_rated_power_w",
+        "name": "External Power Supply Rated Power (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "internal_power_supply_rated_power_w",
+        "name": "Internal Power Supply Rated Power (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "mux_device",
+        "name": "MUX Device",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "storage_technology",
+        "name": "Storage Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "total_battery_capacity_watt_hours",
+        "name": "Total Battery Capacity (watt-hours)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "default_low_power_mode",
+        "name": "Default Low-power Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "long_idle_power_used_for_sleep_mode",
+        "name": "Long Idle Power Used for Sleep Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "off_mode_watts",
+        "name": "Off Mode (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "sleep_mode_watts",
+        "name": "Sleep Mode (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "long_idle_watts",
+        "name": "Long Idle (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "short_idle_watts",
+        "name": "Short Idle (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "additional_measured_power_in_short_idle_at_115v__",
+        "name": "Additional Measured Power in Short Idle at 115V (W) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "base_tec_allowance_kwh",
+        "name": "Base TEC Allowance (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "functional_adder_allowances_kwh",
+        "name": "Functional Adder Allowances (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "tec_of_model_kwh",
+        "name": "TEC of Model (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_tec_requirements_etec_max_kwh",
+        "name": "Maximum TEC Requirements (Etec max) (kWh) ",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "ethernet_capability",
+        "name": "Ethernet Capability",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "touch_screen",
+        "name": "Touch Screen",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "sleep_mode_default_time_upon_shipment_min",
+        "name": "Sleep Mode Default Time Upon Shipment (min.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "display_sleep_mode_default_time_upon_shipment_min",
+        "name": "Display Sleep Mode Default Time Upon Shipment (min.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "wol_wake_on_lan_from_sleep",
+        "name": "WOL (Wake on LAN) From Sleep",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "will_the_speed_of_any_active_1_gb_s_or_higher_ethernet_network_links_be_reduced_to_less_than_1_gb_s_when_transitioning_to_sleep_or_off_mode",
+        "name": "Will the Speed of Any Active 1 GB/s or Higher Ethernet Network Links be Reduced to Less Than 1 GB/s When Transitioning to Sleep or Off Mode?",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    [
+      {
+        "source_row_id": "row-qq5f_uyme~nebm",
+        "pd_id": "4675614",
+        "brand_name": "Samsung",
+        "model_number": "NP740VJK",
+        "additional_model_information": "NP740VJQ, NP744VJK, NP744VJQ,NP740VJQ, NP744VJK, NP744VJQ",
+        "upc": "198957421945;198957421952;198957421969",
+        "type": "Notebook",
+        "date_available_on_market": "2026-07-20T00:00:00.000",
+        "date_certified": "2026-06-04T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-77fd~62mt~v4it",
+        "pd_id": "4654934",
+        "brand_name": "Samsung",
+        "model_number": "SM-X940",
+        "upc": "198957409677",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2026-08-13T00:00:00.000",
+        "date_certified": "2026-06-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-dp3s~ceut_44yg",
+        "pd_id": "4654474",
+        "brand_name": "Samsung",
+        "model_number": "SM-X848U",
+        "additional_model_information": "SM-X840,SM-X840,Same as basic model except for model designation",
+        "upc": "198957407147;198957407154;198957407161;198957407178;198957407185;198957407192;198957407208;198957407215;198957407222;198957407239;198957407246;198957408793;198957409189;198957409196;198957423314;198957423321;198957423338;198957423550;198957423567;198957423574;198957424632;198957424649;198957424656",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2026-08-07T00:00:00.000",
+        "date_certified": "2026-06-18T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-4k2e.nw8t_42e9",
+        "pd_id": "4529312",
+        "brand_name": "Samsung",
+        "model_number": "NP960XRD",
+        "additional_model_information": "NP964XRD,NP964XRD,Same as basic model except for model designation",
+        "upc": "198957287961",
+        "type": "Notebook",
+        "date_available_on_market": "2026-03-13T00:00:00.000",
+        "date_certified": "2026-04-15T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6zwf~zqr5-m2ur",
+        "pd_id": "4529290",
+        "brand_name": "Samsung",
+        "model_number": "NP764BJG",
+        "additional_model_information": "NP764BJT,NP764BJT,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2026-04-17T00:00:00.000",
+        "date_certified": "2026-02-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-9qyr.3hcz_d2ju",
+        "pd_id": "4520448",
+        "brand_name": "Samsung",
+        "model_number": "NP740VJG",
+        "additional_model_information": "NP740VJT,NP740VJT,Same as basic model except for model designation; NP744BJG,NP744BJG,Same as basic model except for model designation; NP744BJT,NP744BJT,Same as basic model except for model designation; NP744VJG,NP744VJG,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2026-01-20T00:00:00.000",
+        "date_certified": "2026-01-12T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ivkk-fkbc_ccef",
+        "pd_id": "4520447",
+        "brand_name": "Samsung",
+        "model_number": "NP960UJG",
+        "additional_model_information": "NP960UJT,NP960UJT,Same as basic model except for model designation; NP964UJG,NP964UJG,Same as basic model except for model designation; NP964UJT,NP964UJT,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2026-01-20T00:00:00.000",
+        "date_certified": "2026-01-12T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-svua-h5k8-usqj",
+        "pd_id": "4519406",
+        "brand_name": "Samsung",
+        "model_number": "NP760XJG",
+        "additional_model_information": "NP760XJT,NP760XJT,Same as basic model except for model designation; NP764XJG,NP764XJG,Same as basic model except for model designation; NP764XJT,NP764XJT,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2026-02-27T00:00:00.000",
+        "date_certified": "2025-12-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-5p6n~69nq_uwzn",
+        "pd_id": "4519403",
+        "brand_name": "Samsung",
+        "model_number": "NP760VJG",
+        "additional_model_information": "NP760VJT,NP760VJT,Same as basic model except for model designation; NP764VJG,NP764VJG,Same as basic model except for model designation; NP764VJT,NP764VJT,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2026-03-13T00:00:00.000",
+        "date_certified": "2025-12-23T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-36bk_bps5~u6me",
+        "pd_id": "4518044",
+        "brand_name": "Samsung",
+        "model_number": "NP960UJH",
+        "additional_model_information": "NP964UJH,NP964UJH,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2026-02-03T00:00:00.000",
+        "date_certified": "2025-12-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-z3mn~puj4.38nh",
+        "pd_id": "4517315",
+        "brand_name": "Samsung",
+        "model_number": "NP940XJG",
+        "additional_model_information": "NP940XJT,NP940XJT,Same as basic model except for model designation.; NP944XJG,NP944XJG,Same as basic model except for model designation.; NP944XJT,NP944XJT,Same as basic model except for model designation.",
+        "type": "Notebook",
+        "date_available_on_market": "2026-01-21T00:00:00.000",
+        "date_certified": "2025-11-27T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-b5wd~2fvp_vqxr",
+        "pd_id": "4517255",
+        "brand_name": "Samsung",
+        "model_number": "NP960XJG",
+        "additional_model_information": "NP960XJT,NP960XJT,Same as basic model except for model designation; NP964XJG,NP964XJG,Same as basic model except for model designation; NP964XJT,NP964XJT,Same as basic model except for model designation",
+        "upc": "198957281815;198957281822",
+        "type": "Notebook",
+        "date_available_on_market": "2026-01-26T00:00:00.000",
+        "date_certified": "2025-11-27T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-zdfw.scy7~nxa9",
+        "pd_id": "4512707",
+        "brand_name": "Samsung",
+        "model_number": "NP960XGL",
+        "additional_model_information": "NP964XGL,NP964XGL,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2024-02-26T00:00:00.000",
+        "date_certified": "2025-10-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-t9hg~exnx-mfhb",
+        "pd_id": "4512705",
+        "brand_name": "Samsung",
+        "model_number": "XE525QEA",
+        "additional_model_information": "XE520QEA,XE520QEA,Same as basic model except for model designation and support WIFI only; XE521QEA,XE521QEA,Same as basic model except for model designation and support WIFI only",
+        "type": "Notebook",
+        "date_available_on_market": "2022-02-14T00:00:00.000",
+        "date_certified": "2025-10-24T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-z9aj_r8tw-x3bs",
+        "pd_id": "4512704",
+        "brand_name": "Samsung",
+        "model_number": "NP730QFG",
+        "additional_model_information": "NP734QFG,NP734QFG,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2023-02-10T00:00:00.000",
+        "date_certified": "2025-10-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-83r2-fnsx.8dnq",
+        "pd_id": "4512702",
+        "brand_name": "Samsung",
+        "model_number": "NP940XGK",
+        "additional_model_information": "NP940XGQ,NP940XGQ,Same as basic model except for model designation; NP942XGK,NP942XGK,Same as basic model except for model designation; NP944XGK,NP944XGK,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2023-11-30T00:00:00.000",
+        "date_certified": "2025-10-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-9bqp~k4hb_5njd",
+        "pd_id": "4512701",
+        "brand_name": "Samsung",
+        "model_number": "NP960XMA",
+        "additional_model_information": "NP964XMA,NP964XMA,same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2024-05-14T00:00:00.000",
+        "date_certified": "2025-10-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-bbji.g9ic_f4df",
+        "pd_id": "4512700",
+        "brand_name": "Samsung",
+        "model_number": "NP960XMB",
+        "additional_model_information": "NP964XMB,NP964XMB,same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2024-05-14T00:00:00.000",
+        "date_certified": "2025-10-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-cxsm-ueph_49tf",
+        "pd_id": "4512676",
+        "brand_name": "Samsung",
+        "model_number": "NP750XHD",
+        "additional_model_information": "NP750XHW,NP750XHW,Same as basic model except for model designation; NP754XHD,NP754XHD,Same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2025-06-23T00:00:00.000",
+        "date_certified": "2025-10-23T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-bgfa~y753-e3z6",
+        "pd_id": "4512664",
+        "brand_name": "Samsung",
+        "model_number": "XE550XGA",
+        "additional_model_information": "XE551XGA,XE551XGA,same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2024-09-01T00:00:00.000",
+        "date_certified": "2025-10-23T00:00:00.000",
+        "markets": "United States, Canada, Switzerland"
+      },
+      {
+        "source_row_id": "row-vnv7-8pd5~pprz",
+        "pd_id": "4512663",
+        "brand_name": "Samsung",
+        "model_number": "NP940XHA",
+        "additional_model_information": "NP940XHZ,NP940XHZ,same as basic model except for model designation; NP944XHA,NP944XHA,same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2024-11-20T00:00:00.000",
+        "date_certified": "2025-10-23T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3pcv.eyki.xfee",
+        "pd_id": "4512662",
+        "brand_name": "Samsung",
+        "model_number": "NP960QHA",
+        "additional_model_information": "NP964QHA,NP964QHA,same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2024-09-06T00:00:00.000",
+        "date_certified": "2025-10-23T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-udak-wa8a-489z",
+        "pd_id": "4512661",
+        "brand_name": "Samsung",
+        "model_number": "NP960XHA",
+        "additional_model_information": "NP964XHA,NP964XHA,same as basic model except for model designation",
+        "type": "Notebook",
+        "date_available_on_market": "2024-11-26T00:00:00.000",
+        "date_certified": "2025-10-23T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-9qcv.qsfe-y9zc",
+        "pd_id": "4510319",
+        "brand_name": "Samsung",
+        "model_number": "XE340XDA",
+        "upc": "887276589404",
+        "type": "Notebook",
+        "date_available_on_market": "2021-05-23T00:00:00.000",
+        "date_certified": "2025-09-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-66gr_9ff6-tcqw",
+        "pd_id": "4510313",
+        "brand_name": "Samsung",
+        "model_number": "SM-X238U",
+        "additional_model_information": "SM-X230,SM-X230; SM-X238U1,SM-X238U1",
+        "upc": "198957258565",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2025-11-28T00:00:00.000",
+        "date_certified": "2025-09-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-4u7r-vsjs.tx4h",
+        "pd_id": "4510196",
+        "brand_name": "Samsung",
+        "model_number": "SM-T638U",
+        "additional_model_information": "SM-T630,SM-T630,Same as basic model except for model designation; SM-T636B,SM-T636B,Same as basic model except for model designation; SM-T638B,SM-T638B,Same as basic model except for model designation",
+        "upc": "887276712529",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2022-08-31T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-4q28~it3r.ser2",
+        "pd_id": "4510129",
+        "brand_name": "Samsung",
+        "model_number": "XE315XDA",
+        "additional_model_information": "XE310XDA,XE310XDA",
+        "upc": "887276585833",
+        "type": "Notebook",
+        "date_available_on_market": "2021-09-06T00:00:00.000",
+        "date_certified": "2025-09-19T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-kk2x.fczv-8cht",
+        "pd_id": "4510128",
+        "brand_name": "Samsung",
+        "model_number": "SM-X308U",
+        "additional_model_information": "SM-X300,SM-X300,Same as basic model except for model designation",
+        "upc": "887276825069",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2024-02-01T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ww29_ctwu.nbic",
+        "pd_id": "4510127",
+        "brand_name": "Samsung",
+        "model_number": "NP960XGK",
+        "additional_model_information": "NP960XGQ,NP960XGQ,Same as basic model except model designation; NP961XGK,NP961XGK,Same as basic model except model designation; NP962XGK,NP962XGK,Same as basic model except model designation; NP964XGK,NP964XGK,Same as basic model except model designation",
+        "upc": "887276814407",
+        "type": "Notebook",
+        "date_available_on_market": "2024-03-14T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-7zbs.d42p.c5yj",
+        "pd_id": "4510126",
+        "brand_name": "Samsung",
+        "model_number": "SM-X117U",
+        "upc": "887276991665",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2025-04-04T00:00:00.000",
+        "date_certified": "2025-09-19T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-nvj3~tuf3_249p",
+        "pd_id": "4510125",
+        "brand_name": "Samsung",
+        "model_number": "SM-P620",
+        "upc": "887276843322",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2024-03-13T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-2my7~nsqt-cgk6",
+        "pd_id": "4510124",
+        "brand_name": "Samsung",
+        "model_number": "SM-X358U",
+        "additional_model_information": "SM-X350,SM-X350,Same as basic model except model designation; SM-X356B,SM-X356B,Same as basic model except model designation",
+        "upc": "887276954776",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2025-04-18T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-xp6n.m9uf~68va",
+        "pd_id": "4510123",
+        "brand_name": "Samsung",
+        "model_number": "SM-X110",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2025-04-18T00:00:00.000",
+        "date_certified": "2025-09-18T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-35vw~ifkv_ahen",
+        "pd_id": "4510122",
+        "brand_name": "Samsung",
+        "model_number": "NP960QGK",
+        "additional_model_information": "NP960QGQ,NP960QGQ,Same as basic model except model designation; NP961QGK,NP961QGK,Same as basic model except model designation; NP962QGK,NP962QGK,Same as basic model except model designation; NP964QGK,NP964QGK,Same as basic model except model designation",
+        "upc": "887276812236",
+        "type": "Notebook",
+        "date_available_on_market": "2024-03-11T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3tbp_eb73-hxk4",
+        "pd_id": "4510120",
+        "brand_name": "Samsung",
+        "model_number": "NP940XMA",
+        "additional_model_information": "NP944XMA,NP944XMA,Same as basic model except model designation",
+        "upc": "887276861739",
+        "type": "Notebook",
+        "date_available_on_market": "2024-06-03T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-9uec~z82r-xvd9",
+        "pd_id": "4510119",
+        "brand_name": "Samsung",
+        "model_number": "NP750XQA",
+        "additional_model_information": "NP750XQB,NP750XQB,Same as basic model except model designation; NP754XQA,NP754XQA,Same as basic model except model designation; NP754XQB,NP754XQB,Same as basic model except model designation",
+        "upc": "887276901060",
+        "type": "Notebook",
+        "date_available_on_market": "2024-08-30T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-q6n2.zkb8~xh2m",
+        "pd_id": "4510115",
+        "brand_name": "Samsung",
+        "model_number": "NP750QGK",
+        "additional_model_information": "NP754QGK,NP754QGK,Same as basic model except for model designation",
+        "upc": "887276812175",
+        "type": "Notebook",
+        "date_available_on_market": "2024-02-12T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ep36_iv7m_6kwm",
+        "pd_id": "4510111",
+        "brand_name": "Samsung",
+        "model_number": "NP750QHA",
+        "additional_model_information": "NP750QHZ,NP750QHZ,Same as basic model except model designation; NP754QHA,NP754QHA,Same as basic model except model designation",
+        "upc": "887276931500",
+        "type": "Notebook",
+        "date_available_on_market": "2024-12-02T00:00:00.000",
+        "date_certified": "2025-09-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-jeeq-hf5w-eu4c",
+        "pd_id": "4499000",
+        "brand_name": "Samsung",
+        "model_number": "SM-X210",
+        "upc": "887276796246;887276796253;887276796260;887276796277;887276796284;887276796819",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2023-09-04T00:00:00.000",
+        "date_certified": "2025-09-11T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-kjdj-qaai-r8ha",
+        "pd_id": "4498999",
+        "brand_name": "Samsung",
+        "model_number": "SM-X218U",
+        "upc": "887276815886;887276816272;887276824802",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2023-12-07T00:00:00.000",
+        "date_certified": "2025-09-10T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-6ryk-3rh8~shtq",
+        "pd_id": "4479389",
+        "brand_name": "Samsung",
+        "model_number": "SM-X930",
+        "upc": "198957230158",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2025-08-12T00:00:00.000",
+        "date_certified": "2025-07-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-j74c-sj2x-rxdu",
+        "pd_id": "4470479",
+        "brand_name": "Samsung",
+        "model_number": "SM-X730",
+        "upc": "198957236662",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2025-08-12T00:00:00.000",
+        "date_certified": "2025-07-04T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-36ts-rb7v-q289",
+        "pd_id": "4439210",
+        "brand_name": "Samsung",
+        "model_number": "SM-X400",
+        "upc": "198957219764",
+        "type": "Slate/Tablet",
+        "date_available_on_market": "2025-06-23T00:00:00.000",
+        "date_certified": "2025-06-23T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-x5vg_mnvs_quaf",
+        "pd_id": "4429375",
+        "brand_name": "Samsung",
+        "model_number": "NP750XGJ",
+        "additional_model_information": "NP750XGK, NP750XGQ, NP754XGK, NP751XGK, NP751XGQ, NP754XGQ, NP754XGJ,NP750XGK, NP750XGQ, NP754XGK, NP751XGK, NP751XGQ, NP754XGQ, NP754XGJ",
+        "upc": "887276834665;887276834672;887276842622;887276842639;887276860176",
+        "type": "Notebook",
+        "date_available_on_market": "2024-02-28T00:00:00.000",
+        "date_certified": "2025-05-26T00:00:00.000",
+        "markets": "Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-8wnw~staa_9qwm",
+        "pd_id": "4429374",
+        "brand_name": "Samsung",
+        "model_number": "NP750XGL",
+        "additional_model_information": "NP750XGP, NP751XGL, NP751XGP, NP754XGL, NP754XGP,NP750XGP, NP751XGL, NP751XGP, NP754XGL, NP754XGP",
+        "upc": "887276834689",
+        "type": "Notebook",
+        "date_available_on_market": "2024-02-28T00:00:00.000",
+        "date_certified": "2025-05-26T00:00:00.000",
+        "markets": "Japan, Canada, Taiwan, Switzerland"
+      }
+    ]
+  ],
+  "count_before": [
+    {
+      "row_count": "45"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "45"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}

@@ -1,6 +1,8 @@
 import unittest
+import json
+from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
-from scripts.epa_queries import literal, query_url, decode_rows, row_count, complete_scan
+from scripts.epa_queries import literal, query_url, decode_rows, row_count, complete_scan, catalog_projection
 
 
 class EpaQueryBoundaries(unittest.TestCase):
@@ -41,3 +43,43 @@ class EpaQueryBoundaries(unittest.TestCase):
     def test_count_malformed_or_missing_does_not_default_to_zero(self):
         for rows in ([],[{}],[{'row_count':'-1'}],[{'row_count':'1.5'}]):
             with self.assertRaises(ValueError): row_count(rows)
+
+    def test_catalog_same_id_on_other_domain_does_not_establish_official_source(self):
+        data = {'results':[{'resource':{'id':'p5st-her9','type':'dataset'},'metadata':{'domain':'example.com'}}]}
+        with self.assertRaises(ValueError): catalog_projection(data,'p5st-her9')
+
+    def test_catalog_metadata_omits_contacts_and_does_not_certify_models(self):
+        data = {'results':[{'resource':{'id':'p5st-her9','type':'dataset'},
+                            'metadata':{'domain':'data.energystar.gov','contact':'TEST_CONTACT'},'owner':'TEST_OWNER'}]}
+        result = catalog_projection(data,'p5st-her9')
+        self.assertNotIn('TEST_CONTACT',json.dumps(result))
+        self.assertNotIn('TEST_OWNER',json.dumps(result))
+        self.assertEqual(result['current_certification'],'NOT_EVALUATED')
+
+    def fixture(self, dataset):
+        return json.loads((Path(__file__).parent / 'fixtures/epa-query' / (dataset + '.json')).read_text(encoding='utf-8'))
+
+    def test_actual_nine_queries_preserve_complete_paging_and_error_boundaries(self):
+        paths = list((Path(__file__).parent / 'fixtures/epa-query').glob('*.json'))
+        self.assertEqual(len(paths),9)
+        for path in paths:
+            data = self.fixture(path.stem)
+            before = {k:data['metadata_before'][k] for k in ('id','rowsUpdatedAt','viewLastModified','columns')}
+            after = {k:data['metadata_after'][k] for k in before}
+            result = complete_scan(data['pages'],row_count(data['count_before']),row_count(data['count_after']),before,after,100)
+            self.assertEqual(result['certification_matching'],'NOT_EVALUATED',msg=path.stem)
+            error = data['controlled_error']
+            with self.assertRaises(ValueError):decode_rows(error['status'],error['content_type'],error['body_utf8'])
+
+    def test_actual_empty_fan_brand_query_never_implies_hood_noncertification(self):
+        data = self.fixture('8dv7-nngq')
+        self.assertEqual(data['pages'],[[]])
+        self.assertEqual(row_count(data['count_before']),0)
+        self.assertEqual(complete_scan(data['pages'],0,0,{}, {},100)['candidate_absence'],'NOT_EVALUATED')
+
+    def test_actual_monitor_upc_omission_and_nonus_computer_market_remain_raw(self):
+        monitor = [r for p in self.fixture('qbg3-d468')['pages'] for r in p]
+        self.assertTrue(any(not r.get('upc') for r in monitor))
+        computer = [r for p in self.fixture('rxdj-2c88')['pages'] for r in p]
+        self.assertTrue(any('United States' not in r.get('markets','') for r in computer))
+        self.assertIn('Slate/Tablet',{r.get('type') for r in computer})

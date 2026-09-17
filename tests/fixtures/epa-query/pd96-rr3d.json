@@ -1,0 +1,1156 @@
+{
+  "dataset_id": "pd96-rr3d",
+  "metadata_before": {
+    "id": "pd96-rr3d",
+    "name": "ENERGY STAR Certified Televisions",
+    "rowsUpdatedAt": 1789565099,
+    "viewLastModified": 1739912176,
+    "publicationDate": 1713450219,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "application",
+        "name": "Application",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "display_type",
+        "name": "Display Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "backlight_technology_type",
+        "name": "Backlight Technology Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "diagonal_viewable_screen_size_inches",
+        "name": "Diagonal Viewable Screen Size (in.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "screen_area_square_inches",
+        "name": "Screen Area (sq. in.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "native_horizontal_resolution_pixels",
+        "name": "Native Horizontal Resolution (pixels)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "native_vertical_resolution_pixels",
+        "name": "Native Vertical Resolution (pixels)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "resolution_format",
+        "name": "Resolution Format",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "high_contrast_ratio_hcr_display",
+        "name": "High Contrast Ratio (HCR) Display",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "physical_data_ports_available",
+        "name": "Physical Data Ports Available",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "ethernet_supported",
+        "name": "Ethernet Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "low_power_wireless_technologies_supported",
+        "name": "Low Power Wireless Technologies Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "features",
+        "name": "Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "automatic_brightness_control",
+        "name": "Automatic Brightness Control",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "is_automatic_brightness_control_enabled_by_default_when_television_is_shipped",
+        "name": "Is Automatic Brightness Control Enabled by Default in the Default SDR Preset Picture Setting When Television is Shipped?",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "power_consumption_in_on_mode_watts",
+        "name": "Average On Mode Power Consumption for Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_on_mode_power_for_certification_watts",
+        "name": "Maximum Average On Mode Power for Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_on_mode_power_per_the_federal_test_procedure_watts",
+        "name": "Reported On Mode Power (per the Federal Test Procedure) (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_annual_energy_consumption_kwh",
+        "name": "Reported Annual Energy Consumption (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "measured_standby_mode_power_w",
+        "name": "Measured Standby Mode Power (Watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "power_consumption_in_standby_mode_when_network_not_connected_watts",
+        "name": "Power Consumption in Standby Mode when Not Connected to a Network (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "power_consumption_in_standby_mode_when_network_connected_watts",
+        "name": "Power Consumption in Standby Mode when Connected to a Network (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_standby_active_low_mode_power_watts",
+        "name": "Reported Standby-Active, Low Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "pd96-rr3d",
+    "name": "ENERGY STAR Certified Televisions",
+    "rowsUpdatedAt": 1789565099,
+    "viewLastModified": 1739912176,
+    "publicationDate": 1713450219,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "application",
+        "name": "Application",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "display_type",
+        "name": "Display Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "backlight_technology_type",
+        "name": "Backlight Technology Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "diagonal_viewable_screen_size_inches",
+        "name": "Diagonal Viewable Screen Size (in.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "screen_area_square_inches",
+        "name": "Screen Area (sq. in.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "native_horizontal_resolution_pixels",
+        "name": "Native Horizontal Resolution (pixels)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "native_vertical_resolution_pixels",
+        "name": "Native Vertical Resolution (pixels)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "resolution_format",
+        "name": "Resolution Format",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "high_contrast_ratio_hcr_display",
+        "name": "High Contrast Ratio (HCR) Display",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "physical_data_ports_available",
+        "name": "Physical Data Ports Available",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "ethernet_supported",
+        "name": "Ethernet Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "low_power_wireless_technologies_supported",
+        "name": "Low Power Wireless Technologies Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "features",
+        "name": "Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "automatic_brightness_control",
+        "name": "Automatic Brightness Control",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "is_automatic_brightness_control_enabled_by_default_when_television_is_shipped",
+        "name": "Is Automatic Brightness Control Enabled by Default in the Default SDR Preset Picture Setting When Television is Shipped?",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "power_consumption_in_on_mode_watts",
+        "name": "Average On Mode Power Consumption for Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_on_mode_power_for_certification_watts",
+        "name": "Maximum Average On Mode Power for Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_on_mode_power_per_the_federal_test_procedure_watts",
+        "name": "Reported On Mode Power (per the Federal Test Procedure) (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_annual_energy_consumption_kwh",
+        "name": "Reported Annual Energy Consumption (kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "measured_standby_mode_power_w",
+        "name": "Measured Standby Mode Power (Watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "power_consumption_in_standby_mode_when_network_not_connected_watts",
+        "name": "Power Consumption in Standby Mode when Not Connected to a Network (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "power_consumption_in_standby_mode_when_network_connected_watts",
+        "name": "Power Consumption in Standby Mode when Connected to a Network (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_standby_active_low_mode_power_watts",
+        "name": "Reported Standby-Active, Low Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    [
+      {
+        "source_row_id": "row-q2di~mf88.azg3",
+        "pd_id": "4430171",
+        "brand_name": "Samsung",
+        "model_number": "QN115QN90FF",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-06-09T00:00:00.000",
+        "date_qualified": "2025-06-09T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-bxgm.aaw2-3cj9",
+        "pd_id": "3462878",
+        "brand_name": "Samsung",
+        "model_number": "QN42S90DAE",
+        "additional_model_information": "QN42S90DDE,QN42S90DDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-04-25T00:00:00.000",
+        "date_qualified": "2024-04-18T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-tqgt_s8ff~qerv",
+        "pd_id": "3994228",
+        "brand_name": "Samsung",
+        "model_number": "QN42S90FAE",
+        "additional_model_information": "QN42S90FDE,QN42S90FDE,Same as basic model except model designation; QN42S92FAE,QN42S92FAE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-hnfj-qmjf.uw6y",
+        "pd_id": "4529262",
+        "brand_name": "Samsung",
+        "model_number": "QN42S90HAE",
+        "additional_model_information": "QN42S90HDE,QN42S90HDE,Same as basic model except for model designation; QN42S92HAE,QN42S92HAE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-ays4_fusk_nkwa",
+        "pd_id": "3354303",
+        "brand_name": "Samsung",
+        "model_number": "QN43QN90DAF",
+        "additional_model_information": "QN43QN90DDF,QN43QN90DDF,Same as basic model except model designation; QN43QN92DAF,QN43QN92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-18T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-siyj_4e3q.bduj",
+        "pd_id": "3982849",
+        "brand_name": "Samsung",
+        "model_number": "QN43QN90FAF",
+        "additional_model_information": "QN43QN90FDF,QN43QN90FDF,Same as basic model except model designation; QN43QN92FAF,QN43QN92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-01-30T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-g65b~mjjd~6f3u",
+        "pd_id": "4529259",
+        "brand_name": "Samsung",
+        "model_number": "QN48S85HAE",
+        "additional_model_information": "QN48S85HDE,QN48S85HDE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-aqc9.5p74-sky3",
+        "pd_id": "3439034",
+        "brand_name": "Samsung",
+        "model_number": "QN48S90DAE",
+        "additional_model_information": "QN48S90DDE,QN48S90DDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-04-22T00:00:00.000",
+        "date_qualified": "2024-04-16T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-jgx2.h98m.gpbx",
+        "pd_id": "3994229",
+        "brand_name": "Samsung",
+        "model_number": "QN48S90FAE",
+        "additional_model_information": "QN48S90FDE,QN48S90FDE,Same as basic model except model designation; QN48S92FAE,QN48S92FAE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-ivaz~dhfp-a3va",
+        "pd_id": "4529255",
+        "brand_name": "Samsung",
+        "model_number": "QN48S90HAE",
+        "additional_model_information": "QN48S90HDE,QN48S90HDE,Same as basic model except for model designation; QN48S92HAE,QN48S92HAE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-dyrh~uvjr-jdyu",
+        "pd_id": "3354304",
+        "brand_name": "Samsung",
+        "model_number": "QN50QN90DAF",
+        "additional_model_information": "QN50QN90DDF,QN50QN90DDF,Same as basic model except model designation; QN50QN92DAF,QN50QN92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-17T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-zvda_9s9r_ccy9",
+        "pd_id": "3943121",
+        "brand_name": "Samsung",
+        "model_number": "QN50QN90FAF",
+        "additional_model_information": "QN50QN90FDF,QN50QN90FDF,Same as basic model except model designation; QN50QN92FAF,QN50QN92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-01-20T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-kwcz_758d.p8ys",
+        "pd_id": "2862420",
+        "brand_name": "Samsung",
+        "model_number": "QN55QN90DAF",
+        "additional_model_information": "QN55QN90DDF,QN55QN90DDF,Same as basic model except model designation; QN55QN92DAF,QN55QN92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-07T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-tuzu_99cn.wui4",
+        "pd_id": "3943231",
+        "brand_name": "Samsung",
+        "model_number": "QN55QN90FAF",
+        "additional_model_information": "QN55QN90FDF,QN55QN90FDF,Same as basic model except model designation; QN55QN92FAF,QN55QN92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-01-22T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-ce4t.jw2i~t959",
+        "pd_id": "4481070",
+        "brand_name": "Samsung",
+        "model_number": "QN55S84FAF",
+        "additional_model_information": "QN55S84FDF,QN55S84FDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-08-11T00:00:00.000",
+        "date_qualified": "2025-08-04T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-ttat~hcj3~z7jt",
+        "pd_id": "3462883",
+        "brand_name": "Samsung",
+        "model_number": "QN55S85DAE",
+        "additional_model_information": "QN55S85DDE,QN55S85DDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-05-13T00:00:00.000",
+        "date_qualified": "2024-04-21T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-etd9_gsna~8jv5",
+        "pd_id": "3994230",
+        "brand_name": "Samsung",
+        "model_number": "QN55S85FAF",
+        "additional_model_information": "QN55S85FBF,QN55S85FBF,Same as basic model except model designation; QN55S85FDF,QN55S85FDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-03T00:00:00.000",
+        "date_qualified": "2025-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-vjfa-muai.dck7",
+        "pd_id": "4529261",
+        "brand_name": "Samsung",
+        "model_number": "QN55S85HAE",
+        "additional_model_information": "QN55S85HDE,QN55S85HDE,Same as basic model except for model designation; QN55S88HAE,QN55S88HAE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-iub3~nijg.nh7x",
+        "pd_id": "3354310",
+        "brand_name": "Samsung",
+        "model_number": "QN55S90DAF",
+        "additional_model_information": "QN55S90DDF,QN55S90DDF,Same as basic model except model designation; QN55S92DAF,QN55S92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-18T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-6vr4-ezqs_na4h",
+        "pd_id": "3984068",
+        "brand_name": "Samsung",
+        "model_number": "QN55S90FAF",
+        "additional_model_information": "QN55S90FDF,QN55S90FDF,Same as basic model except model designation.; QN55S92FAF,QN55S92FAF,Same as basic model except model designation.",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-01-31T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-7bjv_hk8b_azd2",
+        "pd_id": "4520757",
+        "brand_name": "Samsung",
+        "model_number": "QN55S90HAE",
+        "additional_model_information": "QN55S90HDE,QN55S90HDE,Same as basic model except for model designation; QN55S92HAE,QN55S92HAE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-01-30T00:00:00.000",
+        "date_qualified": "2026-01-16T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-4bgy.6s2g.j8fu",
+        "pd_id": "3354428",
+        "brand_name": "Samsung",
+        "model_number": "QN55S95DAF",
+        "additional_model_information": "QN55S95DDF,QN55S95DDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-01-02T00:00:00.000",
+        "date_qualified": "2023-12-26T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-bv96.v62s-phs6",
+        "pd_id": "3994242",
+        "brand_name": "Samsung",
+        "model_number": "QN55S95FAF",
+        "additional_model_information": "QN55S95FDF,QN55S95FDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-02-06T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-mxvf_un2h_x5sp",
+        "pd_id": "4520756",
+        "brand_name": "Samsung",
+        "model_number": "QN55S95HAF",
+        "additional_model_information": "QN55S95HDF,QN55S95HDF,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-01-30T00:00:00.000",
+        "date_qualified": "2026-01-19T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-2sex-rvsi.mwh8",
+        "pd_id": "3354305",
+        "brand_name": "Samsung",
+        "model_number": "QN65QN90DAF",
+        "additional_model_information": "QN65QN90DDF,QN65QN90DDF,Same as basic model except model designation; QN65QN92DAF,QN65QN92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-07T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-zwp5~d9e5~zxye",
+        "pd_id": "3943232",
+        "brand_name": "Samsung",
+        "model_number": "QN65QN90FAF",
+        "additional_model_information": "QN65QN90FDF,QN65QN90FDF,Same as basic model except model designation; QN65QN92FAF,QN65QN92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-01-22T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-7bda-uqvv.fbaq",
+        "pd_id": "3354726",
+        "brand_name": "Samsung",
+        "model_number": "QN65QN95DAF",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2024-01-03T00:00:00.000",
+        "date_qualified": "2024-01-02T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-t9d4~vrjy.27tz",
+        "pd_id": "4437467",
+        "brand_name": "Samsung",
+        "model_number": "QN65S84FAE",
+        "additional_model_information": "QN65S84FDE,QN65S84FDE,Same as basic model except for model designation",
+        "upc": "198957231858;198957231865",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-06-23T00:00:00.000",
+        "date_qualified": "2026-07-09T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-8unw~56zd.hidv",
+        "pd_id": "4667954",
+        "brand_name": "Samsung",
+        "model_number": "QN65S84HAE",
+        "additional_model_information": "QN65S84HDE,QN65S84HDE,Same as basic model except for model designation",
+        "upc": "198957431593;198957431609",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-06-23T00:00:00.000",
+        "date_qualified": "2026-07-09T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-rdc8_cyv4~pm2j",
+        "pd_id": "3462884",
+        "brand_name": "Samsung",
+        "model_number": "QN65S85DAE",
+        "additional_model_information": "QN65S85DDE,QN65S85DDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-05-13T00:00:00.000",
+        "date_qualified": "2024-04-25T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-p7qe_er6c-n6xm",
+        "pd_id": "3994262",
+        "brand_name": "Samsung",
+        "model_number": "QN65S85FAF",
+        "additional_model_information": "QN65S85FBF,QN65S85FBF,Same as basic model except model designation; QN65S85FDF,QN65S85FDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-03T00:00:00.000",
+        "date_qualified": "2025-02-07T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-7ahx~envz~gsxr",
+        "pd_id": "4529260",
+        "brand_name": "Samsung",
+        "model_number": "QN65S85HAE",
+        "additional_model_information": "QN65S85HDE,QN65S85HDE,Same as basic model except for model designation; QN65S88HAE,QN65S88HAE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-c3es~f7ra~ye8d",
+        "pd_id": "3354311",
+        "brand_name": "Samsung",
+        "model_number": "QN65S90DAF",
+        "additional_model_information": "QN65S90DDF,QN65S90DDF,Same as basic model except model designation; QN65S92DAF,QN65S92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-17T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-a3h7~d3mq~dk2d",
+        "pd_id": "3984069",
+        "brand_name": "Samsung",
+        "model_number": "QN65S90FAF",
+        "additional_model_information": "QN65S90FDF,QN65S90FDF,Same as basic model except model designation; QN65S92FAF,QN65S92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-01-31T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-3gfu~x8pm_cy37",
+        "pd_id": "4519592",
+        "brand_name": "Samsung",
+        "model_number": "QN65S90HAE",
+        "additional_model_information": "QN65S90HDE,QN65S90HDE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-01-05T00:00:00.000",
+        "date_qualified": "2026-01-06T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-ray8.vjkn-7qk2",
+        "pd_id": "3354429",
+        "brand_name": "Samsung",
+        "model_number": "QN65S95DAF",
+        "additional_model_information": "QN65S95DDF,QN65S95DDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-01-02T00:00:00.000",
+        "date_qualified": "2023-12-26T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-fmcu_itdr_t2h2",
+        "pd_id": "3994255",
+        "brand_name": "Samsung",
+        "model_number": "QN65S95FAF",
+        "additional_model_information": "QN65S95FDF,QN65S95FDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-02-07T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-rxyj_maa3~5u9p",
+        "pd_id": "4519371",
+        "brand_name": "Samsung",
+        "model_number": "QN65S95HAF",
+        "additional_model_information": "QN65S95HDF,QN65S95HDF,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-12-26T00:00:00.000",
+        "date_qualified": "2025-12-22T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-4rqn.42dz_r9ri",
+        "pd_id": "2406512",
+        "brand_name": "Samsung",
+        "model_number": "QN75QN90CAF",
+        "additional_model_information": "QN75QN90CDF,QN75QN90CDF,Same as basic model except model designation; QN75QN92CAF,QN75QN92CAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2022-12-31T00:00:00.000",
+        "date_qualified": "2023-01-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-vt87-7rip_qmyi",
+        "pd_id": "3354306",
+        "brand_name": "Samsung",
+        "model_number": "QN75QN90DAF",
+        "additional_model_information": "QN75QN90DDF,QN75QN90DDF,Same as basic model except model designation; QN75QN92DAF,QN75QN92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-07T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-7ux9~b7bg.vh9u",
+        "pd_id": "3943300",
+        "brand_name": "Samsung",
+        "model_number": "QN75QN90FAF",
+        "additional_model_information": "QN75QN90FDF,QN75QN90FDF,Same as basic model except model designation; QN75QN92FAF,QN75QN92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-01-23T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-9mhw_degx.97m6",
+        "pd_id": "3354727",
+        "brand_name": "Samsung",
+        "model_number": "QN75QN95DAF",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2024-01-03T00:00:00.000",
+        "date_qualified": "2024-01-02T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-bygc~whww.tysc",
+        "pd_id": "3462885",
+        "brand_name": "Samsung",
+        "model_number": "QN77S85DAE",
+        "additional_model_information": "QN77S84DAE,QN77S84DAE,Same as basic model except model designation; QN77S84DBE,QN77S84DBE,Same as basic model except model designation; QN77S85DDE,QN77S85DDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-05-13T00:00:00.000",
+        "date_qualified": "2024-04-25T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-n8yb_uv4b.pwbq",
+        "pd_id": "3994365",
+        "brand_name": "Samsung",
+        "model_number": "QN77S85FAE",
+        "additional_model_information": "QN77S84FAE,QN77S84FAE,Same as basic model except model designation; QN77S84FDE,QN77S84FDE,Same as basic model except model designation; QN77S85FBE,QN77S85FBE,Same as basic model except model designation; QN77S85FDE,QN77S85FDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-02-10T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-9zup_vfiq.pktd",
+        "pd_id": "4529258",
+        "brand_name": "Samsung",
+        "model_number": "QN77S85HAE",
+        "additional_model_information": "QN77S85HDE,QN77S85HDE,Same as basic model except for model designation; QN77S88HAE,QN77S88HAE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-9gi4_63cp~9mr9",
+        "pd_id": "3354312",
+        "brand_name": "Samsung",
+        "model_number": "QN77S90DAF",
+        "additional_model_information": "QN77S90DDF,QN77S90DDF,Same as basic model except model designation; QN77S92DAF,QN77S92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-17T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-m7ag_c82g~qzj6",
+        "pd_id": "3994232",
+        "brand_name": "Samsung",
+        "model_number": "QN77S90FAF",
+        "additional_model_information": "QN77S90FDF,QN77S90FDF,Same as basic model except model designation; QN77S92FAF,QN77S92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-02-06T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-uxxj_wqt8.yh5v",
+        "pd_id": "4519591",
+        "brand_name": "Samsung",
+        "model_number": "QN77S90HAE",
+        "additional_model_information": "QN77S90HDE,QN77S90HDE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-01-05T00:00:00.000",
+        "date_qualified": "2026-01-06T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-q35z.44ax.6k27",
+        "pd_id": "3354313",
+        "brand_name": "Samsung",
+        "model_number": "QN77S95DAF",
+        "additional_model_information": "QN77S95DDF,QN77S95DDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2024-01-02T00:00:00.000",
+        "date_qualified": "2023-12-15T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-e7w2.5w3e~6fnx",
+        "pd_id": "3994320",
+        "brand_name": "Samsung",
+        "model_number": "QN77S95FAF",
+        "additional_model_information": "QN77S95FDF,QN77S95FDF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-02-09T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-mbag_w35h.qchg",
+        "pd_id": "4529257",
+        "brand_name": "Samsung",
+        "model_number": "QN77S95HAF",
+        "additional_model_information": "QN77S95HDF,QN77S95HDF,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-3kqy.fs88.9prt",
+        "pd_id": "3994360",
+        "brand_name": "Samsung",
+        "model_number": "QN83S85FAE",
+        "additional_model_information": "QN83S85FBE,QN83S85FBE,Same as basic model except model designation; QN83S85FDE,QN83S85FDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-03T00:00:00.000",
+        "date_qualified": "2025-02-10T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-n7kv~y77i_apkn",
+        "pd_id": "4529256",
+        "brand_name": "Samsung",
+        "model_number": "QN83S85HAE",
+        "additional_model_information": "QN83S85HDE,QN83S85HDE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-05T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-8xjv-fzfw~nz53",
+        "pd_id": "3994340",
+        "brand_name": "Samsung",
+        "model_number": "QN83S95FAE",
+        "additional_model_information": "QN83S95FDE,QN83S95FDE,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2025-02-10T00:00:00.000",
+        "date_qualified": "2025-02-10T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-e2ra~sn6d~fv96",
+        "pd_id": "4529208",
+        "brand_name": "Samsung",
+        "model_number": "QN83S95HAE",
+        "additional_model_information": "QN83S95HDE,QN83S95HDE,Same as basic model except for model designation",
+        "product_type": "Television (TV)",
+        "display_type": "OLED",
+        "backlight_technology_type": "OLED",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_qualified": "2026-02-03T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-2kg6~4yze_ur5a",
+        "pd_id": "3354307",
+        "brand_name": "Samsung",
+        "model_number": "QN85QN90DAF",
+        "additional_model_information": "QN85QN90DDF,QN85QN90DDF,Same as basic model except model designation; QN85QN92DAF,QN85QN92DAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2023-12-29T00:00:00.000",
+        "date_qualified": "2023-12-17T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-gutm-trxf-q8qh",
+        "pd_id": "3943301",
+        "brand_name": "Samsung",
+        "model_number": "QN85QN90FAF",
+        "additional_model_information": "QN85QN90FDF,QN85QN90FDF,Same as basic model except model designation; QN85QN92FAF,QN85QN92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-01-23T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-6a6r.tjpg-5jxj",
+        "pd_id": "3354728",
+        "brand_name": "Samsung",
+        "model_number": "QN85QN95DAF",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2024-01-03T00:00:00.000",
+        "date_qualified": "2024-01-02T00:00:00.000",
+        "markets": "United States"
+      },
+      {
+        "source_row_id": "row-se6p~gf63-hmgf",
+        "pd_id": "3943302",
+        "brand_name": "Samsung",
+        "model_number": "QN98QN90FAF",
+        "additional_model_information": "QN98QN90FDF,QN98QN90FDF,Same as basic model except model designation; QN98QN92FAF,QN98QN92FAF,Same as basic model except model designation",
+        "product_type": "Television (TV)",
+        "display_type": "QD-LED (QLED)",
+        "backlight_technology_type": "Direct-lit LED",
+        "date_available_on_market": "2025-01-27T00:00:00.000",
+        "date_qualified": "2025-01-23T00:00:00.000",
+        "markets": "United States"
+      }
+    ]
+  ],
+  "count_before": [
+    {
+      "row_count": "59"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "59"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}

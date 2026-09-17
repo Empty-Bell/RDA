@@ -1,0 +1,578 @@
+{
+  "dataset_id": "q8py-6w3f",
+  "metadata_before": {
+    "id": "q8py-6w3f",
+    "name": "ENERGY STAR Certified Residential Dishwashers",
+    "rowsUpdatedAt": 1789564310,
+    "viewLastModified": 1739912213,
+    "publicationDate": 1681262384,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "type",
+        "name": "Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "capacity_maximum_number_of_place_settings",
+        "name": "Capacity - Maximum Number of Place Settings",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "soil_sensing_capability",
+        "name": "Soil-Sensing Capability",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "tub_material",
+        "name": "Tub Material",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "drying_method",
+        "name": "Drying Method",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_product_features",
+        "name": "Additional Product Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "annual_energy_use_kwh_year",
+        "name": "Annual Energy Use (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_kwh_year",
+        "name": "US Federal Standard (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "better_than_us_federal_standard_kwh_year",
+        "name": "% Better than US Federal Standard (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "water_use_gallons_cycle",
+        "name": "Water Use (gallons/cycle)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_gallons_cycle",
+        "name": "US Federal Standard (gallons/cycle)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "better_than_us_federal_standard_gallons_cycle",
+        "name": "% Better than US Federal Standard (gallons/cycle)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "connected_capable",
+        "name": "Connected Capable",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connects_using",
+        "name": "Connects Using",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "communication_hardware_architecture",
+        "name": "Communication Hardware Architecture",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "dr_protocol",
+        "name": "DR Protocol",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": " Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "q8py-6w3f",
+    "name": "ENERGY STAR Certified Residential Dishwashers",
+    "rowsUpdatedAt": 1789564310,
+    "viewLastModified": 1739912213,
+    "publicationDate": 1681262384,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "type",
+        "name": "Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "capacity_maximum_number_of_place_settings",
+        "name": "Capacity - Maximum Number of Place Settings",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "soil_sensing_capability",
+        "name": "Soil-Sensing Capability",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "tub_material",
+        "name": "Tub Material",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "drying_method",
+        "name": "Drying Method",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_product_features",
+        "name": "Additional Product Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "annual_energy_use_kwh_year",
+        "name": "Annual Energy Use (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_kwh_year",
+        "name": "US Federal Standard (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "better_than_us_federal_standard_kwh_year",
+        "name": "% Better than US Federal Standard (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "water_use_gallons_cycle",
+        "name": "Water Use (gallons/cycle)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_gallons_cycle",
+        "name": "US Federal Standard (gallons/cycle)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "better_than_us_federal_standard_gallons_cycle",
+        "name": "% Better than US Federal Standard (gallons/cycle)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "connected_capable",
+        "name": "Connected Capable",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connects_using",
+        "name": "Connects Using",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "communication_hardware_architecture",
+        "name": "Communication Hardware Architecture",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "dr_protocol",
+        "name": "DR Protocol",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": " Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    [
+      {
+        "source_row_id": "row-8quk~6fj9~krz4",
+        "pd_id": "2507681",
+        "brand_name": "Samsung",
+        "model_number": "DW50T6060**",
+        "additional_model_information": "Remark: * could be A-Z, a-z, 0-9, - or blank.",
+        "upc": "887276412658;887276412665",
+        "type": "Standard",
+        "date_available_on_market": "2023-05-10T00:00:00.000",
+        "date_certified": "2023-05-31T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ksed.t7q3-adhc",
+        "pd_id": "2507682",
+        "brand_name": "Samsung",
+        "model_number": "DW60R2014**",
+        "additional_model_information": "Remark: * could be A-Z, a-z, 0-9, - or blank",
+        "upc": "887276303529;887276303536",
+        "type": "Standard",
+        "date_available_on_market": "2023-05-10T00:00:00.000",
+        "date_certified": "2023-05-31T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6pbz-99uv.7ynq",
+        "pd_id": "4049685",
+        "brand_name": "Samsung",
+        "model_number": "DW70F81YEU*",
+        "upc": "198957212178;198957212956;198957227943",
+        "type": "Standard",
+        "date_available_on_market": "2025-08-22T00:00:00.000",
+        "date_certified": "2025-05-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-xdzk_36kn~94zm",
+        "pd_id": "4046750",
+        "brand_name": "Samsung",
+        "model_number": "DW70F83YEU*",
+        "upc": "198957212963",
+        "type": "Standard",
+        "date_available_on_market": "2025-08-15T00:00:00.000",
+        "date_certified": "2025-05-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-w37m.r7un_tvmk",
+        "pd_id": "4594534",
+        "brand_name": "Samsung",
+        "model_number": "DW70H83YETR",
+        "type": "Standard",
+        "date_available_on_market": "2026-04-10T00:00:00.000",
+        "date_certified": "2026-04-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-z2d4~62r6.mwnw",
+        "pd_id": "4594554",
+        "brand_name": "Samsung",
+        "model_number": "DW70H83YEUR",
+        "upc": "198957405228",
+        "type": "Standard",
+        "date_available_on_market": "2026-04-10T00:00:00.000",
+        "date_certified": "2026-04-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8xwa.5wpk_e578",
+        "pd_id": "2409711",
+        "brand_name": "Samsung",
+        "model_number": "DW80B6060**",
+        "upc": "887276616384;887276616391;887276618401;887276618418",
+        "type": "Standard",
+        "date_available_on_market": "2022-03-04T00:00:00.000",
+        "date_certified": "2023-02-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-rbt9_uyg5_ddmj",
+        "pd_id": "2409712",
+        "brand_name": "Samsung",
+        "model_number": "DW80B6061**",
+        "upc": "887276609683;887276616407",
+        "type": "Standard",
+        "date_available_on_market": "2022-03-04T00:00:00.000",
+        "date_certified": "2023-02-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-jts6.xw8a_rnny",
+        "pd_id": "2409708",
+        "brand_name": "Samsung",
+        "model_number": "DW80B7070**",
+        "upc": "887276609690;887276609706;887276616414;887276616544;887276618425;887276618432",
+        "type": "Standard",
+        "date_available_on_market": "2022-02-25T00:00:00.000",
+        "date_certified": "2023-02-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-haqb~quni_ch7e",
+        "pd_id": "2409710",
+        "brand_name": "Samsung",
+        "model_number": "DW80B7071**",
+        "upc": "887276616421;887276616438",
+        "type": "Standard",
+        "date_available_on_market": "2022-03-11T00:00:00.000",
+        "date_certified": "2023-02-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-e6jf_4766_ve9e",
+        "pd_id": "2409709",
+        "brand_name": "Samsung",
+        "model_number": "DW80BB7070****",
+        "upc": "887276657400",
+        "type": "Standard",
+        "date_available_on_market": "2022-07-06T00:00:00.000",
+        "date_certified": "2023-02-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8f67.2525.4guy",
+        "pd_id": "2453102",
+        "brand_name": "Samsung",
+        "model_number": "DW80CB545*****",
+        "upc": "887276761435;887276761442",
+        "type": "Standard",
+        "date_available_on_market": "2023-07-17T00:00:00.000",
+        "date_certified": "2023-04-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3dfq.7i69-7wh8",
+        "pd_id": "2485651",
+        "brand_name": "Samsung",
+        "model_number": "DW80CG4021**",
+        "additional_model_information": "Remark: * could be A-Z, a-z, 0-9, - or blank",
+        "upc": "887276772882;887276772899",
+        "type": "Standard",
+        "date_available_on_market": "2023-04-20T00:00:00.000",
+        "date_certified": "2023-05-16T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-is9e-62pc~fqjv",
+        "pd_id": "2485652",
+        "brand_name": "Samsung",
+        "model_number": "DW80CG4051**",
+        "additional_model_information": "Remark: * could be A-Z, a-z, 0-9, - or blank",
+        "upc": "887276772882;887276772899",
+        "type": "Standard",
+        "date_available_on_market": "2023-04-20T00:00:00.000",
+        "date_certified": "2023-05-16T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-tmjh_qnn8-rnvq",
+        "pd_id": "2453105",
+        "brand_name": "Samsung",
+        "model_number": "DW80CG502*****",
+        "upc": "887276764122",
+        "type": "Standard",
+        "date_available_on_market": "2023-07-17T00:00:00.000",
+        "date_certified": "2023-04-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6zkd.wing.3sag",
+        "pd_id": "2453104",
+        "brand_name": "Samsung",
+        "model_number": "DW80CG542*****",
+        "upc": "887276761459;887276763842",
+        "type": "Standard",
+        "date_available_on_market": "2023-07-17T00:00:00.000",
+        "date_certified": "2023-04-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-hbbi.ifa3~j6mx",
+        "pd_id": "2453103",
+        "brand_name": "Samsung",
+        "model_number": "DW80CG545*****",
+        "upc": "887276761466;887276761473;887276763859;887276763866",
+        "type": "Standard",
+        "date_available_on_market": "2023-07-17T00:00:00.000",
+        "date_certified": "2023-04-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vt27_g7dv~qve3",
+        "pd_id": "3417575",
+        "brand_name": "Samsung",
+        "model_number": "DW80DG5200**",
+        "additional_model_information": "* could be A-Z, a-z, 0-9, - or blank.",
+        "upc": "887276824840",
+        "type": "Standard",
+        "date_available_on_market": "2024-02-09T00:00:00.000",
+        "date_certified": "2024-02-27T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-bis8.4bpq_5s64",
+        "pd_id": "3417576",
+        "brand_name": "Samsung",
+        "model_number": "DW80DG5500**",
+        "additional_model_information": "* could be A-Z, a-z, 0-9, - or blank.",
+        "upc": "887276824857",
+        "type": "Standard",
+        "date_available_on_market": "2024-02-09T00:00:00.000",
+        "date_certified": "2024-02-27T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-dyqh-s9k7.mx3z",
+        "pd_id": "2409707",
+        "brand_name": "Samsung",
+        "model_number": "DW80R995***",
+        "upc": "887276296623;887276296630;887276296647;887276296654;887276320137;887276581798",
+        "type": "Standard",
+        "date_available_on_market": "2019-02-20T00:00:00.000",
+        "date_certified": "2023-02-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-2ckh-3594_exsn",
+        "pd_id": "3798910",
+        "brand_name": "Samsung",
+        "model_number": "DW90F8**0***",
+        "upc": "887276931456;887276931463;887276931470;887276931487",
+        "type": "Standard",
+        "date_available_on_market": "2025-02-21T00:00:00.000",
+        "date_certified": "2024-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ahni.vabx~38x3",
+        "pd_id": "4529609",
+        "brand_name": "Samsung",
+        "model_number": "DW90H89TE**",
+        "upc": "198957291142;198957291401",
+        "type": "Standard",
+        "date_available_on_market": "2026-06-27T00:00:00.000",
+        "date_certified": "2026-02-11T00:00:00.000",
+        "markets": "United States, Canada"
+      }
+    ]
+  ],
+  "count_before": [
+    {
+      "row_count": "22"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "22"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}

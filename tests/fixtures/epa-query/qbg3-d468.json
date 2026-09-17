@@ -1,0 +1,2233 @@
+{
+  "dataset_id": "qbg3-d468",
+  "metadata_before": {
+    "id": "qbg3-d468",
+    "name": "ENERGY STAR Certified Displays",
+    "rowsUpdatedAt": 1789564667,
+    "viewLastModified": 1739912114,
+    "publicationDate": 1645114916,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "display_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "panel_type",
+        "name": "Panel Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "native_resolution_pixels",
+        "name": "Native Resolution (pixels)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "total_native_resolution",
+        "name": "Total Native Resolution (megapixels)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "screen_size_inches",
+        "name": "Screen Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "screen_area_square_inches",
+        "name": "Screen Area (square inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_features",
+        "name": "Model Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "features_enabled_in_default",
+        "name": "Features Enabled in Default On Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "features_enabled_in_default_1",
+        "name": "Features Enabled in Default Sleep Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "signal_or_data_interfaces",
+        "name": "Signal or Data Interfaces",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "power_source",
+        "name": "Power Source",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "on_mode_power_watts",
+        "name": "On Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_on_mode_power_limit",
+        "name": "Maximum On Mode Power Limit for Signage Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "sleep_mode_power_watts",
+        "name": "Sleep Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_sleep_mode_power",
+        "name": "Maximum Sleep Mode Power Limit for Signage Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "off_mode_power_watts",
+        "name": "Off Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "on_mode_power_at_12_lux_at_115_volts_w",
+        "name": "On Mode Power at 12 Lux at 115 Volts (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "on_mode_power_at_300_lux",
+        "name": "On Mode Power at 300 Lux (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "monitor_total_energy",
+        "name": "Monitor Total Energy Consumption at 115 Volts (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_total_energy",
+        "name": "Maximum Total Energy Consumption Limit for Monitor Certification (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_luminance_candelas",
+        "name": "Maximum Luminance (candelas per square meter)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "enhanced_performance_display",
+        "name": "Enhanced-Performance Display?",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "color_gamut",
+        "name": "Color Gamut",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "color_spaces_supported",
+        "name": "Color Spaces Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "high_dynamic_range_hdr",
+        "name": "High Dynamic Range (HDR)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "display_contrast_ratio_at",
+        "name": "Display Contrast Ratio  at 0 deg. Horiz. Viewing Angle",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_contrast_ratio_at",
+        "name": "Reported Contrast Ratio at -85 Degrees (Left) Horizontal Viewing Angle",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_contrast_ratio_at_1",
+        "name": "Reported Contrast Ratio at +85 Degrees (Right) Horizontal Viewing Angle",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "usb_c_with_power_delivery",
+        "name": "USB-C with Power Delivery Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "maximum_power_delivery_w",
+        "name": "Maximum Power Delivery (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "tiled_display_system",
+        "name": "Tiled Display System",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "maximum_tiled_configuration",
+        "name": "Maximum Tiled Configuration",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "qbg3-d468",
+    "name": "ENERGY STAR Certified Displays",
+    "rowsUpdatedAt": 1789564667,
+    "viewLastModified": 1739912114,
+    "publicationDate": 1645114916,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "display_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "panel_type",
+        "name": "Panel Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "native_resolution_pixels",
+        "name": "Native Resolution (pixels)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "total_native_resolution",
+        "name": "Total Native Resolution (megapixels)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "screen_size_inches",
+        "name": "Screen Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "screen_area_square_inches",
+        "name": "Screen Area (square inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_features",
+        "name": "Model Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "features_enabled_in_default",
+        "name": "Features Enabled in Default On Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "features_enabled_in_default_1",
+        "name": "Features Enabled in Default Sleep Mode",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "signal_or_data_interfaces",
+        "name": "Signal or Data Interfaces",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "power_source",
+        "name": "Power Source",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "on_mode_power_watts",
+        "name": "On Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_on_mode_power_limit",
+        "name": "Maximum On Mode Power Limit for Signage Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "sleep_mode_power_watts",
+        "name": "Sleep Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_sleep_mode_power",
+        "name": "Maximum Sleep Mode Power Limit for Signage Certification (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "off_mode_power_watts",
+        "name": "Off Mode Power (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "on_mode_power_at_12_lux_at_115_volts_w",
+        "name": "On Mode Power at 12 Lux at 115 Volts (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "on_mode_power_at_300_lux",
+        "name": "On Mode Power at 300 Lux (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "monitor_total_energy",
+        "name": "Monitor Total Energy Consumption at 115 Volts (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_total_energy",
+        "name": "Maximum Total Energy Consumption Limit for Monitor Certification (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "maximum_luminance_candelas",
+        "name": "Maximum Luminance (candelas per square meter)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "enhanced_performance_display",
+        "name": "Enhanced-Performance Display?",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "color_gamut",
+        "name": "Color Gamut",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "color_spaces_supported",
+        "name": "Color Spaces Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "high_dynamic_range_hdr",
+        "name": "High Dynamic Range (HDR)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "display_contrast_ratio_at",
+        "name": "Display Contrast Ratio  at 0 deg. Horiz. Viewing Angle",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_contrast_ratio_at",
+        "name": "Reported Contrast Ratio at -85 Degrees (Left) Horizontal Viewing Angle",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "reported_contrast_ratio_at_1",
+        "name": "Reported Contrast Ratio at +85 Degrees (Right) Horizontal Viewing Angle",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "usb_c_with_power_delivery",
+        "name": "USB-C with Power Delivery Supported",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "maximum_power_delivery_w",
+        "name": "Maximum Power Delivery (W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "tiled_display_system",
+        "name": "Tiled Display System",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "maximum_tiled_configuration",
+        "name": "Maximum Tiled Configuration",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    [
+      {
+        "source_row_id": "row-tvdd~4k32.j622",
+        "pd_id": "2377900",
+        "brand_name": "Samsung",
+        "model_number": "F24T450FZN",
+        "additional_model_information": "F24T450FZ*,F24T450FZ*,Same as basic model except model designation.* can be any alphanumeric character; F24T454FZ*,F24T454FZ*,Same as basic model except model designation.* can be any alphanumeric character; F24T454FZN,F24T454FZN,Same as basic model except model designation.",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2021-05-24T00:00:00.000",
+        "date_certified": "2021-05-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-buqr-m4et-2w69",
+        "pd_id": "2381279",
+        "brand_name": "Samsung",
+        "model_number": "F24T450GYN",
+        "additional_model_information": "F24T450GY*,F24T450GY*,* can be any alphanumeric character; F24T454GY*,F24T454GY*,* can be any alphanumeric character; F24T454GYN,F24T454GYN",
+        "display_type": "Monitor",
+        "panel_type": "PLS",
+        "date_available_on_market": "2021-06-30T00:00:00.000",
+        "date_certified": "2021-06-27T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-3pa5_97ae.ipeb",
+        "pd_id": "2359645",
+        "brand_name": "Samsung",
+        "model_number": "F27T450FQN",
+        "additional_model_information": "* can be any alphanumeric character; F27T450FQ*,F27T450FQ*; F27T452FQ*,F27T452FQ*; F27T452FQN,F27T452FQN; F27T454FQ*,F27T454FQ*; F27T454FQN,F27T454FQN; LF27T450FQNX**,LF27T450FQNX**; LF27T452FQNX**,LF27T452FQNX**",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2020-06-01T00:00:00.000",
+        "date_certified": "2020-05-11T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-9qyb_x6c5_ry9b",
+        "pd_id": "2377901",
+        "brand_name": "Samsung",
+        "model_number": "F27T450FZN",
+        "additional_model_information": "F27T450FZ*,F27T450FZ*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2021-05-24T00:00:00.000",
+        "date_certified": "2021-05-14T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6hns.s63y~vvsu",
+        "pd_id": "2376039",
+        "brand_name": "Samsung",
+        "model_number": "KM24A",
+        "additional_model_information": "LH24KMATBGCX**,LH24KMATBGCX**,* can be any alphanumeric character; LH24KMATBGCXZA,LH24KMATBGCXZA",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2021-04-15T00:00:00.000",
+        "date_certified": "2021-04-05T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-i2nz_zj6y.83gy",
+        "pd_id": "2345804",
+        "brand_name": "Samsung",
+        "model_number": "LH13QBREBGCXZA",
+        "additional_model_information": "LH13QBREBGC***,LH13QBREBGC***; LH13QBRTBGC***,LH13QBRTBGC***,(* can be any alphanumeric character); LH13QBRTBGCXZA,LH13QBRTBGCXZA,(* can be any alphanumeric character); QB13R,QB13R; QB13R-T,QB13R-T",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-10T00:00:00.000",
+        "date_certified": "2019-09-03T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-uijq-7qy6-uumb",
+        "pd_id": "2348775",
+        "brand_name": "Samsung",
+        "model_number": "LH43QBREBGCXZA",
+        "additional_model_information": "LH43QBREBGC***,LH43QBREBGC***,* can be any alphanumeric character; LH43QBRNBGC***,LH43QBRNBGC***; LH43QBRNBGCXZA,LH43QBRNBGCXZA,* can be any alphanumeric character; QB43R-B,QB43R-B; QB43R-N,QB43R-N; QB43R,QB43R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-yguj~ts77-9nc7",
+        "pd_id": "2390701",
+        "brand_name": "Samsung",
+        "model_number": "LH43QMBEBGCXZA",
+        "additional_model_information": "LH43QMBEB*****,LH43QMBEB*****,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-tiwm_9nds~heca",
+        "pd_id": "2349069",
+        "brand_name": "Samsung",
+        "model_number": "LH43QMREBGCXZA",
+        "additional_model_information": "* can be any alphanumeric character; LH43QMREBGC***,LH43QMREBGC***,* can be any alphanumeric character; QM43R-A,QM43R-A; QM43R-B,QM43R-B; QM43R,QM43R,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6gxd_2ra8_tp4s",
+        "pd_id": "2348771",
+        "brand_name": "Samsung",
+        "model_number": "LH49QBREBGCXZA",
+        "additional_model_information": "LH49QBREBGC***,LH49QBREBGC***,* can be any alphanumeric character; LH49QBRNBGC***,LH49QBRNBGC***; LH49QBRNBGCXZA,LH49QBRNBGCXZA,* can be any alphanumeric character; QB49R-N,QB49R-N; QB49R,QB49R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-aaiv~rqyz_cr7a",
+        "pd_id": "2345803",
+        "brand_name": "Samsung",
+        "model_number": "LH49QHREBGCXZA",
+        "additional_model_information": "LH49QHREBGC***,LH49QHREBGC***; QH49R,QH49R,(* can be any alphanumeric character)",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-10T00:00:00.000",
+        "date_certified": "2019-09-03T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6qit_2x2g~b5fx",
+        "pd_id": "2348772",
+        "brand_name": "Samsung",
+        "model_number": "LH55QBREBGCXZA",
+        "additional_model_information": "LH55QBREBGC***,LH55QBREBGC***,* can be any alphanumeric character; LH55QBRNBGC***,LH55QBRNBGC***,* can be any alphanumeric character; LH55QBRNBGCXZA,LH55QBRNBGCXZA; QB55R-B,QB55R-B; QB55R-N,QB55R-N; QB55R,QB55R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-9ew7_xuc7.4qxp",
+        "pd_id": "2345805",
+        "brand_name": "Samsung",
+        "model_number": "LH55QHREBGCXZA",
+        "additional_model_information": "LH55QHREBGC***,LH55QHREBGC***; QH55R,QH55R,(* can be any alphanumeric character)",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-10T00:00:00.000",
+        "date_certified": "2019-09-03T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-ywhg.fdgp.knyr",
+        "pd_id": "2349066",
+        "brand_name": "Samsung",
+        "model_number": "LH55QMREBGCXZA",
+        "additional_model_information": "LH55QMREBGC***,LH55QMREBGC***,* can be any alphanumeric character; QM55R-A,QM55R-A; QM55R-B,QM55R-B; QM55R-N,QM55R-N; QM55R,QM55R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-esas_uucf~uapn",
+        "pd_id": "2348773",
+        "brand_name": "Samsung",
+        "model_number": "LH65QBREBGCXZA",
+        "additional_model_information": "LH65QBREBGC***,LH65QBREBGC***,* can be any alphanumeric character; LH65QBRNBGC***,LH65QBRNBGC***; LH65QBRNBGCXZA,LH65QBRNBGCXZA; QB65R-B,QB65R-B; QB65R-N,QB65R-N; QB65R,QB65R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-jqja.w47k-etdr",
+        "pd_id": "2345806",
+        "brand_name": "Samsung",
+        "model_number": "LH65QHREBGCXZA",
+        "additional_model_information": "LH65QHREBGC***,LH65QHREBGC***; QH65R,QH65R,(* can be any alphanumeric character)",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-10T00:00:00.000",
+        "date_certified": "2019-09-03T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6kir_8m6c.285y",
+        "pd_id": "2349067",
+        "brand_name": "Samsung",
+        "model_number": "LH65QMREBGCXZA",
+        "additional_model_information": "LH65QMREBGC***,LH65QMREBGC***,* can be any alphanumeric character; QM65R-A,QM65R-A; QM65R-B,QM65R-B; QM65R-N,QM65R-N; QM65R,QM65R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-abdk-nu9z~bzjh",
+        "pd_id": "4481024",
+        "brand_name": "Samsung",
+        "model_number": "LH65WAFPLGCXZA",
+        "additional_model_information": "LH65WAFP****** (* = 0-9, A-Z, a-z, symbol or blank for the marketing purpose, only different model designations on the marking plate for different markets. No safety concerns.),LH65WAFP******(* = 0-9, A-Z, a-z, symbol or blank for the marketing purpose, only different model designations on the marking plate for different markets. No safety concerns.); WA65FX***,WA65FX***",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-07-31T00:00:00.000",
+        "date_certified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-nwft.rgvn_4dhv",
+        "pd_id": "2348774",
+        "brand_name": "Samsung",
+        "model_number": "LH75QBREBGCXZA",
+        "additional_model_information": "LH75QBREBGC***,LH75QBREBGC***,* can be any alphanumeric character; LH75QBRNBGC***,LH75QBRNBGC***,* can be any alphanumeric character; LH75QBRNBGCXZA,LH75QBRNBGCXZA; QB75R-B,QB75R-B; QB75R-N,QB75R-N; QB75R,QB75R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-nptc_n67r_vrre",
+        "pd_id": "2349068",
+        "brand_name": "Samsung",
+        "model_number": "LH75QMREBGCXZA",
+        "additional_model_information": "LH75QMREBGC***,LH75QMREBGC***,* can be any alphanumeric character; QM75R-A,QM75R-A; QM75R-B,QM75R-B; QM75R-N,QM75R-N; QM75R,QM75R",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2019-10-14T00:00:00.000",
+        "date_certified": "2019-10-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-gy7u-xpgp-ku7u",
+        "pd_id": "4481025",
+        "brand_name": "Samsung",
+        "model_number": "LH75WAFPLGCXZA",
+        "additional_model_information": "LH75WAFP****** (* = 0-9, A-Z, a-z, symbol or blank for the marketing purpose, only different model designations on the marking plate for different markets. No safety concerns.),LH75WAFP****** (* = 0-9, A-Z, a-z, symbol or blank for the marketing purpose, only different model designations on the marking plate for different markets. No safety concerns.); WA75FX***,WA75FX***",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-07-31T00:00:00.000",
+        "date_certified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-8njv~dyei.s69d",
+        "pd_id": "4481026",
+        "brand_name": "Samsung",
+        "model_number": "LH86WAFPLGCXZA",
+        "additional_model_information": "LH86WAFP****** (* = 0-9, A-Z, a-z, symbol or blank for the marketing purpose, only different model designations on the marking plate for different markets. No safety concerns.),LH86WAFP****** (* = 0-9, A-Z, a-z, symbol or blank for the marketing purpose, only different model designations on the marking plate for different markets. No safety concerns.); WA86FX***,WA86FX***",
+        "display_type": "Signage Display",
+        "panel_type": "TFT-LCD",
+        "date_available_on_market": "2025-07-31T00:00:00.000",
+        "date_certified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-m8gw~q49w_e2xm",
+        "pd_id": "3994134",
+        "brand_name": "Samsung",
+        "model_number": "LH86WAFW",
+        "additional_model_information": "LH86WAFWLGCXZA, LH86WAFWLGCXEN, LH86WAFW******,The symbol “*”  can be 0-9, A-Z, a-z, “/”, “\\”, “_”, “-”, “(”, “)”, “,”， “.” or blank for the marketing purpose, only different model designations on the marking plate for different markets.",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-01-20T00:00:00.000",
+        "date_certified": "2025-01-15T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-iet8-69iw_7ttj",
+        "pd_id": "2376262",
+        "brand_name": "Samsung",
+        "model_number": "LS24A40*******(where “*” can be 0-9, A-Z, a-z or blank)",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2021-05-21T00:00:00.000",
+        "date_certified": "2021-04-15T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-ermd.s44p~cvaq",
+        "pd_id": "4046720",
+        "brand_name": "Samsung",
+        "model_number": "QB13C",
+        "additional_model_information": "LH13QBCEBGBX**,LH13QBCEBGBX**,Same as basic model except model designation. * can be any alphanumeric character; LH13QBCEBGBXZA,LH13QBCEBGBXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "ADS LCD",
+        "date_available_on_market": "2025-05-23T00:00:00.000",
+        "date_certified": "2025-05-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-myvw~adcc~jx3m",
+        "pd_id": "4480880",
+        "brand_name": "Samsung",
+        "model_number": "QB13C-T",
+        "additional_model_information": "LH13QBCTBGBX**,LH13QBCTBGBX**,Same as basic model except model designation, * can be any alphanumeric character; LH13QBCTBGBXZA,LH13QBCTBGBXZA,Same as basic model except model designation",
+        "display_type": "Signage Display",
+        "panel_type": "ADS LCD",
+        "date_available_on_market": "2025-07-31T00:00:00.000",
+        "date_certified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-sp3v-9ch9_4em6",
+        "pd_id": "2453011",
+        "brand_name": "Samsung",
+        "model_number": "QB13R-M",
+        "additional_model_information": "LH13QBRMBGC***,LH13QBRMBGC***,Same as basic model except model designation. * can be any alphanumeric character; LH13QBRMBGCXZA,LH13QBRMBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "ADS LCD",
+        "date_available_on_market": "2023-04-30T00:00:00.000",
+        "date_certified": "2023-03-31T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-xvmg-cpsu-zgmv",
+        "pd_id": "2453084",
+        "brand_name": "Samsung",
+        "model_number": "QB13R-TM",
+        "additional_model_information": "LH13QBRTMGC***,LH13QBRTMGC***,Same as basic model except model designation. * can be any alphanumeric character; LH13QBRTMGCXZA,LH13QBRTMGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "ADS LCD",
+        "date_available_on_market": "2023-04-30T00:00:00.000",
+        "date_certified": "2023-04-06T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-v6bc.ca8f-bfd8",
+        "pd_id": "2648747",
+        "brand_name": "Samsung",
+        "model_number": "QB24C",
+        "additional_model_information": "LH24QBCEBGCXGO,LH24QBCEBGCXGO,Same as basic model except model designation. * can be any alphanumeric character; LH24QBCEBGCX**,LH24QBCEBGCX**,* can be any alphanumeric character; LH24QBCEBGCXZA,LH24QBCEBGCXZA,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "ADS",
+        "date_available_on_market": "2023-09-05T00:00:00.000",
+        "date_certified": "2023-08-23T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-pfff-xvvq-27fg",
+        "pd_id": "2662895",
+        "brand_name": "Samsung",
+        "model_number": "QB24C-T",
+        "additional_model_information": "LH24QBCTBGCXGO,LH24QBCTBGCXGO,Same as basic model except model designation; LH24QBCTBGCX**,LH24QBCTBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH24QBCTBGCXZA,LH24QBCTBGCXZA,Same as basic model except model designation; LH24QBCTBG****,LH24QBCTBG****,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "ADS",
+        "date_available_on_market": "2023-09-19T00:00:00.000",
+        "date_certified": "2023-09-07T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-hhi6.tumu-egim",
+        "pd_id": "2369553",
+        "brand_name": "Samsung",
+        "model_number": "QB24R",
+        "additional_model_information": "LH24QBREBGCX**,LH24QBREBGCX**,Same as basic model except model designation. (* can be any alphanumeric character); LH24QBREBGCXZA,LH24QBREBGCXZA; QB24R-B,QB24R-B",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-12-21T00:00:00.000",
+        "date_certified": "2021-11-14T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-u4m8-yrdw-icnd",
+        "pd_id": "2369552",
+        "brand_name": "Samsung",
+        "model_number": "QB24R-T",
+        "additional_model_information": "LH24QBRTBGCX**,LH24QBRTBGCX**; LH24QBRTBGCXZA,LH24QBRTBGCXZA",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-12-21T00:00:00.000",
+        "date_certified": "2020-11-16T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-fsze~tpix.9vvm",
+        "pd_id": "2391589",
+        "brand_name": "Samsung",
+        "model_number": "QB24R-TB",
+        "additional_model_information": "LH24QBRTFGCX**,LH24QBRTFGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH24QBRTFGCXZA,LH24QBRTFGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-24T00:00:00.000",
+        "date_certified": "2022-01-24T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-q3h8_b6an.jnjq",
+        "pd_id": "2631778",
+        "brand_name": "Samsung",
+        "model_number": "QB43C",
+        "additional_model_information": "LH43QBCEBGCXGO,LH43QBCEBGCXGO,Same as basic model except model designation.; LH43QBCEBGCX**,LH43QBCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH43QBCEBGCXZA,LH43QBCEBGCXZA,Same as basic model except model designation.; LH43QBCNBGCX**,LH43QBCNBGCX**,Same as basic model except model designation. * can be any alphanumeric character; QB43C-N,QB43C-N,Same as basic model except for model designation",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2026-03-19T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-zn5e~s6rx-cng7",
+        "pd_id": "2390702",
+        "brand_name": "Samsung",
+        "model_number": "QB50B",
+        "additional_model_information": "LH50QBBEBGCX**,LH50QBBEBGCX**,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-y4za.n8wk_4ysc",
+        "pd_id": "2631779",
+        "brand_name": "Samsung",
+        "model_number": "QB50C",
+        "additional_model_information": "LH50QBCEBGCXGO,LH50QBCEBGCXGO,Same as basic model except model designation.; LH50QBCEBGCX**,LH50QBCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH50QBCEBGCXZA,LH50QBCEBGCXZA,Same as basic model except model designation.; LH50QBCNBGCX**,LH50QBCNBGCX**,Same as basic model except for model designation, * can be any alphanumeric character; QB50C-N,QB50C-N,Same as basic model except for model designation",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2026-03-19T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-6e3p_mt98-xdsk",
+        "pd_id": "2364777",
+        "brand_name": "Samsung",
+        "model_number": "QB50R",
+        "additional_model_information": "LH50QBREBGCXGO,LH50QBREBGCXGO,* can be any alphanumeric character; LH50QBREBGCX**,LH50QBREBGCX**; LH50QBREBGCXZA,LH50QBREBGCXZA; QB50R-B,QB50R-B",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-08-31T00:00:00.000",
+        "date_certified": "2020-08-19T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-xuzi-xzpu.q9z8",
+        "pd_id": "2390704",
+        "brand_name": "Samsung",
+        "model_number": "QB55B",
+        "additional_model_information": "LH55QBBEBGCX**,LH55QBBEBGCX**,* can be any alphanumeric character; LH55QBBNBGCX**,LH55QBBNBGCX**,* can be any alphanumeric character; QB55B-N,QB55B-N",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-93cp-igvy_fzsv",
+        "pd_id": "2631780",
+        "brand_name": "Samsung",
+        "model_number": "QB55C",
+        "additional_model_information": "LH55QBCEBGCXGO,LH55QBCEBGCXGO,Same as basic model except model designation.; LH55QBCEBGCX**,LH55QBCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH55QBCEBGCXZA,LH55QBCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-07-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-ge8i~6t3s_7rgu",
+        "pd_id": "2633266",
+        "brand_name": "Samsung",
+        "model_number": "QB55C-N",
+        "additional_model_information": "LH55QBCNBGCXGO,LH55QBCNBGCXGO,Same as basic model except model designation.; LH55QBCNBGCX**,LH55QBCNBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH55QBCNBGCXZA,LH55QBCNBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-08-07T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-s58g-cky7.7eti",
+        "pd_id": "2390707",
+        "brand_name": "Samsung",
+        "model_number": "QB65B",
+        "additional_model_information": "LH65QBBEBGCX**,LH65QBBEBGCX**,* can be any alphanumeric character; LH65QBBNBGCX**,LH65QBBNBGCX**,* can be any alphanumeric character; QB65B-N,QB65B-N",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-mi2f.zsje-hwkd",
+        "pd_id": "2631781",
+        "brand_name": "Samsung",
+        "model_number": "QB65C",
+        "additional_model_information": "LH65QBCEBGCXGO,LH65QBCEBGCXGO,Same as basic model except model designation.; LH65QBCEBGCX**,LH65QBCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH65QBCEBGCXZA,LH65QBCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-07-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-3bfs-xumy~j9t4",
+        "pd_id": "2633267",
+        "brand_name": "Samsung",
+        "model_number": "QB65C-N",
+        "additional_model_information": "LH65QBCNBGCXGO,LH65QBCNBGCXGO,Same as basic model except model designation.; LH65QBCNBGCX**,LH65QBCNBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH65QBCNBGCXZA,LH65QBCNBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-08-07T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-su63_2gun.z5iu",
+        "pd_id": "2396894",
+        "brand_name": "Samsung",
+        "model_number": "QB75B",
+        "additional_model_information": "LH75QBBEBGCX**,LH75QBBEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH75QBBNBGCX**,LH75QBBNBGCX**,Same as basic model except model designation. * can be any alphanumeric character; QB75B-N,QB75B-N,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-06-05T00:00:00.000",
+        "date_certified": "2022-05-25T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-2jqq-ft3m.ar5u",
+        "pd_id": "2631782",
+        "brand_name": "Samsung",
+        "model_number": "QB75C",
+        "additional_model_information": "LH75QBCEBGCXGO,LH75QBCEBGCXGO,Same as basic model except model designation.; LH75QBCEBGCX**,LH75QBCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH75QBCEBGCXZA,LH75QBCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-07-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-5i54.acqe-9vf8",
+        "pd_id": "2633268",
+        "brand_name": "Samsung",
+        "model_number": "QB75C-N",
+        "additional_model_information": "LH75QBCNBGCXGO,LH75QBCNBGCXGO,Same as basic model except model designation.; LH75QBCNBGCX**,LH75QBCNBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH75QBCNBGCXZA,LH75QBCNBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-08-07T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-9j7v_ctne_zsg2",
+        "pd_id": "2631810",
+        "brand_name": "Samsung",
+        "model_number": "QB85C",
+        "additional_model_information": "LH85QBCEBGCXGO,LH85QBCEBGCXGO,Same as basic model except model designation.; LH85QBCEBGCX**,LH85QBCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH85QBCEBGCXZA,LH85QBCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-07-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-nspj-f7m7.rztr",
+        "pd_id": "2633269",
+        "brand_name": "Samsung",
+        "model_number": "QB85C-N",
+        "additional_model_information": "LH85QBCNBGCXGO,LH85QBCNBGCXGO,Same as basic model except model designation.; LH85QBCNBGCX**,LH85QBCNBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH85QBCNBGCXZA,LH85QBCNBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-08-04T00:00:00.000",
+        "date_certified": "2023-08-07T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-x7kk.xe4m~vdvh",
+        "pd_id": "4686974",
+        "brand_name": "Samsung",
+        "model_number": "QB98C",
+        "additional_model_information": "LH98QBCEBGCX**,LH98QBCEBGCX**,Same as basic model except for model designation, * can be any alphanumeric character; LH98QBCEBGCXZA,LH98QBCEBGCXZA,Same as basic model except for model designation; LH98QBCEPGCX**,LH98QBCEPGCX**,Same as basic model except for model designation, * can be any alphanumeric character; LH98QBCEPGCXZA,LH98QBCEPGCXZA,Same as basic model except for model designation; LH98QBCNBGCX**,LH98QBCNBGCX**,Same as basic model except for model designation, * can be any alphanumeric character; LH98QBCNBGCXZA,LH98QBCNBGCXZA,Same as basic model except for model designation; QB98C-N,QB98C-N,Same as basic model except for model designation",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2026-08-07T00:00:00.000",
+        "date_certified": "2026-08-07T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-2va2~t228~jdng",
+        "pd_id": "4479539",
+        "brand_name": "Samsung",
+        "model_number": "QH115FX",
+        "additional_model_information": "LH115QHFEBGX**,LH115QHFEBGX**,Same as basic model except model designation. * can be any alphanumeric character.; LH115QHFEBGXZA,LH115QHFEBGXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2025-07-18T00:00:00.000",
+        "date_certified": "2025-07-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-5gt3-9kp2.j396",
+        "pd_id": "2396587",
+        "brand_name": "Samsung",
+        "model_number": "QH43B",
+        "additional_model_information": "LH43QHBEBGCX**,LH43QHBEBGCX**,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-06-05T00:00:00.000",
+        "date_certified": "2022-05-18T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6me4~e4mv_26cf",
+        "pd_id": "2507627",
+        "brand_name": "Samsung",
+        "model_number": "QH43C",
+        "additional_model_information": "LH43QHCEBGCXGO,LH43QHCEBGCXGO,Same as basic model except model designation.; LH43QHCEBGCX**,LH43QHCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH43QHCEBGCXZA,LH43QHCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-05T00:00:00.000",
+        "date_certified": "2023-05-26T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-sdjp~265k~f277",
+        "pd_id": "2396891",
+        "brand_name": "Samsung",
+        "model_number": "QH50B",
+        "additional_model_information": "LH50QHBEBGCX**,LH50QHBEBGCX**,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-06-05T00:00:00.000",
+        "date_certified": "2022-05-25T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-nfvu~uq2r_jjdm",
+        "pd_id": "2507628",
+        "brand_name": "Samsung",
+        "model_number": "QH50C",
+        "additional_model_information": "LH50QHCEBGCXGO,LH50QHCEBGCXGO,Same as basic model except model designation.; LH50QHCEBGCX**,LH50QHCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH50QHCEBGCXZA,LH50QHCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-05T00:00:00.000",
+        "date_certified": "2023-05-26T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-macy~e69c.7gn2",
+        "pd_id": "2390705",
+        "brand_name": "Samsung",
+        "model_number": "QH55B",
+        "additional_model_information": "LH55QHBEBGCX**,LH55QHBEBGCX**,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-z2wd.u69u~g9rm",
+        "pd_id": "2507629",
+        "brand_name": "Samsung",
+        "model_number": "QH55C",
+        "additional_model_information": "LH55QHCEBGCXGO,LH55QHCEBGCXGO,Same as basic model except model designation.; LH55QHCEBGCX**,LH55QHCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH55QHCEBGCXZA,LH55QHCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-05T00:00:00.000",
+        "date_certified": "2023-05-26T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-ikie~xzrb.dcey",
+        "pd_id": "2390708",
+        "brand_name": "Samsung",
+        "model_number": "QH65B",
+        "additional_model_information": "LH65QHBEBGCX**,LH65QHBEBGCX**,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-e6gr-v7wx.6rtb",
+        "pd_id": "2545293",
+        "brand_name": "Samsung",
+        "model_number": "QH65C",
+        "additional_model_information": "LH65QHCEBGCXGO,LH65QHCEBGCXGO,Same as basic model except model designation.; LH65QHCEBGCX**,LH65QHCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH65QHCEBGCXZA,LH65QHCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-23T00:00:00.000",
+        "date_certified": "2023-06-27T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6nd9~hkuq_wy5c",
+        "pd_id": "2396892",
+        "brand_name": "Samsung",
+        "model_number": "QH75B",
+        "additional_model_information": "LH75QHBEBGCX**,LH75QHBEBGCX**,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-06-05T00:00:00.000",
+        "date_certified": "2022-05-25T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-yfyn~5ecn~5erj",
+        "pd_id": "2545294",
+        "brand_name": "Samsung",
+        "model_number": "QH75C",
+        "additional_model_information": "LH75QHCEBGCXGO,LH75QHCEBGCXGO,Same as basic model except model designation.; LH75QHCEBGCX**,LH75QHCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH75QHCEBGCXZA,LH75QHCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-23T00:00:00.000",
+        "date_certified": "2023-06-27T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-xxj7~2eu9.9qts",
+        "pd_id": "3554614",
+        "brand_name": "Samsung",
+        "model_number": "QH98C",
+        "additional_model_information": "LH98QHCEBGCX**,LH98QHCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character.; LH98QHCEBGCXZA,LH98QHCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-08-09T00:00:00.000",
+        "date_certified": "2024-07-16T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-b6cd.scup_5222",
+        "pd_id": "2668228",
+        "brand_name": "Samsung",
+        "model_number": "QM32C",
+        "additional_model_information": "LH32QMCEBGCX**,LH32QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH32QMCEBGCXZA,LH32QMCEBGCXZA,Same as basic model except model designation.; LH32QMCEPGCX**,LH32QMCEPGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH32QMCEPGCXZA,LH32QMCEPGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD, IPS LCD",
+        "date_available_on_market": "2023-10-05T00:00:00.000",
+        "date_certified": "2023-09-25T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6i82_2wgp-rm8b",
+        "pd_id": "4480879",
+        "brand_name": "Samsung",
+        "model_number": "QM32C-T",
+        "additional_model_information": "LH32QMCTBGCX**,LH32QMCTBGCX**,Same as basic model except model designation, * can be any alphanumeric character; LH32QMCTBGCXZA,LH32QMCTBGCXZA,Same as basic model except model designation",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2025-07-31T00:00:00.000",
+        "date_certified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-yukd.535t-82nj",
+        "pd_id": "2352733",
+        "brand_name": "Samsung",
+        "model_number": "QM32R",
+        "additional_model_information": "LH32QMREBGC***,LH32QMREBGC***,(* can be any alphanumeric character); LH32QMREBGCXZA,LH32QMREBGCXZA; QM32R-AN,QM32R-AN; QM32R-A,QM32R-A; QM32R-B,QM32R-B",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-01-10T00:00:00.000",
+        "date_certified": "2020-01-08T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-4ttp-jwvs-8548",
+        "pd_id": "2359642",
+        "brand_name": "Samsung",
+        "model_number": "QM32R-T",
+        "additional_model_information": "(* can be any alphanumeric character); LH32QMRTBGCX**,LH32QMRTBGCX**",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-06-01T00:00:00.000",
+        "date_certified": "2020-05-11T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-rcsf.v5mc.m4wh",
+        "pd_id": "2396028",
+        "brand_name": "Samsung",
+        "model_number": "QM43B-T",
+        "additional_model_information": "LH43QMBTBGCX**,LH43QMBTBGCX**,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-05-18T00:00:00.000",
+        "date_certified": "2022-05-15T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-998t-cagd~jt92",
+        "pd_id": "2507630",
+        "brand_name": "Samsung",
+        "model_number": "QM43C",
+        "additional_model_information": "LH43QMCEBGCXGO,LH43QMCEBGCXGO,Same as basic model except model designation.; LH43QMCEBGCX**,LH43QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH43QMCEBGCXZA,LH43QMCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-05T00:00:00.000",
+        "date_certified": "2023-05-26T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6f7a_7zth.39hw",
+        "pd_id": "2359643",
+        "brand_name": "Samsung",
+        "model_number": "QM43R-T",
+        "additional_model_information": "(* can be any alphanumeric character); LH43QMRTBGCX**,LH43QMRTBGCX**",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-06-01T00:00:00.000",
+        "date_certified": "2020-05-11T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-m566~9ezq.f6nu",
+        "pd_id": "2396893",
+        "brand_name": "Samsung",
+        "model_number": "QM50B",
+        "additional_model_information": "LH50QMBEBGCX**,LH50QMBEBGCX**,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-06-05T00:00:00.000",
+        "date_certified": "2022-05-25T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-q5cx-5nrc-3caz",
+        "pd_id": "2507632",
+        "brand_name": "Samsung",
+        "model_number": "QM50C",
+        "additional_model_information": "LH50QMCEBGCXGO,LH50QMCEBGCXGO,Same as basic model except model designation.; LH50QMCEBGCX**,LH50QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH50QMCEBGCXZA,LH50QMCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-05T00:00:00.000",
+        "date_certified": "2023-05-26T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-fxma-n5xz~qxcw",
+        "pd_id": "2365393",
+        "brand_name": "Samsung",
+        "model_number": "QM50R",
+        "additional_model_information": "LH24QBRTBGCX**,LH24QBRTBGCX**; LH24QBRTBGCXZA,LH24QBRTBGCXZA; LH50QMREBGCXZA,LH50QMREBGCXZA; QM50R-A,QM50R-A; QM50R-B,QM50R-B",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-09-10T00:00:00.000",
+        "date_certified": "2020-09-02T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-3djc.xzct_496y",
+        "pd_id": "2390706",
+        "brand_name": "Samsung",
+        "model_number": "QM55B",
+        "additional_model_information": "LH55QMBEBGCX**,LH55QMBEBGCX**,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-hvuw.y6vq-z98n",
+        "pd_id": "2396027",
+        "brand_name": "Samsung",
+        "model_number": "QM55B-T",
+        "additional_model_information": "LH55QMBTBGCX**,LH55QMBTBGCX**,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-05-18T00:00:00.000",
+        "date_certified": "2022-05-15T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-2bg8_knzn.i833",
+        "pd_id": "2507631",
+        "brand_name": "Samsung",
+        "model_number": "QM55C",
+        "additional_model_information": "LH55QMCEBGCXGO,LH55QMCEBGCXGO,Same as basic model except model designation.; LH55QMCEBGCX**,LH55QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH55QMCEBGCXZA,LH55QMCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-05T00:00:00.000",
+        "date_certified": "2023-05-26T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-imym~dp7v_8csu",
+        "pd_id": "2359644",
+        "brand_name": "Samsung",
+        "model_number": "QM55R-T",
+        "additional_model_information": "(* can be any alphanumeric character); LH55QMRTBGCX**,LH55QMRTBGCX**",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2020-06-01T00:00:00.000",
+        "date_certified": "2020-05-11T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-we4j~89di.v4a5",
+        "pd_id": "2390709",
+        "brand_name": "Samsung",
+        "model_number": "QM65B",
+        "additional_model_information": "LH65QMBEBCCX**,LH65QMBEBCCX**,* can be any alphanumeric character; LH65QMBEBGCX**,LH65QMBEBGCX**,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-u275~pc9r.jv6z",
+        "pd_id": "2545295",
+        "brand_name": "Samsung",
+        "model_number": "QM65C",
+        "additional_model_information": "LH65QMCEBGCXGO,LH65QMCEBGCXGO,Same as basic model except model designation.; LH65QMCEBGCX**,LH65QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH65QMCEBGCXZA,LH65QMCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-23T00:00:00.000",
+        "date_certified": "2023-06-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-dpvi.7q4s.pavp",
+        "pd_id": "2390710",
+        "brand_name": "Samsung",
+        "model_number": "QM75B",
+        "additional_model_information": "LH75QMBEBGCX**,LH75QMBEBGCX**,* can be any alphanumeric character",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-01-31T00:00:00.000",
+        "date_certified": "2022-01-17T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-se22_a8wd~ngqi",
+        "pd_id": "2545296",
+        "brand_name": "Samsung",
+        "model_number": "QM75C",
+        "additional_model_information": "LH75QMCEBGCXGO,LH75QMCEBGCXGO,Same as basic model except model designation.; LH75QMCEBGCX**,LH75QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH75QMCEBGCXZA,LH75QMCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-23T00:00:00.000",
+        "date_certified": "2023-06-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-2hna_552x~t9re",
+        "pd_id": "2545421",
+        "brand_name": "Samsung",
+        "model_number": "QM85C",
+        "additional_model_information": "LH85QMCEBGCXGO,LH85QMCEBGCXGO,Same as basic model except model designation.; LH85QMCEBGCX**,LH85QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character; LH85QMCEBGCXZA,LH85QMCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-06-23T00:00:00.000",
+        "date_certified": "2023-06-28T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-79yb.p4eg~m9kb",
+        "pd_id": "3554615",
+        "brand_name": "Samsung",
+        "model_number": "QM98C",
+        "additional_model_information": "LH98QMCEBGCX**,LH98QMCEBGCX**,Same as basic model except model designation. * can be any alphanumeric character.; LH98QMCEBGCXZA,LH98QMCEBGCXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-08-09T00:00:00.000",
+        "date_certified": "2024-07-16T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-zank-ksi3-akmy",
+        "pd_id": "3722354",
+        "brand_name": "Samsung",
+        "model_number": "QP105DX-5K",
+        "additional_model_information": "LH105QPD5BGX**,LH105QPD5BGX**,Same as basic model except model designation. * can be any alphanumeric character; LH105QPD5BGXZA,LH105QPD5BGXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-11-18T00:00:00.000",
+        "date_certified": "2024-11-07T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-5c7f-8rvv_sw8a",
+        "pd_id": "3629525",
+        "brand_name": "Samsung",
+        "model_number": "S22D400GAN",
+        "additional_model_information": "S22D400GA*,S22D400GA*,Same as basic model except model designation. * can be any alphanumeric character; S22D400GEN,S22D400GEN,Same as basic model except model designation.; S22D400GE*,S22D400GE*,Same as basic model except model designation. * can be any alphanumeric character; S22D402GAN,S22D402GAN,Same as basic model except model designation.; S22D402GA*,S22D402GA*,Same as basic model except model designation. * can be any alphanumeric character; S22D402GEN,S22D402GEN,Same as basic model except model designation.; S22D402GE*,S22D402GE*,Same as basic model except model designation. * can be any alphanumeric character; S22D404GAN,S22D404GAN,Same as basic model except model designation.; S22D404GA*,S22D404GA*,Same as basic model except model designation. * can be any alphanumeric character; S22D404GEN,S22D404GEN,Same as basic model except model designation.; S22D404GE*,S22D404GE*,Same as basic model except model designation. * can be any alphanumeric character; S22D40*GA*,S22D40*GA*,Same as basic model except model designation. * can be any alphanumeric character; S22D40*GE*,S22D40*GE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-09-17T00:00:00.000",
+        "date_certified": "2024-09-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-2uc9_r7zb_79dm",
+        "pd_id": "2382869",
+        "brand_name": "Samsung",
+        "model_number": "S24A40*### (*=0-9, #=A-Z, blank)",
+        "display_type": "Monitor",
+        "panel_type": "TN LCD",
+        "date_available_on_market": "2021-09-01T00:00:00.000",
+        "date_certified": "2021-08-03T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-3fvn-qdeu-uyhm",
+        "pd_id": "2372420",
+        "brand_name": "Samsung",
+        "model_number": "S24A600UCN",
+        "additional_model_information": "S24A600UC*,S24A600UC*,* can be any alphanumeric character; S24A608UCN,S24A608UCN; S24A608UC*,S24A608UC*,* can be any alphanumeric character; S24A60PUCN,S24A60PUCN; S24A60PUC*,S24A60PUC*,* can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2021-01-15T00:00:00.000",
+        "date_certified": "2021-01-12T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-x4fb-bpvw~ernz",
+        "pd_id": "2408010",
+        "brand_name": "Samsung",
+        "model_number": "S24A608NAN",
+        "additional_model_information": "S24A600NA*,S24A600NA*,Same as basic model except model designation. * can be any alphanumeric character; S24A608NA*,S24A608NA*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2023-01-31T00:00:00.000",
+        "date_certified": "2023-02-07T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-2td6_gnhp-7rhc",
+        "pd_id": "3629526",
+        "brand_name": "Samsung",
+        "model_number": "S24D400GAN",
+        "additional_model_information": "S24D400GA*,S24D400GA*,Same as basic model except model designation. * can be any alphanumeric character; S24D400GEN,S24D400GEN,Same as basic model except model designation.; S24D400GE*,S24D400GE*,Same as basic model except model designation. * can be any alphanumeric character; S24D400GSN,S24D400GSN,Same as basic model except model designation.; S24D400GS*,S24D400GS*,Same as basic model except model designation. * can be any alphanumeric character; S24D402GAN,S24D402GAN,Same as basic model except model designation.; S24D402GA*,S24D402GA*,Same as basic model except model designation. * can be any alphanumeric character; S24D402GEN,S24D402GEN,Same as basic model except model designation.; S24D402GE*,S24D402GE*,Same as basic model except model designation. * can be any alphanumeric character; S24D402GSN,S24D402GSN,Same as basic model except model designation.; S24D402GS*,S24D402GS*,Same as basic model except model designation. * can be any alphanumeric character; S24D404GAN,S24D404GAN,Same as basic model except model designation.; S24D404GA*,S24D404GA*,Same as basic model except model designation. * can be any alphanumeric character; S24D404GEN,S24D404GEN,Same as basic model except model designation.; S24D404GE*,S24D404GE*,Same as basic model except model designation. * can be any alphanumeric character; S24D406GAN,S24D406GAN,Same as basic model except model designation.; S24D406GA*,S24D406GA*,Same as basic model except model designation. * can be any alphanumeric character; S24D406GEN,S24D406GEN,Same as basic model except model designation.; S24D406GE*,S24D406GE*,Same as basic model except model designation. * can be any alphanumeric character; S24D408GAN,S24D408GAN,Same as basic model except model designation.; S24D408GA*,S24D408GA*,Same as basic model except model designation. * can be any alphanumeric character; S24D408GEN,S24D408GEN,Same as basic model except model designation.; S24D408GE*,S24D408GE*,Same as basic model except model designation. * can be any alphanumeric character; S24D409GAN,S24D409GAN,Same as basic model except model designation.; S24D409GA*,S24D409GA*,Same as basic model except model designation. * can be any alphanumeric character; S24D409GEN,S24D409GEN,Same as basic model except model designation.; S24D409GE*,S24D409GE*,Same as basic model except model designation. * can be any alphanumeric character; S24D40*GA*,S24D40*GA*,Same as basic model except model designation. * can be any alphanumeric character; S24D40*GE*,S24D40*GE*,Same as basic model except model designation. * can be any alphanumeric character; S24D40*GS*,S24D40*GS*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-09-17T00:00:00.000",
+        "date_certified": "2024-09-20T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-afff-26ti_pxhb",
+        "pd_id": "3417593",
+        "brand_name": "Samsung",
+        "model_number": "S24D600EAN",
+        "additional_model_information": "S24D600EAL,S24D600EAL,Same as basic model except model designation; S24D600EA*,S24D600EA*,Same as basic model except model designation. * can be any alphanumeric character; S24D600EAU,S24D600EAU,Same as basic model except model designation; S24D600EEN,S24D600EEN,Same as basic model except model designation; S24D600EE*,S24D600EE*,Same as basic model except model designation. * can be any alphanumeric character; S24D602EA*,S24D602EA*,Same as basic model except model designation. * can be any alphanumeric character; S24D602EEN,S24D602EEN,Same as basic model except model designation; S24D602EE*,S24D602EE*,Same as basic model except model designation. * can be any alphanumeric character; S24D604EA*,S24D604EA*,Same as basic model except model designation. * can be any alphanumeric character; S24D604EEN,S24D604EEN,Same as basic model except model designation; S24D604EE*,S24D604EE*,Same as basic model except model designation. * can be any alphanumeric character; S24D606EA*,S24D606EA*,Same as basic model except model designation. * can be any alphanumeric character; S24D60*EE*,S24D60*EE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-03-22T00:00:00.000",
+        "date_certified": "2024-02-26T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-kjmq_8qed~gk7z",
+        "pd_id": "3417590",
+        "brand_name": "Samsung",
+        "model_number": "S24D600UAN",
+        "additional_model_information": "S24D600UAL,S24D600UAL,Same as basic model except model designation; S24D600UA*,S24D600UA*,Same as basic model except model designation. * can be any alphanumeric character; S24D600UAU,S24D600UAU,Same as basic model except model designation; S24D600UEN,S24D600UEN,Same as basic model except model designation; S24D600UE*,S24D600UE*,Same as basic model except model designation. * can be any alphanumeric character; S24D602UA*,S24D602UA*,Same as basic model except model designation. * can be any alphanumeric character; S24D602UEN,S24D602UEN,Same as basic model except model designation; S24D602UE*,S24D602UE*,Same as basic model except model designation. * can be any alphanumeric character; S24D604UA*,S24D604UA*,Same as basic model except model designation. * can be any alphanumeric character; S24D604UEN,S24D604UEN,Same as basic model except model designation; S24D604UE*,S24D604UE*,Same as basic model except model designation. * can be any alphanumeric character; S24D606UA*,S24D606UA*,Same as basic model except model designation. * can be any alphanumeric character; S24D60*UE*,S24D60*UE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-03-22T00:00:00.000",
+        "date_certified": "2024-02-27T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-xmm4~y8sb_iet2",
+        "pd_id": "4005981",
+        "brand_name": "Samsung",
+        "model_number": "S24F43*UA****",
+        "additional_model_information": "LS24F43*UA****,*S24F43*UA****",
+        "upc": "887276991481;887276991498;887276991504",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-04-21T00:00:00.000",
+        "date_certified": "2025-03-28T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-uwyb~7zy6_q8vt",
+        "pd_id": "4611814",
+        "brand_name": "Samsung",
+        "model_number": "S24HG31*** (* = 0-9, A-Z or blank)",
+        "additional_model_information": "LS24HG31****** (* = 0-9, A-Z or blank),LS24HG31****** (* = 0-9, A-Z or blank)",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-05-09T00:00:00.000",
+        "date_certified": "2026-05-11T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-tehm~bjpn~4ztn",
+        "pd_id": "4661514",
+        "brand_name": "Samsung",
+        "model_number": "S24HG320EN",
+        "additional_model_information": "S24HG32*E*",
+        "upc": "198957356711;198957356728;198957356735;198957356742",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-07-15T00:00:00.000",
+        "date_certified": "2026-06-30T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-svff~v6mr.zdjg",
+        "pd_id": "2345763",
+        "brand_name": "Samsung",
+        "model_number": "S24R65*FD#",
+        "additional_model_information": "#S24R65*FD#### (*= 0-9, #= A-Z, blank),#S24R65*FD#### (*= 0-9, #= A-Z, blank)",
+        "display_type": "Monitor",
+        "panel_type": "TFT LCD",
+        "date_available_on_market": "2019-10-10T00:00:00.000",
+        "date_certified": "2019-08-29T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-an3a_n2ei.wtb6",
+        "pd_id": "2382868",
+        "brand_name": "Samsung",
+        "model_number": "S27A40*### (*=0-9, #=A-Z, blank)",
+        "display_type": "Monitor",
+        "panel_type": "TN LCD",
+        "date_available_on_market": "2021-09-01T00:00:00.000",
+        "date_certified": "2021-08-03T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-pt5q~wctq.83e5",
+        "pd_id": "2408124",
+        "brand_name": "Samsung",
+        "model_number": "S27A600NAN",
+        "additional_model_information": "S27A600NA*,S27A600NA*,Same as basic model except model designation. * can be any alphanumeric character; S27A602NA*,S27A602NA*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2023-02-10T00:00:00.000",
+        "date_certified": "2023-02-07T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-3tpm-qyr8.rd8u",
+        "pd_id": "2373169",
+        "brand_name": "Samsung",
+        "model_number": "S27A600UUN",
+        "additional_model_information": "S27A600UU*,S27A600UU*,* can be any alphanumeric character; S27A60PUUN,S27A60PUUN; S27A60PUU*,S27A60PUU*,* can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2021-02-15T00:00:00.000",
+        "date_certified": "2021-01-29T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-ge4h.7hv9-fnj6",
+        "pd_id": "2373170",
+        "brand_name": "Samsung",
+        "model_number": "S27A700NWN",
+        "additional_model_information": "S27A700NW*,S27A700NW*,* can be any alphanumeric character; S27A702NWN,S27A702NWN; S27A702NW*,S27A702NW*,* can be any alphanumeric character; S27A704NWN,S27A704NWN; S27A704NW*,S27A704NW*,* can be any alphanumeric character; S27A706NWN,S27A706NWN; S27A706NW*,S27A706NW*,* can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2021-02-15T00:00:00.000",
+        "date_certified": "2021-01-29T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-9iqv.kyt6.499e",
+        "pd_id": "2379564",
+        "brand_name": "Samsung",
+        "model_number": "S27A800UNN",
+        "additional_model_information": "S27A800UN*,S27A800UN*,Same as basic model except model designation. * can be any alphanumeric character; S27A80DUNN*,S27A80DUNN*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2021-06-01T00:00:00.000",
+        "date_certified": "2021-05-31T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-37bj~v9ym_w3vk",
+        "pd_id": "2393544",
+        "brand_name": "Samsung",
+        "model_number": "S27B800PXN",
+        "additional_model_information": "S27B800PEN,S27B800PEN,Same as basic model except model designation.; S27B800PE*,S27B800PE*,Same as basic model except model designation. * can be any alphanumeric character; S27B800PX*,S27B800PX*,Same as basic model except model designation. * can be any alphanumeric character; S27B802PEN,S27B802PEN,Same as basic model except model designation.; S27B802PE*,S27B802PE*,Same as basic model except model designation. * can be any alphanumeric character; S27B804PEN,S27B804PEN,Same as basic model except model designation.; S27B804PE*,S27B804PE*,Same as basic model except model designation. * can be any alphanumeric character; S27B804PXN,S27B804PXN,Same as basic model except model designation.; S27B804PX*,S27B804PX*,Same as basic model except model designation. * can be any alphanumeric character; S27B806PXN,S27B806PXN,Same as basic model except model designation.; S27B806PX*,S27B806PX*,Same as basic model except model designation. * can be any alphanumeric character; S27B80*PE*,S27B80*PE*,Same as basic model except model designation. * can be any alphanumeric character; S27B80*PX*,S27B80*PX*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2022-03-07T00:00:00.000",
+        "date_certified": "2022-03-02T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-aa3i-vbxr~wyxk",
+        "pd_id": "3629542",
+        "brand_name": "Samsung",
+        "model_number": "S27D400GAN",
+        "additional_model_information": "S27D400GA*,S27D400GA*,same as basic model except model designation. * can be any alphanumeric character; S27D400GEN,S27D400GEN,Same as basic model except model designation.; S27D400GE*,S27D400GE*,same as basic model except model designation. * can be any alphanumeric character; S27D400GSN,S27D400GSN,Same as basic model except model designation.; S27D400GS*,S27D400GS*,same as basic model except model designation. * can be any alphanumeric character; S27D402GAN,S27D402GAN,Same as basic model except model designation.; S27D402GA*,S27D402GA*,same as basic model except model designation. * can be any alphanumeric character; S27D402GEN,S27D402GEN,Same as basic model except model designation.; S27D402GE*,S27D402GE*,same as basic model except model designation. * can be any alphanumeric character; S27D402GSN,S27D402GSN,Same as basic model except model designation.; S27D402GS*,S27D402GS*,same as basic model except model designation. * can be any alphanumeric character; S27D404GAN,S27D404GAN,Same as basic model except model designation.; S27D404GA*,S27D404GA*,same as basic model except model designation. * can be any alphanumeric character; S27D404GEN,S27D404GEN,Same as basic model except model designation.; S27D404GE*,S27D404GE*,same as basic model except model designation. * can be any alphanumeric character; S27D406GAN,S27D406GAN,Same as basic model except model designation.; S27D406GA*,S27D406GA*,same as basic model except model designation. * can be any alphanumeric character; S27D406GEN,S27D406GEN,Same as basic model except model designation.; S27D406GE*,S27D406GE*,same as basic model except model designation. * can be any alphanumeric character; S27D408GAN,S27D408GAN,Same as basic model except model designation.; S27D408GA*,S27D408GA*,same as basic model except model designation. * can be any alphanumeric character; S27D408GEN,S27D408GEN,Same as basic model except model designation.; S27D408GE*,S27D408GE*,same as basic model except model designation. * can be any alphanumeric character; S27D409GAN,S27D409GAN,Same as basic model except model designation.; S27D409GA*,S27D409GA*,same as basic model except model designation. * can be any alphanumeric character; S27D409GEN,S27D409GEN,Same as basic model except model designation.; S27D409GE*,S27D409GE*,same as basic model except model designation. * can be any alphanumeric character; S27D40*GA*,S27D40*GA*,same as basic model except model designation. * can be any alphanumeric character; S27D40*GE*,S27D40*GE*,same as basic model except model designation. * can be any alphanumeric character; S27D40*GS*,S27D40*GS*,same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-09-17T00:00:00.000",
+        "date_certified": "2024-09-23T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      }
+    ],
+    [
+      {
+        "source_row_id": "row-sapj.5eyd.bw23",
+        "pd_id": "3417594",
+        "brand_name": "Samsung",
+        "model_number": "S27D600EAN",
+        "additional_model_information": "S27D600EAL,S27D600EAL,Same as basic model except model designation; S27D600EA*,S27D600EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D600EAU,S27D600EAU,Same as basic model except model designation; S27D600EEN,S27D600EEN,Same as basic model except model designation; S27D600EE*,S27D600EE*,Same as basic model except model designation. * can be any alphanumeric character; S27D600ESN,S27D600ESN,Same as basic model except model designation; S27D600ES*,S27D600ES*,Same as basic model except model designation. * can be any alphanumeric character; S27D602EA*,S27D602EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D602EEN,S27D602EEN,Same as basic model except model designation; S27D602EE*,S27D602EE*,Same as basic model except model designation. * can be any alphanumeric character; S27D602ESN,S27D602ESN,Same as basic model except model designation; S27D602ES*,S27D602ES*,Same as basic model except model designation. * can be any alphanumeric character; S27D604EA*,S27D604EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D604EEN,S27D604EEN,Same as basic model except model designation; S27D604EE*,S27D604EE*,Same as basic model except model designation. * can be any alphanumeric character; S27D606EA*,S27D606EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D60*EE*,S27D60*EE*,Same as basic model except model designation. * can be any alphanumeric character; S27D60*ES*,S27D60*ES*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-03-22T00:00:00.000",
+        "date_certified": "2024-02-26T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-2j9s.h49m.uadv",
+        "pd_id": "3417591",
+        "brand_name": "Samsung",
+        "model_number": "S27D600UAN",
+        "additional_model_information": "S27D600UAL,S27D600UAL,Same as basic model except model designation; S27D600UA*,S27D600UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D600UAU,S27D600UAU,Same as basic model except model designation; S27D600UEN,S27D600UEN,Same as basic model except model designation; S27D600UE*,S27D600UE*,Same as basic model except model designation. * can be any alphanumeric character; S27D600USN,S27D600USN,Same as basic model except model designation; S27D600US*,S27D600US*,Same as basic model except model designation. * can be any alphanumeric character; S27D602UA*,S27D602UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D602UEN,S27D602UEN,Same as basic model except model designation; S27D602UE*,S27D602UE*,Same as basic model except model designation. * can be any alphanumeric character; S27D602USN,S27D602USN,Same as basic model except model designation; S27D602US*,S27D602US*,Same as basic model except model designation. * can be any alphanumeric character; S27D604UA*,S27D604UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D604UEN,S27D604UEN,Same as basic model except model designation; S27D604UE*,S27D604UE*,Same as basic model except model designation. * can be any alphanumeric character; S27D606UA*,S27D606UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D60*UE*,S27D60*UE*,Same as basic model except model designation. * can be any alphanumeric character; S27D60*US*,S27D60*US*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-03-22T00:00:00.000",
+        "date_certified": "2024-02-27T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-r9ci_h4mx_42r8",
+        "pd_id": "3425393",
+        "brand_name": "Samsung",
+        "model_number": "S27D700EAN",
+        "additional_model_information": "S27D700EA*,S27D700EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D702EAN,S27D702EAN,Same as basic model except model designation.; S27D702EA*,S27D702EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D704EAN,S27D704EAN,Same as basic model except model designation.; S27D704EA*,S27D704EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D706EAN,S27D706EAN,Same as basic model except model designation.; S27D706EA*,S27D706EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D707EAN,S27D707EAN,Same as basic model except model designation.; S27D707EA*,S27D707EA*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-04-12T00:00:00.000",
+        "date_certified": "2024-03-27T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-hc5x_cxsj_54rv",
+        "pd_id": "3425440",
+        "brand_name": "Samsung",
+        "model_number": "S27D800EAN",
+        "additional_model_information": "S27D800EA*,S27D800EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D800EEN,S27D800EEN,Same as basic model except model designation.; S27D800EE*,S27D800EE*,Same as basic model except model designation. * can be any alphanumeric character; S27D802EAN,S27D802EAN,Same as basic model except model designation.; S27D802EA*,S27D802EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D802EEN,S27D802EEN,Same as basic model except model designation.; S27D802EE*,S27D802EE*,Same as basic model except model designation. * can be any alphanumeric character; S27D804EAN,S27D804EAN,Same as basic model except model designation.; S27D804EA*,S27D804EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D804EEN,S27D804EEN,Same as basic model except model designation.; S27D804EE*,S27D804EE*,Same as basic model except model designation. * can be any alphanumeric character; S27D806EAN,S27D806EAN,Same as basic model except model designation.; S27D806EA*,S27D806EA*,Same as basic model except model designation. * can be any alphanumeric character; S27D80*EE*,S27D80*EE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-04-12T00:00:00.000",
+        "date_certified": "2024-03-28T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-zj8f_axqc_h7ca",
+        "pd_id": "3425430",
+        "brand_name": "Samsung",
+        "model_number": "S27D800UAN",
+        "additional_model_information": "S27D800UA*,S27D800UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D800UEN,S27D800UEN,Same as basic model except model designation.; S27D800UE*,S27D800UE*,Same as basic model except model designation. * can be any alphanumeric character; S27D802UAN,S27D802UAN,Same as basic model except model designation.; S27D802UA*,S27D802UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D802UEN,S27D802UEN,Same as basic model except model designation.; S27D802UE*,S27D802UE*,Same as basic model except model designation. * can be any alphanumeric character; S27D804UAN,S27D804UAN,Same as basic model except model designation.; S27D804UA*,S27D804UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D804UEN,S27D804UEN,Same as basic model except model designation.; S27D804UE*,S27D804UE*,Same as basic model except model designation. * can be any alphanumeric character; S27D806UAN,S27D806UAN,Same as basic model except model designation.; S27D806UA*,S27D806UA*,Same as basic model except model designation. * can be any alphanumeric character; S27D80*UE*,S27D80*UE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-04-12T00:00:00.000",
+        "date_certified": "2024-03-28T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-2nbq.26bv_pbyq",
+        "pd_id": "4005982",
+        "brand_name": "Samsung",
+        "model_number": "S27F43*UA****",
+        "additional_model_information": "LS27F43*UA****,*S27F43*UA****",
+        "upc": "887276991511;887276991573;887276991580",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-04-21T00:00:00.000",
+        "date_certified": "2025-03-28T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-stm8~293a_iv7g",
+        "pd_id": "4576797",
+        "brand_name": "Samsung",
+        "model_number": "S27H800EAN",
+        "additional_model_information": "S27H800EA*,S27H800EA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H802EAN,S27H802EAN,Same as basic model except for model designation; S27H802EA*,S27H802EA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H804EAN,S27H804EAN,Same as basic model except for model designation; S27H804EA*,S27H804EA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H80DEAN,S27H80DEAN,Same as basic model except for model designation; S27H80DEA*,S27H80DEA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H80*EA*,S27H80*EA*,Same as basic model except for model designation, * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-03-20T00:00:00.000",
+        "date_certified": "2026-03-17T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-x8vi_2hcz_h67j",
+        "pd_id": "4576803",
+        "brand_name": "Samsung",
+        "model_number": "S27H800UAN",
+        "additional_model_information": "S27H800UA*,S27H800UA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H802UAN,S27H802UAN,Same as basic model except for model designation; S27H802UA*,S27H802UA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H804UAN,S27H804UAN,Same as basic model except for model designation; S27H804UA*,S27H804UA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H80DUAN,S27H80DUAN,Same as basic model except for model designation; S27H80DUA*,S27H80DUA*,Same as basic model except for model designation, * can be any alphanumeric character; S27H80*UA*,S27H80*UA*,Same as basic model except for model designation, * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-03-20T00:00:00.000",
+        "date_certified": "2026-03-17T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-ezsn~fxf4.yxz7",
+        "pd_id": "4611834",
+        "brand_name": "Samsung",
+        "model_number": "S27HG31*** (* = 0-9, A-Z or blank)",
+        "additional_model_information": "LS27HG31****** (* = 0-9, A-Z or blank ),LS27HG31****** (* = 0-9, A-Z or blank)",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-05-09T00:00:00.000",
+        "date_certified": "2026-05-11T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-va69-2w8c.ixgp",
+        "pd_id": "4661534",
+        "brand_name": "Samsung",
+        "model_number": "S27HG320EN",
+        "additional_model_information": "S27HG32*E*",
+        "upc": "198957356759;198957356766;198957357435;198957357442",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-07-15T00:00:00.000",
+        "date_certified": "2026-06-30T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-uzve.43gb_jc9q",
+        "pd_id": "2345939",
+        "brand_name": "Samsung",
+        "model_number": "S27R65*FD#",
+        "additional_model_information": "#S27R65*FD#### (*=0-9, #=A-Z, blank),#S27R65*FD#### (*=0-9, #=A-Z, blank)",
+        "display_type": "Monitor",
+        "panel_type": "TFT LCD",
+        "date_available_on_market": "2019-10-10T00:00:00.000",
+        "date_certified": "2019-09-03T00:00:00.000",
+        "markets": "United States, Switzerland, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-vr69_vhs8_qk3b",
+        "pd_id": "2372147",
+        "brand_name": "Samsung",
+        "model_number": "S32A700NWN",
+        "additional_model_information": "S32A700NW*,S32A700NW*,* can be any alphanumeric character; S32A702NWN,S32A702NWN; S32A702NW*,S32A702NW*,* can be any alphanumeric character; S32A704NWN,S32A704NWN; S32A704NW*,S32A704NW*,* can be any alphanumeric character; S32A706NWN,S32A706NWN; S32A706NW*,S32A706NW*,* can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2021-01-15T00:00:00.000",
+        "date_certified": "2021-01-12T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-49ic-sqrp_df3e",
+        "pd_id": "2393545",
+        "brand_name": "Samsung",
+        "model_number": "S32B800PXN",
+        "additional_model_information": "S32B800PEN,S32B800PEN,Same as basic model except model designation.; S32B800PE*,S32B800PE*,Same as basic model except model designation. * can be any alphanumeric character; S32B800PX*,S32B800PX*,Same as basic model except model designation. * can be any alphanumeric character; S32B802PEN,S32B802PEN,Same as basic model except model designation.; S32B802PE*,S32B802PE*,Same as basic model except model designation. * can be any alphanumeric character; S32B804PEN,S32B804PEN,Same as basic model except model designation.; S32B804PE*,S32B804PE*,Same as basic model except model designation. * can be any alphanumeric character; S32B804PXN,S32B804PXN,Same as basic model except model designation.; S32B804PX*,S32B804PX*,Same as basic model except model designation. * can be any alphanumeric character; S32B806PXN,S32B806PXN,Same as basic model except model designation.; S32B806PX*,S32B806PX*,Same as basic model except model designation. * can be any alphanumeric character; S32B80*PE*,S32B80*PE*,Same as basic model except model designation. * can be any alphanumeric character; S32B80*PX*,S32B80*PX*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2022-03-07T00:00:00.000",
+        "date_certified": "2022-03-02T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-32rw-gnyr.sb7p",
+        "pd_id": "3417595",
+        "brand_name": "Samsung",
+        "model_number": "S32D600EAN",
+        "additional_model_information": "S32D600EAL,S32D600EAL,Same as basic model except model designation; S32D600EA*,S32D600EA*,same as basic model except model designation. * can be any alphanumeric character; S32D600EAU,S32D600EAU,Same as basic model except model designation; S32D600EEN,S32D600EEN,Same as basic model except model designation; S32D600EE*,S32D600EE*,same as basic model except model designation. * can be any alphanumeric character; S32D602EA*,S32D602EA*,same as basic model except model designation. * can be any alphanumeric character; S32D602EEN,S32D602EEN,Same as basic model except model designation; S32D602EE*,S32D602EE*,same as basic model except model designation. * can be any alphanumeric character; S32D604EA*,S32D604EA*,same as basic model except model designation. * can be any alphanumeric character; S32D604EEN,S32D604EEN,Same as basic model except model designation; S32D604EE*,S32D604EE*,same as basic model except model designation. * can be any alphanumeric character; S32D606EA*,S32D606EA*,same as basic model except model designation. * can be any alphanumeric character; S32D60*EE*,S32D60*EE*,same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-03-22T00:00:00.000",
+        "date_certified": "2024-02-26T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-9xiw-5i7k_ivh4",
+        "pd_id": "3417592",
+        "brand_name": "Samsung",
+        "model_number": "S32D600UAN",
+        "additional_model_information": "S32D600UAL,S32D600UAL,Same as basic model except model designation; S32D600UA*,S32D600UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D600UAU,S32D600UAU,Same as basic model except model designation; S32D600UEN,S32D600UEN,Same as basic model except model designation; S32D600UE*,S32D600UE*,Same as basic model except model designation. * can be any alphanumeric character; S32D602UA*,S32D602UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D602UEN,S32D602UEN,Same as basic model except model designation; S32D602UE*,S32D602UE*,Same as basic model except model designation. * can be any alphanumeric character; S32D604UA*,S32D604UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D604UEN,S32D604UEN,Same as basic model except model designation; S32D604UE*,S32D604UE*,Same as basic model except model designation. * can be any alphanumeric character; S32D606UA*,S32D606UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D60*UE*,S32D60*UE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-03-22T00:00:00.000",
+        "date_certified": "2024-02-27T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-3im4-9w92_9efp",
+        "pd_id": "3425429",
+        "brand_name": "Samsung",
+        "model_number": "S32D700EAN",
+        "additional_model_information": "S32D700EA*,S32D700EA*,Same as basic model except model designation. * can be any alphanumeric character; S32D701EAN,S32D701EAN,Same as basic model except model designation.; S32D701EA*,S32D701EA*,Same as basic model except model designation. * can be any alphanumeric character; S32D702EAN,S32D702EAN,Same as basic model except model designation.; S32D702EA*,S32D702EA*,Same as basic model except model designation. * can be any alphanumeric character; S32D703EAN,S32D703EAN,Same as basic model except model designation.; S32D703EA*,S32D703EA*,Same as basic model except model designation. * can be any alphanumeric character; S32D704EAN,S32D704EAN,Same as basic model except model designation.; S32D704EA*,S32D704EA*,Same as basic model except model designation. * can be any alphanumeric character; S32D705EAN,S32D705EAN,Same as basic model except model designation.; S32D705EA*,S32D705EA*,Same as basic model except model designation. * can be any alphanumeric character; S32D706EAN,S32D706EAN,Same as basic model except model designation.; S32D706EA*,S32D706EA*,Same as basic model except model designation. * can be any alphanumeric character; S32D707EAN,S32D707EAN,Same as basic model except model designation.; S32D707EA*,S32D707EA*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-04-12T00:00:00.000",
+        "date_certified": "2024-03-27T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-8vvb.g5ci~vumm",
+        "pd_id": "3892087",
+        "brand_name": "Samsung",
+        "model_number": "S32D700EBN",
+        "additional_model_information": "S32D700EB*,S32D700EB*,same as basic model except model designation. * can be any alphanumeric character.; S32D702EBN,S32D702EBN,same as basic model except model designation.; S32D702EB*,S32D702EB*,same as basic model except model designation. * can be any alphanumeric character.; S32D704EBN,S32D704EBN,same as basic model except model designation.; S32D704EB*,S32D704EB*,same as basic model except model designation. * can be any alphanumeric character.; S32D706EBN,S32D706EBN,same as basic model except model designation.; S32D706EB*,S32D706EB*,same as basic model except model designation. * can be any alphanumeric character.; S32D708EBN,S32D708EBN,same as basic model except model designation.; S32D708EB*,S32D708EB*,same as basic model except model designation. * can be any alphanumeric character.; S32D709EBN,S32D709EBN,same as basic model except model designation.; S32D709EB*,S32D709EB*,same as basic model except model designation. * can be any alphanumeric character.; S32D70*EB*,S32D70*EB*,same as basic model except model designation. * can be any alphanumeric character.",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-12-23T00:00:00.000",
+        "date_certified": "2025-01-02T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-42t3.q6sv.w4ag",
+        "pd_id": "3425432",
+        "brand_name": "Samsung",
+        "model_number": "S32D800EAN",
+        "additional_model_information": "S32D800EA*,S32D800EA*,Same as basic model except model designation. * can be any alphanumeric character.; S32D800EEN,S32D800EEN,Same as basic model except model designation.; S32D800EE*,S32D800EE*,Same as basic model except model designation. * can be any alphanumeric character.; S32D802EAN,S32D802EAN,Same as basic model except model designation.; S32D802EA*,S32D802EA*,Same as basic model except model designation. * can be any alphanumeric character.; S32D802EEN,S32D802EEN,Same as basic model except model designation.; S32D802EE*,S32D802EE*,Same as basic model except model designation. * can be any alphanumeric character.; S32D804EAN,S32D804EAN,Same as basic model except model designation.; S32D804EA*,S32D804EA*,Same as basic model except model designation. * can be any alphanumeric character.; S32D804EEN,S32D804EEN,Same as basic model except model designation.; S32D804EE*,S32D804EE*,Same as basic model except model designation. * can be any alphanumeric character.; S32D806EAN,S32D806EAN,Same as basic model except model designation.; S32D806EA*,S32D806EA*,Same as basic model except model designation. * can be any alphanumeric character.; S32D80*EE*,S32D80*EE*,Same as basic model except model designation. * can be any alphanumeric character.",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-04-12T00:00:00.000",
+        "date_certified": "2024-03-28T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-kkxg.edjb_qed9",
+        "pd_id": "3425431",
+        "brand_name": "Samsung",
+        "model_number": "S32D800UAN",
+        "additional_model_information": "S32D800UA*,S32D800UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D800UBN,S32D800UBN,Same as basic model except model designation.; S32D800UB*,S32D800UB*,Same as basic model except model designation. * can be any alphanumeric character; S32D800UEN,S32D800UEN,Same as basic model except model designation.; S32D800UE*,S32D800UE*,Same as basic model except model designation. * can be any alphanumeric character; S32D802UAN,S32D802UAN,Same as basic model except model designation.; S32D802UA*,S32D802UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D802UBN,S32D802UBN,Same as basic model except model designation.; S32D802UB*,S32D802UB*,Same as basic model except model designation. * can be any alphanumeric character; S32D802UEN,S32D802UEN,Same as basic model except model designation.; S32D802UE*,S32D802UE*,Same as basic model except model designation. * can be any alphanumeric character; S32D804UAN,S32D804UAN,Same as basic model except model designation.; S32D804UA*,S32D804UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D804UBN,S32D804UBN,Same as basic model except model designation.; S32D804UB*,S32D804UB*,Same as basic model except model designation. * can be any alphanumeric character; S32D804UEN,S32D804UEN,Same as basic model except model designation.; S32D804UE*,S32D804UE*,Same as basic model except model designation. * can be any alphanumeric character; S32D806UAN,S32D806UAN,Same as basic model except model designation.; S32D806UA*,S32D806UA*,Same as basic model except model designation. * can be any alphanumeric character; S32D806UBN,S32D806UBN,Same as basic model except model designation.; S32D806UB*,S32D806UB*,Same as basic model except model designation. * can be any alphanumeric character; S32D808UBN,S32D808UBN,Same as basic model except model designation.; S32D808UB*,S32D808UB*,Same as basic model except model designation. * can be any alphanumeric character; S32D809UBN,S32D809UBN,Same as basic model except model designation.; S32D809UB*,S32D809UB*,Same as basic model except model designation. * can be any alphanumeric character; S32D80*UB*,S32D80*UB*,Same as basic model except model designation. * can be any alphanumeric character; S32D80*UE*,S32D80*UE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-04-12T00:00:00.000",
+        "date_certified": "2024-03-27T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-tv4v.atxj.sdv2",
+        "pd_id": "3892092",
+        "brand_name": "Samsung",
+        "model_number": "S32D800UBN",
+        "additional_model_information": "S32D800UB*,S32D800UB*,same as basic model except model designation. * can be any alphanumeric character.; S32D802UBN,S32D802UBN,same as basic model except model designation.; S32D802UB*,S32D802UB*,same as basic model except model designation. * can be any alphanumeric character.; S32D804UBN,S32D804UBN,same as basic model except model designation.; S32D804UB*,S32D804UB*,same as basic model except model designation. * can be any alphanumeric character.; S32D806UBN,S32D806UBN,same as basic model except model designation.; S32D806UB*,S32D806UB*,same as basic model except model designation. * can be any alphanumeric character.; S32D808UBN,S32D808UBN,same as basic model except model designation.; S32D808UB*,S32D808UB*,same as basic model except model designation. * can be any alphanumeric character.; S32D809UBN,S32D809UBN,same as basic model except model designation.; S32D809UB*,S32D809UB*,same as basic model except model designation. * can be any alphanumeric character.; S32D80*UB*,S32D80*UB*,same as basic model except model designation. * can be any alphanumeric character.",
+        "display_type": "Monitor",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2024-12-23T00:00:00.000",
+        "date_certified": "2025-01-02T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-e2t6-fydd_6acb",
+        "pd_id": "4576805",
+        "brand_name": "Samsung",
+        "model_number": "S32H800EAN",
+        "additional_model_information": "S32H800EA*,S32H800EA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H802EAN,S32H802EAN,Same as basic model except for model designation; S32H802EA*,S32H802EA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H804EAN,S32H804EAN,Same as basic model except for model designation; S32H804EA*,S32H804EA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H80DEAN,S32H80DEAN,Same as basic model except for model designation; S32H80DEA*,S32H80DEA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H80*EA*,S32H80*EA*,Same as basic model except for model designation, * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2026-03-20T00:00:00.000",
+        "date_certified": "2026-03-17T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-6qrb_zz3p.hpxz",
+        "pd_id": "4576798",
+        "brand_name": "Samsung",
+        "model_number": "S32H800UAN",
+        "additional_model_information": "S32H800UA*,S32H800UA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H802UAN,S32H802UAN,Same as basic model except for model designation; S32H802UA*,S32H802UA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H804UAN,S32H804UAN,Same as basic model except for model designation; S32H804UA*,S32H804UA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H80DUAN,S32H80DUAN,Same as basic model except for model designation; S32H80DUA*,S32H80DUA*,Same as basic model except for model designation, * can be any alphanumeric character; S32H80*UA*,S32H80*UA*,Same as basic model except for model designation, * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2026-03-20T00:00:00.000",
+        "date_certified": "2026-03-17T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-zh3t.94d8_eqdj",
+        "pd_id": "2399205",
+        "brand_name": "Samsung",
+        "model_number": "S34A650UBN",
+        "additional_model_information": "S34A650UB*,S34A650UB*,Same as basic model except model designation.(* can be any alphanumeric character); S34A652UBN,S34A652UBN,Same as basic model except model designation.(* can be any alphanumeric character); S34A652UB*,S34A652UB*,Same as basic model except model designation.(* can be any alphanumeric character); S34A654UBN,S34A654UBN,Same as basic model except model designation.(* can be any alphanumeric character); S34A654UB*,S34A654UB*,Same as basic model except model designation.(* can be any alphanumeric character)",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2022-08-01T00:00:00.000",
+        "date_certified": "2022-07-25T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-3nxi.qtt3.2wdb",
+        "pd_id": "2732644",
+        "brand_name": "Samsung",
+        "model_number": "S34C650TAN",
+        "additional_model_information": "S34C650TA*,S34C650TA*,Same as basic model except model designation. * can be any alphanumeric character.; S34C652TAN,S34C652TAN,Same as basic model except model designation.; S34C652TA*,S34C652TA*,Same as basic model except model designation. * can be any alphanumeric character.; S34C654TAN,S34C654TAN,Same as basic model except model designation.; S34C654TA*,S34C654TA*,Same as basic model except model designation. * can be any alphanumeric character.",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-11-13T00:00:00.000",
+        "date_certified": "2023-11-01T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-ba4e.tgkb~ay89",
+        "pd_id": "2488981",
+        "brand_name": "Samsung",
+        "model_number": "S34C650UAN",
+        "additional_model_information": "S34C650UA*,S34C650UA*,Same as basic model except model designation. * can be any alphanumeric character; S34C650UEN,S34C650UEN,Same as basic model except model designation.; S34C650UE*,S34C650UE*,Same as basic model except model designation. * can be any alphanumeric character; S34C650UNI,S34C650UNI,Same as basic model except model designation.; S34C652UAN,S34C652UAN,Same as basic model except model designation.; S34C652UA*,S34C652UA*,Same as basic model except model designation. * can be any alphanumeric character; S34C652UEN,S34C652UEN,Same as basic model except model designation.; S34C652UE*,S34C652UE*,Same as basic model except model designation. * can be any alphanumeric character; S34C654UAN,S34C654UAN,Same as basic model except model designation.; S34C654UA*,S34C654UA*,Same as basic model except model designation. * can be any alphanumeric character; S34C654UEN,S34C654UEN,Same as basic model except model designation.; S34C654UE*,S34C654UE*,Same as basic model except model designation. * can be any alphanumeric character; S34C65*UE*,S34C65*UE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-05-30T00:00:00.000",
+        "date_certified": "2023-05-08T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-ambb.jqij~s2vb",
+        "pd_id": "2473626",
+        "brand_name": "Samsung",
+        "model_number": "S34C650VAN",
+        "additional_model_information": "S34C650VA*,S34C650VA*,Same as basic model except model designation. * can be any alphanumeric character; S34C650VEN,S34C650VEN,Same as basic model except model designation.; S34C650VE*,S34C650VE*,Same as basic model except model designation. * can be any alphanumeric character; S34C652VAN,S34C652VAN,Same as basic model except model designation.; S34C652VA*,S34C652VA*,Same as basic model except model designation. * can be any alphanumeric character; S34C652VEN,S34C652VEN,Same as basic model except model designation.; S34C652VE*,S34C652VE*,Same as basic model except model designation. * can be any alphanumeric character; S34C654VAN,S34C654VAN,Same as basic model except model designation.; S34C654VA*,S34C654VA*,Same as basic model except model designation. * can be any alphanumeric character; S34C654VEN,S34C654VEN,Same as basic model except model designation.; S34C654VE*,S34C654VE*,Same as basic model except model designation. * can be any alphanumeric character; S34C65*VA*,S34C65*VA*,Same as basic model except model designation. * can be any alphanumeric character; S34C65*VE*,S34C65*VE*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2023-05-30T00:00:00.000",
+        "date_certified": "2023-05-08T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-yqdf-vwyn_9jbx",
+        "pd_id": "3892418",
+        "brand_name": "Samsung",
+        "model_number": "S37D700EAN",
+        "additional_model_information": "S37D700EA*,S37D700EA*,Same as basic model except model designation. * can be any alphanumeric character; S37D702EAN,S37D702EAN,same as basic model except model designation.; S37D702EA*,S37D702EA*,Same as basic model except model designation. * can be any alphanumeric character; S37D704EAN,S37D704EAN,same as basic model except model designation.; S37D704EA*,S37D704EA*,Same as basic model except model designation. * can be any alphanumeric character; S37D70*EA*,S37D70*EA*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-12-23T00:00:00.000",
+        "date_certified": "2025-01-06T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-g7jz.kmkv_63w4",
+        "pd_id": "3892284",
+        "brand_name": "Samsung",
+        "model_number": "S37D800EAN",
+        "additional_model_information": "S37D800EA*,S37D800EA*,Same as basic model except model designation. * can be any alphanumeric character; S37D802EAN,S37D802EAN,Same as basic model except model designation.; S37D802EA*,S37D802EA*,Same as basic model except model designation. * can be any alphanumeric character; S37D804EAN,S37D804EAN,Same as basic model except model designation.; S37D804EA*,S37D804EA*,Same as basic model except model designation. * can be any alphanumeric character; S37D80*EA*,S37D80*EA*,Same as basic model except model designation. * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-12-23T00:00:00.000",
+        "date_certified": "2025-01-05T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-6nxp.6mf8.udwt",
+        "pd_id": "3892283",
+        "brand_name": "Samsung",
+        "model_number": "S37D800UAN",
+        "additional_model_information": "S37D800UA*,S37D800UA*,Same as basic model except model designation.* can be any alphanumeric character; S37D802UAN,S37D802UAN,same as basic model except model designation.; S37D802UA*,S37D802UA*,Same as basic model except model designation.* can be any alphanumeric character; S37D804UAN,S37D804UAN,same as basic model except model designation.; S37D804UA*,S37D804UA*,Same as basic model except model designation.* can be any alphanumeric character; S37D80*UA*,S37D80*UA*,Same as basic model except model designation.* can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2024-12-23T00:00:00.000",
+        "date_certified": "2025-01-05T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-tike-y9ec~7ip7",
+        "pd_id": "4576792",
+        "brand_name": "Samsung",
+        "model_number": "S40H850TAN",
+        "additional_model_information": "S40H850TA*,S40H850TA*,Same as basic model except model designation, * can be any alphanumeric character; S40H852TAN,S40H852TAN,Same as basic model except model designation; S40H852TA*,S40H852TA*,Same as basic model except model designation, * can be any alphanumeric character; S40H854TAN,S40H854TAN,Same as basic model except model designation; S40H854TA*,S40H854TA*,Same as basic model except model designation, * can be any alphanumeric character; S40H85*TA*,S40H85*TA*,Same as basic model except model designation, * can be any alphanumeric character",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2026-03-13T00:00:00.000",
+        "date_certified": "2026-03-17T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-5dft~6bcg-qrkm",
+        "pd_id": "4046721",
+        "brand_name": "Samsung",
+        "model_number": "S49F950UAN",
+        "additional_model_information": "S49F950UA*,S49F950UA*,Same as basic model except model designation (* can be any alphanumeric character); S49F952UAN,S49F952UAN,same as basic model except model designation; S49F952UA*,S49F952UA*,Same as basic model except model designation (* can be any alphanumeric character); S49F954UAN,S49F954UAN,same as basic model except model designation; S49F954UA*,S49F954UA*,Same as basic model except model designation (* can be any alphanumeric character); S49F95*UA*,S49F95*UA*,Same as basic model except model designation (* can be any alphanumeric character)",
+        "display_type": "Monitor",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2025-05-23T00:00:00.000",
+        "date_certified": "2025-05-19T00:00:00.000",
+        "markets": "United States, Taiwan, Canada"
+      },
+      {
+        "source_row_id": "row-iypy_k259_m3hk",
+        "pd_id": "2687106",
+        "brand_name": "Samsung",
+        "model_number": "SH37C",
+        "additional_model_information": "LH37SHCEBGBX**,LH37SHCEBGBX**,Same as basic model except model designation. * can be any alphanumeric character; LH37SHCEBGBXZA,LH37SHCEBGBXZA,Same as basic model except model designation.",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD, IPS LCD",
+        "date_available_on_market": "2023-11-10T00:00:00.000",
+        "date_certified": "2023-10-23T00:00:00.000",
+        "markets": "United States, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-watr-hxy2~ndss",
+        "pd_id": "3555659",
+        "brand_name": "Samsung",
+        "model_number": "WA65F",
+        "additional_model_information": "**65**********,**65**********,The symbol \"*\" can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpose, No safety concerns.); 65WAFWLGCXUE,65WAFWLGCXUE,--; LH65WAFWLGCXEN,LH65WAFWLGCXEN,--; LH65WAFW,LH65WAFW,--; LH65WAFW******,LH65WAFW******,The symbol \"*\" can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpose, No safety concerns.); LH65WAFW******,LH65WAFW******,The symbol \"*\" can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpose, No safety concerns.); WA65F***,WA65F***,The symbol \"*\" can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpose, No safety concerns.)",
+        "display_type": "Signage Display",
+        "panel_type": "ADS-LCD",
+        "date_available_on_market": "2025-02-15T00:00:00.000",
+        "date_certified": "2024-07-31T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-sncn~6wcz-tvfw",
+        "pd_id": "4689294",
+        "brand_name": "Samsung",
+        "model_number": "WA65HX-M",
+        "additional_model_information": "LH65WAH********** (* = alphanumeric, /, - or blank),LH65WAH********** (* = alphanumeric, /, - or blank); WA65HX******,WA65HX******",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-08-30T00:00:00.000",
+        "date_certified": "2026-08-10T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-a4dd_nw4x_eczj",
+        "pd_id": "3555658",
+        "brand_name": "Samsung",
+        "model_number": "WA75F",
+        "additional_model_information": "**75**********,**75**********,The symbol\"*\"can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpose, No safety concerns.); LH75WAFWLGCXEN,LH75WAFWLGCXEN,--; LH75WAFWLGCXUE,LH75WAFWLGCXUE,--; LH75WAFW,LH75WAFW,--; LH75WAFW******,LH75WAFW******,The symbol\"*\"can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpose, No safety concerns.); WA75F***,WA75F***,The symbol\"*\"can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpose, No safety concerns.)",
+        "display_type": "Signage Display",
+        "panel_type": "ADS-LCD",
+        "date_available_on_market": "2024-08-30T00:00:00.000",
+        "date_certified": "2024-07-30T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-q93r.mud3.jzpn",
+        "pd_id": "4689314",
+        "brand_name": "Samsung",
+        "model_number": "WA75HX-M",
+        "additional_model_information": "LH75WAH********* (* = alphanumeric, /, - or blank),LH75WAH********* (* = alphanumeric, /, - or blank); WA75HX******,WA75HX******",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-08-30T00:00:00.000",
+        "date_certified": "2026-08-11T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-ekxe_z7wz.crkc",
+        "pd_id": "4429157",
+        "brand_name": "Samsung",
+        "model_number": "WA86F",
+        "additional_model_information": "LH86WAFWLGCXEN,LH86WAFWLGCXEN,--; LH86WAFWLGCXZA,LH86WAFWLGCXZA,--; LH86WAFW,LH86WAFW,--; LH86WAFW******,LH86WAFW******,The symbol \"*\" can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\"  , \".\" or blank for the marketing purpos; WA86F***,WA86F***,The symbol\"*\"can be 0-9, A-Z, a-z, \"/\", \"\\\", \"_\", \"-\", \"(\", \")\", \",\" \".\" or blank for the marketing purpose",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2025-02-15T00:00:00.000",
+        "date_certified": "2025-04-29T00:00:00.000",
+        "markets": "United States, Taiwan, Japan, Canada"
+      },
+      {
+        "source_row_id": "row-4uyt~fnsk.2hui",
+        "pd_id": "4689334",
+        "brand_name": "Samsung",
+        "model_number": "WA86HX-M",
+        "additional_model_information": "LH86WAH********** (* = alphanumeric, /, - or blank),LH86WAH********** (* = alphanumeric, /, - or blank); WA86HX******,WA86HX******",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-08-30T00:00:00.000",
+        "date_certified": "2026-08-11T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-cnxk~ntf4-wwp7",
+        "pd_id": "4689354",
+        "brand_name": "Samsung",
+        "model_number": "WA98HX-M",
+        "additional_model_information": "LH98WAH********** (* = alphanumeric, /, - or blank),LH98WAH********** (* = alphanumeric, /, - or blank); WA98HX******,WA98HX******",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2026-08-30T00:00:00.000",
+        "date_certified": "2026-08-11T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan, Switzerland"
+      },
+      {
+        "source_row_id": "row-xg36~sqb8~x82n",
+        "pd_id": "4481388",
+        "brand_name": "Samsung",
+        "model_number": "WE65FX",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-11-10T00:00:00.000",
+        "date_certified": "2025-08-18T00:00:00.000",
+        "markets": "United States, Japan, Canada, Switzerland"
+      },
+      {
+        "source_row_id": "row-n6t3-hpjn.wzki",
+        "pd_id": "4481389",
+        "brand_name": "Samsung",
+        "model_number": "WE75FX",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-11-10T00:00:00.000",
+        "date_certified": "2025-08-18T00:00:00.000",
+        "markets": "United States, Japan, Canada, Switzerland"
+      },
+      {
+        "source_row_id": "row-iwa8~b3q7~akd4",
+        "pd_id": "4481390",
+        "brand_name": "Samsung",
+        "model_number": "WE86FX",
+        "display_type": "Signage Display",
+        "panel_type": "IPS LCD",
+        "date_available_on_market": "2025-11-10T00:00:00.000",
+        "date_certified": "2025-08-18T00:00:00.000",
+        "markets": "United States, Japan, Canada, Switzerland"
+      },
+      {
+        "source_row_id": "row-7ac3~piqp.tp4k",
+        "pd_id": "4518039",
+        "brand_name": "Samsung",
+        "model_number": "WM55FX",
+        "additional_model_information": "LH55WMFWBGCX**,LH55WMFWBGCX**,* can be any alphanumeric character; LH55WMFWBGCXZA,LH55WMFWBGCXZA",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2025-12-12T00:00:00.000",
+        "date_certified": "2025-12-18T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-ysgt~ubaf-d85r",
+        "pd_id": "4518040",
+        "brand_name": "Samsung",
+        "model_number": "WM65FX",
+        "additional_model_information": "LH65WMFWBGCX**,LH65WMFWBGCX**,Same as basic model except for model designation (* can be any alphanumeric character); LH65WMFWBGCXZA,LH65WMFWBGCXZA,Same as basic model except for model designation",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2025-12-12T00:00:00.000",
+        "date_certified": "2025-12-18T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-bxuc-v8ag-q6xn",
+        "pd_id": "4570001",
+        "brand_name": "Samsung",
+        "model_number": "WM75FX",
+        "additional_model_information": "LH75WMFWLGCX**,LH75WMFWLGCX**,Same as basic model except for model designation, * can be any alphanumeric character; LH75WMFWLGCXZA,LH75WMFWLGCXZA,Same as basic model except for model designation",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2026-02-06T00:00:00.000",
+        "date_certified": "2026-02-11T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      },
+      {
+        "source_row_id": "row-6jhe~4q5s-q4m8",
+        "pd_id": "4572719",
+        "brand_name": "Samsung",
+        "model_number": "WM85FX",
+        "additional_model_information": "LH85WMFWLGCX**,LH85WMFWLGCX**,Same as basic model except for model designation. * can be any alphanumeric character; LH85WMFWLGCXZA,LH85WMFWLGCXZA,Same as basic model except for model designation",
+        "display_type": "Signage Display",
+        "panel_type": "VA LCD",
+        "date_available_on_market": "2026-02-27T00:00:00.000",
+        "date_certified": "2026-02-25T00:00:00.000",
+        "markets": "United States, Japan, Canada, Taiwan"
+      }
+    ]
+  ],
+  "count_before": [
+    {
+      "row_count": "146"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "146"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}

@@ -35,6 +35,23 @@ def row_count(rows):
     return int(rows[0]['row_count'])
 
 
+def catalog_projection(data, dataset):
+    if not isinstance(data, dict) or not isinstance(data.get('results'), list):
+        raise ValueError('EPA catalog response malformed')
+    entries = []
+    for item in data['results']:
+        resource = item.get('resource', {})
+        metadata = item.get('metadata', {})
+        if metadata.get('domain') == 'data.energystar.gov':
+            entries.append({'id':resource.get('id'),'name':resource.get('name'),'type':resource.get('type'),
+                            'domain':metadata['domain'],'publication_stage':metadata.get('publication_stage')})
+    if not any(e['id'] == dataset and e['type'] == 'dataset' for e in entries):
+        raise ValueError('Configured dataset not observed in bounded official catalog search')
+    return {'entries':entries,'result_set_size_raw':data.get('result_set_size'),
+            'configured_dataset_observation':'ADVERTISED_IN_OFFICIAL_DOMAIN',
+            'current_certification':'NOT_EVALUATED','cross_version_completeness':'NOT_EVALUATED'}
+
+
 def complete_scan(pages, expected, final_count, before, after, page_size):
     if before != after or expected != final_count:
         raise ValueError('EPA source changed during scan')

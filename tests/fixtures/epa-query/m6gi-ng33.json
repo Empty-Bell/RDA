@@ -1,0 +1,722 @@
+{
+  "dataset_id": "m6gi-ng33",
+  "metadata_before": {
+    "id": "m6gi-ng33",
+    "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+    "rowsUpdatedAt": 1789564327,
+    "viewLastModified": 1739912245,
+    "publicationDate": 1697732785,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "installation_type",
+        "name": "Installation Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "cooking_top_technology",
+        "name": "Cooking Top Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "height_inches",
+        "name": "Height (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "number_of_cooking_zones",
+        "name": "Number of Cooking Zones",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "control_type",
+        "name": "Control Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "voltage_volts",
+        "name": "Voltage (volts)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "amperage_amps",
+        "name": "Amperage (amps)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "specialty_zones",
+        "name": "Specialty Zones",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "smart_capabilities",
+        "name": "Smart Capabilities",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_product_features",
+        "name": "Additional Product Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "annual_energy_consumption_kwh_yr",
+        "name": "Annual Energy Consumption (kWh/year)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "low_power_mode_energy_consumption_oven_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Oven Component (kWh/year)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "low_power_mode_energy_consumption_cooking_top_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Cooking Top (kWh/year)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "average_cooking_zone_time_minutes",
+        "name": "Average Cooking Zone Time (minutes)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_1_size_inches",
+        "name": "Cooking Zone #1 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_2_size_inches",
+        "name": "Cooking Zone #2 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_3_size_inches",
+        "name": "Cooking Zone #3 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_4_size_inches",
+        "name": "Cooking Zone #4 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_5_size_inches",
+        "name": "Cooking Zone #5 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_6_size_inches",
+        "name": "Cooking Zone #6 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_1_wattage_watts",
+        "name": "Cooking Zone #1 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_2_wattage_watts",
+        "name": "Cooking Zone #2 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_3_wattage_watts",
+        "name": "Cooking Zone #3 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_4_wattage_watts",
+        "name": "Cooking Zone #4 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_5_wattage_watts",
+        "name": "Cooking Zone #5 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_6_wattage_watts",
+        "name": "Cooking Zone #6 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": " Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "m6gi-ng33",
+    "name": "ENERGY STAR Certified Residential Electric Cooking Products",
+    "rowsUpdatedAt": 1789564327,
+    "viewLastModified": 1739912245,
+    "publicationDate": 1697732785,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "installation_type",
+        "name": "Installation Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "cooking_top_technology",
+        "name": "Cooking Top Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "height_inches",
+        "name": "Height (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "number_of_cooking_zones",
+        "name": "Number of Cooking Zones",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "control_type",
+        "name": "Control Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "voltage_volts",
+        "name": "Voltage (volts)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "amperage_amps",
+        "name": "Amperage (amps)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "specialty_zones",
+        "name": "Specialty Zones",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "smart_capabilities",
+        "name": "Smart Capabilities",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_product_features",
+        "name": "Additional Product Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "annual_energy_consumption_kwh_yr",
+        "name": "Annual Energy Consumption (kWh/year)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "low_power_mode_energy_consumption_oven_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Oven Component (kWh/year)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "low_power_mode_energy_consumption_cooking_top_kwh_yr",
+        "name": "Low-Power Mode Energy Consumption for Cooking Top (kWh/year)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "average_cooking_zone_time_minutes",
+        "name": "Average Cooking Zone Time (minutes)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_1_size_inches",
+        "name": "Cooking Zone #1 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_2_size_inches",
+        "name": "Cooking Zone #2 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_3_size_inches",
+        "name": "Cooking Zone #3 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_4_size_inches",
+        "name": "Cooking Zone #4 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_5_size_inches",
+        "name": "Cooking Zone #5 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_6_size_inches",
+        "name": "Cooking Zone #6 Size (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_1_wattage_watts",
+        "name": "Cooking Zone #1 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_2_wattage_watts",
+        "name": "Cooking Zone #2 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_3_wattage_watts",
+        "name": "Cooking Zone #3 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_4_wattage_watts",
+        "name": "Cooking Zone #4 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_5_wattage_watts",
+        "name": "Cooking Zone #5 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "cooking_zone_6_wattage_watts",
+        "name": "Cooking Zone #6 Wattage (watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_certified",
+        "name": " Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    [
+      {
+        "source_row_id": "row-f6h5~yr5e-88gw",
+        "pd_id": "3354752",
+        "brand_name": "Samsung",
+        "model_number": "NSI6D*99******",
+        "upc": "887276816142;887276816227;887276821641;887276821696",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Touch Control",
+        "date_available_on_market": "2024-01-03T00:00:00.000",
+        "date_certified": "2024-01-03T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-4tyr~9p85~dups",
+        "pd_id": "3354753",
+        "brand_name": "Samsung",
+        "model_number": "NSI6D*95******",
+        "upc": "887276816128;887276816197;887276816203;887276821672;887276821689",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Touch Control",
+        "date_available_on_market": "2024-01-03T00:00:00.000",
+        "date_certified": "2024-01-03T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ga6c-h2am~83yh",
+        "pd_id": "3354754",
+        "brand_name": "Samsung",
+        "model_number": "NSI6D*93******",
+        "upc": "887276816111;887276816173;887276816180;887276821634;887276821665",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Touch Control",
+        "date_available_on_market": "2024-01-03T00:00:00.000",
+        "date_certified": "2024-01-03T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-83cn-d8wm.gbmy",
+        "pd_id": "3354755",
+        "brand_name": "Samsung",
+        "model_number": "NSI6D*91******",
+        "upc": "887276816159;887276816166;887276821658",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Touch Control",
+        "date_available_on_market": "2024-01-03T00:00:00.000",
+        "date_certified": "2024-01-03T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-k5uw-jx98_8hpw",
+        "pd_id": "3356760",
+        "brand_name": "Samsung",
+        "model_number": "NZ36C3060**",
+        "upc": "887276757407",
+        "product_type": "Cooktop",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Touch Control",
+        "date_available_on_market": "2024-01-02T00:00:00.000",
+        "date_certified": "2024-01-04T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-md6f.fbjb~2bgu",
+        "pd_id": "3463006",
+        "brand_name": "Samsung",
+        "model_number": "NSE6D*8702**",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2024-06-14T00:00:00.000",
+        "date_certified": "2024-04-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-cirh-b53t_ht45",
+        "pd_id": "3463008",
+        "brand_name": "Samsung",
+        "model_number": "NSE6D*8502**",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2024-06-14T00:00:00.000",
+        "date_certified": "2024-04-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-pkfv~qhfs_g2sr",
+        "pd_id": "3463010",
+        "brand_name": "Samsung",
+        "model_number": "NSE6D*8550**",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2024-06-14T00:00:00.000",
+        "date_certified": "2024-04-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-bvxs.gw43-fr84",
+        "pd_id": "3463013",
+        "brand_name": "Samsung",
+        "model_number": "NE63D6711**",
+        "product_type": "Range",
+        "installation_type": "Freestanding",
+        "control_type": "Knobs",
+        "date_available_on_market": "2024-06-14T00:00:00.000",
+        "date_certified": "2024-04-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-wbqr~nfrj-53bg",
+        "pd_id": "3463014",
+        "brand_name": "Samsung",
+        "model_number": "NE63F6711**",
+        "product_type": "Range",
+        "installation_type": "Freestanding",
+        "control_type": "Knobs",
+        "date_available_on_market": "2024-06-14T00:00:00.000",
+        "date_certified": "2024-04-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-wjqs.cy6f~dcgp",
+        "pd_id": "3543546",
+        "brand_name": "Samsung",
+        "model_number": "NE63D6511**",
+        "product_type": "Range",
+        "installation_type": "Freestanding",
+        "control_type": "Knobs",
+        "date_available_on_market": "2024-07-08T00:00:00.000",
+        "date_certified": "2024-06-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-etiu-3s6n-xp7z",
+        "pd_id": "3543547",
+        "brand_name": "Samsung",
+        "model_number": "NE63F6511**",
+        "product_type": "Range",
+        "installation_type": "Freestanding",
+        "control_type": "Knobs",
+        "date_available_on_market": "2024-07-08T00:00:00.000",
+        "date_certified": "2024-06-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-weav-hpvs.54c7",
+        "pd_id": "3814669",
+        "brand_name": "Samsung",
+        "model_number": "NZ30*G5332**",
+        "product_type": "Cooktop",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2025-02-14T00:00:00.000",
+        "date_certified": "2024-11-22T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-mzps~bxaw.wqjj",
+        "pd_id": "3814670",
+        "brand_name": "Samsung",
+        "model_number": "NZ36*G5332**",
+        "product_type": "Cooktop",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2025-02-14T00:00:00.000",
+        "date_certified": "2024-11-22T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-5tr8~mv73_9bv4",
+        "pd_id": "3845235",
+        "brand_name": "Samsung",
+        "model_number": "CC70*30***",
+        "product_type": "Cooktop",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Touch Control",
+        "date_available_on_market": "2025-02-28T00:00:00.000",
+        "date_certified": "2024-12-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-siaa-5sxd_zuec",
+        "pd_id": "3892119",
+        "brand_name": "Samsung",
+        "model_number": "CC70*36***",
+        "product_type": "Cooktop",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Touch Control",
+        "date_available_on_market": "2025-03-21T00:00:00.000",
+        "date_certified": "2024-12-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-jd53_rp3a_d5zj",
+        "pd_id": "4005975",
+        "brand_name": "Samsung",
+        "model_number": "NZ30*G6332**",
+        "product_type": "Cooktop",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2025-05-26T00:00:00.000",
+        "date_certified": "2025-03-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vwiz-4huk.jv83",
+        "pd_id": "4005976",
+        "brand_name": "Samsung",
+        "model_number": "NZ36*G6432**",
+        "product_type": "Cooktop",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2025-05-26T00:00:00.000",
+        "date_certified": "2025-03-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-2dgq~fa6q-8bmw",
+        "pd_id": "4515602",
+        "brand_name": "Samsung",
+        "model_number": "NSE70H63S*",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2026-01-30T00:00:00.000",
+        "date_certified": "2025-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-qdgz_adjs.2fvm",
+        "pd_id": "4515603",
+        "brand_name": "Samsung",
+        "model_number": "NSE80H63S*",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2026-01-30T00:00:00.000",
+        "date_certified": "2025-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-dk4m~9t9w-aezw",
+        "pd_id": "4515604",
+        "brand_name": "Samsung",
+        "model_number": "NSE80H63X*",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2026-01-30T00:00:00.000",
+        "date_certified": "2025-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-tykp_8dvq-abhp",
+        "pd_id": "4515605",
+        "brand_name": "Samsung",
+        "model_number": "NSE90H63S*",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2026-01-30T00:00:00.000",
+        "date_certified": "2025-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-7ihv.2bvb_zvhj",
+        "pd_id": "4586372",
+        "brand_name": "Samsung",
+        "model_number": "NSE90H63D*",
+        "product_type": "Range",
+        "installation_type": "Built-in/Slide-in",
+        "control_type": "Knobs",
+        "date_available_on_market": "2026-03-31T00:00:00.000",
+        "date_certified": "2026-03-31T00:00:00.000",
+        "markets": "United States, Canada"
+      }
+    ]
+  ],
+  "count_before": [
+    {
+      "row_count": "23"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "23"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}

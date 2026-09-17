@@ -8,7 +8,8 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
-from epa_queries import BRAND_WHERE, literal, query_url, decode_rows, row_count, complete_scan
+from urllib.parse import urlencode
+from epa_queries import BRAND_WHERE, literal, query_url, decode_rows, row_count, complete_scan, catalog_projection
 from source_recon import FAMILIES
 from source_contract import epa_contract
 
@@ -60,6 +61,13 @@ def main():
     def fingerprint(m):
         return {k:m[k] for k in ('id','rowsUpdatedAt','viewLastModified','columns')}
     try:
+        term = re.sub(r'\s+V\d+(?:\.\d+)*$', '',config['dataset_name'])
+        catalog_url = 'https://api.us.socrata.com/api/catalog/v1?' + urlencode({'domains':'data.energystar.gov',
+                         'search_context':'data.energystar.gov','q':term,'limit':100})
+        status, kind, body = fetch('catalog', catalog_url, True)
+        assert status == 200 and 'json' in kind.lower(), 'EPA catalog unavailable'
+        catalog = catalog_projection(json.loads(body),dataset)
+        save('catalog.projected.json',catalog); report['catalog_inventory'] = catalog
         before = metadata('metadata-before')
         fields = [c['fieldName'] for c in before['columns'] if re.fullmatch(r'[a-z][a-z0-9_]*',c['fieldName'])]
         selected = [f for f in fields if f in ('pd_id','brand_name','model_number','upc','markets')
@@ -110,7 +118,7 @@ def main():
         else:
             report['exact_model_probe'] = {'status':'NOT_OBSERVED_NO_BRAND_ROWS'}
         report['raw_field_values'] = {f:sorted({r[f] for r in all_rows if isinstance(r.get(f),str)})
-                                    for f in selected if re.search(r'type|market|brand',f)}
+                                    for f in selected if f in ('markets','brand_name') or ('type' in f and not f.startswith('date'))}
         report['omitted_upc_rows'] = sum(not r.get('upc') for r in all_rows)
         report['literal_wildcard_rows'] = sum('*' in r['model_number'] or '?' in r['model_number'] for r in all_rows)
         report['update_metadata'] = {k:before[k] for k in ('rowsUpdatedAt','viewLastModified','publicationDate')}

@@ -1,0 +1,1644 @@
+{
+  "dataset_id": "t9u7-4d2j",
+  "metadata_before": {
+    "id": "t9u7-4d2j",
+    "name": "ENERGY STAR Certified Residential Clothes Dryers",
+    "rowsUpdatedAt": 1789563703,
+    "viewLastModified": 1739912075,
+    "publicationDate": 1644255339,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "type",
+        "name": "Fuel Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "special_type",
+        "name": "Special Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "heat_pump_technology",
+        "name": "Heat Pump Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "voltage",
+        "name": "Voltage (V)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "drum_capacity_cu_ft",
+        "name": "Drum Capacity (cu-ft)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "height_inches",
+        "name": "Height (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "combined_energy_factor_cef",
+        "name": "Combined Energy Factor (CEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "estimated_annual_energy_use_kwh_yr",
+        "name": "Estimated Annual Energy Use (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "estimated_energy_test_cycle_time_min",
+        "name": "Estimated Energy Test Cycle Time (min)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_test_cycle_information",
+        "name": "Energy Test Cycle Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_dryer_features",
+        "name": "Additional Dryer Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "vented_or_ventless",
+        "name": "Vented or Ventless",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "refrigerant_type",
+        "name": "Refrigerant Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "refrigerant_with_gwp",
+        "name": "Refrigerant with GWP",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connected",
+        "name": "Connected",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connected_demand_response_functionality_tested",
+        "name": "Connects Using",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "communication_standard_application_layer",
+        "name": "Communication Standard - Application Layer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh",
+        "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_washer_available",
+        "name": "Paired ENERGY STAR Clothes Washer Available",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_washer_energy_star_model_identifier",
+        "name": "Paired ENERGY STAR Clothes Washer ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available on Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "t9u7-4d2j",
+    "name": "ENERGY STAR Certified Residential Clothes Dryers",
+    "rowsUpdatedAt": 1789563703,
+    "viewLastModified": 1739912075,
+    "publicationDate": 1644255339,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "product_type",
+        "name": "Product Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "type",
+        "name": "Fuel Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "special_type",
+        "name": "Special Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "heat_pump_technology",
+        "name": "Heat Pump Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "voltage",
+        "name": "Voltage (V)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "drum_capacity_cu_ft",
+        "name": "Drum Capacity (cu-ft)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "height_inches",
+        "name": "Height (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "combined_energy_factor_cef",
+        "name": "Combined Energy Factor (CEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "estimated_annual_energy_use_kwh_yr",
+        "name": "Estimated Annual Energy Use (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "estimated_energy_test_cycle_time_min",
+        "name": "Estimated Energy Test Cycle Time (min)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_test_cycle_information",
+        "name": "Energy Test Cycle Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_dryer_features",
+        "name": "Additional Dryer Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "vented_or_ventless",
+        "name": "Vented or Ventless",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "refrigerant_type",
+        "name": "Refrigerant Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "refrigerant_with_gwp",
+        "name": "Refrigerant with GWP",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connected",
+        "name": "Connected",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connected_demand_response_functionality_tested",
+        "name": "Connects Using",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "communication_standard_application_layer",
+        "name": "Communication Standard - Application Layer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh",
+        "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_washer_available",
+        "name": "Paired ENERGY STAR Clothes Washer Available",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_washer_energy_star_model_identifier",
+        "name": "Paired ENERGY STAR Clothes Washer ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available on Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    [
+      {
+        "source_row_id": "row-x3x6.ey9k-mr7j",
+        "pd_id": "2231129",
+        "brand_name": "Samsung",
+        "model_number": "DV52J870*E*",
+        "upc": "887276095813",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2015-03-10T00:00:00.000",
+        "date_qualified": "2015-01-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3aat_6zmh-44jr",
+        "pd_id": "2231130",
+        "brand_name": "Samsung",
+        "model_number": "DV52J806*E*",
+        "upc": "887276075433",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2015-02-15T00:00:00.000",
+        "date_qualified": "2015-01-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3imd.te4y-j9j9",
+        "pd_id": "2231131",
+        "brand_name": "Samsung",
+        "model_number": "DV48J777*E*",
+        "upc": "887276095769",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2015-03-10T00:00:00.000",
+        "date_qualified": "2015-01-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-g8by-apaw_w4e4",
+        "pd_id": "2231132",
+        "brand_name": "Samsung",
+        "model_number": "DV48J770*E*",
+        "upc": "887276095738",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2015-03-10T00:00:00.000",
+        "date_qualified": "2015-01-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ijch-466d_ppvr",
+        "pd_id": "2231172",
+        "brand_name": "Samsung",
+        "model_number": "DV52J870*G*",
+        "upc": "887276095837",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2015-03-10T00:00:00.000",
+        "date_qualified": "2015-01-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-k785~wazg_m4pq",
+        "pd_id": "2231173",
+        "brand_name": "Samsung",
+        "model_number": "DV52J806*G*",
+        "upc": "887276075440",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2015-02-15T00:00:00.000",
+        "date_qualified": "2015-01-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-fdqd.f7t6.wzpf",
+        "pd_id": "2231174",
+        "brand_name": "Samsung",
+        "model_number": "DV48J777*G*",
+        "upc": "887276095783",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2015-03-10T00:00:00.000",
+        "date_qualified": "2015-01-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-iw6k_d7nj.4fuf",
+        "pd_id": "2231175",
+        "brand_name": "Samsung",
+        "model_number": "DV48J770*G*",
+        "upc": "887276095745",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2015-03-10T00:00:00.000",
+        "date_qualified": "2015-01-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-p55e~ei6v-53ve",
+        "pd_id": "2255002",
+        "brand_name": "Samsung",
+        "model_number": "DV50K86**E*",
+        "upc": "887276132655",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2015-12-20T00:00:00.000",
+        "date_qualified": "2015-12-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ny6y~zmrr.625t",
+        "pd_id": "2255003",
+        "brand_name": "Samsung",
+        "model_number": "DV45K76**E*",
+        "upc": "887276132624",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2015-12-20T00:00:00.000",
+        "date_qualified": "2015-12-09T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-w533-b9qq.tjta",
+        "pd_id": "2255005",
+        "brand_name": "Samsung",
+        "model_number": "DV50K86**G*",
+        "upc": "887276132693",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2015-12-20T00:00:00.000",
+        "date_qualified": "2015-12-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-j5gn.p2p4-s3zn",
+        "pd_id": "2255006",
+        "brand_name": "Samsung",
+        "model_number": "DV45K76**G*",
+        "upc": "887276132648",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2015-12-20T00:00:00.000",
+        "date_qualified": "2015-12-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-uzg8.jvea-e3yi",
+        "pd_id": "2257198",
+        "brand_name": "Samsung",
+        "model_number": "DV50K75**E*",
+        "upc": "887276135960",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2016-01-24T00:00:00.000",
+        "date_qualified": "2016-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-sjn5~pfgj~xjz3",
+        "pd_id": "2257199",
+        "brand_name": "Samsung",
+        "model_number": "DV45K65**E*",
+        "upc": "887276138381",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2016-01-24T00:00:00.000",
+        "date_qualified": "2016-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-7w98_dryi.vqyr",
+        "pd_id": "2257200",
+        "brand_name": "Samsung",
+        "model_number": "DV45K62**E*",
+        "upc": "887276138329",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2016-01-24T00:00:00.000",
+        "date_qualified": "2016-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-q5qp_nyuk-96dd",
+        "pd_id": "2257201",
+        "brand_name": "Samsung",
+        "model_number": "DV50K75**G*",
+        "upc": "887276135984",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2016-01-24T00:00:00.000",
+        "date_qualified": "2016-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-zp63~ybi3.i3gv",
+        "pd_id": "2257202",
+        "brand_name": "Samsung",
+        "model_number": "DV45K65**G*",
+        "upc": "887276138428",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2016-01-24T00:00:00.000",
+        "date_qualified": "2016-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-yqug-uzzk.hrfu",
+        "pd_id": "2257203",
+        "brand_name": "Samsung",
+        "model_number": "DV45K62**G*",
+        "upc": "887276138367",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2016-01-24T00:00:00.000",
+        "date_qualified": "2015-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-2d67.7btz.vi47",
+        "pd_id": "2271286",
+        "brand_name": "Samsung",
+        "model_number": "DV45K71**E*",
+        "upc": "887276132594",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2016-07-22T00:00:00.000",
+        "date_qualified": "2016-06-30T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-u54q-can6.mnj3",
+        "pd_id": "2271287",
+        "brand_name": "Samsung",
+        "model_number": "DV45K71**G*",
+        "upc": "887276132617",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2016-07-22T00:00:00.000",
+        "date_qualified": "2016-06-30T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6ngc-qa4f_vdk8",
+        "pd_id": "2290026",
+        "brand_name": "Samsung",
+        "model_number": "DVE45M55***",
+        "upc": "887276197135",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-x6wt.iuj4.kwjr",
+        "pd_id": "2290027",
+        "brand_name": "Samsung",
+        "model_number": "DVE60M99***",
+        "upc": "887276197135",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-b4pu~zszw~h5t2",
+        "pd_id": "2290028",
+        "brand_name": "Samsung",
+        "model_number": "DVE55M96***",
+        "upc": "887276197135",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-jk47~qph8-vh22",
+        "pd_id": "2290029",
+        "brand_name": "Samsung",
+        "model_number": "DVE54M87***",
+        "upc": "887276197005",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ur6m~9n6g_84z3",
+        "pd_id": "2290030",
+        "brand_name": "Samsung",
+        "model_number": "DVE52M86***",
+        "upc": "887276197005",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-7znb.8xuu~23tp",
+        "pd_id": "2290031",
+        "brand_name": "Samsung",
+        "model_number": "DVE52M77***",
+        "upc": "887276197005",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6khj.t9fv~uwxr",
+        "pd_id": "2290032",
+        "brand_name": "Samsung",
+        "model_number": "DVG45M55***",
+        "upc": "887276197166",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-mdqz~e3qm.47hr",
+        "pd_id": "2290033",
+        "brand_name": "Samsung",
+        "model_number": "DVG60M99***",
+        "upc": "887276197166",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-d2um~wt7d~q7s3",
+        "pd_id": "2290034",
+        "brand_name": "Samsung",
+        "model_number": "DVG55M96***",
+        "upc": "887276197166",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-u4sv-v426-sznt",
+        "pd_id": "2290035",
+        "brand_name": "Samsung",
+        "model_number": "DVG54M87***",
+        "upc": "887276197043",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-hyhs_jaxa.gri4",
+        "pd_id": "2290036",
+        "brand_name": "Samsung",
+        "model_number": "DVG52M86***",
+        "upc": "887276197043",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6f79_uqdt.qyss",
+        "pd_id": "2290037",
+        "brand_name": "Samsung",
+        "model_number": "DVG52M77***",
+        "upc": "887276197043",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2017-01-30T00:00:00.000",
+        "date_qualified": "2017-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-x42g-zygp.5gi6",
+        "pd_id": "2325656",
+        "brand_name": "Samsung",
+        "model_number": "DV22N685*H*",
+        "product_type": "Electric Compact Ventless 240V",
+        "type": "Electric",
+        "date_available_on_market": "2018-10-01T00:00:00.000",
+        "date_qualified": "2018-09-07T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-acwk~cx89_ighh",
+        "pd_id": "2325657",
+        "brand_name": "Samsung",
+        "model_number": "DV22N680*H*",
+        "product_type": "Electric Compact Ventless 240V",
+        "type": "Electric",
+        "date_available_on_market": "2018-10-15T00:00:00.000",
+        "date_qualified": "2018-09-07T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-zseg~ihan_bbpe",
+        "pd_id": "2333034",
+        "brand_name": "Samsung",
+        "model_number": "DVE45R63***",
+        "upc": "887276305264",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2019-02-01T00:00:00.000",
+        "date_qualified": "2019-01-07T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-aqjw-b8mi_g5va",
+        "pd_id": "2334001",
+        "brand_name": "Samsung",
+        "model_number": "DVG45R63***",
+        "upc": "887276305288",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2019-02-01T00:00:00.000",
+        "date_qualified": "2019-01-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-iqcr.yb9h~rv2t",
+        "pd_id": "2339075",
+        "brand_name": "Samsung",
+        "model_number": "DVE54R76***",
+        "upc": "887276347981",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2019-07-05T00:00:00.000",
+        "date_qualified": "2019-05-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-7gwb_99ms_23w7",
+        "pd_id": "2339076",
+        "brand_name": "Samsung",
+        "model_number": "DVE54R72***",
+        "upc": "887276347967",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2019-07-12T00:00:00.000",
+        "date_qualified": "2019-05-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-sf22.pg57_jgc8",
+        "pd_id": "2339077",
+        "brand_name": "Samsung",
+        "model_number": "DVG54R76***",
+        "upc": "887276348025",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2019-07-05T00:00:00.000",
+        "date_qualified": "2019-05-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3y4a-ycie.qgjp",
+        "pd_id": "2339078",
+        "brand_name": "Samsung",
+        "model_number": "DVG54R72***",
+        "upc": "887276348018",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2019-07-12T00:00:00.000",
+        "date_qualified": "2019-05-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8y38.qjci-54n7",
+        "pd_id": "2339824",
+        "brand_name": "Samsung",
+        "model_number": "DVE50R85***",
+        "upc": "887276348803",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2019-07-20T00:00:00.000",
+        "date_qualified": "2019-05-31T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ar9a~vkfy_zwmv",
+        "pd_id": "2339825",
+        "brand_name": "Samsung",
+        "model_number": "DVG50R85***",
+        "upc": "887276348827",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2019-07-20T00:00:00.000",
+        "date_qualified": "2019-05-31T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-v3zz_7vnr_ecj7",
+        "pd_id": "2349758",
+        "brand_name": "Samsung",
+        "model_number": "DVE52T76***",
+        "upc": "887276387826",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2020-01-03T00:00:00.000",
+        "date_qualified": "2019-11-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-zu9e.mdhc_8ckg",
+        "pd_id": "2349759",
+        "brand_name": "Samsung",
+        "model_number": "DVE50T74***",
+        "upc": "887276391038",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2020-01-03T00:00:00.000",
+        "date_qualified": "2019-11-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-26my-6mv4_z6kh",
+        "pd_id": "2349760",
+        "brand_name": "Samsung",
+        "model_number": "DVE50T73***",
+        "upc": "887276390383",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2020-01-03T00:00:00.000",
+        "date_qualified": "2019-11-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-734p_7kkf-3a9r",
+        "pd_id": "2349761",
+        "brand_name": "Samsung",
+        "model_number": "DVE45T70***",
+        "upc": "887276390376",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2020-01-03T00:00:00.000",
+        "date_qualified": "2019-11-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-b2ef-eyii~7uaj",
+        "pd_id": "2351598",
+        "brand_name": "Samsung",
+        "model_number": "DVE45T61***",
+        "upc": "887276390352",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2020-01-15T00:00:00.000",
+        "date_qualified": "2019-11-27T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8hti.rneu.amnd",
+        "pd_id": "2351599",
+        "brand_name": "Samsung",
+        "model_number": "DVG45T61***",
+        "upc": "887276390390",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2020-01-15T00:00:00.000",
+        "date_qualified": "2019-11-27T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-jqix~fjzm_7nb2",
+        "pd_id": "2354201",
+        "brand_name": "Samsung",
+        "model_number": "DVE45T6005*",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2020-02-14T00:00:00.000",
+        "date_qualified": "2020-01-22T00:00:00.000",
+        "markets": "Canada"
+      },
+      {
+        "source_row_id": "row-w89m~swng~sc3d",
+        "pd_id": "2370526",
+        "brand_name": "Samsung",
+        "model_number": "DVE50T52***",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-01-10T00:00:00.000",
+        "date_qualified": "2020-11-30T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-2ekz~kjq3-gu42",
+        "pd_id": "2371158",
+        "brand_name": "Samsung",
+        "model_number": "DVE50A88***",
+        "upc": "887276517735",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-01-15T00:00:00.000",
+        "date_qualified": "2020-12-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-zfmk-p8qm-my5t",
+        "pd_id": "2371159",
+        "brand_name": "Samsung",
+        "model_number": "DVE50A86***",
+        "upc": "887276521558",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-01-15T00:00:00.000",
+        "date_qualified": "2020-12-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-r3gx_ku4w~rpg7",
+        "pd_id": "2371160",
+        "brand_name": "Samsung",
+        "model_number": "DVG50A88***",
+        "upc": "887276521565",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2021-01-15T00:00:00.000",
+        "date_qualified": "2020-12-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8vwc_t6gr.mx6k",
+        "pd_id": "2371161",
+        "brand_name": "Samsung",
+        "model_number": "DVG50A86***",
+        "upc": "887276517742",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2021-01-15T00:00:00.000",
+        "date_qualified": "2020-12-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-fbin.8bjj-wm2i",
+        "pd_id": "2374793",
+        "brand_name": "Samsung",
+        "model_number": "DVE50A5405*",
+        "upc": "887276539348",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-03-25T00:00:00.000",
+        "date_qualified": "2021-03-12T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-bvpn-7453-h6qr",
+        "pd_id": "2376196",
+        "brand_name": "Samsung",
+        "model_number": "DVE50A85***",
+        "upc": "887276549569",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-05-15T00:00:00.000",
+        "date_qualified": "2021-04-14T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vi28~jyuj.5vu3",
+        "pd_id": "2376197",
+        "brand_name": "Samsung",
+        "model_number": "DVG50A85***",
+        "upc": "887276549576",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2021-05-15T00:00:00.000",
+        "date_qualified": "2021-04-14T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8k43.cbrt.gwp4",
+        "pd_id": "2377972",
+        "brand_name": "Samsung",
+        "model_number": "DVE55A77***",
+        "upc": "887276557762",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-w6pz~km3r~sntq",
+        "pd_id": "2377973",
+        "brand_name": "Samsung",
+        "model_number": "DVE55A73***",
+        "upc": "887276557755",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ive3_siip-zghv",
+        "pd_id": "2377974",
+        "brand_name": "Samsung",
+        "model_number": "DVE45A64***",
+        "upc": "887276557700",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-g52n-bhb6~y72p",
+        "pd_id": "2377975",
+        "brand_name": "Samsung",
+        "model_number": "DVE60A99***",
+        "upc": "887276551616",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-t7xh~rfaf~6znu",
+        "pd_id": "2377976",
+        "brand_name": "Samsung",
+        "model_number": "DVG55A77***",
+        "upc": "887276557847",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-y5v8-22if~wz4j",
+        "pd_id": "2377977",
+        "brand_name": "Samsung",
+        "model_number": "DVG55A73***",
+        "upc": "887276557830",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-tpeh-vke2.a7yh",
+        "pd_id": "2377978",
+        "brand_name": "Samsung",
+        "model_number": "DVG45A64***",
+        "upc": "887276557779",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-659s-wq56-njmn",
+        "pd_id": "2377979",
+        "brand_name": "Samsung",
+        "model_number": "DVG60A99***",
+        "upc": "887276551623",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2021-05-30T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-u68n-akii~pjr8",
+        "pd_id": "2389299",
+        "brand_name": "Samsung",
+        "model_number": "DVE52B76***",
+        "upc": "887276618661",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-01-20T00:00:00.000",
+        "date_qualified": "2021-12-14T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-h9nz~qbms.m3tz",
+        "pd_id": "2393094",
+        "brand_name": "Samsung",
+        "model_number": "DVE45B6305*",
+        "upc": "887276652153",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-04-01T00:00:00.000",
+        "date_qualified": "2022-02-17T00:00:00.000",
+        "markets": "Canada"
+      },
+      {
+        "source_row_id": "row-4jmy~32a3_geqy",
+        "pd_id": "2393095",
+        "brand_name": "Samsung",
+        "model_number": "DVG45B6305*",
+        "upc": "887276652160",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2022-04-01T00:00:00.000",
+        "date_qualified": "2022-02-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-qpny~ecrk.agxm",
+        "pd_id": "2395844",
+        "brand_name": "Samsung",
+        "model_number": "DVE50BG83***",
+        "upc": "887276660868",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-06-03T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-9s4w~sr7z.xdsc",
+        "pd_id": "2395845",
+        "brand_name": "Samsung",
+        "model_number": "DVE46BB67***",
+        "upc": "887276660035",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-06-03T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-hu28_5uf4.ppn9",
+        "pd_id": "2395846",
+        "brand_name": "Samsung",
+        "model_number": "DVE46BG65***",
+        "upc": "887276660066",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-06-03T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-m9ri-wbmp.itvn",
+        "pd_id": "2395847",
+        "brand_name": "Samsung",
+        "model_number": "DVG50BG83***",
+        "upc": "887276660882",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2022-06-03T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-4732-x6xs_zay9",
+        "pd_id": "2395848",
+        "brand_name": "Samsung",
+        "model_number": "DVG46BB67***",
+        "upc": "887276660141",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2022-06-03T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-pev5_zvus_yizw",
+        "pd_id": "2395849",
+        "brand_name": "Samsung",
+        "model_number": "DVG46BG65***",
+        "upc": "887276660165",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2022-06-03T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-4mu9-7jut~b5se",
+        "pd_id": "2395851",
+        "brand_name": "Samsung",
+        "model_number": "DVE53BB89***",
+        "upc": "887276657264",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-05-27T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-e8xt_vq5p~wzyu",
+        "pd_id": "2395852",
+        "brand_name": "Samsung",
+        "model_number": "DVE53BB87***",
+        "upc": "887276657233",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-05-27T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8uf4.2r9b-3kfu",
+        "pd_id": "2395853",
+        "brand_name": "Samsung",
+        "model_number": "DVG53BB89***",
+        "upc": "887276657325",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2022-05-27T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-78tf-d6i3-6bfx",
+        "pd_id": "2395854",
+        "brand_name": "Samsung",
+        "model_number": "DVG53BB87***",
+        "upc": "887276657295",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2022-05-27T00:00:00.000",
+        "date_qualified": "2022-05-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-dn8b.b64i~fz2s",
+        "pd_id": "2396779",
+        "brand_name": "Samsung",
+        "model_number": "DV25B68**H*",
+        "upc": "887276665177",
+        "product_type": "Electric Compact Ventless 240V",
+        "type": "Electric",
+        "date_available_on_market": "2022-06-20T00:00:00.000",
+        "date_qualified": "2022-05-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-qg4a.7sji_dexa",
+        "pd_id": "2399120",
+        "brand_name": "Samsung",
+        "model_number": "DV25B69**H*",
+        "upc": "887276665207",
+        "product_type": "Electric Compact Ventless 240V",
+        "type": "Electric",
+        "date_available_on_market": "2022-09-01T00:00:00.000",
+        "date_qualified": "2022-07-22T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-83zd~hutj-pgs3",
+        "pd_id": "2399999",
+        "brand_name": "Samsung",
+        "model_number": "DV53BB89**H*",
+        "upc": "887276716268",
+        "product_type": "Electric Standard Ventless",
+        "type": "Electric",
+        "date_available_on_market": "2022-09-01T00:00:00.000",
+        "date_qualified": "2022-08-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-tmwa_5yx9.w9aq",
+        "pd_id": "2404552",
+        "brand_name": "Samsung",
+        "model_number": "DVE55CG7105*",
+        "upc": "887276740935",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2022-12-01T00:00:00.000",
+        "date_qualified": "2022-11-14T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-z942_7yzw.7345",
+        "pd_id": "2409716",
+        "brand_name": "Samsung",
+        "model_number": "DVE54CG7155*",
+        "upc": "887276759913",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2023-05-05T00:00:00.000",
+        "date_qualified": "2023-03-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-hfbi_fr6d~augv",
+        "pd_id": "2409717",
+        "brand_name": "Samsung",
+        "model_number": "DVE54CG755**",
+        "upc": "887276759920",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2023-04-28T00:00:00.000",
+        "date_qualified": "2023-03-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-igpn_gke6.6mm7",
+        "pd_id": "2409718",
+        "brand_name": "Samsung",
+        "model_number": "DVE55CG75***",
+        "upc": "887276764795",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2023-12-08T00:00:00.000",
+        "date_qualified": "2023-03-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-gts6_hb9y~23e7",
+        "pd_id": "2409719",
+        "brand_name": "Samsung",
+        "model_number": "DVG54CG755**",
+        "upc": "887276759951",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2023-04-28T00:00:00.000",
+        "date_qualified": "2023-03-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-2jw6~dc2v-in47",
+        "pd_id": "2409720",
+        "brand_name": "Samsung",
+        "model_number": "DVG55CG75***",
+        "upc": "887276764801",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2023-12-08T00:00:00.000",
+        "date_qualified": "2023-03-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-buip_pb4e_4t39",
+        "pd_id": "2545604",
+        "brand_name": "Samsung",
+        "model_number": "DVE51CG8005*",
+        "upc": "887276783574",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2023-08-11T00:00:00.000",
+        "date_qualified": "2023-07-03T00:00:00.000",
+        "markets": "Canada"
+      },
+      {
+        "source_row_id": "row-28iw-hh2w~4wyf",
+        "pd_id": "2788447",
+        "brand_name": "Samsung",
+        "model_number": "WH53DBH7**G*",
+        "upc": "887276814582",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-sxwe~tkup~q33b",
+        "pd_id": "2788448",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH5**G*",
+        "upc": "887276814537",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-gsut.694m.xij8",
+        "pd_id": "2788449",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH1**G*",
+        "upc": "887276814513",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-xpap~y9v4-h7h3",
+        "pd_id": "2788487",
+        "brand_name": "Samsung",
+        "model_number": "WH53DBH7**E*",
+        "upc": "887276814575",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ix54~snui-k8si",
+        "pd_id": "2788488",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH50*E*",
+        "upc": "887276814520",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-cxkc.4nt3.uege",
+        "pd_id": "2788489",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH55*E*",
+        "upc": "887276814544",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-z9xk-iqin-htkt",
+        "pd_id": "2788490",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH1**E*",
+        "upc": "887276814490",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-zb6a~smgt.p5i5",
+        "pd_id": "3387758",
+        "brand_name": "Samsung",
+        "model_number": "WD53DBA9**H*",
+        "upc": "887276824949",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "refrigerant_type": "R-134a",
+        "date_available_on_market": "2024-03-08T00:00:00.000",
+        "date_qualified": "2024-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-smjs-wh26-yejq",
+        "pd_id": "3543504",
+        "brand_name": "Samsung",
+        "model_number": "DV45DG60**H*",
+        "upc": "887276886152",
+        "product_type": "Electric Standard Ventless",
+        "type": "Electric",
+        "date_available_on_market": "2024-07-01T00:00:00.000",
+        "date_qualified": "2024-06-12T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-wf68.c5a6-tt5t",
+        "pd_id": "3555509",
+        "brand_name": "Samsung",
+        "model_number": "DVE52DG5505*",
+        "upc": "887276904313",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2024-08-15T00:00:00.000",
+        "date_qualified": "2024-07-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-i3pf_5ery.cz99",
+        "pd_id": "3998322",
+        "brand_name": "Samsung",
+        "model_number": "WD90F53*V*",
+        "upc": "887276989174",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "date_available_on_market": "2025-03-14T00:00:00.000",
+        "date_qualified": "2025-02-18T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-bz4a~24t6~whn5",
+        "pd_id": "3999616",
+        "brand_name": "Samsung",
+        "model_number": "DV90F53*E*",
+        "upc": "198957074172",
+        "product_type": "Electric Standard Vented",
+        "type": "Electric",
+        "date_available_on_market": "2025-03-21T00:00:00.000",
+        "date_qualified": "2025-03-10T00:00:00.000",
+        "markets": "United States, Canada"
+      }
+    ],
+    [
+      {
+        "source_row_id": "row-kpuy.p2zb_gu2i",
+        "pd_id": "3999617",
+        "brand_name": "Samsung",
+        "model_number": "DV90F53*G*",
+        "upc": "198957074219",
+        "product_type": "Gas Standard Vented",
+        "type": "Gas",
+        "date_available_on_market": "2025-03-21T00:00:00.000",
+        "date_qualified": "2025-03-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-gwcu.4cue.9p4i",
+        "pd_id": "4481059",
+        "brand_name": "Samsung",
+        "model_number": "DV25FG62*0**",
+        "upc": "198957233562",
+        "product_type": "Electric Compact Ventless 240V",
+        "type": "Electric",
+        "date_available_on_market": "2025-10-05T00:00:00.000",
+        "date_qualified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-4ghz-g73v~wbbu",
+        "pd_id": "4481060",
+        "brand_name": "Samsung",
+        "model_number": "DV25FG50*0**",
+        "upc": "198957233524",
+        "product_type": "Electric Compact Ventless 240V",
+        "type": "Electric",
+        "date_available_on_market": "2025-10-05T00:00:00.000",
+        "date_qualified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-hjsa_2qd4-xw86",
+        "pd_id": "4576676",
+        "brand_name": "Samsung",
+        "model_number": "WD80H53*H*",
+        "upc": "198957290022",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "date_available_on_market": "2026-04-24T00:00:00.000",
+        "date_qualified": "2026-03-11T00:00:00.000",
+        "markets": "United States, Canada"
+      }
+    ]
+  ],
+  "count_before": [
+    {
+      "row_count": "104"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "104"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}

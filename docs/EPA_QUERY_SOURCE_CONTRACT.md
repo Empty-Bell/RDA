@@ -1,10 +1,15 @@
 # EPA query, type and update source contract
 
-Status: hosted discovery pending. Phase 0 RUNNING; D09 remains OPEN.
+Status: query discovery PASS in run 35165385059; catalog/fixture regression pending.
+Phase 0 RUNNING; D09 remains OPEN.
 
 An anonymous, standard-library-only ubuntu-24.04 job probes each of the nine
 distinct existing datasets. Shared routes (Range/Cooktop; Computer/Chromebook/Tablet)
 are recorded without treating a shared dataset as approved product applicability.
+Bounded official-domain catalog searches retain configured dataset advertisement
+and other returned version entries, omitting publisher/contact fields. Advertisement
+does not prove sole current version or current certification. Search failure/missing
+configured ID fails the extraction probe without claiming the dataset is absent.
 The EPA job installs no browser/OCR/LLM dependencies; concurrency is bounded to 3.
 
 Declared exploratory scope is upper(brand_name) = 'SAMSUNG'. This is a literal
@@ -50,6 +55,25 @@ contract verified, never certification, absence or G0 acceptance.
 
 Primary references checked 2026-09-17:
 - [Socrata text comparison and quote escaping](https://dev.socrata.com/docs/datatypes/text.html)
-- [Socrata paging and explicit ordering](https://dev.socrata.com/docs/paging.html)
+- [Socrata explicit paging order](https://dev.socrata.com/docs/queries/order.html)
 - [EPA data tools / daily updates](https://www.energystar.gov/products/productstr)
 - [EPA API dataset replacement process](https://www.energystar.gov/products/spec/energy_star_api_user_essentials_pd)
+
+Discovery code 1f664cec4c2fd20fe03f82916fdd1cbab637b683 passed all nine EPA
+jobs with seven query-boundary tests each. Actual full-query fixtures retain nine
+datasets and controlled 400 responses; the fixture manifest records hashes/expiry.
+Observed declared brand rows: refrigerator 101, dishwasher 22, washer 66, TV 59,
+cooking 23, dryer 104, fan 0, displays 146, computers 45. These are query snapshot
+counts, not retail SKU counts or per-SKU certification matching coverage.
+
+Computers include Notebook and Slate/Tablet with some market strings excluding
+United States. UPC omission is observed in multiple datasets, including most display
+rows. Cooking has distinct product types; dryer/washer special_type includes combo
+and laundry-center rows. Do not replace explicit source types with listing family.
+Fan 0 rows means only this declared brand query returned zero; hood applicability
+and other aliases remain OPEN. Pattern/variant equality and cross-version routing
+require approved semantics. Current source advertisement is separately probed.
+
+The local editing Python failed TLS trust verification for api.us.socrata.com;
+no certificate-verification bypass was used. Catalog acceptance requires actual
+hosted evidence, where OS trust roots and network are the target environment.

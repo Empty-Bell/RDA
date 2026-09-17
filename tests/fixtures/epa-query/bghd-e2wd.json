@@ -1,0 +1,1091 @@
+{
+  "dataset_id": "bghd-e2wd",
+  "metadata_before": {
+    "id": "bghd-e2wd",
+    "name": "ENERGY STAR Certified Residential Clothes Washers",
+    "rowsUpdatedAt": 1789564819,
+    "viewLastModified": 1739912065,
+    "publicationDate": 1623071472,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "load_configuration",
+        "name": "Load Configuration",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "special_type",
+        "name": "Special Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_washer_features",
+        "name": "Additional Washer Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "intended_market",
+        "name": "Intended Market",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "volume_cubic_feet",
+        "name": "Volume (cu. ft.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "height_inches",
+        "name": "Height (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "integrated_modified_energy_factor_imef",
+        "name": "Integrated Modified Energy Factor (IMEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_imef",
+        "name": "US Federal Standard (IMEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "annual_energy_use_kwh_year",
+        "name": "Annual Energy Use (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "integrated_water_factor_iwf",
+        "name": "Integrated Water Factor (IWF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_iwf",
+        "name": "US Federal Standard (IWF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "annual_water_use_gallons_year",
+        "name": "Annual Water Use (gallons/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Drum Capacity for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Heat Pump Technology for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Combined Energy Factor (CEF) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Annual Energy Use (kWh/yr) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Energy Test Cycle Time (min) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Energy Test Cycle Information for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Additional Dryer Features for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connected",
+        "name": "Connected",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connects_using",
+        "name": "Connects Using",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "communication_standard_application_layer",
+        "name": "Communication Standard Application Layer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_dryer_available",
+        "name": "Paired ENERGY STAR Clothes Dryer Available",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_dryer_energy_star_model_identifier",
+        "name": "Paired ENERGY STAR Clothes Dryer ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "bghd-e2wd",
+    "name": "ENERGY STAR Certified Residential Clothes Washers",
+    "rowsUpdatedAt": 1789564819,
+    "viewLastModified": 1739912065,
+    "publicationDate": 1623071472,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "load_configuration",
+        "name": "Load Configuration",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "special_type",
+        "name": "Special Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_washer_features",
+        "name": "Additional Washer Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "intended_market",
+        "name": "Intended Market",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "volume_cubic_feet",
+        "name": "Volume (cu. ft.)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "height_inches",
+        "name": "Height (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "width_inches",
+        "name": "Width (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "depth_inches",
+        "name": "Depth (inches)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "integrated_modified_energy_factor_imef",
+        "name": "Integrated Modified Energy Factor (IMEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_imef",
+        "name": "US Federal Standard (IMEF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "annual_energy_use_kwh_year",
+        "name": "Annual Energy Use (kWh/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "integrated_water_factor_iwf",
+        "name": "Integrated Water Factor (IWF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "us_federal_standard_iwf",
+        "name": "US Federal Standard (IWF)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "annual_water_use_gallons_year",
+        "name": "Annual Water Use (gallons/yr)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Drum Capacity for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Heat Pump Technology for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Combined Energy Factor (CEF) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Annual Energy Use (kWh/yr) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Estimated Energy Test Cycle Time (min) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Energy Test Cycle Information for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh) for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+        "name": "Additional Dryer Features for the dryer in a Combination All-in-One Washer-Dryer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connected",
+        "name": "Connected",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "connects_using",
+        "name": "Connects Using",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "communication_standard_application_layer",
+        "name": "Communication Standard Application Layer",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "direct_on_premises_open_standard_based_interconnection",
+        "name": "Direct on-premises Open-standard Based Interconnection",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_dryer_available",
+        "name": "Paired ENERGY STAR Clothes Dryer Available",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "paired_energy_star_clothes_dryer_energy_star_model_identifier",
+        "name": "Paired ENERGY STAR Clothes Dryer ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Certified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "ENERGY STAR Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    [
+      {
+        "source_row_id": "row-umxd~jpvt-2hr9",
+        "pd_id": "2393093",
+        "brand_name": "Samsung",
+        "model_number": "WA49B5205A*",
+        "upc": "887276751122",
+        "date_available_on_market": "2022-03-15T00:00:00.000",
+        "date_qualified": "2022-02-17T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-tf39-xdnu~2kbd",
+        "pd_id": "2373639",
+        "brand_name": "Samsung",
+        "model_number": "WA50A54**A*",
+        "upc": "887276532035",
+        "date_available_on_market": "2021-03-08T00:00:00.000",
+        "date_qualified": "2021-02-03T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-iirq_fq33_gcnk",
+        "pd_id": "2310461",
+        "brand_name": "Samsung",
+        "model_number": "WA50M74**A*",
+        "upc": "887276196411",
+        "date_available_on_market": "2017-02-12T00:00:00.000",
+        "date_qualified": "2016-12-27T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-fy7i_vbm9~wsdm",
+        "pd_id": "2333512",
+        "brand_name": "Samsung",
+        "model_number": "WA50R52**A*",
+        "upc": "887276300528",
+        "date_available_on_market": "2019-02-01T00:00:00.000",
+        "date_qualified": "2019-01-16T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-s25y~82wk-h829",
+        "pd_id": "2333511",
+        "brand_name": "Samsung",
+        "model_number": "WA50R54**A*",
+        "upc": "887276300542",
+        "date_available_on_market": "2019-02-01T00:00:00.000",
+        "date_qualified": "2019-01-16T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-xxg6-bjwe_pwe9",
+        "pd_id": "2352575",
+        "brand_name": "Samsung",
+        "model_number": "WA50T53**A*",
+        "upc": "887276399317",
+        "date_available_on_market": "2020-01-17T00:00:00.000",
+        "date_qualified": "2019-12-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-9g9s~fyqv.y6pd",
+        "pd_id": "2350126",
+        "brand_name": "Samsung",
+        "model_number": "WA50T74**A*",
+        "upc": "887276385228",
+        "date_available_on_market": "2020-01-03T00:00:00.000",
+        "date_qualified": "2019-11-14T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-85ye.72rw_97jk",
+        "pd_id": "2389052",
+        "brand_name": "Samsung",
+        "model_number": "WA51A5505A*",
+        "upc": "887276751153",
+        "date_available_on_market": "2021-06-11T00:00:00.000",
+        "date_qualified": "2021-05-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-k8a2.hecz_myki",
+        "pd_id": "2732690",
+        "brand_name": "Samsung",
+        "model_number": "WA51DG5505A*",
+        "upc": "887276818252",
+        "date_available_on_market": "2023-12-10T00:00:00.000",
+        "date_qualified": "2023-11-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-2s66~mzhn.96vj",
+        "pd_id": "2378430",
+        "brand_name": "Samsung",
+        "model_number": "WA52A55**A*",
+        "upc": "887276751184",
+        "date_available_on_market": "2021-06-11T00:00:00.000",
+        "date_qualified": "2021-05-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3tm4-he4h.c8mb",
+        "pd_id": "2388146",
+        "brand_name": "Samsung",
+        "model_number": "WA52B76**A*",
+        "upc": "887276618678",
+        "date_available_on_market": "2021-12-25T00:00:00.000",
+        "date_qualified": "2021-11-16T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-nx8n_8xw9_vubn",
+        "pd_id": "2732691",
+        "brand_name": "Samsung",
+        "model_number": "WA52DG55**A*",
+        "upc": "887276818283",
+        "date_available_on_market": "2023-12-10T00:00:00.000",
+        "date_qualified": "2023-11-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-rp6r~xkjj~68gq",
+        "pd_id": "2310462",
+        "brand_name": "Samsung",
+        "model_number": "WA52M77**A*",
+        "upc": "887276196428",
+        "date_available_on_market": "2017-02-01T00:00:00.000",
+        "date_qualified": "2017-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-r2f2-hzmh-rr3e",
+        "pd_id": "2350127",
+        "brand_name": "Samsung",
+        "model_number": "WA52T76**A*",
+        "upc": "887276385235",
+        "date_available_on_market": "2020-01-03T00:00:00.000",
+        "date_qualified": "2019-11-14T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-xv75-b4u9.k8qi",
+        "pd_id": "2453095",
+        "brand_name": "Samsung",
+        "model_number": "WA53CG7155A*",
+        "upc": "887276760353",
+        "date_available_on_market": "2023-05-10T00:00:00.000",
+        "date_qualified": "2023-04-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-bk7e~ttnk-p47x",
+        "pd_id": "2453094",
+        "brand_name": "Samsung",
+        "model_number": "WA53CG7555A*",
+        "upc": "887276759892",
+        "date_available_on_market": "2023-12-31T00:00:00.000",
+        "date_qualified": "2023-04-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vgrp-wc2m.u9pf",
+        "pd_id": "2378431",
+        "brand_name": "Samsung",
+        "model_number": "WA54A7305A*",
+        "upc": "887276751214",
+        "date_available_on_market": "2021-06-11T00:00:00.000",
+        "date_qualified": "2021-05-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8xs9.3dng_tw8z",
+        "pd_id": "2453100",
+        "brand_name": "Samsung",
+        "model_number": "WA54CG7105A*",
+        "upc": "887276739106",
+        "date_available_on_market": "2023-06-10T00:00:00.000",
+        "date_qualified": "2023-04-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-7th6.4xex~y2mm",
+        "pd_id": "2453097",
+        "brand_name": "Samsung",
+        "model_number": "WA54CG715*A*",
+        "upc": "887276760360",
+        "date_available_on_market": "2023-05-10T00:00:00.000",
+        "date_qualified": "2023-04-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-dpwe_tya3~vdjk",
+        "pd_id": "2453096",
+        "brand_name": "Samsung",
+        "model_number": "WA54CG755*A*",
+        "upc": "887276760384",
+        "date_available_on_market": "2023-05-10T00:00:00.000",
+        "date_qualified": "2023-04-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-3cit_kdex~g9f8",
+        "pd_id": "2310464",
+        "brand_name": "Samsung",
+        "model_number": "WA54M87**A*",
+        "upc": "887276196466",
+        "date_available_on_market": "2017-02-01T00:00:00.000",
+        "date_qualified": "2017-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ffi2.e2as~au3n",
+        "pd_id": "2339823",
+        "brand_name": "Samsung",
+        "model_number": "WA54R72**A*",
+        "upc": "887276300566",
+        "date_available_on_market": "2019-07-01T00:00:00.000",
+        "date_qualified": "2019-06-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-qdwd.der3~r33v",
+        "pd_id": "2339822",
+        "brand_name": "Samsung",
+        "model_number": "WA54R76**A*",
+        "upc": "887276300580",
+        "date_available_on_market": "2019-07-01T00:00:00.000",
+        "date_qualified": "2019-06-10T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-n9hq-kdm7_c2gx",
+        "pd_id": "2378432",
+        "brand_name": "Samsung",
+        "model_number": "WA55A73**A*",
+        "upc": "887276751221",
+        "date_available_on_market": "2021-06-11T00:00:00.000",
+        "date_qualified": "2021-05-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vyjg~523z-abqp",
+        "pd_id": "2378433",
+        "brand_name": "Samsung",
+        "model_number": "WA55A77**A*",
+        "upc": "887276751238",
+        "date_available_on_market": "2021-06-11T00:00:00.000",
+        "date_qualified": "2021-05-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6sea_3kmz-pwyh",
+        "pd_id": "2453099",
+        "brand_name": "Samsung",
+        "model_number": "WA55CG71**A*",
+        "upc": "887276739137",
+        "date_available_on_market": "2023-06-10T00:00:00.000",
+        "date_qualified": "2023-04-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-v7cf-kv3y-mmdm",
+        "pd_id": "2453098",
+        "brand_name": "Samsung",
+        "model_number": "WA55CG75**A*",
+        "upc": "887276760391",
+        "date_available_on_market": "2023-12-31T00:00:00.000",
+        "date_qualified": "2023-04-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-r4fw-fgv5.ieuf",
+        "pd_id": "3387758",
+        "brand_name": "Samsung",
+        "model_number": "WD53DBA9**H*",
+        "upc": "887276824949",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "date_available_on_market": "2024-03-08T00:00:00.000",
+        "date_qualified": "2024-01-19T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-jhwg_quah-un4n",
+        "pd_id": "4576676",
+        "brand_name": "Samsung",
+        "model_number": "WD80H53*H*",
+        "upc": "198957290022",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "date_available_on_market": "2026-04-24T00:00:00.000",
+        "date_qualified": "2026-03-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-5xdq~iard-jqxa",
+        "pd_id": "3998322",
+        "brand_name": "Samsung",
+        "model_number": "WD90F53*V*",
+        "upc": "887276989174",
+        "special_type": "Combination All-in-One Washer/Dryer",
+        "date_available_on_market": "2025-03-14T00:00:00.000",
+        "date_qualified": "2025-02-18T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-pigt.xnk2.sd69",
+        "pd_id": "2378660",
+        "brand_name": "Samsung",
+        "model_number": "WF45A64**A*",
+        "upc": "887276557854",
+        "date_available_on_market": "2021-05-31T00:00:00.000",
+        "date_qualified": "2021-05-18T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ai5q-a9d8.7aq8",
+        "pd_id": "2389114",
+        "brand_name": "Samsung",
+        "model_number": "WF45B63**A*",
+        "upc": "887276627427",
+        "date_available_on_market": "2022-01-20T00:00:00.000",
+        "date_qualified": "2021-11-29T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-rj4e.p66j-n2x6",
+        "pd_id": "2310456",
+        "brand_name": "Samsung",
+        "model_number": "WF45K65**A*",
+        "upc": "887276138121",
+        "date_available_on_market": "2016-02-07T00:00:00.000",
+        "date_qualified": "2016-01-13T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vis9~pd47_358f",
+        "pd_id": "2310460",
+        "brand_name": "Samsung",
+        "model_number": "WF45M55**A*",
+        "upc": "887276195360",
+        "date_available_on_market": "2017-01-01T00:00:00.000",
+        "date_qualified": "2016-11-23T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-r7yr_4iy4~43zr",
+        "pd_id": "2333514",
+        "brand_name": "Samsung",
+        "model_number": "WF45R61**A*",
+        "upc": "887276299464",
+        "date_available_on_market": "2019-02-01T00:00:00.000",
+        "date_qualified": "2019-01-15T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-aftv_iw7z-sqhk",
+        "pd_id": "2333513",
+        "brand_name": "Samsung",
+        "model_number": "WF45R63**A*",
+        "upc": "887276299488",
+        "date_available_on_market": "2019-02-01T00:00:00.000",
+        "date_qualified": "2019-01-15T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-y325-ueyy-bfhw",
+        "pd_id": "2354715",
+        "brand_name": "Samsung",
+        "model_number": "WF45T60**A*",
+        "upc": "887276394794",
+        "date_available_on_market": "2020-02-20T00:00:00.000",
+        "date_qualified": "2020-02-05T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-q3mb-6n5i-finp",
+        "pd_id": "2352574",
+        "brand_name": "Samsung",
+        "model_number": "WF45T62**A*",
+        "upc": "887276407036",
+        "date_available_on_market": "2020-02-24T00:00:00.000",
+        "date_qualified": "2019-12-04T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-tvc3.gqvk-5cjm",
+        "pd_id": "2396783",
+        "brand_name": "Samsung",
+        "model_number": "WF46BB67**A*",
+        "upc": "887276659763",
+        "date_available_on_market": "2022-07-15T00:00:00.000",
+        "date_qualified": "2022-05-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-byuf.75j9.qrhb",
+        "pd_id": "2396780",
+        "brand_name": "Samsung",
+        "model_number": "WF46BG65**A*",
+        "upc": "887276659794",
+        "date_available_on_market": "2022-07-01T00:00:00.000",
+        "date_qualified": "2022-05-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-8s4y_8hxb-pex6",
+        "pd_id": "2374792",
+        "brand_name": "Samsung",
+        "model_number": "WF50A85**A*",
+        "upc": "887276540726",
+        "date_available_on_market": "2021-03-22T00:00:00.000",
+        "date_qualified": "2021-03-12T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-a8u6_sp5i_vc2j",
+        "pd_id": "2371013",
+        "brand_name": "Samsung",
+        "model_number": "WF50A86**A*",
+        "upc": "887276518992",
+        "date_available_on_market": "2021-01-10T00:00:00.000",
+        "date_qualified": "2020-12-18T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-z5dt.8w8f-uwr9",
+        "pd_id": "2371012",
+        "brand_name": "Samsung",
+        "model_number": "WF50A88**A*",
+        "upc": "887276519012",
+        "date_available_on_market": "2021-01-10T00:00:00.000",
+        "date_qualified": "2020-12-18T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-gvuv.a6fn_rvh7",
+        "pd_id": "2396782",
+        "brand_name": "Samsung",
+        "model_number": "WF50BG83**A*",
+        "upc": "887276660912",
+        "date_available_on_market": "2022-06-24T00:00:00.000",
+        "date_qualified": "2022-05-24T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ehh4~ksrz~f9ga",
+        "pd_id": "2341069",
+        "brand_name": "Samsung",
+        "model_number": "WF50R85**A*",
+        "upc": "887276348063",
+        "date_available_on_market": "2019-08-16T00:00:00.000",
+        "date_qualified": "2019-07-04T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ucma~emsu~d2x7",
+        "pd_id": "2356083",
+        "brand_name": "Samsung",
+        "model_number": "WF50T85**A*",
+        "upc": "887276398754",
+        "date_available_on_market": "2020-03-20T00:00:00.000",
+        "date_qualified": "2020-03-06T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-6ktj_gud3_w2q4",
+        "pd_id": "2620679",
+        "brand_name": "Samsung",
+        "model_number": "WF51CG80**A*",
+        "upc": "887276785295",
+        "date_available_on_market": "2023-08-15T00:00:00.000",
+        "date_qualified": "2023-07-18T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-emuu-bvvk~r8yk",
+        "pd_id": "2395405",
+        "brand_name": "Samsung",
+        "model_number": "WF53BB87**A*",
+        "upc": "887276652238",
+        "date_available_on_market": "2022-06-10T00:00:00.000",
+        "date_qualified": "2022-05-04T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vdm7.gtdh_kyha",
+        "pd_id": "2395404",
+        "brand_name": "Samsung",
+        "model_number": "WF53BB89**A*",
+        "upc": "887276660127",
+        "date_available_on_market": "2022-06-03T00:00:00.000",
+        "date_qualified": "2022-05-04T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-9tgq_vizw_6uer",
+        "pd_id": "2310439",
+        "brand_name": "Samsung",
+        "model_number": "WF56H91**C*",
+        "upc": "887276028286",
+        "date_available_on_market": "2014-10-15T00:00:00.000",
+        "date_qualified": "2014-09-25T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-c9c7_d9d7-f9dh",
+        "pd_id": "3998793",
+        "brand_name": "Samsung",
+        "model_number": "WF90F53*D*",
+        "upc": "198957070556",
+        "date_available_on_market": "2025-03-07T00:00:00.000",
+        "date_qualified": "2025-02-25T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-hwym~9qf2.wbke",
+        "pd_id": "2788580",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH1**E*",
+        "upc": "887276814490",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-pdqc.eaj3.7txe",
+        "pd_id": "2788581",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH1**G*",
+        "upc": "887276814513",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-p6yr.pats-ds7u",
+        "pd_id": "2788551",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH50*E*",
+        "upc": "887276814520",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-kzk6-6wvy-ayni",
+        "pd_id": "2788550",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH55*E*",
+        "upc": "887276814544",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-eaxg~s4im_rvyy",
+        "pd_id": "2788549",
+        "brand_name": "Samsung",
+        "model_number": "WH46DBH5**G*",
+        "upc": "887276814537",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-djsq-qp8y~3bem",
+        "pd_id": "2788506",
+        "brand_name": "Samsung",
+        "model_number": "WH53DBH7**E*",
+        "upc": "887276814575",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vudp-hcb9~b5wt",
+        "pd_id": "2788507",
+        "brand_name": "Samsung",
+        "model_number": "WH53DBH7**G*",
+        "upc": "887276814582",
+        "special_type": "Laundry Center",
+        "date_available_on_market": "2023-12-30T00:00:00.000",
+        "date_qualified": "2023-11-21T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-m4et.hmud-gjdz",
+        "pd_id": "2300867",
+        "brand_name": "Samsung",
+        "model_number": "WV55M96**A***",
+        "upc": "887276196923",
+        "date_available_on_market": "2017-01-23T00:00:00.000",
+        "date_qualified": "2017-05-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-kcue_v7ga-72mk",
+        "pd_id": "2378347",
+        "brand_name": "Samsung",
+        "model_number": "WV60A99**A*",
+        "upc": "887276557885",
+        "date_available_on_market": "2021-05-22T00:00:00.000",
+        "date_qualified": "2021-05-11T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-ft4v.q92x_qep8",
+        "pd_id": "2300868",
+        "brand_name": "Samsung",
+        "model_number": "WV60M99**A***",
+        "upc": "887276196954",
+        "date_available_on_market": "2017-01-23T00:00:00.000",
+        "date_qualified": "2017-05-26T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-vb57_f8cw.aych",
+        "pd_id": "2310452",
+        "brand_name": "Samsung",
+        "model_number": "WW22K680*A*",
+        "upc": "887276126876",
+        "date_available_on_market": "2015-12-20T00:00:00.000",
+        "date_qualified": "2015-11-30T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-s4vu.cca9.67q3",
+        "pd_id": "2394988",
+        "brand_name": "Samsung",
+        "model_number": "WW25B68**A*",
+        "upc": "887276650302",
+        "date_available_on_market": "2022-06-02T00:00:00.000",
+        "date_qualified": "2022-04-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-tid6~i4mw_seij",
+        "pd_id": "2394989",
+        "brand_name": "Samsung",
+        "model_number": "WW25B69**A*",
+        "upc": "887276650319",
+        "date_available_on_market": "2022-06-02T00:00:00.000",
+        "date_qualified": "2022-04-20T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-abm9.k2ty-3fjr",
+        "pd_id": "4480862",
+        "brand_name": "Samsung",
+        "model_number": "WW25FG5B****",
+        "upc": "198957228759",
+        "date_available_on_market": "2025-09-05T00:00:00.000",
+        "date_qualified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Canada"
+      },
+      {
+        "source_row_id": "row-cpxn_hr8d.d344",
+        "pd_id": "4480861",
+        "brand_name": "Samsung",
+        "model_number": "WW25FG6B****",
+        "upc": "198957228766",
+        "date_available_on_market": "2025-09-05T00:00:00.000",
+        "date_qualified": "2025-07-30T00:00:00.000",
+        "markets": "United States, Canada"
+      }
+    ]
+  ],
+  "count_before": [
+    {
+      "row_count": "66"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "66"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "dataset_id": "8dv7-nngq",
+  "metadata_before": {
+    "id": "8dv7-nngq",
+    "name": "ENERGY STAR Certified Ventilating Fans",
+    "rowsUpdatedAt": 1789563715,
+    "viewLastModified": 1739912079,
+    "publicationDate": 1631040141,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "unit_type",
+        "name": "Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "merv_of_in_line_fan_filter",
+        "name": "MERV of In-line Fan Filter",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "number_of_speeds",
+        "name": "Number of Speeds",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "duct_size",
+        "name": "Duct Size",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "sound_level_sones",
+        "name": "Sound Level (sones)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "bathroom_and_utility_room_sound_level_sones_at_0_25_in_w_g",
+        "name": "Bathroom and Utility Room Sound Level (sones) at 0.25 in. w.g.",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "bathroom_and_utility_room_airflow_at_0_25_in_w_g",
+        "name": "Bathroom and Utility Room Airflow at 0.25 in. w.g.",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "shipped_with_energy_star_lamp_s",
+        "name": "Shipped with ENERGY STAR Lamp(s)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_lamp_esuid",
+        "name": "ENERGY STAR Lamp ESUID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "alternate_energy_star_lamps_esuids",
+        "name": "Alternate ENERGY STAR Lamps ESUIDs",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_lamp_partner",
+        "name": "ENERGY STAR Lamp Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "lamp_model_number",
+        "name": "Lamp Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "lighting_technology_used",
+        "name": "Lighting Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "light_output_lumens",
+        "name": "Total Light Output (lumens)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "total_input_power_watts",
+        "name": "Total Input Power (Watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "luminaire_efficacy",
+        "name": "Energy Efficiency - Measured Outside the Fixture (lm/W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "power_factor",
+        "name": "Power Factor",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "correlated_color_temperature_kelvin",
+        "name": "Light Color Appearance (CCT)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "color_rendering_index_cri",
+        "name": "Light Color Quality (CRI)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "life_source_life_hours",
+        "name": "Light Source Life (Hours)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "special_features_dimming_motion_sensing_etc",
+        "name": "Special Features (Dimming, Motion Sensing, etc.)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "notes",
+        "name": "Notes",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "lighting",
+        "name": "Lighting",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "airflow_1_cfm",
+        "name": "Airflow 1 (cfm)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "airflow_2_cfm",
+        "name": "Airflow 2 (cfm)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "airflow_3_cfm",
+        "name": "Airflow 3 (cfm)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "efficacy_1_cfm_w",
+        "name": "Efficacy 1 (cfm/Watt)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "efficacy_2_cfm_w",
+        "name": "Efficacy 2 (cfm/Watt)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "efficacy_3_cfm_w",
+        "name": "Efficacy 3 (cfm/Watt)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "ventilating_fan_features",
+        "name": "Ventilating Fan Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Qualified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "metadata_after": {
+    "id": "8dv7-nngq",
+    "name": "ENERGY STAR Certified Ventilating Fans",
+    "rowsUpdatedAt": 1789563715,
+    "viewLastModified": 1739912079,
+    "publicationDate": 1631040141,
+    "columns": [
+      {
+        "fieldName": "pd_id",
+        "name": "ENERGY STAR Unique ID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_partner",
+        "name": "ENERGY STAR Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "brand_name",
+        "name": "Brand Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_name",
+        "name": "Model Name",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "model_number",
+        "name": "Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "additional_model_information",
+        "name": "Additional Model Information",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "upc",
+        "name": "UPC",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "unit_type",
+        "name": "Type",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "merv_of_in_line_fan_filter",
+        "name": "MERV of In-line Fan Filter",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "number_of_speeds",
+        "name": "Number of Speeds",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "duct_size",
+        "name": "Duct Size",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "sound_level_sones",
+        "name": "Sound Level (sones)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "bathroom_and_utility_room_sound_level_sones_at_0_25_in_w_g",
+        "name": "Bathroom and Utility Room Sound Level (sones) at 0.25 in. w.g.",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "bathroom_and_utility_room_airflow_at_0_25_in_w_g",
+        "name": "Bathroom and Utility Room Airflow at 0.25 in. w.g.",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "shipped_with_energy_star_lamp_s",
+        "name": "Shipped with ENERGY STAR Lamp(s)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_lamp_esuid",
+        "name": "ENERGY STAR Lamp ESUID",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "alternate_energy_star_lamps_esuids",
+        "name": "Alternate ENERGY STAR Lamps ESUIDs",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "energy_star_lamp_partner",
+        "name": "ENERGY STAR Lamp Partner",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "lamp_model_number",
+        "name": "Lamp Model Number",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "lighting_technology_used",
+        "name": "Lighting Technology",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "light_output_lumens",
+        "name": "Total Light Output (lumens)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "total_input_power_watts",
+        "name": "Total Input Power (Watts)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "luminaire_efficacy",
+        "name": "Energy Efficiency - Measured Outside the Fixture (lm/W)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "power_factor",
+        "name": "Power Factor",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "correlated_color_temperature_kelvin",
+        "name": "Light Color Appearance (CCT)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "color_rendering_index_cri",
+        "name": "Light Color Quality (CRI)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "life_source_life_hours",
+        "name": "Light Source Life (Hours)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "special_features_dimming_motion_sensing_etc",
+        "name": "Special Features (Dimming, Motion Sensing, etc.)",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "notes",
+        "name": "Notes",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "lighting",
+        "name": "Lighting",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "airflow_1_cfm",
+        "name": "Airflow 1 (cfm)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "airflow_2_cfm",
+        "name": "Airflow 2 (cfm)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "airflow_3_cfm",
+        "name": "Airflow 3 (cfm)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "efficacy_1_cfm_w",
+        "name": "Efficacy 1 (cfm/Watt)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "efficacy_2_cfm_w",
+        "name": "Efficacy 2 (cfm/Watt)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "efficacy_3_cfm_w",
+        "name": "Efficacy 3 (cfm/Watt)",
+        "dataTypeName": "number"
+      },
+      {
+        "fieldName": "ventilating_fan_features",
+        "name": "Ventilating Fan Features",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "date_available_on_market",
+        "name": "Date Available On Market",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "date_qualified",
+        "name": "Date Qualified",
+        "dataTypeName": "calendar_date"
+      },
+      {
+        "fieldName": "markets",
+        "name": "Markets",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "energy_star_model_identifier",
+        "name": "CB Model Identifier",
+        "dataTypeName": "text"
+      },
+      {
+        "fieldName": "meets_most_efficient_criteria",
+        "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+        "dataTypeName": "text"
+      }
+    ]
+  },
+  "pages": [
+    []
+  ],
+  "count_before": [
+    {
+      "row_count": "0"
+    }
+  ],
+  "count_after": [
+    {
+      "row_count": "0"
+    }
+  ],
+  "controlled_empty": [],
+  "controlled_error": {
+    "status": 400,
+    "content_type": "application/json",
+    "body_utf8": "{\n  \"code\" : \"query.compiler.malformed\",\n  \"error\" : true,\n  \"message\" : \"Could not parse SoQL query \\\"select * where (\\\" at line 1 character 17: Expected an expression, but got end of input\",\n  \"data\" : {\n    \"query\" : \"select * where (\",\n    \"position\" : { }\n  }\n}\n"
+  }
+}
