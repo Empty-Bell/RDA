@@ -1,6 +1,8 @@
 name: G2 Samsung declared-pair capture
-on: {workflow_dispatch:}
-permissions: {contents: read}
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
   capture:
     runs-on: ubuntu-24.04
