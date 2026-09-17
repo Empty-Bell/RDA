@@ -14,3 +14,9 @@ The report regression creates an EnergyGuide source fact with 585 kWh/year and
 unchanged while finding count stays zero and assessment remains disabled. Hosted
 run 35182804474 passed the G1 fixture suite; hosted run 35182804467 passed the
 G2 source contracts on Ubuntu 24.04.
+
+The live artifact replay guard independently rebuilds this report projection from
+the same-run bundle and rejects any changed, omitted or additional row entry.
+Hosted refrigerator run 35183198414 at 28b62b1 PASSed this guard on ubuntu-24.04.
+Its preserved artifact is 10481426384 with ZIP digest
+`2af6aa68bf3e79d0bf1f1364eff835f03ca9d312e323bdaa69293c2427121677`.

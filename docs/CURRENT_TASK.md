@@ -74,7 +74,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   complete: report rows retain document URL/hash/status, each reviewed source
   measurement and evidence IDs without deriving an assessment. Hosted G1 fixture
   CI 35182804474 and G2 contract CI 35182804467 PASSed at 19bf045. Next: bounded
-  report replay against the saved live artifact. Recommended model: Luna low.
+  report replay against the saved live artifact. This now PASSed: G2 hosted run
+  35183198414 at 28b62b1 rebuilt and compared every report entry against the
+  same-run bundle; artifact 10481426384 ZIP digest is
+  2af6aa68bf3e79d0bf1f1364eff835f03ca9d312e323bdaa69293c2427121677.
+  Next: model descriptor source-observation projection only. Recommended model:
+  Luna low.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
