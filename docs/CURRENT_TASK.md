@@ -100,7 +100,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   captured five official sources and replayed their raw SHA-256 evidence. Artifact
   10483337728 ZIP digest: 6293ab90b6ac297e3bc457477476ddb4ce0b8abb7774ae34cc1ed60678859926.
   Next: review captured dataset-scoped grammar and draft a proposed matching matrix;
-  no matcher. Recommended model: Sol medium.
+  no matcher. Recommended model: Sol medium. Review found the Product Finder
+  HTML was only a JS shell. Follow-up ef0da55 adds literal PD_ID API capture and
+  raw/projection replay; hosted run 35189830486 PASSed (5 source-contract tests).
+  Artifact 10483857141 ZIP SHA256:
+  8a799f87f8f9e0d1698e37c559f810ba4b810bc93f2eb1f37473601131cb1fd2.
+  G2_EPA_MATCHING_MATRIX_PROPOSAL.md records reviewed scope; grammar remains draft.
+  Next: small actual-source fixtures and projection replay tampering contracts,
+  no matcher/assessment. Recommended model: Luna low.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

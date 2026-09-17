@@ -4,6 +4,15 @@ Research date: 2026-09-17. Status: bounded hosted source-capture checkpoint PASS
 D07/D09 remain OPEN.
 No matching, OCR correction or assessment is enabled.
 
+Review correction: original Product Finder response was a JavaScript shell.
+Run 35189522017 proved raw-byte capture/replay, not product-value extraction.
+The follow-up at ef0da55 distinguishes the shell and captures the literal PD_ID
+API record. Hosted run 35189830486 PASSed; artifact 10483857141 ZIP SHA256 is
+`8a799f87f8f9e0d1698e37c559f810ba4b810bc93f2eb1f37473601131cb1fd2`.
+See G2_EPA_MATCHING_MATRIX_PROPOSAL.md for reviewed metadata scope and the
+unapproved candidate-linkage matrix. Product-value observations now come from
+the stored API response, not the shell or cached search result.
+
 ## Official evidence and scope
 
 | Source | Observed guidance | Boundary |

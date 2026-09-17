@@ -1,5 +1,11 @@
 # Open semantic decisions
 
+D09 reviewed matrix: G2_EPA_MATCHING_MATRIX_PROPOSAL.md records letter/digit
+descriptions from preserved refrigerator metadata and a literal PD_ID API record.
+The original Product Finder HTML was shell-only; follow-up hosted run 35189830486
+validates API projections. Positional wildcard/UPC linkage remains a proposal,
+with suffix, current-certification and label-corrobation decisions still OPEN.
+
 Official wildcard follow-up: G2_EPA_WILDCARD_RECON.md records single-position
 guidance from the EPA UPC FAQ and QPX documentation, but differing letter versus
 alphanumeric star descriptions and unresolved Samsung label/suffix scope. This
