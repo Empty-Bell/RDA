@@ -47,6 +47,15 @@ nine reviewed SKU records: eight unique observations were retained and
 RF22A4111SR/AA remained `NOT_OBSERVED`. The latter outcome preserves the $109 / 585
 OCR ambiguity rather than treating visual review as an OCR correction.
 
+Live review-bound integration checkpoint PASS: hosted run 35179885437 at 1cd83df
+collected a fresh bounded refrigerator package on ubuntu-24.04. Each live label is
+eligible for an `annual_energy_kwh` VALUE only when its exact SKU, PDF SHA256,
+reviewed page and detection IDs all still agree; an unreviewed SKU or changed PDF
+records `NOT_OBSERVED` while preserving raw source evidence. Artifact
+10480785114 has ZIP digest
+`bffd5d342f7a2f2f930f9a4f126562632b8fc99d217bd2832bd2e9c4eb9dc9a8`.
+Assessments, comparison and EPA matching remain disabled.
+
 Remaining work: replay every saved candidate against the selector on hosted
 Ubuntu. Capacity, wildcard identity, OCR corrections and regulatory comparisons
 remain open. This review does not close G2.

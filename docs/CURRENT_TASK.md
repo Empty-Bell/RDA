@@ -44,11 +44,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   hosted Python 3.11/3.12. It selects only the unique 700 kWh refrigerator fixture
   candidate and leaves multiplicity, disagreement and provenance mismatch unobserved.
   It is not wired into live canonical facts pending saved-corpus review.
-- Expanded corpus downloaded via GitHub connector, ZIP verified, 166 evidence
-  hashes/20 facts validated. See G2_CORPUS_REVIEW.md. RF22A4111 cost 109 enters
-  annual text candidates alongside 585; selector abstains. Review gate/proposal
-  uniqueness checks strengthened after discovering omissions in the first selector.
-  Next: complete PDF-bound visual annotations and offline saved-corpus replay.
+- Expanded corpus review/replay is complete. Nine saved extra labels were bound to
+  PDF/page/detection annotations; eight select only under that contract and
+  RF22A4111 stays unobserved because 109 and 585 occur as raw candidates. Live
+  integration checkpoint 35179885437 at 1cd83df PASSed on ubuntu-24.04: a value is
+  recorded only when the newly collected exact-SKU PDF hash and reviewed detection
+  IDs match. Assessment, comparison and EPA matching remain disabled. See
+  G2_CORPUS_REVIEW.md and g2-label-corpus-replay.json.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
