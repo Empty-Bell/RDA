@@ -8,7 +8,9 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from energyguide_fields import annual_layout_candidates, label_candidates
-from g2_label_activation import load_review_annotations, select_live_reviewed_energy, summarize_selection_outcomes
+from g2_label_activation import (load_capacity_review_annotations, load_review_annotations,
+    select_live_reviewed_capacity, select_live_reviewed_energy, summarize_capacity_selection_outcomes,
+    summarize_selection_outcomes)
 
 
 class LabelActivationTests(unittest.TestCase):
@@ -49,3 +51,19 @@ class LabelActivationTests(unittest.TestCase):
         self.assertEqual(summary["counts"], {"VALUE": 1, "NOT_OBSERVED": 0})
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             summarize_selection_outcomes([record, record])
+
+    def test_capacity_review_requires_matching_live_bytes(self):
+        reviews = load_capacity_review_annotations(ROOT / "docs/evidence/g2-capacity-model-review.json")
+        review = dict(reviews["RF22A4221SR/AA"], pdf_sha256=self.result["sha256"],
+                      capacity_text_raw="Capacity: 28.6 Cubic Feet")
+        candidates = copy.deepcopy(self.candidates)
+        candidates["capacity_candidates_raw"] = [{"value_raw": "Capacity: 28.6 Cubic Feet", "line": 0}]
+        selected = select_live_reviewed_capacity("RF22A4221SR/AA", self.result, candidates,
+                                                 {"RF22A4221SR/AA": review})
+        self.assertEqual(selected["observation"]["state"], "VALUE")
+        changed = dict(self.result, sha256="0" * 64)
+        self.assertEqual(select_live_reviewed_capacity("RF22A4221SR/AA", changed, candidates,
+                         {"RF22A4221SR/AA": review})["observation"]["state"], "NOT_OBSERVED")
+        summary = summarize_capacity_selection_outcomes([{"exact_sku": "SKU", "source_document_index": 0,
+            "pdf_sha256": self.result["sha256"], "selection": selected}])
+        self.assertEqual(summary["counts"], {"VALUE": 1, "NOT_OBSERVED": 0})
