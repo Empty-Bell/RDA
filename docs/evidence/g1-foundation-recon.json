@@ -1,0 +1,61 @@
+{
+  "api_verified_conclusion": "success",
+  "artifacts": [
+    {
+      "artifact_id": 10476424386,
+      "expires_at": "2026-10-01T01:27:30Z",
+      "job_id": 105041287767,
+      "report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "bc57842d37aabebda9b1b5e87c2f4ca5e80ff62d",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14",
+        "run_attempt": "1",
+        "run_id": "35170618251",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 28
+      },
+      "report_sha256": "b35935cca0fec717bb9da8245ff6b7a6d5e3bae3f352ee38e5b86df2deccc750",
+      "zip_sha256": "45f2b47442d86c13722e2437c7b4245f87105372e619eeadcad569d73339fc18"
+    },
+    {
+      "artifact_id": 10476278259,
+      "expires_at": "2026-10-01T01:27:27Z",
+      "job_id": 105041287593,
+      "report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "bc57842d37aabebda9b1b5e87c2f4ca5e80ff62d",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.11.16",
+        "run_attempt": "1",
+        "run_id": "35170618251",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 28
+      },
+      "report_sha256": "2cc5f87272651020fdd829827d818cb27fd7f2802a7c0f465c4ae4964b15ecfd",
+      "zip_sha256": "72f4eb9c4c5ed53a792600ed08272efae842950dbefc3b1746c34bc25c38c10a"
+    }
+  ],
+  "git_sha": "bc57842d37aabebda9b1b5e87c2f4ca5e80ff62d",
+  "phase_gate": "NOT_EVALUATED",
+  "remaining_g1": [
+    "specialized PDP/EnergyGuide/EPA schemas and unit contracts",
+    "rich config validation",
+    "explicit G1 semantic baseline decisions and acceptance review"
+  ],
+  "run_attempt": 1,
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35170618251",
+  "runner_label": "ubuntu-24.04",
+  "scope": "G1 draft foundation only",
+  "status": "PASS"
+}

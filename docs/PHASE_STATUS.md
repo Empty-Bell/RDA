@@ -3,6 +3,10 @@
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
 Phase 1 / G1: RUNNING — draft envelopes, offline CLI/config and hosted fixture CI.
 Phases 2–7: NOT_STARTED.
+G1 draft foundation checkpoint: hosted run 35170618251, code bc57842,
+Python 3.11.16 and 3.12.14 each executed 28 tests, zero skips/failures/errors.
+Both downloaded reports/hashes are archived in docs/evidence/g1-foundation-recon.json.
+This bounded checkpoint is PASS; the full G1 gate remains NOT_EVALUATED.
 G1 is not accepted: specialized fact/unit contracts, rich config validation and
 explicit baseline decisions remain. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
 
