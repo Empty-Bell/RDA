@@ -1,12 +1,13 @@
 # G2 model interpretation and identity policy proposal
 
-Status: DRAFT / awaiting user semantic approval. D07 and D09 remain OPEN.
+Status: fixture-only evidence contract approved on 2026-09-17. D07 and D09
+remain OPEN for automatic correction, substantive identity matching and rules.
 Scope: refrigerator fixtures first; no live correction, EPA matching, rule,
 severity or new issue code is enabled by this document.
 
 ## Recommended decision
 
-Approve a conservative evidence contract for fixture-only implementation:
+Approved conservative evidence contract for fixture-only implementation:
 1. Keep raw OCR, reviewed visual transcription, and product identity decisions
    as separate records. A transcription does not populate
    `label_model_normalized` or `model_confusion_corrected`.
@@ -83,6 +84,11 @@ that same correction. Numeric agreement alone cannot resolve wildcard meaning.
 | M4 | Independent matching/corroboration proposal | Source-backed grammar and non-circular evidence matrix; D01/D07/D09 decisions reviewed before implementation | Sol medium |
 
 No live collector rerun is needed for M1–M3. Audit runtime uses deterministic
-Python and no LLM calls. This draft is a review deliverable, not a hosted G2
-acceptance or decision closure. Existing live checkpoint 35184128593 remains
-source-observation evidence only.
+Python and no LLM calls. The fixture checkpoint passed in hosted run 35188432065
+at `6588115` on ubuntu-24.04 with Python 3.11 and 3.12. Its retained artifacts
+are 10483470587 (`bff00f24efad1ba465da10b97370a4b00deff83f6fbb9b79c5d83ca4146c5169`)
+and 10483415205 (`dcb391aa3376f50429ad50670e69083bff26bffe5b242212ca35acafa1c4cdc0`).
+The 34-case suite verifies review provenance, changed-byte/token invalidation,
+literal-only diagnostics, and withheld wildcard/suffix/confusion cases. This is
+not a hosted G2 acceptance or decision closure. Existing live checkpoint
+35184128593 remains source-observation evidence only.

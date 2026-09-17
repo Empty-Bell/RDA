@@ -1,10 +1,10 @@
 # Open semantic decisions
 
-D07/D09 review proposal: G2_MODEL_IDENTITY_POLICY_PROPOSAL.md recommends separate
-reviewed transcription evidence, withheld wildcard/suffix equivalence, and literal
-equality diagnostics only. It requests fixture-contract approval; no automatic
-correction, live matching or compliance rule is authorized. Both decisions remain
-OPEN, and D01 measurement semantics are a dependency for future corroboration.
+D07/D09 fixture contract: the user approved separate reviewed transcription
+evidence, withheld wildcard/suffix equivalence, and literal equality diagnostics
+only. Hosted checkpoint 35188432065 passed at 6588115. No automatic correction,
+live matching or compliance rule is authorized. Both decisions remain OPEN, and
+D01 measurement semantics is a dependency for future corroboration.
 
 G2 saved refrigerator corpus boundary review: G2_CAPACITY_MODEL_REVIEW.md records
 five PDF render/descriptor comparisons. RF18A5101 loses the visible trailing stars
