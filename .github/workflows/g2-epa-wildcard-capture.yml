@@ -1,0 +1,26 @@
+name: G2 EPA wildcard source capture
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/g2_epa_wildcard_capture.py', 'checks/g2/test_epa_wildcard_capture.py', '.github/workflows/g2-epa-wildcard-capture.yml']
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with: {python-version-file: '.python-version'}
+      - run: python -m unittest checks/g2/test_epa_wildcard_capture.py -v
+      - run: python scripts/g2_epa_wildcard_capture.py
+      - if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g2-epa-wildcard-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g2-epa-wildcard-capture/
+          retention-days: 14
+          if-no-files-found: error
