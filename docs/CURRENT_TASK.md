@@ -164,8 +164,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   page and the single linked XLSX as raw bytes, records their hashes and replays
   link/hash/container identity. Its manifest keeps matching, disqualification
   state and assessment `NOT_EVALUATED`. See
-  G2_EPA_DISQUALIFIED_CAPTURE_CONTRACT.md. Next: run the hosted manual capture
-  and verify its artifact; recommended model: Terra medium.
+  G2_EPA_DISQUALIFIED_CAPTURE_CONTRACT.md. Hosted raw capture 35216830202
+  passed on ubuntu-24.04; artifact 10495336944 ZIP SHA-256 is
+  78f40271db8dad87c6ebf11c8bf3f854245da47117a15f2ba9cefe3b38738ffd.
+  It establishes raw source/replay evidence only. Next: isolated XLSX schema
+  review proposal, with no row parser, model matching or negative inference;
+  recommended model: Sol medium for source-meaning boundary review.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

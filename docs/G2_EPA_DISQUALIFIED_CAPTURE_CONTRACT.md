@@ -39,6 +39,16 @@ which links EPA's disqualified-products XLSX. The next potential stage would be
 an isolated spreadsheet schema review. It needs a separate decision before any
 row parser, identifier comparison or audit consequence is implemented.
 
+## Hosted capture checkpoint
+
+The first hosted raw capture passed on standard `ubuntu-24.04` in
+[run 35216830202](https://github.com/Empty-Bell/RDA/actions/runs/35216830202).
+Artifact `g2-epa-disqualified-35216830202-1` (ID `10495336944`) is retained for
+14 days; its artifact ZIP SHA-256 is
+`78f40271db8dad87c6ebf11c8bf3f854245da47117a15f2ba9cefe3b38738ffd`.
+This proves only that the Integrity page and its linked XLSX were captured and
+replayed under this contract. It does not establish any product-level result.
+
 Recommended model: Terra medium for the capture/replay integration. Luna low is
 enough for later documentation-only maintenance; use Sol medium only when
 deciding source meaning or a matching rule.
