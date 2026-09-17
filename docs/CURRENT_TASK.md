@@ -134,8 +134,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   pair and investigate explicit EPA additional-model mappings. User approved
   terminal Samsung `AA`/`/AA` removal only: preserve raw exact SKU and every
   preceding character; this remains identity/assessment NOT_EVALUATED. Next:
-  apply that bounded observation to the offline positional diagnostic report;
-  recommended model Terra medium.
+  apply that bounded observation to the offline positional diagnostic report.
+  Hosted contract run 35204222516 passed. EPA PD_ID 2839420 still has no
+  additional-model field, so no explicit mapping exists for the Samsung pair.
+  Next: define the D09 evidence threshold for identity/current/US separately;
+  recommended model Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

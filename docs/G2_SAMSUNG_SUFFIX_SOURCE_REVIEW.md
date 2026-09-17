@@ -92,3 +92,14 @@ left `RF23DB9600QL` and right `RF23DB9600QLAA` tokens. Replay completed in the
 hosted collector before artifact upload. This is manufacturer source evidence
 for this one displayed pair only. It neither strips `AA`/`/AA` elsewhere nor
 sets EPA identity, certification status, market applicability, or assessment.
+
+## EPA additional-model mapping check
+
+After terminal-suffix normalization, the official EPA API was queried for Samsung
+`model_number=RF23D*9600**`. It returned one row: PD_ID `2839420`, the known
+model pattern, four UPCs, and `markets=United States, Canada`. The response did
+not contain `additional_model_information`. Consequently there is no explicit
+EPA listing of `RF23DB9600QL` or `RF23DB9600QLAA` in this row. UPC values and
+market text are retained as separate source observations; neither is a
+manufacturer-to-EPA identifier mapping. D09 therefore remains open for identity,
+current status and US applicability despite the approved suffix normalization.
