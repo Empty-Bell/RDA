@@ -70,8 +70,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   Live binding checkpoint 35181903264 at 55a7e20 PASSed on ubuntu-24.04. Fresh
   bytes must match the saved capacity review; checkpoint records its own capacity
   observation summary. No identity/comparison/assessment policy changed. Next:
-  expose the joined annual/capacity source observations in the report. Recommended
-  model: Luna low.
+  expose the joined annual/capacity source observations in the report. This is now
+  complete: report rows retain document URL/hash/status, each reviewed source
+  measurement and evidence IDs without deriving an assessment. Hosted G1 fixture
+  CI 35182804474 and G2 contract CI 35182804467 PASSed at 19bf045. Next: bounded
+  report replay against the saved live artifact. Recommended model: Luna low.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
