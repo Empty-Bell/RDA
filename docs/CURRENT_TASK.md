@@ -138,7 +138,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   Hosted contract run 35204222516 passed. EPA pattern `RF23D*9600**`
   positionally includes normalized `RF23DB9600QL`, hence observed exact SKU
   `RF23DB9600QLAA` under the approved terminal suffix policy. The EPA row has
-  no separate additional-model list. Next: define D09 thresholds for current
+  no separate additional-model list. Offline report v3 now records explicit
+  model_pattern_inclusion INCLUDED/NOT_INCLUDED/UNKNOWN separately from current
+  certification, US applicability and assessment. It reads the saved actual EPA
+  row fixture and retains its body hash/PD_ID. Non-inclusion in this one pattern
+  is not absence of certification. Next: define D09 thresholds for current
   status and US applicability separately; recommended model Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;

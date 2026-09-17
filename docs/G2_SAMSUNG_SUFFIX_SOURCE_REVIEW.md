@@ -107,3 +107,15 @@ did not also provide a separate explicit SKU list in that field. UPC values and
 market text remain separate source observations. D09 remains open for current
 status and US applicability; those questions are not answered merely by a
 pattern match or the market text.
+
+Offline report v3 implements the approved pattern inclusion observation as a
+separate `model_pattern_inclusion` field. It records `INCLUDED` for the RF23
+exact SKU after the approved suffix normalization. `NOT_INCLUDED` means only
+that a SKU does not fit this one saved EPA pattern; it is not an exhaustive
+EPA search or an uncertified finding. Current certification, US applicability
+and assessment retain independent `NOT_EVALUATED` states. The report now reads
+the saved actual EPA fixture rather than hardcoding its pattern, retaining
+PD_ID and the original response body hash as references. This reference is not
+a fresh API capture or a verification of the original bytes by the fixture test.
+Hosted offline CI uploads the report for each Python version without networking
+to Samsung or EPA.
