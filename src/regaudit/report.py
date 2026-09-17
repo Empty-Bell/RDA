@@ -26,14 +26,16 @@ def summarize_bundle(
         if fact["kind"] != "ENERGYGUIDE":
             continue
         observations = fact["observations"]
-        rows[fact["exact_sku"]]["energyguide_source_observations"].append({
-            "document_url": copy.deepcopy(observations["document_url"]),
-            "document_sha256": copy.deepcopy(observations["document_sha256"]),
-            "document_status": copy.deepcopy(observations["document_status"]),
-            "annual_energy_kwh": copy.deepcopy(observations["annual_energy_kwh"]),
-            "capacity": copy.deepcopy(observations["capacity"]),
-            "evidence_ids": copy.deepcopy(fact["evidence_ids"]),
-        })
+        rows[fact["exact_sku"]]["energyguide_source_observations"].append(
+            {
+                "document_url": copy.deepcopy(observations["document_url"]),
+                "document_sha256": copy.deepcopy(observations["document_sha256"]),
+                "document_status": copy.deepcopy(observations["document_status"]),
+                "annual_energy_kwh": copy.deepcopy(observations["annual_energy_kwh"]),
+                "capacity": copy.deepcopy(observations["capacity"]),
+                "evidence_ids": copy.deepcopy(fact["evidence_ids"]),
+            }
+        )
     for row in rows.values():
         row["energyguide_source_observations"].sort(
             key=lambda item: str(item["document_sha256"].get("value", ""))

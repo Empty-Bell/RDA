@@ -20,15 +20,46 @@ class ReportSourceObservationTests(unittest.TestCase):
     def test_energyguide_measurements_are_copied_with_evidence_not_interpreted(self):
         bundle = json.loads((ROOT / "fixtures/g1/bundle.json").read_text(encoding="utf-8"))
         observations = {field.name: absent() for field in fields(TYPES["ENERGYGUIDE"])}
-        observations.update({
-            "document_url": {"state": "VALUE", "value": "https://example.com/label.pdf", "error": None},
-            "document_sha256": {"state": "VALUE", "value": bundle["evidence"][0]["sha256"], "error": None},
-            "document_status": {"state": "VALUE", "value": "SOURCE_PDF_PARSED", "error": None},
-            "annual_energy_kwh": {"state": "VALUE", "value": {"amount": 585.0, "unit": "kWh/year", "raw": "585 kWh"}, "error": None},
-            "capacity": {"state": "VALUE", "value": {"amount": 22.0, "unit": "Cubic Feet", "raw": "Capacity: 22.0 Cubic Feet"}, "error": None},
-        })
-        bundle["facts"].append({"fact_id": "f-energyguide", "run_id": "synthetic-g1", "product_group": "washer",
-            "exact_sku": "SYNTHETIC-SKU", "kind": "ENERGYGUIDE", "observations": observations, "evidence_ids": ["e1"]})
+        observations.update(
+            {
+                "document_url": {
+                    "state": "VALUE",
+                    "value": "https://example.com/label.pdf",
+                    "error": None,
+                },
+                "document_sha256": {
+                    "state": "VALUE",
+                    "value": bundle["evidence"][0]["sha256"],
+                    "error": None,
+                },
+                "document_status": {"state": "VALUE", "value": "SOURCE_PDF_PARSED", "error": None},
+                "annual_energy_kwh": {
+                    "state": "VALUE",
+                    "value": {"amount": 585.0, "unit": "kWh/year", "raw": "585 kWh"},
+                    "error": None,
+                },
+                "capacity": {
+                    "state": "VALUE",
+                    "value": {
+                        "amount": 22.0,
+                        "unit": "Cubic Feet",
+                        "raw": "Capacity: 22.0 Cubic Feet",
+                    },
+                    "error": None,
+                },
+            }
+        )
+        bundle["facts"].append(
+            {
+                "fact_id": "f-energyguide",
+                "run_id": "synthetic-g1",
+                "product_group": "washer",
+                "exact_sku": "SYNTHETIC-SKU",
+                "kind": "ENERGYGUIDE",
+                "observations": observations,
+                "evidence_ids": ["e1"],
+            }
+        )
         before = copy.deepcopy(bundle)
         report = summarize_bundle(bundle)
         source = report["rows"][0]["energyguide_source_observations"]
