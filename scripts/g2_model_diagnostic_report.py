@@ -81,6 +81,7 @@ def build_report() -> dict:
                     "model_pattern_inclusion": inclusion,
                     "current_certification_state": current_index["state"],
                     "current_certification_reason": current_index["reason"],
+                    "current_index_observation_scope": "EPA_ROW_ONLY",
                     "current_index_source_body_sha256": index["body_sha256"],
                     "current_index_date_certified_raw": index["projection"].get("date_certified"),
                     "markets_raw": source_row["markets"],

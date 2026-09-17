@@ -36,6 +36,7 @@ class ModelDiagnosticReportTests(unittest.TestCase):
     def test_nonincluded_skus_do_not_become_uncertified(self):
         record = next(r for r in build_report()["records"] if r["exact_sku"] == "RF18A5101SR/AA")
         self.assertEqual(record["model_pattern_inclusion"], "NOT_INCLUDED")
+        self.assertEqual(record["current_index_observation_scope"], "EPA_ROW_ONLY")
         self.assertEqual(record["assessment"], "NOT_EVALUATED")
 
     def test_market_requires_literal_complete_token(self):

@@ -158,10 +158,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   refrigerator projections agree exactly on PD_ID, brand, model pattern and CB
   identifier; it retains the Index row hash and raw certification date. Missing
   or mismatched keys remain `NOT_EVALUATED`; assessment remains disabled. The
-  EPA Current Model Index is the sole EPA certification comparison source. Next:
-  define the product-page logo/claim versus current-index assessment inputs once
-  complete collection coverage and freshness requirements are ready. Recommended
-  model: Sol medium for that policy decision, then Terra medium for implementation.
+  EPA Current Model Index is the sole EPA certification comparison source.
+  G2_CURRENT_INDEX_CLAIM_COMPARISON.md documents the user-directed claim versus
+  current-list decision table and the prerequisite collection-definition gates.
+  The saved diagnostic now marks current_index_observation_scope=EPA_ROW_ONLY:
+  a nonincluded SKU is not certified or uncertified by the compared row. Next:
+  hosted complete Current Model Index Samsung-scope capture/replay with actual
+  metadata, pagination/count/update controls. Assessment remains disabled until
+  collection definitions and coverage are complete. Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
