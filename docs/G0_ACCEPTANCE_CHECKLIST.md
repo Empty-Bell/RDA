@@ -30,7 +30,13 @@ run 35165687365 (nine datasets, 12 query tests); full source regression run
 35165687343 passed 177 tests and 12 source legs. See EPA_QUERY_SOURCE_CONTRACT.md
 and epa-query-recon.json. Declared query completeness is separate from full EPA
 coverage, type/market applicability, active-version exclusivity and current
-certification. D09 remains OPEN. Next: hosted runtime freeze and recovery contract.
+certification. D09 remains OPEN. Bounded application runtime freeze and controlled
+recovery passed run 35166865310 (two cold jobs, 180 tests); full source 35166865304,
+EPA 35166865352 and runner probe 35166865316 passed. See RUNTIME_FREEZE_CONTRACT.md
+and runtime-freeze-recon.json. Hashed package/build/model resources and Node24
+Actions are pinned; image/system libraries remain hosted inputs. Controlled-copy
+recovery is separate from generic source/WAF recovery. Next: consolidated G0
+evidence and remaining-gap review; full G0 remains NOT_EVALUATED.
 Reuse existing sanitized
 fixtures and read compact projections/diffs. Use the existing model handoff guidance:
 Sol medium for a new contract; Terra medium after the contract is fixed. Escalate

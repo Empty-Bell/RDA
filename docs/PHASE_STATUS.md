@@ -182,15 +182,30 @@ include unrelated entries, so sole current version/certification remain unknown.
 See EPA_QUERY_SOURCE_CONTRACT.md, epa-query-recon.json and the actual fixture manifest.
 No current-certification, applicability, matching or compliance rule was introduced.
 
-Next bounded task: hosted runtime dependency/OCR-model/Actions freeze and recovery contract.
+Hosted application runtime freeze / controlled recovery PASS: code
+bf6078724ebda11384860219be82f63bfc82b4de. Two independent cold jobs in run
+35166865310 passed 180 tests, pinned resource integrity, expected isolated model
+corruption rejection/recovery and PDF/CPU-OCR/Chromium/Samsung/EPA live probes.
+Full source 35166865304 passed all 12 legs; EPA 35166865352 passed all nine jobs;
+separate runner probe 35166865316 passed. Python 3.12.14, hashed transitive/build
+locks, three ONNX/configuration hashes and Node24 Actions are explicit. Existing
+bad bytes fail before collection; bootstrap failures retain stage/exit-code evidence.
+Original runtime/model resources are untouched by controlled-copy recovery. The
+initial directory orchestration failure is confirmed and preserved. See
+RUNTIME_FREEZE_CONTRACT.md and runtime-freeze-recon.json. Image/system libraries
+remain GitHub-managed; arbitrary WAF/network recovery and future reachability are
+not implied by this PASS.
+
+Next bounded task: consolidated G0 evidence review and explicit remaining-gap inventory.
 All family discovery is complete; common claim/quality/runtime acceptance remains.
 See G0_ACCEPTANCE_CHECKLIST.md for intermediate artifacts and verification gates.
 Do not advance to Phase 1 until full G0 is verified.
 
-Follow-ups before locking runtime: freeze transitive Python dependencies and OCR model hashes;
-replace older Node20 Actions pins with verified current releases (runner currently upgrades
-them to Node24; first run succeeded with warnings). No downgrade flag should be enabled.
+Application runtime locking is now hosted-verified. Future updates require reviewed
+lock/model/Actions changes and cold plus full-source regression. Do not enable Node
+downgrade flags or auto-refresh expected model hashes.
 
-Token handoff: use Sol medium for the next exploratory runtime freeze/recovery contract only; Terra medium
-for repeated adapters after the contract is fixed. Read relevant docs and artifact fields,
+Token handoff: reuse the existing model guidance: Terra medium for the next bounded
+evidence/checklist consolidation; Sol medium only for a specific new unresolved contract.
+Read relevant docs and artifact fields,
 not complete dependency logs or all source payloads. No LLM calls in Actions runtime.

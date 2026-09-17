@@ -1,6 +1,6 @@
 # Hosted runtime freeze and controlled recovery
 
-Status: inventory PASS; locked cold-start/recovery acceptance pending.
+Status: bounded locked cold-start/controlled recovery PASS in run 35166865310.
 Phase 0 remains RUNNING, full G0 NOT_EVALUATED.
 
 Target ubuntu-24.04 x64 and exact Python 3.12.14 via .python-version. Two independent
@@ -59,7 +59,25 @@ artifact 10474938764 (ZIP SHA256
 04088bbb00c7957343f6ac7804229529e615aa6794e012d93ec79191fd6cd59c).
 Initial workflow omitted diagnostic-directory preparation and failed before
 inventory; retained in runtime-freeze-failure-history.json. No package/model/source
-absence conclusion was made. Cold acceptance must precede stage completion.
+absence conclusion was made. The original job log confirms that missing directory;
+its hash/error are retained in the failure history.
+
+Final code bf6078724ebda11384860219be82f63bfc82b4de:
+- Two independent cold jobs in run 35166865310 passed 180 tests, six resource hash
+  checks, expected corrupted-copy rejection, verified-copy recovery and four live
+  probe checks (disk, embedded/image-only PDF OCR, Chromium/Samsung, EPA catalog).
+- Full source regression 35166865304 passed all 12 source legs with 180 tests.
+- EPA regression 35166865352 passed nine jobs with the 12 query-boundary tests.
+- Separate hosted runner probe 35166865316 passed tests and all live probes.
+
+Image ubuntu24 / 20260907.300.1 and actual browser 153.0.8010.12 were observed.
+Complete compact proof is docs/evidence/runtime-freeze-recon.json: action/lock/model
+configuration, committed Linux lockfile hashes, job/runner names, before/after FAIL
+and recovery hashes, artifact ZIP hashes/expiry and live-probe results. Windows
+working-copy CRLF is not a new expected Linux checksum. Corrupted binary bytes are
+retained in raw artifacts; reports never overwrite the failed observation.
+Runtime PASS does not close G0 or approve audit semantics. Next: consolidated G0
+evidence/gap review. No LLM or provider credentials in Actions runtime.
 
 Primary manifests:
 - [checkout](https://raw.githubusercontent.com/actions/checkout/3d3c42e5aac5ba805825da76410c181273ba90b1/action.yml)

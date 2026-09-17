@@ -1,0 +1,1099 @@
+{
+  "status": "PASS",
+  "code_commit": "bf6078724ebda11384860219be82f63bfc82b4de",
+  "tests": 180,
+  "scope": "locked application runtime on mutable GitHub-hosted Ubuntu image; controlled-copy recovery",
+  "phase_gate": "NOT_EVALUATED",
+  "compliance": "NOT_EVALUATED",
+  "runs": {
+    "source": {
+      "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865304",
+      "attempt": 1,
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 105029792540,
+          "name": "recon (washer)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001454"
+        },
+        {
+          "id": 105029792662,
+          "name": "recon (cooktop)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001457"
+        },
+        {
+          "id": 105029792688,
+          "name": "recon (refrigerator)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001455"
+        },
+        {
+          "id": 105029792702,
+          "name": "recon (dryer)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001456"
+        },
+        {
+          "id": 105029792706,
+          "name": "recon (range)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001458"
+        },
+        {
+          "id": 105029792730,
+          "name": "recon (monitor)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001462"
+        },
+        {
+          "id": 105029792734,
+          "name": "recon (tv)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001464"
+        },
+        {
+          "id": 105029792735,
+          "name": "recon (dishwasher)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001459"
+        },
+        {
+          "id": 105029792775,
+          "name": "recon (chromebook)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001463"
+        },
+        {
+          "id": 105029792841,
+          "name": "recon (computer)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001465"
+        },
+        {
+          "id": 105029792880,
+          "name": "recon (tablet)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001466"
+        },
+        {
+          "id": 105029792920,
+          "name": "recon (hood)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001467"
+        }
+      ]
+    },
+    "probe": {
+      "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865316",
+      "attempt": 1,
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 105029791933,
+          "name": "probe",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001451"
+        }
+      ]
+    },
+    "epa": {
+      "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865352",
+      "attempt": 1,
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 105029792457,
+          "name": "epa (dishwasher)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001453"
+        },
+        {
+          "id": 105029792588,
+          "name": "epa (hood)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001471"
+        },
+        {
+          "id": 105029792660,
+          "name": "epa (refrigerator)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001460"
+        },
+        {
+          "id": 105029792700,
+          "name": "epa (range)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001469"
+        },
+        {
+          "id": 105029792707,
+          "name": "epa (computer)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001473"
+        },
+        {
+          "id": 105029792710,
+          "name": "epa (dryer)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001470"
+        },
+        {
+          "id": 105029792781,
+          "name": "epa (monitor)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001472"
+        },
+        {
+          "id": 105029792805,
+          "name": "epa (tv)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001468"
+        },
+        {
+          "id": 105029792816,
+          "name": "epa (washer)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001461"
+        }
+      ]
+    },
+    "cold": {
+      "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35166865310",
+      "attempt": 1,
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 105029791845,
+          "name": "cold (one)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001450"
+        },
+        {
+          "id": 105029792191,
+          "name": "cold (two)",
+          "conclusion": "success",
+          "runner_name": "GitHub Actions 1000001452"
+        }
+      ]
+    }
+  },
+  "cold_artifacts": {
+    "two": {
+      "artifact": {
+        "id": 10474523834,
+        "name": "runtime-freeze-two-35166865310-1",
+        "expires_at": "2026-10-01T00:32:00Z"
+      },
+      "artifact_zip_sha256": "c0ea2880ff4018dba410b8582026b436fc908dc5b7742a45180e97c720abc00d",
+      "bootstrap": {
+        "status": "PASS",
+        "run_id": "35166865310",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "stages": [
+          {
+            "stage": "begin",
+            "exit_code": 0,
+            "at": "2026-09-17T00:30:55.806402+00:00"
+          },
+          {
+            "stage": "locked_build_tools",
+            "exit_code": 0,
+            "at": "2026-09-17T00:30:57.574477+00:00"
+          },
+          {
+            "stage": "locked_runtime_packages",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:12.311740+00:00"
+          },
+          {
+            "stage": "dependency_health",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:12.767198+00:00"
+          },
+          {
+            "stage": "model_integrity",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:12.922623+00:00"
+          },
+          {
+            "stage": "browser_install",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:34.257688+00:00"
+          },
+          {
+            "stage": "complete",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:34.284161+00:00"
+          }
+        ]
+      },
+      "prepared": {
+        "status": "PASS",
+        "mode": "prepare",
+        "run_id": "35166865310",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "runner_image": "ubuntu24",
+        "runner_image_version": "20260907.300.1",
+        "python": "3.12.14",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "compliance": "NOT_EVALUATED",
+        "manifest_sha256": "e235dd621eb05164b60f19cf5fef6e84066ac8ed4d16af581b47e690e25299b1",
+        "package_versions": {
+          "antlr4-python3-runtime": "4.9.3",
+          "certifi": "2026.7.22",
+          "charset-normalizer": "3.5.1",
+          "colorlog": "6.12.0",
+          "flatbuffers": "25.12.19",
+          "greenlet": "3.5.6",
+          "idna": "3.19",
+          "numpy": "2.5.3",
+          "omegaconf": "2.3.1",
+          "onnxruntime": "1.30.0",
+          "opencv-python": "5.0.0.93",
+          "packaging": "26.3",
+          "pillow": "12.3.0",
+          "playwright": "1.63.0",
+          "protobuf": "7.36.1",
+          "pyclipper": "1.4.0",
+          "pyee": "13.0.1",
+          "pymupdf": "1.28.2",
+          "pyyaml": "6.0.3",
+          "rapidocr": "3.9.2",
+          "requests": "2.34.2",
+          "shapely": "2.1.2",
+          "six": "1.17.0",
+          "tqdm": "4.70.1",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "pip": "26.2.1",
+          "setuptools": "84.0.0",
+          "wheel": "0.48.0"
+        },
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ],
+        "browser_registry_canonical_sha256": "237494f3a119b2f03a97623f2a38291ff35a7122a2a443be63a96270fcc0e5f2"
+      },
+      "recovery": {
+        "status": "PASS",
+        "mode": "recovery",
+        "run_id": "35166865310",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "runner_image": "ubuntu24",
+        "runner_image_version": "20260907.300.1",
+        "python": "3.12.14",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "compliance": "NOT_EVALUATED",
+        "manifest_sha256": "e235dd621eb05164b60f19cf5fef6e84066ac8ed4d16af581b47e690e25299b1",
+        "package_versions": {
+          "antlr4-python3-runtime": "4.9.3",
+          "certifi": "2026.7.22",
+          "charset-normalizer": "3.5.1",
+          "colorlog": "6.12.0",
+          "flatbuffers": "25.12.19",
+          "greenlet": "3.5.6",
+          "idna": "3.19",
+          "numpy": "2.5.3",
+          "omegaconf": "2.3.1",
+          "onnxruntime": "1.30.0",
+          "opencv-python": "5.0.0.93",
+          "packaging": "26.3",
+          "pillow": "12.3.0",
+          "playwright": "1.63.0",
+          "protobuf": "7.36.1",
+          "pyclipper": "1.4.0",
+          "pyee": "13.0.1",
+          "pymupdf": "1.28.2",
+          "pyyaml": "6.0.3",
+          "rapidocr": "3.9.2",
+          "requests": "2.34.2",
+          "shapely": "2.1.2",
+          "six": "1.17.0",
+          "tqdm": "4.70.1",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "pip": "26.2.1",
+          "setuptools": "84.0.0",
+          "wheel": "0.48.0"
+        },
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ],
+        "browser_registry_canonical_sha256": "237494f3a119b2f03a97623f2a38291ff35a7122a2a443be63a96270fcc0e5f2",
+        "controlled_corruption_gate": "EXPECTED_FAILURE_BLOCKED",
+        "controlled_recovery": "VERIFIED_COPY_RESTORED_NO_COMPLIANCE_DECISION"
+      },
+      "controlled_corruption": {
+        "status": "FAIL",
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "79bdb665b99fb1b7200134901ee409e548190c616e4fbbb1ebdfa2d96f028170",
+            "status": "FAIL"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ]
+      },
+      "controlled_recovered": {
+        "status": "PASS",
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ]
+      },
+      "probe": {
+        "phase": 0,
+        "scope": "runtime and refrigerator reconnaissance sample",
+        "automatic_final_legal_conclusion": false,
+        "started_at": "2026-09-17T00:31:35.073408+00:00",
+        "github_run_id": "35166865310",
+        "github_run_attempt": "1",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "runner_image": "ubuntu24",
+        "runner_image_version": "20260907.300.1",
+        "python": "3.12.14",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "checks": [
+          {
+            "name": "disk_budget",
+            "status": "PASS",
+            "details": {
+              "free_bytes": 90822524928
+            },
+            "elapsed_seconds": 0.0
+          },
+          {
+            "name": "embedded_pdf_and_image_only_ocr",
+            "status": "PASS",
+            "details": {
+              "embedded_text": true,
+              "image_only_fallback": true,
+              "ocr_texts": [
+                "EnergyGuide TEST MODEL RF28B1234",
+                "Annual energy use 685 kWh"
+              ]
+            },
+            "elapsed_seconds": 1.99
+          },
+          {
+            "name": "headless_chromium_and_samsung",
+            "status": "PASS",
+            "details": {
+              "observed_endpoints": 2,
+              "pdp_sample_attempted": true
+            },
+            "elapsed_seconds": 22.55
+          },
+          {
+            "name": "epa_catalog_access",
+            "status": "PASS",
+            "details": {
+              "url": "https://api.us.socrata.com/api/catalog/v1?search_context=data.energystar.gov&q=refrigerators&limit=5",
+              "result_count": 5,
+              "fixture_sha256": "76d8c15b9613017033b1457b8d681a9806870ffdedf20a1a36f5af2f137b4be1",
+              "certification_lookup": "NOT_EVALUATED"
+            },
+            "elapsed_seconds": 0.5
+          }
+        ],
+        "full_phase_gate": "NOT_EVALUATED",
+        "browser_identity": {
+          "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+          "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+          "browser_version": "153.0.8010.12",
+          "locale": "en-US",
+          "viewport": {
+            "width": 1365,
+            "height": 768
+          },
+          "profile": "desktop-linux-chromium"
+        },
+        "completed_at": "2026-09-17T00:32:00.109895+00:00",
+        "probe_status": "PASS"
+      }
+    },
+    "one": {
+      "artifact": {
+        "id": 10474229154,
+        "name": "runtime-freeze-one-35166865310-1",
+        "expires_at": "2026-10-01T00:31:57Z"
+      },
+      "artifact_zip_sha256": "652f3435ce2e0bd506c95ab8d3a174ed90fcee8c8dbc50a13565ff99234d29a7",
+      "bootstrap": {
+        "status": "PASS",
+        "run_id": "35166865310",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "stages": [
+          {
+            "stage": "begin",
+            "exit_code": 0,
+            "at": "2026-09-17T00:30:55.615986+00:00"
+          },
+          {
+            "stage": "locked_build_tools",
+            "exit_code": 0,
+            "at": "2026-09-17T00:30:57.454460+00:00"
+          },
+          {
+            "stage": "locked_runtime_packages",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:09.953458+00:00"
+          },
+          {
+            "stage": "dependency_health",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:10.477352+00:00"
+          },
+          {
+            "stage": "model_integrity",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:10.655529+00:00"
+          },
+          {
+            "stage": "browser_install",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:30.743931+00:00"
+          },
+          {
+            "stage": "complete",
+            "exit_code": 0,
+            "at": "2026-09-17T00:31:30.774350+00:00"
+          }
+        ]
+      },
+      "prepared": {
+        "status": "PASS",
+        "mode": "prepare",
+        "run_id": "35166865310",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "runner_image": "ubuntu24",
+        "runner_image_version": "20260907.300.1",
+        "python": "3.12.14",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "compliance": "NOT_EVALUATED",
+        "manifest_sha256": "e235dd621eb05164b60f19cf5fef6e84066ac8ed4d16af581b47e690e25299b1",
+        "package_versions": {
+          "antlr4-python3-runtime": "4.9.3",
+          "certifi": "2026.7.22",
+          "charset-normalizer": "3.5.1",
+          "colorlog": "6.12.0",
+          "flatbuffers": "25.12.19",
+          "greenlet": "3.5.6",
+          "idna": "3.19",
+          "numpy": "2.5.3",
+          "omegaconf": "2.3.1",
+          "onnxruntime": "1.30.0",
+          "opencv-python": "5.0.0.93",
+          "packaging": "26.3",
+          "pillow": "12.3.0",
+          "playwright": "1.63.0",
+          "protobuf": "7.36.1",
+          "pyclipper": "1.4.0",
+          "pyee": "13.0.1",
+          "pymupdf": "1.28.2",
+          "pyyaml": "6.0.3",
+          "rapidocr": "3.9.2",
+          "requests": "2.34.2",
+          "shapely": "2.1.2",
+          "six": "1.17.0",
+          "tqdm": "4.70.1",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "pip": "26.2.1",
+          "setuptools": "84.0.0",
+          "wheel": "0.48.0"
+        },
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ],
+        "browser_registry_canonical_sha256": "237494f3a119b2f03a97623f2a38291ff35a7122a2a443be63a96270fcc0e5f2"
+      },
+      "recovery": {
+        "status": "PASS",
+        "mode": "recovery",
+        "run_id": "35166865310",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "runner_image": "ubuntu24",
+        "runner_image_version": "20260907.300.1",
+        "python": "3.12.14",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "compliance": "NOT_EVALUATED",
+        "manifest_sha256": "e235dd621eb05164b60f19cf5fef6e84066ac8ed4d16af581b47e690e25299b1",
+        "package_versions": {
+          "antlr4-python3-runtime": "4.9.3",
+          "certifi": "2026.7.22",
+          "charset-normalizer": "3.5.1",
+          "colorlog": "6.12.0",
+          "flatbuffers": "25.12.19",
+          "greenlet": "3.5.6",
+          "idna": "3.19",
+          "numpy": "2.5.3",
+          "omegaconf": "2.3.1",
+          "onnxruntime": "1.30.0",
+          "opencv-python": "5.0.0.93",
+          "packaging": "26.3",
+          "pillow": "12.3.0",
+          "playwright": "1.63.0",
+          "protobuf": "7.36.1",
+          "pyclipper": "1.4.0",
+          "pyee": "13.0.1",
+          "pymupdf": "1.28.2",
+          "pyyaml": "6.0.3",
+          "rapidocr": "3.9.2",
+          "requests": "2.34.2",
+          "shapely": "2.1.2",
+          "six": "1.17.0",
+          "tqdm": "4.70.1",
+          "typing-extensions": "4.16.0",
+          "urllib3": "2.8.0",
+          "pip": "26.2.1",
+          "setuptools": "84.0.0",
+          "wheel": "0.48.0"
+        },
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ],
+        "browser_registry_canonical_sha256": "237494f3a119b2f03a97623f2a38291ff35a7122a2a443be63a96270fcc0e5f2",
+        "controlled_corruption_gate": "EXPECTED_FAILURE_BLOCKED",
+        "controlled_recovery": "VERIFIED_COPY_RESTORED_NO_COMPLIANCE_DECISION"
+      },
+      "controlled_corruption": {
+        "status": "FAIL",
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "79bdb665b99fb1b7200134901ee409e548190c616e4fbbb1ebdfa2d96f028170",
+            "status": "FAIL"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ]
+      },
+      "controlled_recovered": {
+        "status": "PASS",
+        "resources": [
+          {
+            "path": "config.yaml",
+            "expected_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "actual_sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+            "status": "PASS"
+          },
+          {
+            "path": "default_models.yaml",
+            "expected_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "actual_sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+            "status": "PASS"
+          },
+          {
+            "path": "inference_engine/pytorch/networks/arch_config.yaml",
+            "expected_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "actual_sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_det_small.onnx",
+            "expected_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "actual_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+            "status": "PASS"
+          },
+          {
+            "path": "models/PP-OCRv6_rec_small.onnx",
+            "expected_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "actual_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+            "status": "PASS"
+          },
+          {
+            "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+            "expected_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "actual_sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+            "status": "PASS"
+          }
+        ]
+      },
+      "probe": {
+        "phase": 0,
+        "scope": "runtime and refrigerator reconnaissance sample",
+        "automatic_final_legal_conclusion": false,
+        "started_at": "2026-09-17T00:31:31.689713+00:00",
+        "github_run_id": "35166865310",
+        "github_run_attempt": "1",
+        "git_sha": "bf6078724ebda11384860219be82f63bfc82b4de",
+        "runner_image": "ubuntu24",
+        "runner_image_version": "20260907.300.1",
+        "python": "3.12.14",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "checks": [
+          {
+            "name": "disk_budget",
+            "status": "PASS",
+            "details": {
+              "free_bytes": 90821234688
+            },
+            "elapsed_seconds": 0.0
+          },
+          {
+            "name": "embedded_pdf_and_image_only_ocr",
+            "status": "PASS",
+            "details": {
+              "embedded_text": true,
+              "image_only_fallback": true,
+              "ocr_texts": [
+                "EnergyGuide TEST MODEL RF28B1234",
+                "Annual energy use 685 kWh"
+              ]
+            },
+            "elapsed_seconds": 1.41
+          },
+          {
+            "name": "headless_chromium_and_samsung",
+            "status": "PASS",
+            "details": {
+              "observed_endpoints": 2,
+              "pdp_sample_attempted": true
+            },
+            "elapsed_seconds": 23.2
+          },
+          {
+            "name": "epa_catalog_access",
+            "status": "PASS",
+            "details": {
+              "url": "https://api.us.socrata.com/api/catalog/v1?search_context=data.energystar.gov&q=refrigerators&limit=5",
+              "result_count": 5,
+              "fixture_sha256": "74f9214b8b81e901841ffb61e59190ae4046b17378bfdff1162331485a5cb9bd",
+              "certification_lookup": "NOT_EVALUATED"
+            },
+            "elapsed_seconds": 0.66
+          }
+        ],
+        "full_phase_gate": "NOT_EVALUATED",
+        "browser_identity": {
+          "native_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+          "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+          "browser_version": "153.0.8010.12",
+          "locale": "en-US",
+          "viewport": {
+            "width": 1365,
+            "height": 768
+          },
+          "profile": "desktop-linux-chromium"
+        },
+        "completed_at": "2026-09-17T00:31:56.967166+00:00",
+        "probe_status": "PASS"
+      }
+    }
+  },
+  "lockfiles": {
+    "requirements-probe.lock": {
+      "size_bytes": 56197,
+      "sha256": "ce631aae93ccf916849fdba1afccc9c1fc7ccc96103959e63b5bc93493d6658a",
+      "bytes_scope": "committed Git blob / Linux checkout"
+    },
+    "requirements-tools.lock": {
+      "size_bytes": 807,
+      "sha256": "67c5f89870e212bc161b3d3f229c80fab139d3e23002e89e306a81dad77ebad6",
+      "bytes_scope": "committed Git blob / Linux checkout"
+    },
+    "runtime-manifest.json": {
+      "size_bytes": 4069,
+      "sha256": "e235dd621eb05164b60f19cf5fef6e84066ac8ed4d16af581b47e690e25299b1",
+      "bytes_scope": "committed Git blob / Linux checkout"
+    },
+    ".python-version": {
+      "size_bytes": 8,
+      "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc",
+      "bytes_scope": "committed Git blob / Linux checkout"
+    }
+  },
+  "runtime_manifest": {
+    "python": "3.12.14",
+    "target": "ubuntu-24.04 x64",
+    "packages": {
+      "antlr4-python3-runtime": "4.9.3",
+      "certifi": "2026.7.22",
+      "charset-normalizer": "3.5.1",
+      "colorlog": "6.12.0",
+      "flatbuffers": "25.12.19",
+      "greenlet": "3.5.6",
+      "idna": "3.19",
+      "numpy": "2.5.3",
+      "omegaconf": "2.3.1",
+      "onnxruntime": "1.30.0",
+      "opencv-python": "5.0.0.93",
+      "packaging": "26.3",
+      "pillow": "12.3.0",
+      "playwright": "1.63.0",
+      "protobuf": "7.36.1",
+      "pyclipper": "1.4.0",
+      "pyee": "13.0.1",
+      "pymupdf": "1.28.2",
+      "pyyaml": "6.0.3",
+      "rapidocr": "3.9.2",
+      "requests": "2.34.2",
+      "shapely": "2.1.2",
+      "six": "1.17.0",
+      "tqdm": "4.70.1",
+      "typing-extensions": "4.16.0",
+      "urllib3": "2.8.0",
+      "pip": "26.2.1",
+      "setuptools": "84.0.0",
+      "wheel": "0.48.0"
+    },
+    "ocr_files": [
+      {
+        "path": "config.yaml",
+        "size_bytes": 4225,
+        "sha256": "06623941e188461a0bc263fe16175cb5e5f6f6b01f4387e546d3a741569fc021",
+        "download_url_candidates": []
+      },
+      {
+        "path": "default_models.yaml",
+        "size_bytes": 71521,
+        "sha256": "db47df9d6b071721f1633667b41cfef1e40b5d7f09be030aaea8be801ca2f2f5",
+        "download_url_candidates": []
+      },
+      {
+        "path": "inference_engine/pytorch/networks/arch_config.yaml",
+        "size_bytes": 10904,
+        "sha256": "3bc09a1d74372260039edabd3a17cec3b61e97d7d2458459c05ed05fdccb5308",
+        "download_url_candidates": []
+      },
+      {
+        "path": "models/PP-OCRv6_det_small.onnx",
+        "size_bytes": 9929594,
+        "sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+        "download_url_candidates": [
+          "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx"
+        ]
+      },
+      {
+        "path": "models/PP-OCRv6_rec_small.onnx",
+        "size_bytes": 21234383,
+        "sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+        "download_url_candidates": [
+          "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx"
+        ]
+      },
+      {
+        "path": "models/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+        "size_bytes": 585532,
+        "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+        "download_url_candidates": [
+          "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_mobile.onnx"
+        ]
+      }
+    ],
+    "browser_registry": {
+      "comment": "Do not edit this file, use utils/roll_browser.js",
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1243",
+          "installByDefault": true,
+          "browserVersion": "153.0.8010.12",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1243",
+          "installByDefault": true,
+          "browserVersion": "153.0.8010.12",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1543",
+          "installByDefault": true,
+          "browserVersion": "155.0",
+          "title": "Firefox"
+        },
+        {
+          "name": "webkit",
+          "revision": "2359",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251"
+          },
+          "browserVersion": "26.6",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    "browser_registry_canonical_sha256": "237494f3a119b2f03a97623f2a38291ff35a7122a2a443be63a96270fcc0e5f2",
+    "requirements_probe_sha256": "ce631aae93ccf916849fdba1afccc9c1fc7ccc96103959e63b5bc93493d6658a",
+    "requirements_tools_sha256": "67c5f89870e212bc161b3d3f229c80fab139d3e23002e89e306a81dad77ebad6"
+  },
+  "actions": [
+    {
+      "name": "actions/checkout",
+      "tag": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "declared_runtime": "node24",
+      "manifest_url": "https://raw.githubusercontent.com/actions/checkout/3d3c42e5aac5ba805825da76410c181273ba90b1/action.yml"
+    },
+    {
+      "name": "actions/setup-python",
+      "tag": "v7.0.0",
+      "sha": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "declared_runtime": "node24",
+      "manifest_url": "https://raw.githubusercontent.com/actions/setup-python/5fda3b95a4ea91299a34e894583c3862153e4b97/action.yml"
+    },
+    {
+      "name": "actions/upload-artifact",
+      "tag": "v7.0.1",
+      "sha": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+      "declared_runtime": "node24",
+      "manifest_url": "https://raw.githubusercontent.com/actions/upload-artifact/043fb46d1a93c77aae656e7c1c64a875d1fc6a0a/action.yml"
+    }
+  ]
+}
