@@ -18,7 +18,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Bootstrap observed baseline
-        run: bash scripts/bootstrap.sh
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
       - name: Propose locks and model inventory
         run: python scripts/runtime_discovery.py
       - name: Preserve inventory

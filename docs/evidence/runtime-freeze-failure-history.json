@@ -1,0 +1,18 @@
+{
+  "failures": [
+    {
+      "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35166370754",
+      "code_commit": "7ffa607cacc50a56820b86f0382a924c6a4a65cb",
+      "job_id": 105028262414,
+      "conclusion": "failure",
+      "inventory_executed": false,
+      "artifact_count": 0,
+      "observed_failed_steps": [
+        "Bootstrap observed baseline",
+        "Preserve inventory"
+      ],
+      "identified_orchestration_gap": "New inventory workflow omitted mkdir runtime; baseline bootstrap redirects pip freeze to runtime/dependencies.txt. Source/model/pip release conclusions not inferred.",
+      "recovery": "Prepare diagnostics before baseline bootstrap; preserve failure record."
+    }
+  ]
+}
