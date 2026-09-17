@@ -97,9 +97,13 @@ sets EPA identity, certification status, market applicability, or assessment.
 
 After terminal-suffix normalization, the official EPA API was queried for Samsung
 `model_number=RF23D*9600**`. It returned one row: PD_ID `2839420`, the known
-model pattern, four UPCs, and `markets=United States, Canada`. The response did
-not contain `additional_model_information`. Consequently there is no explicit
-EPA listing of `RF23DB9600QL` or `RF23DB9600QLAA` in this row. UPC values and
-market text are retained as separate source observations; neither is a
-manufacturer-to-EPA identifier mapping. D09 therefore remains open for identity,
-current status and US applicability despite the approved suffix normalization.
+model pattern, four UPCs, and `markets=United States, Canada`.
+
+The EPA pattern positionally includes `RF23DB9600QL`; with the approved terminal
+suffix normalization, it also covers the observed exact SKU `RF23DB9600QLAA`.
+This is the supported model-pattern inclusion observation for this pair. The
+response did not contain `additional_model_information`, which only means EPA
+did not also provide a separate explicit SKU list in that field. UPC values and
+market text remain separate source observations. D09 remains open for current
+status and US applicability; those questions are not answered merely by a
+pattern match or the market text.
