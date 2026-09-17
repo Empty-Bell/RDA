@@ -87,21 +87,30 @@ def collect_samples(products, output):
                 response=page.goto(result['requested_url'],wait_until='domcontentloaded',timeout=60000)
                 page.wait_for_timeout(10000)
                 result.update(final_url=safe_url(page.url),http_status=response.status if response else None)
-                specs=page.get_by_role('button',name=re.compile(r'^Specs$',re.I))
-                if specs.count()!=1:raise ValueError('PDP Specs navigation is missing or ambiguous')
-                specs.click(timeout=10000)
-                page.wait_for_timeout(1000)
-                spec_root=page.locator('#specs')
-                if spec_root.count()!=1:raise ValueError('PDP Specs surface did not mount')
-                # Samsung currently mounts the full table when its Specs tab opens.
-                # Do not click an optional toggle without first observing that the rows are absent.
-                if spec_root.locator('[class*="Specs_subSpecItem__"]').count()==0:
-                    expand=spec_root.get_by_role('button',name=re.compile(r'^See All Specs$',re.I))
-                    if expand.count()!=1:raise ValueError('PDP Specs table is unavailable or ambiguous')
-                    expand.click(timeout=10000)
-                    page.wait_for_timeout(1000)
-                result['spec_surface_interaction']='SPECS_NAVIGATION_SUCCESS'
                 snapshot=page.evaluate(DOM_SNAPSHOT)
+                # A page can still supply exact PDP identity and logo evidence when its
+                # interactive Specs tab is unavailable.  Preserve that evidence and mark
+                # only the spec-table point UNKNOWN; never turn an interaction timeout
+                # into an absence finding or abort the rest of the bounded pilot.
+                try:
+                    specs=page.get_by_role('button',name=re.compile(r'^Specs$',re.I))
+                    if specs.count()!=1:raise ValueError('PDP Specs navigation is missing or ambiguous')
+                    specs.click(timeout=10000)
+                    page.wait_for_timeout(1000)
+                    spec_root=page.locator('#specs')
+                    if spec_root.count()!=1:raise ValueError('PDP Specs surface did not mount')
+                    # Samsung currently mounts the full table when its Specs tab opens.
+                    # Do not click an optional toggle without first observing that the rows are absent.
+                    if spec_root.locator('[class*="Specs_subSpecItem__"]').count()==0:
+                        expand=spec_root.get_by_role('button',name=re.compile(r'^See All Specs$',re.I))
+                        if expand.count()!=1:raise ValueError('PDP Specs table is unavailable or ambiguous')
+                        expand.click(timeout=10000)
+                        page.wait_for_timeout(1000)
+                    snapshot=page.evaluate(DOM_SNAPSHOT)
+                    result['spec_surface_interaction']='SPECS_NAVIGATION_SUCCESS'
+                except Exception as spec_error:
+                    result['spec_surface_interaction']='SPECS_NAVIGATION_UNAVAILABLE'
+                    result['spec_surface_error_class']=type(spec_error).__name__
                 raw=(json.dumps(snapshot,sort_keys=True,indent=2)+'\n').encode();path=folder/'snapshot.json';path.write_bytes(raw)
                 result['observations'].append({'url':safe_url(page.url),'path':str(path),'sha256':hashlib.sha256(raw).hexdigest(),
                                                'captured_at':datetime.now(timezone.utc).isoformat()})
