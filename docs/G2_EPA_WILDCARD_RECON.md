@@ -1,7 +1,7 @@
 # EPA wildcard and independent identity reconnaissance
 
-Research date: 2026-09-17. Status: bounded documentation research complete;
-hosted source-capture checkpoint not yet implemented. D07/D09 remain OPEN.
+Research date: 2026-09-17. Status: bounded hosted source-capture checkpoint PASS.
+D07/D09 remain OPEN.
 No matching, OCR correction or assessment is enabled.
 
 ## Official evidence and scope
@@ -54,7 +54,14 @@ candidate records instead of selecting the first or latest certification date.
 
 ## Next bounded work: source capture, no matcher
 
-Use a separate manual hosted source-recon job on ubuntu-24.04 with locked Python
+The separate hosted source-recon job passed as run 35189522017 at `ae632c7` on
+ubuntu-24.04. Artifact 10483337728 has ZIP digest
+`6293ab90b6ac297e3bc457477476ddb4ce0b8abb7774ae34cc1ed60678859926`.
+It retained raw FAQ, QPX PDF, template, Product Finder record and dataset metadata
+responses; each manifest SHA-256 replayed against its stored bytes. The successful
+capture is evidence preservation only, not a grammar or matching acceptance.
+
+The source-recon job uses locked Python
 dependencies. Preserve raw response bytes before extracting a compact projection.
 Capture the FAQ, QPX PDF, refrigerator metadata, and record 2839420; record URL,
 UTC capture time, status, response hash and extraction version. A failed request
@@ -67,6 +74,5 @@ bytes/hashes. Tests should cover malformed metadata, changed bytes, multiple
 PD_IDs, preserved UPC leading zeros, market values, and unsupported syntax.
 This source capture does not enable any grammar or identity conclusion.
 
-Recommended model for that bounded collector/fixture integration: Terra medium.
-Use Luna low for subsequent checkpoint documentation; use Sol medium only when
-the collected evidence is reviewed to approve a matching/corroboration policy.
+Recommended model for the next evidence review/policy proposal: Sol medium.
+Use Luna low for checkpoint documentation and fixture-only follow-up.

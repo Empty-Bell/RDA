@@ -96,7 +96,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   documented in G2_EPA_WILDCARD_RECON.md: EPA single-position guidance was found,
   but character-class and Samsung label/suffix scope remain unresolved. Next:
   bounded hosted source capture/replay of official guidance, metadata and one EPA
-  record; no matcher. Recommended model: Terra medium.
+  record; no matcher. This is now PASSed: hosted run 35189522017 at ae632c7
+  captured five official sources and replayed their raw SHA-256 evidence. Artifact
+  10483337728 ZIP digest: 6293ab90b6ac297e3bc457477476ddb4ce0b8abb7774ae34cc1ed60678859926.
+  Next: review captured dataset-scoped grammar and draft a proposed matching matrix;
+  no matcher. Recommended model: Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
