@@ -11,7 +11,7 @@ def review(root, git_blobs=False):
 
     def check(name, expected, manifest):
         path = root / name
-        if not name.startswith('tests/fixtures/') or not path.resolve().is_relative_to(root.resolve()):
+        if not name.startswith(('tests/fixtures/', 'fixtures/epa-routing/')) or not path.resolve().is_relative_to(root.resolve()):
             raise ValueError(f'Unsafe fixture path: {name}')
         data = subprocess.run(['git', 'show', f'HEAD:{name}'], cwd=root,
                               capture_output=True, check=True).stdout if git_blobs else path.read_bytes()

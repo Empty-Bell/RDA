@@ -1,0 +1,314 @@
+{
+  "dataset": [
+    {
+      "identifier": "https://data.energystar.gov/api/views/8dv7-nngq",
+      "title": "ENERGY STAR Certified Ventilating Fans",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 4.0 ENERGY STAR Program Requirements for Ventilating Fans that were effective as of October 1, 2015 or the Version 4.1 requirements that are effective as of July 24, 2018. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/heating_cooling/fans_ventilating/key_product_criteria .",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/8dv7-nngq",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/8dv7-nngq/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/8dv7-nngq/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/8dv7-nngq/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/8dv7-nngq/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/8dv7-nngq/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/8wj2-sec8",
+      "title": "ENERGY STAR Model Index",
+      "description": "This data set contains a simplified list of all currently certified ENERGY STAR models with basic model information collected across all product categories including ENERGY STAR Unique IDs, ENERGY STAR partners, model names and numbers, and brand names. Learn more about ENERGY STAR products at www.energystar.gov/products. A full list of ENERGY STAR specifications can be found at www.energystar.gov/specifications.",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/8wj2-sec8",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/8wj2-sec8/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/8wj2-sec8/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/8wj2-sec8/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/8wj2-sec8/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/8wj2-sec8/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/bghd-e2wd",
+      "title": "ENERGY STAR Certified Residential Clothes Washers",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 8.0 and Version 8.1 ENERGY STAR Program Requirements for Clothes Washers that are effective as of February 5, 2018. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/clothes_washers/key_product_criteria",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/bghd-e2wd",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/bghd-e2wd/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/bghd-e2wd/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/bghd-e2wd/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/bghd-e2wd/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/bghd-e2wd/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/m6gi-ng33",
+      "title": "ENERGY STAR Certified Residential Electric Cooking Products",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 1.0 ENERGY STAR Program Requirements for Residential Electric Cooking Products that are effective as of September 25, 2023. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/electric_cooking_products/key_product_criteria",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/m6gi-ng33",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/m6gi-ng33/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/m6gi-ng33/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/m6gi-ng33/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/m6gi-ng33/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/m6gi-ng33/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/p5st-her9",
+      "title": "ENERGY STAR Certified Residential Refrigerators",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 5.0 ENERGY STAR Program Requirements for Residential Refrigerators and Freezers that are effective as of September 15, 2014 or the Version 5.1 Program Requirements that are effective as of August 5, 2021. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/refrigerators/key_product_criteria",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/p5st-her9",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/p5st-her9/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/p5st-her9/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/p5st-her9/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/p5st-her9/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/p5st-her9/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/pd96-rr3d",
+      "title": "ENERGY STAR Certified Televisions",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 9.0 ENERGY STAR Program Requirements for Televisions that are effective as of October 20, 2022 or the Version 9.1 Program Requirements that are effective as of April 14, 2023. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/electronics/televisions/key_product_criteria.",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/pd96-rr3d",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/pd96-rr3d/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/pd96-rr3d/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/pd96-rr3d/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/pd96-rr3d/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/pd96-rr3d/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/q8py-6w3f",
+      "title": "ENERGY STAR Certified Residential Dishwashers",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 7.0 ENERGY STAR Program Requirements for Residential Dishwashers that are effective as of July 19, 2023. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/dishwashers/key_product_criteria",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/q8py-6w3f",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/q8py-6w3f/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/q8py-6w3f/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/q8py-6w3f/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/q8py-6w3f/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/q8py-6w3f/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/qbg3-d468",
+      "title": "ENERGY STAR Certified Displays",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 8.0 ENERGY STAR Program Requirements for Displays that came into effect on January 28, 2020. A detailed listing of key efficiency criteria are available at: https://www.energystar.gov/products/office_equipment/displays/displays_key_product_criteria",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/qbg3-d468",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/qbg3-d468/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/qbg3-d468/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/qbg3-d468/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/qbg3-d468/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/qbg3-d468/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/rxdj-2c88",
+      "title": "ENERGY STAR Certified Computers V9.0",
+      "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 9.0 Requirements that are effective as of October 27, 2025.",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/rxdj-2c88",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/rxdj-2c88/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/rxdj-2c88/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/rxdj-2c88/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/rxdj-2c88/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/rxdj-2c88/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    },
+    {
+      "identifier": "https://data.energystar.gov/api/views/t9u7-4d2j",
+      "title": "ENERGY STAR Certified Residential Clothes Dryers",
+      "description": "Certified dryers and combination all-in-one washer-dryers that meet all ENERGY STAR requirements as listed in the Version 1.1 ENERGY STAR Program Requirements for Clothes Dryers that are effective as of January 1, 2015. Combination all-in-one washer-dryers also meet the Version 8.1 ENERGY STAR Program Requirements for Clothes Washers that are effective as of February 5, 2018. A detailed listing of key efficiency criteria are available at: https://www.energystar.gov/products/appliances/clothes_dryers/key_product_criteria",
+      "theme": [
+        "Active Specifications"
+      ],
+      "modified": "2026-09-16",
+      "landingPage": "https://data.energystar.gov/d/t9u7-4d2j",
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/t9u7-4d2j/export.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "mediaType": "application/json",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/t9u7-4d2j/query.json?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/t9u7-4d2j/columns.json",
+          "describedByType": "application/json",
+          "@type": "dcat:Distribution"
+        },
+        {
+          "mediaType": "application/xml",
+          "downloadURL": "https://data.energystar.gov/api/v3/views/t9u7-4d2j/query.xml?accessType=DOWNLOAD",
+          "describedBy": "https://data.energystar.gov/api/views/t9u7-4d2j/columns.xml",
+          "describedByType": "application/xml",
+          "@type": "dcat:Distribution"
+        }
+      ]
+    }
+  ]
+}

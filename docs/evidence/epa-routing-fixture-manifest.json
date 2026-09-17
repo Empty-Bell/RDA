@@ -1,0 +1,23 @@
+[
+  {
+    "file": "fixtures/epa-routing/catalog.json",
+    "sha256": "6e007a5b358865ceed9d765484ec722aac2368510330e4fc3fbc790589802714",
+    "source_url": "https://data.energystar.gov/data.json",
+    "projection": "Actual public source projection; contacts/analytics omitted; HTML table reconstruction from observed cells",
+    "source_scope": "local reconnaissance input; acceptance requires hosted fresh-source probe"
+  },
+  {
+    "file": "fixtures/epa-routing/combo-metadata.json",
+    "sha256": "433e4997aa1f72a81539afa6362fe2d5171a9157e6765954af233814d9044602",
+    "source_url": "https://data.energystar.gov/api/views/9jai-gs6t.json",
+    "projection": "Actual public source projection; contacts/analytics omitted; HTML table reconstruction from observed cells",
+    "source_scope": "local reconnaissance input; acceptance requires hosted fresh-source probe"
+  },
+  {
+    "file": "fixtures/epa-routing/specifications.html",
+    "sha256": "d582719585ffa95fc78ebf0a7598436c38a68e7d2278081984cac5d3cd77e7a0",
+    "source_url": "https://www.energystar.gov/products/spec",
+    "projection": "Actual public source projection; contacts/analytics omitted; HTML table reconstruction from observed cells",
+    "source_scope": "local reconnaissance input; acceptance requires hosted fresh-source probe"
+  }
+]

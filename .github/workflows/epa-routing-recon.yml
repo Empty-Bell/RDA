@@ -1,0 +1,36 @@
+name: Phase 0 official EPA source routing
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/epa_routing*.py', 'fixtures/epa-routing/**', '.github/workflows/epa-routing-recon.yml']
+permissions:
+  contents: read
+concurrency:
+  group: epa-routing-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  routing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Check sanitized routing fixtures
+        run: python -m unittest scripts.epa_routing_test -v
+      - name: Check query error boundaries
+        run: python -m unittest discover -s tests -p 'test_epa_queries.py' -v
+      - name: Observe official routing sources
+        run: python scripts/epa_routing_recon.py
+      - name: Preserve public routing evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: epa-routing-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/epa-routing/
+          retention-days: 14
+          if-no-files-found: error

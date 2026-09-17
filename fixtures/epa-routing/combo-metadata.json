@@ -1,0 +1,212 @@
+{
+  "id": "9jai-gs6t",
+  "name": "ENERGY STAR Certified Res-Combo-Washer-Dryer",
+  "description": "Certified models meet all ENERGY STAR requirements as listed in the Version 8.0 and Version 8.1 ENERGY STAR Program Requirements for Clothes Washers that are effective as of February 5, 2018. This view includes Combination All-in-One Washer/Dryer only. See the source dataset for complete listing of all product types certified under the Residential Clothes Washers specification. A detailed listing of key efficiency criteria are available at https://www.energystar.gov/products/appliances/clothes_washers/key_product_criteria",
+  "category": "Active Specifications",
+  "provenance": "official",
+  "publicationStage": "published",
+  "viewType": "tabular",
+  "displayType": "table",
+  "flags": [
+    "calculatedView",
+    "ownerMayBeContacted",
+    "restorable",
+    "restorePossibleForType",
+    "soqlBasedView"
+  ],
+  "parentViewId": null,
+  "rowsUpdatedAt": 1789564819,
+  "viewLastModified": 1739912249,
+  "columns": [
+    {
+      "fieldName": "pd_id",
+      "name": "ENERGY STAR Unique ID",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "brand_name",
+      "name": "Brand Name",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "model_number",
+      "name": "Model Number",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_model_information",
+      "name": "Additional Model Information",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "upc",
+      "name": "UPC",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "load_configuration",
+      "name": "Load Configuration",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "special_type",
+      "name": "Special Type",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_washer_features",
+      "name": "Additional Washer Features",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "intended_market",
+      "name": "Intended Market",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "volume_cubic_feet",
+      "name": "Volume (cu. ft.)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "height_inches",
+      "name": "Height (inches)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "width_inches",
+      "name": "Width (inches)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "depth_inches",
+      "name": "Depth (inches)",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "integrated_modified_energy_factor_imef",
+      "name": "Integrated Modified Energy Factor (IMEF)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "us_federal_standard_imef",
+      "name": "US Federal Standard (IMEF)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "annual_energy_use_kwh_year",
+      "name": "Annual Energy Use (kWh/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "integrated_water_factor_iwf",
+      "name": "Integrated Water Factor (IWF)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "us_federal_standard_iwf",
+      "name": "US Federal Standard (IWF)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "annual_water_use_gallons_year",
+      "name": "Annual Water Use (gallons/yr)",
+      "dataTypeName": "number"
+    },
+    {
+      "fieldName": "drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Drum Capacity for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "heat_pump_technology_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Heat Pump Technology for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Combined Energy Factor (CEF) for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Estimated Annual Energy Use (kWh/yr) for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "estimated_energy_test_cycle_time_min_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Estimated Energy Test Cycle Time (min) for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_test_cycle_information_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Energy Test Cycle Information for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "calculated_combined_energy_factor_max_dryness_setting_lbs_kwh_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Calculated Combined Energy Factor - Max Dryness Setting (lbs/kWh) for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "additional_dryer_features_for_the_dryer_in_a_combination_all_in_one_washer_dryer",
+      "name": "Additional Dryer Features for the dryer in a Combination All-in-One Washer-Dryer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connected",
+      "name": "Connected",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "connects_using",
+      "name": "Connects Using",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "communication_standard_application_layer",
+      "name": "Communication Standard Application Layer",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "direct_on_premises_open_standard_based_interconnection",
+      "name": "Direct on-premises Open-standard Based Interconnection",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "paired_energy_star_clothes_dryer_available",
+      "name": "Paired ENERGY STAR Clothes Dryer Available",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "paired_energy_star_clothes_dryer_energy_star_model_identifier",
+      "name": "Paired ENERGY STAR Clothes Dryer ENERGY STAR Model Identifier",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "date_available_on_market",
+      "name": "Date Available On Market",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "date_qualified",
+      "name": "Date Certified",
+      "dataTypeName": "calendar_date"
+    },
+    {
+      "fieldName": "markets",
+      "name": "Markets",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "energy_star_model_identifier",
+      "name": "ENERGY STAR Model Identifier",
+      "dataTypeName": "text"
+    },
+    {
+      "fieldName": "meets_most_efficient_criteria",
+      "name": "Meets ENERGY STAR Most Efficient 2025 Criteria",
+      "dataTypeName": "text"
+    }
+  ]
+}
