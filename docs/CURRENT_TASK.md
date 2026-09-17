@@ -92,7 +92,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   (34 tests). It validates review provenance and withholding of wildcard/suffix/
   OCR-confusion cases; no live crawl occurred. Next: independent source-backed
   wildcard grammar and EPA identity evidence reconnaissance proposal, without
-  matching implementation. Recommended model: Sol medium.
+  matching implementation. Recommended model: Sol medium. This research is now
+  documented in G2_EPA_WILDCARD_RECON.md: EPA single-position guidance was found,
+  but character-class and Samsung label/suffix scope remain unresolved. Next:
+  bounded hosted source capture/replay of official guidance, metadata and one EPA
+  record; no matcher. Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

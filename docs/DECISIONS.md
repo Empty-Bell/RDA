@@ -1,5 +1,11 @@
 # Open semantic decisions
 
+Official wildcard follow-up: G2_EPA_WILDCARD_RECON.md records single-position
+guidance from the EPA UPC FAQ and QPX documentation, but differing letter versus
+alphanumeric star descriptions and unresolved Samsung label/suffix scope. This
+is documentation reconnaissance only; no wildcard rule, correction or certification
+identity decision is approved. Next is bounded hosted raw-source capture.
+
 D07/D09 fixture contract: the user approved separate reviewed transcription
 evidence, withheld wildcard/suffix equivalence, and literal equality diagnostics
 only. Hosted checkpoint 35188432065 passed at 6588115. No automatic correction,
