@@ -94,7 +94,7 @@ hosted ubuntu-24.04 must execute every case. Actions CI separately checks Python
 draft fixtures, not the G1 acceptance gate or full G0 source suite.
 CI now installs only hash-locked development tools (requirements-g1-tools.lock).
 Audit runtime dependencies remain empty. Ruff checks E4/E7/E9/F and formatting
-on all 7 package files. Mypy checks all package functions, requiring complete
+on all package files (currently 8). Mypy checks all package functions, requiring complete
 function annotations and checking their bodies; it is not full strict mode.
 Any is confined to dynamic JSON/record data and dictionary envelopes; this static
 check complements required runtime field/type/reference tests. No ignores or

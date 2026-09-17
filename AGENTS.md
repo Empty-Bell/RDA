@@ -23,3 +23,6 @@ Unapproved semantic policies remain disabled; draft contracts do not resolve dec
 No unapproved compliance decision engine or Pages deployment.
 Use standard ubuntu-24.04 x64. Local success does not pass hosted gates.
 Token economy: inspect relevant fields/diffs only; no agents; no LLM in audit runtime.
+
+For next-step continuation, read docs/CURRENT_TASK.md first and only relevant
+changed contract/code sections; avoid repeatedly reading full chronological docs.
