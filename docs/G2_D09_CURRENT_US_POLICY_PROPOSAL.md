@@ -1,6 +1,8 @@
 # Refrigerator EPA current-status and US-applicability proposal
 
-Status: proposal only. It follows the approved Samsung terminal `AA`/`/AA`
+Status: user approved the bounded US-market observation on continuation after
+the market explanation. Current-status assessment remains disabled.
+It follows the approved Samsung terminal `AA`/`/AA`
 normalization and EPA positional-pattern inclusion observation. It does not
 activate an assessment, issue code, certification PASS, or absence finding.
 
@@ -14,10 +16,10 @@ comes from source-observed SKU `RF23DB9600QLAA` under the approved suffix rule.
 |---|---|---|
 | `model_pattern_inclusion` | `INCLUDED` | Fits this preserved EPA pattern |
 | `current_certification_state` | `NOT_EVALUATED` | No source states current/withdrawn status |
-| `us_applicability_state` | `NOT_EVALUATED` | Raw market text has not been approved as the criterion |
+| `us_applicability_state` | `OBSERVED_US_MARKET` | Literal `United States` token observed in the EPA row |
 | `assessment` | `NOT_EVALUATED` | No compliance conclusion follows |
 
-## Proposed approval boundary
+## Approved observation boundary
 
 1. A successfully captured, schema-validated EPA row whose `markets` lists
    literal `United States` may set `us_applicability_state=OBSERVED_US_MARKET`.
@@ -32,6 +34,9 @@ comes from source-observed SKU `RF23DB9600QLAA` under the approved suffix rule.
 
 The report must preserve raw markets/date, PD_ID, source URL and response hash.
 Missing markets means `NOT_EVALUATED`, not non-US. A source failure cannot
-produce a negative conclusion. If approved, implement only an offline projector
-and fixtures for literal US, non-US, missing markets, duplicate candidates and
-source failure. Recommended model: Terra medium; fixture-only changes: Luna low.
+produce a negative conclusion. Implementation is limited to the offline
+projector with literal US, non-US, missing/malformed markets and source-failure
+tests; no candidate precedence or deduplication is activated. The report implements exact comma-delimited token
+observation and records `EPA_ROW_ONLY` scope, including on nonmatching corpus
+SKUs. Thus the state does not imply a SKU-to-row association. Recommended model:
+Terra medium; fixture-only changes: Luna low.

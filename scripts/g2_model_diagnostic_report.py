@@ -6,8 +6,20 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from g2_epa_wildcard_capture import positional_diagnostic  # noqa: E402
+from g2_epa_wildcard_capture import SOURCES, positional_diagnostic  # noqa: E402
 from g2_samsung_suffix import normalize_terminal_aa  # noqa: E402
+
+
+def observe_us_market(markets, *, source_status: str) -> str:
+    """Observe a literal comma-delimited EPA market; not certification status."""
+    if source_status != "PASS":
+        raise ValueError("EPA source capture failed; market observation unavailable")
+    if not isinstance(markets, str) or not markets.strip():
+        return "NOT_EVALUATED"
+    tokens = [token.strip() for token in markets.split(",")]
+    if any(not token for token in tokens):
+        return "NOT_EVALUATED"
+    return "OBSERVED_US_MARKET" if "United States" in tokens else "NOT_EVALUATED"
 
 
 def build_report() -> dict:
@@ -45,11 +57,16 @@ def build_report() -> dict:
                     "label_model_raw": item["model_token_raw"],
                     "epa_pattern_raw": pattern,
                     "epa_source_body_sha256": epa["body_sha256"],
+                    "epa_source_url": SOURCES[epa["source"]],
                     "epa_pd_id": source_row["pd_id"],
                     "model_pattern_inclusion": inclusion,
                     "current_certification_state": "NOT_EVALUATED",
                     "markets_raw": source_row["markets"],
-                    "us_applicability_state": "NOT_EVALUATED",
+                    "date_qualified_raw": source_row.get("date_qualified"),
+                    "us_applicability_state": observe_us_market(
+                        source_row.get("markets"), source_status="PASS"
+                    ),
+                    "us_market_observation_scope": "EPA_ROW_ONLY",
                     "assessment": "NOT_EVALUATED",
                     "full_sku_diagnostic": positional_diagnostic(
                         pattern, sku, dataset_id="p5st-her9", metadata_sha256=metadata_hash

@@ -144,9 +144,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   row fixture and retains its body hash/PD_ID. Non-inclusion in this one pattern
   is not absence of certification. D09 proposal is now
   G2_D09_CURRENT_US_POLICY_PROPOSAL.md: pattern inclusion, observed US market
-  and current certification remain independent. Next: user decision on the
-  proposed `OBSERVED_US_MARKET` state; current certification remains
-  NOT_EVALUATED. Recommended model Sol medium for approval, Terra medium after.
+  and current certification remain independent. User authorized bounded
+  `OBSERVED_US_MARKET`; offline report records literal US tokens with
+  EPA_ROW_ONLY scope, raw markets/date and source URL/hash. Current certification
+  remains NOT_EVALUATED. Next: investigate EPA public-list current/withdrawn
+  semantics before proposing certification currency; recommended model Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
