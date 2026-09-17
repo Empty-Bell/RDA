@@ -18,6 +18,7 @@ from regaudit.report import summarize_bundle
 from g2_population import observation, population_records
 from source_contract import pdp_facts
 from source_recon import FAMILIES
+from g2_pdp import select_sample, collect_samples, coverage, verify_identity
 
 
 def main():
@@ -52,7 +53,7 @@ def main():
             'playwright_version':__import__('importlib.metadata',fromlist=['version']).version('playwright'),
             'runner':'ubuntu-24.04-x64','overall_execution_status':'PARTIAL','assessment_enabled':False},
             'products':products,'evidence':[],'facts':[],'assessments':[]}
-        def evidence(raw,url,sku,kind):
+        def evidence(raw,url,sku,kind,captured_at=None):
             digest=hashlib.sha256(raw).hexdigest();relative='raw/'+digest+'.bin';path=out/relative
             path.parent.mkdir(exist_ok=True)
             if not path.exists():
@@ -60,7 +61,7 @@ def main():
             elif path.read_bytes()!=raw:raise ValueError('Raw hash collision')
             identity='e-'+str(len(bundle['evidence']))
             bundle['evidence'].append({'evidence_id':identity,'run_id':run_id,'product_group':'refrigerator',
-                'sku':sku,'source_url':url,'captured_at':started,'sha256':digest,'parser_version':'g2-observation-1',
+                'sku':sku,'source_url':url,'captured_at':captured_at or started,'sha256':digest,'parser_version':'g2-observation-1',
                 'evidence_type':kind,'relative_path':relative})
             return identity,digest
         for offset in ordered:
@@ -70,14 +71,15 @@ def main():
         if sku not in {p['exact_sku'] for p in products}:raise ValueError('Sample outside population')
         bridge=pdp['json_endpoints'][0];raw=(source/bridge['fixture']).read_bytes()
         if hashlib.sha256(raw).hexdigest()!=bridge['fixture_sha256']:raise ValueError('Bridge hash mismatch')
-        parsed_pdp=pdp_facts(json.loads(raw),sku)
+        snapshot=json.loads((source/'fixtures/public-claim-snapshot.json').read_bytes())
+        parsed_pdp=verify_identity(sku,pdp['final_url'],snapshot,json.loads(raw))
         bridge_id,bridge_hash=evidence(raw,bridge['url'],sku,'projected-public-bridge-response')
         for name in ('pdp-facts.json','public-claim-facts.json','fixtures/public-claim-snapshot.json'):
             evidence((source/name).read_bytes(),pdp['final_url'],sku,'uninterpreted-pdp-observation')
-        def fact(kind,values,refs):
+        def fact(kind,values,refs,exact_sku=None):
             observations={f.name:observation() for f in fields(TYPES[kind])};observations.update(values)
-            bundle['facts'].append({'fact_id':'f-'+kind,'run_id':run_id,'product_group':'refrigerator',
-                'exact_sku':sku,'kind':kind,'observations':observations,'evidence_ids':refs})
+            bundle['facts'].append({'fact_id':'f-'+kind+('-'+exact_sku if exact_sku else ''),'run_id':run_id,'product_group':'refrigerator',
+                'exact_sku':exact_sku or sku,'kind':kind,'observations':observations,'evidence_ids':refs})
         fact('PDP',{'pdp_model':observation(sku),'pdp_url':observation(pdp['final_url']),
              'source_bridge_hash':observation(bridge_hash)},[bridge_id])
         label=json.loads((source/'energyguide-observation.json').read_bytes());raw=(source/'energyguide-original.pdf').read_bytes()
@@ -104,12 +106,33 @@ def main():
                 'assessment_status':'NOT_EVALUATED','severity':None,'issue_code':None,
                 'reason':'Rule evaluation disabled; dataset context does not establish certification match',
                 'expected':None,'observed':None,'evidence_ids':[bridge_id] if domain=='FTC' else [],'automatic_final_legal_conclusion':False})
+        selected=select_sample(products,sku,limit=5)
+        samples=[{'exact_sku':sku,'status':'VERIFIED_EXACT_IDENTITY'}]
+        samples.extend(collect_samples([p for p in selected if p['exact_sku']!=sku],out/'pdp-samples'))
+        for result in samples[1:]:
+            refs={}
+            for entry in result['responses']+result['observations']:
+                if 'path' not in entry:continue
+                raw=Path(entry['path']).read_bytes()
+                if hashlib.sha256(raw).hexdigest()!=entry['sha256']:raise ValueError('Per-SKU response bytes changed')
+                ref,digest=evidence(raw,entry['url'],result['exact_sku'],'per-sku-pdp-public-observation',entry['captured_at'])
+                refs[entry['path']]=(ref,digest)
+            evidence(dumps(result).encode(),result.get('final_url',result['requested_url']),result['exact_sku'],'pdp-collection-result')
+            if result['status']=='VERIFIED_EXACT_IDENTITY':
+                ref,digest=refs[result['bridge']['path']]
+                fact('PDP',{'pdp_model':observation(result['exact_sku']),'pdp_url':observation(result['final_url']),
+                     'source_bridge_hash':observation(digest)},[ref],result['exact_sku'])
+        pdp_coverage=coverage(products,samples)
+        with (out/'pdp-coverage.json').open('x',encoding='utf-8',newline='\n') as stream:stream.write(dumps(pdp_coverage))
         bundle['manifest']['completed_at']=datetime.now(timezone.utc).isoformat()
         validate_bundle(bundle);verify_evidence_files(bundle,out)
         for name,data in [('bundle.json',bundle),('report.json',summarize_bundle(bundle))]:
             with (out/name).open('x',encoding='utf-8',newline='\n') as stream:stream.write(dumps(data))
-        checkpoint.update(status='PASS',population_groups=parsed['total_groups'],population_skus=len(products),
-            collected_pdp_skus=[sku],collected_label_skus=[sku],epa_brand_scan=epa_recon['brand_scan'],
+        checkpoint.update(status='PASS' if not pdp_coverage['counts']['FAILED'] else 'FAILED',population_groups=parsed['total_groups'],population_skus=len(products),
+            collected_pdp_skus=[r['exact_sku'] for r in samples if r['status']=='VERIFIED_EXACT_IDENTITY'],
+            attempted_pdp_skus=[r['exact_sku'] for r in samples],pdp_coverage_counts=pdp_coverage['counts'],
+            pdp_coverage_sha256=hashlib.sha256((out/'pdp-coverage.json').read_bytes()).hexdigest(),
+            collected_label_skus=[sku],epa_brand_scan=epa_recon['brand_scan'],
             sku_certification_matching='NOT_EVALUATED',bundle_sha256=hashlib.sha256((out/'bundle.json').read_bytes()).hexdigest())
     except Exception as error:
         checkpoint['error_class']=type(error).__name__

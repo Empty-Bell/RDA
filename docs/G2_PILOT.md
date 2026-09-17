@@ -67,3 +67,33 @@ redirect/selected variant mismatch), source-backed measure/claim normalization,
 PDF/OCR golden corpus and decision proposals for D01–D04/D07/D09/D10, EPA matching,
 versioned assessed bundles/rules, fixture dashboard, then full refrigerator gate.
 No rule or new issue code is approved by collection success.
+
+## Per-SKU PDP increment
+
+The next pilot selects up to five population SKUs deterministically: existing
+PDF sample, one other representative, one variant, then remaining sorted SKUs.
+The cap is a request budget, not a hardcoded population size or full coverage.
+Each additional SKU gets a fresh page in the shared desktop Chromium context.
+Final URL must be on Samsung US with that source SKU slug, current Product
+JSON-LD identifiers must equal the exact SKU, and exactly one target Specs and
+Support record must exist. Missing/contradictory identity is collection failure,
+not automatic wrong-model/legal finding. Slash-to-hyphen spelling is permitted
+only for Samsung URL slug checks; exact SKU keys/declarations remain unchanged.
+
+Per-response timestamps and projected bridge hashes are recorded before
+interpretation. Product snapshot, response/error metadata and raw PDP fields are
+retained. Successful responses add typed PDP facts/evidence to the same run.
+All sample attempts continue independently; any failed sampled SKU fails the
+pilot checkpoint while retaining partial package/coverage for review.
+
+pdp-coverage.json covers every population SKU exactly once with
+VERIFIED_EXACT_IDENTITY, FAILED or NOT_ATTEMPTED. Counts sum to population_count;
+attempted_count includes verified plus failed. This technical collection coverage
+is not D04's future assessment/domain completion denominator. Unattempted and
+failed SKUs do not disappear and are not counted as healthy. Label collection
+still covers the original one SKU; EPA per-SKU matching and rules remain disabled.
+
+checks/g2 now has 30 regression cases including redirects, wrong selected variant,
+missing/invalid JSON-LD, contradictory MPN, duplicate/wrong Specs, source flag
+preservation and coverage identity/count/status mutations. Live hosted verification
+of this increment is pending; this document does not close G2a.
