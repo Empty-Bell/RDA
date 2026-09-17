@@ -7,6 +7,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from g2_refrigerator_pattern_bridge import (  # noqa: E402
     bridge_pattern_candidate,
     build_refrigerator_target_feed,
+    project_same_run_refrigerator_candidates,
 )
 
 
@@ -27,7 +28,55 @@ def epa_row() -> dict:
     }
 
 
+def scan() -> dict:
+    return {
+        "query_completeness": "COMPLETE_OBSERVED_QUERY",
+        "current_certification_state": "NOT_EVALUATED",
+        "assessment": "NOT_EVALUATED",
+        "source_run_id": "execution-1",
+    }
+
+
+def current_row(model: str, category: str = "Consumer Refrigeration Products") -> tuple[dict, dict]:
+    return (
+        {
+            **epa_row(),
+            "model_number": model,
+            "source_row_id": "row-1",
+            "product_category": category,
+            "product_type": "Refrigerators or Refrigerator-Freezers",
+        },
+        {"name": "page-0000", "body_sha256": "c" * 64},
+    )
+
+
 class RefrigeratorPatternBridgeTests(unittest.TestCase):
+    def test_same_run_projection_excludes_other_current_index_categories(self):
+        result = project_same_run_refrigerator_candidates(
+            [pdp("RF23DB9600QLAA")],
+            scan(),
+            [current_row("RF23DB9600QL"), current_row("RF23DB9600QLAA", "Clothes Dryers")],
+            "execution-1",
+        )
+        record = result["candidate_projection"]["records"][0]
+        self.assertEqual(
+            record["candidate_projection_state"], "MATCHED_APPROVED_NORMALIZED_LITERAL_CANDIDATES"
+        )
+        self.assertEqual(len(record["approved_normalized_literal_candidates"]), 1)
+
+    def test_same_run_projection_rejects_missing_category_or_mixed_execution(self):
+        with self.assertRaisesRegex(ValueError, "category"):
+            project_same_run_refrigerator_candidates(
+                [pdp("RF23DB9600QLAA")],
+                scan(),
+                [(epa_row(), {"name": "page", "body_sha256": "a" * 64})],
+                "execution-1",
+            )
+        with self.assertRaisesRegex(ValueError, "provenance"):
+            project_same_run_refrigerator_candidates(
+                [pdp("RF23DB9600QLAA")], scan(), [current_row("RF23DB9600QL")], "other-execution"
+            )
+
     def test_same_run_feed_keeps_only_verified_pdp_targets(self):
         feed = build_refrigerator_target_feed(
             [pdp("RF23DB9600QLAA"), pdp("FAILED", "FAILED")], "execution-1"

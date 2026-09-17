@@ -30,6 +30,8 @@ from g2_label_activation import (
     summarize_capacity_selection_outcomes,
     summarize_selection_outcomes,
 )
+from g2_current_index_candidate_projection import load_replayed_rows
+from g2_refrigerator_pattern_bridge import project_same_run_refrigerator_candidates
 
 
 def main():
@@ -339,9 +341,39 @@ def main():
         # Coverage still records every unattempted SKU rather than treating this cap as
         # a population or assessment-completion threshold.
         selected = select_sample(products, sku, limit=10)
-        samples = [{"exact_sku": sku, "status": "VERIFIED_EXACT_IDENTITY"}]
+        samples = [
+            {
+                "exact_sku": sku,
+                "status": "VERIFIED_EXACT_IDENTITY",
+                "bridge": {"url": bridge["url"], "sha256": bridge_hash},
+            }
+        ]
         samples.extend(
             collect_samples([p for p in selected if p["exact_sku"] != sku], out / "pdp-samples")
+        )
+        current_index_dir = out / "epa-current-index"
+        current_index_env = {**os.environ, "RDA_EXECUTION_ID": run_id}
+        subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "g2_epa_current_index_samsung_capture.py"),
+                "--out",
+                str(current_index_dir),
+            ],
+            cwd=ROOT,
+            env=current_index_env,
+            check=True,
+            timeout=900,
+        )
+        current_index_scan, current_index_rows = load_replayed_rows(current_index_dir)
+        current_index_projection = project_same_run_refrigerator_candidates(
+            samples, current_index_scan, current_index_rows, run_id
+        )
+        (out / "current-index-target-feed.json").write_text(
+            dumps(current_index_projection["target_feed"]), encoding="utf-8"
+        )
+        (out / "current-index-candidates.json").write_text(
+            dumps(current_index_projection["candidate_projection"]), encoding="utf-8"
         )
         for result in samples[1:]:
             refs = {}
@@ -563,6 +595,14 @@ def main():
             label_selection_summary=label_selection_summary,
             capacity_selection_summary=capacity_selection_summary,
             sku_certification_matching="NOT_EVALUATED",
+            current_index_candidate_projection={
+                "target_count": len(current_index_projection["target_feed"]["targets"]),
+                "record_count": len(current_index_projection["candidate_projection"]["records"]),
+                "states": [
+                    record["candidate_projection_state"]
+                    for record in current_index_projection["candidate_projection"]["records"]
+                ],
+            },
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),
         )
     except Exception as error:

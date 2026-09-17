@@ -7,6 +7,7 @@ Samsung SKU is certified and it does not evaluate publication claims.
 import hashlib
 import json
 import os
+import argparse
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -149,7 +150,12 @@ def replay_capture(root: Path) -> dict:
 
 
 def main() -> None:
-    out = Path("runtime/g2-epa-current-index-samsung-capture")
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--out", type=Path, default=Path("runtime/g2-epa-current-index-samsung-capture")
+    )
+    args = parser.parse_args()
+    out = args.out
     out.mkdir(parents=True, exist_ok=True)
     records: list[dict] = []
 
@@ -192,7 +198,8 @@ def main() -> None:
             "contract": "G2_EPA_CURRENT_INDEX_SAMSUNG_SCOPE_CAPTURE_ONLY_V1",
             "status": "PASS",
             "captured_at": datetime.now(timezone.utc).isoformat(),
-            "run_id": os.getenv("GITHUB_RUN_ID"),
+            "run_id": os.getenv("RDA_EXECUTION_ID", os.getenv("GITHUB_RUN_ID")),
+            "github_run_id": os.getenv("GITHUB_RUN_ID"),
             "git_sha": os.getenv("GITHUB_SHA"),
             "sources": records,
             "metadata_before": before,

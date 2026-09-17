@@ -7,9 +7,13 @@ on:
       - 'scripts/g2_smoke.py'
       - 'scripts/g2_population.py'
       - 'scripts/g2_pdp.py'
+      - 'scripts/g2_epa_current_index_samsung_capture.py'
+      - 'scripts/g2_current_index_candidate_projection.py'
+      - 'scripts/g2_refrigerator_pattern_bridge.py'
       - 'scripts/g2_label_activation.py'
       - 'checks/g2/test_population.py'
       - 'checks/g2/test_pdp.py'
+      - 'checks/g2/test_refrigerator_pattern_bridge.py'
       - '.github/workflows/g2-smoke.yml'
 permissions:
   contents: read
@@ -47,5 +51,6 @@ jobs:
             runtime/g2/
             runtime/source-recon/refrigerator/
             runtime/epa-query/p5st-her9/
+            runtime/g2/**/epa-current-index/
           retention-days: 14
           if-no-files-found: error
