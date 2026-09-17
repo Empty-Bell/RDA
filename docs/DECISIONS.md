@@ -1,5 +1,10 @@
 # Open semantic decisions
 
+Corpus diagnostic review: G2_EPA_DIAGNOSTIC_CORPUS_REVIEW.md confirms all nine
+read-only diagnostics withheld identity (five unsupported `/AA` forms, four
+length mismatches). It supplies no basis for suffix stripping or wildcard
+restoration. A Samsung source-backed suffix contract remains OPEN under D09.
+
 D09 positional-diagnostic approval: the user approved the concrete offline-only v1 contract
 in G2_EPA_MATCHING_MATRIX_PROPOSAL.md proposes uppercase letter/digit single-slot
 grammar under preserved refrigerator metadata. This remains unapproved; prior

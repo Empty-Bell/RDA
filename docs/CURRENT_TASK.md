@@ -122,8 +122,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   assessment. This is now PASSed: hosted run 35195946960 applied the diagnostic
   to 9 saved SKU observations. Artifact 10486160033 ZIP SHA256:
   8b766e3c94b2e7bc557be6323fdfe52b877a0e6fc55ac7aa387d0c256ebfa20c. All raw
-  strings remain preserved and identity/correction states remain disabled. Next:
-  review corpus patterns for human tuning; recommended model Luna low.
+  strings remain preserved and identity/correction states remain disabled. Corpus
+  review is recorded in G2_EPA_DIAGNOSTIC_CORPUS_REVIEW.md: five records were
+  withheld for `/AA` syntax and four for length; none became compatible. Keep v1
+  unchanged. Next: only investigate a source-backed Samsung suffix observation;
+  recommended model Sol medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
