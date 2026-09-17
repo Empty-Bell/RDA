@@ -14,6 +14,7 @@ def summarize_bundle(
             "exact_sku": p["exact_sku"],
             "listings": copy.deepcopy(p["listings"]),
             "assessments": [],
+            "energyguide_source_observations": [],
         }
         for p in bundle["products"]
     }
@@ -21,6 +22,22 @@ def summarize_bundle(
     findings = [a for a in bundle["assessments"] if a["assessment_status"] == "FINDING"]
     for assessment in bundle["assessments"]:
         rows[assessment["exact_sku"]]["assessments"].append(copy.deepcopy(assessment))
+    for fact in bundle["facts"]:
+        if fact["kind"] != "ENERGYGUIDE":
+            continue
+        observations = fact["observations"]
+        rows[fact["exact_sku"]]["energyguide_source_observations"].append({
+            "document_url": copy.deepcopy(observations["document_url"]),
+            "document_sha256": copy.deepcopy(observations["document_sha256"]),
+            "document_status": copy.deepcopy(observations["document_status"]),
+            "annual_energy_kwh": copy.deepcopy(observations["annual_energy_kwh"]),
+            "capacity": copy.deepcopy(observations["capacity"]),
+            "evidence_ids": copy.deepcopy(fact["evidence_ids"]),
+        })
+    for row in rows.values():
+        row["energyguide_source_observations"].sort(
+            key=lambda item: str(item["document_sha256"].get("value", ""))
+        )
     by_group: dict[str, Any] = {}
     for group in sorted(groups):
         members = {
