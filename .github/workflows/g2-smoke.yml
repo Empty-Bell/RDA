@@ -3,7 +3,13 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['scripts/g2_*.py', 'checks/g2/**', '.github/workflows/g2-smoke.yml']
+    paths:
+      - 'scripts/g2_smoke.py'
+      - 'scripts/g2_population.py'
+      - 'scripts/g2_pdp.py'
+      - 'checks/g2/test_population.py'
+      - 'checks/g2/test_pdp.py'
+      - '.github/workflows/g2-smoke.yml'
 permissions:
   contents: read
 concurrency:

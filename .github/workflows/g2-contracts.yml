@@ -1,0 +1,43 @@
+name: G2 source-normalization contracts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/regaudit/normalization.py'
+      - 'scripts/g2_normalized.py'
+      - 'checks/g2/test_normalized_pdp.py'
+      - 'checks/g2/run_contracts.py'
+      - '.github/workflows/g2-contracts.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run offline source-normalization contracts
+        run: python checks/g2/run_contracts.py
+      - name: Preserve contract report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g2-contracts-${{ matrix.python-version }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g2-contracts/report.json
+          retention-days: 14
+          if-no-files-found: error
