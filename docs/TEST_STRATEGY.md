@@ -1,3 +1,10 @@
+# Phase 1 validation
+
+G1 PASS: hosted run 35172241517 (dccaba9), Python 3.11.16 and 3.12.14.
+Each job passed 80 fixture tests without skips and 15 static/build/installed CLI
+checks. Exact scope and hashed downloaded evidence: G1_ACCEPTANCE_RECORD.md.
+No production compliance rule or whole-population collection is evaluated.
+
 # Phase 0 validation
 
 Current G0 result: PASS for reconnaissance/hosted foundation; see

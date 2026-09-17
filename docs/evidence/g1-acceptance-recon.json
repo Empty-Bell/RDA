@@ -1,0 +1,354 @@
+{
+  "api_verified_conclusion": "success",
+  "approval_record": "docs/G1_DECISION_PROPOSAL.md",
+  "artifacts": [
+    {
+      "artifact_id": 10477132112,
+      "expires_at": "2026-10-01T01:53:01Z",
+      "fixture_report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "dccaba94537ba66372eb1f3009af7d776eafded6",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.11.16",
+        "run_attempt": "1",
+        "run_id": "35172241517",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 80
+      },
+      "fixture_report_sha256": "e536b0206fa9e6eed1a3dc5eaaa4319ae4c09e49ea1ce3ccf68cb702147e21d8",
+      "job_id": 105046180101,
+      "quality_report": {
+        "checks": [
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "lint",
+            "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "format",
+            "output_sha256": "0321fffcb91606a42c0a19d8c1121d5c544379d663821fce616c71a7bb62f6b5",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "types",
+            "output_sha256": "050c52a2b0c61e8b681ef5c485e0bc03340b8d55148e0acef27d744c8be42033",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "build-wheel",
+            "output_sha256": "12369807ca28b6e0ae04340432c29491f41db9343dac737ef6d082ec35cc2438",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "isolated-environment",
+            "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "install-wheel",
+            "output_sha256": "d2339e6f7b1bfe56077c45676d9f6aad5d1e39ee896b4279cc8de3ca3b876aa1",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "installed-import",
+            "output_sha256": "43ccec9365635a15213bb451ac149cc2aa36a583ed1a4615e4ef883397cb83fd",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "entrypoint-help",
+            "output_sha256": "e753c9346f9bf95efc87c9a6aa488345fcd78884654b0e6497b3d6beff9bc4b4",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "validate-typed-fixture",
+            "output_sha256": "a76c8bd960665233ea12e06076687d9253c6f78dedf40a65e8473de0bf7bab9a",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "name": "missing-evidence-rejected",
+            "output_sha256": "644d5000e305cf5c8473c8e170f4582fa4520da51a82ec1ecb8ca70bcc3e5e8e",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "summary",
+            "output_sha256": "a7b94865e0bc7a2383c0aa417540b3a8cd4bf71e934eb9990c74b5575e4dfc18",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "name": "summary-overwrite-rejected",
+            "output_sha256": "82fc4649a1175be066d0f29a6e54b656a6e46f48d3ff457690455661e12f1ea7",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "init-run-0",
+            "output_sha256": "72c656101e94a0563f98f44b6cb301f451af48f6b468ee2c985e0f5685f34a49",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "init-run-1",
+            "output_sha256": "72c656101e94a0563f98f44b6cb301f451af48f6b468ee2c985e0f5685f34a49",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "name": "run-overwrite-rejected",
+            "output_sha256": "82fc4649a1175be066d0f29a6e54b656a6e46f48d3ff457690455661e12f1ea7",
+            "status": "PASS"
+          }
+        ],
+        "git_sha": "dccaba94537ba66372eb1f3009af7d776eafded6",
+        "phase_gate": "NOT_EVALUATED",
+        "python": "3.11.16",
+        "run_attempt": "1",
+        "run_id": "35172241517",
+        "scope": "G1 static and installed CLI checks",
+        "status": "PASS",
+        "tool_lock_sha256": "364d3e5011ad9696469e2dbfe8443619c906e4e33d08e8641685cceae0a18fab",
+        "tools": {
+          "ast_serialize": "0.11.2",
+          "librt": "0.15.0",
+          "mypy": "2.3.1",
+          "mypy_extensions": "1.1.0",
+          "packaging": "26.3",
+          "pathspec": "1.1.1",
+          "ruff": "0.16.8",
+          "setuptools": "84.0.0",
+          "typing_extensions": "4.16.0",
+          "wheel": "0.48.0"
+        },
+        "wheel_sha256": "4924a72c31ca7571ccb31ad0cb5d5ccc4e04168055b6592e749152558903794d"
+      },
+      "quality_report_sha256": "a875c4f700646146c0c38211a7a0778df03aca88fb194bc492dd297c9a3b4659",
+      "zip_sha256": "fc567993320615b378cdcbeba90d1b84bda0922f838de4199fb107a2aac411b4"
+    },
+    {
+      "artifact_id": 10477695390,
+      "expires_at": "2026-10-01T01:53:06Z",
+      "fixture_report": {
+        "architecture": "x86_64",
+        "errors": 0,
+        "failures": 0,
+        "git_sha": "dccaba94537ba66372eb1f3009af7d776eafded6",
+        "phase_gate": "NOT_EVALUATED",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14",
+        "run_attempt": "1",
+        "run_id": "35172241517",
+        "scope": "G1 draft foundation fixtures; not compliance evaluation",
+        "skipped": [],
+        "status": "PASS",
+        "tests": 80
+      },
+      "fixture_report_sha256": "3442ff124197ef897ca1587bb73b3d1147d10dd1ff98de432d74ced51bc660ac",
+      "job_id": 105046179932,
+      "quality_report": {
+        "checks": [
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "lint",
+            "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "format",
+            "output_sha256": "0321fffcb91606a42c0a19d8c1121d5c544379d663821fce616c71a7bb62f6b5",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "types",
+            "output_sha256": "050c52a2b0c61e8b681ef5c485e0bc03340b8d55148e0acef27d744c8be42033",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "build-wheel",
+            "output_sha256": "e8683d0414e6fd4c013b441b19671634d454aba307a075cf4ea177b5bc9d062f",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "isolated-environment",
+            "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "install-wheel",
+            "output_sha256": "d2339e6f7b1bfe56077c45676d9f6aad5d1e39ee896b4279cc8de3ca3b876aa1",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "installed-import",
+            "output_sha256": "ad533fe446b6a4c6f438f942e2b8c28ab904657b6a8930cb35c33d1e1fa16ee3",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "entrypoint-help",
+            "output_sha256": "e753c9346f9bf95efc87c9a6aa488345fcd78884654b0e6497b3d6beff9bc4b4",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "validate-typed-fixture",
+            "output_sha256": "a76c8bd960665233ea12e06076687d9253c6f78dedf40a65e8473de0bf7bab9a",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "name": "missing-evidence-rejected",
+            "output_sha256": "644d5000e305cf5c8473c8e170f4582fa4520da51a82ec1ecb8ca70bcc3e5e8e",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "summary",
+            "output_sha256": "a7b94865e0bc7a2383c0aa417540b3a8cd4bf71e934eb9990c74b5575e4dfc18",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "name": "summary-overwrite-rejected",
+            "output_sha256": "82fc4649a1175be066d0f29a6e54b656a6e46f48d3ff457690455661e12f1ea7",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "init-run-0",
+            "output_sha256": "72c656101e94a0563f98f44b6cb301f451af48f6b468ee2c985e0f5685f34a49",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 0,
+            "expected_exit_code": 0,
+            "name": "init-run-1",
+            "output_sha256": "72c656101e94a0563f98f44b6cb301f451af48f6b468ee2c985e0f5685f34a49",
+            "status": "PASS"
+          },
+          {
+            "exit_code": 1,
+            "expected_exit_code": 1,
+            "name": "run-overwrite-rejected",
+            "output_sha256": "82fc4649a1175be066d0f29a6e54b656a6e46f48d3ff457690455661e12f1ea7",
+            "status": "PASS"
+          }
+        ],
+        "git_sha": "dccaba94537ba66372eb1f3009af7d776eafded6",
+        "phase_gate": "NOT_EVALUATED",
+        "python": "3.12.14",
+        "run_attempt": "1",
+        "run_id": "35172241517",
+        "scope": "G1 static and installed CLI checks",
+        "status": "PASS",
+        "tool_lock_sha256": "364d3e5011ad9696469e2dbfe8443619c906e4e33d08e8641685cceae0a18fab",
+        "tools": {
+          "ast_serialize": "0.11.2",
+          "librt": "0.15.0",
+          "mypy": "2.3.1",
+          "mypy_extensions": "1.1.0",
+          "packaging": "26.3",
+          "pathspec": "1.1.1",
+          "ruff": "0.16.8",
+          "setuptools": "84.0.0",
+          "typing_extensions": "4.16.0",
+          "wheel": "0.48.0"
+        },
+        "wheel_sha256": "ba39fa55a853656571394afabd8c9fb2467c4bb90661e20a02e62d31b05e17f2"
+      },
+      "quality_report_sha256": "e0b943f5e546fe0a91e2193079b1c119edab3ed73b58eeedff545176cd621130",
+      "zip_sha256": "f99ea9b084b3f0adf95388d35b831918ca90ab0026a20e7dd91bc1613be1999c"
+    }
+  ],
+  "failure_history": [
+    {
+      "git_sha": "b931212ac27d7a17dfb1565377c59be48476f021",
+      "resolved_by": "dccaba9 block scalar",
+      "run_id": 35172198096,
+      "scope": "workflow YAML parse"
+    }
+  ],
+  "field_inventory": "docs/G1_FIELD_INVENTORY.md",
+  "git_sha": "dccaba94537ba66372eb1f3009af7d776eafded6",
+  "incidental_g0_runs_api_verified": [
+    {
+      "conclusion": "success",
+      "git_sha": "b931212ac27d7a17dfb1565377c59be48476f021",
+      "name": "runtime freeze/recovery",
+      "run_id": 35172199156
+    },
+    {
+      "conclusion": "success",
+      "git_sha": "b931212ac27d7a17dfb1565377c59be48476f021",
+      "name": "hosted runner probe",
+      "run_id": 35172199151
+    },
+    {
+      "conclusion": "success",
+      "git_sha": "b931212ac27d7a17dfb1565377c59be48476f021",
+      "name": "product source contracts",
+      "run_id": 35172199094
+    }
+  ],
+  "limitations": [
+    "G1 schema/CLI/report/CI acceptance, not compliance PASS",
+    "No full live SKU collection or rule evaluation",
+    "G2-G7 semantics remain open at their respective gates"
+  ],
+  "phase_gate": "PASS",
+  "prerequisite": "docs/G0_ACCEPTANCE_RECORD.md",
+  "run_attempt": 1,
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35172241517",
+  "runner_label": "ubuntu-24.04",
+  "scope": "Phase 1 G1 acceptance review",
+  "status": "PASS"
+}

@@ -1,23 +1,17 @@
 # Phase status
 
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
-Phase 1 / G1: RUNNING — draft envelopes, offline CLI/config and hosted fixture CI.
+Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI accepted 2026-09-17.
 Phases 2–7: NOT_STARTED.
-G1 draft foundation checkpoint: hosted run 35170618251, code bc57842,
-Python 3.11.16 and 3.12.14 each executed 28 tests, zero skips/failures/errors.
-Both downloaded reports/hashes are archived in docs/evidence/g1-foundation-recon.json.
-This bounded checkpoint is PASS; the full G1 gate remains NOT_EVALUATED.
-G1 is not accepted: full acceptance review remains.
-Product/count/ID baseline approved by user 2026-09-17; see G1_DECISION_PROPOSAL.md.
-Specialized PDP/EnergyGuide/EPA observation schemas and strict config validation
-are implemented as drafts. Hosted run 35171015637 (code 25ee7d8) executed 66 tests
-on each Python 3.11.16 / 3.12.14 with zero skips/failures/errors. Downloaded reports
-and ZIP hashes are archived in docs/evidence/g1-typed-contract-recon.json.
-Approved population merge and one-SKU/multi-assessment count implementation
-passed hosted run 35171608893 (code 4206b79): 80 tests per Python 3.11.16 and
-3.12.14, zero skips/failures/errors. See g1-population-report-recon.json.
-G1 remains RUNNING: static lint/type and installed CLI are implemented and
-locally verified; hosted quality checkpoint and full acceptance review remain. See DATA_CONTRACTS.md and G1_DECISION_PROPOSAL.md.
+See G1_ACCEPTANCE_RECORD.md and docs/evidence/g1-acceptance-recon.json.
+Hosted final run 35172241517, code dccaba9, attempt 1: Python 3.11.16 and 3.12.14
+each passed 80 fixture tests (zero skips/errors/failures) and 15 static/build/
+installed-CLI checks. Downloaded raw reports, wheel hashes and ZIP hashes verified.
+Initial YAML parse failure 35172198096 was corrected before final acceptance.
+G1 product/count/ID baseline is approved; remaining assessment/publication/history
+policies stay OPEN at later gates. No live per-SKU compliance assessment is claimed.
+Earlier G1 checkpoints: 35170618251 (28), 35171015637 (66), 35171608893 (80);
+archived as foundation, typed-contract and population-report evidence.
 
 Final hosted combined checkpoint 35169843199 tested code
 6069bed296dde8bc418619af4888925fce30f118, attempt 1, job 105038925672:

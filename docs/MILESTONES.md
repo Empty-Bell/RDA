@@ -1,6 +1,6 @@
 # 남은 마일스톤 — 2026-09-17
 
-현재 **Phase 0 / G0 PASS**, **Phase 1 / G1 진행 중**, Phase 2–7 미착수다.
+현재 **Phase 0 / G0 PASS**, **Phase 1 / G1 PASS**, Phase 2–7 미착수다.
 종료 기록: G0_ACCEPTANCE_RECORD.md, 통합 hosted checkpoint 35169843199.
 11개 제품군 PLP 조사와 대표 PDP/라벨/EPA 샘플, 런타임 고정·cold/recovery,
 소스 쿼리·claim·라벨 품질의 제한된 검증은 완료했다. 전체 모델별 PDP·라벨·EPA
@@ -12,7 +12,7 @@
 | 순서 / 상태 | 할 일과 중간산출물 | 종료 검증 |
 |---|---|---|
 | **G0 종료 — PASS** | source matrix·계약/fixture coverage 대조와 후속 의미 결정의 시점 고정 완료 | 214개 테스트 중 213 성공·선택적 CV 1개 skip(기존 cold에서 실행), fixture 참조 99개 검증. 개별 적용성·판정 정책은 후속 gate까지 보류 |
-| **G1 골격 — 진행 중** | typed schema, config, canonical SKU/provenance, run/evidence manifest, CLI, fixture CI; Python 3.11 호환성 | null/unknown/오류/다중 finding/중복 SKU/서로 다른 run 참조를 hosted CI에서 검증. D04/D08/D11/D12 관련 계약 확정 |
+| **G1 종료 — PASS** | typed schema, config, canonical SKU/provenance, run/evidence manifest, CLI, fixture CI; Python 3.11 호환성 | null/unknown/오류/다중 finding/중복 SKU/서로 다른 run 참조를 hosted CI에서 검증. D04/D08/D11/D12 관련 계약 확정 |
 | **G2 냉장고 관통 — 미착수** | 먼저 소규모 PLP→PDP→PDF/OCR→EPA→판정→증거→대시보드, 이후 냉장고 전체 모집단 | 실제 전체 수집 coverage, OCR golden suite, 허용오차·보강증거·current/US/wildcard 판정표, 양 도메인 분리 검증. D01–D04/D07/D09/D10 선결 |
 | **G3 FTC 3군 확장 — 미착수** | Dishwasher→Clothes Washer→Television adapter 및 제품군별 측정량·라벨 구조 | 네 FTC군 전체 모집단·정답/오류 fixture 검증, 냉장고 회귀 유지 |
 | **G4 EPA 7군 확장 — 미착수** | Range/Cooktop→Dryer/Hood→Monitor/Computer/Tablet. 콤보·스택형·구성별 적용성과 인증 연결 | 11군 전체 수집 상태 설명. 무claim/비적용/미확인/조회 실패를 구분하고 제품군별 hosted 검증 |
@@ -24,8 +24,9 @@
 초안 계약·CLI·fixture CI와 PDP/라벨/EPA 세부 관측·설정 검증을 구현했다.
 Hosted run 35171015637에서 Python 3.11/3.12 각각 66개 테스트 전부 통과했다.
 제품/집계/ID 기준은 사용자가 승인했고, 정확한 SKU 병합·다중 finding 집계를 구현했다.
-G1_FIELD_INVENTORY.md에 필드 대조를 기록했다. 정적 lint/type 검사, 설치된 CLI
-검증과 전체 G1 종료 검토는 남아 있다.
+G1_FIELD_INVENTORY.md에 필드 대조를 기록했다. 최종 hosted run 35172241517에서
+Python 3.11/3.12 각각 80 fixture + 15 quality/설치 CLI 검사 전부 통과해 G1 종료했다.
+다음은 G2 냉장고 관통 구현과 판정 정책 검토다.
 실제 판정과 공개 배포는 후속 단계다.
 G1 미완료 항목과 승인 제안은 DATA_CONTRACTS.md / G1_DECISION_PROPOSAL.md를 참조한다.
 각 종료 기록은 PASS/FAIL/BLOCKED와 실제 hosted Actions run/commit/attempt/

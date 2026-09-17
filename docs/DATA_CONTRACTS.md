@@ -2,7 +2,7 @@
 
 Status: technical draft with approved G1 identity/count/ID baseline; assessment
 policies remain disabled. See G1_DECISION_PROPOSAL.md. `draft-1`
-is deliberately not a stable production schema. G1 is RUNNING, not accepted.
+is deliberately not a stable production schema. G1 foundation is accepted PASS; see G1_ACCEPTANCE_RECORD.md.
 The contract implementation is `src/regaudit/contracts.py`; fixtures are synthetic.
 
 The envelope contains one RunManifest plus products, evidence, facts and
@@ -110,3 +110,7 @@ Tool/package setup needs public PyPI; CLI smoke and fixtures are offline.
 
 Artifacts use the existing 14-day review window. This is not approval of durable
 storage, long-term raw retention or D12's future retry/recovery policy.
+
+Static tool configuration follows the official [Ruff rule selection](https://docs.astral.sh/ruff/linter/)
+and [Mypy incremental adoption](https://mypy.readthedocs.io/en/stable/existing_code.html)
+documentation. The checked-in selection above states the actual scope.

@@ -21,8 +21,8 @@ synthetic transport tests use the fixture-only Python validation option. G2 must
 introduce a versioned assessed bundle contract and rule engine before real findings
 can be consumed. No live collection or dashboard is added by this inventory.
 
-Full G1 acceptance record still requires review of hosted checkpoint coverage.
+Full G1 acceptance review completed: PASS; see G1_ACCEPTANCE_RECORD.md.
 Static lint/format/type checks and installed wheel CLI checks are now implemented
 in checks/g1/quality.py. See DATA_CONTRACTS.md for exact lint/type scope, dynamic
-JSON boundaries and offline installed smoke checks. Local quality PASS does not
-close the hosted gate; final hosted review is pending.
+JSON boundaries and offline installed smoke checks. Hosted run 35172241517 passed all 80 fixture tests and 15 quality/installed CLI
+checks on both supported Python versions; report/wheel hashes verified.
