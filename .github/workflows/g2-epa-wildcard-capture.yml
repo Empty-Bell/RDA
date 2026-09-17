@@ -17,10 +17,14 @@ jobs:
         with: {python-version-file: '.python-version'}
       - run: python -m unittest checks/g2/test_epa_wildcard_capture.py -v
       - run: python scripts/g2_epa_wildcard_capture.py
+      - name: Apply diagnostic to saved review corpus
+        run: python scripts/g2_model_diagnostic_report.py
       - if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: g2-epa-wildcard-${{ github.run_id }}-${{ github.run_attempt }}
-          path: runtime/g2-epa-wildcard-capture/
+          path: |
+            runtime/g2-epa-wildcard-capture/
+            runtime/g2-model-diagnostics/
           retention-days: 14
           if-no-files-found: error
