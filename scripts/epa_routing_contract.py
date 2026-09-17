@@ -22,6 +22,14 @@ def range_hood_rows(rows):
     return rows
 
 
+def identity_select(metadata):
+    fields = [c['fieldName'] for c in metadata['columns']
+              if re.fullmatch(r'[a-z][a-z0-9_]*', c.get('fieldName', ''))]
+    if not {'pd_id', 'brand_name', 'model_number'} <= set(fields):
+        raise ValueError('Identity select schema missing')
+    return ':id as source_row_id,' + ','.join(fields)
+
+
 class SpecTable(HTMLParser):
     def __init__(self):
         super().__init__(); self.rows = []; self.row = None; self.cell = None

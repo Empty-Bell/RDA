@@ -3,7 +3,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
-from scripts.epa_routing_contract import catalog_entries, specification_rows, public_metadata, hood_type_condition, range_hood_rows
+from scripts.epa_routing_contract import catalog_entries, specification_rows, public_metadata, hood_type_condition, range_hood_rows, identity_select
 
 FIXTURES = Path(__file__).resolve().parents[1] / 'fixtures/epa-routing'
 
@@ -68,3 +68,9 @@ class RoutingContract(unittest.TestCase):
     def test_non_hood_or_empty_rows_rejected(self):
         for rows in ([], [{'product_type': 'Range Hood'}], [{'unit_type': 'Bathroom Fan'}]):
             with self.assertRaises(ValueError): range_hood_rows(rows)
+
+    def test_select_uses_explicit_observed_fields(self):
+        selection = identity_select(self.meta)
+        self.assertTrue(selection.startswith(':id as source_row_id,'))
+        self.assertNotIn('*', selection)
+        self.assertIn('model_number', selection.split(','))

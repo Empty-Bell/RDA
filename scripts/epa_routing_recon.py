@@ -6,7 +6,7 @@ from pathlib import Path
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
-from epa_routing_contract import DATASETS, catalog_entries, specification_rows, public_metadata, hood_type_condition, range_hood_rows
+from epa_routing_contract import DATASETS, catalog_entries, specification_rows, public_metadata, hood_type_condition, range_hood_rows, identity_select
 from epa_queries import BRAND_WHERE, query_url, literal, decode_rows, row_count, complete_scan
 
 OUT = Path('runtime/epa-routing')
@@ -52,7 +52,7 @@ def main():
         if n > 5000: raise ValueError('Diagnostic query bound exceeded')
         pages = []
         for index in range(51):
-            page = rows(ds, 'page-' + str(index), {'$where': condition, '$select': ':id as source_row_id,*',
+            page = rows(ds, 'page-' + str(index), {'$where': condition, '$select': identity_select(before),
                         '$order': ':id', '$limit': 100, '$offset': index * 100})
             pages.append(page)
             if len(page) < 100: break
