@@ -15,10 +15,11 @@
 13. Every compliance rule requires unit tests.
 14. Every phase ends PASS/FAIL/BLOCKED, backed by hosted Actions evidence.
 
-Current scope: Phase 1 schemas/config/manifests/CLI/fixture CI, authorized after G0 PASS.
+Current scope: Phase 2 refrigerator observational pilot, authorized after G1 PASS.
 G0 and G1 accepted: see docs/G0_ACCEPTANCE_RECORD.md and docs/G1_ACCEPTANCE_RECORD.md.
-Phase 2 assessment rules remain out of scope until the next authorized stage.
+Collectors/population/evidence integration may proceed. Assessment policies
+remain disabled until their specific open decisions are resolved.
 Unapproved semantic policies remain disabled; draft contracts do not resolve decisions.
-No compliance decision engine or Pages deployment.
+No unapproved compliance decision engine or Pages deployment.
 Use standard ubuntu-24.04 x64. Local success does not pass hosted gates.
 Token economy: inspect relevant fields/diffs only; no agents; no LLM in audit runtime.

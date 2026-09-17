@@ -1,0 +1,44 @@
+name: G2 refrigerator observational pilot
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/g2_*.py', 'checks/g2/**', '.github/workflows/g2-smoke.yml']
+permissions:
+  contents: read
+concurrency:
+  group: g2-refrigerator-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  pilot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Bootstrap locked source runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Population adapter regression
+        run: python -m unittest discover -s checks/g2 -v
+      - name: Collect and validate unevaluated pilot package
+        run: python scripts/g2_smoke.py
+      - name: Preserve pilot and source evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g2-pilot-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            runtime/g2/
+            runtime/source-recon/refrigerator/
+            runtime/epa-query/p5st-her9/
+          retention-days: 14
+          if-no-files-found: error

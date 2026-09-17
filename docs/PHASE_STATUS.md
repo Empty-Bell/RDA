@@ -2,7 +2,9 @@
 
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
 Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI accepted 2026-09-17.
-Phases 2–7: NOT_STARTED.
+Phase 2 / G2: RUNNING — observational refrigerator pilot (listing, one PDP/PDF, EPA brand snapshot).
+Phases 3–7: NOT_STARTED.
+No G2 gate is accepted yet; pilot collection success is not whole-SKU coverage or assessment PASS.
 See G1_ACCEPTANCE_RECORD.md and docs/evidence/g1-acceptance-recon.json.
 Hosted final run 35172241517, code dccaba9, attempt 1: Python 3.11.16 and 3.12.14
 each passed 80 fixture tests (zero skips/errors/failures) and 15 static/build/
