@@ -27,7 +27,17 @@ requires PDF-bound single-document/all-page/US-panel review, matching page, expl
 kWh and exactly one geometry proposal; default invocation abstains. No live
 canonical fact has been enabled. Text/geometry remain correlated OCR evidence.
 
-Remaining work: review rendered originals for the other label hashes, bind review
-annotations to PDF/page/region, then replay every saved candidate against the
+All five distinct additional-label OCR-input renders were visually reviewed.
+Shared PDF hashes let one render review cover the corresponding source bytes,
+but do not independently establish SKU applicability. Visible annual values are
+540 (RF18A5101 group), 585 (both RF22 groups), 621 (RF23BB8600 group), and
+634 (RF23DB9600). Model wildcards remain uncorrected. This is visual review of
+the preserved 2x render, not an independent second OCR engine.
+
+Strengthened fixture gate run 35179047280 at 234dfd2 passed on hosted Python
+3.11/3.12 (18 contracts). No live canonical selector was enabled.
+
+Remaining work: bind review annotations to PDF/page/region and detection records,
+then replay every saved candidate against the
 selector on hosted Ubuntu. Capacity, wildcard identity, OCR corrections and
 regulatory comparisons remain open. This review does not close G2.
