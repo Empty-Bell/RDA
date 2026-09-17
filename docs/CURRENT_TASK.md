@@ -87,7 +87,10 @@ on every next-step prompt. Same-task model changes should continue existing work
   096e7a6a99d0c7c629410dd5506f2fc282e338c309db6fe0c454ebf4650dd8a9. See
   G2_MODEL_SOURCE_OBSERVATIONS.md. Next: draft an explicit wildcard correction and
   identity-matching policy for human review only; no implementation or matching.
-  Recommended model: Sol medium.
+  Recommended model: Sol medium. The review draft is now ready in
+  G2_MODEL_IDENTITY_POLICY_PROPOSAL.md; D07/D09 remain OPEN. Await user approval of
+  its bounded fixture-only evidence contract. Next after approval: separate review
+  annotations and diagnostic identity fixtures, using Luna low; no live crawl.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
