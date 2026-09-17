@@ -5,7 +5,11 @@ Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI 
 Phase 2 / G2: RUNNING — observational refrigerator pilot (listing, one PDP/PDF, EPA brand snapshot).
 Phases 3–7: NOT_STARTED.
 No G2 gate is accepted yet; pilot collection success is not whole-SKU coverage or assessment PASS.
-Per-SKU PDP identity/coverage increment implemented; hosted verification pending.
+Per-SKU PDP identity/coverage checkpoint PASS: run 35173796328 / code 21b621a.
+30 regression tests, 5 verified PDP SKUs / 0 failed / 70 unattempted (75 total).
+105 evidence hashes and population/coverage/report SKU sets verified after
+downloading; sample URL/JSON-LD/exact Specs/Support identity replayed.
+Label still one SKU; rules disabled. See docs/evidence/g2-pdp-coverage-recon.json.
 First G2 observational checkpoint PASS: run 35173368182 / code 59d973f.
 41 listing groups / 75 SKUs, one PDP/original label SKU, EPA brand scan 101 rows,
 93 evidence records validated; 12 adapter regressions. Bundle PARTIAL; domain

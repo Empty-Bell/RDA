@@ -59,3 +59,9 @@ G2 첫 관측 checkpoint: hosted run 35173368182 PASS. 목록 41그룹/75 SKU를
 101행을 보존했다. 증거 93개 hash·run 참조와 보고서 SKU 집합을 검증했다.
 현재 PARTIAL/NOT_EVALUATED이며, 다음은 SKU별 PDP coverage/identity 검증과
 측정량·claim 정규화 계약이다. G2 전체 종료와 다른 군 확장은 아직 불가하다.
+
+G2 PDP identity/coverage checkpoint: run 35173796328 / 21b621a PASS,
+30 회귀 테스트 + 대표/variant 포함 5 SKU 라이브 검증 성공, 실패 0, 미수집 70.
+증거 105개와 population/coverage/report SKU 집합을 확인했다.
+다음은 측정량·claim 정규화 계약 및 SKU별 수집 확대이며, 라벨 전수·EPA
+인증 매칭·양불 규칙·대시보드·전체 냉장고 gate는 계속 미완료다.

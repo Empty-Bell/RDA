@@ -1,0 +1,77 @@
+{
+  "api_verified_job_conclusion": "success",
+  "artifact_expires_at": "2026-10-01T02:18:42Z",
+  "artifact_id": 10477846948,
+  "checkpoint": {
+    "attempted_pdp_skus": [
+      "RF29DB9900QDAA",
+      "RF18A5101SR/AA",
+      "RF18A5101MT/AA",
+      "RF18A5101S9/AA",
+      "RF22A4111SR/AA"
+    ],
+    "bundle_sha256": "67faed336a286f480268021bbc41dee74ce66c77a1d2fde22c3c4aad41243969",
+    "collected_label_skus": [
+      "RF29DB9900QDAA"
+    ],
+    "collected_pdp_skus": [
+      "RF29DB9900QDAA",
+      "RF18A5101SR/AA",
+      "RF18A5101MT/AA",
+      "RF18A5101S9/AA",
+      "RF22A4111SR/AA"
+    ],
+    "epa_brand_scan": {
+      "candidate_absence": "NOT_EVALUATED",
+      "certification_matching": "NOT_EVALUATED",
+      "query_completeness": "COMPLETE_OBSERVED_QUERY",
+      "row_count": 101,
+      "snapshot_atomicity": "NOT_GUARANTEED_BY_OFFSET_API"
+    },
+    "git_sha": "21b621ac6030595cfaeb57be000028e68cbbfada",
+    "github_run_attempt": "1",
+    "github_run_id": "35173796328",
+    "pdp_coverage_counts": {
+      "FAILED": 0,
+      "NOT_ATTEMPTED": 70,
+      "VERIFIED_EXACT_IDENTITY": 5
+    },
+    "pdp_coverage_sha256": "0711d6e76da0415cbb36db5a2df3bf9ac1fc151b070b75d72fede281ad5898d8",
+    "phase_gate": "NOT_EVALUATED",
+    "population_groups": 41,
+    "population_skus": 75,
+    "rule_evaluation": "NOT_EVALUATED",
+    "run_id": "ff7db42df0da45afac0d9b96275bb846",
+    "scope": "G2 observational pilot; no assessment",
+    "sku_certification_matching": "NOT_EVALUATED",
+    "started_at": "2026-09-17T02:17:19.509284+00:00",
+    "status": "PASS"
+  },
+  "checkpoint_sha256": "61450d87688ac04748f22cd7f4184b609634bf25666799fdf90e0e0b37dfd1d6",
+  "coverage_counts": {
+    "FAILED": 0,
+    "NOT_ATTEMPTED": 70,
+    "VERIFIED_EXACT_IDENTITY": 5
+  },
+  "evidence_count": 105,
+  "git_sha": "21b621ac6030595cfaeb57be000028e68cbbfada",
+  "job_id": 105050931631,
+  "limitations": [
+    "Five PDP SKUs only, one original label SKU",
+    "Remaining SKU PDPs NOT_ATTEMPTED",
+    "No claim/measure normalization, per-SKU EPA certification matching or compliance rule evaluation"
+  ],
+  "phase_gate": "NOT_EVALUATED",
+  "regression_tests": 30,
+  "run_attempt": 1,
+  "run_url": "https://github.com/Empty-Bell/RDA/actions/runs/35173796328",
+  "scope": "G2 per-SKU PDP identity and collection coverage",
+  "status": "PASS",
+  "validation": [
+    "Actual raw evidence SHA and graph validation",
+    "Population/coverage/report exact-SKU set equality",
+    "PDP fact set matches verified coverage",
+    "Replayed current JSON-LD/final URL/exact Specs and Support for additional samples"
+  ],
+  "zip_sha256": "2f240473409d8a1eac34bc541b8d6b596ba81e3de90aaf953d57ddbe5c3cae70"
+}

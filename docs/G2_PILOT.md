@@ -96,4 +96,10 @@ still covers the original one SKU; EPA per-SKU matching and rules remain disable
 checks/g2 now has 30 regression cases including redirects, wrong selected variant,
 missing/invalid JSON-LD, contradictory MPN, duplicate/wrong Specs, source flag
 preservation and coverage identity/count/status mutations. Live hosted verification
-of this increment is pending; this document does not close G2a.
+of this increment passed run 35173796328 (code 21b621a), attempt 1, job
+105050931631. Population 75: verified 5, failed 0, not attempted 70.
+Samples RF29DB9900QDAA, RF18A5101SR/AA (representative), RF18A5101MT/AA
+(variant), RF18A5101S9/AA, RF22A4111SR/AA. Downloaded evidence 105 hashes
+and population/coverage/report SKU sets verified; additional sample identity
+replayed from copied raw observations. See docs/evidence/g2-pdp-coverage-recon.json.
+These snapshot counts are not runtime constants; this does not close G2a.
