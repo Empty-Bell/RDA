@@ -55,6 +55,9 @@ Offline replay of the saved nine-SKU corpus selected 17.5 for the three RF18A510
 SKUs, 22.1 for RF22A4111SR/AA, 22.0 for RF22A4221SR/AA and 22.8 for the four
 RF23 SKUs. These are reviewed source observations only.
 
+Hosted fixture checkpoint PASS: run 35181720506 at 23ba5a1 passed 27 contracts
+on ubuntu-24.04, Python 3.11/3.12. This does not enable the live capacity field.
+
 Model normalization, OCR character replacement and wildcard-to-SKU matching remain
 disabled (D07/D09). Do not treat a star as arbitrary-length glob text, remove /AA
 or AA, restore missing stars from filenames, or accept a prefix as an identity

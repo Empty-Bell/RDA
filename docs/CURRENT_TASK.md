@@ -64,7 +64,10 @@ on every next-step prompt. Same-task model changes should continue existing work
   Hosted cheap contract run 35181212977 at 4ba3dd6 PASSed 25 cases on Python
   3.11/3.12; no live collector was rerun.
   Next: fixture-only capacity selection with explicit descriptor/unit and reviewed
-  detection binding; live capacity remains disabled. Recommended model: Luna low.
+  detection binding; live capacity remains disabled. The capacity selector and
+  nine-SKU saved-corpus replay PASSed; hosted run 35181720506 at 23ba5a1 passed
+  27 contracts on Python 3.11/3.12. Next: bind it to fresh live bytes only.
+  Recommended model: Terra medium.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
