@@ -29,9 +29,12 @@ def plp_logo_point(cards: list[dict[str, Any]], exact_sku: str) -> dict[str, Any
     logos = [candidate for candidate in card.get("energy_candidates", []) if _logo(candidate)]
     if logos:
         return _point(PRESENT, logos, "Energy Star image observed inside the exact SKU PLP card")
-    if card.get("logo_inspection") == "SUPPORTED_CARD_COMPLETE":
+    if (card.get("card_scope_contract") == "PLP_EXACT_LIST_ITEM_V2"
+            and card.get("logo_inspection") == "SUPPORTED_EXACT_CARD_COMPLETE"
+            and card.get("exact_sku_anchor_count") == 1
+            and card.get("exact_sku_anchor_values") == [exact_sku]):
         return _point(ABSENT, [], "Exact SKU PLP card was completely inspected and has no Energy Star image")
-    return _point(UNKNOWN, [], "PLP card visual scope was not supported")
+    return _point(UNKNOWN, [], "PLP exact-SKU card boundary was not supported")
 
 
 def pdp_logo_point(snapshot: dict[str, Any], exact_sku: str, identity_state: str) -> dict[str, Any]:

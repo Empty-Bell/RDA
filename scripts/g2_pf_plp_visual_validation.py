@@ -44,6 +44,12 @@ def calibrate(pf_records: list[dict[str, Any]], cards: list[dict[str, Any]]) -> 
     unknown_cards = sorted(set(card_skus) - set(flags))
     if unknown_cards:
         raise ValueError("Rendered PLP card is absent from current PF population")
+    for card in cards:
+        sku = card["sku"]
+        if card.get("card_scope_contract") != "PLP_EXACT_LIST_ITEM_V2":
+            raise ValueError("Rendered PLP card lacks exact-card scope contract")
+        if card.get("exact_sku_anchor_count") != 1 or card.get("exact_sku_anchor_values") != [sku]:
+            raise ValueError("Rendered PLP card has ambiguous exact-SKU ownership")
 
     records = []
     counts = Counter()

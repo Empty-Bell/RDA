@@ -200,18 +200,34 @@ DOM_SNAPSHOT = r"""() => {
 }"""
 
 PLP_SNAPSHOT = r"""() => Array.from(document.querySelectorAll('.pd21-product-card__name')).map(e => {
-  const card = e.closest('.pd21-product-card');
-  const visible = x => !!x.getClientRects().length && getComputedStyle(x).visibility !== 'hidden';
-  // Samsung supplied the product-card path.  This relative selector deliberately
-  // omits the card's nth-child position and absolute XPath, so each card is
-  // inspected independently even when the listing order changes.
-  const plpLogoSelector = '[class*="energy-star-label-wrap"] img[src*="energy-star-logo"]';
-  return {sku:e.getAttribute('data-modelcode'), title:e.textContent.trim().slice(0,300),
-    card_scope_found:!!card,
-    logo_inspection:card ? 'SUPPORTED_CARD_COMPLETE' : 'UNSUPPORTED_CARD_SCOPE',
-    plp_logo_selector_contract:'PLP_ENERGY_STAR_CARD_IMAGE_V1', plp_logo_selector:plpLogoSelector,
-    energy_candidates:card ? Array.from(card.querySelectorAll(plpLogoSelector))
-      .filter(visible).map(x => ({tag:x.tagName, text:(x.children.length ? '' : x.textContent || '').trim().slice(0,400),
+  // `.pd21-product-card` is the page-wide product finder, rather than one SKU
+  // card. The accepted boundary is its list's immediate child containing this
+  // model-code anchor; this stops one card borrowing another card's badge.
+  const list = e.closest('.pd21-product-card__list');
+  let item = e;
+  while (item && list && item.parentElement !== list) item = item.parentElement;
+  if (!list || !item || item.parentElement !== list) item = null;
+  const sku = e.getAttribute('data-modelcode');
+  const itemModelCodes = item ? Array.from(item.querySelectorAll('[data-modelcode]'))
+    .map(x => x.getAttribute('data-modelcode')).filter(Boolean) : [];
+  const exactScope = !!item && typeof sku === 'string' && sku.length > 0 &&
+    itemModelCodes.length === 1 && itemModelCodes[0] === sku;
+  const rendered = x => {
+    if (!x.getClientRects().length) return false;
+    for (let node = x; node && node.nodeType === 1; node = node.parentElement) {
+      const style = getComputedStyle(node);
+      if (style.display === 'none' || style.visibility === 'hidden' || style.visibility === 'collapse' || style.opacity === '0') return false;
+    }
+    return true;
+  };
+  const plpLogoSelector = ':scope > [class*="energy-star-label-wrap"] img[src*="energy-star-logo"]';
+  return {sku, title:e.textContent.trim().slice(0,300),
+    card_scope_contract:'PLP_EXACT_LIST_ITEM_V2',
+    exact_sku_anchor_count:itemModelCodes.length, exact_sku_anchor_values:itemModelCodes,
+    logo_inspection:exactScope ? 'SUPPORTED_EXACT_CARD_COMPLETE' : 'UNSUPPORTED_EXACT_CARD_SCOPE',
+    plp_logo_selector_contract:'PLP_EXACT_LIST_ITEM_IMAGE_V2', plp_logo_selector:plpLogoSelector,
+    energy_candidates:exactScope ? Array.from(item.querySelectorAll(plpLogoSelector))
+      .filter(rendered).map(x => ({tag:x.tagName, text:(x.children.length ? '' : x.textContent || '').trim().slice(0,400),
         alt:x.getAttribute('alt'),label:x.getAttribute('aria-label'),src:x.getAttribute('src'),
-        selector_contract:'PLP_ENERGY_STAR_CARD_IMAGE_V1',selector:plpLogoSelector})).slice(0,10) : []};
+        selector_contract:'PLP_EXACT_LIST_ITEM_IMAGE_V2',selector:plpLogoSelector})).slice(0,10) : []};
 })"""

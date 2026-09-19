@@ -12,7 +12,9 @@ from g2_energy_star_publication_points import (  # noqa: E402
 
 class PublicationPointTests(unittest.TestCase):
     def test_plp_image_is_required_for_logo(self):
-        card = {"sku": "SKU", "logo_inspection": "SUPPORTED_CARD_COMPLETE", "energy_candidates": [{"tag": "SPAN", "text": "Energy Star", "src": None}]}
+        card = {"sku": "SKU", "card_scope_contract": "PLP_EXACT_LIST_ITEM_V2", "exact_sku_anchor_count": 1,
+                "exact_sku_anchor_values": ["SKU"], "logo_inspection": "SUPPORTED_EXACT_CARD_COMPLETE",
+                "energy_candidates": [{"tag": "SPAN", "text": "Energy Star", "src": None}]}
         self.assertEqual(plp_logo_point([card], "SKU")["state"], ABSENT)
         card["energy_candidates"] = [{"tag": "IMG", "src": "https://example/energy-star.png"}]
         self.assertEqual(plp_logo_point([card], "SKU")["state"], PRESENT)
