@@ -242,6 +242,19 @@ on every next-step prompt. Same-task model changes should continue existing work
   The output is source collection only: EPA comparison and PASS/LOW/HIGH rule
   activation remain disabled. Next: bind the same-run Current Model Index to
   these exact-SKU declarations, then review the three-point rule inputs.
+  PF-to-rendered-PLP calibration is now complete. Hosted ubuntu-24.04 run
+  35408029886 at 4a89246 PASSed in 1m13s; artifact
+  `g2-pf-plp-visual-validation-35408029886-1` has ZIP SHA-256
+  `ab1b50587187127ede1bf53bc8abfdc41314d2c0c8867e1ae8e7881d0ad31c39`.
+  It observed 75 current PF exact SKUs and 41 rendered exact PLP cards.
+  The 37 PF `Y` cards all displayed the Energy Star logo. Four PF `N` cards
+  (`RM80F23VMRAA`, `RS23A500ASR/AA`, `RS28A500ASR/AA`, `RS70H27SDRAA`) also
+  displayed it. The other 34 exact SKUs were not rendered cards and were not
+  treated as absent. Therefore PF `energyStarFlg` is not sufficient evidence
+  of PLP logo publication, especially for a negative value. Keep the current
+  source-declaration collection as raw evidence only; do not use its PF flag
+  as the PLP publication point. Next: decide the exact-SKU PLP collection
+  source or collector that can produce a reliable publication observation.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
