@@ -242,19 +242,25 @@ on every next-step prompt. Same-task model changes should continue existing work
   The output is source collection only: EPA comparison and PASS/LOW/HIGH rule
   activation remain disabled. Next: bind the same-run Current Model Index to
   these exact-SKU declarations, then review the three-point rule inputs.
-  PF-to-rendered-PLP calibration is now complete. Hosted ubuntu-24.04 run
-  35408029886 at 4a89246 PASSed in 1m13s; artifact
-  `g2-pf-plp-visual-validation-35408029886-1` has ZIP SHA-256
-  `ab1b50587187127ede1bf53bc8abfdc41314d2c0c8867e1ae8e7881d0ad31c39`.
-  It observed 75 current PF exact SKUs and 41 rendered exact PLP cards.
-  The 37 PF `Y` cards all displayed the Energy Star logo. Four PF `N` cards
-  (`RM80F23VMRAA`, `RS23A500ASR/AA`, `RS28A500ASR/AA`, `RS70H27SDRAA`) also
-  displayed it. The other 34 exact SKUs were not rendered cards and were not
-  treated as absent. Therefore PF `energyStarFlg` is not sufficient evidence
-  of PLP logo publication, especially for a negative value. Keep the current
-  source-declaration collection as raw evidence only; do not use its PF flag
-  as the PLP publication point. Next: decide the exact-SKU PLP collection
-  source or collector that can produce a reliable publication observation.
+  Initial PF-to-rendered-PLP calibration at 4a89246 used the page-wide
+  `.pd21-product-card` container and was invalid: it associated badges from
+  other cards. It produced four false positive logo observations. The collector
+  now scopes a card to the immediate child of the product list, requires its
+  distinct `data-modelcode` set to contain only the inspected exact SKU, and
+  fails when another SKU is present. Repeated anchors for that same SKU are
+  normal Samsung card markup and are retained as raw occurrence counts. Hosted
+  ubuntu-24.04 rerun 35409051794 at 09a502c PASSed; artifact
+  `g2-pf-plp-visual-validation-35409051794-1` has ZIP SHA-256
+  `ab20111229d12523c30352fc69bc1f4919db43950774b994f0847a46635a847e`.
+  It observed 75 current PF exact SKUs and all 41 rendered exact PLP cards:
+  37 PF `Y`/logo-present and 4 PF `N`/logo-absent, with zero disagreement.
+  The other 34 exact SKUs were not rendered cards and were not judged absent.
+  This validates PF `energyStarFlg` as the per-exact-SKU PLP source declaration
+  for the currently observable representative-card sample, including both
+  values. It does not visually validate unrendered variants, which continue to
+  use only their own PF raw value and never inherit a representative result.
+  Next: bind the same-run Current Model Index to these exact-SKU declarations,
+  then review the three-point rule inputs.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
