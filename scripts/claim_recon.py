@@ -208,8 +208,9 @@ PLP_SNAPSHOT = r"""() => Array.from(document.querySelectorAll('.pd21-product-car
   while (item && list && item.parentElement !== list) item = item.parentElement;
   if (!list || !item || item.parentElement !== list) item = null;
   const sku = e.getAttribute('data-modelcode');
-  const itemModelCodes = item ? Array.from(item.querySelectorAll('[data-modelcode]'))
+  const itemModelCodeOccurrences = item ? Array.from(item.querySelectorAll('[data-modelcode]'))
     .map(x => x.getAttribute('data-modelcode')).filter(Boolean) : [];
+  const itemModelCodes = [...new Set(itemModelCodeOccurrences)];
   const exactScope = !!item && typeof sku === 'string' && sku.length > 0 &&
     itemModelCodes.length === 1 && itemModelCodes[0] === sku;
   const rendered = x => {
@@ -224,6 +225,7 @@ PLP_SNAPSHOT = r"""() => Array.from(document.querySelectorAll('.pd21-product-car
   return {sku, title:e.textContent.trim().slice(0,300),
     card_scope_contract:'PLP_EXACT_LIST_ITEM_V2',
     exact_sku_anchor_count:itemModelCodes.length, exact_sku_anchor_values:itemModelCodes,
+    exact_sku_anchor_occurrences:itemModelCodeOccurrences.length,
     logo_inspection:exactScope ? 'SUPPORTED_EXACT_CARD_COMPLETE' : 'UNSUPPORTED_EXACT_CARD_SCOPE',
     plp_logo_selector_contract:'PLP_EXACT_LIST_ITEM_IMAGE_V2', plp_logo_selector:plpLogoSelector,
     energy_candidates:exactScope ? Array.from(item.querySelectorAll(plpLogoSelector))
