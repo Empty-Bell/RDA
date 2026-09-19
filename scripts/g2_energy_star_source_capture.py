@@ -333,8 +333,14 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         (out / "current-index-binding.json").write_text(
             json.dumps(binding, indent=2) + "\n", encoding="utf-8"
         )
+        from g2_energy_star_input_review import build_input_review
+        review = build_input_review(result["declarations"], binding)
+        (out / "three-point-input-review.json").write_text(
+            json.dumps(review, indent=2) + "\n", encoding="utf-8"
+        )
         result["epa_current_index_manifest"] = "epa-current-index/manifest.json"
         result["current_index_binding"] = "current-index-binding.json"
+        result["three_point_input_review"] = "three-point-input-review.json"
         (out / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 
