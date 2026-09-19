@@ -259,8 +259,17 @@ on every next-step prompt. Same-task model changes should continue existing work
   for the currently observable representative-card sample, including both
   values. It does not visually validate unrendered variants, which continue to
   use only their own PF raw value and never inherit a representative result.
-  Next: bind the same-run Current Model Index to these exact-SKU declarations,
-  then review the three-point rule inputs.
+  Same-run Current Model Index binding is now complete. Hosted ubuntu-24.04
+  run 35409373091 at f7a28b8 PASSed in 4m43s; artifact
+  `g2-energy-star-source-35409373091-1` has ZIP SHA-256
+  `c4c65092dda7b17f284ddf0b5cb6487fc8479ee0287f28e75500ac51d9d01d51`.
+  All 75 per-SKU PF/PDP Next/Bridge declarations were bound to the same UUID
+  Current Model Index capture. Each has `UNRESOLVED_PATTERN_ENCODINGS_PRESENT`:
+  the Index exposes wildcard model patterns, so none is current-certified or
+  uncertified by this step. All 75 records retain
+  `current_certification_state=NOT_EVALUATED` and `assessment=NOT_EVALUATED`.
+  Next: review the three publication-point source inputs together with these
+  same-run candidate records before activating the approved rule.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
