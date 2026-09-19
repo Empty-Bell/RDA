@@ -268,8 +268,18 @@ on every next-step prompt. Same-task model changes should continue existing work
   the Index exposes wildcard model patterns, so none is current-certified or
   uncertified by this step. All 75 records retain
   `current_certification_state=NOT_EVALUATED` and `assessment=NOT_EVALUATED`.
-  Next: review the three publication-point source inputs together with these
-  same-run candidate records before activating the approved rule.
+  The three-point source input review is now complete. Hosted ubuntu-24.04 run
+  35410182480 at e5a61fa PASSed in 4m08s; artifact
+  `g2-energy-star-source-35410182480-1` has ZIP SHA-256
+  `429c2e3960a5bb8b4e1c797bdc852505fbb40941cfcc06b68ae873eb80a2230b`.
+  It has one non-assessing record per 75 exact SKU: PF PLP and PDP Next flags
+  agree as `Y/Y` for 68 and `N/N` for 7; Bridge Spec rows and same-run EPA
+  candidate references are retained alongside them. All 75 EPA candidates
+  still contain wildcard encodings, so certification and assessment stay
+  `NOT_EVALUATED`. The input-review transformation itself is offline; Samsung
+  PF/Bridge session transport remains the collection-time bottleneck. Next:
+  apply the already approved bounded positional diagnostic to the same-run EPA
+  pattern candidates, preserving its candidate-only boundary.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
