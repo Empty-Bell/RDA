@@ -6,9 +6,11 @@ on:
     branches: [main]
     paths:
       - 'scripts/g2_energy_star_source_capture.py'
+      - 'scripts/g2_energy_star_current_index_binding.py'
       - 'scripts/g2_epa_current_index_samsung_capture.py'
       - 'scripts/source_contract.py'
       - 'checks/g2/test_energy_star_source_capture.py'
+      - 'checks/g2/test_energy_star_current_index_binding.py'
       - '.github/workflows/g2-energy-star-source.yml'
 
 permissions:
@@ -37,7 +39,7 @@ jobs:
           mkdir -p runtime
           bash scripts/bootstrap.sh
       - name: Direct-source contract regression
-        run: python -m unittest checks/g2/test_energy_star_source_capture.py -v
+        run: python -m unittest checks/g2/test_energy_star_source_capture.py checks/g2/test_energy_star_current_index_binding.py -v
       - name: Capture current Samsung PF population
         run: python scripts/source_recon.py --family refrigerator
       - name: Capture browserless Samsung and EPA source declarations

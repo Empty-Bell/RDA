@@ -328,7 +328,13 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
             check=True,
             env=env,
         )
+        from g2_energy_star_current_index_binding import bind_current_index
+        binding = bind_current_index(result, epa_out)
+        (out / "current-index-binding.json").write_text(
+            json.dumps(binding, indent=2) + "\n", encoding="utf-8"
+        )
         result["epa_current_index_manifest"] = "epa-current-index/manifest.json"
+        result["current_index_binding"] = "current-index-binding.json"
         (out / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 
