@@ -304,14 +304,6 @@ def main():
                 original_capacity_selection_id,
             ],
         )
-        # Dataset-query context is not evidence of a product certification match.
-        for entry in epa_recon["responses"]:
-            path = epa / (entry["name"] + "-response.bin")
-            if path.exists():
-                raw = path.read_bytes()
-                if hashlib.sha256(raw).hexdigest() != entry["body_sha256"]:
-                    raise ValueError("EPA response hash mismatch")
-                evidence(raw, entry["url"], sku, "epa-dataset-query-context-not-sku-match")
         for domain in ("FTC", "EPA"):
             bundle["assessments"].append(
                 {
