@@ -338,9 +338,15 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         (out / "three-point-input-review.json").write_text(
             json.dumps(review, indent=2) + "\n", encoding="utf-8"
         )
+        from g2_energy_star_pattern_diagnostic import capture_pattern_candidates
+        pattern_diagnostic = capture_pattern_candidates(
+            out / "epa-p5st-pattern-diagnostic", binding, execution_id=run_id
+        )
         result["epa_current_index_manifest"] = "epa-current-index/manifest.json"
         result["current_index_binding"] = "current-index-binding.json"
         result["three_point_input_review"] = "three-point-input-review.json"
+        result["p5st_pattern_diagnostic"] = "epa-p5st-pattern-diagnostic/result.json"
+        result["p5st_pattern_diagnostic_counts"] = pattern_diagnostic["counts"]
         (out / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 
