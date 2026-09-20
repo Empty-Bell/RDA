@@ -31,8 +31,6 @@ from g2_label_activation import (
     summarize_selection_outcomes,
 )
 from g2_current_index_candidate_projection import load_replayed_rows
-from g2_refrigerator_pattern_bridge import project_same_run_refrigerator_candidates
-from g2_refrigerator_pattern_capture import capture_pattern_rows
 from g2_energy_star_publication_points import collect_publication_points
 
 
@@ -53,24 +51,20 @@ def main():
         "rule_evaluation": "NOT_EVALUATED",
     }
     try:
-        for script in ("source_recon.py", "epa_recon.py"):
-            subprocess.run(
-                [sys.executable, str(ROOT / "scripts" / script), "--family", "refrigerator"],
-                cwd=ROOT,
-                check=True,
-                timeout=900,
-            )
+        subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "source_recon.py"), "--family", "refrigerator"],
+            cwd=ROOT,
+            check=True,
+            timeout=900,
+        )
         source = ROOT / "runtime/source-recon/refrigerator"
-        epa = ROOT / "runtime/epa-query/p5st-her9"
         recon = json.loads((source / "recon.json").read_bytes())
-        epa_recon = json.loads((epa / "recon.json").read_bytes())
-        for report in (recon, epa_recon):
-            if (
-                report["status"] != "PASS"
-                or report["run_id"] != os.getenv("GITHUB_RUN_ID")
-                or report["git_sha"] != os.getenv("GITHUB_SHA")
-            ):
-                raise ValueError("Collector failure or mixed execution provenance")
+        if (
+            recon["status"] != "PASS"
+            or recon["run_id"] != os.getenv("GITHUB_RUN_ID")
+            or recon["git_sha"] != os.getenv("GITHUB_SHA")
+        ):
+            raise ValueError("Collector failure or mixed execution provenance")
         pages = {}
         page_sources = {}
         for entry in recon["observations"]:
@@ -368,22 +362,7 @@ def main():
             check=True,
             timeout=900,
         )
-        current_index_scan, current_index_rows = load_replayed_rows(current_index_dir)
-        current_index_projection = project_same_run_refrigerator_candidates(
-            samples, current_index_scan, current_index_rows, run_id
-        )
-        (out / "current-index-target-feed.json").write_text(
-            dumps(current_index_projection["target_feed"]), encoding="utf-8"
-        )
-        (out / "current-index-candidates.json").write_text(
-            dumps(current_index_projection["candidate_projection"]), encoding="utf-8"
-        )
-        pattern_bridge = capture_pattern_rows(
-            out / "epa-refrigerator-pattern-bridge",
-            current_index_projection["target_feed"],
-            current_index_projection["candidate_projection"],
-            execution_id=run_id,
-        )
+        load_replayed_rows(current_index_dir)
         plp_observation_path = source / "plp-claim-observation.json"
         plp_observation = json.loads(plp_observation_path.read_bytes())
         cards = plp_observation.get("cards")
@@ -642,27 +621,9 @@ def main():
                 (out / "pdp-coverage.json").read_bytes()
             ).hexdigest(),
             collected_label_skus=sorted({sku, *[result["exact_sku"] for result in labels]}),
-            epa_brand_scan=epa_recon["brand_scan"],
             label_selection_summary=label_selection_summary,
             capacity_selection_summary=capacity_selection_summary,
             sku_certification_matching="NOT_EVALUATED",
-            current_index_candidate_projection={
-                "target_count": len(current_index_projection["target_feed"]["targets"]),
-                "record_count": len(current_index_projection["candidate_projection"]["records"]),
-                "states": [
-                    record["candidate_projection_state"]
-                    for record in current_index_projection["candidate_projection"]["records"]
-                ],
-            },
-            current_index_pattern_bridge={
-                "compatible_pattern_candidate_count": pattern_bridge[
-                    "compatible_pattern_candidate_count"
-                ],
-                "bridge_count": len(pattern_bridge["bridges"]),
-                "states": [
-                    bridge["pattern_candidate_state"] for bridge in pattern_bridge["bridges"]
-                ],
-            },
             energy_star_publication_points={
                 "sampled_sku_count": len(publication_points["records"]),
                 "point_states": publication_points["states"],

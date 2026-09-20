@@ -8,8 +8,18 @@ certification or an audit outcome.
 from pathlib import Path
 
 from g2_current_index_candidate_projection import candidate_reference, load_replayed_rows
-from g2_refrigerator_pattern_bridge import refrigerator_current_index_rows
 from g2_samsung_suffix import normalize_terminal_aa
+
+REFRIGERATOR_CATEGORY = "Consumer Refrigeration Products"
+
+
+def _refrigerator_rows(rows_with_sources: list[tuple[dict, dict]]) -> list[tuple[dict, dict]]:
+    if any("product_category" not in row or "product_type" not in row for row, _ in rows_with_sources):
+        raise ValueError("Current Index refrigerator category/type fields unavailable")
+    return [
+        (row, source) for row, source in rows_with_sources
+        if row["product_category"] == REFRIGERATOR_CATEGORY
+    ]
 
 
 def _identifiers(exact_sku: str) -> dict:
@@ -44,7 +54,7 @@ def bind_current_index(declaration_manifest: dict, capture_dir: Path) -> dict:
             or scan.get("current_certification_state") != "NOT_EVALUATED"
             or scan.get("assessment") != "NOT_EVALUATED"):
         raise ValueError("Current Index scan is not candidate-only complete evidence")
-    rows = refrigerator_current_index_rows(rows_with_sources)
+    rows = _refrigerator_rows(rows_with_sources)
     references = [(row, candidate_reference(row, source)) for row, source in rows]
     output = []
     for declaration in sorted(declarations, key=lambda item: item["exact_sku"]):

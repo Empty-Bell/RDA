@@ -111,21 +111,9 @@ on every next-step prompt. Same-task model changes should continue existing work
   2fd920e4c8419fa1a90d7abfb0bb98bfb576b5410bac3a44aa72cac55d748aca. Next:
   decide whether to approve a dataset-scoped positional diagnostic; no automatic
   matcher or assessment. Recommended model: Sol medium.
-  The user approved the concrete offline positional diagnostic request in
-  G2_EPA_MATCHING_MATRIX_PROPOSAL.md:
-  offline p5st-her9 positional diagnostic only, uppercase A–Z star slots and
-  digit hash slots, full-length equality, immutable raw values and unchanged
-  identity/correction states. Implementation is complete: hosted run 35191030514
-  PASSed at 6c43029 with 7 tests; artifact 10483914100 ZIP SHA256:
-  23f308a90d76685e5206539a7f2fe65f568645394dbacb1464fc57c3125f259d. Next:
-  review diagnostic outputs against the refrigerator corpus; no live matching or
-  assessment. This is now PASSed: hosted run 35195946960 applied the diagnostic
-  to 9 saved SKU observations. Artifact 10486160033 ZIP SHA256:
-  8b766e3c94b2e7bc557be6323fdfe52b877a0e6fc55ac7aa387d0c256ebfa20c. All raw
-  strings remain preserved and identity/correction states remain disabled. Corpus
-  review is recorded in G2_EPA_DIAGNOSTIC_CORPUS_REVIEW.md: five records were
-  withheld for `/AA` syntax and four for length; none became compatible. Keep v1
-  unchanged. Official suffix research is recorded in
+  The former p5st pattern diagnostic and its evidence were retired by explicit
+  instruction. The EPA Current Model Index is the only EPA comparison source.
+  Official suffix research is recorded in
   G2_SAMSUNG_SUFFIX_SOURCE_REVIEW.md: Samsung US displays
   `RF23DB9600QL / RF23DB9600QLAA` together, but no general suffix deletion or
   EPA identity rule was established. Hosted run 35202527763 captured the
@@ -176,25 +164,9 @@ on every next-step prompt. Same-task model changes should continue existing work
   contract CI run 35225714504 PASSed at 1899c91. It requires same-run verified
   PDP targets, preserves every raw/approved-normalized literal candidate and
   withholds a no-match result while any EPA pattern encoding remains unresolved.
-  See G2_CURRENT_INDEX_CANDIDATE_PROJECTION.md. The same-run refrigerator target
-  feed and strict p5st-her9 four-key provenance bridge are now defined and hosted
-  contract CI run 35226584964 PASSed at debd8e4. Only verified PDP SKUs enter the
-  feed; a pattern diagnostic runs only after its Current Index and refrigerator
-  rows match on PD_ID, brand, model pattern and CB identifier. This remains a
-  candidate-only result. See G2_REFRIGERATOR_PATTERN_BRIDGE.md. It is now
-  integrated in one bounded live refrigerator execution: hosted run 35227238209
-  PASSed at f2efd97 on ubuntu-24.04 in 3m33s. The run verified PDP targets,
-  captured the complete Samsung Current Model Index snapshot under the same UUID,
-  replayed raw EPA evidence and wrote the target feed/candidate projection into
-  the pilot artifact. Artifact `g2-pilot-35227238209-1` has GitHub digest
-  `e83145ee8aaa9297db0dc4faffc656b5fe401a1cbf3f385882699dc3ee4d7021`.
-  Assessment remains disabled until collection definitions and coverage are
-  complete. Same-run p5st-her9 raw-row capture is now integrated for compatible
-  pattern candidates only. Hosted refrigerator run 35228688716 PASSed at a639e42
-  on ubuntu-24.04 in 3m33s; its `g2-pilot-35228688716-1` artifact is 3,522,140
-  bytes. The run preserved p5st metadata and exact PD_ID responses, then applied
-  the four-key bridge only to compatible candidates. This remains candidate-only,
-  with current certification and assessment NOT_EVALUATED. Next: add the
+  See G2_CURRENT_INDEX_CANDIDATE_PROJECTION.md. The former p5st cross-dataset
+  bridge was removed from code, workflows and task evidence because it is not
+  part of the Current Index-only comparison. Next: add the
   three independent Samsung publication-point collectors (PLP logo, PDP logo and
   visible Spec certification) with target attribution and PRESENT/ABSENT/UNKNOWN
   boundaries. Recommended model: Terra medium.
@@ -277,20 +249,10 @@ on every next-step prompt. Same-task model changes should continue existing work
   candidate references are retained alongside them. All 75 EPA candidates
   still contain wildcard encodings, so certification and assessment stay
   `NOT_EVALUATED`. The input-review transformation itself is offline; Samsung
-  PF/Bridge session transport remains the collection-time bottleneck. The
-  bounded positional diagnostic is now applied to the same-run pattern
-  candidates. Hosted ubuntu-24.04 run 35543232715 at 219981a PASSed; artifact
-  `g2-energy-star-source-35543232715-1` has ZIP SHA-256
-  `a1315ec33a4026823ae88921590b2c3a19dd7ac04c56c2db538fb7103b683a12`.
-  It retained all 75 exact SKUs, found 49 normalized-SKU/pattern pairs that
-  were positionally compatible, and retained 44 only after p5st reproduced
-  the Current Index row with the same PD_ID, brand, model pattern and CB
-  identifier. Five checks were withheld because their p5st PD_ID response was
-  not exactly one row: RF90F23AECEAA, RF90F23AECRAA (3943242), RF90F29AECEAA,
-  RF90F29AECRAA (3943244), and RZ11M7074SA/AA (2362230). A withheld check is
-  not a finding that the model lacks EPA registration. Every record still has
-  `current_certification_state=NOT_EVALUATED` and `assessment=NOT_EVALUATED`.
-  Next: reduce the Samsung PF/Bridge session-transport collection bottleneck
+  PF/Bridge session transport remains the collection-time bottleneck. EPA
+  comparison uses only the same-run Current Model Index binding; p5st capture,
+  cross-dataset bridges and their prior evidence are removed. Next: reduce the
+  Samsung PF/Bridge session-transport collection bottleneck
   without changing the per-exact-SKU source declaration boundary.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
