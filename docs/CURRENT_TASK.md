@@ -277,9 +277,21 @@ on every next-step prompt. Same-task model changes should continue existing work
   candidate references are retained alongside them. All 75 EPA candidates
   still contain wildcard encodings, so certification and assessment stay
   `NOT_EVALUATED`. The input-review transformation itself is offline; Samsung
-  PF/Bridge session transport remains the collection-time bottleneck. Next:
-  apply the already approved bounded positional diagnostic to the same-run EPA
-  pattern candidates, preserving its candidate-only boundary.
+  PF/Bridge session transport remains the collection-time bottleneck. The
+  bounded positional diagnostic is now applied to the same-run pattern
+  candidates. Hosted ubuntu-24.04 run 35543232715 at 219981a PASSed; artifact
+  `g2-energy-star-source-35543232715-1` has ZIP SHA-256
+  `a1315ec33a4026823ae88921590b2c3a19dd7ac04c56c2db538fb7103b683a12`.
+  It retained all 75 exact SKUs, found 49 normalized-SKU/pattern pairs that
+  were positionally compatible, and retained 44 only after p5st reproduced
+  the Current Index row with the same PD_ID, brand, model pattern and CB
+  identifier. Five checks were withheld because their p5st PD_ID response was
+  not exactly one row: RF90F23AECEAA, RF90F23AECRAA (3943242), RF90F29AECEAA,
+  RF90F29AECRAA (3943244), and RZ11M7074SA/AA (2362230). A withheld check is
+  not a finding that the model lacks EPA registration. Every record still has
+  `current_certification_state=NOT_EVALUATED` and `assessment=NOT_EVALUATED`.
+  Next: reduce the Samsung PF/Bridge session-transport collection bottleneck
+  without changing the per-exact-SKU source declaration boundary.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
