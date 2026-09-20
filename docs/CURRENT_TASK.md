@@ -264,7 +264,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   RZ11M7074SA/AA normalizes to `RZ11M7074SA`, matching `RZ11M7074**`
   (PD_ID 2362230). The binder now records these as
   `MATCHED_CURRENT_INDEX_POSITIONAL_PATTERN_CANDIDATES` without requesting
-  p5st. Hosted verification of this update is pending.
+  p5st. Hosted run 35545792333 passed on ubuntu-24.04 at 9dc064a; artifact
+  `g2-energy-star-source-35545792333-1` has ZIP SHA-256
+  `9e56598235c01cb25b4fc3cf916607e7fde29c1b81d01bbfe46448c284cc3489`.
+  The artifact confirms exactly one Current Index pattern candidate per SKU,
+  sourced from page-0006 for the RF90F rows and page-0001 for RZ11M7074SA/AA.
+  All five have zero unsupported patterns; certification and assessment remain
+  `NOT_EVALUATED` until the final policy activation step.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only
