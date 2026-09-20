@@ -7,6 +7,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from g2_energy_star_pattern_diagnostic import (  # noqa: E402
     bridge_pattern_candidate,
     compatible_pattern_pairs,
+    withheld_pattern_candidate,
 )
 
 
@@ -42,6 +43,12 @@ class EnergyStarPatternDiagnosticTests(unittest.TestCase):
         refrigerator_row = {"pd_id": "2839420", "brand_name": "Samsung", "model_number": "RF23D*9600**", "energy_star_model_identifier": "OTHER"}
         with self.assertRaisesRegex(ValueError, "mismatch"):
             bridge_pattern_candidate(pair, refrigerator_row, "a" * 64)
+
+    def test_unreproducible_p5st_row_is_withheld_not_assessed(self):
+        pair = compatible_pattern_pairs(BINDING, "a" * 64)[0]
+        result = withheld_pattern_candidate(pair, "WITHHELD_P5ST_PD_ID_NOT_UNIQUE")
+        self.assertEqual(result["pattern_candidate_state"], "WITHHELD_P5ST_PD_ID_NOT_UNIQUE")
+        self.assertEqual(result["assessment"], "NOT_EVALUATED")
 
 
 if __name__ == "__main__":

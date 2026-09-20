@@ -93,6 +93,19 @@ def bridge_pattern_candidate(pair: dict, refrigerator_row: dict, metadata_sha256
     }
 
 
+def withheld_pattern_candidate(pair: dict, state: str) -> dict:
+    """Record a closed candidate boundary without turning it into an audit result."""
+    return {
+        "contract": "G2_ENERGY_STAR_P5ST_FOUR_KEY_PATTERN_CANDIDATE_ONLY_V1",
+        "exact_sku": pair["exact_sku"],
+        "normalized_identifier": pair["normalized_identifier"],
+        "current_index_reference": pair["current_index_reference"],
+        "pattern_candidate_state": state,
+        "current_certification_state": "NOT_EVALUATED",
+        "assessment": "NOT_EVALUATED",
+    }
+
+
 def capture_pattern_candidates(out: Path, binding: dict, *, execution_id: str) -> dict:
     """Capture reviewed p5st rows for same-run compatible declaration candidates."""
     if binding.get("source_run_id") != execution_id:
@@ -130,14 +143,28 @@ def capture_pattern_candidates(out: Path, binding: dict, *, execution_id: str) -
         if not re.fullmatch(r"\d+", pd_id):
             raise ValueError("Energy Star compatible pattern PD_ID invalid")
         body = fetch("pd-id-" + pd_id, query_url(DATASET, {"$where": "pd_id = " + pd_id, "$limit": 2}))
-        rows_by_pd_id[pd_id] = validate_refrigerator_row(pd_id, decode_rows(200, "application/json", body))
-    candidates = [
-        bridge_pattern_candidate(item, rows_by_pd_id[str(item["current_index_reference"]["pd_id"])], metadata_sha256)
-        for item in pairs
-    ]
-    candidates_by_sku = {}
-    for candidate in candidates:
-        candidates_by_sku.setdefault(candidate["exact_sku"], []).append(candidate)
+        rows = decode_rows(200, "application/json", body)
+        try:
+            rows_by_pd_id[pd_id] = validate_refrigerator_row(pd_id, rows)
+        except ValueError:
+            # A Current Index row that cannot be reproduced as precisely one
+            # p5st row is not a candidate. It is not an EPA absence finding.
+            rows_by_pd_id[pd_id] = None
+    checks = []
+    for item in pairs:
+        refrigerator_row = rows_by_pd_id[str(item["current_index_reference"]["pd_id"])]
+        if refrigerator_row is None:
+            checks.append(withheld_pattern_candidate(item, "WITHHELD_P5ST_PD_ID_NOT_UNIQUE"))
+            continue
+        try:
+            checks.append(bridge_pattern_candidate(item, refrigerator_row, metadata_sha256))
+        except ValueError as error:
+            if "four-key mismatch" not in str(error):
+                raise
+            checks.append(withheld_pattern_candidate(item, "WITHHELD_P5ST_FOUR_KEY_MISMATCH"))
+    checks_by_sku = {}
+    for check in checks:
+        checks_by_sku.setdefault(check["exact_sku"], []).append(check)
     record_skus = [item.get("exact_sku", {}).get("exact_sku_raw") for item in binding.get("records", [])]
     if None in record_skus or len(set(record_skus)) != len(record_skus):
         raise ValueError("Energy Star pattern binding exact SKU coverage invalid")
@@ -149,10 +176,17 @@ def capture_pattern_candidates(out: Path, binding: dict, *, execution_id: str) -
         "counts": {
             "exact_skus": len(record_skus),
             "compatible_pattern_pairs": len(pairs),
-            "provenance_bound_pattern_candidates": len(candidates),
+            "provenance_bound_pattern_candidates": sum(
+                item["pattern_candidate_state"] == "PROVENANCE_BOUND_POSITIONAL_CANDIDATE"
+                for item in checks
+            ),
+            "withheld_p5st_pattern_checks": sum(
+                item["pattern_candidate_state"] != "PROVENANCE_BOUND_POSITIONAL_CANDIDATE"
+                for item in checks
+            ),
         },
         "records": [
-            {"exact_sku": sku, "pattern_candidates": candidates_by_sku.get(sku, []),
+            {"exact_sku": sku, "pattern_checks": checks_by_sku.get(sku, []),
              "current_certification_state": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"}
             for sku in sorted(record_skus)
         ],
