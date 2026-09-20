@@ -11,7 +11,7 @@ DECLARATION = {"exact_sku": "SKU", "plp_energy_star_flag_raw": "Y", "pdp_energy_
                "pdp_energy_star_spec_rows_raw": [{"name": "ENERGY STAR Certified", "value": "Yes"}]}
 CANDIDATE = {"exact_sku": {"exact_sku_raw": "SKU"}, "candidate_projection_state": "UNRESOLVED_PATTERN_ENCODINGS_PRESENT",
              "current_certification_state": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"}
-BINDING = {"contract": "G2_SAME_RUN_ENERGY_STAR_DECLARATION_CURRENT_INDEX_BINDING_V1", "source_run_id": "run-1",
+BINDING = {"contract": "G2_SAME_RUN_ENERGY_STAR_DECLARATION_CURRENT_INDEX_BINDING_V2", "source_run_id": "run-1",
            "records": [CANDIDATE]}
 
 

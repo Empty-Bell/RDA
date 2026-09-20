@@ -31,7 +31,8 @@ a complete scan without literal or pattern candidates can emit
 `COMPLETE_NO_LITERAL_OR_PATTERN_CANDIDATE`; this is still candidate-projection
 output, not a certification or publication decision.
 
-The reviewed refrigerator positional grammar is intentionally not applied by
-this generic projector. It needs its strict p5st-her9 provenance and four-key
-binding in the same execution before it can resolve a Current Model Index
-pattern candidate.
+This generic projector stays literal-only. The Energy Star declaration binder
+uses the approved fixed-position pattern comparison directly against the
+same-run Current Model Index rows. It does not query p5st-her9 or another EPA
+dataset. A positional match is still candidate evidence; assessment remains
+separately gated.

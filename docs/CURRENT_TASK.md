@@ -236,10 +236,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   `g2-energy-star-source-35409373091-1` has ZIP SHA-256
   `c4c65092dda7b17f284ddf0b5cb6487fc8479ee0287f28e75500ac51d9d01d51`.
   All 75 per-SKU PF/PDP Next/Bridge declarations were bound to the same UUID
-  Current Model Index capture. Each has `UNRESOLVED_PATTERN_ENCODINGS_PRESENT`:
-  the Index exposes wildcard model patterns, so none is current-certified or
-  uncertified by this step. All 75 records retain
-  `current_certification_state=NOT_EVALUATED` and `assessment=NOT_EVALUATED`.
+  Current Model Index capture. The first binding kept wildcard rows unresolved;
+  the Energy Star binder now compares those patterns directly against the
+  normalized exact SKU under the approved fixed-position rule. This determines
+  only same-run Current Index pattern candidates; assessment remains separate.
+  All records retain `current_certification_state=NOT_EVALUATED` and
+  `assessment=NOT_EVALUATED` pending the final rule-activation gate.
   The three-point source input review is now complete. Hosted ubuntu-24.04 run
   35410182480 at e5a61fa PASSed in 4m08s; artifact
   `g2-energy-star-source-35410182480-1` has ZIP SHA-256
@@ -254,6 +256,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   cross-dataset bridges and their prior evidence are removed. Next: reduce the
   Samsung PF/Bridge session-transport collection bottleneck
   without changing the per-exact-SKU source declaration boundary.
+  The five former p5st holds have all been resolved directly against the
+  preserved Current Index page rows from successful run 35544478856 (artifact
+  SHA-256 `eb9da55d442ae29bf8721b829e23263cd359254afbaa17ef5d3eb613fa35047b`).
+  RF90F23AECEAA and RF90F23AECRAA match `RF90F23AE**` (PD_ID 3943242);
+  RF90F29AECEAA and RF90F29AECRAA match `RF90F29AE**` (PD_ID 3943244); and
+  RZ11M7074SA/AA normalizes to `RZ11M7074SA`, matching `RZ11M7074**`
+  (PD_ID 2362230). The binder now records these as
+  `MATCHED_CURRENT_INDEX_POSITIONAL_PATTERN_CANDIDATES` without requesting
+  p5st. Hosted verification of this update is pending.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

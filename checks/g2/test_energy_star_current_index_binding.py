@@ -35,10 +35,11 @@ class EnergyStarCurrentIndexBindingTests(unittest.TestCase):
         self.assertEqual(record["current_certification_state"], "NOT_EVALUATED")
 
     @patch("g2_energy_star_current_index_binding.load_replayed_rows")
-    def test_pattern_is_retained_unresolved(self, mocked):
+    def test_current_index_pattern_is_matched_positionally(self, mocked):
         mocked.return_value = SCAN, [(row("RF23D*9600**"), SOURCE)]
         record = bind_current_index(MANIFEST, Path("ignored"))["records"][0]
-        self.assertEqual(record["candidate_projection_state"], "UNRESOLVED_PATTERN_ENCODINGS_PRESENT")
+        self.assertEqual(record["candidate_projection_state"], "MATCHED_CURRENT_INDEX_POSITIONAL_PATTERN_CANDIDATES")
+        self.assertEqual(record["current_index_pattern_candidates"][0]["model_number_raw"], "RF23D*9600**")
         self.assertEqual(record["assessment"], "NOT_EVALUATED")
 
     @patch("g2_energy_star_current_index_binding.load_replayed_rows")

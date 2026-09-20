@@ -1,8 +1,7 @@
 """Bind exact-SKU Energy Star declarations to a same-run EPA Current Index scan.
 
-The binding is candidate evidence only.  Literal candidates are retained and
-EPA wildcard encodings remain unresolved; this module never determines current
-certification or an audit outcome.
+The binding supports literal comparison and the approved fixed-position model
+pattern form. It emits candidate evidence only, never an audit outcome.
 """
 
 from pathlib import Path
@@ -36,6 +35,30 @@ def _identifiers(exact_sku: str) -> dict:
     return result
 
 
+def _pattern_compatibility(pattern: str, identifier: str) -> bool | None:
+    """Compare one Current Index pattern positionally; None means unsupported."""
+    if not isinstance(pattern, str) or not isinstance(identifier, str):
+        return None
+    if not pattern or not identifier:
+        return None
+    if any(not ("A" <= char <= "Z" or "0" <= char <= "9" or char in "*#") for char in pattern):
+        return None
+    if any(not ("A" <= char <= "Z" or "0" <= char <= "9") for char in identifier):
+        return None
+    if len(pattern) != len(identifier):
+        return False
+    for expected, actual in zip(pattern, identifier):
+        if expected == "*":
+            if not "A" <= actual <= "Z":
+                return False
+        elif expected == "#":
+            if not "0" <= actual <= "9":
+                return False
+        elif expected != actual:
+            return False
+    return True
+
+
 def bind_current_index(declaration_manifest: dict, capture_dir: Path) -> dict:
     """Attach same-run Current Index literal/pattern candidate references per SKU."""
     if declaration_manifest.get("status") != "PASS":
@@ -66,12 +89,22 @@ def bind_current_index(declaration_manifest: dict, capture_dir: Path) -> dict:
             reference for row, reference in references
             if normalized and normalized != raw and row["model_number"] == normalized
         ]
-        patterns = [reference for row, reference in references if "*" in row["model_number"] or "#" in row["model_number"]]
+        positional_patterns, unsupported_patterns = [], []
+        for row, reference in references:
+            if "*" not in row["model_number"] and "#" not in row["model_number"]:
+                continue
+            compatibility = _pattern_compatibility(row["model_number"], normalized or "")
+            if compatibility is True:
+                positional_patterns.append(reference)
+            elif compatibility is None:
+                unsupported_patterns.append(reference)
         if raw_matches:
             state = "MATCHED_RAW_LITERAL_CANDIDATES"
         elif normalized_matches:
             state = "MATCHED_APPROVED_NORMALIZED_LITERAL_CANDIDATES"
-        elif patterns:
+        elif positional_patterns:
+            state = "MATCHED_CURRENT_INDEX_POSITIONAL_PATTERN_CANDIDATES"
+        elif unsupported_patterns:
             state = "UNRESOLVED_PATTERN_ENCODINGS_PRESENT"
         else:
             state = "COMPLETE_NO_LITERAL_OR_PATTERN_CANDIDATE"
@@ -85,12 +118,13 @@ def bind_current_index(declaration_manifest: dict, capture_dir: Path) -> dict:
             "candidate_projection_state": state,
             "raw_literal_candidates": raw_matches,
             "approved_normalized_literal_candidates": normalized_matches,
-            "unresolved_pattern_references": patterns,
+            "current_index_pattern_candidates": positional_patterns,
+            "unsupported_pattern_references": unsupported_patterns,
             "current_certification_state": "NOT_EVALUATED",
             "assessment": "NOT_EVALUATED",
         })
     return {
-        "contract": "G2_SAME_RUN_ENERGY_STAR_DECLARATION_CURRENT_INDEX_BINDING_V1",
+            "contract": "G2_SAME_RUN_ENERGY_STAR_DECLARATION_CURRENT_INDEX_BINDING_V2",
         "source_run_id": run_id,
         "scan_query_completeness": scan["query_completeness"],
         "records": output,

@@ -6,7 +6,7 @@ from typing import Any
 
 def build_input_review(declarations: list[dict[str, Any]], binding: dict[str, Any]) -> dict[str, Any]:
     """Join source declarations to same-run EPA candidate evidence without a rule."""
-    if binding.get("contract") != "G2_SAME_RUN_ENERGY_STAR_DECLARATION_CURRENT_INDEX_BINDING_V1":
+    if binding.get("contract") != "G2_SAME_RUN_ENERGY_STAR_DECLARATION_CURRENT_INDEX_BINDING_V2":
         raise ValueError("Current Index binding contract is unavailable")
     candidates = binding.get("records")
     if not isinstance(declarations, list) or not isinstance(candidates, list):
