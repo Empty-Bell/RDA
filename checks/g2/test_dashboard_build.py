@@ -29,6 +29,8 @@ class DashboardBuildTests(unittest.TestCase):
             html = (Path(directory) / "index.html").read_text(encoding="utf-8")
             self.assertIn("SKU search", html)
             self.assertIn("Control", html)
+            self.assertIn("SKU control outcomes", html)
+            self.assertIn("data/report_data.json", html)
 
     def test_rejects_mixed_runs(self):
         bundle, report = self.inputs()
