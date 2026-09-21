@@ -57,7 +57,26 @@ def _compare(
     }
 
 
-def build_comparison(artifact_zip: Path, selection_replay_path: Path) -> dict[str, Any]:
+def _epa_measurement(record: dict[str, Any] | None, field: str) -> dict[str, Any]:
+    if record is None:
+        return {"state": "NOT_REQUESTED", "amount": None}
+    value = record.get(field)
+    if not isinstance(value, dict) or not isinstance(value.get("state"), str):
+        raise ValueError("EPA numeric enrichment measurement is invalid")
+    return {"state": value["state"], "amount": value.get("amount")}
+
+
+def _relation(left: float | None, right: float | None) -> str:
+    if left is None or right is None:
+        return "NOT_COMPARABLE"
+    return "EQUAL" if Decimal(str(left)) == Decimal(str(right)) else "DIFFERENT"
+
+
+def build_comparison(
+    artifact_zip: Path,
+    selection_replay_path: Path,
+    epa_numeric_path: Path | None = None,
+) -> dict[str, Any]:
     replay = json.loads(selection_replay_path.read_text(encoding="utf-8"))
     if replay.get("contract") != "G2_LABEL_ANNOTATION_REPLAY_V1" or replay.get("status") != "PASS":
         raise ValueError("Successful label selection replay is required")
@@ -86,6 +105,17 @@ def build_comparison(artifact_zip: Path, selection_replay_path: Path) -> dict[st
         row["exact_sku"]: row["capacity_observation"]
         for row in replay["capacity_selection_summary"]["records"]
     }
+    epa_records = None
+    if epa_numeric_path is not None:
+        epa = json.loads(epa_numeric_path.read_text(encoding="utf-8"))
+        if (epa.get("contract") != "G2_EPA_REFRIGERATOR_NUMERIC_ENRICHMENT_V1"
+                or epa.get("status") != "PASS"
+                or epa.get("source_run_id") != run_id
+                or epa.get("assessment_enabled") is not False):
+            raise ValueError("EPA numeric enrichment provenance is invalid")
+        epa_records = {row["exact_sku"]: row for row in epa.get("records", [])}
+        if set(epa_records) != product_skus:
+            raise ValueError("EPA numeric enrichment does not cover the exact-SKU population")
     if set(pdp_facts) != product_skus or set(annual) != product_skus or set(capacity) != product_skus:
         raise ValueError("Comparison inputs do not cover the exact-SKU population")
 
@@ -104,6 +134,17 @@ def build_comparison(artifact_zip: Path, selection_replay_path: Path) -> dict[st
             {"cu ft"},
             {"Cubic Feet", "cubic feet"},
         )
+        epa_row = epa_records.get(sku) if epa_records is not None else None
+        epa_annual = _epa_measurement(epa_row, "annual_energy_kwh")
+        epa_capacity = _epa_measurement(epa_row, "capacity_cu_ft")
+        annual_result["epa_amount"] = epa_annual["amount"]
+        annual_result["epa_state"] = epa_annual["state"]
+        annual_result["label_epa_relation"] = _relation(annual_result["label_amount"], epa_annual["amount"])
+        annual_result["pdp_epa_relation"] = _relation(annual_result["pdp_amount"], epa_annual["amount"])
+        capacity_result["epa_amount"] = epa_capacity["amount"]
+        capacity_result["epa_state"] = epa_capacity["state"]
+        capacity_result["label_epa_relation"] = _relation(capacity_result["label_amount"], epa_capacity["amount"])
+        capacity_result["pdp_epa_relation"] = _relation(capacity_result["pdp_amount"], epa_capacity["amount"])
         records.append({
             "exact_sku": sku,
             "annual_energy_kwh": annual_result,
@@ -124,6 +165,7 @@ def build_comparison(artifact_zip: Path, selection_replay_path: Path) -> dict[st
             "product_group": "refrigerator",
             "grain": "exact_sku",
             "comparison_mode": "OBSERVATION_ONLY_NO_TOLERANCE_NO_FINDINGS",
+            "epa_numeric_enrichment": epa_numeric_path is not None,
         },
         "counts": {
             "population": len(records),
@@ -154,20 +196,34 @@ def render_markdown(document: dict[str, Any]) -> str:
         f"| Annual energy (kWh/year) | {annual['EQUAL']} | {annual['DIFFERENT']} | {annual['NOT_COMPARABLE']} |",
         f"| Capacity (cu ft) | {capacity['EQUAL']} | {capacity['DIFFERENT']} | {capacity['NOT_COMPARABLE']} |",
         "",
+    ]
+    if document["scope"].get("epa_numeric_enrichment"):
+        annual_epa = Counter(row["annual_energy_kwh"]["label_epa_relation"] for row in document["records"])
+        capacity_epa = Counter(row["capacity_cu_ft"]["label_epa_relation"] for row in document["records"])
+        lines.extend([
+            "## EnergyGuide / EPA numeric corroboration",
+            "",
+            "| Field | Equal | Different | Not comparable |",
+            "|---|---:|---:|---:|",
+            f"| Annual energy (kWh/year) | {annual_epa['EQUAL']} | {annual_epa['DIFFERENT']} | {annual_epa['NOT_COMPARABLE']} |",
+            f"| Capacity (cu ft) | {capacity_epa['EQUAL']} | {capacity_epa['DIFFERENT']} | {capacity_epa['NOT_COMPARABLE']} |",
+            "",
+        ])
+    lines.extend([
         "## Observed differences",
         "",
-        "| Exact SKU | Field | PDP | EnergyGuide | PDP − label |",
-        "|---|---|---:|---:|---:|",
-    ]
+        "| Exact SKU | Field | PDP | EnergyGuide | EPA | PDP − label |",
+        "|---|---|---:|---:|---:|---:|",
+    ])
     for row in different:
         for field, label in (("annual_energy_kwh", "Annual energy"), ("capacity_cu_ft", "Capacity")):
             result = row[field]
             if result["state"] == "DIFFERENT":
                 lines.append(
-                    f"| {row['exact_sku']} | {label} | {result['pdp_amount']} | {result['label_amount']} | {result['delta_pdp_minus_label']} |"
+                    f"| {row['exact_sku']} | {label} | {result['pdp_amount']} | {result['label_amount']} | {result['epa_amount']} | {result['delta_pdp_minus_label']} |"
                 )
     if not different:
-        lines.append("| — | — | — | — | — |")
+        lines.append("| — | — | — | — | — | — |")
     lines.append("")
     return "\n".join(lines)
 
@@ -176,10 +232,11 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("artifact_zip", type=Path)
     parser.add_argument("--selection-replay", type=Path, required=True)
+    parser.add_argument("--epa-numeric", type=Path)
     parser.add_argument("--json-output", type=Path, required=True)
     parser.add_argument("--markdown-output", type=Path, required=True)
     args = parser.parse_args()
-    document = build_comparison(args.artifact_zip, args.selection_replay)
+    document = build_comparison(args.artifact_zip, args.selection_replay, args.epa_numeric)
     args.json_output.parent.mkdir(parents=True, exist_ok=True)
     args.json_output.write_text(json.dumps(document, indent=2) + "\n", encoding="utf-8")
     args.markdown_output.write_text(render_markdown(document), encoding="utf-8")

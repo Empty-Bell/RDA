@@ -48,10 +48,24 @@ class EnergyGuideNumericComparisonTests(unittest.TestCase):
                 ]},
             }
             replay_path.write_text(json.dumps(replay), encoding="utf-8")
-            result = build_comparison(archive, replay_path)
+            epa_path = root / "epa.json"
+            epa_path.write_text(json.dumps({
+                "contract": "G2_EPA_REFRIGERATOR_NUMERIC_ENRICHMENT_V1",
+                "status": "PASS", "source_run_id": "run-1", "assessment_enabled": False,
+                "records": [
+                    {"exact_sku": "SKU-A", "annual_energy_kwh": {"state": "VALUE", "amount": 700},
+                     "capacity_cu_ft": {"state": "VALUE", "amount": 28.6}},
+                    {"exact_sku": "SKU-B", "annual_energy_kwh": {"state": "VALUE", "amount": 600},
+                     "capacity_cu_ft": {"state": "NO_CURRENT_INDEX_CANDIDATE", "amount": None}},
+                ],
+            }), encoding="utf-8")
+            result = build_comparison(archive, replay_path, epa_path)
             self.assertEqual(result["counts"]["annual_energy"], {"EQUAL": 1, "DIFFERENT": 0, "NOT_COMPARABLE": 1})
             self.assertEqual(result["counts"]["capacity"], {"EQUAL": 1, "DIFFERENT": 1, "NOT_COMPARABLE": 0})
             self.assertEqual(result["records"][0]["capacity_cu_ft"]["delta_pdp_minus_label"], 0.4)
+            self.assertEqual(result["records"][0]["capacity_cu_ft"]["label_epa_relation"], "EQUAL")
+            self.assertEqual(result["records"][0]["capacity_cu_ft"]["pdp_epa_relation"], "DIFFERENT")
+            self.assertTrue(result["scope"]["epa_numeric_enrichment"])
             self.assertFalse(result["assessment_enabled"])
             self.assertEqual(result["overall_product_compliance"], "NOT_EVALUATED")
             self.assertIn("does not apply a tolerance", render_markdown(result))

@@ -410,6 +410,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   NOT_COMPARABLE without tolerance, severity or findings. The recommended V1
   finding policy is documented in G2_ENERGYGUIDE_NUMERIC_COMPARISON_PROPOSAL.md
   and remains disabled pending explicit approval of its new issue code/severity.
+- EPA refrigerator numeric enrichment now joins `p5st-her9` only through PD_IDs
+  already matched by the same-run Current Model Index. It does not participate in
+  certification eligibility. The official family rows corroborate all comparable
+  selected EnergyGuide values: 48/48 annual-energy and 51/51 capacity values are
+  exactly equal. All seven PDP/label capacity differences have EPA equal to the
+  label and different from PDP. User direction: missing PDP annual energy is LOW;
+  capacity uses exact equality with no tolerance. Assessment activation and exact
+  issue-code naming remain the next rule step.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

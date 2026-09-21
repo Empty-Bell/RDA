@@ -1,6 +1,7 @@
 # G2 refrigerator EnergyGuide numeric comparison proposal
 
-Status: observation implementation complete; finding policy awaiting approval.
+Status: three-source observation implementation complete; approved severity direction
+recorded; issue-code activation remains separate.
 
 ## Full-population observation
 
@@ -19,34 +20,41 @@ finding.
 
 The seven capacity differences are 0.3–0.5 cu ft:
 
-| Exact SKU | PDP | EnergyGuide | PDP − label |
-|---|---:|---:|---:|
-| RF23DB990012AA | 22.8 | 22.5 | 0.3 |
-| RF23DB9900QDAA | 22.8 | 22.5 | 0.3 |
-| RF25C5551SR/AA | 25.0 | 24.5 | 0.5 |
-| RF29DB990012AA | 29.0 | 28.6 | 0.4 |
-| RF29DB9900QDAA | 29.0 | 28.6 | 0.4 |
-| RS22T5561SR/AA | 22.0 | 21.5 | 0.5 |
-| RS23CB7600QLAA | 23.0 | 22.6 | 0.4 |
+| Exact SKU | PDP | EnergyGuide | EPA | PDP − label |
+|---|---:|---:|---:|---:|
+| RF23DB990012AA | 22.8 | 22.5 | 22.5 | 0.3 |
+| RF23DB9900QDAA | 22.8 | 22.5 | 22.5 | 0.3 |
+| RF25C5551SR/AA | 25.0 | 24.5 | 24.5 | 0.5 |
+| RF29DB990012AA | 29.0 | 28.6 | 28.6 | 0.4 |
+| RF29DB9900QDAA | 29.0 | 28.6 | 28.6 | 0.4 |
+| RS22T5561SR/AA | 22.0 | 21.5 | 21.5 | 0.5 |
+| RS23CB7600QLAA | 23.0 | 22.6 | 22.6 | 0.4 |
 
-The master plan already states that 29 PDP versus 28.6 label capacity is not an
-identity failure or finding. The available data does not establish that every PDP
-capacity label uses the same tested/net capacity definition as EnergyGuide.
+The EPA refrigerator family rows for these seven products exactly corroborate the
+EnergyGuide capacity and annual-energy values. The comparison uses only PD_IDs
+already matched in the same-run Current Model Index binding. `p5st-her9` does not
+become a certification source and does not change an ENERGY STAR assessment.
 
-## Recommended V1 policy requiring approval
+Across the full population, EnergyGuide and EPA are exactly equal for all 48
+comparable annual-energy rows and all 51 comparable capacity rows. Nineteen SKUs
+have no Current Index candidate. Five matched Current Index rows are absent from
+the refrigerator family response. Three SKUs have two same-pattern PD_IDs with
+different annual-energy values; those annual values remain conflicting rather
+than being selected from the label. Their common capacity remains usable.
+
+## User-approved direction
 
 1. Compare annual energy only when both sources provide numeric kWh/year.
 2. Exact equality gives the annual-energy consistency subcontrol `PASS`.
-3. Missing PDP annual energy gives `NOT_EVALUATED` for this subcontrol and no
-   finding; it does not erase the independently collected label value.
-4. A future numeric difference gives `MEDIUM` review finding
-   `ENERGYGUIDE_ANNUAL_ENERGY_SOURCE_CONFLICT`. It does not automatically claim
-   that the label, PDP or document is legally wrong.
-5. Record capacity equality/difference for evidence only. Capacity does not emit
-   a finding and does not corroborate model identity in V1.
-6. No capacity tolerance is introduced. The raw difference is retained so a
-   later measurement-basis decision can evaluate it without re-collecting data.
+3. Missing PDP annual energy is a LOW finding, at the same UI severity as the
+   ENERGY STAR consistency improvement finding. It does not erase the independently
+   collected label or EPA value.
+4. Capacity uses exact equality with no tolerance. The seven observed differences
+   are PDP-side inconsistencies because EnergyGuide and EPA agree exactly.
+5. Numeric EPA enrichment is corroboration only. Current Model Index remains the
+   sole EPA certification source.
 
-This policy is intentionally narrower than a whole EnergyGuide PASS. Document
-presence/accessibility and model identity remain independent controls. Pipeline
-errors remain errors, and no missing comparison value becomes PASS.
+Exact issue-code names and final assessment activation are handled in the next
+rule step. Document presence/accessibility and model identity remain independent
+controls. Pipeline errors remain errors, and no missing comparison value becomes
+PASS.
