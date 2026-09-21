@@ -41,6 +41,32 @@
       "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
       "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
       "expected_observation": {"state": "VALUE", "amount": 634.0}
+    },
+    {
+      "exact_skus": ["RF90F23AECEAA", "RF90F23AECRAA", "RF90F23AEWAA"],
+      "pdf_sha256": "f8b7d79784f9fd8c87627a63c6a6a34474c02afca5e7cb1046d038b4f3120177",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 618.0},
+      "review_source": {
+        "github_run_id": 35555806408,
+        "artifact_id": 10620777089,
+        "run_uuid": "400100dfdff44ecc8d8eb3c569da01da",
+        "render": "pdftoppm -png -r 150"
+      }
+    },
+    {
+      "exact_skus": ["RF90F29AECEAA", "RF90F29AECRAA", "RF90F29AEWAA"],
+      "pdf_sha256": "516173ddebf32cc3b67c64d12e04ce894165574896a081c9425ae9e332656e0a",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 663.0},
+      "review_source": {
+        "github_run_id": 35555806408,
+        "artifact_id": 10620777089,
+        "run_uuid": "400100dfdff44ecc8d8eb3c569da01da",
+        "render": "pdftoppm -png -r 150"
+      }
     }
   ],
   "limitations": [

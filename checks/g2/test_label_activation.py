@@ -80,8 +80,9 @@ class LabelActivationTests(unittest.TestCase):
 
     def test_saved_annotations_have_one_mapping_per_replayed_sku(self):
         reviews = load_review_annotations(ROOT / "docs/evidence/g2-label-review-annotations.json")
-        self.assertEqual(len(reviews), 9)
+        self.assertEqual(len(reviews), 15)
         self.assertIn("RF22A4111SR/AA", reviews)
+        self.assertEqual(reviews["RF90F23AEWAA"]["expected_observation"]["amount"], 618.0)
 
     def test_summary_is_observation_only_and_rejects_duplicate_document(self):
         selection = select_live_reviewed_energy(
@@ -98,6 +99,14 @@ class LabelActivationTests(unittest.TestCase):
         self.assertEqual(summary["counts"], {"VALUE": 1, "NOT_OBSERVED": 0})
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             summarize_selection_outcomes([record, record])
+
+    def test_two_source_model_patterns_do_not_prevent_capacity_projection(self):
+        reviews = load_capacity_review_annotations(
+            ROOT / "docs/evidence/g2-capacity-model-review.json"
+        )
+        review = reviews["RF90F29AEWAA"]
+        self.assertEqual(review["model_tokens_raw"], ["RF90F29AE*", "RF90F29AE**"])
+        self.assertIn("IDENTITY_NOT_EVALUATED", review["model_review"])
 
     def test_capacity_review_requires_matching_live_bytes(self):
         reviews = load_capacity_review_annotations(

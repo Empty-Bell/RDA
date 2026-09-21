@@ -26,6 +26,20 @@ class LabelIdentityReviewTests(unittest.TestCase):
                 self.assertEqual(parsed["wildcard_correction"], "NOT_APPLIED")
                 self.assertEqual(parsed["identity_matching"], "NOT_EVALUATED")
 
+    def test_multi_pattern_source_labels_remain_ambiguous(self):
+        multi = [record for record in self.review["records"] if "model_tokens_raw" in record]
+        self.assertEqual(len(multi), 2)
+        for record in multi:
+            with self.subTest(pdf=record["pdf_sha256"]):
+                parsed = label_candidates(
+                    record["model_text_raw"], self.review["engine"], record["pdf_sha256"]
+                )
+                self.assertEqual(
+                    [candidate["value_raw"] for candidate in parsed["model_candidates_raw"]],
+                    record["model_tokens_raw"],
+                )
+                self.assertFalse(self.review["sku_identity_matching_enabled"])
+
     def test_token_without_star_does_not_resolve_visible_wildcard_damage(self):
         damaged = [record for record in self.review["records"] if record["model_review"].startswith("OCR_")]
         self.assertEqual(len(damaged), 2)

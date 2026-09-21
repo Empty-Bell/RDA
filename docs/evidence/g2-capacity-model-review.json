@@ -97,6 +97,56 @@
       "capacity_bbox": [[406.5, 191.5], [538.0, 191.5], [538.0, 206.5], [406.5, 206.5]],
       "capacity_visual_amount": 22.8,
       "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE"
+    },
+    {
+      "pdf_sha256": "f8b7d79784f9fd8c87627a63c6a6a34474c02afca5e7cb1046d038b4f3120177",
+      "exact_skus": ["RF90F23AECEAA", "RF90F23AECRAA", "RF90F23AEWAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0,
+      "model_detection": 6,
+      "model_text_raw": "Models RF90F23AE*, RF90F23AE**",
+      "model_token_raw": "RF90F23AE*",
+      "model_tokens_raw": ["RF90F23AE*", "RF90F23AE**"],
+      "model_bbox": [[358.5, 176.5], [537.5, 175.0], [537.5, 190.0], [358.5, 191.0]],
+      "model_confidence_raw": 1.0,
+      "model_visual_transcription": "Models RF90F23AE*, RF90F23AE**",
+      "model_review": "SOURCE_LABEL_EXPLICITLY_LISTS_TWO_PATTERNS_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8,
+      "capacity_text_raw": "Capacity: 22.5 Cubic Feet",
+      "capacity_bbox": [[406.5, 192.0], [537.5, 192.0], [537.5, 207.0], [406.5, 207.0]],
+      "capacity_visual_amount": 22.5,
+      "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {
+        "github_run_id": 35555806408,
+        "artifact_id": 10620777089,
+        "run_uuid": "400100dfdff44ecc8d8eb3c569da01da",
+        "render": "pdftoppm -png -r 150"
+      }
+    },
+    {
+      "pdf_sha256": "516173ddebf32cc3b67c64d12e04ce894165574896a081c9425ae9e332656e0a",
+      "exact_skus": ["RF90F29AECEAA", "RF90F29AECRAA", "RF90F29AEWAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0,
+      "model_detection": 6,
+      "model_text_raw": "Models RF90F29AE*, RF90F29AE**",
+      "model_token_raw": "RF90F29AE*",
+      "model_tokens_raw": ["RF90F29AE*", "RF90F29AE**"],
+      "model_bbox": [[359.0, 174.0], [538.0, 172.5], [538.0, 187.5], [359.0, 188.5]],
+      "model_confidence_raw": 1.0,
+      "model_visual_transcription": "Models RF90F29AE*, RF90F29AE**",
+      "model_review": "SOURCE_LABEL_EXPLICITLY_LISTS_TWO_PATTERNS_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8,
+      "capacity_text_raw": "Capacity: 28.6 Cubic Feet",
+      "capacity_bbox": [[406.5, 189.5], [538.0, 189.5], [538.0, 204.5], [406.5, 204.5]],
+      "capacity_visual_amount": 28.6,
+      "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {
+        "github_run_id": 35555806408,
+        "artifact_id": 10620777089,
+        "run_uuid": "400100dfdff44ecc8d8eb3c569da01da",
+        "render": "pdftoppm -png -r 150"
+      }
     }
   ],
   "canonical_capacity_enabled": false,

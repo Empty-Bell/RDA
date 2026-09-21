@@ -347,6 +347,23 @@ on every next-step prompt. Same-task model changes should continue existing work
   than changing parser output.
 - The source-only Energy Star workflow is manual to avoid duplicating its full
   collection on every code push; the combined G2 pilot owns same-run reporting.
+- The first two EnergyGuide review-queue PDFs were visually checked from the
+  preserved full-run artifact. RF90F23 explicitly shows model patterns
+  `RF90F23AE*` and `RF90F23AE**`, 618 kWh/year and 22.5 cu ft. RF90F29
+  explicitly shows `RF90F29AE*` and `RF90F29AE**`, 663 kWh/year and 28.6 cu
+  ft. Annual energy and capacity are now byte-hash-bound for the six affected
+  exact SKUs. The two model patterns remain separately preserved and model
+  identity is still NOT_EVALUATED.
+- Current annotations can now be replayed offline against an existing G2 ZIP.
+  The replay indexes candidate and layout files by PDF SHA-256, so an exact SKU
+  can reuse a byte-identical label even when the artifact stores that raw file
+  under another SKU folder. Replaying artifact 10620777089 raises reviewed
+  annual-energy coverage from 8 to 14 SKUs (4 to 6 PDF hashes) and capacity
+  coverage from 9 to 15 SKUs (5 to 7 PDF hashes), without Samsung/EPA access.
+  The remaining queue is 52 annual-energy hashes and 51 capacity hashes; the
+  two RF90F hashes stay visible as model-ambiguous even though their numeric
+  fields are reviewed. Next: review the ordinary queue one PDF hash at a time,
+  starting with dual-field rows, and replay each annotation batch offline.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

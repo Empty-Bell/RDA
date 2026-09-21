@@ -24,7 +24,12 @@ def _value(fact: dict, name: str):
     return observation.get("value") if observation.get("state") == "VALUE" else None
 
 
-def build_quality_profile(archive_path: Path, *, github_run_id: str | None = None) -> dict:
+def build_quality_profile(
+    archive_path: Path,
+    *,
+    github_run_id: str | None = None,
+    selection_replay: dict | None = None,
+) -> dict:
     with zipfile.ZipFile(archive_path) as archive:
         checkpoint = _one_json(archive, r"/checkpoint\.json$")
         bundle = _one_json(archive, r"/bundle\.json$")
@@ -62,8 +67,14 @@ def build_quality_profile(archive_path: Path, *, github_run_id: str | None = Non
     if len(facts) != len(product_skus) or set(fact_skus) != product_skus:
         raise ValueError("EnergyGuide fact coverage differs from product population")
 
-    annual_summary = checkpoint.get("label_selection_summary", {})
-    capacity_summary = checkpoint.get("capacity_selection_summary", {})
+    if selection_replay is not None:
+        if selection_replay.get("contract") != "G2_LABEL_ANNOTATION_REPLAY_V1" or selection_replay.get("status") != "PASS":
+            raise ValueError("Selection replay contract is invalid")
+        if selection_replay.get("source", {}).get("execution_run_id") != manifest.get("run_id"):
+            raise ValueError("Selection replay source run differs from artifact")
+    selection_source = selection_replay or checkpoint
+    annual_summary = selection_source.get("label_selection_summary", {})
+    capacity_summary = selection_source.get("capacity_selection_summary", {})
     annual_records = annual_summary.get("records")
     capacity_records = capacity_summary.get("records")
     if not isinstance(annual_records, list) or not isinstance(capacity_records, list):
@@ -142,6 +153,7 @@ def build_quality_profile(archive_path: Path, *, github_run_id: str | None = Non
             "execution_run_id": manifest["run_id"],
             "git_sha": manifest.get("git_sha"),
             "artifact_zip": archive_path.name,
+            "selection_binding": "CURRENT_ANNOTATION_REPLAY" if selection_replay else "ARTIFACT_CHECKPOINT",
         },
         "grain": {
             "product_key": "exact_sku",
@@ -305,8 +317,17 @@ def main() -> None:
     parser.add_argument("--github-run-id")
     parser.add_argument("--json-output", type=Path)
     parser.add_argument("--markdown-output", type=Path)
+    parser.add_argument("--selection-replay", type=Path)
     args = parser.parse_args()
-    profile = build_quality_profile(args.artifact_zip, github_run_id=args.github_run_id)
+    replay_document = (
+        json.loads(args.selection_replay.read_text(encoding="utf-8"))
+        if args.selection_replay else None
+    )
+    profile = build_quality_profile(
+        args.artifact_zip,
+        github_run_id=args.github_run_id,
+        selection_replay=replay_document,
+    )
     if args.json_output:
         args.json_output.parent.mkdir(parents=True, exist_ok=True)
         args.json_output.write_text(json.dumps(profile, indent=2) + "\n", encoding="utf-8")
