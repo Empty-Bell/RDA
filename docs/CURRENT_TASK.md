@@ -296,16 +296,24 @@ on every next-step prompt. Same-task model changes should continue existing work
   or review-only changes no longer trigger Samsung/EPA collection. The manual
   review workflow accepts an optional source run ID and otherwise selects the
   latest successful source run.
-- Energy Star same-run report connection is implemented as a separate report
-  section in the G2 refrigerator pilot. It reuses that run's PF capture and run
-  UUID, requires matching GitHub run ID and commit, exact SKU-set equality, full
-  coverage and replayable counts, and hashes the attached assessment file. The
-  G2 bundle assessment flag/counts stay disabled; the Energy Star section keeps
-  its own counts and overall compliance remains NOT_EVALUATED. Hosted proof is
-  still pending. The old source-only Energy Star workflow is now manual to avoid
-  duplicating this full collection on every code push. Next: run the G2 Actions
-  workflow and confirm the gate passes for all current refrigerator SKUs in a
-  single artifact.
+- Same-run Energy Star integration commit `d5aa746` passed hosted G2 run
+  [35554057794](https://github.com/Empty-Bell/RDA/actions/runs/35554057794) on
+  ubuntu-24.04. The single artifact has canonical report run UUID equal to the
+  assessment source UUID, GitHub run ID `35554057794`, and commit
+  `d5aa7469c52c6e8cfc24a819978a8d5f7c3c410b`. The canonical population and
+  Energy Star assessment both cover the same 75/75 exact refrigerator SKUs;
+  the assessment hash in the report matches the archived file. Corrected
+  Energy Star outcomes are 57 UI PASS (52 rule PASS + 5 NO_FINDING), 4 LOW,
+  14 HIGH, and 0 NOT_EVALUATED. Canonical overall product compliance remains
+  NOT_EVALUATED and its assessment engine remains disabled. Artifact:
+  `g2-pilot-35554057794-1`, ID `10618983718`.
+- Next G2a work: expand the canonical PDP/SKU identity collection from 10/75 to
+  all 75 exact refrigerator SKUs, then verify full identity coverage and
+  resource/time limits on hosted Ubuntu before treating the population-to-PDP
+  stage as complete. The latest run observed 10 verified, 0 failed, 65 not
+  attempted. EnergyGuide/PDF/OCR coverage and the remaining G2 gates follow.
+- The source-only Energy Star workflow is manual to avoid duplicating its full
+  collection on every code push; the combined G2 pilot owns same-run reporting.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
