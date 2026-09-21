@@ -5,13 +5,13 @@
 The user selected EPA Current Model Index `8wj2-sec8` as the sole current
 certification source. A verified model present in that list supplies current
 certification evidence. The user explicitly approved the three-point publication
-consistency rule: PLP logo, PDP logo and affirmative certification in the visible
-Spec table. The rule and LOW/HIGH severity below supersede the earlier claim-only
-table. Assessment remains disabled until collection definitions and their
-verification are complete. Existing issue codes are reused; no new code is added.
+consistency rule: PLP logo, PDP logo and affirmative ENERGY STAR certification
+in the exact-SKU Bridge Specs. The source-only collection boundary was also
+approved; PLP `energyStarFlg`, PDP Next `energyStarFlag` and the exact-SKU
+Bridge certification row supply those three points. The rule is implemented
+below. Existing issue codes are reused; no new code is added.
 
-This table documents the intended behavior for later implementation, not a
-currently executing compliance rule:
+This table is the executed Energy Star publication consistency rule:
 
 | Current-index model result | PLP logo / PDP logo / Spec certification | Approved result |
 |---|---|---|
@@ -55,8 +55,9 @@ aliases must be source-reviewed before normalization.
 Footer, generic banners, recommendations, related products, ambiguous gallery
 roots and unbound images cannot become target claims. A positive Spec value
 cannot fill in a missing PLP or PDP logo. A PLP logo cannot fill in the Spec point.
-The LOW rule counts absence only after a supported identified surface has been
-successfully inspected; timeout, unrendered content or unsupported layout is UNKNOWN.
+The LOW rule counts an absent source declaration only after the exact-SKU source
+capture is complete; missing capture, unsupported values or incomplete layout is
+UNKNOWN.
 
 Structured flags remain separate source signals. A raw `energyStarFlag=Y` alone
 does not establish a visible logo or advertised assertion. `N` or an absent flag
@@ -86,11 +87,9 @@ so only after all its candidate comparisons are resolved.
 ### Model comparison and market
 
 Compare verified raw/normalized Samsung targets to Current Model Index model
-strings. Literal equality is direct evidence. For the reviewed refrigerator
-pattern, retain the approved single-position grammar and the exact four-key
-binding to p5st-her9 provenance; the category dataset supplies grammar provenance
-only, not an alternate current-certification verdict. Do not apply that grammar
-to unrelated datasets, labels or unsupported pattern syntax.
+strings. Literal equality and the approved fixed-position model patterns are
+direct evidence from the same Current Model Index snapshot. No secondary EPA
+dataset is queried. Unsupported model syntax remains UNKNOWN.
 
 Keep all candidates. Do not choose a row by latest date, similarity, prefix or
 numerical energy/capacity equality. Unknown pattern encodings prevent an absence
@@ -113,20 +112,21 @@ diagnostic report's current-index observation concerns the compared EPA row,
 not every SKU printed beside it; `current_index_observation_scope=EPA_ROW_ONLY`
 makes that boundary explicit.
 
-## Remaining collection-definition milestones
+## Refrigerator Energy Star milestone status
 
-1. Hosted complete Current Model Index Samsung-scope capture/replay, with actual
+1. **Complete.** Hosted complete Current Model Index Samsung-scope capture/replay, with actual
    category/type metadata and tested pagination/failure boundaries.
-2. Exact-target candidate projection; preserve all row references and distinguish
+2. **Complete.** Exact-target candidate projection; preserve all row references and distinguish
    matched, complete no-match and unresolved comparisons without assessments.
-3. Same-run PLP-logo, PDP-logo and visible Spec-certification projections, each
-   with target attribution and PRESENT/ABSENT/UNKNOWN states; establish full
-   refrigerator collection coverage.
-4. Join the observations by run/SKU/evidence identity and validate replay.
-5. Review collection completeness, then activate the approved decision table.
-   Test all three single-point gaps, all-absent registered models, each single
-   positive point on unregistered models, unknown/error paths and partial coverage.
-   Other unresolved measurement/OCR policies remain separate.
+3. **Complete.** Same-run, exact-SKU PLP PF flag, PDP Next flag and Bridge Spec
+   certification rows were captured for all 75 refrigerator SKUs. Source
+   evidence hashes are attached to the point records.
+4. **Complete.** The sources were joined by same-run execution and exact SKU;
+   the EPA pages replay from preserved hashes.
+5. **Complete.** The approved rule runs after coverage checks and emits the
+   existing LOW/HIGH issue codes. It reports only this Energy Star check;
+   it does not decide whole-product compliance. Measurement and OCR policies
+   remain separate G2 work.
 
 Next recommended model: Terra medium for milestone 1 and its bounded contracts.
 Use Luna low for documentation-only maintenance and Sol medium only when an

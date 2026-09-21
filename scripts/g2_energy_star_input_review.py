@@ -37,6 +37,7 @@ def build_input_review(declarations: list[dict[str, Any]], binding: dict[str, An
                 "field": "Bridge Specs ENERGY STAR rows",
                 "raw_rows": declaration.get("pdp_energy_star_spec_rows_raw"),
             },
+            "source_evidence_refs": declaration.get("source_evidence_refs"),
             "epa_current_index_candidate": candidate,
             "current_certification_state": "NOT_EVALUATED",
             "assessment": "NOT_EVALUATED",
@@ -44,6 +45,7 @@ def build_input_review(declarations: list[dict[str, Any]], binding: dict[str, An
     return {
         "contract": "G2_ENERGY_STAR_THREE_POINT_INPUT_REVIEW_ONLY_V1",
         "source_run_id": binding.get("source_run_id"),
+        "current_index_query_completeness": binding.get("scan_query_completeness"),
         "scope": "Exact-SKU PLP PF, PDP Next, Bridge Specs and same-run EPA candidate inputs; no publication or certification decision",
         "counts": {"exact_skus": len(records), "plp_pdp_raw_flag_pairs": dict(sorted(flag_pairs.items())),
                    "epa_candidate_states": dict(sorted(candidate_states.items()))},

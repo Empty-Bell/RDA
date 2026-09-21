@@ -8,6 +8,7 @@ on:
       - 'scripts/g2_energy_star_source_capture.py'
       - 'scripts/g2_energy_star_current_index_binding.py'
       - 'scripts/g2_energy_star_input_review.py'
+      - 'scripts/g2_energy_star_assessment.py'
       - 'scripts/g2_epa_current_index_samsung_capture.py'
       - 'scripts/source_contract.py'
       - 'checks/g2/test_energy_star_source_capture.py'
@@ -44,7 +45,7 @@ jobs:
         run: python -m unittest checks/g2/test_energy_star_source_capture.py checks/g2/test_energy_star_current_index_binding.py checks/g2/test_energy_star_input_review.py -v
       - name: Capture current Samsung PF population
         run: python scripts/source_recon.py --family refrigerator
-      - name: Capture browserless Samsung and EPA source declarations
+      - name: Capture Samsung source declarations and EPA Current Index
         run: python scripts/g2_energy_star_source_capture.py --pf-source runtime/source-recon/refrigerator
       - name: Preserve direct-source evidence
         if: always()

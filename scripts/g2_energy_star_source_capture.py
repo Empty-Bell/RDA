@@ -1,7 +1,7 @@
-"""Collect per-SKU Energy Star source declarations without a browser.
+"""Collect per-SKU Energy Star source declarations.
 
-This collector records source fields only.  It does not decide whether a logo is
-visibly rendered and it does not produce PASS/LOW/HIGH findings.
+Headless browser sessions transport PF and Bridge JSON. This collector records
+source declarations and assessment evidence; it does not inspect rendered logos.
 """
 
 import argparse
@@ -274,6 +274,17 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         record.update(_write_raw(raw, f"pf/page-{number:02d}.json", source_body))
     population = pf_population(pages)
     groups = [group for page in pages for group in page["searchResults"]]
+    pf_source_by_sku = {}
+    for page, page_source in zip(pages, page_records):
+        for group in page["searchResults"]:
+            for variant in group["groupedProductList"]:
+                pf_source_by_sku[variant["modelCode"]] = {
+                    "file": page_source["file"],
+                    "url": page_source.get("url"),
+                    "sha256": page_source["sha256"],
+                    "field": "energyStarFlg",
+                    "exact_sku": variant["modelCode"],
+                }
     products = []
     for group in groups:
         for variant in group["groupedProductList"]:
@@ -282,6 +293,7 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
                 "variant": variant,
                 "exact_sku": variant["modelCode"],
                 "pdp_url": urljoin("https://www.samsung.com", variant["pdpURL"]),
+                "pf_source_evidence": pf_source_by_sku[variant["modelCode"]],
             })
     session_bridges, session_identity = capture_session_bridges(products, raw)
     declarations, group_records = [], []
@@ -297,14 +309,29 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
             raise ValueError("PDP Next source unavailable or not HTML")
         next_record = _write_raw(raw, f"next/sku-{number:02d}.html", next_body)
         next_record.update({"url": product["pdp_url"], "status": status})
-        declarations.append(project_sku_declaration(group, variant, next_body, bridge))
+        declaration = project_sku_declaration(group, variant, next_body, bridge)
+        declaration["source_evidence_refs"] = {
+            "plp_logo_source": product["pf_source_evidence"],
+            "pdp_logo_source": {
+                "file": next_record["file"], "url": next_record["url"],
+                "sha256": next_record["sha256"], "field": "energyStarFlag",
+                "exact_sku": sku,
+            },
+            "pdp_spec_certification_source": {
+                "file": bridge_record["file"], "url": bridge_record["url"],
+                "sha256": bridge_record["sha256"],
+                "field": "Bridge Specs ENERGY STAR rows", "exact_sku": sku,
+                "full_specs_collection": "COMPLETE_EXACT_SKU_SPECS",
+            },
+        }
+        declarations.append(declaration)
         group_records.append({"exact_sku": sku, "source_family_id": group["group_id"], "bridge": bridge_record, "next": next_record})
     if len(declarations) != population["unique_exact_skus"] or len({x["exact_sku"] for x in declarations}) != len(declarations):
         raise ValueError("Exact SKU declaration coverage is incomplete or duplicated")
     result = {
         "contract": "G2_ENERGY_STAR_DIRECT_SOURCE_DECLARATIONS_V1",
         "status": "PASS",
-        "scope": "Per-SKU PF, PDP Next, Bridge and EPA current-index source capture; no visual inspection or rule evaluation",
+        "scope": "Per-SKU PF, PDP Next, Bridge and EPA Current Index source capture with three-point assessment; no visual inspection",
         "run_id": run_id,
         "github_run_id": os.getenv("GITHUB_RUN_ID"),
         "git_sha": os.getenv("GITHUB_SHA"),
@@ -338,9 +365,21 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         (out / "three-point-input-review.json").write_text(
             json.dumps(review, indent=2) + "\n", encoding="utf-8"
         )
+        from g2_energy_star_assessment import build_assessment
+        assessment = build_assessment(
+            review,
+            expected_exact_skus=population["unique_exact_skus"],
+            query_completeness=binding["scan_query_completeness"],
+        )
+        (out / "energy-star-assessment.json").write_text(
+            json.dumps(assessment, indent=2) + "\n", encoding="utf-8"
+        )
         result["epa_current_index_manifest"] = "epa-current-index/manifest.json"
         result["current_index_binding"] = "current-index-binding.json"
         result["three_point_input_review"] = "three-point-input-review.json"
+        result["energy_star_assessment"] = "energy-star-assessment.json"
+        result["assessment_counts"] = assessment["counts"]
+        result["rule_evaluation"] = "COMPLETED_FOR_SOURCE_CAPTURE"
         (out / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 
