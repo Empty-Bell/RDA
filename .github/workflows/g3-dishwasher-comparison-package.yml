@@ -5,6 +5,11 @@ on:
     workflows: [G3 dishwasher source match]
     types: [completed]
     branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_dishwasher_comparison_package.py'
+      - '.github/workflows/g3-dishwasher-comparison-package.yml'
 permissions:
   actions: read
   contents: read
