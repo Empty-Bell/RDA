@@ -42,7 +42,7 @@ class LabelIdentityReviewTests(unittest.TestCase):
 
     def test_token_without_star_does_not_resolve_visible_wildcard_damage(self):
         damaged = [record for record in self.review["records"] if record["model_review"].startswith("OCR_")]
-        self.assertEqual(len(damaged), 2)
+        self.assertEqual(len(damaged), 3)
         for record in damaged:
             with self.subTest(pdf=record["pdf_sha256"]):
                 parsed = label_candidates(record["model_text_raw"], self.review["engine"], record["pdf_sha256"])

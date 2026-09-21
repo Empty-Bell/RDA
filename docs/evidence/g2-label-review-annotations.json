@@ -67,6 +67,156 @@
         "run_uuid": "400100dfdff44ecc8d8eb3c569da01da",
         "render": "pdftoppm -png -r 150"
       }
+    },
+    {
+      "exact_skus": ["RF32CG5B10SRAA"],
+      "pdf_sha256": "0e4c8471d3978ff04a6c528f34bd51e9272dc0e2bdbef3c970976ae69b07ea33",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 785.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RS70H27SDRAA"],
+      "pdf_sha256": "0eb5ed1a436698ee7635209b7ce0b9114fa5771c63289c6dfe8674bf575f730d",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 715.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RF32CG5D00SRAA"],
+      "pdf_sha256": "1833679d5288ae622beda869971fe410e75375bf4b274d38b9faea3c41694382",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 23, "number_detection": 21, "unit_detection": 22,
+      "expected_observation": {"state": "VALUE", "amount": 709.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RF32CG5900SRAA"],
+      "pdf_sha256": "1d9e4e2cec6a71a0741bc8d75bfc6724cf2e2f868a25bc92f92a47229a240e52",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 781.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RF27CG5010S9AA"],
+      "pdf_sha256": "1dbc5857bcfc62ac306b44ebbebbf965db8509de96cfa6efb5d20cc33b6bd0c3",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 656.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RT70F18LRSRAA"],
+      "pdf_sha256": "1f326b7d083f6d07a6eb27dcb845151a472b036a03a33a9bcc07893c2698be85",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 25, "number_detection": 23, "unit_detection": 24,
+      "expected_observation": {"state": "VALUE", "amount": 343.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RS27T5200SG/AA", "RS27T5200SR/AA"],
+      "pdf_sha256": "2f618dc1ecae19d06d65509d9f406054645070bacb8f537a8a304ed64aa9f3ac",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 9, "number_detection": 8, "unit_detection": 8,
+      "expected_observation": {"state": "VALUE", "amount": 728.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RF25C5A01SRAA"],
+      "pdf_sha256": "33eb99b1eca6e19c947cab88c72b6efbc4c4b0c99d19d22be15fd58d9e783016",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 643.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RF70H25KERAA"],
+      "pdf_sha256": "36f77a629b98f9502c11767ebc2e9e42a8f1f01872e12fc1676a3d3e26b8a6ff",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 637.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RF32CG5B30SRAA"],
+      "pdf_sha256": "38e3cf98557103ee45be5dd4d2554e5d32dad0a9f1cd6610e3318eee855b4177",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 785.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "exact_skus": ["RF70F29DERAA"], "pdf_sha256": "3cd081cdc675f6878d17fa74074eb5c21037f4a0fb865196f95569c6dd215cac",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 23, "number_detection": 21, "unit_detection": 22,
+      "expected_observation": {"state": "VALUE", "amount": 685.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RF29DB990012AA", "RF29DB9900QDAA"], "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 23, "number_detection": 21, "unit_detection": 22,
+      "expected_observation": {"state": "VALUE", "amount": 700.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RT70F18LASRAA"], "pdf_sha256": "4100c4b1718282d5462ef4686f1be304c534693364f8750755cb50cdacfe7782",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 446.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RF29BB860012AA", "RF29BB86004MAA", "RF29BB8600QLAA"], "pdf_sha256": "41630bbf339bcacc72a5c471157c9f89a0b37e7f5cb4ac939f83b736d76d1f56",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 21, "number_detection": 19, "unit_detection": 20,
+      "expected_observation": {"state": "VALUE", "amount": 685.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RZ11M7074SA/AA"], "pdf_sha256": "41cac721518d82eb617b26f22bb4c7a22e6eaf87d7df60a999abccb3b8bfeaec",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 17, "number_detection": 15, "unit_detection": 16,
+      "expected_observation": {"state": "VALUE", "amount": 361.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RF70H25HERAA"], "pdf_sha256": "455a4bf604ac71dac6615f2cf88801a084d3c1486771b0b34e076f4b7995b44c",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 709.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RM80F23VMRAA"], "pdf_sha256": "52beddac8ae132fe46b8a5deecb8502f3aac04a04ba2380a5419324069a55167",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 510.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RF23DB990012AA", "RF23DB9900QDAA"], "pdf_sha256": "54ce81d35ff0d4f0a7e4607a72d18782fa93842d92ba80bf2f7706536d185b66",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
+      "expected_observation": {"state": "VALUE", "amount": 631.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RF24BB6600QLAA"], "pdf_sha256": "6077ca27d13e79e857de3c3738ade19da7b99d4bf27b1336692a1f813479b313",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 23, "number_detection": 21, "unit_detection": 22,
+      "expected_observation": {"state": "VALUE", "amount": 630.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "exact_skus": ["RF25C5551SR/AA"], "pdf_sha256": "63515c1339959a99e21a98ac0d8aa743a4267a997ea7c0090b177bba9e4cc3ed",
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
+      "page": 0, "caption_detection": 25, "number_detection": 23, "unit_detection": 24,
+      "expected_observation": {"state": "VALUE", "amount": 643.0},
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
     }
   ],
   "limitations": [

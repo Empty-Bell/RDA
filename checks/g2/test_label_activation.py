@@ -80,7 +80,7 @@ class LabelActivationTests(unittest.TestCase):
 
     def test_saved_annotations_have_one_mapping_per_replayed_sku(self):
         reviews = load_review_annotations(ROOT / "docs/evidence/g2-label-review-annotations.json")
-        self.assertEqual(len(reviews), 15)
+        self.assertEqual(len(reviews), 40)
         self.assertIn("RF22A4111SR/AA", reviews)
         self.assertEqual(reviews["RF90F23AEWAA"]["expected_observation"]["amount"], 618.0)
 

@@ -147,6 +147,196 @@
         "run_uuid": "400100dfdff44ecc8d8eb3c569da01da",
         "render": "pdftoppm -png -r 150"
       }
+    },
+    {
+      "pdf_sha256": "0e4c8471d3978ff04a6c528f34bd51e9272dc0e2bdbef3c970976ae69b07ea33",
+      "exact_skus": ["RF32CG5B10SRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF32CG5B10**", "model_token_raw": "RF32CG5B10**",
+      "model_bbox": [[429.0, 175.5], [543.5, 174.0], [543.5, 189.0], [429.0, 190.0]], "model_confidence_raw": 0.99931,
+      "model_visual_transcription": "RF32CG5B10**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 30.5 Cubic Feet",
+      "capacity_bbox": [[410.5, 192.0], [543.0, 192.0], [543.0, 205.5], [410.5, 205.5]],
+      "capacity_visual_amount": 30.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "0eb5ed1a436698ee7635209b7ce0b9114fa5771c63289c6dfe8674bf575f730d",
+      "exact_skus": ["RS70H27SDRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RS70H27SD*", "model_token_raw": "RS70H27SD*",
+      "model_bbox": [[302.5, 98.0], [381.5, 98.0], [381.5, 109.5], [302.5, 109.5]], "model_confidence_raw": 0.99942,
+      "model_visual_transcription": "RS70H27SD*", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 27.4 Cubic Feet",
+      "capacity_bbox": [[279.0, 109.5], [382.0, 109.5], [382.0, 122.5], [279.0, 122.5]],
+      "capacity_visual_amount": 27.4, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "1833679d5288ae622beda869971fe410e75375bf4b274d38b9faea3c41694382",
+      "exact_skus": ["RF32CG5D00SRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF32CG5D00**", "model_token_raw": "RF32CG5D00**",
+      "model_bbox": [[293.5, 100.5], [382.0, 99.5], [382.0, 111.5], [294.0, 112.5]], "model_confidence_raw": 0.99519,
+      "model_visual_transcription": "RF32CG5D00**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 31.5 Cubic Feet",
+      "capacity_bbox": [[280.0, 113.0], [382.0, 113.0], [382.0, 124.5], [280.0, 124.5]],
+      "capacity_visual_amount": 31.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "1d9e4e2cec6a71a0741bc8d75bfc6724cf2e2f868a25bc92f92a47229a240e52",
+      "exact_skus": ["RF32CG5900SRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF32CG5900**", "model_token_raw": "RF32CG5900**",
+      "model_bbox": [[431.0, 172.0], [545.5, 170.5], [546.0, 185.5], [431.0, 186.5]], "model_confidence_raw": 0.95695,
+      "model_visual_transcription": "RF32CG5900**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 30.0 Cubic Feet",
+      "capacity_bbox": [[410.0, 187.5], [546.0, 187.0], [546.0, 202.5], [410.0, 203.0]],
+      "capacity_visual_amount": 30.0, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "1dbc5857bcfc62ac306b44ebbebbf965db8509de96cfa6efb5d20cc33b6bd0c3",
+      "exact_skus": ["RF27CG5010S9AA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF27CG5010**", "model_token_raw": "RF27CG5010**",
+      "model_bbox": [[432.5, 173.5], [547.0, 172.0], [547.5, 187.0], [432.5, 188.0]], "model_confidence_raw": 0.97344,
+      "model_visual_transcription": "RF27CG5010**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 26.5 Cubic Feet",
+      "capacity_bbox": [[411.5, 188.5], [547.0, 188.0], [547.0, 203.5], [411.5, 204.0]],
+      "capacity_visual_amount": 26.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "1f326b7d083f6d07a6eb27dcb845151a472b036a03a33a9bcc07893c2698be85",
+      "exact_skus": ["RT70F18LRSRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RT70F18LR**", "model_token_raw": "RT70F18LR**",
+      "model_bbox": [[435.0, 174.5], [538.5, 173.0], [538.5, 188.0], [435.0, 189.0]], "model_confidence_raw": 0.99858,
+      "model_visual_transcription": "RT70F18LR**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 17.5 Cubic Feet",
+      "capacity_bbox": [[407.5, 190.0], [538.5, 190.0], [538.5, 205.0], [407.5, 205.0]],
+      "capacity_visual_amount": 17.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "2f618dc1ecae19d06d65509d9f406054645070bacb8f537a8a304ed64aa9f3ac",
+      "exact_skus": ["RS27T5200SG/AA", "RS27T5200SR/AA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 1, "model_text_raw": "Model RS27T5200**", "model_token_raw": "RS27T5200**",
+      "model_bbox": [[11.18359375, 84.80682373046875], [380.013671875, 84.80682373046875], [380.013671875, 134.96682739257812], [11.18359375, 134.96682739257812]], "model_confidence_raw": null,
+      "model_visual_transcription": "RS27T5200**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 1, "capacity_text_raw": "Capacity: 27.4 Cubic Feet",
+      "capacity_bbox": [[11.18359375, 84.80682373046875], [380.013671875, 84.80682373046875], [380.013671875, 134.96682739257812], [11.18359375, 134.96682739257812]],
+      "capacity_visual_amount": 27.4, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_EMBEDDED_TEXT_SPAN",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "33eb99b1eca6e19c947cab88c72b6efbc4c4b0c99d19d22be15fd58d9e783016",
+      "exact_skus": ["RF25C5A01SRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF25C5A01**", "model_token_raw": "RF25C5A01**",
+      "model_bbox": [[302.0, 100.5], [383.5, 99.5], [383.5, 111.5], [302.0, 112.5]], "model_confidence_raw": 0.99181,
+      "model_visual_transcription": "RF25C5A01**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 24.5 Cubic Feet",
+      "capacity_bbox": [[279.5, 113.0], [381.5, 113.0], [381.5, 124.5], [279.5, 124.5]],
+      "capacity_visual_amount": 24.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "36f77a629b98f9502c11767ebc2e9e42a8f1f01872e12fc1676a3d3e26b8a6ff",
+      "exact_skus": ["RF70H25KERAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF70H25KE*", "model_token_raw": "RF70H25KE*",
+      "model_bbox": [[303.0, 100.5], [381.5, 100.5], [381.5, 112.0], [303.0, 112.0]], "model_confidence_raw": 0.99865,
+      "model_visual_transcription": "RF70H25KE*", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 24.5 Cubic Feet",
+      "capacity_bbox": [[279.5, 113.0], [381.5, 113.0], [381.5, 124.5], [279.5, 124.5]],
+      "capacity_visual_amount": 24.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "38e3cf98557103ee45be5dd4d2554e5d32dad0a9f1cd6610e3318eee855b4177",
+      "exact_skus": ["RF32CG5B30SRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF32CG5B30**", "model_token_raw": "RF32CG5B30**",
+      "model_bbox": [[293.5, 100.5], [382.0, 99.5], [382.0, 111.5], [294.0, 112.5]], "model_confidence_raw": 0.98672,
+      "model_visual_transcription": "RF32CG5B30**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 30.5 Cubic Feet",
+      "capacity_bbox": [[280.0, 113.0], [382.0, 113.0], [382.0, 124.5], [280.0, 124.5]],
+      "capacity_visual_amount": 30.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-01"}
+    },
+    {
+      "pdf_sha256": "3cd081cdc675f6878d17fa74074eb5c21037f4a0fb865196f95569c6dd215cac", "exact_skus": ["RF70F29DERAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF70F29DE*", "model_token_raw": "RF70F29DE*", "model_bbox": [[437.5, 174.5], [538.5, 173.0], [538.5, 188.0], [437.5, 189.0]], "model_confidence_raw": 0.99551, "model_visual_transcription": "RF70F29DE*", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 28.9 Cubic Feet", "capacity_bbox": [[407.0, 189.5], [539.0, 189.5], [539.0, 206.0], [407.0, 206.0]], "capacity_visual_amount": 28.9, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "3f0a9d21947c986f9a45c611043bfc67b92bdb75974e77acaea81c89dcce02e9", "exact_skus": ["RF29DB990012AA", "RF29DB9900QDAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF29DB9900**", "model_token_raw": "RF29DB9900**", "model_bbox": [[427.0, 176.0], [536.5, 174.5], [536.5, 190.0], [427.0, 191.0]], "model_confidence_raw": 0.99329, "model_visual_transcription": "RF29DB9900**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 28.6 Cubic Feet", "capacity_bbox": [[407.0, 192.5], [536.0, 192.5], [536.0, 206.0], [407.0, 206.0]], "capacity_visual_amount": 28.6, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "4100c4b1718282d5462ef4686f1be304c534693364f8750755cb50cdacfe7782", "exact_skus": ["RT70F18LASRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RT70F18LA**", "model_token_raw": "RT70F18LA**", "model_bbox": [[434.0, 177.5], [539.0, 175.5], [539.0, 190.5], [434.0, 192.0]], "model_confidence_raw": 0.99575, "model_visual_transcription": "RT70F18LA**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 17.5 Cubic Feet", "capacity_bbox": [[407.5, 193.5], [538.0, 193.5], [538.0, 207.0], [407.5, 207.0]], "capacity_visual_amount": 17.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "41630bbf339bcacc72a5c471157c9f89a0b37e7f5cb4ac939f83b736d76d1f56", "exact_skus": ["RF29BB860012AA", "RF29BB86004MAA", "RF29BB8600QLAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF29BB8600**", "model_token_raw": "RF29BB8600**", "model_bbox": [[444.0, 166.5], [566.0, 166.0], [566.0, 181.0], [444.0, 181.5]], "model_confidence_raw": 0.98096, "model_visual_transcription": "RF29BB8600**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 28.8 Gubic Feet", "capacity_bbox": [[421.0, 185.0], [566.5, 185.0], [566.5, 200.0], [421.0, 200.0]], "capacity_visual_amount": 28.8, "capacity_review": "OCR_GUBIC_SUBSTITUTION_VISUALLY_CUBIC_SELECTION_WITHHELD",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "41cac721518d82eb617b26f22bb4c7a22e6eaf87d7df60a999abccb3b8bfeaec", "exact_skus": ["RZ11M7074SA/AA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RZ11M7074**", "model_token_raw": "RZ11M7074**", "model_bbox": [[447.0, 165.5], [562.0, 164.5], [562.5, 179.0], [447.0, 180.5]], "model_confidence_raw": 0.97711, "model_visual_transcription": "RZ11M7074**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 7, "capacity_text_raw": "Capacity: 11.4 Cubic Feet", "capacity_bbox": [[417.0, 181.5], [563.0, 180.5], [563.5, 198.5], [417.0, 199.5]], "capacity_visual_amount": 11.4, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "455a4bf604ac71dac6615f2cf88801a084d3c1486771b0b34e076f4b7995b44c", "exact_skus": ["RF70H25HERAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF70H25HE*", "model_token_raw": "RF70H25HE*", "model_bbox": [[303.0, 100.5], [381.5, 100.5], [381.5, 112.0], [303.0, 112.0]], "model_confidence_raw": 0.99851, "model_visual_transcription": "RF70H25HE*", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 23.5 Cubic Feet", "capacity_bbox": [[279.5, 113.0], [381.5, 113.0], [381.5, 124.5], [279.5, 124.5]], "capacity_visual_amount": 23.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "52beddac8ae132fe46b8a5deecb8502f3aac04a04ba2380a5419324069a55167", "exact_skus": ["RM80F23VMRAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RM80F23VM*", "model_token_raw": "RM80F23VM*", "model_bbox": [[438.0, 177.0], [541.0, 177.0], [541.0, 190.5], [438.0, 190.5]], "model_confidence_raw": 0.99959, "model_visual_transcription": "RM80F23VM*", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 23.5 Cubic Feet", "capacity_bbox": [[409.0, 192.5], [542.0, 192.5], [542.0, 207.5], [409.0, 207.5]], "capacity_visual_amount": 23.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "54ce81d35ff0d4f0a7e4607a72d18782fa93842d92ba80bf2f7706536d185b66", "exact_skus": ["RF23DB990012AA", "RF23DB9900QDAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF23DB9900**", "model_token_raw": "RF23DB9900**", "model_bbox": [[426.5, 174.5], [536.0, 174.5], [536.0, 189.0], [426.5, 189.0]], "model_confidence_raw": 0.9998, "model_visual_transcription": "RF23DB9900**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 22.5 Cubic Feet", "capacity_bbox": [[405.0, 189.5], [536.5, 189.5], [536.5, 206.0], [405.0, 206.0]], "capacity_visual_amount": 22.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "6077ca27d13e79e857de3c3738ade19da7b99d4bf27b1336692a1f813479b313", "exact_skus": ["RF24BB6600QLAA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF24BB6600**", "model_token_raw": "RF24BB6600**", "model_bbox": [[440.0, 161.5], [561.5, 160.5], [562.0, 175.0], [440.0, 176.5]], "model_confidence_raw": 0.99661, "model_visual_transcription": "RF24BB6600**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 24.0 Cubic Feet", "capacity_bbox": [[417.5, 178.5], [562.0, 178.5], [562.0, 193.5], [417.5, 193.5]], "capacity_visual_amount": 24.0, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
+    },
+    {
+      "pdf_sha256": "63515c1339959a99e21a98ac0d8aa743a4267a997ea7c0090b177bba9e4cc3ed", "exact_skus": ["RF25C5551SR/AA"],
+      "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
+      "model_detection": 6, "model_text_raw": "Model RF25C5551", "model_token_raw": "RF25C5551", "model_bbox": [[449.0, 163.0], [552.0, 163.0], [552.0, 177.5], [449.0, 177.5]], "model_confidence_raw": 0.99583, "model_visual_transcription": "RF25C5551**", "model_review": "OCR_WILDCARD_LOSS_IDENTITY_NOT_EVALUATED",
+      "capacity_detection": 9, "capacity_text_raw": "Capacity: 24.5 Cubic Feet", "capacity_bbox": [[415.5, 180.0], [561.5, 179.0], [562.0, 195.5], [415.5, 196.5]], "capacity_visual_amount": 24.5, "capacity_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE",
+      "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
     }
   ],
   "canonical_capacity_enabled": false,

@@ -371,6 +371,17 @@ on every next-step prompt. Same-task model changes should continue existing work
   selection summary and refreshed quality profile. This validates that future
   label-review batches can update coverage on a GitHub-hosted runner without
   recollecting Samsung or EPA sources.
+- EnergyGuide visual-review batches 01 and 02 covered 20 additional unique PDF
+  hashes and 25 exact SKUs from the preserved artifact. Offline replay now
+  selects annual energy for 39/75 SKUs across 26/58 PDF hashes and capacity for
+  37/75 SKUs across 26/58 hashes. The open queue fell from 54 to 35 hashes: 31
+  need both numeric fields, one needs annual energy only, one needs capacity
+  only, and the two RF90F hashes retain their explicit two-pattern model
+  ambiguity. RF29BB8600** visibly says `Capacity: 28.8 Cubic Feet`, while its
+  preserved OCR says `Gubic`; annual energy is bound but capacity remains
+  NOT_OBSERVED because the selector does not silently repair OCR text. Next:
+  continue batched visual review, then make a separate explicit decision on
+  visually confirmed capacity OCR substitutions.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
