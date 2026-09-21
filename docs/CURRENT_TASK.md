@@ -479,6 +479,21 @@ on every next-step prompt. Same-task model changes should continue existing work
   The full pilot auto-runs on source/assessment changes; direct edits to its
   orchestration script require manual dispatch.
 
+- Dishwasher work has moved to separate GitHub-hosted jobs to keep each source
+  step short. Source reconnaissance run `35609221806` passed in about 40 seconds.
+  Exact-SKU PDP collection is implemented in `g3-dishwasher-collection.yml` and
+  consumes the source-recon artifact; no refrigerator population is revisited.
+  EnergyGuide retrieval is implemented in `g3-dishwasher-energyguide-collection.yml`
+  and downloads each distinct Support URL once, recording verified PDF SHA-256
+  and all SKU/document links. The user confirmed the latest EnergyGuide retrieval
+  run succeeded; run-level counts have not yet been inspected in this session.
+- Next dishwasher checkpoint: observe each byte-distinct PDF once using PyMuPDF
+  embedded text and page coordinates, with RapidOCR fallback only for pages
+  lacking embedded text. Preserve raw candidates and layout proposals with a
+  2x page preview; expose US `EnergyGuide` and Canadian `EnerGuide` heading
+  locations without inferring crop bounds or selecting values. No assessment.
+  Recommended implementation model: Terra medium; result review: Luna low.
+
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
 Local test env PYTHONPATH=src (add scripts for checks/g2).

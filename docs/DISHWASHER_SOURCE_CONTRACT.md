@@ -87,3 +87,28 @@ Final 28-test hosted dishwasher validation PASS:
 https://github.com/Empty-Bell/RDA/actions/runs/35103625881
 commit 629e3a6a21baa1a39f03e4bd61d0435640b30189, job 104819058726.
 All four live source checks and artifact upload passed on cold hosted Ubuntu.
+
+## Current exact-SKU collection and label observation path
+
+The G3 dishwasher source reconnaissance, exact-SKU PDP collection, and
+Support-declared EnergyGuide PDF retrieval are separate hosted workflows. The
+PDP collection binds each current PF exact SKU to its own final PDP URL, JSON-LD
+identity, and Specs/Support bridge record. The document collector consumes that
+successful artifact, downloads each distinct URL once, verifies PDF bytes, and
+records SHA-256 links back to every SKU/document row.
+
+The next observation workflow consumes the successful PDF retrieval artifact,
+verifies each source PDF hash, and processes each byte-distinct PDF once. It
+preserves per-page embedded text and text coordinates; RapidOCR is used only
+when a page has no embedded text. For every page it preserves source spans,
+bounding boxes, OCR confidence, raw annual-energy/model candidates, layout
+proposals, and a 2x preview image. It marks literal `EnergyGuide` and
+`EnerGuide` heading candidates independently so the combined US/Canada label
+page can be reviewed spatially. Heading coordinates do not define crop bounds,
+select a value, or establish model identity. Field selection, identity matching,
+and compliance remain `NOT_EVALUATED`.
+
+This is a source-observation step, not the final dishwasher rule setup. The
+hosted output must first show what the US/Canada label layout and OCR candidates
+look like across the collected PDFs. Then approve a bounded US-area and
+annual-energy selection contract before comparing label values with PDP or EPA.
