@@ -1,0 +1,36 @@
+name: G3 dishwasher EPA current source capture
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [G3 dishwasher EnergyGuide text observation]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Capture official EPA Samsung dishwasher rows
+        run: python scripts/g3_dishwasher_epa_capture.py --out runtime/g3-dishwasher/epa
+      - name: Preserve EPA source evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-dishwasher-epa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-dishwasher/epa/
+          retention-days: 14
+          if-no-files-found: error

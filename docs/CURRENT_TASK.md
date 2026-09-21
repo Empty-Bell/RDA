@@ -500,6 +500,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   `REVIEW_REQUIRED`; no value is selected and no finding is emitted. It starts
   only from a successful observation `workflow_run` or manual dispatch, so a
   code push cannot race ahead of the first successful observation artifact.
+- EPA source capture now runs after successful dishwasher observation through
+  `g3-dishwasher-epa-capture.yml`. It stores the official `q8py-6w3f` metadata
+  and the current Samsung-filtered rows with raw SHA-256 hashes. It is source
+  evidence only; exact model matching, current certification interpretation,
+  and assessment are not enabled.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
