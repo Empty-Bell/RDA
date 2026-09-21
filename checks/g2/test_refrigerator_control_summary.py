@@ -27,6 +27,7 @@ class RefrigeratorControlSummaryTests(unittest.TestCase):
                                                 "findings_by_severity": {"HIGH": 1, "MEDIUM": 1, "LOW": 0}})
         self.assertEqual(report["rows"][0]["refrigerator_control_summary"]["controls"]["energyguide_model_pattern"]["outcome"], "OUT_OF_SCOPE")
         self.assertEqual(report["rows"][1]["refrigerator_control_summary"]["controls"]["energyguide_model_pattern"]["outcome"], "PASS")
+        self.assertEqual(len(report["refrigerator_control_summary"]["records"]), 2)
         self.assertFalse(report["assessment_enabled"])
 
     def test_rejects_mixed_run_or_incomplete_control_coverage(self):

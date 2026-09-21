@@ -110,5 +110,8 @@ def add_control_summary(report: dict[str, Any], summary: dict[str, Any]) -> dict
                        "findings_by_severity": {key: severity_counts.get(key, 0) for key in ("HIGH", "MEDIUM", "LOW")}}
     if summary.get("counts") != expected_counts:
         raise ValueError("Control summary counts do not replay")
-    report["refrigerator_control_summary"] = {key: summary[key] for key in ("contract", "source_run_id", "coverage", "counts", "overall_product_compliance")}
+    report["refrigerator_control_summary"] = {
+        key: summary[key]
+        for key in ("contract", "source_run_id", "coverage", "counts", "overall_product_compliance", "records")
+    }
     return report
