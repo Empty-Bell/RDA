@@ -317,6 +317,26 @@ on every next-step prompt. Same-task model changes should continue existing work
   cap. A successful full run is required before recording PDP identity coverage
   as complete; its accompanying EnergyGuide observations remain source evidence
   until the separate label/OCR decision gates are accepted.
+- G2a full hosted run
+  [35555806408](https://github.com/Empty-Bell/RDA/actions/runs/35555806408)
+  passed at commit `c0e46ca`: 75/75 exact SKUs verified, 0 failed and 0
+  unattempted. Artifact `g2-pilot-35555806408-1` (ID `10620777089`) contains
+  75 parsed EnergyGuide facts and is about 51 MB. This completes canonical
+  refrigerator population-to-PDP identity coverage; it does not complete G2b.
+- G2b data-quality profile: 75 parsed EnergyGuide facts map to 58 byte-distinct
+  PDFs; 71 SKUs require RapidOCR and 4 use embedded text. Current byte-bound
+  review coverage yields annual energy VALUE for 8 SKUs across 4 PDF hashes and
+  capacity VALUE for 9 SKUs across 5 hashes. The remaining 67/66 values stay
+  NOT_OBSERVED. Raw model is VALUE for 69 SKUs; six RF90F SKUs share two PDFs
+  that contain two model-pattern candidates each, so identity remains withheld.
+  `scripts/g2_label_quality_report.py` and the executed notebook
+  `notebooks/g2_energyguide_quality.ipynb` reproduce this profile. The offline
+  quality-review workflow reads an existing successful G2 artifact and does not
+  recollect Samsung/EPA sources.
+- Next G2b work: generate a PDF-hash review queue for the remaining 54 annual-
+  energy and 53 capacity hashes, preserving exact-SKU membership. Review and
+  approve one byte-distinct PDF/panel once, then bind only explicitly covered
+  exact SKUs. Do not infer model identity for the two RF90F ambiguous hashes.
 - The source-only Energy Star workflow is manual to avoid duplicating its full
   collection on every code push; the combined G2 pilot owns same-run reporting.
 
