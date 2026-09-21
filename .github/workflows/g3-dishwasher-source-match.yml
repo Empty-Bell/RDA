@@ -1,0 +1,47 @@
+name: G3 dishwasher source match
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [G3 dishwasher EPA current source capture]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_dishwasher_source_match.py'
+      - '.github/workflows/g3-dishwasher-source-match.yml'
+permissions:
+  actions: read
+  contents: read
+jobs:
+  match:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      GH_TOKEN: ${{ github.token }}
+      EPA_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.epa_run_id || '' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with: {python-version-file: '.python-version'}
+      - name: Download latest successful source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$EPA_RUN_ID" ]; then EPA_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dishwasher-epa-capture.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; fi
+          mkdir -p runtime/g3/match/epa runtime/g3/match/obs
+          for spec in "epa:$EPA_RUN_ID:g3-dishwasher-epa-" "obs::g3-dishwasher-energyguide-observation-"; do
+            IFS=: read kind run prefix <<< "$spec"
+            if [ -z "$run" ]; then run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dishwasher-energyguide-observation.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; fi
+            aid="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run}/artifacts" --jq "[.artifacts[]|select(.expired==false)|select(.name|startswith(\"$prefix\"))]|sort_by(.created_at)|last|.id")"
+            test -n "$aid"; target="runtime/g3/match/$kind"; gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${aid}/zip" > "$target/a.zip"; unzip -q "$target/a.zip" -d "$target"; if [ "$kind" = obs ]; then echo "OBS_DIR=$(dirname "$(find "$target" -name sku-document-index.json -print -quit)")" >> "$GITHUB_ENV"; else echo "EPA_DIR=$(dirname "$(find "$target" -name samsung-current-rows.json -print -quit)")" >> "$GITHUB_ENV"; fi
+          done
+      - name: Build automatic current EPA candidate match
+        run: python scripts/g3_dishwasher_source_match.py --observation-root "$OBS_DIR" --epa-root "$EPA_DIR" --out runtime/g3/match/report
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-dishwasher-source-match-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3/match/report/
+          retention-days: 14
