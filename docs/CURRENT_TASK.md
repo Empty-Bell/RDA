@@ -441,6 +441,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   rejects an execution-ID, exact-SKU-coverage or display-count mismatch and does
   not enable whole-product compliance. Hosted ubuntu-24.04 run 35566584490 passed
   at `be6277e`; artifact `g2-pilot-35566584490-1` (ID 10624737882) is 51.3 MB.
+- The two manually reviewed multi-pattern EnergyGuide labels now have a separate,
+  deliberately narrow model-inclusion assessment. It covers only the two
+  hash-bound RF90F labels and their six listed SKUs. After approved terminal
+  `AA` removal, a SKU is PASS when either explicitly printed pattern matches
+  positionally (`*` is exactly one uppercase letter or digit): `RF90F23AEWAA`,
+  `RF90F23AECEAA`, `RF90F23AECRAA`, `RF90F29AEWAA`, `RF90F29AECEAA`, and
+  `RF90F29AECRAA` all pass. This is not a general wildcard identity rule and
+  does not alter numeric LOW or MEDIUM findings. The next step is hosted
+  ubuntu-24.04 validation of this canonical-report section.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

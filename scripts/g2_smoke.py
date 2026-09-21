@@ -38,6 +38,8 @@ from g2_epa_refrigerator_numeric_capture import capture_from_binding, replay_cap
 from g2_energyguide_numeric_comparison import build_comparison_from_inputs
 from g2_energyguide_numeric_assessment import build_assessment as build_numeric_assessment
 from g2_energyguide_numeric_report_adapter import attach_numeric_assessment, add_numeric_section
+from g2_energyguide_model_pattern_assessment import build_assessment as build_model_pattern_assessment
+from g2_energyguide_model_report_adapter import attach_model_pattern_assessment, add_model_pattern_section
 
 
 def main():
@@ -652,9 +654,15 @@ def main():
             numeric_assessment_path,
             artifact_reference=numeric_assessment_path.relative_to(out).as_posix(),
         )
+        model_pattern_assessment = build_model_pattern_assessment(bundle, capacity_reviews)
+        model_pattern_path = energy_star_out / "model-pattern-assessment.json"
+        with model_pattern_path.open("x", encoding="utf-8", newline="\n") as stream:
+            stream.write(dumps(model_pattern_assessment))
+        model_pattern_section = attach_model_pattern_assessment(bundle, model_pattern_assessment, model_pattern_path)
         report = summarize_bundle(bundle)
         add_energy_star_section(report, energy_star_section)
         add_numeric_section(report, numeric_section)
+        add_model_pattern_section(report, model_pattern_section)
         verify_report_source_observations(bundle, report)
         for name, data in [("bundle.json", bundle), ("report.json", report)]:
             with (out / name).open("x", encoding="utf-8", newline="\n") as stream:
@@ -686,6 +694,9 @@ def main():
             numeric_assessment_counts=numeric_section["counts"]["display"],
             numeric_assessment_coverage=numeric_section["coverage"],
             numeric_assessment_sha256=numeric_section["source_artifact"]["sha256"],
+            model_pattern_assessment_counts=model_pattern_section["counts"]["display"],
+            model_pattern_assessment_coverage=model_pattern_section["coverage"],
+            model_pattern_assessment_sha256=model_pattern_section["source_artifact"]["sha256"],
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),
         )
     except Exception as error:

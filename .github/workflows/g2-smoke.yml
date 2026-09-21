@@ -18,6 +18,10 @@ on:
       - 'scripts/g2_energyguide_numeric_comparison.py'
       - 'scripts/g2_energyguide_numeric_assessment.py'
       - 'scripts/g2_energyguide_numeric_report_adapter.py'
+      - 'scripts/g2_energyguide_model_pattern_assessment.py'
+      - 'scripts/g2_energyguide_model_report_adapter.py'
+      - 'scripts/g2_samsung_suffix.py'
+      - 'docs/evidence/g2-capacity-model-review.json'
       - 'scripts/claim_recon.py'
       - 'scripts/source_recon.py'
       - 'scripts/g2_label_activation.py'
@@ -29,6 +33,8 @@ on:
       - 'checks/g2/test_energyguide_numeric_comparison.py'
       - 'checks/g2/test_energyguide_numeric_assessment.py'
       - 'checks/g2/test_energyguide_numeric_report_adapter.py'
+      - 'checks/g2/test_energyguide_model_pattern_assessment.py'
+      - 'checks/g2/test_energyguide_model_report_adapter.py'
       - '.github/workflows/g2-smoke.yml'
 permissions:
   contents: read
