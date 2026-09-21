@@ -14,6 +14,7 @@ on:
       - 'checks/g2/test_energy_star_source_capture.py'
       - 'checks/g2/test_energy_star_current_index_binding.py'
       - 'checks/g2/test_energy_star_input_review.py'
+      - 'checks/g2/test_energy_star_assessment.py'
       - '.github/workflows/g2-energy-star-source.yml'
 
 permissions:
@@ -42,7 +43,7 @@ jobs:
           mkdir -p runtime
           bash scripts/bootstrap.sh
       - name: Direct-source contract regression
-        run: python -m unittest checks/g2/test_energy_star_source_capture.py checks/g2/test_energy_star_current_index_binding.py checks/g2/test_energy_star_input_review.py -v
+        run: python -m unittest checks/g2/test_energy_star_source_capture.py checks/g2/test_energy_star_current_index_binding.py checks/g2/test_energy_star_input_review.py checks/g2/test_energy_star_assessment.py -v
       - name: Capture current Samsung PF population
         run: python scripts/source_recon.py --family refrigerator
       - name: Capture Samsung source declarations and EPA Current Index

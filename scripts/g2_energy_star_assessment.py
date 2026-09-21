@@ -1,5 +1,7 @@
 """Apply the approved three-point Energy Star rule to complete source inputs."""
 
+from collections import defaultdict
+
 REGISTERED_STATES = {
     "MATCHED_RAW_LITERAL_CANDIDATES",
     "MATCHED_APPROVED_NORMALIZED_LITERAL_CANDIDATES",
@@ -72,6 +74,36 @@ def _decide(registration: str, points: dict) -> tuple[str, str | None, str | Non
     return "NOT_EVALUATED", None, None
 
 
+def _high_review_clusters(records: list[dict]) -> list[dict]:
+    """Group HIGH review rows without changing an exact-SKU verdict."""
+    grouped: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for record in records:
+        if record["severity"] != "HIGH":
+            continue
+        declaration = record.get("source_declaration") or {}
+        family_id = declaration.get("source_family_id")
+        # Missing provenance must never collapse unrelated exact-SKU findings.
+        key = (str(family_id), "FAMILY") if isinstance(family_id, str) and family_id else (
+            record["exact_sku"], "EXACT_SKU"
+        )
+        grouped[key].append(record)
+    output = []
+    for (identifier, grouping_basis), members in sorted(grouped.items()):
+        first = members[0]
+        declaration = first.get("source_declaration") or {}
+        output.append({
+            "severity": "HIGH",
+            "issue_code": HIGH_ISSUE,
+            "grouping_basis": grouping_basis,
+            "source_family_id": identifier if grouping_basis == "FAMILY" else None,
+            "representative_sku": declaration.get("representative_sku"),
+            "exact_skus": sorted(member["exact_sku"] for member in members),
+            "exact_sku_count": len(members),
+            "rule_note": "Each exact SKU remains an independent HIGH finding.",
+        })
+    return output
+
+
 def build_assessment(
     review: dict,
     *,
@@ -116,6 +148,7 @@ def build_assessment(
         outcome, severity, issue_code = _decide(registration["state"], points)
         output.append({
             "exact_sku": record["exact_sku"],
+            "source_declaration": record["epa_current_index_candidate"].get("source_declaration"),
             "epa_current_index_registration": registration,
             "publication_points": points,
             "publication_evidence_refs": source_refs,
@@ -149,5 +182,6 @@ def build_assessment(
         "coverage": {"expected_exact_skus": expected_exact_skus, "evaluated_records": len(output)},
         "overall_product_compliance": "NOT_EVALUATED",
         "counts": dict(sorted(counts.items())),
+        "review_clusters": {"HIGH": _high_review_clusters(output)},
         "records": output,
     }
