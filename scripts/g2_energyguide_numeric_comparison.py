@@ -72,16 +72,11 @@ def _relation(left: float | None, right: float | None) -> str:
     return "EQUAL" if Decimal(str(left)) == Decimal(str(right)) else "DIFFERENT"
 
 
-def build_comparison(
-    artifact_zip: Path,
-    selection_replay_path: Path,
-    epa_numeric_path: Path | None = None,
+def build_comparison_from_inputs(
+    bundle: dict[str, Any], replay: dict[str, Any], epa: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    replay = json.loads(selection_replay_path.read_text(encoding="utf-8"))
     if replay.get("contract") != "G2_LABEL_ANNOTATION_REPLAY_V1" or replay.get("status") != "PASS":
         raise ValueError("Successful label selection replay is required")
-    with zipfile.ZipFile(artifact_zip) as archive:
-        bundle = _one_json(archive, "/bundle.json")
     run_id = bundle.get("manifest", {}).get("run_id")
     if replay.get("source", {}).get("execution_run_id") != run_id:
         raise ValueError("Selection replay and bundle run IDs differ")
@@ -106,8 +101,7 @@ def build_comparison(
         for row in replay["capacity_selection_summary"]["records"]
     }
     epa_records = None
-    if epa_numeric_path is not None:
-        epa = json.loads(epa_numeric_path.read_text(encoding="utf-8"))
+    if epa is not None:
         if (epa.get("contract") != "G2_EPA_REFRIGERATOR_NUMERIC_ENRICHMENT_V1"
                 or epa.get("status") != "PASS"
                 or epa.get("source_run_id") != run_id
@@ -157,7 +151,7 @@ def build_comparison(
         "contract": CONTRACT,
         "status": "PASS",
         "source": {
-            "artifact_zip": artifact_zip.name,
+            "artifact_zip": "IN_MEMORY_SAME_RUN_BUNDLE",
             "execution_run_id": run_id,
             "git_sha": bundle.get("manifest", {}).get("git_sha"),
         },
@@ -165,7 +159,7 @@ def build_comparison(
             "product_group": "refrigerator",
             "grain": "exact_sku",
             "comparison_mode": "OBSERVATION_ONLY_NO_TOLERANCE_NO_FINDINGS",
-            "epa_numeric_enrichment": epa_numeric_path is not None,
+            "epa_numeric_enrichment": epa is not None,
         },
         "counts": {
             "population": len(records),
@@ -176,6 +170,20 @@ def build_comparison(
         "assessment_enabled": False,
         "overall_product_compliance": "NOT_EVALUATED",
     }
+
+
+def build_comparison(
+    artifact_zip: Path,
+    selection_replay_path: Path,
+    epa_numeric_path: Path | None = None,
+) -> dict[str, Any]:
+    replay = json.loads(selection_replay_path.read_text(encoding="utf-8"))
+    with zipfile.ZipFile(artifact_zip) as archive:
+        bundle = _one_json(archive, "/bundle.json")
+    epa = json.loads(epa_numeric_path.read_text(encoding="utf-8")) if epa_numeric_path else None
+    document = build_comparison_from_inputs(bundle, replay, epa)
+    document["source"]["artifact_zip"] = artifact_zip.name
+    return document
 
 
 def render_markdown(document: dict[str, Any]) -> str:

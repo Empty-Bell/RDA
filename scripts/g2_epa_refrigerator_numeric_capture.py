@@ -166,7 +166,7 @@ def build_projection(binding: dict[str, Any], rows: list[dict[str, Any]]) -> dic
     }
 
 
-def replay_capture(artifact_zip: Path, root: Path) -> dict[str, Any]:
+def replay_capture_from_binding(binding: dict[str, Any], root: Path) -> dict[str, Any]:
     projection = json.loads((root / "projection.json").read_text(encoding="utf-8"))
     if projection.get("contract") != CONTRACT or projection.get("status") != "PASS":
         raise ValueError("EPA numeric projection contract is invalid")
@@ -183,13 +183,16 @@ def replay_capture(artifact_zip: Path, root: Path) -> dict[str, Any]:
     after = metadata_projection(bodies["metadata-after"])
     if before != after or before != projection.get("metadata"):
         raise ValueError("EPA numeric metadata does not replay")
-    binding = load_binding(artifact_zip)
     pd_ids = {value for record in binding["records"] for value in candidate_ids(record)}
     rebuilt = build_projection(binding, decode_rows(bodies["rows"], pd_ids))
     for key in ("contract", "status", "source_run_id", "scope", "records", "assessment_enabled"):
         if rebuilt[key] != projection.get(key):
             raise ValueError("EPA numeric projection does not replay")
     return projection
+
+
+def replay_capture(artifact_zip: Path, root: Path) -> dict[str, Any]:
+    return replay_capture_from_binding(load_binding(artifact_zip), root)
 
 
 def query_url(pd_ids: list[str]) -> str:
@@ -204,13 +207,13 @@ def query_url(pd_ids: list[str]) -> str:
     return f"https://data.energystar.gov/resource/{DATASET}.json?" + urllib.parse.urlencode(params)
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("artifact_zip", type=Path)
-    parser.add_argument("--out", type=Path, required=True)
-    args = parser.parse_args()
-    args.out.mkdir(parents=True, exist_ok=True)
-    binding = load_binding(args.artifact_zip)
+def capture_from_binding(binding: dict[str, Any], out: Path) -> dict[str, Any]:
+    """Capture/replay numeric EPA evidence for one same-run Current Index binding."""
+    if binding.get("contract") != "G2_SAME_RUN_ENERGY_STAR_DECLARATION_CURRENT_INDEX_BINDING_V2":
+        raise ValueError("Current Index binding contract is unsupported")
+    if binding.get("scan_query_completeness") != "COMPLETE_OBSERVED_QUERY":
+        raise ValueError("Current Index binding is incomplete")
+    out.mkdir(parents=True, exist_ok=True)
     pd_ids = sorted({value for record in binding["records"] for value in candidate_ids(record)}, key=int)
     if not pd_ids:
         raise ValueError("Current Index binding has no candidate PD_IDs")
@@ -230,7 +233,7 @@ def main() -> int:
         if status != 200 or "json" not in content_type.lower() or not body:
             raise ValueError(f"EPA source unavailable: {name}")
         filename = name + ".json"
-        (args.out / filename).write_bytes(body)
+        (out / filename).write_bytes(body)
         sources.append({
             "name": name,
             "file": filename,
@@ -254,7 +257,17 @@ def main() -> int:
     projection["git_sha"] = os.getenv("GITHUB_SHA")
     projection["sources"] = sources
     projection["metadata"] = before
-    (args.out / "projection.json").write_text(json.dumps(projection, indent=2) + "\n", encoding="utf-8")
+    (out / "projection.json").write_text(json.dumps(projection, indent=2) + "\n", encoding="utf-8")
+    return projection
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("artifact_zip", type=Path)
+    parser.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args()
+    binding = load_binding(args.artifact_zip)
+    capture_from_binding(binding, args.out)
     replay_capture(args.artifact_zip, args.out)
     return 0
 

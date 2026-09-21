@@ -34,6 +34,10 @@ from g2_current_index_candidate_projection import load_replayed_rows
 from g2_energy_star_publication_points import collect_publication_points
 from g2_energy_star_source_capture import capture as capture_energy_star_sources
 from g2_energy_star_report_adapter import attach_energy_star_assessment, add_energy_star_section
+from g2_epa_refrigerator_numeric_capture import capture_from_binding, replay_capture_from_binding
+from g2_energyguide_numeric_comparison import build_comparison_from_inputs
+from g2_energyguide_numeric_assessment import build_assessment as build_numeric_assessment
+from g2_energyguide_numeric_report_adapter import attach_numeric_assessment, add_numeric_section
 
 
 def main():
@@ -621,8 +625,36 @@ def main():
             github_run_id=os.environ["GITHUB_RUN_ID"],
             artifact_reference=assessment_path.relative_to(out).as_posix(),
         )
+        numeric_out = energy_star_out / "epa-numeric"
+        current_index_binding = json.loads(
+            (energy_star_out / "current-index-binding.json").read_bytes()
+        )
+        epa_numeric = capture_from_binding(current_index_binding, numeric_out)
+        replay_capture_from_binding(current_index_binding, numeric_out)
+        numeric_replay = {
+            "contract": "G2_LABEL_ANNOTATION_REPLAY_V1",
+            "status": "PASS",
+            "source": {"execution_run_id": run_id},
+            "label_selection_summary": label_selection_summary,
+            "capacity_selection_summary": capacity_selection_summary,
+        }
+        numeric_comparison = build_comparison_from_inputs(bundle, numeric_replay, epa_numeric)
+        numeric_comparison_path = energy_star_out / "numeric-comparison.json"
+        with numeric_comparison_path.open("x", encoding="utf-8", newline="\n") as stream:
+            stream.write(dumps(numeric_comparison))
+        numeric_assessment = build_numeric_assessment(numeric_comparison)
+        numeric_assessment_path = energy_star_out / "numeric-assessment.json"
+        with numeric_assessment_path.open("x", encoding="utf-8", newline="\n") as stream:
+            stream.write(dumps(numeric_assessment))
+        numeric_section = attach_numeric_assessment(
+            bundle,
+            numeric_assessment,
+            numeric_assessment_path,
+            artifact_reference=numeric_assessment_path.relative_to(out).as_posix(),
+        )
         report = summarize_bundle(bundle)
         add_energy_star_section(report, energy_star_section)
+        add_numeric_section(report, numeric_section)
         verify_report_source_observations(bundle, report)
         for name, data in [("bundle.json", bundle), ("report.json", report)]:
             with (out / name).open("x", encoding="utf-8", newline="\n") as stream:
@@ -651,6 +683,9 @@ def main():
             energy_star_assessment_counts=energy_star_section["display_counts"],
             energy_star_assessment_coverage=energy_star_section["coverage"],
             energy_star_assessment_sha256=energy_star_section["source_artifact"]["sha256"],
+            numeric_assessment_counts=numeric_section["counts"]["display"],
+            numeric_assessment_coverage=numeric_section["coverage"],
+            numeric_assessment_sha256=numeric_section["source_artifact"]["sha256"],
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),
         )
     except Exception as error:

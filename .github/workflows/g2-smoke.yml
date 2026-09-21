@@ -14,6 +14,10 @@ on:
       - 'scripts/g2_energy_star_input_review.py'
       - 'scripts/g2_energy_star_assessment.py'
       - 'scripts/g2_energy_star_report_adapter.py'
+      - 'scripts/g2_epa_refrigerator_numeric_capture.py'
+      - 'scripts/g2_energyguide_numeric_comparison.py'
+      - 'scripts/g2_energyguide_numeric_assessment.py'
+      - 'scripts/g2_energyguide_numeric_report_adapter.py'
       - 'scripts/claim_recon.py'
       - 'scripts/source_recon.py'
       - 'scripts/g2_label_activation.py'
@@ -21,6 +25,10 @@ on:
       - 'checks/g2/test_pdp.py'
       - 'checks/g2/test_energy_star_publication_points.py'
       - 'checks/g2/test_energy_star_report_adapter.py'
+      - 'checks/g2/test_epa_refrigerator_numeric_capture.py'
+      - 'checks/g2/test_energyguide_numeric_comparison.py'
+      - 'checks/g2/test_energyguide_numeric_assessment.py'
+      - 'checks/g2/test_energyguide_numeric_report_adapter.py'
       - '.github/workflows/g2-smoke.yml'
 permissions:
   contents: read
