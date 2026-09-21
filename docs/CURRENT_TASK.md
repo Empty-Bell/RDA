@@ -395,6 +395,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   complete. Overall product compliance remains NOT_EVALUATED until PDP/label
   comparison rules run. Next: hosted-validate this source-selection contract,
   then define the EnergyGuide PDP comparison and finding rules.
+- Hosted ubuntu-24.04 offline replay run
+  [35562382237](https://github.com/Empty-Bell/RDA/actions/runs/35562382237)
+  passed at `cf43651`. Artifact `g2-label-quality-35562382237-1` (ID
+  10622577282) confirms 75/75 annual-energy values and 75/75 capacity values
+  across all 58 PDF hashes under the automatic source-selection contract. The
+  numeric exception queue is empty; only the two already documented RF90F
+  multi-pattern model observations remain outside numeric selection.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
