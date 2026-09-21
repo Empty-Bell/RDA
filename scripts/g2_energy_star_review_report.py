@@ -11,6 +11,7 @@ def render_review_report(assessment: dict) -> str:
         raise ValueError("Energy Star assessment contract unavailable")
     coverage = assessment.get("coverage") or {}
     counts = assessment.get("counts") or {}
+    display_pass = counts.get("PASS", 0) + counts.get("NO_FINDING", 0)
     lines = [
         "# Refrigerator ENERGY STAR review report",
         "",
@@ -19,17 +20,19 @@ def render_review_report(assessment: dict) -> str:
         "This report presents the assessed artifact. It does not recompute certification, "
         "make a legal conclusion, or alter any exact-SKU finding.",
         "",
-        "## Coverage and outcomes",
+        "## Final UI summary",
         "",
-        "| Expected exact SKUs | Evaluated | PASS | LOW | HIGH | No finding | Not evaluated |",
-        "|---:|---:|---:|---:|---:|---:|---:|",
-        "| {expected} | {evaluated} | {pass_count} | {low} | {high} | {no_finding} | {not_evaluated} |".format(
+        "PASS includes source-rule PASS and NO_FINDING outcomes. Raw outcomes remain in "
+        "`energy-star-assessment.json` for audit traceability.",
+        "",
+        "| Expected exact SKUs | Evaluated | PASS | LOW | HIGH | Not evaluated |",
+        "|---:|---:|---:|---:|---:|---:|",
+        "| {expected} | {evaluated} | {display_pass} | {low} | {high} | {not_evaluated} |".format(
             expected=coverage.get("expected_exact_skus", 0),
             evaluated=coverage.get("evaluated_records", 0),
-            pass_count=counts.get("PASS", 0),
+            display_pass=display_pass,
             low=counts.get("LOW", 0),
             high=counts.get("HIGH", 0),
-            no_finding=counts.get("NO_FINDING", 0),
             not_evaluated=counts.get("NOT_EVALUATED", 0),
         ),
         "",

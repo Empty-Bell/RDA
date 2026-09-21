@@ -13,7 +13,7 @@ class EnergyStarReviewReportTests(unittest.TestCase):
             "contract": "G2_ENERGY_STAR_THREE_POINT_ASSESSMENT_V1",
             "source_run_id": "run-1",
             "coverage": {"expected_exact_skus": 2, "evaluated_records": 2},
-            "counts": {"HIGH": 1, "LOW": 1},
+            "counts": {"HIGH": 1, "LOW": 1, "NO_FINDING": 1},
             "review_clusters": {"HIGH": [{
                 "source_family_id": "GROUP-1", "representative_sku": "SKU-H",
                 "exact_sku_count": 1, "exact_skus": ["SKU-H"],
@@ -23,7 +23,8 @@ class EnergyStarReviewReportTests(unittest.TestCase):
             }}],
         }
         report = render_review_report(assessment)
-        self.assertIn("| 2 | 2 | 0 | 1 | 1 | 0 | 0 |", report)
+        self.assertIn("| 2 | 2 | 1 | 1 | 1 | 0 |", report)
+        self.assertIn("PASS includes source-rule PASS and NO_FINDING outcomes.", report)
         self.assertIn("| GROUP-1 | SKU-H | 1 | SKU-H |", report)
         self.assertIn("| SKU-L | plp_logo |", report)
 
