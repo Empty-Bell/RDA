@@ -434,6 +434,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   Hosted ubuntu-24.04 run 35564685897 passed at `8a6dcaf`; artifact
   `g2-label-quality-35564685897-1` (ID 10624030788). G1 common-contract regression
   run 35564685890 passed at the same commit. Canonical report integration is next.
+- Canonical report integration is complete. The full same-run G2 collector now
+  captures p5st numeric evidence only after Current Model Index PD_ID matching,
+  replays its raw hashes, applies the numeric assessment, and attaches the
+  complete 75-SKU section as `energyguide_numeric` in `report.json`. The section
+  rejects an execution-ID, exact-SKU-coverage or display-count mismatch and does
+  not enable whole-product compliance. Hosted ubuntu-24.04 run 35566584490 passed
+  at `be6277e`; artifact `g2-pilot-35566584490-1` (ID 10624737882) is 51.3 MB.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
