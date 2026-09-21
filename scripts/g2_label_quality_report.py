@@ -120,10 +120,10 @@ def build_quality_profile(
 
     annual_value = sum(row["annual_energy_state"] == "VALUE" for row in rows)
     capacity_value = sum(row["capacity_state"] == "VALUE" for row in rows)
-    annual_reviewed_hashes = {
+    annual_value_hashes = {
         row["pdf_sha256"] for row in rows if row["annual_energy_state"] == "VALUE"
     }
-    capacity_reviewed_hashes = {
+    capacity_value_hashes = {
         row["pdf_sha256"] for row in rows if row["capacity_state"] == "VALUE"
     }
     groups = [
@@ -131,8 +131,8 @@ def build_quality_profile(
             "pdf_sha256": digest,
             "exact_skus": sorted(skus),
             "exact_sku_count": len(skus),
-            "annual_energy_value_bound": digest in annual_reviewed_hashes,
-            "capacity_value_bound": digest in capacity_reviewed_hashes,
+            "annual_energy_value_bound": digest in annual_value_hashes,
+            "capacity_value_bound": digest in capacity_value_hashes,
             "source_pdf_entries": sorted(pdf_entries_by_hash.get(digest, [])),
             "source_candidate_entries": sorted(
                 name for name, _candidate in candidates_by_hash.get(digest, [])
@@ -145,9 +145,46 @@ def build_quality_profile(
         raise ValueError("EnergyGuide review source files are missing from artifact")
     population = len(product_skus)
     unique_pdfs = len(groups)
+    annual_missing = population - annual_value
+    capacity_missing = population - capacity_value
+    risks = []
+    if annual_missing:
+        risks.append({
+            "severity": "HIGH",
+            "finding": "Annual-energy source selection is incomplete for downstream comparison",
+            "affected_exact_skus": annual_missing,
+            "affected_pdf_hashes": unique_pdfs - len(annual_value_hashes),
+            "control": "Keep annual energy NOT_OBSERVED until the strict rule or a byte-bound review selects it",
+        })
+    if capacity_missing:
+        risks.append({
+            "severity": "HIGH",
+            "finding": "Capacity source selection is incomplete for downstream comparison",
+            "affected_exact_skus": capacity_missing,
+            "affected_pdf_hashes": unique_pdfs - len(capacity_value_hashes),
+            "control": "Keep capacity NOT_OBSERVED until the strict rule or a byte-bound review selects it",
+        })
+    risks.extend([
+        {
+            "severity": "MEDIUM",
+            "finding": "Most source labels require OCR rather than embedded-text extraction",
+            "affected_exact_skus": engines.get("RapidOCR", 0),
+            "control": "Retain raw OCR, coordinates, PDF hash and reviewed exceptions",
+        },
+        {
+            "severity": "MEDIUM",
+            "finding": "Some labels contain missing or ambiguous raw model candidates",
+            "affected_exact_skus": population - model_states["VALUE"],
+            "control": "Preserve every raw model candidate and withhold model identity until its pattern rule is reviewed",
+        },
+    ])
     return {
         "contract": CONTRACT,
-        "status": "SOURCE_COMPLETE_REVIEW_BINDING_INCOMPLETE",
+        "status": (
+            "SOURCE_AND_NUMERIC_SELECTION_COMPLETE"
+            if not annual_missing and not capacity_missing
+            else "SOURCE_COMPLETE_NUMERIC_SELECTION_INCOMPLETE"
+        ),
         "source": {
             "github_run_id": github_run_id,
             "execution_run_id": manifest["run_id"],
@@ -171,10 +208,10 @@ def build_quality_profile(
             "annual_energy_not_observed": population - annual_value,
             "capacity_values": capacity_value,
             "capacity_not_observed": population - capacity_value,
-            "annual_energy_reviewed_pdf_hashes": len(annual_reviewed_hashes),
-            "annual_energy_unreviewed_pdf_hashes": unique_pdfs - len(annual_reviewed_hashes),
-            "capacity_reviewed_pdf_hashes": len(capacity_reviewed_hashes),
-            "capacity_unreviewed_pdf_hashes": unique_pdfs - len(capacity_reviewed_hashes),
+            "annual_energy_value_pdf_hashes": len(annual_value_hashes),
+            "annual_energy_not_observed_pdf_hashes": unique_pdfs - len(annual_value_hashes),
+            "capacity_value_pdf_hashes": len(capacity_value_hashes),
+            "capacity_not_observed_pdf_hashes": unique_pdfs - len(capacity_value_hashes),
         },
         "rates": {
             "source_fact_coverage": len(facts) / population,
@@ -183,34 +220,7 @@ def build_quality_profile(
         },
         "extraction_engines": dict(sorted(engines.items())),
         "fallback_reasons": dict(sorted(fallbacks.items())),
-        "risks": [
-            {
-                "severity": "HIGH",
-                "finding": "Annual-energy review binding is incomplete for downstream comparison",
-                "affected_exact_skus": population - annual_value,
-                "affected_pdf_hashes": unique_pdfs - len(annual_reviewed_hashes),
-                "control": "Keep annual energy NOT_OBSERVED until byte-identical PDF/panel review is recorded",
-            },
-            {
-                "severity": "HIGH",
-                "finding": "Capacity review binding is incomplete for OCR corroboration",
-                "affected_exact_skus": population - capacity_value,
-                "affected_pdf_hashes": unique_pdfs - len(capacity_reviewed_hashes),
-                "control": "Keep capacity NOT_OBSERVED until byte-identical PDF/panel review is recorded",
-            },
-            {
-                "severity": "MEDIUM",
-                "finding": "Most source labels require OCR rather than embedded-text extraction",
-                "affected_exact_skus": engines.get("RapidOCR", 0),
-                "control": "Retain raw OCR, coordinates, PDF hash and reviewed panel evidence",
-            },
-            {
-                "severity": "MEDIUM",
-                "finding": "Some labels contain missing or ambiguous raw model candidates",
-                "affected_exact_skus": population - model_states["VALUE"],
-                "control": "Preserve every raw model candidate and withhold model identity until its pattern rule is reviewed",
-            },
-        ],
+        "risks": risks,
         "pdf_groups": groups,
         "review_queue": [
             {
@@ -274,12 +284,16 @@ def render_markdown(profile: dict) -> str:
         "|---:|---:|---:|---:|---:|",
         f"| {counts['population_exact_skus']} | {counts['source_pdf_parsed']} | {counts['unique_pdf_hashes']} | {engines.get('RapidOCR', 0)} | {engines.get('PyMuPDF', 0)} |",
         "",
-        "| Review-bound field | VALUE SKUs | NOT_OBSERVED SKUs | Reviewed PDF hashes | Unreviewed PDF hashes |",
+        "| Selected field | VALUE SKUs | NOT_OBSERVED SKUs | VALUE PDF hashes | NOT_OBSERVED PDF hashes |",
         "|---|---:|---:|---:|---:|",
-        f"| Annual energy | {counts['annual_energy_values']} | {counts['annual_energy_not_observed']} | {counts['annual_energy_reviewed_pdf_hashes']} | {counts['annual_energy_unreviewed_pdf_hashes']} |",
-        f"| Capacity | {counts['capacity_values']} | {counts['capacity_not_observed']} | {counts['capacity_reviewed_pdf_hashes']} | {counts['capacity_unreviewed_pdf_hashes']} |",
+        f"| Annual energy | {counts['annual_energy_values']} | {counts['annual_energy_not_observed']} | {counts['annual_energy_value_pdf_hashes']} | {counts['annual_energy_not_observed_pdf_hashes']} |",
+        f"| Capacity | {counts['capacity_values']} | {counts['capacity_not_observed']} | {counts['capacity_value_pdf_hashes']} | {counts['capacity_not_observed_pdf_hashes']} |",
         "",
-        "Source collection is complete. Review binding is incomplete, so missing reviewed values remain NOT_OBSERVED and overall product compliance remains NOT_EVALUATED.",
+        (
+            "Source collection and numeric field selection are complete. Overall product compliance remains NOT_EVALUATED until comparison rules run."
+            if profile["status"] == "SOURCE_AND_NUMERIC_SELECTION_COMPLETE"
+            else "Source collection is complete. Missing numeric selections remain NOT_OBSERVED and overall product compliance remains NOT_EVALUATED."
+        ),
         "",
         "## PDF-hash review queue",
         "",

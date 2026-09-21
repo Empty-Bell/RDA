@@ -76,7 +76,7 @@ class LabelQualityReportTests(unittest.TestCase):
         self.assertEqual(counts["shared_pdf_hash_groups"], 1)
         self.assertEqual(counts["annual_energy_values"], 1)
         self.assertEqual(counts["raw_model_not_observed"], 0)
-        self.assertEqual(counts["annual_energy_unreviewed_pdf_hashes"], 0)
+        self.assertEqual(counts["annual_energy_not_observed_pdf_hashes"], 0)
         self.assertEqual(profile["pdf_groups"][0]["candidates"]["model_values_raw"], ["SKU-**"])
         self.assertEqual(profile["overall_product_compliance"], "NOT_EVALUATED")
         report = render_markdown(profile)

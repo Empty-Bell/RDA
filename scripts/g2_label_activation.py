@@ -5,7 +5,13 @@ from pathlib import Path
 import re
 from typing import Any
 
-from g2_label_selection import select_annual_energy, select_capacity, unavailable
+from g2_label_selection import (
+    select_annual_energy,
+    select_annual_energy_strict,
+    select_capacity,
+    select_capacity_strict,
+    unavailable,
+)
 
 
 def observe_raw_model(candidates: dict[str, Any]) -> dict[str, Any]:
@@ -65,13 +71,15 @@ def select_live_reviewed_energy(
     layout: dict[str, Any],
     reviews: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
-    """Never carry a review forward when current collection bytes differ."""
+    """Use matching visual review, otherwise apply the strict source rule."""
+    if result.get("sha256") != candidates.get("pdf_sha256"):
+        return unavailable("CURRENT_RESULT_AND_CANDIDATES_PDF_DO_NOT_MATCH")
     review = reviews.get(exact_sku)
     if review is None:
-        return unavailable("NO_SAVED_REVIEW_ANNOTATION")
-    if result.get("sha256") != review.get("pdf_sha256"):
-        return unavailable("REVIEW_ARTIFACT_PDF_DOES_NOT_MATCH_CURRENT_COLLECTION")
-    return select_annual_energy(candidates, layout, review)
+        return select_annual_energy_strict(candidates, layout)
+    if result.get("sha256") == review.get("pdf_sha256"):
+        return select_annual_energy(candidates, layout, review)
+    return select_annual_energy_strict(candidates, layout)
 
 
 def select_live_reviewed_capacity(
@@ -80,13 +88,15 @@ def select_live_reviewed_capacity(
     candidates: dict[str, Any],
     reviews: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
-    """Never carry a capacity review forward when current PDF bytes differ."""
+    """Use matching visual review, otherwise apply the strict source rule."""
+    if result.get("sha256") != candidates.get("pdf_sha256"):
+        return unavailable("CURRENT_RESULT_AND_CANDIDATES_PDF_DO_NOT_MATCH")
     review = reviews.get(exact_sku)
     if review is None:
-        return unavailable("NO_SAVED_CAPACITY_REVIEW_ANNOTATION")
-    if result.get("sha256") != review.get("pdf_sha256"):
-        return unavailable("CAPACITY_REVIEW_PDF_DOES_NOT_MATCH_CURRENT_COLLECTION")
-    return select_capacity(candidates, review)
+        return select_capacity_strict(candidates)
+    if result.get("sha256") == review.get("pdf_sha256"):
+        return select_capacity(candidates, review)
+    return select_capacity_strict(candidates)
 
 
 def summarize_selection_outcomes(outcomes: list[dict[str, Any]]) -> dict[str, Any]:
@@ -129,7 +139,7 @@ def summarize_selection_outcomes(outcomes: list[dict[str, Any]]) -> dict[str, An
     records.sort(key=lambda item: (item["exact_sku"], item["source_document_index"]))
     selected = sum(item["annual_energy_observation"]["state"] == "VALUE" for item in records)
     return {
-        "contract": "REVIEW_BOUND_LIVE_OBSERVATION_ONLY",
+        "contract": "STRICT_SOURCE_OR_HASH_REVIEW_OBSERVATION_V1",
         "records": records,
         "counts": {"VALUE": selected, "NOT_OBSERVED": len(records) - selected},
     }
@@ -174,7 +184,7 @@ def summarize_capacity_selection_outcomes(outcomes: list[dict[str, Any]]) -> dic
     records.sort(key=lambda item: (item["exact_sku"], item["source_document_index"]))
     selected = sum(item["capacity_observation"]["state"] == "VALUE" for item in records)
     return {
-        "contract": "REVIEW_BOUND_LIVE_CAPACITY_OBSERVATION_ONLY",
+        "contract": "STRICT_SOURCE_OR_HASH_REVIEW_CAPACITY_OBSERVATION_V1",
         "records": records,
         "counts": {"VALUE": selected, "NOT_OBSERVED": len(records) - selected},
     }

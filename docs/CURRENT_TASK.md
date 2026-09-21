@@ -382,6 +382,19 @@ on every next-step prompt. Same-task model changes should continue existing work
   NOT_OBSERVED because the selector does not silently repair OCR text. Next:
   continue batched visual review, then make a separate explicit decision on
   visually confirmed capacity OCR substitutions.
+- The manual EnergyGuide PDF pass is now closed as a one-time rule-validation
+  exercise. The adopted annual-energy rule selects the single explicit kWh
+  candidate matching the sole annual-caption geometry proposal; unrelated cost
+  numbers no longer create false ambiguity. The adopted capacity rule selects
+  one exact `Capacity: <number> Cubic Feet` descriptor. A hash-bound reviewed
+  exception preserves the observed `Gubic Feet` OCR text while projecting its
+  visually confirmed `Cubic Feet` unit; this is not a general OCR correction.
+  Offline replay selects annual energy and capacity for all 75/75 exact SKUs and
+  all 58/58 byte-distinct PDFs. The numeric review queue is empty. Only the two
+  RF90F multi-pattern model-identity rows remain, and their numeric fields are
+  complete. Overall product compliance remains NOT_EVALUATED until PDP/label
+  comparison rules run. Next: hosted-validate this source-selection contract,
+  then define the EnergyGuide PDP comparison and finding rules.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

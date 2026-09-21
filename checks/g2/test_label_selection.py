@@ -8,7 +8,12 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from energyguide_fields import annual_layout_candidates, label_candidates
-from g2_label_selection import select_annual_energy, select_capacity
+from g2_label_selection import (
+    select_annual_energy,
+    select_annual_energy_strict,
+    select_capacity,
+    select_capacity_strict,
+)
 
 
 class LabelSelectionTests(unittest.TestCase):
@@ -53,11 +58,16 @@ class LabelSelectionTests(unittest.TestCase):
     def test_without_panel_review_never_selects(self):
         self.assertEqual(select_annual_energy(self.candidates, self.layout)["observation"]["state"], "NOT_OBSERVED")
 
-    def test_actual_rf22a4111_cost_candidate_contamination_is_not_selected(self):
+    def test_strict_annual_rule_selects_without_visual_review(self):
+        selected = select_annual_energy_strict(self.candidates, self.layout)
+        self.assertEqual(selected["observation"]["value"]["amount"], 700.0)
+        self.assertEqual(selected["selection_basis"], "STRICT_SOURCE_STRUCTURE")
+
+    def test_unique_layout_match_excludes_nearby_cost_endpoint(self):
         source = json.loads((ROOT / "tests/fixtures/energyguide-fields/rf22a4111-selection-projection.json").read_text(encoding="utf-8"))
-        review = dict(self.review, pdf_sha256=source["pdf_sha256"])
-        result = select_annual_energy(source["candidates"], source["layout"], review)
-        self.assertEqual(result["observation"]["state"], "NOT_OBSERVED")
+        result = select_annual_energy_strict(source["candidates"], source["layout"])
+        self.assertEqual(result["observation"]["value"]["amount"], 585.0)
+        self.assertEqual(result["layout"]["nearest_proposal_raw"]["value_raw"], "585")
 
     def test_nearest_of_multiple_proposals_never_selects(self):
         layout = copy.deepcopy(self.layout)
@@ -92,6 +102,16 @@ class LabelSelectionTests(unittest.TestCase):
         self.assertEqual(selected["observation"]["value"],
                          {"amount": 28.6, "unit": "Cubic Feet", "raw": "Capacity: 28.6 Cubic Feet"})
 
+    def test_strict_capacity_rule_selects_one_exact_descriptor(self):
+        candidates = copy.deepcopy(self.candidates)
+        candidates["capacity_candidates_raw"] = [
+            {"value_raw": "Capacity: 28.6 Cubic Feet", "line": 2},
+            {"value_raw": "Both cost ranges based on models of similar size capacity.", "line": 3},
+        ]
+        selected = select_capacity_strict(candidates)
+        self.assertEqual(selected["observation"]["value"]["amount"], 28.6)
+        self.assertEqual(selected["selection_basis"], "STRICT_SOURCE_STRUCTURE")
+
     def test_capacity_requires_unique_reviewed_explicit_descriptor(self):
         candidates = copy.deepcopy(self.candidates)
         candidates["capacity_candidates_raw"] = [{"value_raw": "Capacity: 28.6 Cubic Feet", "line": 2}]
@@ -104,3 +124,19 @@ class LabelSelectionTests(unittest.TestCase):
                 self.assertEqual(select_capacity(candidates, dict(self.capacity_review(), **change))["observation"]["state"], "NOT_OBSERVED")
         candidates["capacity_candidates_raw"].append({"value_raw": "Capacity: 29 Cubic Feet", "line": 3})
         self.assertEqual(select_capacity(candidates, self.capacity_review())["observation"]["state"], "NOT_OBSERVED")
+
+    def test_hash_bound_review_can_confirm_observed_gubic_ocr_substitution(self):
+        candidates = copy.deepcopy(self.candidates)
+        candidates["capacity_candidates_raw"] = [
+            {"value_raw": "Capacity: 28.8 Gubic Feet", "line": 2},
+            {"value_raw": "Both cost ranges based on models of similar size capacity.", "line": 3},
+        ]
+        review = dict(
+            self.capacity_review("Capacity: 28.8 Gubic Feet"),
+            capacity_visual_amount=28.8,
+            capacity_review="OCR_GUBIC_SUBSTITUTION_VISUALLY_CONFIRMED_CUBIC_FEET",
+        )
+        selected = select_capacity(candidates, review)
+        self.assertEqual(selected["observation"]["value"]["amount"], 28.8)
+        self.assertEqual(selected["source_correction"]["observed"], "Gubic Feet")
+        self.assertEqual(selected["selection_basis"], "HASH_BOUND_VISUAL_REVIEW")

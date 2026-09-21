@@ -1,6 +1,32 @@
 # G2 label-field selection proposal
 
-Status: conservative fixture contract adopted; review-bound annual-energy
+## Current adopted numeric selection contract
+
+The initial manual PDF review was a one-time validation exercise for the source
+selection rules. Normal future runs do not require a person to review every
+label. The current automatic annual-energy rule requires one annual-use caption,
+one geometry proposal, and exactly one explicit kWh candidate whose value equals
+that proposal. Other nearby OCR numbers, such as cost-range endpoints, do not
+block selection when they do not match the caption-linked proposal. The capacity
+rule requires exactly one complete `Capacity: <number> Cubic Feet` descriptor;
+boilerplate text containing the word capacity is ignored.
+
+Both automatic rules retain the current PDF SHA-256, candidate text and layout
+coordinates. Missing, conflicting or structurally invalid candidates remain
+NOT_OBSERVED. A saved visual review can select an exception only when its exact
+SKU and PDF hash match the current collection. The sole current numeric exception
+is the preserved OCR text `Capacity: 28.8 Gubic Feet`: the rendered source visibly
+shows `Cubic Feet`, and its hash-bound review records the observed and reviewed
+strings separately. No general spelling correction is enabled.
+
+Offline replay against full refrigerator artifact 10620777089 selects annual
+energy and capacity for 75/75 exact SKUs across all 58 byte-distinct PDFs. This
+completes numeric source-field selection, not PDP comparison or product
+compliance. The two RF90F documents that explicitly list two model patterns
+remain model-identity exceptions; D01 comparison tolerance and the final
+EnergyGuide assessment rule are still separate decisions.
+
+Historical status at proposal time: conservative fixture contract adopted; review-bound annual-energy
 selection enabled after saved-corpus replay and hosted verification. Capacity/model
 selectors and compliance rules remain disabled. Historical proposal evidence and
 initial checkpoints below describe the state when the proposal was written.

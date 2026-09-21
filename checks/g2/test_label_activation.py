@@ -63,9 +63,10 @@ class LabelActivationTests(unittest.TestCase):
             "NOT_OBSERVED",
         )
 
-    def test_missing_review_annotation_never_selects(self):
+    def test_missing_review_annotation_uses_strict_source_rule(self):
         selected = select_live_reviewed_energy("SKU", self.result, self.candidates, self.layout, {})
-        self.assertEqual(selected["observation"]["state"], "NOT_OBSERVED")
+        self.assertEqual(selected["observation"]["state"], "VALUE")
+        self.assertEqual(selected["selection_basis"], "STRICT_SOURCE_STRUCTURE")
 
     def test_raw_model_token_is_preserved_without_correction_or_identity_matching(self):
         candidates = copy.deepcopy(self.candidates)
@@ -95,7 +96,7 @@ class LabelActivationTests(unittest.TestCase):
             "selection": selection,
         }
         summary = summarize_selection_outcomes([record])
-        self.assertEqual(summary["contract"], "REVIEW_BOUND_LIVE_OBSERVATION_ONLY")
+        self.assertEqual(summary["contract"], "STRICT_SOURCE_OR_HASH_REVIEW_OBSERVATION_V1")
         self.assertEqual(summary["counts"], {"VALUE": 1, "NOT_OBSERVED": 0})
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             summarize_selection_outcomes([record, record])
@@ -107,6 +108,17 @@ class LabelActivationTests(unittest.TestCase):
         review = reviews["RF90F29AEWAA"]
         self.assertEqual(review["model_tokens_raw"], ["RF90F29AE*", "RF90F29AE**"])
         self.assertIn("IDENTITY_NOT_EVALUATED", review["model_review"])
+
+    def test_capacity_without_review_uses_strict_source_rule(self):
+        candidates = copy.deepcopy(self.candidates)
+        candidates["capacity_candidates_raw"] = [
+            {"value_raw": "Capacity: 28.6 Cubic Feet", "line": 0}
+        ]
+        selected = select_live_reviewed_capacity(
+            "SKU", self.result, candidates, {}
+        )
+        self.assertEqual(selected["observation"]["state"], "VALUE")
+        self.assertEqual(selected["selection_basis"], "STRICT_SOURCE_STRUCTURE")
 
     def test_capacity_review_requires_matching_live_bytes(self):
         reviews = load_capacity_review_annotations(

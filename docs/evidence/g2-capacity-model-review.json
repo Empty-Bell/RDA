@@ -293,7 +293,7 @@
       "pdf_sha256": "41630bbf339bcacc72a5c471157c9f89a0b37e7f5cb4ac939f83b736d76d1f56", "exact_skus": ["RF29BB860012AA", "RF29BB86004MAA", "RF29BB8600QLAA"],
       "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true, "page": 0,
       "model_detection": 6, "model_text_raw": "Model RF29BB8600**", "model_token_raw": "RF29BB8600**", "model_bbox": [[444.0, 166.5], [566.0, 166.0], [566.0, 181.0], [444.0, 181.5]], "model_confidence_raw": 0.98096, "model_visual_transcription": "RF29BB8600**", "model_review": "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED",
-      "capacity_detection": 8, "capacity_text_raw": "Capacity: 28.8 Gubic Feet", "capacity_bbox": [[421.0, 185.0], [566.5, 185.0], [566.5, 200.0], [421.0, 200.0]], "capacity_visual_amount": 28.8, "capacity_review": "OCR_GUBIC_SUBSTITUTION_VISUALLY_CUBIC_SELECTION_WITHHELD",
+      "capacity_detection": 8, "capacity_text_raw": "Capacity: 28.8 Gubic Feet", "capacity_bbox": [[421.0, 185.0], [566.5, 185.0], [566.5, 200.0], [421.0, 200.0]], "capacity_visual_amount": 28.8, "capacity_review": "OCR_GUBIC_SUBSTITUTION_VISUALLY_CONFIRMED_CUBIC_FEET",
       "review_source": {"github_run_id": 35555806408, "artifact_id": 10620777089, "run_uuid": "400100dfdff44ecc8d8eb3c569da01da", "render": "pdftoppm -png -r 150", "batch": "2026-09-21-batch-02"}
     },
     {

@@ -12,8 +12,12 @@ on:
     paths:
       - 'scripts/g2_label_quality_report.py'
       - 'scripts/g2_label_replay.py'
+      - 'scripts/g2_label_selection.py'
+      - 'scripts/g2_label_activation.py'
       - 'checks/g2/test_label_quality_report.py'
       - 'checks/g2/test_label_replay.py'
+      - 'checks/g2/test_label_selection.py'
+      - 'checks/g2/test_label_activation.py'
       - 'docs/evidence/g2-label-review-annotations.json'
       - 'docs/evidence/g2-capacity-model-review.json'
       - 'notebooks/g2_energyguide_quality.ipynb'
@@ -45,7 +49,7 @@ jobs:
       - name: Run quality profiler regression
         env:
           PYTHONPATH: src:scripts
-        run: python -m unittest checks/g2/test_label_quality_report.py checks/g2/test_label_replay.py -v
+        run: python -m unittest discover -s checks/g2 -p 'test_label_*.py' -v
       - name: Resolve successful source run and download artifact
         shell: bash
         run: |

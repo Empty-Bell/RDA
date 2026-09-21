@@ -243,7 +243,7 @@ def main():
         original_selection_id, _ = evidence(
             dumps(
                 {
-                    "selection_contract": "REVIEW_BOUND_LIVE_OBSERVATION_ONLY",
+                    "selection_contract": "STRICT_SOURCE_OR_HASH_REVIEW_OBSERVATION_V1",
                     "exact_sku": sku,
                     "pdf_sha256": label_hash,
                     "selection": original_selection,
@@ -256,7 +256,7 @@ def main():
         original_capacity_selection_id, _ = evidence(
             dumps(
                 {
-                    "selection_contract": "REVIEW_BOUND_LIVE_CAPACITY_OBSERVATION_ONLY",
+                    "selection_contract": "STRICT_SOURCE_OR_HASH_REVIEW_CAPACITY_OBSERVATION_V1",
                     "exact_sku": sku,
                     "pdf_sha256": label_hash,
                     "selection": original_capacity_selection,
@@ -506,7 +506,7 @@ def main():
             selection_ref, _ = evidence(
                 dumps(
                     {
-                        "selection_contract": "REVIEW_BOUND_LIVE_OBSERVATION_ONLY",
+                        "selection_contract": "STRICT_SOURCE_OR_HASH_REVIEW_OBSERVATION_V1",
                         "exact_sku": result["exact_sku"],
                         "pdf_sha256": label_hash,
                         "selection": selection,
@@ -520,7 +520,7 @@ def main():
             capacity_selection_ref, _ = evidence(
                 dumps(
                     {
-                        "selection_contract": "REVIEW_BOUND_LIVE_CAPACITY_OBSERVATION_ONLY",
+                        "selection_contract": "STRICT_SOURCE_OR_HASH_REVIEW_CAPACITY_OBSERVATION_V1",
                         "exact_sku": result["exact_sku"],
                         "pdf_sha256": label_hash,
                         "selection": capacity_selection,

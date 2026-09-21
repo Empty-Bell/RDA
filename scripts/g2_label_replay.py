@@ -79,15 +79,15 @@ def replay(
             raise ValueError(f"Preserved candidates are unavailable for {sku}")
         result = {"sha256": digest}
         candidates = candidates_by_hash[digest]
+        layout = layouts_by_hash.get(digest)
+        if layout is None:
+            raise ValueError(f"Preserved layout candidates are unavailable for {sku}")
         annual_review = annual_reviews.get(sku)
         if annual_review is None:
             annual_selection = select_live_reviewed_energy(
-                sku, result, candidates, {}, annual_reviews
+                sku, result, candidates, layout, annual_reviews
             )
         else:
-            layout = layouts_by_hash.get(digest)
-            if layout is None:
-                raise ValueError(f"Preserved layout candidates are unavailable for reviewed {sku}")
             annual_selection = select_live_reviewed_energy(
                 sku, result, candidates, layout, annual_reviews
             )

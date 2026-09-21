@@ -19,7 +19,7 @@
       "pdf_sha256": "7a173cd4228415d307a7d17ccdf419db9879cecec103e1e83b1e38dbcf4298cf",
       "document_count": 1, "all_pages_reviewed": true, "us_panel_verified": true,
       "page": 0, "caption_detection": 24, "number_detection": 22, "unit_detection": 23,
-      "expected_observation": {"state": "NOT_OBSERVED", "reason": "MULTIPLE_TEXT_CANDIDATES_INCLUDING_UNMARKED_COST_ENDPOINT"}
+      "expected_observation": {"state": "VALUE", "amount": 585.0}
     },
     {
       "exact_skus": ["RF22A4221SR/AA"],
