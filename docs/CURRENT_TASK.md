@@ -425,6 +425,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   comparison. The hosted summary confirms EnergyGuide/EPA exact equality for all
   comparable values and shows EPA equal to EnergyGuide for all seven PDP capacity
   differences.
+- Refrigerator numeric assessment is active under the approved rules and issue
+  codes. `PDP_ANNUAL_ENERGY_MISSING` emits LOW; any exact PDP/EnergyGuide capacity
+  difference emits MEDIUM as `PDP_ENERGYGUIDE_CAPACITY_MISMATCH`, with zero
+  tolerance. Independent findings are preserved and the highest severity drives
+  the SKU display. The 75-SKU result is 31 findings across 29 affected SKUs:
+  24 LOW and seven MEDIUM; UI display is 46 PASS, seven MEDIUM and 22 LOW.
+  Hosted ubuntu-24.04 run 35564685897 passed at `8a6dcaf`; artifact
+  `g2-label-quality-35564685897-1` (ID 10624030788). G1 common-contract regression
+  run 35564685890 passed at the same commit. Canonical report integration is next.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

@@ -1,7 +1,6 @@
 # G2 refrigerator EnergyGuide numeric comparison proposal
 
-Status: three-source observation implementation complete; approved severity direction
-recorded; issue-code activation remains separate.
+Status: three-source observation and approved numeric assessment implementation complete.
 
 ## Full-population observation
 
@@ -58,7 +57,14 @@ than being selected from the label. Their common capacity remains usable.
 5. Numeric EPA enrichment is corroboration only. Current Model Index remains the
    sole EPA certification source.
 
-Exact issue-code names and final assessment activation are handled in the next
-rule step. Document presence/accessibility and model identity remain independent
-controls. Pipeline errors remain errors, and no missing comparison value becomes
-PASS.
+The approved issue codes are `PDP_ANNUAL_ENERGY_MISSING` (LOW) and
+`PDP_ENERGYGUIDE_CAPACITY_MISMATCH` (MEDIUM). The full 75-SKU assessment emits
+31 findings across 29 affected SKUs: 24 LOW and seven MEDIUM. Two SKUs retain
+both findings and display MEDIUM. UI counts are 46 PASS, seven MEDIUM and 22 LOW.
+Document presence/accessibility and model identity remain independent controls.
+Pipeline errors remain errors, and no missing comparison value becomes PASS.
+
+Hosted ubuntu-24.04 assessment run 35564685897 passed at `8a6dcaf`; artifact
+`g2-label-quality-35564685897-1` (ID 10624030788) contains the raw EPA numeric
+capture, comparison and assessed JSON/Markdown. Common-contract regression run
+35564685890 also passed at the same commit.

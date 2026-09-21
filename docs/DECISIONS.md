@@ -7,8 +7,10 @@ missing PDP values. The user approved LOW for missing PDP annual energy and
 MEDIUM for every confirmed capacity difference, with exact equality and no
 tolerance. EPA `p5st-her9` corroborates all comparable EnergyGuide values but is
 used only for numeric enrichment after a Current Model Index PD_ID match; Current
-Model Index remains the sole certification source. Exact new issue-code names and
-assessment activation remain disabled until separately recorded.
+Model Index remains the sole certification source. Assessment is active with
+`PDP_ANNUAL_ENERGY_MISSING` (LOW) and
+`PDP_ENERGYGUIDE_CAPACITY_MISMATCH` (MEDIUM). Hosted assessment run 35564685897
+and common-contract regression 35564685890 passed at `8a6dcaf`.
 
 Latest approved EPA publication rule: G2_CURRENT_INDEX_CLAIM_COMPARISON.md is
 authoritative for the user's three-point PLP-logo/PDP-logo/Spec-certification
