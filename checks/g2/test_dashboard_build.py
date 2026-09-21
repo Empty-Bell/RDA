@@ -2,6 +2,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+import json
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -23,6 +24,11 @@ class DashboardBuildTests(unittest.TestCase):
             self.assertEqual(result["summary"]["finding_count"], 2)
             self.assertIn("data/findings.json", result["files"])
             self.assertIn("report_data.csv", result["files"])
+            findings = json.loads((Path(directory) / "data/findings.json").read_text(encoding="utf-8"))
+            self.assertTrue((Path(directory) / findings[0]["public_evidence_url"]).is_file())
+            html = (Path(directory) / "index.html").read_text(encoding="utf-8")
+            self.assertIn("SKU search", html)
+            self.assertIn("Control", html)
 
     def test_rejects_mixed_runs(self):
         bundle, report = self.inputs()
