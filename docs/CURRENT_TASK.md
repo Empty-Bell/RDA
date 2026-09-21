@@ -416,7 +416,8 @@ on every next-step prompt. Same-task model changes should continue existing work
   selected EnergyGuide values: 48/48 annual-energy and 51/51 capacity values are
   exactly equal. All seven PDP/label capacity differences have EPA equal to the
   label and different from PDP. User direction: missing PDP annual energy is LOW;
-  capacity uses exact equality with no tolerance. Assessment activation and exact
+  capacity uses exact equality with no tolerance and each confirmed difference is
+  MEDIUM. Assessment activation and exact
   issue-code naming remain the next rule step.
   Hosted ubuntu-24.04 run 35564075530 passed at `0719f7e`; artifact
   `g2-label-quality-35564075530-1` (ID 10623360729) preserves the raw EPA

@@ -34,6 +34,9 @@ The EPA refrigerator family rows for these seven products exactly corroborate th
 EnergyGuide capacity and annual-energy values. The comparison uses only PD_IDs
 already matched in the same-run Current Model Index binding. `p5st-her9` does not
 become a certification source and does not change an ENERGY STAR assessment.
+The official Current Model Index `8wj2-sec8` schema has 14 identity/status fields
+and exposes neither annual energy nor capacity; these measurements therefore must
+come from the product-family dataset when numeric corroboration is required.
 
 Across the full population, EnergyGuide and EPA are exactly equal for all 48
 comparable annual-energy rows and all 51 comparable capacity rows. Nineteen SKUs
@@ -50,7 +53,8 @@ than being selected from the label. Their common capacity remains usable.
    ENERGY STAR consistency improvement finding. It does not erase the independently
    collected label or EPA value.
 4. Capacity uses exact equality with no tolerance. The seven observed differences
-   are PDP-side inconsistencies because EnergyGuide and EPA agree exactly.
+   are PDP-side inconsistencies because EnergyGuide and EPA agree exactly. Each
+   confirmed capacity difference is a MEDIUM finding.
 5. Numeric EPA enrichment is corroboration only. Current Model Index remains the
    sole EPA certification source.
 
