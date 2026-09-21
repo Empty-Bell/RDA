@@ -271,6 +271,15 @@ on every next-step prompt. Same-task model changes should continue existing work
   sourced from page-0006 for the RF90F rows and page-0001 for RZ11M7074SA/AA.
   All five have zero unsupported patterns; certification and assessment remain
   `NOT_EVALUATED` until the final policy activation step.
+- Final refrigerator Energy Star assessment is active. Hosted ubuntu-24.04
+  run 35547213219 at `50ca9cc` passed; artifact
+  `g2-energy-star-source-35547213219-1`, ID 10617170631, ZIP SHA-256
+  `93084dfa227992b883d86faee4fcd15f943051f9c6dfc36090011dcdb31c8072`.
+  Complete same-run evidence covers 75/75 exact SKUs, with zero missing source
+  references or NOT_EVALUATED records. Results: 43 PASS, 3 LOW consistency
+  findings, 24 HIGH eligibility findings and 5 NO_FINDING. This completes the
+  refrigerator ENERGY STAR publication check only; it is not whole-product
+  compliance PASS and does not complete the remaining G2 or later phases.
 - No agents, LLM runtime, schedule or publication. Standard ubuntu-24.04 x64.
 - Token economy: default Terra medium for bounded source integration/collection;
   Luna low for docs, fixture-only tests and workflow maintenance; Sol medium only

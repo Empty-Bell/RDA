@@ -2,7 +2,7 @@
 
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
 Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI accepted 2026-09-17.
-Phase 2 / G2: RUNNING — observational refrigerator pilot (listing, one PDP/PDF, EPA brand snapshot).
+Phase 2 / G2: RUNNING — the refrigerator Energy Star three-point source assessment is now a completed vertical slice (75/75 exact SKUs); full G2 acceptance, other product families and whole-product decisions remain open.
 Source measurement/claim normalization is integrated into the live pilot:
 run 35174846442 / bd19bfd passed on ubuntu-24.04. PDP facts now retain normalized
 source observations with same-run bridge/raw/derived evidence references; no
@@ -13,7 +13,7 @@ is now bounded to ten deterministic SKUs: run 35175307189 / d884b4c passed on
 ubuntu-24.04 with no selected identity failure; full-population coverage and
 assessment remain next work. See docs/evidence/g2-pdp-coverage-expansion-recon.json.
 Phases 3–7: NOT_STARTED.
-No G2 gate is accepted yet; pilot collection success is not whole-SKU coverage or assessment PASS.
+The Energy Star vertical slice is not whole-product compliance PASS and does not accept the overall G2 gate. Its hosted run 35547213219 passed: 75/75 source-complete exact SKUs, 43 PASS, 3 LOW, 24 HIGH, 5 NO_FINDING, 0 NOT_EVALUATED. See CURRENT_TASK.md and G2_CURRENT_INDEX_CLAIM_COMPARISON.md. Remaining G2 work includes EnergyGuide/OCR and measurement assessment, integrating all applicable checks into the canonical audit/report, and acceptance of complete refrigerator coverage and operational gates.
 Per-SKU PDP identity/coverage checkpoint PASS: run 35173796328 / code 21b621a.
 30 regression tests, 5 verified PDP SKUs / 0 failed / 70 unattempted (75 total).
 105 evidence hashes and population/coverage/report SKU sets verified after

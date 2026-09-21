@@ -128,6 +128,11 @@ makes that boundary explicit.
    it does not decide whole-product compliance. Measurement and OCR policies
    remain separate G2 work.
 
-Next recommended model: Terra medium for milestone 1 and its bounded contracts.
-Use Luna low for documentation-only maintenance and Sol medium only when an
-unresolved comparison or assessment meaning requires a decision.
+Hosted assessment completed in run 35547213219 (artifact ZIP SHA-256
+`93084dfa227992b883d86faee4fcd15f943051f9c6dfc36090011dcdb31c8072`): 75/75
+exact SKUs evaluated, 43 PASS, 3 LOW, 24 HIGH, 5 NO_FINDING, and zero
+NOT_EVALUATED or missing evidence references. This is the refrigerator Energy
+Star publication check, not overall refrigerator compliance. For remaining
+source plumbing or deterministic integration, use Terra medium; use Luna low
+for documentation-only/offline maintenance. Reserve Sol medium for a genuinely
+ambiguous rule or source interpretation.
