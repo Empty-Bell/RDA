@@ -418,6 +418,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   label and different from PDP. User direction: missing PDP annual energy is LOW;
   capacity uses exact equality with no tolerance. Assessment activation and exact
   issue-code naming remain the next rule step.
+  Hosted ubuntu-24.04 run 35564075530 passed at `0719f7e`; artifact
+  `g2-label-quality-35564075530-1` (ID 10623360729) preserves the raw EPA
+  metadata/rows with SHA-256 records, replayed enrichment, and the three-source
+  comparison. The hosted summary confirms EnergyGuide/EPA exact equality for all
+  comparable values and shows EPA equal to EnergyGuide for all seven PDP capacity
+  differences.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
