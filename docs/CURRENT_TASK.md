@@ -453,6 +453,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   attempt (run 35571621828) failed because the smoke runner passed the loaded
   SKU-index map where the assessor expected the original review document. The
   runner now keeps both forms and passes the source document to the assessor.
+- The canonical refrigerator report now also contains a per-SKU control summary.
+  It replays the complete 75-SKU Energy Star publication and numeric sections,
+  and adds the six-SKU reviewed model-pattern section only where it applies.
+  Each control keeps its own result and all HIGH/MEDIUM/LOW findings are
+  retained together; the projection cannot enable overall product compliance.
+  It rejects mixed-run inputs, missing SKU coverage and replay-count changes.
+  Next: validate this report projection on the GitHub-hosted full G2 run, then
+  use it as the stable input for the fixture dashboard.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
