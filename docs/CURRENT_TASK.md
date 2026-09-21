@@ -290,6 +290,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   This is a recommendation, not an automatic model-setting change.
 - Separate cheap offline schema/normalization CI from expensive live collectors.
   Never rerun live collectors for docs-only or pure normalization changes.
+- Energy Star review rendering is separated from source collection. The review
+  workflow downloads the selected successful run's existing artifact and emits
+  `energy-star-review.md`; it also runs after source workflow success. Renderer
+  or review-only changes no longer trigger Samsung/EPA collection. The manual
+  review workflow accepts an optional source run ID and otherwise selects the
+  latest successful source run.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
