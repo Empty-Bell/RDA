@@ -364,6 +364,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   two RF90F hashes stay visible as model-ambiguous even though their numeric
   fields are reviewed. Next: review the ordinary queue one PDF hash at a time,
   starting with dual-field rows, and replay each annotation batch offline.
+- Hosted ubuntu-24.04 offline replay run
+  [35560556408](https://github.com/Empty-Bell/RDA/actions/runs/35560556408)
+  passed at `4d0a445` in under one minute. Artifact
+  `g2-label-quality-35560556408-1` (ID 10622425668) contains the replayed
+  selection summary and refreshed quality profile. This validates that future
+  label-review batches can update coverage on a GitHub-hosted runner without
+  recollecting Samsung or EPA sources.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
