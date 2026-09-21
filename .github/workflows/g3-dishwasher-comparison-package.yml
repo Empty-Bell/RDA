@@ -1,0 +1,42 @@
+name: G3 dishwasher comparison package
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [G3 dishwasher source match]
+    types: [completed]
+    branches: [main]
+permissions:
+  actions: read
+  contents: read
+jobs:
+  package:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      GH_TOKEN: ${{ github.token }}
+      MATCH_RUN_ID: ${{ github.event.workflow_run.id || '' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with: {python-version-file: '.python-version'}
+      - name: Download source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$MATCH_RUN_ID" ]; then MATCH_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dishwasher-source-match.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; fi
+          mkdir -p runtime/g3/pkg/{pdp,obs,epa,match}
+          download(){ run="$1"; prefix="$2"; target="$3"; aid="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run}/artifacts" --jq "[.artifacts[]|select(.expired==false)|select(.name|startswith(\"$prefix\"))]|sort_by(.created_at)|last|.id")"; test -n "$aid"; gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${aid}/zip" > "$target/a.zip"; unzip -q "$target/a.zip" -d "$target"; }
+          download "$MATCH_RUN_ID" "g3-dishwasher-source-match-" runtime/g3/pkg/match
+          obsrun="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dishwasher-energyguide-observation.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; download "$obsrun" "g3-dishwasher-energyguide-observation-" runtime/g3/pkg/obs
+          eparun="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dishwasher-epa-capture.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; download "$eparun" "g3-dishwasher-epa-" runtime/g3/pkg/epa
+          pdprun="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dishwasher-collection.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; download "$pdprun" "g3-dishwasher-collection-" runtime/g3/pkg/pdp
+          echo "MATCH_DIR=$(dirname "$(find runtime/g3/pkg/match -name match-report.json -print -quit)")" >> "$GITHUB_ENV"; echo "OBS_DIR=$(dirname "$(find runtime/g3/pkg/obs -name sku-document-index.json -print -quit)")" >> "$GITHUB_ENV"; echo "EPA_DIR=$(dirname "$(find runtime/g3/pkg/epa -name samsung-current-rows.json -print -quit)")" >> "$GITHUB_ENV"; echo "PDP_DIR=$(dirname "$(find runtime/g3/pkg/pdp -name products.json -print -quit)")" >> "$GITHUB_ENV"
+      - name: Build same-SKU comparison package
+        run: python scripts/g3_dishwasher_comparison_package.py --pdp-root "$PDP_DIR" --observation-root "$OBS_DIR" --epa-root "$EPA_DIR" --match-root "$MATCH_DIR" --out runtime/g3/comparison
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-dishwasher-comparison-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3/comparison/
+          retention-days: 14
