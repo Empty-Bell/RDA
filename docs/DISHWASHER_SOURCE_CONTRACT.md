@@ -112,3 +112,16 @@ This is a source-observation step, not the final dishwasher rule setup. The
 hosted output must first show what the US/Canada label layout and OCR candidates
 look like across the collected PDFs. Then approve a bounded US-area and
 annual-energy selection contract before comparing label values with PDP or EPA.
+
+## Numeric comparison boundary
+
+The dishwasher comparison selects an annual-energy source value only when all
+raw candidates classified as `ANNUAL_CAPTION_CONTEXT` reduce to one numeric
+value. Repeated OCR detections of the same number do not create ambiguity;
+different remaining numbers do. PDP annual energy and PDP place settings are
+selected only from their exact-SKU spec fields, and EPA annual energy and
+maximum place settings only from a unique current-row candidate. Comparisons
+use exact numeric equality. EnergyGuide capacity class text such as `Standard`
+is not compared with numeric place settings. This stage emits `EQUAL`,
+`DIFFERENT`, or `NOT_COMPARABLE`; it creates no severity or finding and leaves
+compliance `NOT_EVALUATED`.
