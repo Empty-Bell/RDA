@@ -337,6 +337,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   energy and 53 capacity hashes, preserving exact-SKU membership. Review and
   approve one byte-distinct PDF/panel once, then bind only explicitly covered
   exact SKUs. Do not infer model identity for the two RF90F ambiguous hashes.
+- The PDF-hash review queue is now generated in both JSON and Markdown by the
+  offline quality workflow. It contains 54 byte-distinct PDFs: 51 need annual
+  energy and capacity review, one needs annual-energy review only, and two RF90F
+  hashes are prioritized as MODEL_AMBIGUOUS because each contains two raw model
+  patterns. Candidate strings and artifact entry paths are preserved per hash.
+  Next: render/review each queued PDF panel, starting with the two ambiguous
+  hashes and then the 51 dual-field rows; emit byte-bound annotations rather
+  than changing parser output.
 - The source-only Energy Star workflow is manual to avoid duplicating its full
   collection on every code push; the combined G2 pilot owns same-run reporting.
 

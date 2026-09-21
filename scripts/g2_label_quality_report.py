@@ -2,6 +2,7 @@
 
 from collections import Counter, defaultdict
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -27,6 +28,23 @@ def build_quality_profile(archive_path: Path, *, github_run_id: str | None = Non
     with zipfile.ZipFile(archive_path) as archive:
         checkpoint = _one_json(archive, r"/checkpoint\.json$")
         bundle = _one_json(archive, r"/bundle\.json$")
+        candidate_entries = [
+            name for name in archive.namelist()
+            if name.endswith("energyguide-field-candidates.json")
+        ]
+        candidates_by_hash: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+        for name in candidate_entries:
+            candidate = json.loads(archive.read(name))
+            digest = candidate.get("pdf_sha256")
+            if not isinstance(digest, str):
+                raise ValueError("EnergyGuide candidate PDF hash is missing")
+            candidates_by_hash[digest].append((name, candidate))
+        pdf_entries_by_hash: dict[str, list[str]] = defaultdict(list)
+        for name in archive.namelist():
+            if "energyguide" not in name.lower() or not name.lower().endswith(".pdf"):
+                continue
+            digest = hashlib.sha256(archive.read(name)).hexdigest()
+            pdf_entries_by_hash[digest].append(name)
 
     if checkpoint.get("status") != "PASS":
         raise ValueError("G2 source checkpoint is not successful")
@@ -104,9 +122,16 @@ def build_quality_profile(archive_path: Path, *, github_run_id: str | None = Non
             "exact_sku_count": len(skus),
             "annual_energy_value_bound": digest in annual_reviewed_hashes,
             "capacity_value_bound": digest in capacity_reviewed_hashes,
+            "source_pdf_entries": sorted(pdf_entries_by_hash.get(digest, [])),
+            "source_candidate_entries": sorted(
+                name for name, _candidate in candidates_by_hash.get(digest, [])
+            ),
+            "candidates": _candidate_projection(candidates_by_hash.get(digest, [])),
         }
         for digest, skus in sorted(pdf_groups.items())
     ]
+    if any(not group["source_pdf_entries"] or not group["source_candidate_entries"] for group in groups):
+        raise ValueError("EnergyGuide review source files are missing from artifact")
     population = len(product_skus)
     unique_pdfs = len(groups)
     return {
@@ -175,15 +200,60 @@ def build_quality_profile(archive_path: Path, *, github_run_id: str | None = Non
             },
         ],
         "pdf_groups": groups,
+        "review_queue": [
+            {
+                "priority": (
+                    "MODEL_AMBIGUOUS"
+                    if len(group["candidates"]["model_values_raw"]) != 1
+                    else "ANNUAL_AND_CAPACITY"
+                    if not group["annual_energy_value_bound"] and not group["capacity_value_bound"]
+                    else "ANNUAL_ONLY"
+                    if not group["annual_energy_value_bound"]
+                    else "CAPACITY_ONLY"
+                ),
+                **group,
+            }
+            for group in groups
+            if not group["annual_energy_value_bound"] or not group["capacity_value_bound"]
+               or len(group["candidates"]["model_values_raw"]) != 1
+        ],
         "records": rows,
         "overall_product_compliance": "NOT_EVALUATED",
     }
 
 
+def _candidate_projection(entries: list[tuple[str, dict]]) -> dict:
+    if not entries:
+        return {"model_values_raw": [], "annual_energy_candidates": [], "capacity_values_raw": []}
+    projections = []
+    for _name, candidate in entries:
+        projection = {
+            "model_values_raw": [
+                row.get("value_raw") for row in candidate.get("model_candidates_raw", [])
+            ],
+            "annual_energy_candidates": [
+                {
+                    "value_raw": row.get("value_raw"),
+                    "unit_raw": row.get("unit_raw"),
+                    "role": row.get("role"),
+                }
+                for row in candidate.get("energy_candidates_raw", [])
+            ],
+            "capacity_values_raw": [
+                row.get("value_raw") for row in candidate.get("capacity_candidates_raw", [])
+            ],
+        }
+        projections.append(projection)
+    canonical = {json.dumps(item, sort_keys=True) for item in projections}
+    if len(canonical) != 1:
+        raise ValueError("Byte-identical EnergyGuide PDFs produced different candidate projections")
+    return projections[0]
+
+
 def render_markdown(profile: dict) -> str:
     counts = profile["counts"]
     engines = profile["extraction_engines"]
-    return "\n".join([
+    lines = [
         "# G2 refrigerator EnergyGuide quality profile",
         "",
         f"Source GitHub run: `{profile['source']['github_run_id']}`",
@@ -199,7 +269,34 @@ def render_markdown(profile: dict) -> str:
         "",
         "Source collection is complete. Review binding is incomplete, so missing reviewed values remain NOT_OBSERVED and overall product compliance remains NOT_EVALUATED.",
         "",
-    ])
+        "## PDF-hash review queue",
+        "",
+        "One row is one byte-distinct PDF. Exact SKUs remain separate members of the row.",
+        "",
+        "| Priority | PDF SHA-256 | Exact SKUs | Model candidates | Annual-energy candidates | Capacity candidates |",
+        "|---|---|---|---|---|---|",
+    ]
+    for item in profile["review_queue"]:
+        candidates = item["candidates"]
+        energy = ", ".join(
+            f"{row.get('value_raw')} {row.get('unit_raw')}" for row in candidates["annual_energy_candidates"]
+        )
+        lines.append(
+            "| {priority} | `{digest}` | {skus} | {models} | {energy} | {capacity} |".format(
+                priority=item["priority"],
+                digest=item["pdf_sha256"],
+                skus=_markdown_cell(", ".join(item["exact_skus"])),
+                models=_markdown_cell(", ".join(str(value) for value in candidates["model_values_raw"])),
+                energy=_markdown_cell(energy),
+                capacity=_markdown_cell(", ".join(str(value) for value in candidates["capacity_values_raw"])),
+            )
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def _markdown_cell(value: str) -> str:
+    return value.replace("|", "\\|").replace("\n", "<br>") or "—"
 
 
 def main() -> None:

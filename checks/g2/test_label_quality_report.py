@@ -1,4 +1,5 @@
 import json
+import hashlib
 from pathlib import Path
 import sys
 import tempfile
@@ -18,13 +19,15 @@ class LabelQualityReportTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.archive = Path(self.temp.name) / "artifact.zip"
+        self.pdf_bytes = b"%PDF-1.4\nsynthetic-label\n%%EOF\n"
+        self.pdf_sha256 = hashlib.sha256(self.pdf_bytes).hexdigest()
         products = [{"exact_sku": "SKU-A"}, {"exact_sku": "SKU-B"}]
         facts = []
         for sku in ("SKU-A", "SKU-B"):
             facts.append({
                 "kind": "ENERGYGUIDE", "exact_sku": sku,
                 "observations": {
-                    "document_sha256": observation("a" * 64),
+                    "document_sha256": observation(self.pdf_sha256),
                     "document_status": observation("SOURCE_PDF_PARSED"),
                     "extraction_engine": observation("RapidOCR"),
                     "fallback_reason": observation("EMPTY_EMBEDDED_TEXT"),
@@ -51,6 +54,16 @@ class LabelQualityReportTests(unittest.TestCase):
         with zipfile.ZipFile(self.archive, "w") as zipped:
             zipped.writestr("g2/run/checkpoint.json", json.dumps(checkpoint))
             zipped.writestr("g2/run/bundle.json", json.dumps(bundle))
+            for sku in ("SKU-A", "SKU-B"):
+                base = f"g2/run/energyguide-samples/{sku}/0"
+                zipped.writestr(f"{base}/energyguide-original.pdf", self.pdf_bytes)
+                zipped.writestr(f"{base}/energyguide-field-candidates.json", json.dumps({
+                    "pdf_sha256": self.pdf_sha256,
+                    "model_candidates_raw": [{"value_raw": "SKU-**"}],
+                    "energy_candidates_raw": [{"value_raw": "500", "unit_raw": "kWh",
+                                                 "role": "ANNUAL_CAPTION_CONTEXT"}],
+                    "capacity_candidates_raw": [{"value_raw": "Capacity: 20 Cubic Feet"}],
+                }))
 
     def tearDown(self):
         self.temp.cleanup()
@@ -64,8 +77,11 @@ class LabelQualityReportTests(unittest.TestCase):
         self.assertEqual(counts["annual_energy_values"], 1)
         self.assertEqual(counts["raw_model_not_observed"], 0)
         self.assertEqual(counts["annual_energy_unreviewed_pdf_hashes"], 0)
+        self.assertEqual(profile["pdf_groups"][0]["candidates"]["model_values_raw"], ["SKU-**"])
         self.assertEqual(profile["overall_product_compliance"], "NOT_EVALUATED")
-        self.assertIn("| 2 | 2 | 1 | 2 | 0 |", render_markdown(profile))
+        report = render_markdown(profile)
+        self.assertIn("| 2 | 2 | 1 | 2 | 0 |", report)
+        self.assertIn("## PDF-hash review queue", report)
 
     def test_rejects_incomplete_fact_or_review_coverage(self):
         with zipfile.ZipFile(self.archive, "r") as source:
