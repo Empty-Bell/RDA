@@ -21,7 +21,6 @@ on:
       - 'scripts/g2_energyguide_model_pattern_assessment.py'
       - 'scripts/g2_energyguide_model_report_adapter.py'
       - 'scripts/g2_refrigerator_control_summary.py'
-      - 'scripts/g2_dashboard_build.py'
       - 'scripts/g2_samsung_suffix.py'
       - 'docs/evidence/g2-capacity-model-review.json'
       - 'scripts/claim_recon.py'
@@ -38,7 +37,6 @@ on:
       - 'checks/g2/test_energyguide_model_pattern_assessment.py'
       - 'checks/g2/test_energyguide_model_report_adapter.py'
       - 'checks/g2/test_refrigerator_control_summary.py'
-      - 'checks/g2/test_dashboard_build.py'
       - '.github/workflows/g2-smoke.yml'
 permissions:
   contents: read
