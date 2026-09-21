@@ -128,9 +128,9 @@ makes that boundary explicit.
    it does not decide whole-product compliance. Measurement and OCR policies
    remain separate G2 work.
 
-Hosted assessment completed in run 35547213219 (artifact ZIP SHA-256
-`93084dfa227992b883d86faee4fcd15f943051f9c6dfc36090011dcdb31c8072`): 75/75
-exact SKUs evaluated, 43 PASS, 3 LOW, 24 HIGH, 5 NO_FINDING, and zero
+Hosted assessment was corrected in successful run 35548351322: EPA `*` pattern
+positions are alphanumeric, while `#` remains digit-only. The corrected 75/75
+exact-SKU result is 52 PASS, 4 LOW, 14 HIGH, 5 NO_FINDING, and zero
 NOT_EVALUATED or missing evidence references. This is the refrigerator Energy
 Star publication check, not overall refrigerator compliance. For remaining
 source plumbing or deterministic integration, use Terra medium; use Luna low

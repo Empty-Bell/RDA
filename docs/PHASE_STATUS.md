@@ -13,7 +13,7 @@ is now bounded to ten deterministic SKUs: run 35175307189 / d884b4c passed on
 ubuntu-24.04 with no selected identity failure; full-population coverage and
 assessment remain next work. See docs/evidence/g2-pdp-coverage-expansion-recon.json.
 Phases 3–7: NOT_STARTED.
-The Energy Star vertical slice is not whole-product compliance PASS and does not accept the overall G2 gate. Its hosted run 35547213219 passed: 75/75 source-complete exact SKUs, 43 PASS, 3 LOW, 24 HIGH, 5 NO_FINDING, 0 NOT_EVALUATED. See CURRENT_TASK.md and G2_CURRENT_INDEX_CLAIM_COMPARISON.md. Remaining G2 work includes EnergyGuide/OCR and measurement assessment, integrating all applicable checks into the canonical audit/report, and acceptance of complete refrigerator coverage and operational gates.
+The Energy Star vertical slice is not whole-product compliance PASS and does not accept the overall G2 gate. Its corrected hosted run 35548351322 passed: 75/75 source-complete exact SKUs, 52 PASS, 4 LOW, 14 HIGH, 5 NO_FINDING, 0 NOT_EVALUATED. See CURRENT_TASK.md and G2_CURRENT_INDEX_CLAIM_COMPARISON.md. Remaining G2 work includes EnergyGuide/OCR and measurement assessment, integrating all applicable checks into the canonical audit/report, and acceptance of complete refrigerator coverage and operational gates.
 Per-SKU PDP identity/coverage checkpoint PASS: run 35173796328 / code 21b621a.
 30 regression tests, 5 verified PDP SKUs / 0 failed / 70 unattempted (75 total).
 105 evidence hashes and population/coverage/report SKU sets verified after
