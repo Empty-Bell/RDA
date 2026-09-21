@@ -43,6 +43,15 @@ class EnergyStarCurrentIndexBindingTests(unittest.TestCase):
         self.assertEqual(record["assessment"], "NOT_EVALUATED")
 
     @patch("g2_energy_star_current_index_binding.load_replayed_rows")
+    def test_current_index_star_pattern_allows_digit_positions(self, mocked):
+        mocked.return_value = SCAN, [(row("RF23DB9600**"), SOURCE)]
+        record = bind_current_index(
+            {**MANIFEST, "declarations": [{**MANIFEST["declarations"][0], "exact_sku": "RF23DB960012AA"}]},
+            Path("ignored"),
+        )["records"][0]
+        self.assertEqual(record["candidate_projection_state"], "MATCHED_CURRENT_INDEX_POSITIONAL_PATTERN_CANDIDATES")
+
+    @patch("g2_energy_star_current_index_binding.load_replayed_rows")
     def test_cross_run_capture_fails(self, mocked):
         mocked.return_value = {**SCAN, "source_run_id": "other"}, [(row("RF23DB9600QL"), SOURCE)]
         with self.assertRaisesRegex(ValueError, "runs differ"):

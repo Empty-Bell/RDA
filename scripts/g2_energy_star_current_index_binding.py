@@ -49,7 +49,11 @@ def _pattern_compatibility(pattern: str, identifier: str) -> bool | None:
         return False
     for expected, actual in zip(pattern, identifier):
         if expected == "*":
-            if not "A" <= actual <= "Z":
+            # EPA uses `*` for one unspecified model-code position. Current
+            # rows demonstrate that the position may be either a letter or a
+            # digit (for example RF18A5101** covers RF18A5101S9). `#` remains
+            # the explicit digit-only placeholder.
+            if not ("A" <= actual <= "Z" or "0" <= actual <= "9"):
                 return False
         elif expected == "#":
             if not "0" <= actual <= "9":
