@@ -11,10 +11,12 @@ from claim_recon import DOM_SNAPSHOT
 from runner_probe import safe_url
 
 
-def select_sample(products, existing_sku, limit=5):
-    if type(limit) is not int or not 1<=limit<=10:raise ValueError('Pilot bound must be 1..10')
+def select_sample(products, existing_sku, limit=None):
     by_sku={p['exact_sku']:p for p in products}
-    if len(by_sku)!=len(products) or existing_sku not in by_sku:raise ValueError('Invalid sample population')
+    if limit is None:limit=len(by_sku)
+    if (type(limit) is not int or not 1<=limit<=len(by_sku)
+            or len(by_sku)!=len(products) or existing_sku not in by_sku):
+        raise ValueError('Invalid sample population or collection limit')
     selected=[existing_sku]
     for role in ('REPRESENTATIVE','VARIANT'):
         candidates=sorted(p['exact_sku'] for p in products if any(l['sku_role']==role for l in p['listings']))

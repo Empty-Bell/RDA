@@ -4,6 +4,7 @@ Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foun
 Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI accepted 2026-09-17.
 Phase 2 / G2: RUNNING — the refrigerator Energy Star three-point source assessment is now a completed vertical slice (75/75 exact SKUs); full G2 acceptance, other product families and whole-product decisions remain open.
 Same-run report integration passed hosted run [35554057794](https://github.com/Empty-Bell/RDA/actions/runs/35554057794), commit `d5aa746`. Canonical G2 report and Energy Star assessment share one execution UUID and the same 75 exact SKUs; the ENERGY STAR section reports 57 UI PASS, 4 LOW, 14 HIGH and 0 NOT_EVALUATED. The canonical assessment engine remains disabled and overall product compliance remains NOT_EVALUATED. G2a PDP identity coverage is still bounded at 10/75 (0 failed, 65 not attempted); expand and validate the remaining population next.
+The next G2a run is configured to collect every current exact refrigerator SKU. Any `NOT_ATTEMPTED` SKU now fails the run; hosted execution is capped at 45 minutes.
 Source measurement/claim normalization is integrated into the live pilot:
 run 35174846442 / bd19bfd passed on ubuntu-24.04. PDP facts now retain normalized
 source observations with same-run bridge/raw/derived evidence references; no

@@ -57,8 +57,11 @@ class Coverage(unittest.TestCase):
         self.assertEqual([p['exact_sku'] for p in sample],['Z','B','A','C','D','E','F','G','H','I'])
         self.assertEqual(len({p['exact_sku'] for p in sample}),10)
     def test_limit_validated(self):
-        for limit in (0,11,False):
+        for limit in (0,5,False):
             with self.subTest(limit=limit),self.assertRaises(ValueError):select_sample(self.products,'C',limit)
+    def test_full_population_collection_is_allowed(self):
+        sample=select_sample(self.products,'C',len(self.products))
+        self.assertEqual({p['exact_sku'] for p in sample},{'A','B','C','D'})
     def test_success_failure_unattempted_distinct(self):
         r=coverage(self.products,[{'exact_sku':'A','status':'VERIFIED_EXACT_IDENTITY'},{'exact_sku':'B','status':'FAILED'}])
         self.assertEqual(r['counts'],{'VERIFIED_EXACT_IDENTITY':1,'FAILED':1,'NOT_ATTEMPTED':2})

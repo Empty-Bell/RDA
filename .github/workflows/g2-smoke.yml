@@ -30,7 +30,7 @@ concurrency:
 jobs:
   pilot:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 45
     env:
       PYTHONUNBUFFERED: '1'
       PYTHONPATH: 'src:scripts'
@@ -47,7 +47,7 @@ jobs:
           bash scripts/bootstrap.sh
       - name: Population adapter regression
         run: python -m unittest discover -s checks/g2 -v
-      - name: Collect and validate unevaluated pilot package
+      - name: Collect and validate full refrigerator G2a package
         run: python scripts/g2_smoke.py
       - name: Preserve pilot and source evidence
         if: always()

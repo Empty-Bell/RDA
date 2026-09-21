@@ -327,10 +327,9 @@ def main():
                     "automatic_final_legal_conclusion": False,
                 }
             )
-        # The collection budget is bounded independently of the observed population.
-        # Coverage still records every unattempted SKU rather than treating this cap as
-        # a population or assessment-completion threshold.
-        selected = select_sample(products, sku, limit=10)
+        # G2a requires an exact-SKU PDP identity collection for the entire current
+        # population. The coverage gate below rejects any unattempted SKU.
+        selected = select_sample(products, sku, limit=len(products))
         samples = [
             {
                 "exact_sku": sku,
@@ -588,6 +587,8 @@ def main():
                 label_sku,
             )
         pdp_coverage = coverage(products, samples)
+        if pdp_coverage["counts"]["NOT_ATTEMPTED"]:
+            raise ValueError("G2a PDP identity collection left exact SKUs unattempted")
         label_selection_summary = summarize_selection_outcomes(label_selection_outcomes)
         capacity_selection_summary = summarize_capacity_selection_outcomes(
             capacity_selection_outcomes

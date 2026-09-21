@@ -312,6 +312,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   resource/time limits on hosted Ubuntu before treating the population-to-PDP
   stage as complete. The latest run observed 10 verified, 0 failed, 65 not
   attempted. EnergyGuide/PDF/OCR coverage and the remaining G2 gates follow.
+- G2a full collection is now configured: all current exact refrigerator SKUs are
+  selected, `NOT_ATTEMPTED` is a hard failure, and the hosted job has a 45-minute
+  cap. A successful full run is required before recording PDP identity coverage
+  as complete; its accompanying EnergyGuide observations remain source evidence
+  until the separate label/OCR decision gates are accepted.
 - The source-only Energy Star workflow is manual to avoid duplicating its full
   collection on every code push; the combined G2 pilot owns same-run reporting.
 
