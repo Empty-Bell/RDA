@@ -374,10 +374,15 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         (out / "energy-star-assessment.json").write_text(
             json.dumps(assessment, indent=2) + "\n", encoding="utf-8"
         )
+        from g2_energy_star_review_report import render_review_report
+        (out / "energy-star-review.md").write_text(
+            render_review_report(assessment), encoding="utf-8"
+        )
         result["epa_current_index_manifest"] = "epa-current-index/manifest.json"
         result["current_index_binding"] = "current-index-binding.json"
         result["three_point_input_review"] = "three-point-input-review.json"
         result["energy_star_assessment"] = "energy-star-assessment.json"
+        result["energy_star_review_report"] = "energy-star-review.md"
         result["assessment_counts"] = assessment["counts"]
         result["rule_evaluation"] = "COMPLETED_FOR_SOURCE_CAPTURE"
         (out / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
