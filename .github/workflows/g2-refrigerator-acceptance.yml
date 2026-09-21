@@ -1,0 +1,67 @@
+name: G2 refrigerator acceptance
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful G2 refrigerator run ID
+        required: true
+        type: string
+  workflow_run:
+    workflows: [G2 refrigerator observational pilot]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g2_refrigerator_acceptance.py'
+      - 'checks/g2/test_refrigerator_acceptance.py'
+      - '.github/workflows/g2-refrigerator-acceptance.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  acceptance:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.source_run_id || '' }}
+      PYTHONPATH: src:scripts
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Test artifact acceptance contracts
+        run: python -m unittest checks/g2/test_refrigerator_acceptance.py -v
+      - name: Download successful G2 artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$SOURCE_RUN_ID" ]; then
+            SOURCE_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g2-smoke.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          test -n "$SOURCE_RUN_ID"
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g2-smoke.yml") | .id')"
+          test "$VALID_RUN" = "$SOURCE_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g2-pilot-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g2-acceptance
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g2-acceptance/source.zip
+      - name: Validate canonical report and dashboard artifact
+        run: |
+          python scripts/g2_refrigerator_acceptance.py runtime/g2-acceptance/source.zip --out runtime/g2-acceptance
+          cat runtime/g2-acceptance/acceptance.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve acceptance result
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g2-refrigerator-acceptance-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g2-acceptance/acceptance.json
+          retention-days: 14
+          if-no-files-found: error

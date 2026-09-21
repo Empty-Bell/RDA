@@ -1,12 +1,14 @@
 from pathlib import Path
+import json
 import sys
 import tempfile
 import unittest
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from g2_dashboard_build import build  # noqa: E402
-from g2_refrigerator_acceptance import validate  # noqa: E402
+from g2_refrigerator_acceptance import validate, validate_artifact  # noqa: E402
 from g2_refrigerator_control_summary import add_control_summary, build_summary  # noqa: E402
 
 
@@ -48,3 +50,21 @@ class RefrigeratorAcceptanceTests(unittest.TestCase):
             report["rows"].pop()
             with self.assertRaisesRegex(ValueError, "SKU coverage"):
                 validate(bundle, report, directory)
+
+    def test_validates_a_saved_run_artifact_without_recollecting_sources(self):
+        bundle, report = self.inputs()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            run_root = root / "runtime/g2/run-1"
+            run_root.mkdir(parents=True)
+            (run_root / "bundle.json").write_text(json.dumps(bundle), encoding="utf-8")
+            (run_root / "report.json").write_text(json.dumps(report), encoding="utf-8")
+            build(bundle, report, run_root / "site")
+            archive = root / "source.zip"
+            with zipfile.ZipFile(archive, "w") as output:
+                for path in (root / "runtime").rglob("*"):
+                    if path.is_file():
+                        output.write(path, path.relative_to(root).as_posix())
+            result = validate_artifact(archive, root / "extracted")
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["run_id"], "run-1")

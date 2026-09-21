@@ -42,7 +42,6 @@ from g2_energyguide_model_pattern_assessment import build_assessment as build_mo
 from g2_energyguide_model_report_adapter import attach_model_pattern_assessment, add_model_pattern_section
 from g2_refrigerator_control_summary import build_summary as build_control_summary, add_control_summary
 from g2_dashboard_build import build as build_dashboard
-from g2_refrigerator_acceptance import validate as validate_refrigerator_acceptance
 
 
 def main():
@@ -673,9 +672,6 @@ def main():
         for name, data in [("bundle.json", bundle), ("report.json", report)]:
             with (out / name).open("x", encoding="utf-8", newline="\n") as stream:
                 stream.write(dumps(data))
-        refrigerator_acceptance = validate_refrigerator_acceptance(bundle, report, out / "site")
-        with (out / "refrigerator-acceptance.json").open("x", encoding="utf-8", newline="\n") as stream:
-            stream.write(dumps(refrigerator_acceptance))
         checkpoint.update(
             status="PASS" if not pdp_coverage["counts"]["FAILED"] else "FAILED",
             population_groups=parsed["total_groups"],
@@ -708,7 +704,6 @@ def main():
             model_pattern_assessment_sha256=model_pattern_section["source_artifact"]["sha256"],
             refrigerator_control_summary_counts=control_summary["counts"],
             dashboard_summary=dashboard["summary"],
-            refrigerator_acceptance=refrigerator_acceptance,
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),
         )
     except Exception as error:

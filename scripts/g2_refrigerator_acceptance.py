@@ -1,8 +1,10 @@
 """Validate that one refrigerator run's report and dashboard replay each other."""
 
 import csv
+import argparse
 import json
 from pathlib import Path
+import zipfile
 from typing import Any
 
 
@@ -77,3 +79,41 @@ def validate(bundle: dict[str, Any], report: dict[str, Any], site: str | Path) -
             raise ValueError("Report data CSV count differs")
     return {"contract": CONTRACT, "status": "PASS", "run_id": run_id,
             "exact_sku_count": len(report_skus), "finding_count": len(findings)}
+
+
+def validate_artifact(artifact: str | Path, output_dir: str | Path) -> dict[str, Any]:
+    """Extract and validate the completed G2 artifact without rerunning collection."""
+    source = Path(artifact)
+    destination = Path(output_dir)
+    destination.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(source) as archive:
+        for entry in archive.infolist():
+            member = Path(entry.filename)
+            if member.is_absolute() or ".." in member.parts or (member.parts and ":" in member.parts[0]):
+                raise ValueError("G2 artifact contains an unsafe path")
+        archive.extractall(destination)
+    bundle_paths = sorted(destination.glob("runtime/g2/**/bundle.json"))
+    if len(bundle_paths) != 1:
+        raise ValueError("G2 artifact must contain exactly one canonical bundle")
+    run_root = bundle_paths[0].parent
+    bundle = _read_json(bundle_paths[0])
+    report = _read_json(run_root / "report.json")
+    result = validate(bundle, report, run_root / "site")
+    result["artifact_bundle"] = bundle_paths[0].relative_to(destination).as_posix()
+    return result
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("artifact", help="G2 Actions artifact ZIP")
+    parser.add_argument("--out", required=True, help="Directory for extracted source and acceptance result")
+    args = parser.parse_args()
+    result = validate_artifact(args.artifact, args.out)
+    output_path = Path(args.out) / "acceptance.json"
+    output_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps(result, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
