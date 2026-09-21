@@ -461,6 +461,13 @@ on every next-step prompt. Same-task model changes should continue existing work
   It rejects mixed-run inputs, missing SKU coverage and replay-count changes.
   Next: validate this report projection on the GitHub-hosted full G2 run, then
   use it as the stable input for the fixture dashboard.
+- A refrigerator fixture dashboard builder now consumes only one same-run bundle
+  and canonical report. It emits static run/summary/findings/report-data JSON,
+  two reconciled CSV exports and a small filterable HTML view. The builder
+  preserves control outputs instead of re-evaluating them, rejects mixed run IDs
+  and replay-count drift, and records `NOT_EVALUATED` as the whole-product gate.
+  Public compact evidence links and GitHub Pages deployment remain later G2d/G7
+  work; this output is an artifact-only fixture dashboard.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

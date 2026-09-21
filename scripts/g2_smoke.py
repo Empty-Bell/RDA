@@ -41,6 +41,7 @@ from g2_energyguide_numeric_report_adapter import attach_numeric_assessment, add
 from g2_energyguide_model_pattern_assessment import build_assessment as build_model_pattern_assessment
 from g2_energyguide_model_report_adapter import attach_model_pattern_assessment, add_model_pattern_section
 from g2_refrigerator_control_summary import build_summary as build_control_summary, add_control_summary
+from g2_dashboard_build import build as build_dashboard
 
 
 def main():
@@ -667,6 +668,7 @@ def main():
         control_summary = build_control_summary(report)
         add_control_summary(report, control_summary)
         verify_report_source_observations(bundle, report)
+        dashboard = build_dashboard(bundle, report, out / "site")
         for name, data in [("bundle.json", bundle), ("report.json", report)]:
             with (out / name).open("x", encoding="utf-8", newline="\n") as stream:
                 stream.write(dumps(data))
@@ -701,6 +703,7 @@ def main():
             model_pattern_assessment_coverage=model_pattern_section["coverage"],
             model_pattern_assessment_sha256=model_pattern_section["source_artifact"]["sha256"],
             refrigerator_control_summary_counts=control_summary["counts"],
+            dashboard_summary=dashboard["summary"],
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),
         )
     except Exception as error:
