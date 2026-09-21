@@ -92,7 +92,7 @@ def validate_artifact(artifact: str | Path, output_dir: str | Path) -> dict[str,
             if member.is_absolute() or ".." in member.parts or (member.parts and ":" in member.parts[0]):
                 raise ValueError("G2 artifact contains an unsafe path")
         archive.extractall(destination)
-    bundle_paths = sorted(destination.glob("runtime/g2/**/bundle.json"))
+    bundle_paths = sorted(set(destination.glob("g2/**/bundle.json")) | set(destination.glob("runtime/g2/**/bundle.json")))
     if len(bundle_paths) != 1:
         raise ValueError("G2 artifact must contain exactly one canonical bundle")
     run_root = bundle_paths[0].parent

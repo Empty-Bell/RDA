@@ -64,7 +64,7 @@ class RefrigeratorAcceptanceTests(unittest.TestCase):
             with zipfile.ZipFile(archive, "w") as output:
                 for path in (root / "runtime").rglob("*"):
                     if path.is_file():
-                        output.write(path, path.relative_to(root).as_posix())
+                        output.write(path, path.relative_to(root / "runtime").as_posix())
             result = validate_artifact(archive, root / "extracted")
         self.assertEqual(result["status"], "PASS")
         self.assertEqual(result["run_id"], "run-1")
