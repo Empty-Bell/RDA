@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT / "src"), str(ROOT / "scripts")]
-from g3_dishwasher_collect import coverage, load_population, verify_identity  # noqa: E402
+from g3_dishwasher_collect import coverage, load_population, prepare_output, verify_identity  # noqa: E402
 from source_contract import project_bridge  # noqa: E402
 
 
@@ -54,3 +54,10 @@ class DishwasherCollectionTests(unittest.TestCase):
         results = [{"exact_sku": "A", "status": "VERIFIED_EXACT_IDENTITY"}, {"exact_sku": "B", "status": "FAILED"}]
         result = coverage(products, results)
         self.assertEqual(result["counts"], {"VERIFIED_EXACT_IDENTITY": 1, "FAILED": 1, "NOT_ATTEMPTED": 1})
+
+    def test_output_setup_accepts_precreated_run_directory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "run"
+            root.mkdir()
+            self.assertEqual(prepare_output(root), root)
+            self.assertTrue((root / "pdp").is_dir())

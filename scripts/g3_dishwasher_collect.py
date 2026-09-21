@@ -100,19 +100,26 @@ def verify_identity(sku: str, final_url: str, snapshot: dict[str, Any], bridge: 
     return pdp_facts(bridge, sku, family="dishwasher")
 
 
+def prepare_output(output: str | Path) -> Path:
+    destination = Path(output)
+    destination.mkdir(parents=True, exist_ok=True)
+    (destination / "pdp").mkdir(exist_ok=True)
+    return destination
+
+
 def collect(products: list[dict[str, Any]], output: str | Path) -> list[dict[str, Any]]:
     from playwright.sync_api import sync_playwright
 
-    destination = Path(output)
-    destination.mkdir(parents=True, exist_ok=False)
+    destination = prepare_output(output)
+    pdp_root = destination / "pdp"
     results = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
         context, identity = desktop_context(browser)
         for index, product in enumerate(products):
             sku = product["exact_sku"]
-            folder = destination / "pdp" / sku
-            folder.mkdir(parents=True)
+            folder = pdp_root / sku
+            folder.mkdir(exist_ok=False)
             record: dict[str, Any] = {"exact_sku": sku, "status": "FAILED", "browser_identity": identity,
                                       "requested_url": product["listings"][0]["pdp_url"], "bridge_responses": []}
             page = context.new_page()
