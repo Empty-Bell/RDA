@@ -497,7 +497,9 @@ on every next-step prompt. Same-task model changes should continue existing work
   It reads the observation artifact offline and emits one review row per PDF
   hash with raw annual-energy/model/capacity candidates, US/Canada heading
   candidates, page previews, and exact-SKU membership. Every row remains
-  `REVIEW_REQUIRED`; no value is selected and no finding is emitted.
+  `REVIEW_REQUIRED`; no value is selected and no finding is emitted. It starts
+  only from a successful observation `workflow_run` or manual dispatch, so a
+  code push cannot race ahead of the first successful observation artifact.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
