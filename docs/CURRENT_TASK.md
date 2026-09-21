@@ -472,11 +472,12 @@ on every next-step prompt. Same-task model changes should continue existing work
   workflow. Full refrigerator source collection ran as hosted run
   [35604010759](https://github.com/Empty-Bell/RDA/actions/runs/35604010759) and
   passed in 30 minutes. The artifact's report/dashboard consistency acceptance
-  was initially part of that full run. To avoid repeating the 30-minute source
-  collection when acceptance code changes, it is now being moved to a separate
-  `workflow_run` job that downloads the successful `g2-pilot` artifact and
-  validates it offline. The full pilot will auto-run on source/assessment
-  changes; direct edits to its orchestration script require manual dispatch.
+  was initially part of that full run. It now runs as a separate hosted job that
+  downloads a successful `g2-pilot` artifact and validates it offline; hosted
+  acceptance run [35608640670](https://github.com/Empty-Bell/RDA/actions/runs/35608640670)
+  passed against source run `35604010759`, with no second source collection.
+  The full pilot auto-runs on source/assessment changes; direct edits to its
+  orchestration script require manual dispatch.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
