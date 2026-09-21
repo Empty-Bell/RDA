@@ -493,6 +493,11 @@ on every next-step prompt. Same-task model changes should continue existing work
   2x page preview; expose US `EnergyGuide` and Canadian `EnerGuide` heading
   locations without inferring crop bounds or selecting values. No assessment.
   Recommended implementation model: Terra medium; result review: Luna low.
+- After observation, the next short job is `g3-dishwasher-energyguide-review-queue.yml`.
+  It reads the observation artifact offline and emits one review row per PDF
+  hash with raw annual-energy/model/capacity candidates, US/Canada heading
+  candidates, page previews, and exact-SKU membership. Every row remains
+  `REVIEW_REQUIRED`; no value is selected and no finding is emitted.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
