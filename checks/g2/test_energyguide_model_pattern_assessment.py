@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from g2_energyguide_model_pattern_assessment import build_assessment  # noqa: E402
+from g2_label_activation import load_capacity_review_annotations  # noqa: E402
 
 
 class ModelPatternAssessmentTests(unittest.TestCase):
@@ -32,3 +33,10 @@ class ModelPatternAssessmentTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "scope"):
             build_assessment({"manifest": {"run_id": "run-1"}}, review)
 
+    def test_repository_review_projection_emits_the_six_approved_passes(self):
+        path = ROOT / "docs/evidence/g2-capacity-model-review.json"
+        sku_index = load_capacity_review_annotations(path)
+        source_projection = __import__("json").loads(path.read_bytes())
+        result = build_assessment({"manifest": {"run_id": "run-1"}}, source_projection)
+        self.assertEqual(result["counts"]["display"], {"PASS": 6, "NOT_EVALUATED": 0})
+        self.assertTrue({row["exact_sku"] for row in result["records"]}.issubset(sku_index))

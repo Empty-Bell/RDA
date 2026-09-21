@@ -449,7 +449,10 @@ on every next-step prompt. Same-task model changes should continue existing work
   `RF90F23AECEAA`, `RF90F23AECRAA`, `RF90F29AEWAA`, `RF90F29AECEAA`, and
   `RF90F29AECRAA` all pass. This is not a general wildcard identity rule and
   does not alter numeric LOW or MEDIUM findings. The next step is hosted
-  ubuntu-24.04 validation of this canonical-report section.
+  ubuntu-24.04 validation of this canonical-report section. The first hosted
+  attempt (run 35571621828) failed because the smoke runner passed the loaded
+  SKU-index map where the assessor expected the original review document. The
+  runner now keeps both forms and passes the source document to the assessor.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

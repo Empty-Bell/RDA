@@ -94,9 +94,9 @@ def main():
         label_reviews = load_review_annotations(
             ROOT / "docs/evidence/g2-label-review-annotations.json"
         )
-        capacity_reviews = load_capacity_review_annotations(
-            ROOT / "docs/evidence/g2-capacity-model-review.json"
-        )
+        capacity_review_path = ROOT / "docs/evidence/g2-capacity-model-review.json"
+        capacity_reviews = load_capacity_review_annotations(capacity_review_path)
+        capacity_review_projection = json.loads(capacity_review_path.read_bytes())
         label_selection_outcomes = []
         capacity_selection_outcomes = []
         bundle = {
@@ -654,7 +654,7 @@ def main():
             numeric_assessment_path,
             artifact_reference=numeric_assessment_path.relative_to(out).as_posix(),
         )
-        model_pattern_assessment = build_model_pattern_assessment(bundle, capacity_reviews)
+        model_pattern_assessment = build_model_pattern_assessment(bundle, capacity_review_projection)
         model_pattern_path = energy_star_out / "model-pattern-assessment.json"
         with model_pattern_path.open("x", encoding="utf-8", newline="\n") as stream:
             stream.write(dumps(model_pattern_assessment))
