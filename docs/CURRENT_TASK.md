@@ -296,6 +296,16 @@ on every next-step prompt. Same-task model changes should continue existing work
   or review-only changes no longer trigger Samsung/EPA collection. The manual
   review workflow accepts an optional source run ID and otherwise selects the
   latest successful source run.
+- Energy Star same-run report connection is implemented as a separate report
+  section in the G2 refrigerator pilot. It reuses that run's PF capture and run
+  UUID, requires matching GitHub run ID and commit, exact SKU-set equality, full
+  coverage and replayable counts, and hashes the attached assessment file. The
+  G2 bundle assessment flag/counts stay disabled; the Energy Star section keeps
+  its own counts and overall compliance remains NOT_EVALUATED. Hosted proof is
+  still pending. The old source-only Energy Star workflow is now manual to avoid
+  duplicating this full collection on every code push. Next: run the G2 Actions
+  workflow and confirm the gate passes for all current refrigerator SKUs in a
+  single artifact.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

@@ -32,6 +32,8 @@ from g2_label_activation import (
 )
 from g2_current_index_candidate_projection import load_replayed_rows
 from g2_energy_star_publication_points import collect_publication_points
+from g2_energy_star_source_capture import capture as capture_energy_star_sources
+from g2_energy_star_report_adapter import attach_energy_star_assessment, add_energy_star_section
 
 
 def main():
@@ -41,7 +43,7 @@ def main():
     started = datetime.now(timezone.utc).isoformat()
     checkpoint = {
         "status": "FAILED",
-        "scope": "G2 observational pilot; no assessment",
+        "scope": "G2 draft pilot with separate same-run refrigerator Energy Star assessment",
         "phase_gate": "NOT_EVALUATED",
         "run_id": run_id,
         "github_run_id": os.getenv("GITHUB_RUN_ID"),
@@ -595,7 +597,31 @@ def main():
         bundle["manifest"]["completed_at"] = datetime.now(timezone.utc).isoformat()
         validate_bundle(bundle)
         verify_evidence_files(bundle, out)
+        energy_star_out = out / "energy-star-source"
+        old_execution_id = os.environ.get("RDA_EXECUTION_ID")
+        os.environ["RDA_EXECUTION_ID"] = run_id
+        try:
+            capture_energy_star_sources(
+                energy_star_out, run_id, include_epa=True, pf_source=source
+            )
+        finally:
+            if old_execution_id is None:
+                os.environ.pop("RDA_EXECUTION_ID", None)
+            else:
+                os.environ["RDA_EXECUTION_ID"] = old_execution_id
+        energy_star_manifest = json.loads((energy_star_out / "manifest.json").read_bytes())
+        assessment_path = energy_star_out / "energy-star-assessment.json"
+        energy_star_assessment = json.loads(assessment_path.read_bytes())
+        energy_star_section = attach_energy_star_assessment(
+            bundle,
+            energy_star_assessment,
+            energy_star_manifest,
+            assessment_path,
+            github_run_id=os.environ["GITHUB_RUN_ID"],
+            artifact_reference=assessment_path.relative_to(out).as_posix(),
+        )
         report = summarize_bundle(bundle)
+        add_energy_star_section(report, energy_star_section)
         verify_report_source_observations(bundle, report)
         for name, data in [("bundle.json", bundle), ("report.json", report)]:
             with (out / name).open("x", encoding="utf-8", newline="\n") as stream:
@@ -615,12 +641,15 @@ def main():
             collected_label_skus=sorted({sku, *[result["exact_sku"] for result in labels]}),
             label_selection_summary=label_selection_summary,
             capacity_selection_summary=capacity_selection_summary,
-            sku_certification_matching="NOT_EVALUATED",
+            sku_certification_matching="NOT_EVALUATED_IN_CANONICAL_BUNDLE",
             energy_star_publication_points={
                 "sampled_sku_count": len(publication_points["records"]),
                 "point_states": publication_points["states"],
                 "assessment_status": "NOT_EVALUATED",
             },
+            energy_star_assessment_counts=energy_star_section["display_counts"],
+            energy_star_assessment_coverage=energy_star_section["coverage"],
+            energy_star_assessment_sha256=energy_star_section["source_artifact"]["sha256"],
             bundle_sha256=hashlib.sha256((out / "bundle.json").read_bytes()).hexdigest(),
         )
     except Exception as error:

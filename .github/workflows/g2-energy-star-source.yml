@@ -2,19 +2,6 @@ name: G2 Energy Star direct source capture
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/g2_energy_star_source_capture.py'
-      - 'scripts/g2_energy_star_current_index_binding.py'
-      - 'scripts/g2_energy_star_input_review.py'
-      - 'scripts/g2_energy_star_assessment.py'
-      - 'scripts/g2_epa_current_index_samsung_capture.py'
-      - 'scripts/source_contract.py'
-      - 'checks/g2/test_energy_star_source_capture.py'
-      - 'checks/g2/test_energy_star_current_index_binding.py'
-      - 'checks/g2/test_energy_star_input_review.py'
-      - 'checks/g2/test_energy_star_assessment.py'
 
 permissions:
   contents: read
