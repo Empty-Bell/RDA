@@ -6,7 +6,9 @@ on:
     branches: [main]
     paths:
       - 'scripts/g2_dashboard_build.py'
+      - 'scripts/g2_refrigerator_acceptance.py'
       - 'checks/g2/test_dashboard_build.py'
+      - 'checks/g2/test_refrigerator_acceptance.py'
       - '.github/workflows/g2-dashboard-contracts.yml'
 
 permissions:
@@ -26,5 +28,5 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version-file: '.python-version'
-      - name: Run dashboard contracts
-        run: python -m unittest checks/g2/test_dashboard_build.py -v
+      - name: Run dashboard and acceptance contracts
+        run: python -m unittest checks/g2/test_dashboard_build.py checks/g2/test_refrigerator_acceptance.py -v
