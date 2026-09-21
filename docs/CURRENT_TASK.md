@@ -402,6 +402,14 @@ on every next-step prompt. Same-task model changes should continue existing work
   across all 58 PDF hashes under the automatic source-selection contract. The
   numeric exception queue is empty; only the two already documented RF90F
   multi-pattern model observations remain outside numeric selection.
+- A non-assessing PDP/EnergyGuide numeric comparison now covers all 75 exact
+  SKUs. Annual energy is comparable for 51 SKUs and all 51 are exactly equal;
+  24 have no PDP annual-energy observation. Capacity is comparable for 69 SKUs:
+  62 are equal and seven differ by 0.3–0.5 cu ft; six have no PDP capacity.
+  `scripts/g2_energyguide_numeric_comparison.py` records EQUAL, DIFFERENT and
+  NOT_COMPARABLE without tolerance, severity or findings. The recommended V1
+  finding policy is documented in G2_ENERGYGUIDE_NUMERIC_COMPARISON_PROPOSAL.md
+  and remains disabled pending explicit approval of its new issue code/severity.
 
 Repository root: C:/Users/JB/Documents/Coding/RDA/repo.
 Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).

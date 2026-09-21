@@ -14,10 +14,12 @@ on:
       - 'scripts/g2_label_replay.py'
       - 'scripts/g2_label_selection.py'
       - 'scripts/g2_label_activation.py'
+      - 'scripts/g2_energyguide_numeric_comparison.py'
       - 'checks/g2/test_label_quality_report.py'
       - 'checks/g2/test_label_replay.py'
       - 'checks/g2/test_label_selection.py'
       - 'checks/g2/test_label_activation.py'
+      - 'checks/g2/test_energyguide_numeric_comparison.py'
       - 'docs/evidence/g2-label-review-annotations.json'
       - 'docs/evidence/g2-capacity-model-review.json'
       - 'notebooks/g2_energyguide_quality.ipynb'
@@ -49,7 +51,9 @@ jobs:
       - name: Run quality profiler regression
         env:
           PYTHONPATH: src:scripts
-        run: python -m unittest discover -s checks/g2 -p 'test_label_*.py' -v
+        run: |
+          python -m unittest discover -s checks/g2 -p 'test_label_*.py' -v
+          python -m unittest checks/g2/test_energyguide_numeric_comparison.py -v
       - name: Resolve successful source run and download artifact
         shell: bash
         run: |
@@ -75,7 +79,12 @@ jobs:
             --selection-replay runtime/g2-label-quality/selection-replay.json \
             --json-output runtime/g2-label-quality/profile.json \
             --markdown-output runtime/g2-label-quality/profile.md
+          python scripts/g2_energyguide_numeric_comparison.py runtime/g2-label-quality/source.zip \
+            --selection-replay runtime/g2-label-quality/selection-replay.json \
+            --json-output runtime/g2-label-quality/numeric-comparison.json \
+            --markdown-output runtime/g2-label-quality/numeric-comparison.md
           cat runtime/g2-label-quality/profile.md >> "$GITHUB_STEP_SUMMARY"
+          cat runtime/g2-label-quality/numeric-comparison.md >> "$GITHUB_STEP_SUMMARY"
       - name: Preserve quality profile
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
@@ -84,5 +93,7 @@ jobs:
             runtime/g2-label-quality/profile.json
             runtime/g2-label-quality/profile.md
             runtime/g2-label-quality/selection-replay.json
+            runtime/g2-label-quality/numeric-comparison.json
+            runtime/g2-label-quality/numeric-comparison.md
           retention-days: 14
           if-no-files-found: error

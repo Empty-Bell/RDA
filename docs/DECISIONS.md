@@ -1,5 +1,14 @@
 # Open semantic decisions
 
+D01 refrigerator numeric observation is complete. Full-population replay finds
+51/51 comparable PDP-versus-label annual-energy values exactly equal; 24 lack a
+PDP annual value. Capacity has 62 equal, seven 0.3–0.5 cu ft differences and six
+missing PDP values. G2_ENERGYGUIDE_NUMERIC_COMPARISON_PROPOSAL.md recommends an
+exact annual-energy consistency subcontrol, no finding for missing PDP energy,
+a new MEDIUM source-conflict finding for future numeric differences, and
+observation-only capacity. This is a proposal; the new code/severity and D01 V1
+assessment policy remain disabled until explicit approval.
+
 Latest approved EPA publication rule: G2_CURRENT_INDEX_CLAIM_COMPARISON.md is
 authoritative for the user's three-point PLP-logo/PDP-logo/Spec-certification
 control. Registered plus all three present gives PASS for this check; registered
