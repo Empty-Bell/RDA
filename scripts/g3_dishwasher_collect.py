@@ -8,7 +8,7 @@ import os
 from pathlib import Path
 import re
 from typing import Any
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
 from source_contract import pf_population, pdp_facts, project_bridge
@@ -107,6 +107,10 @@ def prepare_output(output: str | Path) -> Path:
     return destination
 
 
+def sku_directory_name(sku: str) -> str:
+    return quote(sku, safe="")
+
+
 def collect(products: list[dict[str, Any]], output: str | Path) -> list[dict[str, Any]]:
     from playwright.sync_api import sync_playwright
 
@@ -118,7 +122,7 @@ def collect(products: list[dict[str, Any]], output: str | Path) -> list[dict[str
         context, identity = desktop_context(browser)
         for index, product in enumerate(products):
             sku = product["exact_sku"]
-            folder = pdp_root / sku
+            folder = pdp_root / sku_directory_name(sku)
             folder.mkdir(exist_ok=False)
             record: dict[str, Any] = {"exact_sku": sku, "status": "FAILED", "browser_identity": identity,
                                       "requested_url": product["listings"][0]["pdp_url"], "bridge_responses": []}
@@ -202,7 +206,10 @@ def coverage(products: list[dict[str, Any]], results: list[dict[str, Any]]) -> d
     by_sku = {result["exact_sku"]: result.get("status") for result in results}
     if any(status not in ("VERIFIED_EXACT_IDENTITY", "FAILED") for status in by_sku.values()):
         raise ValueError("Dishwasher PDP result status is invalid")
-    rows = [{"exact_sku": sku, "status": by_sku.get(sku, "NOT_ATTEMPTED")} for sku in sorted(population)]
+    result_by_sku = {result["exact_sku"]: result for result in results}
+    rows = [{"exact_sku": sku, "status": by_sku.get(sku, "NOT_ATTEMPTED"),
+             **({"error": result_by_sku[sku].get("error")} if by_sku.get(sku) == "FAILED" else {})}
+            for sku in sorted(population)]
     counts = {status: sum(row["status"] == status for row in rows)
               for status in ("VERIFIED_EXACT_IDENTITY", "FAILED", "NOT_ATTEMPTED")}
     return {"population_count": len(population), "attempted_count": len(results),
@@ -228,6 +235,15 @@ def main() -> int:
               "assessment": "NOT_EVALUATED", "population": population, "coverage": result_coverage,
               "status": "PASS" if result_coverage["counts"]["FAILED"] == 0 and result_coverage["counts"]["NOT_ATTEMPTED"] == 0 else "FAILED"}
     (destination / "collection-summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    summary_path = os.getenv("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        failed_rows = [row for row in result_coverage["rows"] if row["status"] == "FAILED"]
+        with Path(summary_path).open("a", encoding="utf-8") as stream:
+            stream.write("## Dishwasher exact-SKU PDP collection\n\n")
+            stream.write(f"Status: **{report['status']}**; population: {result_coverage['population_count']}\n\n")
+            stream.write(f"Coverage: `{json.dumps(result_coverage['counts'], sort_keys=True)}`\n\n")
+            for row in failed_rows:
+                stream.write(f"- `{row['exact_sku']}`: {row.get('error') or 'unknown collection failure'}\n")
     print(json.dumps({"status": report["status"], "population_count": result_coverage["population_count"],
                       "coverage_counts": result_coverage["counts"]}, sort_keys=True), flush=True)
     return 0 if report["status"] == "PASS" else 1

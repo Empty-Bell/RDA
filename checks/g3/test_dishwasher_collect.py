@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT / "src"), str(ROOT / "scripts")]
-from g3_dishwasher_collect import coverage, load_population, prepare_output, verify_identity  # noqa: E402
+from g3_dishwasher_collect import coverage, load_population, prepare_output, sku_directory_name, verify_identity  # noqa: E402
 from source_contract import project_bridge  # noqa: E402
 
 
@@ -61,3 +61,6 @@ class DishwasherCollectionTests(unittest.TestCase):
             root.mkdir()
             self.assertEqual(prepare_output(root), root)
             self.assertTrue((root / "pdp").is_dir())
+
+    def test_sku_directory_encodes_path_separator_without_changing_sku(self):
+        self.assertEqual(sku_directory_name("DW80B7070US/AA"), "DW80B7070US%2FAA")
