@@ -138,11 +138,12 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
         with Path(step_summary).open("a", encoding="utf-8") as stream:
             stream.write("## Dryer PDP / EnergyGuide / EPA source candidates\n\n")
             stream.write(f"Exact PDP SKUs: **{len(population)}**; EPA Samsung rows: **{len(epa_rows)}**; SKUs without a Support label: **{len(no_docs)}**. No selection, comparison, or assessment was made.\n\n")
-            stream.write("| Exact SKU | PDP title | Label models / raw annual kWh | EPA model rows / annual kWh / CEF | Label docs |\n|---|---|---|---|---:|\n")
+            stream.write("| Exact SKU | PDP title | Label model candidates | Label annual-kWh candidates | EPA model rows / annual kWh / CEF | Label docs |\n|---|---|---|---|---|---:|\n")
             for row in output_rows:
-                label = "; ".join(f"{m.get('value_raw')} / {', '.join(sorted({e.get('value_raw','') for e in doc['annual_energy_candidates_raw']}))}" for doc in row["label_documents"] for m in doc["model_candidates_raw"]) or "none"
+                label_models = "; ".join(", ".join(sorted({m.get("value_raw", "") for m in doc["model_candidates_raw"] if m.get("value_raw")})) or "no model candidate" for doc in row["label_documents"]) or "none"
+                label_energy = "; ".join(", ".join(sorted({e.get("value_raw", "") for e in doc["annual_energy_candidates_raw"] if e.get("value_raw")})) or "no annual-kWh candidate" for doc in row["label_documents"]) or "none"
                 epa = "; ".join(f"{x['model_number_raw']} / {x['annual_energy_kwh_yr_raw']} / CEF {x['combined_energy_factor_cef_raw']}" for x in row["epa_model_pattern_candidates"]) or "no positional candidate"
-                cells = [row["exact_sku"], row["pdp_title_raw"] or "", label, epa, str(len(row["label_documents"]))]
+                cells = [row["exact_sku"], row["pdp_title_raw"] or "", label_models, label_energy, epa, str(len(row["label_documents"]))]
                 stream.write("| " + " | ".join(str(x).replace("|", "\\|").replace("\n", " ") for x in cells) + " |\n")
     print(json.dumps({"status": "PASS", "population_count": len(population), "epa_row_count": len(epa_rows),
                       "skus_without_support_document": len(no_docs),

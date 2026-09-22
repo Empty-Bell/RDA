@@ -136,3 +136,22 @@ preview/source; then define the Dryer source comparison gates before any numeric
 comparison or assessment. Recommended model for routine fixed-schema run review:
 GPT-5.6 Luna low; GPT-5.6 Terra medium only if a new source-policy decision is
 needed.
+
+## Combo component energy separation
+
+EPA publishes a separate current dataset, `9jai-gs6t`, named `ENERGY STAR
+Certified Res-Combo-Washer-Dryer`, for combination all-in-one washer/dryers. Its
+schema names washer annual energy (`annual_energy_use_kwh_year`) and dryer-side
+annual energy (`estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer`)
+as separate quantities, with separate dryer capacity and CEF fields. The G3
+combo capture preserves the complete Samsung cohort and source metadata; it does
+not route SKUs, decide applicability, compare energy, or assess compliance. Do
+not collapse these two energy fields or use the washer-side EnergyGuide value as
+the dryer-side value.
+
+The candidate-join Actions summary now reports label model text and annual-kWh
+text in separate columns. Values found in one shared PDF are not presented as
+paired model/value assertions unless a later, approved source rule establishes
+that relationship. The next gate is a fresh hosted combo capture and source-row
+review, followed by a narrowly scoped candidate-link integration. Numeric
+comparison and grading stay disabled pending source applicability review.

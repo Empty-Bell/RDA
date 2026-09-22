@@ -685,3 +685,17 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   then resolve any remaining EPA identity patterns. Recommended model: GPT-5.6
   Luna low for fixed-schema review; use GPT-5.6 Terra medium only if a data
   definition or severity decision remains.
+
+Dryer continuation checkpoint (2026-09-22): Added a dedicated, low-cost
+GitHub-hosted workflow to capture Samsung rows from EPA's all-in-one washer/dryer
+dataset `9jai-gs6t`. The capture requires distinct washer annual-energy, dryer
+annual-energy, dryer-capacity and dryer-CEF fields; verifies count/pages, unique
+source IDs and stable schema; hashes raw metadata/rows; and makes no SKU match
+or assessment. The source-candidate table now prints label model and annual-kWh
+candidates in separate columns so shared-PDF tokens are not misrepresented as
+paired evidence. Tests verify that distinct source energy fields remain intact.
+Next: run the hosted capture, inspect current combo EPA rows, then add combo-source
+candidate links while keeping assessment disabled. Washer-side 94/95/103 label
+candidates must not be treated as dryer energy. Recommended model for this
+fixed-schema implementation/review: GPT-5.6 Luna low; use GPT-5.6 Terra medium
+only if interpretation requires a policy decision.
