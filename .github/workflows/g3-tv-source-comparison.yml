@@ -1,6 +1,15 @@
 name: G3 television PDP label EPA source comparison candidates
 
 on:
+  push:
+    paths:
+      - '.github/workflows/g3-tv-source-comparison.yml'
+      - 'scripts/g3_tv_source_comparison.py'
+      - 'scripts/g3_tv_energyguide_collect.py'
+      - 'scripts/g3_tv_energyguide_observe.py'
+      - 'scripts/g3_tv_energyguide_review_queue.py'
+      - 'scripts/g3_dishwasher_energyguide_observe.py'
+      - 'checks/g3/test_tv_energyguide_readability.py'
   workflow_dispatch:
     inputs:
       source_run_id:

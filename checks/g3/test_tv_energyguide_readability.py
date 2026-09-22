@@ -52,7 +52,7 @@ class TvEnergyGuideReadability(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             self.write_fixture(root, b"<html>access denied".hex())
-            with self.assertRaisesRegex(ValueError, "failed PDF URLs"):
+            with self.assertRaisesRegex(ValueError, "other than explicitly allowed NASCA DRM"):
                 verified_pdf_population(root, "42", allow_nasca_drm=True)
 
 
