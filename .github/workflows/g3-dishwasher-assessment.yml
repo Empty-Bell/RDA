@@ -1,12 +1,17 @@
 name: G3 dishwasher final assessment
 on:
  workflow_dispatch:
+ workflow_run:
+  workflows: [G3 dishwasher EnergyGuide model comparison]
+  types: [completed]
+  branches: [main]
  push:
   branches: [main]
   paths: ['scripts/g3_dishwasher_assessment.py','.github/workflows/g3-dishwasher-assessment.yml']
 permissions: {actions: read, contents: read}
 jobs:
  assess:
+  if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
   runs-on: ubuntu-24.04
   timeout-minutes: 5
   env:
