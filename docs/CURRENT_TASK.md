@@ -634,10 +634,18 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   model plus any PLP/PDP logo or Spec certification claim = HIGH. TV operating
   power W is retained separately from annual kWh. Recommended model for this
   fixed-schema hosted workflow review: Luna low; runtime itself uses no LLM.
-  Corrected comparison run 35700837698 failed after OCR succeeded for 162 PDFs:
-  the comparison script shadowed its `epa_watts` parser helper with a markdown
-  rendering variable. The helper-call defect is fixed locally. No source data or
-  classification rule changed; rerun comparison from the retained artifacts.
-  Candidate comparison will keep TV mode power (W), annual energy (kWh), and
-  label model text separate. Present unresolved identity/field examples before
-  any grading or dashboard integration.
+  Corrected comparison run 35701241420 at dca6645 passed on hosted Ubuntu. It
+  retained 167 rows, with 162 readable EnergyGuides and five NASCA DRM labels
+  recorded NOT_ACCESSIBLE / HIGH. All 162 readable labels linked to a model
+  pattern; 160 supplied annual kWh. EPA Current had exact US model matches for
+  35 SKUs, and all 35 label/EPA annual-kWh pairs differed (MEDIUM candidates).
+  The other 132 had no exact EPA model match; 59 had only 5–8-character
+  near-prefix diagnostics, not accepted as matches. PDP typical W vs EPA on-mode
+  W yielded 20 differences; 138 had no exact EPA on-mode row and nine lacked PDP
+  typical W. Power comparisons remain ungraded source candidates. This PASS means
+  collection/comparison completed; it is not a final product assessment. Full
+  output: https://github.com/Empty-Bell/RDA/actions/runs/35701241420.
+  Next: review the 35 annual-kWh differences and EPA no-match identity patterns
+  before enabling final TV severity grading or dashboard integration. Recommended
+  model: GPT-5.6 Luna low for this fixed-schema review; use GPT-5.6 Terra medium
+  only if an identity or comparison-rule decision requires reasoning.

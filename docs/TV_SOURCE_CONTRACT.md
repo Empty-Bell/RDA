@@ -108,8 +108,7 @@ EnergyGuide retrieval verified 162/167 actual PDFs and exposed five Samsung
 URLs returning 70–79 KB bodies that begin `<## NASC` despite claiming
 `application/pdf`. These are not accepted as PDF evidence. The collector records
 the response prefix, requests identity encoding, and fetches up to eight URLs
-in parallel. EPA capture passed; candidate comparison remains pending until
-all declared documents have valid PDF bytes.
+in parallel. EPA capture passed.
 
 The five responses decode to `NASC A DRM FILE - VER1.00`. Under the existing
 MASTER_PLAN §12 readability rule, each is recorded as `NOT_ACCESSIBLE` and a
@@ -125,6 +124,22 @@ federal-test W. Never compare PDP W to annual kWh. A unique label/EPA annual-kWh
 difference after both exact/prefix model links and US-market scope are verified
 is a MEDIUM candidate. PDP currently publishes no annual-kWh field for this
 cohort, so absence alone is not a missing-value verdict in this family.
+
+The first corrected full-population comparison passed on hosted Ubuntu in run
+35701241420 at commit dca6645. It preserved 167 SKU rows, including 162 readable
+EnergyGuide PDFs and five NASCA DRM labels recorded as NOT_ACCESSIBLE / HIGH.
+All 162 readable labels had a model-pattern link; 160 yielded annual kWh.
+EPA Current had an exact US model-pattern match for 35 SKUs, and every one of
+those 35 label/EPA annual-energy pairs differed, producing 35 MEDIUM candidates.
+The other 132 SKUs had no exact EPA model match; 59 showed only 5–8-character
+near-prefix diagnostics, which are not treated as matches or findings.
+
+PDP typical power (W) was compared separately with EPA on-mode power (W): 20
+rows differ, 138 have no exact EPA on-mode record, and nine PDPs lack a typical-W
+candidate. These remain source-comparison candidates and are not emitted as
+severity findings. The run's PASS means collection/comparison completed; no final
+product grading was performed. Full row evidence is in the
+[comparison workflow artifact](https://github.com/Empty-Bell/RDA/actions/runs/35701241420).
 
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule
