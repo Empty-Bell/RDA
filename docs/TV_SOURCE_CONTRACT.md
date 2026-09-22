@@ -78,11 +78,13 @@ applies; runtime has no LLM calls.
 
 ## G3 handoff after Washer
 
-The bounded TV source discovery above is complete; the next TV task is to collect
-the full exact-SKU population (167 SKUs in the captured sample) from PLP, each
-PDP, PDP-declared EnergyGuide PDFs, and the EPA TV current dataset. Then compare
-source candidates without assigning severities and show unresolved cases before
-enabling assessment.
+The bounded TV source discovery above is complete. The first hosted G3 stage now
+refreshes source discovery and then automatically collects every exact-SKU PDP
+(167 SKUs in the captured sample), including the PLP-declared claim flags, exact
+Specs/Support facts, and PDP claim evidence. This stage is still NOT ASSESSED.
+After the hosted capture passes, continue to Support-declared EnergyGuide PDF
+retrieval, full EPA TV current-source capture, and source-candidate comparison;
+show unresolved model/field examples before enabling assessment.
 
 Apply the approved common rules: comparable annual-kWh disagreement is MEDIUM;
 missing PDP annual kWh while label and EPA values agree is LOW; EPA Current Model
