@@ -730,11 +730,15 @@ a duplicated candidate join. WH46 500 Electric/Gas are likewise separate rows
 unassessed observations; Laundry Center label values 94/95 are washer-side and
 cannot be compared with dryer-side EPA values.
 
-Label-link coverage is 11 of 54 SKUs across five PDFs. The other 43 PDP records
-do not declare an EnergyGuide PDF in the current Samsung Support bridge. That
-does not prove a label is absent elsewhere and is not a compliance finding. One
-linked DV53 PDF was retrieved but yielded no OCR model/value candidate, a
-separate extraction gap. Next: close or explicitly scope these source-coverage
-and OCR gaps, then define component-safe comparison gates before any Dryer
-assessment. Recommended model: GPT-5.6 Luna low; use Terra medium only if source
-interpretation requires a policy decision.
+In the captured PDP Bridge response, 11 of 54 SKUs had a Support entry named
+exactly `Energy Guide`, covering five PDFs; the other 43 had an empty
+`Support.supports` array. This was not a search of Samsung Support, manuals,
+other PDP fields, or the web. Therefore the correct statement is “no document
+declared in this captured PDP Support array,” not “PDF link could not be found”
+or “label absent.” The result is source-path coverage only and carries no
+compliance implication. One of the five retrieved PDFs (DV53BB8900HDA2) yielded
+no OCR model/value candidate, a separate extraction gap. Next: decide whether
+to expand document-source discovery beyond the PDP bridge, then close or scope
+the OCR gap and define component-safe comparison gates before Dryer assessment.
+Recommended model: GPT-5.6 Luna low; use Terra medium only if that source-scope
+decision needs policy interpretation.

@@ -191,10 +191,13 @@ while `WH46DBH500GVA3` fits Gas PD ID `2788448`, row `row-cdmn.hcfe.icef`
 already documented in the Washer source contract; it is not a dryer-side
 comparison.
 
-Support-label collection coverage is 11 of 54 exact Dryer SKUs linked to five
-unique PDFs; 43 PDP records have no Support-declared EnergyGuide PDF in this
-collection. This is a source-path coverage gap only: it does not establish that
-no label exists elsewhere or indicate a compliance violation. The standalone
-DV53BB8900HDA2 document was retrieved successfully but yielded no OCR model or
-annual-energy candidates, which is a separate extraction limitation. Neither
-case is graded here.
+Support-label collection coverage is 11 of 54 exact Dryer SKUs whose captured
+PDP Bridge `Support` response declared a document named exactly `Energy Guide`,
+covering five unique PDFs. The remaining 43 had an empty `Support.supports`
+array in that captured response. This is not a search across Samsung Support,
+manuals, other PDP fields, or the web, and must not be described as “PDFs not
+found” or as evidence that a label is absent. It is only the coverage of this
+specific structured PDP source at capture time; it is not a compliance result.
+The standalone DV53BB8900HDA2 document was retrieved successfully but yielded no
+OCR model or annual-energy candidates, which is a separate extraction
+limitation. Neither case is graded here.
