@@ -10,7 +10,7 @@ def build(energy_star,numeric,out):
         e=a[sku]; n=b[sku]; f=[]
         if e.get("issue_code"): f.append({"control":"ENERGY_STAR_PUBLICATION","severity":e["severity"],"issue_code":e["issue_code"]})
         findings += [{"exact_sku":sku,**x} for x in f]
-        rows.append({"exact_sku":sku,"controls":{"energy_star_publication":{"outcome":e["outcome"]},"energyguide_numeric":{"outcome":"NOT_EVALUATED","comparisons":{k:n[k] for k in ("pdp_vs_energyguide_energy","energyguide_vs_epa_energy","pdp_vs_epa_place_settings")}}},"findings":f,"overall_product_compliance":"NOT_EVALUATED"})
+        rows.append({"exact_sku":sku,"controls":{"energy_star_publication":{"outcome":e["outcome"]},"energyguide_numeric":{"outcome":"NOT_EVALUATED","comparisons":{k:n[k] for k in ("pdp_vs_energyguide_energy","energyguide_vs_epa_energy")}}},"findings":f,"overall_product_compliance":"NOT_EVALUATED"})
     report={"contract":"G3_DISHWASHER_CANONICAL_REPORT_V1","status":"PASS","assessment_enabled":False,"sku_count":len(rows),"finding_count":len(findings),"affected_sku_count":len({x["exact_sku"] for x in findings}),"findings":findings,"rows":rows,"overall_product_compliance":"NOT_EVALUATED"}
     p=Path(out);p.mkdir(parents=True,exist_ok=True);(p/"report.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8");print(json.dumps({"status":"PASS","sku_count":len(rows),"finding_count":len(findings)},sort_keys=True))
 if __name__=="__main__":

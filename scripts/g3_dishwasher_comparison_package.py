@@ -30,7 +30,7 @@ def build(pdp_root, observation_root, epa_root, match_root, out):
                 model_candidates += [{"pdf_sha256":doc["pdf_sha256"],"page":page.get("page"),**x} for x in fields.get("model_candidates_raw", [])]
         m=m_by_sku.get(sku,{})
         epa_rows=[epa_by_id[str(x)] for x in m.get("candidate_pd_ids",[]) if str(x) in epa_by_id]
-        rows.append({"exact_sku":sku,"pdp_energy_raw":facts.get("energy_consumption_raw",[]),"pdp_capacity_raw":facts.get("capacity_raw",[]),"energyguide_energy_candidates_raw":candidates,"energyguide_model_candidates_raw":model_candidates,"epa_candidates_raw":epa_rows,"epa_match_status":m.get("match_status","NOT_OBSERVED"),"comparison_status":"REVIEW_REQUIRED","assessment":"NOT_EVALUATED"})
+        rows.append({"exact_sku":sku,"pdp_energy_raw":facts.get("energy_consumption_raw",[]),"energyguide_energy_candidates_raw":candidates,"energyguide_model_candidates_raw":model_candidates,"epa_candidates_raw":epa_rows,"epa_match_status":m.get("match_status","NOT_OBSERVED"),"comparison_status":"REVIEW_REQUIRED","assessment":"NOT_EVALUATED"})
     report={"contract":"G3_DISHWASHER_COMPARISON_PACKAGE_V1","created_at":datetime.now(timezone.utc).isoformat(),"scope":"Same-SKU source observation package only; no field selection, tolerance, finding, or compliance assessment","status":"PASS","sku_count":len(rows),"rows":rows}
     Path(out).mkdir(parents=True,exist_ok=True); Path(out,"comparison-package.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps({"status":"PASS","sku_count":len(rows)},sort_keys=True))
