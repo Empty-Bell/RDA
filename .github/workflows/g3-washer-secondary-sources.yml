@@ -1,0 +1,94 @@
+name: G3 clothes washer EnergyGuide and EPA source capture
+
+on:
+  workflow_dispatch:
+    inputs:
+      collection_run_id:
+        description: Successful Washer exact-SKU PDP collection run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 clothes washer exact-SKU collection]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_washer_energyguide_collect.py'
+      - 'scripts/g3_washer_epa_capture.py'
+      - '.github/workflows/g3-washer-secondary-sources.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: g3-washer-secondary-sources-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  epa-current:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Capture complete current EPA Samsung washer cohort
+        run: python scripts/g3_washer_epa_capture.py --out runtime/g3-washer/epa
+      - name: Preserve current EPA evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-washer-epa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-washer/epa/
+          retention-days: 14
+          if-no-files-found: error
+
+  energyguide-pdfs:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.collection_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download the successful exact-SKU Washer collection artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$COLLECTION_RUN_ID" ]; then
+            COLLECTION_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-washer-collection.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-washer-collection.yml") | .id')"
+          test "$VALID_RUN" = "$COLLECTION_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-washer-collection-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g3-washer/collection
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-washer/collection.zip
+          unzip -q runtime/g3-washer/collection.zip -d runtime/g3-washer/collection
+          COLLECTION_FILE="$(find runtime/g3-washer/collection -name collection-summary.json -type f -print -quit)"
+          test -n "$COLLECTION_FILE"
+          echo "COLLECTION_RUN_ID=${COLLECTION_RUN_ID}" >> "$GITHUB_ENV"
+          echo "COLLECTION_DIR=$(dirname "$COLLECTION_FILE")" >> "$GITHUB_ENV"
+      - name: Retrieve and hash Support-declared Washer PDFs
+        run: python scripts/g3_washer_energyguide_collect.py --collection-root "$COLLECTION_DIR" --collection-run-id "$COLLECTION_RUN_ID" --out runtime/g3-washer/energyguide
+      - name: Preserve Washer EnergyGuide evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-washer-energyguide-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-washer/energyguide/
+          retention-days: 14
+          if-no-files-found: error
