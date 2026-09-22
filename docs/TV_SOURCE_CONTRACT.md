@@ -83,8 +83,8 @@ PDP (167 in the captured sample), then retrieves Support-declared EnergyGuide
 PDFs and captures the full EPA TV cohort in parallel. If those sources pass,
 the chain observes raw text/layout/OCR and generates a same-run source-candidate
 comparison without grading. PLP claim flags, exact Specs/Support facts, and PDP
-claim evidence stay attached to each SKU. The first hosted recon is in progress;
-no TV collection result is claimed yet.
+claim evidence stay attached to each SKU. Source recon passed; the first PDP
+collection failed and is now being moved to failed-SKU-only parallel recovery.
 
 Apply the approved common rules: comparable annual-kWh disagreement is MEDIUM;
 missing PDP annual kWh while label and EPA values agree is LOW; EPA Current Model
@@ -95,6 +95,16 @@ quantity from annual kWh; never derive one from the other. The sample PDP had no
 annual kWh field, so this LOW rule may apply if full-population sources confirm
 the same gap. PDF/model identity and field selection remain candidate evidence
 until the comparison artifact exposes them for review.
+
+The initial full-population collection failed after 40m33s with 47 exact PDPs
+verified and 120 failed. The collector handled all 167 products sequentially,
+with an 8-second wait per SKU, so a single long run blocked downstream stages.
+A recovery workflow now retries only failed SKUs across eight hosted-runner
+shards, retains previously verified evidence, and emits the same full-population
+artifact format for downstream workflows. Each shard reports exact failure
+reasons to identify whether remaining errors are HTTP/network failures, PDP
+identity-contract mismatches, or missing page evidence. The retry does not
+weaken the identity requirements.
 
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule

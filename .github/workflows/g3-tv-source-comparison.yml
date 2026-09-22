@@ -68,7 +68,7 @@ jobs:
           test -n "$RETRIEVAL_SUMMARY"
           test -n "$EPA_SUMMARY"
           COLLECTION_RUN_ID="$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["collection_run_id"])' "$RETRIEVAL_SUMMARY")"
-          COLLECTION_VALID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-tv-collection.yml") | .id')"
+          COLLECTION_VALID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and (.path == ".github/workflows/g3-tv-collection.yml" or .path == ".github/workflows/g3-tv-recovery.yml")) | .id')"
           test "$COLLECTION_VALID" = "$COLLECTION_RUN_ID"
           fetch_artifact "$COLLECTION_RUN_ID" "g3-tv-collection-" runtime/g3-tv/collection
           COLLECTION_SUMMARY="$(find runtime/g3-tv/collection -name collection-summary.json -type f -print -quit)"

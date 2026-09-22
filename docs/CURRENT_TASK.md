@@ -611,8 +611,12 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   automatically starts exact-SKU PDP capture; a successful PDP run starts
   EnergyGuide PDF retrieval and full EPA TV capture in parallel; their successful
   completion starts OCR observation and a no-grading source-candidate comparison.
-  The first hosted recon run is in progress; no TV collection/comparison results
-  are claimed yet.
+  Initial TV exact-SKU PDP run failed after 40m33s: 47/167 verified and 120
+  failed. The artifact contains per-SKU outcomes, but the Actions summary showed
+  only aggregate counts. Added a recovery workflow that retries failed SKUs in
+  eight hosted-runner shards, preserves the 47 original successes, summarizes
+  specific remaining errors, and emits a combined artifact for the existing
+  downstream stages. Hosted recovery runtime/results are pending.
   Bounded source reconnaissance already passed (run 35105667331).
   The approved rules are: comparable annual-energy disagreement = MEDIUM;
   missing PDP annual energy with agreeing label/EPA = LOW; absent EPA current

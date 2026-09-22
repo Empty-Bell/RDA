@@ -2,7 +2,7 @@ name: G3 television label and EPA source capture
 
 on:
   workflow_run:
-    workflows: [G3 television exact-SKU collection]
+    workflows: [G3 television exact-SKU collection, G3 television failed-SKU recovery]
     types: [completed]
     branches: [main]
 
@@ -38,7 +38,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-tv-collection.yml") | .id')"
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and (.path == ".github/workflows/g3-tv-collection.yml" or .path == ".github/workflows/g3-tv-recovery.yml")) | .id')"
           test "$VALID_RUN" = "$COLLECTION_RUN_ID"
           ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-tv-collection-"))] | sort_by(.created_at) | last | .id')"
           test -n "$ARTIFACT_ID"
