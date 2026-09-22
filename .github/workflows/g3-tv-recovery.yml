@@ -76,7 +76,7 @@ jobs:
           if-no-files-found: warn
 
   assemble:
-    if: always() && needs.retry.result != 'cancelled'
+    if: always() && needs.retry.result != 'cancelled' && needs.retry.result != 'skipped'
     needs: [retry]
     runs-on: ubuntu-24.04
     timeout-minutes: 15

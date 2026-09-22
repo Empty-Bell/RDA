@@ -1,11 +1,6 @@
 name: G3 television exact-SKU collection
 
 on:
-  push:
-    paths:
-      - '.github/workflows/g3-tv-collection.yml'
-      - 'scripts/g3_tv_collect.py'
-      - 'checks/g3/test_tv_collect_population.py'
   workflow_dispatch:
     inputs:
       source_run_id:
