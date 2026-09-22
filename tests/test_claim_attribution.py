@@ -26,6 +26,10 @@ class ClaimAttributionContract(unittest.TestCase):
         self.snapshot['energy_candidates'][0]['surface_count']=2
         self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
 
+    def test_anonymous_product_schema_shell_does_not_hide_exact_sku_badge(self):
+        self.snapshot['product_jsonld'].extend([{'sku':None,'mpn':None}, {'name':None}])
+        self.assertEqual(self.facts()['rendered_attributed_badges_raw'][0]['exact_sku'],'SKU')
+
     def test_footer_and_marketing_image_are_not_product_badges(self):
         self.snapshot['energy_candidates'][0]['product_surface']=None
         self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])

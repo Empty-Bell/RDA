@@ -26,7 +26,8 @@ def main():
     summary = load(root / "collection-summary.json")
     if summary.get("status") != "FAILED":
         raise ValueError("Recovery expects a failed source collection")
-    failed = {row["exact_sku"] for row in summary["coverage"]["rows"] if row["status"] == "FAILED"}
+    failed = {row["exact_sku"] for row in summary["coverage"]["rows"]
+              if row["status"] in ("FAILED", "NOT_ATTEMPTED")}
     selected = [p for p in products
                 if p["exact_sku"] in failed and
                 (int.from_bytes(hashlib.sha256(p["exact_sku"].encode("utf-8")).digest()[:4], "big")

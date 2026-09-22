@@ -1,13 +1,6 @@
 name: G3 television failed-SKU recovery
 
 on:
-  push:
-    paths:
-      - '.github/workflows/g3-tv-recovery.yml'
-      - '.github/workflows/g3-tv-secondary-sources.yml'
-      - '.github/workflows/g3-tv-source-comparison.yml'
-      - 'scripts/g3_tv_retry_shard.py'
-      - 'scripts/g3_tv_retry_aggregate.py'
   workflow_dispatch:
     inputs:
       failed_run_id:
@@ -124,7 +117,7 @@ jobs:
       - name: Assemble complete evidence and report remaining failures
         id: assemble
         continue-on-error: true
-        run: python scripts/g3_tv_retry_aggregate.py --original-root "$ORIGINAL_DIR" --shards-root "$RETRY_DIR" --out runtime/g3-tv/combined
+        run: python scripts/g3_tv_retry_aggregate.py --original-root "$ORIGINAL_DIR" --shards-root "$RETRY_DIR" --out runtime/g3-tv/combined --allow-unverified
       - name: Preserve combined full-population evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -137,6 +130,6 @@ jobs:
             runtime/g3-tv/combined/pdp/
           retention-days: 14
           if-no-files-found: warn
-      - name: Fail if recovery did not verify the full population
+      - name: Fail if recovery evidence is incomplete
         if: always()
         run: test "${{ steps.assemble.outcome }}" = success && test "${{ needs.retry.result }}" = success

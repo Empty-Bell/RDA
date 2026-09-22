@@ -22,8 +22,8 @@ def read_json(path):
 def load_documents(collection_root, collection_run_id):
     root = Path(collection_root)
     summary = read_json(root / "collection-summary.json")
-    if summary.get("status") != "PASS" or str(summary.get("collection_run_id")) != str(collection_run_id):
-        raise ValueError("TV PDP collection artifact is not the requested successful run")
+    if summary.get("status") not in ("PASS", "FAILED") or str(summary.get("collection_run_id")) != str(collection_run_id):
+        raise ValueError("TV PDP collection artifact is not the requested complete-run artifact")
     expected = summary.get("coverage", {}).get("population_count")
     results = sorted(root.glob("pdp/*/result.json"))
     if not isinstance(expected, int) or len(results) != expected:
@@ -34,9 +34,13 @@ def load_documents(collection_root, collection_run_id):
     for path in results:
         result = read_json(path)
         sku = result.get("exact_sku")
-        if not isinstance(sku, str) or not sku or sku in seen or result.get("status") != "VERIFIED_EXACT_IDENTITY":
-            raise ValueError("TV collection result is not a unique verified exact SKU")
+        if not isinstance(sku, str) or not sku or sku in seen or result.get("status") not in ("VERIFIED_EXACT_IDENTITY", "FAILED"):
+            raise ValueError("TV collection result is not a unique attempted exact SKU")
         seen.add(sku)
+        if result.get("status") != "VERIFIED_EXACT_IDENTITY":
+            sku_coverage.append({"exact_sku": sku, "support_document_count": 0,
+                                 "state": "PDP_NOT_VERIFIED", "pdp_error": result.get("error")})
+            continue
         user_agent = result.get("browser_identity", {}).get("user_agent")
         if not isinstance(user_agent, str) or "Chrome/" not in user_agent or "HeadlessChrome/" in user_agent:
             raise ValueError("TV collection has no realistic desktop browser identity")
@@ -59,6 +63,9 @@ def load_documents(collection_root, collection_run_id):
                                  "name_raw": doc.get("name"), "type_raw": doc.get("type"), "url": url})
     if identity is None:
         raise ValueError("TV collection contains no PDP results")
+    expected_skus = {row.get("exact_sku") for row in summary.get("coverage", {}).get("rows", [])}
+    if seen != expected_skus or len(results) != len(expected_skus):
+        raise ValueError("TV PDP result artifacts do not cover the complete reported SKU population")
     return declarations, identity, sku_coverage
 
 

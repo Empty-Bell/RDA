@@ -97,18 +97,16 @@ the same gap. PDF/model identity and field selection remain candidate evidence
 until the comparison artifact exposes them for review.
 
 The initial full-population collection failed after 40m33s with 47 exact PDPs
-verified and 120 failed. The collector handled all 167 products sequentially,
-with an 8-second wait per SKU, so a single long run blocked downstream stages.
-A recovery workflow now retries only failed SKUs across eight hosted-runner
-shards, retains previously verified evidence, and emits the same full-population
-artifact format for downstream workflows. Each shard reports exact failure
-reasons to identify whether remaining errors are HTTP/network failures, PDP
-identity-contract mismatches, or missing page evidence. The first recovery took
-about six minutes but all 120 retries remained failed: 119 gave the combined
-same-SKU evidence error and one lacked rendered exact-SKU text. A lightweight
-diagnostic workflow now separates URL, JSON-LD identity, and exact Specs/Support
-bridge checks from the saved artifact, without re-running browser collection.
-The retry does not weaken the identity requirements.
+verified and 120 failed. The first recovery took about six minutes. Saved
+evidence showed 119 PDPs had a valid exact-SKU URL and exact-SKU Specs/Support
+bridge, but each also had anonymous Product JSON-LD shells. Identity validation
+now ignores only those unidentified shells while continuing to reject any
+conflicting identified SKU. One remaining case, `QN100QN80FFXZA`, was routed by
+the PF listing to a final PDP URL for `QN115QN90FFXZA`; it remains unverified and
+is not silently relabeled. Initial collection now runs in eight shards. Once
+the 166 exact PDP captures complete, independent EnergyGuide/EPA collection and
+candidate comparison proceed for the whole population, with the mismatched PDP
+explicitly marked unverified.
 
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule

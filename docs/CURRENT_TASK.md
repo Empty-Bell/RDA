@@ -612,16 +612,17 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   EnergyGuide PDF retrieval and full EPA TV capture in parallel; their successful
   completion starts OCR observation and a no-grading source-candidate comparison.
   Initial TV exact-SKU PDP run failed after 40m33s: 47/167 verified and 120
-  failed. The artifact contains per-SKU outcomes, but the Actions summary showed
-  only aggregate counts. Added a recovery workflow that retries failed SKUs in
-  eight hosted-runner shards, preserves the 47 original successes, summarizes
-  specific remaining errors, and emits a combined artifact for the existing
-  downstream stages. The first recovery finished in about six minutes but still
-  had the same failure on all 120 retried SKUs (119 reported no same-SKU URL,
-  JSON-LD, Specs and Support evidence; 1 lacked rendered exact SKU text). Added a
-  fast diagnostic workflow to inspect each saved bridge response, final URL and
-  JSON-LD identity so the next correction targets the actual failed evidence.
-  Diagnostic Actions run is pending.
+  failed. The first recovery finished in about six minutes. Saved evidence shows
+  119 PDPs had a valid exact-SKU URL and exact-SKU Specs/Support bridge; they
+  failed only because the page also had anonymous Product JSON-LD shells. The
+  collector now ignores only those unidentified shells while still rejecting
+  conflicting identified SKUs. The remaining SKU `QN100QN80FFXZA` was routed by
+  PF to a different SKU's `QN115QN90FFXZA` page; that mismatch remains explicitly
+  unverified. Initial full collection is now split into eight hosted shards.
+  Independent label/EPA capture and the source-candidate table will continue
+  for the 166 verifiable PDPs, while this one unresolved PDP remains visible and
+  is never treated as an exact match. Diagnostic run passed:
+  [35692565164](https://github.com/Empty-Bell/RDA/actions/runs/35692565164).
   Bounded source reconnaissance already passed (run 35105667331).
   The approved rules are: comparable annual-energy disagreement = MEDIUM;
   missing PDP annual energy with agreeing label/EPA = LOW; absent EPA current

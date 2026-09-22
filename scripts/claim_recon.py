@@ -74,7 +74,9 @@ def project_inline_product_claims(payload):
 
 def badge_attribution(snapshot, exact_jsonld, target):
     attributed = []
-    if len(exact_jsonld) != 1 or len(snapshot['product_jsonld']) != 1:
+    identified_products = [record for record in snapshot.get('product_jsonld', [])
+                           if record.get('sku') or record.get('mpn')]
+    if len(exact_jsonld) != 1 or len(identified_products) != 1:
         return attributed
     for candidate in snapshot.get('energy_candidates', []):
         if candidate.get('tag') != 'IMG' or not re.search(r'/us/b2c_pf/badge/energy-star-logo-pdp-', candidate.get('src') or '', re.I):

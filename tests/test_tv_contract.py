@@ -3,6 +3,7 @@ import json
 import unittest
 from pathlib import Path
 from scripts.source_contract import pf_population, pdp_facts, epa_contract, energyguide_ocr_reason
+from scripts.g3_tv_collect import verify_identity
 
 ROOT = Path(__file__).parent / 'fixtures' / 'tv'
 
@@ -38,6 +39,22 @@ class TelevisionContract(unittest.TestCase):
     def test_unknown_sku_cannot_borrow_sample(self):
         with self.assertRaises(ValueError):
             pdp_facts(self.bridge, 'UNKNOWN', family='tv')
+
+    def test_anonymous_product_schema_shell_does_not_invalidate_exact_identity(self):
+        sku = 'MRN75R95HAFXZA'
+        snapshot = {'jsonld_parse_errors': 0, 'product_jsonld': [
+            {'sku': sku, 'mpn': None}, {'sku': None, 'mpn': None}, {'name': None}]}
+        facts = verify_identity(sku, f'https://www.samsung.com/us/tvs/micro-rgb/75-inch-tv-sku-{sku.lower()}/',
+                                snapshot, self.bridge)
+        self.assertEqual(facts['exact_sku'], sku)
+
+    def test_conflicting_identified_product_schema_still_fails(self):
+        sku = 'MRN75R95HAFXZA'
+        snapshot = {'jsonld_parse_errors': 0, 'product_jsonld': [
+            {'sku': sku}, {'sku': 'OTHER-SKU'}]}
+        with self.assertRaisesRegex(ValueError, 'does not match exact SKU'):
+            verify_identity(sku, f'https://www.samsung.com/us/tvs/micro-rgb/75-inch-tv-sku-{sku.lower()}/',
+                            snapshot, self.bridge)
 
     def test_label_raw_cost_range_and_energy_are_preserved(self):
         label = json.loads((ROOT / 'energyguide-observation.json').read_text(encoding='utf-8'))

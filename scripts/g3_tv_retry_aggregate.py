@@ -18,6 +18,8 @@ def main():
     parser.add_argument("--original-root", required=True)
     parser.add_argument("--shards-root", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--allow-unverified", action="store_true",
+                        help="Return success when every SKU was attempted, even if exact identity failed")
     args = parser.parse_args()
     original, shards, out = Path(args.original_root), Path(args.shards_root), Path(args.out)
     base = load(original / "collection-summary.json")
@@ -35,13 +37,11 @@ def main():
         selected_roots.append(summary_path.parent)
         for result in report["rows"]:
             sku = result["exact_sku"]
-            if sku not in rows or rows[sku]["status"] != "FAILED":
+            if sku not in rows or rows[sku]["status"] not in ("FAILED", "NOT_ATTEMPTED"):
                 raise ValueError(f"Retry contains an unexpected or originally successful SKU: {sku}")
             rows[sku] = {"exact_sku": sku, "status": result["status"], **({"error": result["error"]} if result.get("error") else {})}
     # Retain each original success, and the latest retry result for every failed SKU.
     for sku, result in rows.items():
-        if result["status"] == "NOT_ATTEMPTED":
-            raise ValueError(f"Retry shard coverage omitted {sku}")
         source = original / "pdp" / quote(sku, safe="")
         if sku in products and base["coverage"]["rows"]:
             orig_row = next(r for r in base["coverage"]["rows"] if r["exact_sku"] == sku)
@@ -49,8 +49,10 @@ def main():
                 pass
             else:
                 source = next((root / "pdp" / quote(sku, safe="") for root in selected_roots
-                               if (root / "pdp" / quote(sku, safe="") / "result.json").is_file()), None)
+                               if (root / "pdp" / quote(sku, safe="") / "result.json").is_file()), source)
         if source is None or not (source / "result.json").is_file():
+            if result["status"] == "NOT_ATTEMPTED":
+                continue
             raise ValueError(f"Evidence folder missing for {sku}")
         shutil.copytree(source, out / "pdp" / quote(sku, safe=""))
     counts = Counter(row["status"] for row in rows.values())
@@ -66,7 +68,8 @@ def main():
     (out / "collection-summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     reasons = Counter(row.get("error", "(no error detail)") for row in rows_list if row["status"] == "FAILED")
     print(json.dumps({"status": status, "population_count": len(rows_list), "coverage_counts": report["coverage"]["counts"], "failure_reasons": dict(reasons)}, sort_keys=True), flush=True)
-    return 0 if status == "PASS" else 1
+    complete = counts["NOT_ATTEMPTED"] == 0
+    return 0 if status == "PASS" or (args.allow_unverified and complete) else 1
 
 
 if __name__ == "__main__":

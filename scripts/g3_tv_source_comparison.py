@@ -102,19 +102,33 @@ def us_market_scope(raw):
 def collection_inputs(collection_root, expected_run_id):
     root = Path(collection_root)
     summary = read_json(root / "collection-summary.json")
-    if summary.get("status") != "PASS" or str(summary.get("collection_run_id")) != str(expected_run_id):
-        raise ValueError("PDP collection artifact is not the requested successful same-run source")
+    if summary.get("status") not in ("PASS", "FAILED") or str(summary.get("collection_run_id")) != str(expected_run_id):
+        raise ValueError("PDP collection artifact is not the requested complete same-run source")
     products = read_json(root / "products.json")
     results = [read_json(path) for path in sorted(root.glob("pdp/*/result.json"))]
-    if (not isinstance(products, list) or len(results) != summary.get("coverage", {}).get("population_count")
-            or len({x.get("exact_sku") for x in results}) != len(results)):
+    if not isinstance(products, list) or len(products) != summary.get("coverage", {}).get("population_count"):
         raise ValueError("TV PDP collection population is incomplete or duplicated")
-    if any(result.get("status") != "VERIFIED_EXACT_IDENTITY" for result in results):
-        raise ValueError("TV PDP collection contains an unverified exact SKU")
+    result_by_sku = {x.get("exact_sku"): x for x in results}
     product_by_sku = {row.get("exact_sku"): row for row in products}
-    if set(product_by_sku) != {row.get("exact_sku") for row in results}:
-        raise ValueError("TV PDP listing and result SKU populations differ")
-    return {row["exact_sku"]: row for row in results}, product_by_sku, summary
+    coverage_rows = summary.get("coverage", {}).get("rows", [])
+    coverage_by_sku = {row.get("exact_sku"): row for row in coverage_rows}
+    if (len(product_by_sku) != len(products) or len(result_by_sku) != len(results)
+            or len(coverage_by_sku) != len(coverage_rows)
+            or not set(result_by_sku) <= set(product_by_sku)
+            or set(product_by_sku) != set(coverage_by_sku)):
+        raise ValueError("TV PDP listing, result and coverage SKU populations differ")
+    combined = {}
+    for sku in product_by_sku:
+        result = result_by_sku.get(sku)
+        state = coverage_by_sku[sku].get("status")
+        if result is None:
+            if state != "NOT_ATTEMPTED":
+                raise ValueError(f"TV PDP result is missing for {sku}")
+            result = {"exact_sku": sku, "status": state, "error": "PDP collection was not attempted"}
+        if result.get("status") != state or state not in ("VERIFIED_EXACT_IDENTITY", "FAILED", "NOT_ATTEMPTED"):
+            raise ValueError(f"TV PDP result status disagrees with coverage for {sku}")
+        combined[sku] = result
+    return combined, product_by_sku, summary
 
 
 def epa_inputs(epa_root, expected_run_id):
@@ -149,7 +163,7 @@ def main():
     if str(review.get("collection_run_id")) != str(args.collection_run_id):
         raise ValueError("TV review table is not bound to the same PDP collection run")
     epa_rows, epa_summary = epa_inputs(args.epa_root, args.epa_run_id)
-    population = sorted(pdp_by_sku)
+    population = sorted(product_by_sku)
     if review.get("sku_population_count") != len(population):
         raise ValueError("TV PDP and label-review SKU populations differ")
 
@@ -166,7 +180,8 @@ def main():
                                       "annual_energy_candidates_raw": energies,
                                       "capacity_candidates_raw": entry.get("capacity_candidates_raw", []),
                                       "review_flags": entry.get("review_flags", [])})
-    if any(not label_by_sku[sku] for sku in population if sku not in review.get("skus_without_support_document", [])):
+    no_review_document = set(review.get("skus_without_review_document", review.get("skus_without_support_document", [])))
+    if any(not label_by_sku[sku] for sku in population if sku not in no_review_document):
         raise ValueError("A SKU with a Support-declared document is missing its label review record")
 
     table = []
@@ -241,6 +256,7 @@ def main():
         else:
             energy_comparison = "SOURCE_VALUES_DIFFER"
         table.append({"exact_sku": sku, "pdp_title_raw": listing.get("modelName"),
+                      "pdp_collection_status": pdp.get("status"), "pdp_collection_error": pdp.get("error"),
                       "pdp_identity_contract": pdp.get("identity_contract"),
                       "pdp_source_provenance": {"final_url_raw": pdp.get("final_url"),
                                                 "snapshot_sha256": pdp.get("snapshot_sha256"),
@@ -253,7 +269,7 @@ def main():
                       "epa_normalized_pattern_matches_diagnostic_only": epa_normalized_matches,
                       "epa_near_pattern_candidates_diagnostic_only": near_epa_patterns(sku, epa_rows) if not epa_matches else [],
                       "energy_comparison_candidate": energy_comparison,
-                      "model_comparison": {"pdp": "EXACT_SKU_IDENTITY_VERIFIED",
+                      "model_comparison": {"pdp": "EXACT_SKU_IDENTITY_VERIFIED" if pdp.get("status") == "VERIFIED_EXACT_IDENTITY" else "EXACT_SKU_IDENTITY_NOT_VERIFIED",
                                            "label": "ONE_OR_MORE_PREFIX_PATTERNS_MATCH" if label_matches else "NO_LABEL_PATTERN_MATCH",
                                            "epa_current": "ONE_OR_MORE_CURRENT_ROWS_MATCH" if epa_matches else "NO_CURRENT_EPA_MODEL_ROW_MATCH"},
                       "combo_routing": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"})

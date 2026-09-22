@@ -90,10 +90,18 @@ def verify_identity(sku, final_url, snapshot, bridge):
     declarations = snapshot.get("product_jsonld")
     if not isinstance(declarations, list) or not declarations:
         raise ValueError("TV PDP has no current Product JSON-LD identity")
+    identified = []
     for declaration in declarations:
         identities = [declaration[key] for key in ("sku", "mpn") if declaration.get(key)]
-        if not identities or any(value != sku for value in identities):
+        # Samsung PDPs can emit anonymous Product schema shells alongside the
+        # actual identified product. They are not evidence of another SKU.
+        if not identities:
+            continue
+        if any(value != sku for value in identities):
             raise ValueError("TV PDP JSON-LD does not match exact SKU")
+        identified.append(declaration)
+    if len(identified) != 1:
+        raise ValueError("TV PDP does not have one unique exact-SKU Product JSON-LD identity")
     return pdp_facts(bridge, sku, family="tv")
 
 
