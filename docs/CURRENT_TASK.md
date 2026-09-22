@@ -694,8 +694,12 @@ source IDs and stable schema; hashes raw metadata/rows; and makes no SKU match
 or assessment. The source-candidate table now prints label model and annual-kWh
 candidates in separate columns so shared-PDF tokens are not misrepresented as
 paired evidence. Tests verify that distinct source energy fields remain intact.
-Next: run the hosted capture, inspect current combo EPA rows, then add combo-source
-candidate links while keeping assessment disabled. Washer-side 94/95/103 label
-candidates must not be treated as dryer energy. Recommended model for this
-fixed-schema implementation/review: GPT-5.6 Luna low; use GPT-5.6 Terra medium
-only if interpretation requires a policy decision.
+Initial capture passed in Actions run `35717430123` in 16 seconds with three
+Samsung EPA combo rows. The follow-up now makes the capture summary show both
+component values and adds these rows to a separate hash-verified combo candidate
+slot in the join. The comparison workflow waits for successful combo capture
+and then runs on GitHub-hosted Ubuntu; assessment stays disabled. Washer-side
+94/95/103 label candidates must not be treated as dryer energy. Next: inspect
+the newly linked candidate rows and verify the automated hosted comparison.
+Recommended model for this fixed-schema implementation/review: GPT-5.6 Luna
+low; use GPT-5.6 Terra medium only if interpretation requires a policy decision.

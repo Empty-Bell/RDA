@@ -62,7 +62,22 @@ def load_epa(root, run_id):
     return rows
 
 
-def join_candidates(review_root, collection_root, collection_run_id, epa_root, epa_run_id, output):
+def load_combo_epa(root, run_id):
+    root = Path(root)
+    summary = read_json(root / "capture-summary.json")
+    raw = (root / "samsung-current-rows.json").read_bytes()
+    if (summary.get("status") != "PASS" or summary.get("dataset_id") != "9jai-gs6t"
+            or str(summary.get("capture_run_id")) != str(run_id)
+            or hashlib.sha256(raw).hexdigest() != summary.get("rows_sha256")):
+        raise ValueError("Dryer combo EPA rows are not the requested hash-verified capture")
+    rows = json.loads(raw)
+    if not isinstance(rows, list) or len(rows) != summary.get("row_count"):
+        raise ValueError("Dryer combo EPA row count does not match capture metadata")
+    return rows
+
+
+def join_candidates(review_root, collection_root, collection_run_id, epa_root, epa_run_id,
+                    combo_epa_root, combo_epa_run_id, output):
     review = read_json(Path(review_root) / "review-queue.json")
     if (review.get("status") != "PASS" or review.get("contract") != "G3_DRYER_ENERGYGUIDE_RAW_CANDIDATE_REVIEW_V1"
             or str(review.get("retrieval_run_id")) != str(epa_run_id)):
@@ -71,6 +86,7 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
         raise ValueError("Dryer label review and PDP collection do not share a collection run")
     pdps, products, summary = load_collection(collection_root, collection_run_id)
     epa_rows = load_epa(epa_root, epa_run_id)
+    combo_epa_rows = load_combo_epa(combo_epa_root, combo_epa_run_id)
     population = sorted(pdps)
     if review.get("sku_population_count") != len(population):
         raise ValueError("Dryer review queue and PDP SKU populations differ")
@@ -112,23 +128,39 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
                                     "annual_energy_kwh_yr_raw": row.get("estimated_annual_energy_use_kwh_yr"),
                                     "combined_energy_factor_cef_raw": row.get("combined_energy_factor_cef"),
                                     "drum_capacity_cu_ft_raw": row.get("drum_capacity_cu_ft")})
+        combo_epa_matches = []
+        for row in combo_epa_rows:
+            candidate = positional_prefix_candidate(row.get("model_number"), sku)
+            if candidate:
+                combo_epa_matches.append({**candidate, "source_row_id": row.get("source_row_id"),
+                    "pd_id": row.get("pd_id"), "model_number_raw": row.get("model_number"),
+                    "markets_raw": row.get("markets"), "date_qualified_raw": row.get("date_qualified"),
+                    "special_type_raw": row.get("special_type"), "intended_market_raw": row.get("intended_market"),
+                    "washer_annual_energy_kwh_yr_raw": row.get("annual_energy_use_kwh_year"),
+                    "combo_dryer_annual_energy_kwh_yr_raw": row.get("estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer"),
+                    "combo_dryer_cef_raw": row.get("combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer"),
+                    "combo_dryer_capacity_raw": row.get("drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer")})
         output_rows.append({"exact_sku": sku, "pdp_title_raw": listing.get("modelName"),
                             "pdp_identity": pdp.get("identity_contract"),
                             "pdp_energy_specs_raw": facts.get("energy_consumption_raw", []),
                             "pdp_drying_capacity_raw": facts.get("capacity_raw", []),
                             "label_support_document_state": "DOCUMENT_REVIEWED" if label_docs else "NO_SUPPORT_DOCUMENT_DECLARED",
                             "label_documents": label_docs, "epa_model_pattern_candidates": epa_matches,
+                            "combo_epa_model_pattern_candidates": combo_epa_matches,
                             "epa_model_candidate_count": len(epa_matches),
+                            "combo_epa_model_candidate_count": len(combo_epa_matches),
                             "numeric_comparison": "NOT_EVALUATED",
                             "family_routing": "NOT_EVALUATED",
                             "assessment": "NOT_EVALUATED"})
     report = {"contract": CONTRACT, "status": "PASS", "collection_run_id": str(collection_run_id),
               "epa_capture_run_id": str(epa_run_id), "review_run_id": review.get("review_queue_run_id"),
+              "combo_epa_capture_run_id": str(combo_epa_run_id),
               "comparison_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
               "captured_at": datetime.now(timezone.utc).isoformat(), "population_count": len(population),
-              "epa_samsung_current_row_count": len(epa_rows), "sku_without_support_document_count": len(no_docs),
+              "epa_samsung_current_row_count": len(epa_rows), "combo_epa_samsung_current_row_count": len(combo_epa_rows),
+              "sku_without_support_document_count": len(no_docs),
               "model_candidate_contract": "Positional prefix candidate only: each * consumes one A-Z/0-9 character; remaining exact-SKU suffix is preserved. Candidate is not a match decision.",
-              "scope": "Same-run exact-SKU PDP, Support-label, and EPA source observations; raw source candidates only; no value selection, family routing, numeric comparison, pass/fail, severity, or compliance assessment",
+              "scope": "Exact-SKU PDP, Support-label, EPA dryer, and EPA combo source observations; raw source candidates only; no value selection, family routing, numeric comparison, pass/fail, severity, or compliance assessment",
               "rows": output_rows}
     destination = Path(output)
     destination.mkdir(parents=True, exist_ok=True)
@@ -137,17 +169,19 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
     if step_summary:
         with Path(step_summary).open("a", encoding="utf-8") as stream:
             stream.write("## Dryer PDP / EnergyGuide / EPA source candidates\n\n")
-            stream.write(f"Exact PDP SKUs: **{len(population)}**; EPA Samsung rows: **{len(epa_rows)}**; SKUs without a Support label: **{len(no_docs)}**. No selection, comparison, or assessment was made.\n\n")
-            stream.write("| Exact SKU | PDP title | Label model candidates | Label annual-kWh candidates | EPA model rows / annual kWh / CEF | Label docs |\n|---|---|---|---|---|---:|\n")
+            stream.write(f"Exact PDP SKUs: **{len(population)}**; Dryer EPA rows: **{len(epa_rows)}**; combo EPA rows: **{len(combo_epa_rows)}**; SKUs without a Support label: **{len(no_docs)}**. No selection, comparison, or assessment was made.\n\n")
+            stream.write("| Exact SKU | PDP title | Label model candidates | Label annual-kWh candidates | Dryer EPA candidate rows / kWh / CEF | Combo EPA candidate rows / washer kWh / dryer kWh | Label docs |\n|---|---|---|---|---|---|---:|\n")
             for row in output_rows:
                 label_models = "; ".join(", ".join(sorted({m.get("value_raw", "") for m in doc["model_candidates_raw"] if m.get("value_raw")})) or "no model candidate" for doc in row["label_documents"]) or "none"
                 label_energy = "; ".join(", ".join(sorted({e.get("value_raw", "") for e in doc["annual_energy_candidates_raw"] if e.get("value_raw")})) or "no annual-kWh candidate" for doc in row["label_documents"]) or "none"
                 epa = "; ".join(f"{x['model_number_raw']} / {x['annual_energy_kwh_yr_raw']} / CEF {x['combined_energy_factor_cef_raw']}" for x in row["epa_model_pattern_candidates"]) or "no positional candidate"
-                cells = [row["exact_sku"], row["pdp_title_raw"] or "", label_models, label_energy, epa, str(len(row["label_documents"]))]
+                combo_epa = "; ".join(f"{x['model_number_raw']} / W {x['washer_annual_energy_kwh_yr_raw']} / D {x['combo_dryer_annual_energy_kwh_yr_raw']}" for x in row["combo_epa_model_pattern_candidates"]) or "no positional candidate"
+                cells = [row["exact_sku"], row["pdp_title_raw"] or "", label_models, label_energy, epa, combo_epa, str(len(row["label_documents"]))]
                 stream.write("| " + " | ".join(str(x).replace("|", "\\|").replace("\n", " ") for x in cells) + " |\n")
     print(json.dumps({"status": "PASS", "population_count": len(population), "epa_row_count": len(epa_rows),
                       "skus_without_support_document": len(no_docs),
                       "epa_candidate_rows": sum(row["epa_model_candidate_count"] for row in output_rows),
+                      "combo_epa_candidate_rows": sum(row["combo_epa_model_candidate_count"] for row in output_rows),
                       "numeric_comparison": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"}, sort_keys=True), flush=True)
     return report
 
@@ -159,10 +193,12 @@ def main():
     parser.add_argument("--collection-run-id", required=True)
     parser.add_argument("--epa-root", required=True)
     parser.add_argument("--epa-run-id", required=True)
+    parser.add_argument("--combo-epa-root", required=True)
+    parser.add_argument("--combo-epa-run-id", required=True)
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
     join_candidates(args.review_root, args.collection_root, args.collection_run_id,
-                    args.epa_root, args.epa_run_id, args.out)
+                    args.epa_root, args.epa_run_id, args.combo_epa_root, args.combo_epa_run_id, args.out)
 
 
 if __name__ == "__main__":

@@ -152,6 +152,9 @@ the dryer-side value.
 The candidate-join Actions summary now reports label model text and annual-kWh
 text in separate columns. Values found in one shared PDF are not presented as
 paired model/value assertions unless a later, approved source rule establishes
-that relationship. The next gate is a fresh hosted combo capture and source-row
-review, followed by a narrowly scoped candidate-link integration. Numeric
-comparison and grading stay disabled pending source applicability review.
+that relationship. The first fresh hosted combo capture passed in run
+`35717430123`: EPA returned three Samsung rows. Its artifact is hash-checked,
+and the Actions summary prints washer and dryer energy in distinct columns. The
+candidate join now adds combo rows to a separate SKU/model-pattern candidate
+field and preserves both annual-energy values plus dryer CEF/capacity. Numeric
+comparison and grading remain disabled pending source applicability review.
