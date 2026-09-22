@@ -93,7 +93,25 @@ An automatically duplicated collection run 35713169010 stopped at the source
 artifact identity guard before attempting PDP pages; it does not invalidate the
 complete earlier collection artifact.
 
-Next: capture all Samsung rows from EPA Current dataset `t9u7-4d2j` and retrieve
-all exact-SKU PDP Support-declared EnergyGuide PDFs in parallel. This is source
-capture only. Annual-energy field selection, fuel/venting/combination routing,
-model matching and severity assessment remain NOT_EVALUATED.
+EPA Current Samsung dryer cohort capture and exact-SKU Support PDF retrieval
+passed in hosted run 35714849653. Capture included 104 Samsung rows from dataset
+`t9u7-4d2j`; retrieval retained 54-SKU document coverage, 11 declared URLs, 5
+unique valid PDF bodies. This is source capture only. Annual-energy field
+selection, fuel/venting/combination routing, model matching and severity
+assessment remain NOT_EVALUATED.
+
+## EnergyGuide observation and raw review queue
+
+New hosted-only workflows observe each unique PDF hash once, preserve extracted
+text and page detections, OCR image-only pages (and supplement embedded text if
+no annual-energy candidate appears), then emit a raw candidate index tied to exact
+PDP SKU-document links. Dryer capacity candidates use the printed “Drying
+Capacity (cu.ft)” line; annual-energy candidates require yearly-electricity
+context. These are candidate heuristics only: no OCR correction, candidate
+selection, wildcard matching, numeric comparison, pass/fail, or severity is
+enabled. Combo washer energy is not projected as dryer energy. These steps run on
+GitHub-hosted `ubuntu-24.04`, with the existing pinned OCR/PDF dependencies and no
+LLM calls. Two local sanitized review-queue contract tests pass; hosted evidence
+is pending execution. Recommended model for routine fixed-schema run review:
+GPT-5.6 Luna low; GPT-5.6 Terra medium only if a new source-policy decision is
+needed.

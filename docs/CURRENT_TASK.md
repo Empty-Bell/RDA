@@ -10,12 +10,17 @@ EnergyGuide links and provenance; it does not EPA-match or assess. Combo washer
 Energy Guide kWh is not projected as dryer annual energy. A later duplicate
 collection attempt (35713169010) failed at its upstream source-artifact identity
 guard before PDP collection; use the complete, successful 35712660255 package.
-The next step is parallel same-run capture of EPA Current Samsung dryer rows and
-PDP-declared EnergyGuide PDFs. Comparison and assessment remain disabled pending
-review of fuel, venting and combo applicability. Ten existing Dryer contract tests
-and the full 184-test suite pass locally (one skipped). Recommended model for
-fixed-schema capture review: GPT-5.6 Luna low; use GPT-5.6 Terra medium only if
-source evidence requires a new policy decision. Actions runtime uses no LLM.
+The EPA Current Samsung dryer capture and PDP-declared EnergyGuide retrieval
+passed together in run 35714849653: 104 Samsung EPA rows, 54-SKU PDP coverage,
+11 declared PDF URLs and 5 unique valid PDFs. New hosted steps now observe PDF
+text/layout/OCR and create a raw candidate index for printed model, annual-kWh,
+and drying-capacity text. They do not select values, match models, compare numbers,
+or assess. The immediate next action is hosted OCR/review queue execution, then
+inspect ambiguous raw candidates before building the dryer comparison table.
+Comparison and assessment remain disabled pending review of fuel, venting, and
+combo applicability. Recommended model for this fixed-contract, evidence-only
+work is GPT-5.6 Luna low; use GPT-5.6 Terra medium only if source evidence raises
+a new policy decision. Actions runtime uses no LLM.
 
 Read AGENTS.md and this file first; inspect only the relevant implementation and
 contract sections. Do not reread chronological phase history or full source files
