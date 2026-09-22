@@ -141,6 +141,29 @@ severity findings. The run's PASS means collection/comparison completed; no fina
 product grading was performed. Full row evidence is in the
 [comparison workflow artifact](https://github.com/Empty-Bell/RDA/actions/runs/35701241420).
 
+Business scope update: exclude every exact TV SKU whose model code begins `MNA`
+from the TV population. The baseline included two such SKUs. The collector now
+records excluded exact SKUs and the prefix rule in population evidence; hosted
+recollection and downstream comparison are pending.
+
+The 35 annual-energy differences are all label-higher-than-EPA (median +17.5%).
+They share exact label/EPA model strings and a single OCR annual-kWh candidate,
+so the uniform direction is unlikely to be caused by OCR/model mismatch alone.
+Do not treat the size of this delta as proof of a publication error yet. ENERGY
+STAR [V9.1](https://www.energystar.gov/sites/default/files/2024-08/ENERGY%20STAR%20Version%209.1%20Televisions%20Specification.pdf)
+says its certified AEC uses the DOE Federal Test Procedure (Appendix H)
+and that DOE represented values require separate testing under [10 CFR
+429.25](https://www.ecfr.gov/current/title-10/section-429.25).
+That rule derives represented annual energy from statistically represented power
+values. FTC television representations use procedures in 10 CFR Parts 429 and
+430 ([FTC 16 CFR 305.8](https://www.ecfr.gov/current/title-16/section-305.8)).
+Thus the EnergyGuide may show DOE's represented rating while EPA's Current
+field reflects a certified test AEC. This is a strong explanation for systematic
+positive differences, but per-model DOE sample/represented values are not in the
+captured EPA artifact, so it remains a hypothesis pending a field-level contract
+check. The existing 35 MEDIUM rows remain candidates, not confirmed product
+errors.
+
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule
 is required. Collection/runtime itself uses no LLM.

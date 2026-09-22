@@ -1,6 +1,11 @@
 name: G3 television exact-SKU collection
 
 on:
+  push:
+    paths:
+      - '.github/workflows/g3-tv-collection.yml'
+      - 'scripts/g3_tv_collect.py'
+      - 'checks/g3/test_tv_collect_population.py'
   workflow_dispatch:
     inputs:
       source_run_id:
@@ -91,6 +96,8 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version-file: '.python-version'
+      - name: Verify TV population exclusions
+        run: python -m unittest checks/g3/test_tv_collect_population.py -v
       - name: Download source population and all completed collection shards
         shell: bash
         run: |

@@ -634,18 +634,21 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   model plus any PLP/PDP logo or Spec certification claim = HIGH. TV operating
   power W is retained separately from annual kWh. Recommended model for this
   fixed-schema hosted workflow review: Luna low; runtime itself uses no LLM.
-  Corrected comparison run 35701241420 at dca6645 passed on hosted Ubuntu. It
-  retained 167 rows, with 162 readable EnergyGuides and five NASCA DRM labels
-  recorded NOT_ACCESSIBLE / HIGH. All 162 readable labels linked to a model
-  pattern; 160 supplied annual kWh. EPA Current had exact US model matches for
-  35 SKUs, and all 35 label/EPA annual-kWh pairs differed (MEDIUM candidates).
-  The other 132 had no exact EPA model match; 59 had only 5–8-character
-  near-prefix diagnostics, not accepted as matches. PDP typical W vs EPA on-mode
-  W yielded 20 differences; 138 had no exact EPA on-mode row and nine lacked PDP
-  typical W. Power comparisons remain ungraded source candidates. This PASS means
-  collection/comparison completed; it is not a final product assessment. Full
-  output: https://github.com/Empty-Bell/RDA/actions/runs/35701241420.
-  Next: review the 35 annual-kWh differences and EPA no-match identity patterns
-  before enabling final TV severity grading or dashboard integration. Recommended
-  model: GPT-5.6 Luna low for this fixed-schema review; use GPT-5.6 Terra medium
-  only if an identity or comparison-rule decision requires reasoning.
+  Baseline comparison run 35701241420 at dca6645 passed as candidate generation:
+  167 rows, 162 readable EnergyGuides, and five NASCA DRM labels recorded
+  NOT_ACCESSIBLE / HIGH. Of 35 exact US EPA model matches, all annual label kWh
+  exceeded EPA AEC (median +17.5%). Their model strings matched and OCR exposed a
+  single annual value. ENERGY STAR V9.1 distinguishes certified AEC sent to EPA
+  from DOE represented ratings that require 10 CFR 429.25 sampling calculations;
+  this likely explains the systematic delta but needs source-field confirmation.
+  Keep MEDIUM records as candidates, not confirmed publication errors, pending
+  that validation. See docs/TV_SOURCE_CONTRACT.md and source links there.
+  Business requested excluding MNA TVs. The baseline contained two MNA models;
+  scripts/g3_tv_collect.py now excludes the MNA prefix and records excluded SKUs
+  explicitly. A hosted contract test and full downstream recollection/comparison
+  are pending. Latest baseline output:
+  https://github.com/Empty-Bell/RDA/actions/runs/35701241420.
+  Next: validate MNA exclusion on hosted Actions; confirm EnergyGuide vs EPA
+  annual-value field basis and then resolve the 35 candidates and EPA no-match
+  patterns. Recommended model: GPT-5.6 Luna low for deterministic hosted checks;
+  use GPT-5.6 Terra medium only if a data-definition decision is needed.

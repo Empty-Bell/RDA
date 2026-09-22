@@ -17,6 +17,7 @@ from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
 
 PLP_URL = "https://www.samsung.com/us/tvs/all-tvs/"
 CONTRACT = "G3_TV_EXACT_SKU_PDP_V1"
+EXCLUDED_TV_MODEL_PREFIXES = ("MNA",)
 
 
 def load_json(path):
@@ -49,12 +50,15 @@ def load_population(recon_root, source_run_id):
     offsets = sorted(pages_by_offset)
     pages = [pages_by_offset[offset][0] for offset in offsets]
     population = pf_population(pages)
-    products, listing_by_sku = [], {}
+    products, listing_by_sku, excluded_skus = [], {}, set()
     for offset in offsets:
         page, digest = pages_by_offset[offset]
         for group in page["searchResults"]:
             for variant in group["groupedProductList"]:
                 sku = variant["modelCode"]
+                if sku.startswith(EXCLUDED_TV_MODEL_PREFIXES):
+                    excluded_skus.add(sku)
+                    continue
                 listing_by_sku[sku] = {key: variant.get(key) for key in
                                        ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")}
                 products.append({"run_id": source_run_id, "exact_sku": sku, "listings": [{
@@ -73,10 +77,15 @@ def load_population(recon_root, source_run_id):
     canonical = canonicalize_products(products)
     for product in canonical:
         product["source_claim_listing_raw"] = listing_by_sku[product["exact_sku"]]
-    if len(canonical) != population["unique_exact_skus"]:
+    expected_in_scope = population["unique_exact_skus"] - len(excluded_skus)
+    if len(canonical) != expected_in_scope:
         raise ValueError("TV exact-SKU population cardinality changed")
     return canonical, {"source_run_id": str(source_run_id), "total_groups": population["total_groups"],
-                       "unique_exact_skus": population["unique_exact_skus"], "pf_page_count": len(pages),
+                       "source_unique_exact_skus": population["unique_exact_skus"],
+                       "unique_exact_skus": len(canonical),
+                       "excluded_model_prefixes": list(EXCLUDED_TV_MODEL_PREFIXES),
+                       "excluded_exact_skus": sorted(excluded_skus),
+                       "pf_page_count": len(pages),
                        "pf_page_hashes": [pages_by_offset[offset][1] for offset in offsets]}
 
 
