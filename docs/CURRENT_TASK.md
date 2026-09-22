@@ -703,3 +703,19 @@ and then runs on GitHub-hosted Ubuntu; assessment stays disabled. Washer-side
 the newly linked candidate rows and verify the automated hosted comparison.
 Recommended model for this fixed-schema implementation/review: GPT-5.6 Luna
 low; use GPT-5.6 Terra medium only if interpretation requires a policy decision.
+
+Hosted dryer component-candidate join passed in run `35717939255` (21 seconds)
+after the EPA combo capture. It covered all 54 exact Dryer PDP SKUs, 104 rows
+from the normal Dryer EPA dataset, and 3 rows from the all-in-one EPA dataset.
+Six WD53/WD90 exact SKUs link to the dedicated all-in-one EPA patterns. For
+WD90, label/PDP and EPA washer-side energy are 103 kWh/yr; EPA dryer-side energy
+is 608. For WD53, label washer-side energy is 103 while EPA reports dryer-side
+energy 319; the ordinary Dryer dataset's matching row has no annual-kWh value.
+These source values remain candidates and have not been assessed. WH46 Laundry
+Center labels show 94/95 washer-side candidates; ordinary Dryer EPA shows
+separate dryer-pattern candidates, and the all-in-one dataset has no WH46 row.
+The summary display is now updated in code so only SKU-fitting label patterns
+are called pattern candidates, unmatched PDF tokens appear separately, and EPA
+fuel type is shown. Next, rerun the fast comparison and inspect those rows
+before defining numeric assessment rules. Recommended model: GPT-5.6 Luna low;
+use Terra medium only if the sources create a new policy question.

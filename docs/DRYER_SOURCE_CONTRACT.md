@@ -158,3 +158,17 @@ and the Actions summary prints washer and dryer energy in distinct columns. The
 candidate join now adds combo rows to a separate SKU/model-pattern candidate
 field and preserves both annual-energy values plus dryer CEF/capacity. Numeric
 comparison and grading remain disabled pending source applicability review.
+
+The automated follow-up comparison passed in run `35717939255` (21 seconds):
+54 PDP SKUs, 104 ordinary Dryer EPA rows, and 3 EPA all-in-one combo rows.
+The report exposes 6 WD53/WD90 exact-SKU links to the all-in-one dataset and
+keeps the washer and dryer kWh side by side. For example, WD90 has label/PDP
+washer-side 103 and combo EPA washer 103, while the dryer-component value is
+608; the two EPA dryer paths also show 608 for this pattern. WD53 has label
+washer-side 103 and combo-EPA dryer-side 319; the ordinary Dryer EPA row has no
+annual-kWh value for that pattern. These are component-specific source
+observations, not findings. Laundry Center WH46 labels report 94/95 while the
+ordinary Dryer EPA candidates show separate dryer rows; they do not link to the
+all-in-one combo dataset. The summary now separates SKU-compatible label model
+patterns from other model-like PDF tokens and displays EPA fuel type, so e.g.
+document-number-like text is not mistaken for a matching model pattern.

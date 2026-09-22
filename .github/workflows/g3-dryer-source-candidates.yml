@@ -15,6 +15,11 @@ on:
     workflows: [G3 clothes dryer EnergyGuide raw candidate review, G3 Dryer EPA combo component source capture]
     types: [completed]
     branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_dryer_source_comparison.py'
+      - '.github/workflows/g3-dryer-source-candidates.yml'
 
 permissions:
   actions: read

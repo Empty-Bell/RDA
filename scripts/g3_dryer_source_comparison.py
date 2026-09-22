@@ -76,6 +76,15 @@ def load_combo_epa(root, run_id):
     return rows
 
 
+def label_model_display(document):
+    matched = sorted({candidate.get("pattern_raw") for candidate in document.get("model_inclusion_candidates", [])
+                      if candidate.get("pattern_raw")})
+    all_tokens = sorted({model.get("value_raw") for model in document.get("model_candidates_raw", [])
+                         if model.get("value_raw")})
+    other = [value for value in all_tokens if value not in matched]
+    return ", ".join(matched) or "none", ", ".join(other) or "none"
+
+
 def join_candidates(review_root, collection_root, collection_run_id, epa_root, epa_run_id,
                     combo_epa_root, combo_epa_run_id, output):
     review = read_json(Path(review_root) / "review-queue.json")
@@ -170,13 +179,14 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
         with Path(step_summary).open("a", encoding="utf-8") as stream:
             stream.write("## Dryer PDP / EnergyGuide / EPA source candidates\n\n")
             stream.write(f"Exact PDP SKUs: **{len(population)}**; Dryer EPA rows: **{len(epa_rows)}**; combo EPA rows: **{len(combo_epa_rows)}**; SKUs without a Support label: **{len(no_docs)}**. No selection, comparison, or assessment was made.\n\n")
-            stream.write("| Exact SKU | PDP title | Label model candidates | Label annual-kWh candidates | Dryer EPA candidate rows / kWh / CEF | Combo EPA candidate rows / washer kWh / dryer kWh | Label docs |\n|---|---|---|---|---|---|---:|\n")
+            stream.write("| Exact SKU | PDP title | Label patterns fitting SKU | Other model-like PDF tokens | Label annual-kWh candidates | Dryer EPA candidates / kWh / CEF / type | Combo EPA candidates / washer kWh / dryer kWh | Label docs |\n|---|---|---|---|---|---|---|---:|\n")
             for row in output_rows:
-                label_models = "; ".join(", ".join(sorted({m.get("value_raw", "") for m in doc["model_candidates_raw"] if m.get("value_raw")})) or "no model candidate" for doc in row["label_documents"]) or "none"
+                label_models = "; ".join(label_model_display(doc)[0] for doc in row["label_documents"]) or "none"
+                other_label_tokens = "; ".join(label_model_display(doc)[1] for doc in row["label_documents"]) or "none"
                 label_energy = "; ".join(", ".join(sorted({e.get("value_raw", "") for e in doc["annual_energy_candidates_raw"] if e.get("value_raw")})) or "no annual-kWh candidate" for doc in row["label_documents"]) or "none"
-                epa = "; ".join(f"{x['model_number_raw']} / {x['annual_energy_kwh_yr_raw']} / CEF {x['combined_energy_factor_cef_raw']}" for x in row["epa_model_pattern_candidates"]) or "no positional candidate"
+                epa = "; ".join(f"{x['model_number_raw']} / {x['annual_energy_kwh_yr_raw']} / CEF {x['combined_energy_factor_cef_raw']} / {x['type_raw']}" for x in row["epa_model_pattern_candidates"]) or "no positional candidate"
                 combo_epa = "; ".join(f"{x['model_number_raw']} / W {x['washer_annual_energy_kwh_yr_raw']} / D {x['combo_dryer_annual_energy_kwh_yr_raw']}" for x in row["combo_epa_model_pattern_candidates"]) or "no positional candidate"
-                cells = [row["exact_sku"], row["pdp_title_raw"] or "", label_models, label_energy, epa, combo_epa, str(len(row["label_documents"]))]
+                cells = [row["exact_sku"], row["pdp_title_raw"] or "", label_models, other_label_tokens, label_energy, epa, combo_epa, str(len(row["label_documents"]))]
                 stream.write("| " + " | ".join(str(x).replace("|", "\\|").replace("\n", " ") for x in cells) + " |\n")
     print(json.dumps({"status": "PASS", "population_count": len(population), "epa_row_count": len(epa_rows),
                       "skus_without_support_document": len(no_docs),

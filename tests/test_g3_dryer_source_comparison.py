@@ -2,7 +2,7 @@
 
 import unittest
 
-from scripts.g3_dryer_source_comparison import positional_prefix_candidate
+from scripts.g3_dryer_source_comparison import label_model_display, positional_prefix_candidate
 
 
 class DryerSourceCandidateJoinContract(unittest.TestCase):
@@ -19,6 +19,14 @@ class DryerSourceCandidateJoinContract(unittest.TestCase):
 
     def test_wrong_literal_identity_is_not_silently_normalized(self):
         self.assertIsNone(positional_prefix_candidate("DV53-BB8900HDA*", "DV53BB8900HDA2"))
+
+    def test_only_sku_compatible_label_pattern_is_shown_as_pattern_candidate(self):
+        document = {
+            "model_inclusion_candidates": [{"pattern_raw": "WD53DBA9**H*"}],
+            "model_candidates_raw": [{"value_raw": "DC68-04515A-00"},
+                                      {"value_raw": "WD53DBA9**H*"}],
+        }
+        self.assertEqual(label_model_display(document), ("WD53DBA9**H*", "DC68-04515A-00"))
 
 
 if __name__ == "__main__":
