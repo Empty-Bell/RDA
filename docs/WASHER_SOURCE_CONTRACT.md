@@ -13,6 +13,40 @@ table, then a source-backed determination of washer versus all-in-one combo EPA/
 applicability. Any previous "next product family" language below is historical and
 does not supersede this active Washer checkpoint.
 
+## Same-run PDP / EnergyGuide / EPA comparison (2026-09-22)
+
+Comparison workflow [35685571247](https://github.com/Empty-Bell/RDA/actions/runs/35685571247)
+passed after the exact-SKU PDP collection, Support PDF retrieval, OCR observation,
+and raw candidate review were linked by their source run IDs. Scope is all 37 Washer
+SKUs. The output retains source values and model patterns without selecting a final
+assessment or severity. EPA annual-energy candidate values are drawn only from a
+matching current model row whose `markets` field explicitly lists the US.
+
+Results: 22 SKUs have the same single annual kWh value in PDP, label, and EPA; 2
+show differing values; 13 lack at least one PDP value or EPA model row. All 37 have
+an exact PDP identity and at least one positional EnergyGuide model-pattern match.
+
+The two value differences are the Laundry Center models `WH46DBH500EVA3` and
+`WH46DBH500GVA3`: PDP lists 103 kWh/year; each Support label and its corresponding
+EPA current row list 95 kWh/year. EPA rows classify both as Front Load / Laundry
+Center, date qualified 2023-11-21. Treat these as unresolved source conflicts; do
+not decide which number is correct or assign severity here.
+
+Eight SKUs have no matching model row in the captured current EPA Samsung set:
+`WA40A3005AW/A4`, `WA41A3000AW/A4`, `WA44A3205AW/A4`, `WA45T3200AW/A4`,
+`WA46CG3505AVA4`, `WA46CG3505AWA4`, `WA47CG3500AVA4`, `WA47CG3500AWA4`. Seven of
+these have a label value of 240 kWh/year and no PDP yearly-energy candidate; the
+remaining `WA44A3205AW/A4` has 240 in both PDP and label. Five further SKUs have
+label and EPA values that agree but no PDP annual-energy candidate:
+`WA54CG7105AVUS`, `WA54CG7105AWUS` (120); `WF90F53ADSA5`, `WF90F53ADYA5` (103);
+and `WW25FG6B34BEA2` (90). These source-coverage gaps are not yet assigned a
+severity.
+
+Next: review the two Laundry Center PDP fields against the underlying page facts,
+and inspect the captured EPA model list for the eight no-row SKUs before enabling
+washer assessment. Recommended model: Luna low for this evidence review; Sol
+medium only if the evidence forces a new policy decision.
+
 Status: bounded source reconnaissance PASS on hosted Ubuntu (run 35104751514).
 Phase 0 remains RUNNING. Certification matching/compliance NOT_EVALUATED.
 

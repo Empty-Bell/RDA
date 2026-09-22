@@ -545,3 +545,32 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   start the unified dashboard until all product-family source/assessment work is
   complete. Recommended model for this fixed-schema evidence review: Luna low;
   use Sol medium only if the source fields require a new comparison policy.
+
+- Washer same-run PDP / EnergyGuide / EPA candidate comparison completed on
+  GitHub-hosted `ubuntu-24.04`: [comparison run 35685571247](https://github.com/Empty-Bell/RDA/actions/runs/35685571247), commit `d0baadc`.
+  Observation, raw label review, and comparison all passed. The comparison covers
+  37 exact PDP SKUs against the linked Samsung Support label PDFs and current
+  EPA `bghd-e2wd` rows. It keeps unmodified SKU values, positional wildcard model
+  candidates, EPA market text, and raw kWh evidence; EPA energy candidates are
+  restricted to rows explicitly listing the US market. No PASS/LOW/HIGH or
+  certification finding was generated.
+  Source comparison counts: 22 SKUs have one exact equal kWh value in PDP, label,
+  and EPA; 2 differ; 13 lack at least one source value/model row. The 2 differing
+  SKUs are `WH46DBH500EVA3` and `WH46DBH500GVA3`: PDP says 103 kWh/year while both
+  their Support label and EPA current model row say 95 kWh/year. EPA identifies
+  both rows as Front Load / Laundry Center, qualified 2023-11-21. This is the
+  principal unresolved numeric discrepancy and needs source-field review before
+  assessment rules are applied.
+  The 13 incomplete rows split into 8 with no current EPA model-pattern row:
+  `WA40A3005AW/A4`, `WA41A3000AW/A4`, `WA44A3205AW/A4`, `WA45T3200AW/A4`,
+  `WA46CG3505AVA4`, `WA46CG3505AWA4`, `WA47CG3500AVA4`, and `WA47CG3500AWA4`;
+  plus 5 where the PDP has no annual kWh candidate although label and EPA agree:
+  `WA54CG7105AVUS`, `WA54CG7105AWUS`, `WF90F53ADSA5`, `WF90F53ADYA5`, and
+  `WW25FG6B34BEA2`. Every listed SKU still has an exact PDP identity and a
+  positional label-model-pattern match. These are source-coverage/comparison
+  observations only; no severity is assigned here. Next: inspect the two
+  laundry-center PDP field values against their exact PDP/Support evidence and
+  confirm the 8 EPA no-row cases against the captured Samsung EPA model list.
+  Keep the dashboard deferred until remaining product families are completed.
+  Recommended model for this bounded source-review step: Luna low; use Sol medium
+  only if the evidence reveals a new rule decision.
