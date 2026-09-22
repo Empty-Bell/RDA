@@ -616,7 +616,12 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   only aggregate counts. Added a recovery workflow that retries failed SKUs in
   eight hosted-runner shards, preserves the 47 original successes, summarizes
   specific remaining errors, and emits a combined artifact for the existing
-  downstream stages. Hosted recovery runtime/results are pending.
+  downstream stages. The first recovery finished in about six minutes but still
+  had the same failure on all 120 retried SKUs (119 reported no same-SKU URL,
+  JSON-LD, Specs and Support evidence; 1 lacked rendered exact SKU text). Added a
+  fast diagnostic workflow to inspect each saved bridge response, final URL and
+  JSON-LD identity so the next correction targets the actual failed evidence.
+  Diagnostic Actions run is pending.
   Bounded source reconnaissance already passed (run 35105667331).
   The approved rules are: comparable annual-energy disagreement = MEDIUM;
   missing PDP annual energy with agreeing label/EPA = LOW; absent EPA current

@@ -103,8 +103,12 @@ A recovery workflow now retries only failed SKUs across eight hosted-runner
 shards, retains previously verified evidence, and emits the same full-population
 artifact format for downstream workflows. Each shard reports exact failure
 reasons to identify whether remaining errors are HTTP/network failures, PDP
-identity-contract mismatches, or missing page evidence. The retry does not
-weaken the identity requirements.
+identity-contract mismatches, or missing page evidence. The first recovery took
+about six minutes but all 120 retries remained failed: 119 gave the combined
+same-SKU evidence error and one lacked rendered exact-SKU text. A lightweight
+diagnostic workflow now separates URL, JSON-LD identity, and exact Specs/Support
+bridge checks from the saved artifact, without re-running browser collection.
+The retry does not weaken the identity requirements.
 
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule

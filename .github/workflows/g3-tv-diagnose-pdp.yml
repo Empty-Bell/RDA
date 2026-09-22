@@ -1,0 +1,62 @@
+name: G3 television PDP failure diagnostics
+
+on:
+  push:
+    paths:
+      - '.github/workflows/g3-tv-diagnose-pdp.yml'
+      - 'scripts/g3_tv_diagnose_collection.py'
+  workflow_dispatch:
+    inputs:
+      recovery_run_id:
+        description: G3 TV recovery run ID (blank selects the latest failed recovery)
+        required: false
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download latest combined TV collection artifact
+        shell: bash
+        env:
+          RECOVERY_RUN_ID: ${{ github.event.inputs.recovery_run_id || '' }}
+        run: |
+          set -euo pipefail
+          if [ -z "$RECOVERY_RUN_ID" ]; then
+            RECOVERY_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-tv-recovery.yml/runs?branch=main&per_page=20" --jq '[.workflow_runs[] | select(.conclusion == "failure")] | sort_by(.run_number) | last | .id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RECOVERY_RUN_ID}" --jq 'select(.status == "completed" and .path == ".github/workflows/g3-tv-recovery.yml") | .id')"
+          test "$VALID_RUN" = "$RECOVERY_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RECOVERY_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-tv-collection-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g3-tv/collection
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-tv/collection.zip
+          unzip -q runtime/g3-tv/collection.zip -d runtime/g3-tv/collection
+          SUMMARY="$(find runtime/g3-tv/collection -name collection-summary.json -type f -print -quit)"
+          test -n "$SUMMARY"
+          echo "COLLECTION_DIR=$(dirname "$SUMMARY")" >> "$GITHUB_ENV"
+      - name: Classify the missing exact-SKU evidence for each failed PDP
+        run: python scripts/g3_tv_diagnose_collection.py --collection-root "$COLLECTION_DIR" --out runtime/g3-tv/diagnostics
+      - name: Preserve machine-readable diagnostics
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-tv-pdp-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-tv/diagnostics/
+          retention-days: 14
+          if-no-files-found: warn
