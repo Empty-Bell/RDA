@@ -47,6 +47,36 @@ and inspect the captured EPA model list for the eight no-row SKUs before enablin
 washer assessment. Recommended model: Luna low for this evidence review; Sol
 medium only if the evidence forces a new policy decision.
 
+## Follow-up diagnostic (2026-09-22)
+
+EPA candidate diagnostics reran on the same captured artifacts in
+[workflow 35686761880](https://github.com/Empty-Bell/RDA/actions/runs/35686761880),
+commit `40bc389`; no OCR or source recapture was needed. All eight previously
+unmatched SKUs still have no EPA row after punctuation-only normalization. The
+66-row Samsung cohort also contains no row sharing at least five initial
+alphanumeric characters with any of those eight SKUs after punctuation removal.
+This confirms absence from the captured current cohort under both exact pattern
+matching and the bounded near-candidate check, without inferring a compliance
+severity.
+
+For `WH46DBH500EVA3` and `WH46DBH500GVA3`, exact-SKU PDP bridge evidence gives
+`Energy Guide Label` = 103 kWh/year. Each PDP's Support-declared label prints the
+corresponding wildcard model pattern and 95 kWh/year; each matching EPA row also
+gives 95 kWh/year, Front Load / Laundry Center, qualified 2023-11-21. The current
+Samsung pages confirm the two exact product IDs and distinguish the electric and
+gas dryer variants ([EVA3](https://www.samsung.com/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-electric-dryer-in-brushed-black-sku-wh46dbh500eva3/),
+[GVA3](https://www.samsung.com/us/laundry/washer-and-dryer-sets/stacked-washer-and-dryer-bespoke-4-6-cu-ft-ai-laundry-hub-large-capacity-single-unit-washer-with-flex-auto-dispense-system-and-7-6-cu-ft-gas-dryer-in-brushed-black-sku-wh46dbh500gva3/)). The identity matches, so
+the 103-vs-95 difference remains a real source-field conflict, not an SKU join
+failure. The live page extraction did not expose the annual-energy number itself;
+103 comes from the hash-bound exact-SKU PDP Specs/Support capture.
+
+The next rule decision is limited to two G3 cases: severity for an annual kWh
+conflict and treatment of an SKU absent from the current EPA cohort. No such
+assessment has been applied. PDP annual-kWh omissions with agreeing label/EPA
+values remain mapped to the previously requested LOW behavior for later
+assessment. Recommended model for rule definition: Sol medium; Luna low suffices
+for further mechanical source comparison.
+
 Status: bounded source reconnaissance PASS on hosted Ubuntu (run 35104751514).
 Phase 0 remains RUNNING. Certification matching/compliance NOT_EVALUATED.
 

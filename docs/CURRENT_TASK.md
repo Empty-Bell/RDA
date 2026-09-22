@@ -574,3 +574,20 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   Keep the dashboard deferred until remaining product families are completed.
   Recommended model for this bounded source-review step: Luna low; use Sol medium
   only if the evidence reveals a new rule decision.
+
+- Follow-up Washer source diagnostics completed: [comparison rerun 35686761880](https://github.com/Empty-Bell/RDA/actions/runs/35686761880), commit `40bc389`.
+  The 8 EPA no-row SKUs have neither a positional wildcard match nor a match after
+  punctuation-only normalization against any of the 66 captured current Samsung
+  rows; none has an EPA model candidate sharing even 5 initial alphanumeric
+  characters after punctuation is removed. These eight are confirmed absent from
+  this captured current cohort under the tested matching methods; no severity has
+  been assigned.
+  The two numeric conflicts are confirmed at the source-field level: the exact-SKU
+  PDP Specs field `Energy Guide Label` says 103 kWh/year; same-PDF printed model
+  patterns and yearly-energy text say 95; each matching EPA row says 95. The live
+  PDP pages identify the exact SKUs as separate electric-dryer and gas-dryer
+  Laundry Center variants. Their PDP identity is not the cause of the discrepancy.
+  Remaining determination: decide how the G3 annual-energy comparison should
+  classify (a) a PDP-vs-label/EPA value conflict and (b) a product absent from the
+  current EPA cohort. The 5 PDP-missing cases have label/EPA agreement and follow
+  the already requested LOW treatment once Washer assessment is enabled.
