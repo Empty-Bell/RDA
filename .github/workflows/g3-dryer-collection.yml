@@ -11,12 +11,6 @@ on:
     workflows: [G3 clothes dryer source reconnaissance]
     types: [completed]
     branches: [main]
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/source_contract.py'
-      - 'scripts/g3_dryer_collect.py'
-      - '.github/workflows/g3-dryer-collection.yml'
 permissions:
   actions: read
   contents: read

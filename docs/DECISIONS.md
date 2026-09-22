@@ -22,10 +22,13 @@ remain UNKNOWN/NOT_EVALUATED, and activation waits for collection definitions.
 This approval supersedes the earlier claim-only decision table, not unresolved
 measurement, OCR or global summary policies.
 
-Latest approved G3 severity rule (all covered product families): a confirmed
-annual-energy value disagreement among comparable PDP, EnergyGuide and EPA
-current-source values is MEDIUM; missing PDP annual energy when the label/EPA
-values agree is LOW. Independently, if a complete valid EPA Current Model Index
+Latest approved G3 severity rule for numeric comparison: a confirmed annual-energy value
+disagreement among comparable PDP, EnergyGuide and EPA current-source values is
+MEDIUM; missing PDP annual energy when the label/EPA values agree is LOW. This
+numeric rule applies to Refrigerator, Dishwasher, and Clothes Washer. It does not
+apply to EPA-only families such as Clothes Dryer. The user separately limited TV
+to model-identity comparison, so TV annual-energy values are not compared.
+Independently, if a complete valid EPA Current Model Index
 search finds no current model and any PLP logo, PDP logo or spec certification
 claim is present, classify HIGH. If EPA has no current model and all three
 publication points are absent, there is no ENERGY STAR finding (display PASS).

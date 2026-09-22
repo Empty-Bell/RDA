@@ -1,23 +1,16 @@
-name: G3 clothes dryer EnergyGuide and EPA source capture
+name: G3 clothes dryer EPA ENERGY STAR audit
 
 on:
   workflow_dispatch:
     inputs:
       collection_run_id:
-        description: Successful Dryer exact-SKU PDP collection run ID (blank uses latest success)
+        description: Successful exact-SKU Dryer PDP collection run ID (blank uses latest success)
         required: false
         type: string
   workflow_run:
     workflows: [G3 clothes dryer exact-SKU collection]
     types: [completed]
     branches: [main]
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/g3_dryer_energyguide_collect.py'
-      - 'scripts/g3_dryer_epa_capture.py'
-      - '.github/workflows/g3-dryer-secondary-sources.yml'
-
 permissions:
   actions: read
   contents: read
@@ -28,8 +21,12 @@ concurrency:
 
 jobs:
   epa-current:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
-    timeout-minutes: 8
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.collection_run_id || '' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -39,32 +36,9 @@ jobs:
           python-version-file: '.python-version'
       - name: Capture complete current EPA Samsung dryer cohort
         run: python scripts/g3_dryer_epa_capture.py --out runtime/g3-dryer/epa
-      - name: Preserve current EPA evidence
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        with:
-          name: g3-dryer-epa-${{ github.run_id }}-${{ github.run_attempt }}
-          path: runtime/g3-dryer/epa/
-          retention-days: 14
-          if-no-files-found: error
-
-  energyguide-pdfs:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-24.04
-    timeout-minutes: 18
-    env:
-      GH_TOKEN: ${{ github.token }}
-      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.collection_run_id || '' }}
-      PYTHONUNBUFFERED: '1'
-      PYTHONPATH: 'src:scripts'
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
-        with:
-          python-version-file: '.python-version'
-      - name: Download the successful exact-SKU Dryer collection artifact
+      - name: Capture current EPA Samsung all-in-one washer/dryer cohort
+        run: python scripts/g3_dryer_combo_epa_capture.py --out runtime/g3-dryer/epa-combo
+      - name: Download exact-SKU Dryer PDP claim observations
         shell: bash
         run: |
           set -euo pipefail
@@ -78,17 +52,31 @@ jobs:
           mkdir -p runtime/g3-dryer/collection
           gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-dryer/collection.zip
           unzip -q runtime/g3-dryer/collection.zip -d runtime/g3-dryer/collection
-          COLLECTION_FILE="$(find runtime/g3-dryer/collection -name collection-summary.json -type f -print -quit)"
-          test -n "$COLLECTION_FILE"
+          SUMMARY_FILE="$(find runtime/g3-dryer/collection -name collection-summary.json -type f -print -quit)"
+          test -n "$SUMMARY_FILE"
+          COLLECTION_DIR="$(dirname "$SUMMARY_FILE")"
           echo "COLLECTION_RUN_ID=${COLLECTION_RUN_ID}" >> "$GITHUB_ENV"
-          echo "COLLECTION_DIR=$(dirname "$COLLECTION_FILE")" >> "$GITHUB_ENV"
-      - name: Retrieve and hash Support-declared Dryer PDFs
-        run: python scripts/g3_dryer_energyguide_collect.py --collection-root "$COLLECTION_DIR" --collection-run-id "$COLLECTION_RUN_ID" --out runtime/g3-dryer/energyguide
-      - name: Preserve Dryer EnergyGuide evidence
+          echo "COLLECTION_DIR=${COLLECTION_DIR}" >> "$GITHUB_ENV"
+      - name: Build EPA claim candidate report without assessment
+        run: >-
+          python scripts/g3_dryer_epa_claim_candidates.py
+          --collection-root "$COLLECTION_DIR"
+          --collection-run-id "$COLLECTION_RUN_ID"
+          --epa-root runtime/g3-dryer/epa
+          --epa-run-id "$GITHUB_RUN_ID"
+          --combo-epa-root runtime/g3-dryer/epa-combo
+          --combo-epa-run-id "$GITHUB_RUN_ID"
+          --out runtime/g3-dryer/epa-claim-candidates
+      - name: Apply EPA-only ENERGY STAR publication rules
+        run: >-
+          python scripts/g3_dryer_energy_star_assessment.py
+          --candidates runtime/g3-dryer/epa-claim-candidates/epa-claim-candidates.json
+          --out runtime/g3-dryer/assessment
+      - name: Preserve current EPA evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: g3-dryer-energyguide-${{ github.run_id }}-${{ github.run_attempt }}
-          path: runtime/g3-dryer/energyguide/
+          name: g3-dryer-epa-claim-candidates-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-dryer/
           retention-days: 14
           if-no-files-found: error

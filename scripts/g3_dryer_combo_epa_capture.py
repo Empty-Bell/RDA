@@ -119,14 +119,7 @@ def capture(output, page_size=100):
     if summary_path:
         with Path(summary_path).open("a", encoding="utf-8") as stream:
             stream.write("## EPA current Samsung combination washer/dryer source capture\n\n")
-            stream.write(f"Status: **PASS**; dataset `{DATASET}`; Samsung rows: **{len(rows)}**. Washer and dryer component energy columns are preserved separately; matching and assessment were not evaluated.\n")
-            stream.write("\n| EPA model pattern | Washer annual kWh/yr | Dryer annual kWh/yr | Dryer capacity | Dryer CEF |\n|---|---:|---:|---:|---:|\n")
-            for row in rows:
-                cells = [row.get("model_number", ""), row.get("annual_energy_use_kwh_year", ""),
-                         row.get("estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer", ""),
-                         row.get("drum_capacity_for_the_dryer_in_a_combination_all_in_one_washer_dryer", ""),
-                         row.get("combined_energy_factor_cef_for_the_dryer_in_a_combination_all_in_one_washer_dryer", "")]
-                stream.write("| " + " | ".join(str(value if value is not None else "").replace("|", "\\|").replace("\n", " ") for value in cells) + " |\n")
+            stream.write(f"Capture status: **PASS**; dataset `{DATASET}`; Samsung source rows: **{len(rows)}**. Component fields are preserved in the source artifact for traceability. This Dryer audit does not compare annual energy, capacity, or CEF and does not assess EnergyGuide labels.\n")
     print(json.dumps({"status": "PASS", "dataset_id": DATASET, "samsung_row_count": len(rows)}, sort_keys=True), flush=True)
     return report
 

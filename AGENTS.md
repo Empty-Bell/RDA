@@ -15,10 +15,14 @@
 13. Every compliance rule requires unit tests.
 14. Every phase ends PASS/FAIL/BLOCKED, backed by hosted Actions evidence.
 
-Current scope: Phase 2 refrigerator observational pilot, authorized after G1 PASS.
-G0 and G1 accepted: see docs/G0_ACCEPTANCE_RECORD.md and docs/G1_ACCEPTANCE_RECORD.md.
-Collectors/population/evidence integration may proceed. Assessment policies
-remain disabled until their specific open decisions are resolved.
+Current formal gate: Phase 2 refrigerator audit remains open. G0 and G1 are
+accepted; see docs/G0_ACCEPTANCE_RECORD.md and docs/G1_ACCEPTANCE_RECORD.md.
+The user has also authorized preparatory source work for downstream families;
+this does not accept G3/G4 or enable unapproved assessment rules. Clothes Dryer
+is EPA ENERGY STAR-focused only. Do not collect/retrieve/OCR EnergyGuide PDFs or
+run PDP/label/EPA numeric comparisons for Dryer. See MASTER_PLAN §1.1 and
+DRYER_SOURCE_CONTRACT.md.
+Only approved assessment rules may run; check DECISIONS.md and the family contract.
 Unapproved semantic policies remain disabled; draft contracts do not resolve decisions.
 No unapproved compliance decision engine or Pages deployment.
 Use standard ubuntu-24.04 x64. Local success does not pass hosted gates.

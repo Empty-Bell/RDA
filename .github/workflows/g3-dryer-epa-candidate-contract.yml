@@ -1,0 +1,42 @@
+name: G3 Dryer EPA audit contracts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_dryer_epa_claim_candidates.py'
+      - 'scripts/g3_dryer_energy_star_assessment.py'
+      - 'scripts/epa_only_rules.py'
+      - 'scripts/g3_dryer_epa_capture.py'
+      - 'scripts/g3_dryer_combo_epa_capture.py'
+      - 'scripts/g3_dryer_collect.py'
+      - 'scripts/source_contract.py'
+      - 'tests/test_g3_dryer_epa_claim_candidates.py'
+      - 'tests/test_g3_dryer_energy_star_assessment.py'
+      - 'tests/test_g3_dryer_combo_epa_capture.py'
+      - 'tests/test_source_contract.py'
+      - '.github/workflows/g3-dryer-epa-candidate-contract.yml'
+      - '.github/workflows/g3-dryer-secondary-sources.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Validate dryer EPA audit contracts
+        run: python -m unittest discover -s tests -p "test_g3_dryer*.py" -v
+      - name: Validate shared PDP projection contract
+        run: python -m unittest discover -s tests -p "test_source_contract.py" -v

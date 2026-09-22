@@ -1,36 +1,36 @@
 # Compact continuation context
 
-## Latest G3 checkpoint — Clothes Dryer evidence collection (2026-09-22)
+## Current continuation — Clothes Dryer EPA-only scope (2026-09-22)
 
-The TV audit uses model identity only. Dryer source reconnaissance passed on
-hosted Ubuntu in run 35712517039. Exact-SKU PDP collection passed in run
-35712660255: all 54/54 products have verified exact PDP identity, with zero
-failed or unattempted SKUs. Its original Support projection retained only
-canonical `Energy Guide` entries, so it did not preserve the full raw Support
-document inventory. Combo washer
-Energy Guide kWh is not projected as dryer annual energy. A later duplicate
-collection attempt (35713169010) failed at its upstream source-artifact identity
-guard before PDP collection; use the complete, successful 35712660255 package.
-The EPA Current Samsung dryer capture and PDP-declared EnergyGuide retrieval
-passed together in run 35714849653: 104 Samsung EPA rows, 54-SKU PDP coverage,
-11 canonical-name PDF URLs and 5 unique valid PDFs. OCR run 35715470080 and raw review
-run 35715542396 both PASSed on ubuntu-24.04. Five unique PDFs link to 11 exact
-SKUs under that projection; no reliable count for the other PDP Support entries
-can be derived from those artifacts. Four PDFs
-expose yearly-kWh candidates (94, 95, 103, 103), but their printed model patterns
-are WD/WH families, so retain as raw evidence and do not project them as dryer
-energy. The remaining DV53BB8900HDA2-linked PDF yielded no model, annual-kWh,
-capacity, or US-heading candidate; it was a valid PDF, not a retrieval/DRM failure.
-No capacity candidates were extracted from the five documents. Same-run source
-candidate join run 35716279708 PASSed and preserves PDP, label, and EPA rows for
-all 54 exact SKUs. It produced 28 per-SKU EPA model-pattern candidate links from
-104 EPA rows. These are inspection candidates, not confirmed model matches or
-findings. No values were selected, compared, routed, or assessed. Next: inspect
-the joined EPA/label table and visually inspect the DV53-linked PDF before
-deciding how to represent label coverage; then finalize dryer source definitions.
-Assessment remains disabled pending evidence review. Recommended model for
-fixed-contract evidence review is GPT-5.6 Luna low; use GPT-5.6 Terra medium only
-if source evidence raises a new policy decision. Actions runtime uses no LLM.
+Master-plan scope is explicit: Clothes Dryer is EPA ENERGY STAR-focused only;
+FTC EnergyGuide checks apply to Refrigerator, Dishwasher, Clothes Washer, and TV.
+The user separately chose model identity only for TV energy comparison. Dryer
+EnergyGuide downloads, OCR, and numeric comparisons are out of scope.
+
+Hosted Dryer PDP identity collection passed for 54/54 exact SKUs (run
+35712660255). Prior EPA captures contained 104 standard Dryer Samsung rows and
+three combo rows. Historical candidate join 35720397828 is exploratory only.
+Earlier Dryer EnergyGuide retrieval, OCR, and numeric comparison were out of
+scope and their workflows/scripts were removed; those old artifacts must not
+feed the Dryer audit.
+
+The EPA-only pipeline now captures both EPA datasets, joins the successful
+exact-SKU PDP collection, applies shared `scripts/epa_only_rules.py` model
+pattern and three-point publication rules, and writes
+`energy-star-assessment.json`. The points are PLP logo, rendered PDP logo, and
+visible PDP Specs certification. EPA US registration plus all three points is
+PASS; any missing point for a registered model is LOW; any displayed point for
+an unregistered model is HIGH. No EPA US match plus no claims aggregates to PASS;
+ambiguous EPA markets or unsupported browser surfaces stay NOT_EVALUATED. No
+EnergyGuide fields or numeric values enter this assessment. Local suite passes
+197 tests (one existing optional skip), and compile/diff checks pass. The updated
+hosted assessment has not run; changes are local and uncommitted.
+
+Next: run the hosted contract matrix, then the EPA-only Dryer job and inspect
+HIGH/LOW/NOT_EVALUATED examples before reusing the pipeline for other EPA-only
+families. Actions uses deterministic Python and no LLM tokens. Recommended model
+for this fixed implementation and run review: GPT-5.6 Luna low; use Terra medium
+only if EPA model-pattern interpretation raises a policy question.
 
 Read AGENTS.md and this file first; inspect only the relevant implementation and
 contract sections. Do not reread chronological phase history or full source files

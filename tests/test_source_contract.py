@@ -3,7 +3,6 @@ import json
 import unittest
 from pathlib import Path
 from scripts.source_contract import pf_page, pf_population, pdp_facts, project_bridge, epa_contract
-from scripts.g3_dryer_collect import support_inventory
 
 FIXTURE = Path(__file__).parent / 'fixtures/refrigerator/pf-initial.projected.json'
 
@@ -102,26 +101,21 @@ class RefrigeratorPdpContract(unittest.TestCase):
         self.assertTrue(all(set(d) <= {'name', 'type', 'url'}
                             for s in projected['Support'] for d in s['supports']))
 
-    def test_dryer_discovery_can_preserve_noncanonical_support_document_names(self):
+
+
+class DryerPdpScopeContract(unittest.TestCase):
+    def test_noncanonical_support_documents_are_not_expanded(self):
         raw = {'Specs': [{'modelCode': 'DV1', 'fullSpecs': []}],
                'Support': [{'modelCode': 'DV1', 'supports': [
                    {'name': 'Product Information Sheet', 'type': 'PDF',
                     'url': 'https://images.samsung.com/energyguide/dv1.pdf'},
                    {'name': 'User Manual', 'type': 'PDF',
                     'url': 'https://images.samsung.com/manual/dv1.pdf'}]}]}
-        canonical_only = project_bridge(raw)
-        self.assertEqual(canonical_only['Support'][0]['supports'], [])
-        complete = project_bridge(raw, include_all_supports=True)
-        facts = pdp_facts(complete, 'DV1', family='dryer')
-        self.assertEqual([doc['name'] for doc in facts['support_documents_raw']],
-                         ['Product Information Sheet', 'User Manual'])
+        projection = project_bridge(raw)
+        self.assertEqual(projection['Support'][0]['supports'], [])
+        facts = pdp_facts(projection, 'DV1', family='dryer')
+        self.assertEqual(facts['support_documents_raw'], [])
         self.assertEqual(facts['energyguide_documents'], [])
-        inventory = support_inventory([{'exact_sku': 'DV1', 'status': 'VERIFIED_EXACT_IDENTITY',
-                                        'pdp_facts_raw': facts}])
-        self.assertEqual(inventory['skus_with_any_support_document_count'], 1)
-        self.assertEqual(inventory['skus_with_canonical_energyguide_count'], 0)
-        self.assertEqual(inventory['document_name_inventory'][0]['name_raw'],
-                         'Product Information Sheet')
 
 
 class RefrigeratorEpaContract(unittest.TestCase):

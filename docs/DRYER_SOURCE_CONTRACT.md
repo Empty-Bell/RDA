@@ -1,7 +1,8 @@
 # Clothes Dryer EPA-focused source reconnaissance
 
 Status: bounded Clothes Dryer source reconnaissance PASS on hosted Ubuntu (35109208255).
-Phase 0 remains RUNNING. Certification matching/compliance NOT_EVALUATED.
+G0 is accepted. Clothes Dryer is EPA ENERGY STAR-focused only; certification
+matching/compliance remains NOT_EVALUATED.
 
 Official sources:
 - Samsung listing: https://www.samsung.com/us/laundry/dryers/
@@ -23,6 +24,18 @@ reconnaissance. No legal applicability conclusion is made from that probe scope.
 Cold hosted Ubuntu 24.04, version-matched desktop Chromium UA, no runtime LLM.
 See SOURCE_COVERAGE.md: this is population discovery plus sample verification,
 not full per-model PDP/label collection or EPA SKU lookup.
+
+Correction (2026-09-22): Subsequent Dryer EnergyGuide retrieval/OCR/link-probe
+work recorded below was exploratory work outside the approved Dryer audit scope.
+It did not produce findings or an assessment and is no longer part of the active
+workflow. Do not interpret missing Dryer EnergyGuide links or label values as
+regulatory issues; do not reuse those candidates in Dryer assessment.
+
+Active EPA-only continuation (2026-09-22): one hosted workflow now captures the
+official Dryer and combo EPA rows, joins them to a successful exact-SKU PDP claim
+artifact, and emits provisional model-pattern candidates with the independent
+PLP/PDP claim channels. It deliberately omits EnergyGuide data and numeric fields;
+registration matching, claim consistency, and severity remain NOT_EVALUATED.
 
 ## First hosted observations
 
@@ -257,3 +270,33 @@ clothes dryers, while the 2026 Unified Agenda lists the rulemaking as still in
 the Proposed Rule Stage. See the [FTC rule summary](https://www.ftc.gov/legal-library/browse/rules/energy-water-use-labeling-consumer-products-under-energy-policy-conservation-act-energy-labeling),
 [2024 FTC proposal](https://www.ftc.gov/news-events/news/press-releases/2024/01/federal-trade-commission-seeks-public-comments-improvements-energyguide-labeling-rule),
 and [2026 Unified Agenda](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=3084-AB15&pubId=202510). The 43-PDP EnergyGuide link scan was only follow-up source debugging, not a Dryer audit control. Do not classify missing links as regulatory omissions or findings. Treat Samsung PDP Specs text such as `Energy Guide Label` as source content only; it does not establish a label obligation or a downloadable label. Continue EPA ENERGY STAR dryer certification/claim consistency work as scoped in the master plan.
+
+
+### EPA-only Dryer audit pipeline (2026-09-22)
+
+The operational EPA-only run is `.github/workflows/g3-dryer-secondary-sources.yml`:
+it captures the current standard Dryer and all-in-one combo EPA Samsung cohorts,
+downloads the successful exact-SKU PDP collection artifact, creates source-linked
+model-pattern candidates, then runs `scripts/g3_dryer_energy_star_assessment.py`.
+The shared `scripts/epa_only_rules.py` is designed for reuse by other EPA-only
+families. EPA positional `*` means exactly one alphanumeric character, and any
+remaining exact-SKU suffix is retained. A model candidate counts as current US
+registration only when its EPA market explicitly includes the United States.
+Unclear market or source evidence is NOT_EVALUATED.
+
+The three publication points are PLP per-SKU ENERGY STAR flag, visible PDP gallery
+logo, and visible PDP Specs certification row. PDP logo absence is confirmed only
+when the product surface inspection is supported and the supplied gallery selector
+finds no attributed logo. Spec absence is confirmed only when the visible Specs
+surface was inspected successfully and no ENERGY STAR row was found. The rules
+are: US-registered and all three present → PASS; registered with any confirmed
+absence → LOW; no US EPA registration with any present claim → HIGH; no EPA
+registration and all three absent → no finding (display PASS); incomplete or
+ambiguous evidence → NOT_EVALUATED. This is publication consistency only, not an
+overall legal/product-compliance conclusion. Dryer EnergyGuide retrieval/OCR and
+energy, capacity, or CEF comparisons are excluded.
+
+As of this update, the complete local suite passes 197 tests (one existing
+optional skip), and compile/diff checks pass. The updated hosted workflow has not
+yet been run, so first hosted output requires review before this becomes the proven
+template for other EPA-only product groups.

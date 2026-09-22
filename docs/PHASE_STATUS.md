@@ -1,5 +1,11 @@
 # Phase status
 
+Updated 2026-09-22: G0/G1 are accepted and G2 remains formally open. G3/G4
+source collection and candidate exploration have begun, but they are preparatory
+work only and do not mean those phase gates are accepted. See CURRENT_TASK.md for
+the active family checkpoint. Dryer work is EPA ENERGY STAR-only; its previous
+EnergyGuide retrieval/OCR path has been retired.
+
 Phase 0 / G0: PASS — source reconnaissance contracts and hosted execution foundation accepted 2026-09-17. See G0_ACCEPTANCE_RECORD.md. This is not full per-SKU collection, certification matching or compliance PASS.
 Phase 1 / G1: PASS — schema/config/manifest/CLI/report/fixture and quality CI accepted 2026-09-17.
 Phase 2 / G2: RUNNING — the refrigerator Energy Star three-point source assessment is now a completed vertical slice (75/75 exact SKUs); full G2 acceptance, other product families and whole-product decisions remain open.
@@ -14,7 +20,8 @@ docs/evidence/g2-normalization-integration-recon.json. Expanded PDP collection
 is now bounded to ten deterministic SKUs: run 35175307189 / d884b4c passed on
 ubuntu-24.04 with no selected identity failure; full-population coverage and
 assessment remain next work. See docs/evidence/g2-pdp-coverage-expansion-recon.json.
-Phases 3–7: NOT_STARTED.
+Formal G3/G4 acceptance: NOT_STARTED; preparatory source work has run for later
+families. Phases 5–7 remain NOT_STARTED.
 The Energy Star vertical slice is not whole-product compliance PASS and does not accept the overall G2 gate. Its corrected hosted run 35548351322 passed: 75/75 source-complete exact SKUs, 52 PASS, 4 LOW, 14 HIGH, 5 NO_FINDING, 0 NOT_EVALUATED. See CURRENT_TASK.md and G2_CURRENT_INDEX_CLAIM_COMPARISON.md. Remaining G2 work includes EnergyGuide/OCR and measurement assessment, integrating all applicable checks into the canonical audit/report, and acceptance of complete refrigerator coverage and operational gates.
 Per-SKU PDP identity/coverage checkpoint PASS: run 35173796328 / code 21b621a.
 30 regression tests, 5 verified PDP SKUs / 0 failed / 70 unattempted (75 total).
