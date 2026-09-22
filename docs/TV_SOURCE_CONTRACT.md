@@ -101,12 +101,15 @@ verified and 120 failed. The first recovery took about six minutes. Saved
 evidence showed 119 PDPs had a valid exact-SKU URL and exact-SKU Specs/Support
 bridge, but each also had anonymous Product JSON-LD shells. Identity validation
 now ignores only those unidentified shells while continuing to reject any
-conflicting identified SKU. One remaining case, `QN100QN80FFXZA`, was routed by
-the PF listing to a final PDP URL for `QN115QN90FFXZA`; it remains unverified and
-is not silently relabeled. Initial collection now runs in eight shards. Once
-the 166 exact PDP captures complete, independent EnergyGuide/EPA collection and
-candidate comparison proceed for the whole population, with the mismatched PDP
-explicitly marked unverified.
+conflicting identified SKU. `QN100QN80FFXZA` once redirected to a
+`QN115QN90FFXZA` PDP; its retry passed, and the assembled collection has 167/167
+verified. Initial collection now runs in eight shards. EPA capture passed.
+EnergyGuide retrieval verified 162/167 PDFs and exposed five failing Samsung
+URLs. The collector now checks HTTP status, PDF bytes, and the final HTTPS
+Samsung URL independently of a potentially incorrect Content-Type header, and
+records response details on failure. The GitHub-hosted label/EPA capture has
+been restarted against the verified PDP artifact; candidate comparison remains
+pending.
 
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule

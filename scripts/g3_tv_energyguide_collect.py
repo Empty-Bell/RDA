@@ -86,18 +86,22 @@ def collect(declarations, output, user_agent):
         try:
             body, final_url, content_type, status = retrieve(url, user_agent)
             final = urlsplit(final_url)
-            if (status != 200 or content_type != "application/pdf" or not valid_pdf(body)
-                    or final.scheme != "https" or not final.hostname
+            observation.update(final_url=safe_url(final_url), content_type=content_type,
+                               http_status=status, byte_count=len(body),
+                               pdf_signature=body[:8].decode("ascii", errors="replace"))
+            if status != 200:
+                raise ValueError(f"EnergyGuide HTTP status {status}")
+            if not valid_pdf(body):
+                raise ValueError(f"EnergyGuide body is not PDF bytes (type={content_type}, bytes={len(body)}, signature={observation['pdf_signature']!r})")
+            if (final.scheme != "https" or not final.hostname
                     or not (final.hostname == "samsung.com" or final.hostname.endswith(".samsung.com"))):
-                raise ValueError("TV EnergyGuide response is not an HTTPS Samsung PDF")
+                raise ValueError(f"EnergyGuide final URL is outside HTTPS Samsung domain ({safe_url(final_url)})")
             digest = hashlib.sha256(body).hexdigest()
             path = pdf_root / f"{digest}.pdf"
             if path.exists() and path.read_bytes() != body:
                 raise ValueError("TV EnergyGuide hash path has conflicting bytes")
             path.write_bytes(body)
-            observation.update(status="RETRIEVED_VALID_PDF", final_url=safe_url(final_url),
-                               content_type=content_type, http_status=status, byte_count=len(body),
-                               sha256=digest, path=f"pdf/{path.name}")
+            observation.update(status="RETRIEVED_VALID_PDF", sha256=digest, path=f"pdf/{path.name}")
         except Exception as error:
             observation["error"] = str(error).splitlines()[0][:300]
     records = [{**declaration, "retrieval": {key: value for key, value in by_url[declaration["url"]].items() if key != "url"}}

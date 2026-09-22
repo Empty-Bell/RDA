@@ -57,7 +57,7 @@ jobs:
           echo "COLLECTION_DIR=$(dirname "$SUMMARY")" >> "$GITHUB_ENV"
       - name: Classify the missing exact-SKU evidence for each failed PDP
         env:
-          EXACT_SKU: ${{ github.event.inputs.exact_sku || '' }}
+          EXACT_SKU: ${{ github.event.inputs.exact_sku || 'QN100QN80FFXZA' }}
         run: |
           if [ -n "$EXACT_SKU" ]; then
             python scripts/g3_tv_diagnose_collection.py --collection-root "$COLLECTION_DIR" --out runtime/g3-tv/diagnostics --exact-sku "$EXACT_SKU"

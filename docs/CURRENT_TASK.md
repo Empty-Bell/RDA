@@ -617,12 +617,14 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   failed only because the page also had anonymous Product JSON-LD shells. The
   collector now ignores only those unidentified shells while still rejecting
   conflicting identified SKUs. The remaining SKU `QN100QN80FFXZA` was routed by
-  PF to a different SKU's `QN115QN90FFXZA` page; that mismatch remains explicitly
-  unverified. Initial full collection is now split into eight hosted shards.
-  Independent label/EPA capture and the source-candidate table will continue
-  for the 166 verifiable PDPs, while this one unresolved PDP remains visible and
-  is never treated as an exact match. Diagnostic run passed:
-  [35692565164](https://github.com/Empty-Bell/RDA/actions/runs/35692565164).
+  PF once routed `QN100QN80FFXZA` to the `QN115QN90FFXZA` page, but its retry
+  then passed; the complete combined artifact is now 167/167 verified. EPA
+  capture succeeded. EnergyGuide retrieval reached 162/167 PDFs; five Samsung
+  URLs were rejected by an overly strict content-type check. Retrieval now
+  requires HTTP 200, a valid `%PDF-` byte signature, and a final HTTPS Samsung
+  URL, while logging exact response details. Pushing the fix reruns label/EPA
+  capture from the verified PDP artifact. Source comparison has not run yet.
+  Diagnostic run: [35692565164](https://github.com/Empty-Bell/RDA/actions/runs/35692565164).
   Bounded source reconnaissance already passed (run 35105667331).
   The approved rules are: comparable annual-energy disagreement = MEDIUM;
   missing PDP annual energy with agreeing label/EPA = LOW; absent EPA current

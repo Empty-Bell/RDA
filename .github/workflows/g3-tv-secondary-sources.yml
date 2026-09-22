@@ -1,6 +1,10 @@
 name: G3 television label and EPA source capture
 
 on:
+  push:
+    paths:
+      - '.github/workflows/g3-tv-secondary-sources.yml'
+      - 'scripts/g3_tv_energyguide_collect.py'
   workflow_run:
     workflows: [G3 television exact-SKU collection, G3 television failed-SKU recovery]
     types: [completed]
@@ -12,7 +16,7 @@ permissions:
 
 jobs:
   capture:
-    if: github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     concurrency:
@@ -24,7 +28,7 @@ jobs:
         source: [energyguide, epa]
     env:
       GH_TOKEN: ${{ github.token }}
-      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id }}
+      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id || '' }}
       PYTHONUNBUFFERED: '1'
       PYTHONPATH: 'src:scripts'
     steps:
@@ -38,6 +42,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if [ -z "$COLLECTION_RUN_ID" ]; then
+            COLLECTION_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-tv-recovery.yml/runs?branch=main&per_page=20" --jq '[.workflow_runs[] | select(.conclusion == "success")] | sort_by(.run_number) | last | .id')"
+          fi
           VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and (.path == ".github/workflows/g3-tv-collection.yml" or .path == ".github/workflows/g3-tv-recovery.yml")) | .id')"
           test "$VALID_RUN" = "$COLLECTION_RUN_ID"
           ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-tv-collection-"))] | sort_by(.created_at) | last | .id')"
