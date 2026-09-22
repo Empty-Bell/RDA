@@ -126,5 +126,13 @@ artifact. It preserves literal PDP specs, label candidates, and EPA model/fuel/
 venting/annual-energy/CEF/capacity row fields. Positional `*` inclusion is shown
 only as an explicitly labeled candidate, retaining any exact-SKU suffix. No label
 selection, numeric comparison, dryer/combo routing, pass/fail, or severity is
-enabled. Recommended model for routine fixed-schema run review: GPT-5.6 Luna low;
-GPT-5.6 Terra medium only if a new source-policy decision is needed.
+enabled. Hosted source-candidate join run 35716279708 PASSed against those same
+artifacts. It retained all 54 exact SKUs and surfaced 28 SKU/EPA positional model
+pattern candidates from the 104-row EPA source set. The count is candidate links,
+not confirmed matches or findings. The full downloadable report includes EPA
+annual energy, CEF, capacity, fuel/type, venting and market fields alongside PDP
+and label records. Next: inspect these candidate rows and the DV53-linked PDF
+preview/source; then define the Dryer source comparison gates before any numeric
+comparison or assessment. Recommended model for routine fixed-schema run review:
+GPT-5.6 Luna low; GPT-5.6 Terra medium only if a new source-policy decision is
+needed.

@@ -19,14 +19,16 @@ expose yearly-kWh candidates (94, 95, 103, 103), but their printed model pattern
 are WD/WH families, so retain as raw evidence and do not project them as dryer
 energy. The remaining DV53BB8900HDA2-linked PDF yielded no model, annual-kWh,
 capacity, or US-heading candidate; it was a valid PDF, not a retrieval/DRM failure.
-No capacity candidates were extracted from the five documents. A same-run source
-candidate join now preserves SKU-linked PDP, label, and EPA rows, and surfaces
-strict positional model-pattern inclusions only as candidates. It does not select
-values, compare numbers, route combos, or assess. Next: run the hosted candidate
-join, then inspect its EPA/label table and the DV53 PDF source. Assessment remains
-disabled pending evidence review. Recommended model for this fixed-contract
-evidence work is GPT-5.6 Luna low; use GPT-5.6 Terra medium only if source evidence
-raises a new policy decision. Actions runtime uses no LLM.
+No capacity candidates were extracted from the five documents. Same-run source
+candidate join run 35716279708 PASSed and preserves PDP, label, and EPA rows for
+all 54 exact SKUs. It produced 28 per-SKU EPA model-pattern candidate links from
+104 EPA rows. These are inspection candidates, not confirmed model matches or
+findings. No values were selected, compared, routed, or assessed. Next: inspect
+the joined EPA/label table and visually inspect the DV53-linked PDF before
+deciding how to represent label coverage; then finalize dryer source definitions.
+Assessment remains disabled pending evidence review. Recommended model for
+fixed-contract evidence review is GPT-5.6 Luna low; use GPT-5.6 Terra medium only
+if source evidence raises a new policy decision. Actions runtime uses no LLM.
 
 Read AGENTS.md and this file first; inspect only the relevant implementation and
 contract sections. Do not reread chronological phase history or full source files
