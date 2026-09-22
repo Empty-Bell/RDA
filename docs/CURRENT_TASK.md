@@ -780,7 +780,9 @@ The full 43-SKU PDP probe passed in run `35727102357`; all three hosted shards
 completed, and every page passed exact-URL/SKU checks. Across all 43 pages there
 were zero EnergyGuide-named visible link candidates. Eight pages did contain a
 matching phrase in rendered text; inspecting `DVE45T3200W/A3` showed that one
-such phrase is a Specs row named `Energy Guide Label`, not a document link. Next:
-inspect the corresponding spec-row context for the eight pages and distinguish
-spec text from actual downloadable EnergyGuide documents. Recommended model:
-GPT-5.6 Luna low; upgrade to Terra medium only if source interpretation changes.
+such phrase is a Specs row named `Energy Guide Label`, not a document link.
+
+**Scope correction (2026-09-22):** Clothes dryers are not listed among current
+FTC EnergyGuide-labeled product categories. The FTC proposed adding clothes
+dryers in its 2024 NPRM, and the 2026 Unified Agenda still records the rule as
+in the Proposed Rule Stage. Sources: [FTC current rule summary](https://www.ftc.gov/legal-library/browse/rules/energy-water-use-labeling-consumer-products-under-energy-policy-conservation-act-energy-labeling), [FTC 2024 proposal](https://www.ftc.gov/news-events/news/press-releases/2024/01/federal-trade-commission-seeks-public-comments-improvements-energyguide-labeling-rule), [2026 Unified Agenda](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=3084-AB15&pubId=202510). Therefore the dryer PDP/Support link inventory is source research only; absence of an EnergyGuide link must not be treated as a regulatory omission or finding. The `Energy Guide Label` Specs text is not proof that the FTC-mandated yellow label is required or published. Before further work, decide whether this optional Samsung/EPA data comparison remains useful for the product audit. Recommended model: GPT-5.6 Luna low; use Terra medium only if a policy interpretation needs review.

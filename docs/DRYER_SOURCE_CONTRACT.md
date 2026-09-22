@@ -241,5 +241,12 @@ with exact URL/SKU identity confirmed, and no visible link matched an EnergyGuid
 name. Eight pages contained EnergyGuide-like text; on `DVE45T3200W/A3`, direct
 PDP inspection found the phrase in the Specs section as an `Energy Guide Label`
 row, with value `Electric - 2.4 Kwh`. This is a specs text field, not a document
-link. The remaining seven text hits need the same context check before drawing
-any broader conclusion about PDP label coverage.
+link.
+
+### FTC scope correction (2026-09-22)
+
+This link inventory is not an FTC EnergyGuide compliance audit. The FTC's
+current Energy Labeling Rule summary does not include clothes dryers in the
+required EnergyGuide categories. The FTC's 2024 NPRM proposed new labels for
+previously unlabeled clothes dryers, while the 2026 Unified Agenda lists the
+rulemaking as still in the Proposed Rule Stage. See the [FTC rule summary](https://www.ftc.gov/legal-library/browse/rules/energy-water-use-labeling-consumer-products-under-energy-policy-conservation-act-energy-labeling), [2024 FTC proposal](https://www.ftc.gov/news-events/news/press-releases/2024/01/federal-trade-commission-seeks-public-comments-improvements-energyguide-labeling-rule), and [2026 Unified Agenda](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=3084-AB15&pubId=202510). Do not classify a missing Dryer PDP EnergyGuide link as a regulatory omission or finding. Treat Samsung PDP Specs text such as `Energy Guide Label` as source content only; it does not establish a label obligation or a downloadable label.
