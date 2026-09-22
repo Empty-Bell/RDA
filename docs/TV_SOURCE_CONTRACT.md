@@ -125,26 +125,46 @@ difference after both exact/prefix model links and US-market scope are verified
 is a MEDIUM candidate. PDP currently publishes no annual-kWh field for this
 cohort, so absence alone is not a missing-value verdict in this family.
 
-The first corrected full-population comparison passed on hosted Ubuntu in run
-35701241420 at commit dca6645. It preserved 167 SKU rows, including 162 readable
-EnergyGuide PDFs and five NASCA DRM labels recorded as NOT_ACCESSIBLE / HIGH.
-All 162 readable labels had a model-pattern link; 160 yielded annual kWh.
-EPA Current had an exact US model-pattern match for 35 SKUs, and every one of
-those 35 label/EPA annual-energy pairs differed, producing 35 MEDIUM candidates.
-The other 132 SKUs had no exact EPA model match; 59 showed only 5–8-character
-near-prefix diagnostics, which are not treated as matches or findings.
+The corrected MNA-excluded collection passed hosted validation in run
+35703343706 at commit 011ee1f: 165/165 exact-SKU PDPs verified. The new
+population evidence retains the source count and explicitly records excluded
+model prefixes and exact SKUs. Business scope excludes every exact TV SKU whose
+model code begins `MNA`; the two baseline models were `MNA101MS1BCXZA` and
+`MNA89MS1BACXZA`.
+
+Downstream label/EPA capture run 35704036734 passed: 165 documents declared,
+160 valid readable PDFs, five NASCA DRM labels and a successful EPA Current
+capture. Corrected comparison run 35704080904 passed on hosted Ubuntu with 165
+rows and no MNA SKUs. All 160 readable labels yielded one annual-kWh candidate
+and matched an exact model pattern. Five remain NOT_ACCESSIBLE / HIGH.
+EPA Current had exact US model-pattern matches for 35 SKUs, and all 35
+label/EPA annual-kWh pairs differed, yielding 35 MEDIUM candidates. The other
+130 had no exact EPA model match; 59 showed only 5–8-character near-prefix
+diagnostics, which are not treated as matches or findings.
 
 PDP typical power (W) was compared separately with EPA on-mode power (W): 20
-rows differ, 138 have no exact EPA on-mode record, and nine PDPs lack a typical-W
+rows differ, 138 have no exact EPA on-mode record, and seven PDPs lack a typical-W
 candidate. These remain source-comparison candidates and are not emitted as
 severity findings. The run's PASS means collection/comparison completed; no final
 product grading was performed. Full row evidence is in the
-[comparison workflow artifact](https://github.com/Empty-Bell/RDA/actions/runs/35701241420).
+[comparison workflow artifact](https://github.com/Empty-Bell/RDA/actions/runs/35704080904).
 
-Business scope update: exclude every exact TV SKU whose model code begins `MNA`
-from the TV population. The baseline included two such SKUs. The collector now
-records excluded exact SKUs and the prefix rule in population evidence; hosted
-recollection and downstream comparison are pending.
+The 35 annual-energy differences are all label-higher-than-EPA (median +17.5%).
+They share exact label/EPA model strings and a single OCR annual-kWh candidate,
+so the uniform direction is unlikely to be caused by OCR/model mismatch alone.
+Do not treat the size of this delta as proof of a publication error yet. ENERGY
+STAR [V9.1](https://www.energystar.gov/sites/default/files/2024-08/ENERGY%20STAR%20Version%209.1%20Televisions%20Specification.pdf)
+says its certified AEC uses the DOE Federal Test Procedure (Appendix H) and that
+DOE represented values require separate testing under [10 CFR
+429.25](https://www.ecfr.gov/current/title-10/section-429.25). That rule derives
+represented annual energy from statistically represented power values. FTC
+television representations use procedures in 10 CFR Parts 429 and 430 ([FTC 16
+CFR 305.8](https://www.ecfr.gov/current/title-16/section-305.8)). Thus the
+EnergyGuide may show DOE's represented rating while EPA's Current field reflects
+a certified test AEC. This is a strong explanation for systematic positive
+differences, but per-model DOE sample/represented values are not in the captured
+EPA artifact, so it remains a hypothesis pending field-level confirmation. The
+35 MEDIUM rows remain candidates, not confirmed product errors.
 
 The 35 annual-energy differences are all label-higher-than-EPA (median +17.5%).
 They share exact label/EPA model strings and a single OCR annual-kWh candidate,

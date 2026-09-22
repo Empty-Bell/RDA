@@ -634,21 +634,24 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   model plus any PLP/PDP logo or Spec certification claim = HIGH. TV operating
   power W is retained separately from annual kWh. Recommended model for this
   fixed-schema hosted workflow review: Luna low; runtime itself uses no LLM.
-  Baseline comparison run 35701241420 at dca6645 passed as candidate generation:
-  167 rows, 162 readable EnergyGuides, and five NASCA DRM labels recorded
-  NOT_ACCESSIBLE / HIGH. Of 35 exact US EPA model matches, all annual label kWh
-  exceeded EPA AEC (median +17.5%). Their model strings matched and OCR exposed a
-  single annual value. ENERGY STAR V9.1 distinguishes certified AEC sent to EPA
-  from DOE represented ratings that require 10 CFR 429.25 sampling calculations;
-  this likely explains the systematic delta but needs source-field confirmation.
-  Keep MEDIUM records as candidates, not confirmed publication errors, pending
-  that validation. See docs/TV_SOURCE_CONTRACT.md and source links there.
-  Business requested excluding MNA TVs. The baseline contained two MNA models;
-  scripts/g3_tv_collect.py now excludes the MNA prefix and records excluded SKUs
-  explicitly. A hosted contract test and full downstream recollection/comparison
-  are pending. Latest baseline output:
-  https://github.com/Empty-Bell/RDA/actions/runs/35701241420.
-  Next: validate MNA exclusion on hosted Actions; confirm EnergyGuide vs EPA
-  annual-value field basis and then resolve the 35 candidates and EPA no-match
-  patterns. Recommended model: GPT-5.6 Luna low for deterministic hosted checks;
-  use GPT-5.6 Terra medium only if a data-definition decision is needed.
+  Business-approved MNA exclusion is implemented and hosted-tested. TV collection
+  run 35703343706 (commit 011ee1f) verified 165/165 exact SKUs after excluding
+  `MNA101MS1BCXZA` and `MNA89MS1BACXZA`. EnergyGuide/EPA capture 35704036734
+  succeeded with 160 readable PDFs, five NASCA DRM labels and passing EPA capture.
+  Comparison 35704080904 passed with 165 rows, zero MNA, five
+  NOT_ACCESSIBLE/HIGH candidates and 35 unique exact-US-model annual-kWh
+  differences at MEDIUM candidate severity. All 35 labels are higher (median
+  +17.5%); OCR has one annual candidate and model strings match. There are 130
+  models without an exact EPA model row; 59 near-prefixes are diagnostics only.
+  W comparisons remain separate: 20 differences, 138 without exact EPA on-mode W,
+  seven without PDP typical W. This run is candidate generation, not final product
+  grading. The systematic kWh difference may reflect EnergyGuide's DOE represented
+  values versus EPA's certified AEC; see TV_SOURCE_CONTRACT for regulatory basis.
+  Verify model-level reporting basis before treating the 35 as confirmed defects.
+  A duplicate collection was inadvertently started because both push and source-
+  recon triggers fired. Commit 7cbab99 removes that duplicate path and prevents a
+  skipped recovery job from reporting a false failure.
+  Next: validate the 35 candidates against the represented-value/AEC field basis,
+  then resolve any remaining EPA identity patterns. Recommended model: GPT-5.6
+  Luna low for fixed-schema review; use GPT-5.6 Terra medium only if a data
+  definition or severity decision remains.
