@@ -22,6 +22,15 @@ remain UNKNOWN/NOT_EVALUATED, and activation waits for collection definitions.
 This approval supersedes the earlier claim-only decision table, not unresolved
 measurement, OCR or global summary policies.
 
+Latest approved G3 severity rule (all covered product families): a confirmed
+annual-energy value disagreement among comparable PDP, EnergyGuide and EPA
+current-source values is MEDIUM; missing PDP annual energy when the label/EPA
+values agree is LOW. Independently, if a complete valid EPA Current Model Index
+search finds no current model and any PLP logo, PDP logo or spec certification
+claim is present, classify HIGH. If EPA has no current model and all three
+publication points are absent, there is no ENERGY STAR finding (display PASS).
+Do not convert TV operating-power W to annual kWh or compare unlike test bases.
+
 Latest D09 scope: use the EPA Current Model Index as the sole EPA certification
 comparison source. Earlier chronological notes below do not supersede the
 approved suffix, US-market or current-index observation contracts recorded in

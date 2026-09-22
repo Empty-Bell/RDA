@@ -75,3 +75,25 @@ Next bounded source group: Range (EPA-focused). Continue with source discovery;
 do not apply appliance annual-energy or FTC PDF obligations to EPA-only groups
 without an approved rule contract. Existing Sol medium exploratory model guidance
 applies; runtime has no LLM calls.
+
+## G3 handoff after Washer
+
+The bounded TV source discovery above is complete; the next TV task is to collect
+the full exact-SKU population (167 SKUs in the captured sample) from PLP, each
+PDP, PDP-declared EnergyGuide PDFs, and the EPA TV current dataset. Then compare
+source candidates without assigning severities and show unresolved cases before
+enabling assessment.
+
+Apply the approved common rules: comparable annual-kWh disagreement is MEDIUM;
+missing PDP annual kWh while label and EPA values agree is LOW; EPA Current Model
+Index absence plus any PLP logo, PDP logo, or spec certification claim is HIGH.
+If EPA is absent and all three publication points are absent, there is no ENERGY
+STAR finding and the SKU displays PASS. TV typical/max/standby W remains a separate
+quantity from annual kWh; never derive one from the other. The sample PDP had no
+annual kWh field, so this LOW rule may apply if full-population sources confirm
+the same gap. PDF/model identity and field selection remain candidate evidence
+until the comparison artifact exposes them for review.
+
+Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
+GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule
+is required. Collection/runtime itself uses no LLM.

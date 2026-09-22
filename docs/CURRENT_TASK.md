@@ -607,6 +607,11 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   rule emits HIGH automatically. No manual override or inferred certification
   state was used. Washer is ready to hand off to the eventual unified dashboard;
   dashboard implementation remains deferred until all product families finish.
-  Next product-family step in the master-plan order is Television source-contract
-  reconnaissance. Recommended model: Luna low for fixed-schema discovery review;
-  Terra medium only if Samsung's TV source schema requires a new adapter.
+  Next product-family step in the master-plan order is full-population Television
+  source collection; bounded source reconnaissance already passed (run 35105667331).
+  The approved rules are: comparable annual-energy disagreement = MEDIUM;
+  missing PDP annual energy with agreeing label/EPA = LOW; absent EPA current
+  model plus any PLP/PDP logo or Spec certification claim = HIGH. TV operating
+  power W is retained separately from annual kWh. Recommended model for this
+  bounded contract/evidence stage: Luna low; use Terra medium only if the TV
+  collection requires a new source adapter.
