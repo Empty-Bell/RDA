@@ -1,0 +1,28 @@
+name: G3 dishwasher final assessment
+on:
+ workflow_dispatch:
+ push:
+  branches: [main]
+  paths: ['scripts/g3_dishwasher_assessment.py','.github/workflows/g3-dishwasher-assessment.yml']
+permissions: {actions: read, contents: read}
+jobs:
+ assess:
+  runs-on: ubuntu-24.04
+  timeout-minutes: 5
+  env: {GH_TOKEN: ${{ github.token }}}
+  steps:
+   - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+     with: {persist-credentials: false}
+   - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+     with: {python-version-file: '.python-version'}
+   - name: Download latest controls
+     shell: bash
+     run: |
+      set -euo pipefail
+      download(){ w="$1";p="$2";t="$3";r="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${w}/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')";a="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${r}/artifacts" --jq "[.artifacts[]|select(.expired==false)|select(.name|startswith(\"$p\"))]|last|.id")";mkdir -p "$t";gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${a}/zip" > "$t/a.zip";unzip -q "$t/a.zip" -d "$t";}
+      download g3-dishwasher-energy-star-assessment.yml g3-dishwasher-energy-star- runtime/es
+      download g3-dishwasher-numeric-comparison.yml g3-dishwasher-numeric- runtime/numeric
+      download g3-dishwasher-model-comparison.yml g3-dishwasher-model-comparison- runtime/model
+   - run: python scripts/g3_dishwasher_assessment.py --energy-star "$(find runtime/es -name energy-star-assessment.json -print -quit)" --numeric "$(find runtime/numeric -name numeric-comparison.json -print -quit)" --model "$(find runtime/model -name model-comparison.json -print -quit)" --out runtime/out
+   - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+     with: {name: g3-dishwasher-assessment-${{ github.run_id }}-${{ github.run_attempt }},path: runtime/out/,retention-days: 14}

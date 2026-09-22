@@ -1,12 +1,14 @@
 name: G3 dishwasher canonical report
 on:
-  workflow_dispatch:
-  push:
+ workflow_dispatch:
+  workflow_run:
+    workflows: [G3 dishwasher final assessment]
+    types: [completed]
     branches: [main]
-    paths: ['scripts/g3_dishwasher_report.py', '.github/workflows/g3-dishwasher-report.yml']
 permissions: {actions: read, contents: read}
 jobs:
   report:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     # The dashboard is triggered only after this report succeeds.
     runs-on: ubuntu-24.04
     timeout-minutes: 5
@@ -21,13 +23,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p runtime/g3/report/{es,numeric,model,out}
+          mkdir -p runtime/g3/report/{assessment,out}
           download(){ workflow="$1"; prefix="$2"; target="$3"; run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; aid="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run}/artifacts" --jq "[.artifacts[]|select(.expired==false)|select(.name|startswith(\"$prefix\"))]|last|.id")"; gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${aid}/zip" > "$target/a.zip"; unzip -q "$target/a.zip" -d "$target"; }
-          download g3-dishwasher-energy-star-assessment.yml g3-dishwasher-energy-star- runtime/g3/report/es
-          download g3-dishwasher-numeric-comparison.yml g3-dishwasher-numeric- runtime/g3/report/numeric
-          download g3-dishwasher-model-comparison.yml g3-dishwasher-model-comparison- runtime/g3/report/model
+          download g3-dishwasher-assessment.yml g3-dishwasher-assessment- runtime/g3/report/assessment
       - name: Build canonical report
-        run: python scripts/g3_dishwasher_report.py --energy-star "$(find runtime/g3/report/es -name energy-star-assessment.json -print -quit)" --numeric "$(find runtime/g3/report/numeric -name numeric-comparison.json -print -quit)" --model "$(find runtime/g3/report/model -name model-comparison.json -print -quit)" --out runtime/g3/report/out
+        run: python scripts/g3_dishwasher_report.py --assessment "$(find runtime/g3/report/assessment -name assessment.json -print -quit)" --out runtime/g3/report/out
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: g3-dishwasher-report-${{ github.run_id }}-${{ github.run_attempt }}
