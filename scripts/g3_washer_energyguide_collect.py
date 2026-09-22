@@ -128,6 +128,10 @@ def main():
             for row in report["url_observations"]:
                 if row["status"] == "FAILED":
                     stream.write(f"- `{safe_url(row['url'])}`: {row.get('error', 'retrieval failed')}\n")
+    for row in report["url_observations"]:
+        if row["status"] == "FAILED":
+            print(json.dumps({"failed_energyguide_url": safe_url(row["url"]),
+                              "error": row.get("error", "retrieval failed")}, sort_keys=True), flush=True)
     print(json.dumps({"status": report["status"], "declared_document_count": len(declarations),
                       "url_count": report["url_count"], "pdf_hash_count": report["pdf_hash_count"]}, sort_keys=True), flush=True)
     return 0 if report["status"] == "PASS" else 1
