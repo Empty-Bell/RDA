@@ -104,12 +104,12 @@ now ignores only those unidentified shells while continuing to reject any
 conflicting identified SKU. `QN100QN80FFXZA` once redirected to a
 `QN115QN90FFXZA` PDP; its retry passed, and the assembled collection has 167/167
 verified. Initial collection now runs in eight shards. EPA capture passed.
-EnergyGuide retrieval verified 162/167 PDFs and exposed five failing Samsung
-URLs. The collector now checks HTTP status, PDF bytes, and the final HTTPS
-Samsung URL independently of a potentially incorrect Content-Type header, and
-records response details on failure. The GitHub-hosted label/EPA capture has
-been restarted against the verified PDP artifact; candidate comparison remains
-pending.
+EnergyGuide retrieval verified 162/167 actual PDFs and exposed five Samsung
+URLs returning 70–79 KB bodies that begin `<## NASC` despite claiming
+`application/pdf`. These are not accepted as PDF evidence. The collector records
+the response prefix, requests identity encoding, and fetches up to eight URLs
+in parallel. EPA capture passed; candidate comparison remains pending until
+all declared documents have valid PDF bytes.
 
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule

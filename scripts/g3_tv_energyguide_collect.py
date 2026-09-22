@@ -1,6 +1,7 @@
 """Retrieve and hash TV PDP Support-declared EnergyGuide PDFs; no OCR or assessment."""
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -83,35 +84,41 @@ def collect(declarations, output, user_agent):
     by_url = {}
     for declaration in declarations:
         by_url.setdefault(declaration["url"], {"url": declaration["url"], "status": "FAILED"})
-    for url, observation in by_url.items():
-        try:
-            body, final_url, content_type, status = retrieve(url, user_agent)
-            final = urlsplit(final_url)
-            observation.update(final_url=safe_url(final_url), content_type=content_type,
-                               http_status=status, byte_count=len(body),
-                               pdf_signature=body[:8].decode("ascii", errors="replace"),
-                               body_prefix_hex=body[:96].hex())
-            if status != 200:
-                raise ValueError(f"EnergyGuide HTTP status {status}")
-            if not valid_pdf(body):
-                raise ValueError(f"EnergyGuide body is not PDF bytes (type={content_type}, bytes={len(body)}, signature={observation['pdf_signature']!r})")
-            if (final.scheme != "https" or not final.hostname
-                    or not (final.hostname == "samsung.com" or final.hostname.endswith(".samsung.com"))):
-                raise ValueError(f"EnergyGuide final URL is outside HTTPS Samsung domain ({safe_url(final_url)})")
-            digest = hashlib.sha256(body).hexdigest()
-            path = pdf_root / f"{digest}.pdf"
-            if path.exists() and path.read_bytes() != body:
-                raise ValueError("TV EnergyGuide hash path has conflicting bytes")
-            path.write_bytes(body)
-            observation.update(status="RETRIEVED_VALID_PDF", sha256=digest, path=f"pdf/{path.name}")
-        except Exception as error:
-            observation["error"] = str(error).splitlines()[0][:300]
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        pending = {url: pool.submit(retrieve, url, user_agent) for url in by_url}
+        for url, observation in by_url.items():
+            try:
+                body, final_url, content_type, status = pending[url].result()
+                _record_retrieval(body, final_url, content_type, status, observation, pdf_root)
+            except Exception as error:
+                observation["error"] = str(error).splitlines()[0][:300]
     records = [{**declaration, "retrieval": {key: value for key, value in by_url[declaration["url"]].items() if key != "url"}}
                for declaration in declarations]
     return {"records": records, "url_count": len(by_url),
             "pdf_hash_count": len({x["sha256"] for x in by_url.values() if x.get("sha256")}),
             "failed_url_count": sum(x["status"] == "FAILED" for x in by_url.values()),
             "url_observations": list(by_url.values())}
+
+
+def _record_retrieval(body, final_url, content_type, status, observation, pdf_root):
+    final = urlsplit(final_url)
+    observation.update(final_url=safe_url(final_url), content_type=content_type,
+                       http_status=status, byte_count=len(body),
+                       pdf_signature=body[:8].decode("ascii", errors="replace"),
+                       body_prefix_hex=body[:96].hex())
+    if status != 200:
+        raise ValueError(f"EnergyGuide HTTP status {status}")
+    if not valid_pdf(body):
+        raise ValueError(f"EnergyGuide body is not PDF bytes (type={content_type}, bytes={len(body)}, signature={observation['pdf_signature']!r})")
+    if (final.scheme != "https" or not final.hostname
+            or not (final.hostname == "samsung.com" or final.hostname.endswith(".samsung.com"))):
+        raise ValueError(f"EnergyGuide final URL is outside HTTPS Samsung domain ({safe_url(final_url)})")
+    digest = hashlib.sha256(body).hexdigest()
+    path = pdf_root / f"{digest}.pdf"
+    if path.exists() and path.read_bytes() != body:
+        raise ValueError("TV EnergyGuide hash path has conflicting bytes")
+    path.write_bytes(body)
+    observation.update(status="RETRIEVED_VALID_PDF", sha256=digest, path=f"pdf/{path.name}")
 
 
 def main():
@@ -140,11 +147,12 @@ def main():
             stream.write("SKUs with no PDP Support-declared document: " + (", ".join(f"`{sku}`" for sku in missing_docs) if missing_docs else "none") + "\n\n")
             for row in report["url_observations"]:
                 if row["status"] == "FAILED":
-                    stream.write(f"- `{safe_url(row['url'])}`: {row.get('error', 'retrieval failed')}\n")
+            stream.write(f"- `{safe_url(row['url'])}`: {row.get('error', 'retrieval failed')}; response prefix hex `{row.get('body_prefix_hex', '')}`\n")
     for row in report["url_observations"]:
         if row["status"] == "FAILED":
             print(json.dumps({"failed_energyguide_url": safe_url(row["url"]),
-                              "error": row.get("error", "retrieval failed")}, sort_keys=True), flush=True)
+                              "error": row.get("error", "retrieval failed"),
+                              "body_prefix_hex": row.get("body_prefix_hex")}, sort_keys=True), flush=True)
     print(json.dumps({"status": report["status"], "declared_document_count": len(declarations),
                       "url_count": report["url_count"], "pdf_hash_count": report["pdf_hash_count"]}, sort_keys=True), flush=True)
     return 0 if report["status"] == "PASS" else 1

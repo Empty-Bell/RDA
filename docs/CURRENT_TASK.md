@@ -619,11 +619,12 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   conflicting identified SKUs. The remaining SKU `QN100QN80FFXZA` was routed by
   PF once routed `QN100QN80FFXZA` to the `QN115QN90FFXZA` page, but its retry
   then passed; the complete combined artifact is now 167/167 verified. EPA
-  capture succeeded. EnergyGuide retrieval reached 162/167 PDFs; five Samsung
-  URLs were rejected by an overly strict content-type check. Retrieval now
-  requires HTTP 200, a valid `%PDF-` byte signature, and a final HTTPS Samsung
-  URL, while logging exact response details. Pushing the fix reruns label/EPA
-  capture from the verified PDP artifact. Source comparison has not run yet.
+  capture succeeded. EnergyGuide retrieval reached 162/167 actual PDFs. Five Samsung
+  URLs claim `application/pdf` but return 70–79 KB bodies beginning `<## NASC`,
+  so they are not accepted as PDF evidence. The collector now records the first
+  96 response bytes, requests identity encoding, and retrieves up to eight URLs
+  in parallel. Source comparison remains pending until every declared document
+  has valid PDF bytes.
   Diagnostic run: [35692565164](https://github.com/Empty-Bell/RDA/actions/runs/35692565164).
   Bounded source reconnaissance already passed (run 35105667331).
   The approved rules are: comparable annual-energy disagreement = MEDIUM;
