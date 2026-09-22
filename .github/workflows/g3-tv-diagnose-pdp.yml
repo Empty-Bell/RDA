@@ -8,7 +8,11 @@ on:
   workflow_dispatch:
     inputs:
       recovery_run_id:
-        description: G3 TV recovery run ID (blank selects the latest failed recovery)
+        description: G3 TV recovery run ID (blank selects the latest completed recovery)
+        required: false
+        type: string
+      exact_sku:
+        description: Optional exact SKU to inspect even when it passed collection
         required: false
         type: string
 
@@ -35,10 +39,11 @@ jobs:
         shell: bash
         env:
           RECOVERY_RUN_ID: ${{ github.event.inputs.recovery_run_id || '' }}
+          EXACT_SKU: ${{ github.event.inputs.exact_sku || '' }}
         run: |
           set -euo pipefail
           if [ -z "$RECOVERY_RUN_ID" ]; then
-            RECOVERY_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-tv-recovery.yml/runs?branch=main&per_page=20" --jq '[.workflow_runs[] | select(.conclusion == "failure")] | sort_by(.run_number) | last | .id')"
+            RECOVERY_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-tv-recovery.yml/runs?branch=main&per_page=20" --jq '[.workflow_runs[] | select(.status == "completed")] | sort_by(.run_number) | last | .id')"
           fi
           VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RECOVERY_RUN_ID}" --jq 'select(.status == "completed" and .path == ".github/workflows/g3-tv-recovery.yml") | .id')"
           test "$VALID_RUN" = "$RECOVERY_RUN_ID"
@@ -51,7 +56,14 @@ jobs:
           test -n "$SUMMARY"
           echo "COLLECTION_DIR=$(dirname "$SUMMARY")" >> "$GITHUB_ENV"
       - name: Classify the missing exact-SKU evidence for each failed PDP
-        run: python scripts/g3_tv_diagnose_collection.py --collection-root "$COLLECTION_DIR" --out runtime/g3-tv/diagnostics
+        env:
+          EXACT_SKU: ${{ github.event.inputs.exact_sku || '' }}
+        run: |
+          if [ -n "$EXACT_SKU" ]; then
+            python scripts/g3_tv_diagnose_collection.py --collection-root "$COLLECTION_DIR" --out runtime/g3-tv/diagnostics --exact-sku "$EXACT_SKU"
+          else
+            python scripts/g3_tv_diagnose_collection.py --collection-root "$COLLECTION_DIR" --out runtime/g3-tv/diagnostics
+          fi
       - name: Preserve machine-readable diagnostics
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a

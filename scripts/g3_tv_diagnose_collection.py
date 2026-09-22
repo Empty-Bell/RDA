@@ -30,10 +30,13 @@ def diagnose(root, sku):
         checks.append("no_product_jsonld")
     else:
         identity_rows = [[d.get(k) for k in ("sku", "mpn") if d.get(k)] for d in declarations]
-        if any(not identities for identities in identity_rows):
+        identified_rows = [identities for identities in identity_rows if identities]
+        if not identified_rows:
             checks.append("product_jsonld_identity_missing")
-        elif any(value != sku for identities in identity_rows for value in identities):
+        elif any(value != sku for identities in identified_rows for value in identities):
             checks.append("product_jsonld_exact_sku_mismatch")
+        elif len(identified_rows) != 1:
+            checks.append("product_jsonld_identified_record_not_unique")
     responses = record.get("bridge_responses", [])
     if not responses:
         checks.append("no_specs_support_bridge_response")
@@ -56,11 +59,15 @@ def diagnose(root, sku):
             else:
                 fact_errors.append("bridge_exact_sku_facts_valid")
         checks.extend("bridge:" + reason for reason in fact_errors)
-    return {"exact_sku": sku, "error": record.get("error"), "http_status": record.get("http_status"),
+    return {"exact_sku": sku, "pdp_collection_status": record.get("status"),
+            "error": record.get("error"), "http_status": record.get("http_status"),
             "requested_url": record.get("requested_url"), "final_url": record.get("final_url"),
             "bridge_responses": [{"status": e.get("status"), "has_projected_payload": bool(e.get("path")),
                                   "error_class": e.get("error_class")} for e in responses],
             "jsonld_parse_errors": snapshot.get("jsonld_parse_errors"),
+            "anonymous_product_shell_count": sum(not row for row in
+                                                   [[d.get(k) for k in ("sku", "mpn") if d.get(k)]
+                                                    for d in snapshot.get("product_jsonld", [])]),
             "product_jsonld": snapshot.get("product_jsonld", []),
             "diagnostic_checks": checks}
 
@@ -69,17 +76,24 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--collection-root", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--exact-sku", help="Also inspect one SKU even when the collection passed")
     args = parser.parse_args()
     root, out = Path(args.collection_root), Path(args.out)
     summary = read(root / "collection-summary.json")
-    failed = [row["exact_sku"] for row in summary["coverage"]["rows"] if row["status"] == "FAILED"]
-    records = [diagnose(root, sku) for sku in failed]
+    selected = {row["exact_sku"] for row in summary["coverage"]["rows"] if row["status"] == "FAILED"}
+    if args.exact_sku:
+        known = {row["exact_sku"] for row in summary["coverage"]["rows"]}
+        if args.exact_sku not in known:
+            raise ValueError("Requested diagnostic SKU is outside the collection population")
+        selected.add(args.exact_sku)
+    records = [diagnose(root, sku) for sku in sorted(selected)]
     reasons = Counter(check for record in records for check in record["diagnostic_checks"])
     result = {"collection_run_id": summary.get("collection_run_id"), "population_count": summary["coverage"]["population_count"],
-              "failed_count": len(records), "diagnostic_reason_counts": dict(reasons), "examples": records[:12], "rows": records}
+              "failed_count": sum(record.get("pdp_collection_status") != "VERIFIED_EXACT_IDENTITY" for record in records),
+              "inspected_count": len(records), "diagnostic_reason_counts": dict(reasons), "examples": records[:12], "rows": records}
     out.mkdir(parents=True, exist_ok=True)
     (out / "pdp-diagnostics.json").write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(json.dumps({k: result[k] for k in ("collection_run_id", "population_count", "failed_count", "diagnostic_reason_counts", "examples")}, indent=2, sort_keys=True), flush=True)
+    print(json.dumps({k: result[k] for k in ("collection_run_id", "population_count", "failed_count", "inspected_count", "diagnostic_reason_counts", "examples")}, indent=2, sort_keys=True), flush=True)
     return 0
 
 
