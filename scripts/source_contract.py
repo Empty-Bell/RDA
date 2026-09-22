@@ -14,8 +14,13 @@ def energyguide_ocr_reason(text):
     return None
 
 
-def project_bridge(data):
-    """Explicit product-only allowlist; never retain chat/analytics/RelatedModels."""
+def project_bridge(data, include_all_supports=False):
+    """Explicit product-only allowlist; never retain chat/analytics/RelatedModels.
+
+    Most existing source contracts only need canonical Energy Guide entries.
+    Dryer discovery opts in to all Support name/type/URL triples so alternate
+    document labels are not silently discarded before the source audit.
+    """
     if not isinstance(data, dict) or not isinstance(data.get('Specs'), list) or not isinstance(data.get('Support'), list):
         raise ValueError('Missing Specs/Support bridge-data contract')
     return {
@@ -25,9 +30,10 @@ def project_bridge(data):
                                                for s in g.get('specList', [])]}
                                  for g in x.get('fullSpecs', [])]} for x in data['Specs']],
         'Support': [{'modelCode': x.get('modelCode'),
-                     'supports': [{k: d.get(k) for k in ('name', 'type', 'url')}
+                     'supports': [{k: d.get(k) for k in ('name', 'type', 'url')
+                                   if k in d}
                                   for d in x.get('supports', [])
-                                  if re.fullmatch(r'energy\s*guide', d.get('name', ''), re.I)]}
+                                  if include_all_supports or re.fullmatch(r'energy\s*guide', d.get('name', ''), re.I)]}
                     for x in data['Support']],
     }
 
@@ -164,6 +170,9 @@ def pdp_facts(data, target, family='refrigerator'):
             'hood_power_raw': [x for x in fields if x['name'] == 'Power'],
             'energy_star_spec_claim_raw': [x for x in fields if re.search(r'energy\s*star', x['name'] or '', re.I)],
             'energy_star_structured_claim': None,
+            'support_documents_raw': [] if specs_only else [
+                {k: d.get(k) for k in ('name', 'type', 'url') if k in d}
+                for d in support[0]['supports']],
             'energyguide_documents': [{k: x.get(k) for k in ('name', 'type', 'url')} for x in documents]}
 
 

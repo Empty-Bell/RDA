@@ -109,7 +109,8 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
                                 "annual_energy_candidates_raw": entry.get("annual_energy_candidates_raw", []),
                                 "capacity_candidates_raw": entry.get("capacity_candidates_raw", []),
                                 "review_flags": entry.get("review_flags", [])})
-    no_docs = set(review.get("skus_without_support_document", []))
+    no_docs = set(review.get("skus_without_canonical_energyguide_entry",
+                             review.get("skus_without_support_document", [])))
     if no_docs - set(population):
         raise ValueError("Dryer review queue no-document list contains an unknown SKU")
     if any(not labels[sku] for sku in population if sku not in no_docs):
@@ -153,7 +154,9 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
                             "pdp_identity": pdp.get("identity_contract"),
                             "pdp_energy_specs_raw": facts.get("energy_consumption_raw", []),
                             "pdp_drying_capacity_raw": facts.get("capacity_raw", []),
-                            "label_support_document_state": "DOCUMENT_REVIEWED" if label_docs else "NO_SUPPORT_DOCUMENT_DECLARED",
+                            "pdp_support_documents_raw": facts.get("support_documents_raw", []),
+                            "pdp_support_document_count": len(facts.get("support_documents_raw", [])),
+                            "label_support_document_state": "DOCUMENT_REVIEWED" if label_docs else "NO_CANONICAL_ENERGYGUIDE_FROM_CAPTURED_PDP_SUPPORT",
                             "label_documents": label_docs, "epa_model_pattern_candidates": epa_matches,
                             "combo_epa_model_pattern_candidates": combo_epa_matches,
                             "epa_model_candidate_count": len(epa_matches),
@@ -167,6 +170,7 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
               "comparison_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
               "captured_at": datetime.now(timezone.utc).isoformat(), "population_count": len(population),
               "epa_samsung_current_row_count": len(epa_rows), "combo_epa_samsung_current_row_count": len(combo_epa_rows),
+              "sku_without_canonical_energyguide_entry_count": len(no_docs),
               "sku_without_support_document_count": len(no_docs),
               "model_candidate_contract": "Positional prefix candidate only: each * consumes one A-Z/0-9 character; remaining exact-SKU suffix is preserved. Candidate is not a match decision.",
               "scope": "Exact-SKU PDP, Support-label, EPA dryer, and EPA combo source observations; raw source candidates only; no value selection, family routing, numeric comparison, pass/fail, severity, or compliance assessment",
@@ -178,18 +182,22 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
     if step_summary:
         with Path(step_summary).open("a", encoding="utf-8") as stream:
             stream.write("## Dryer PDP / EnergyGuide / EPA source candidates\n\n")
-            stream.write(f"Exact PDP SKUs: **{len(population)}**; Dryer EPA rows: **{len(epa_rows)}**; combo EPA rows: **{len(combo_epa_rows)}**; SKUs without a Support label: **{len(no_docs)}**. No selection, comparison, or assessment was made.\n\n")
-            stream.write("| Exact SKU | PDP title | Label patterns fitting SKU | Other model-like PDF tokens | Label annual-kWh candidates | Dryer EPA candidates / kWh / CEF / type | Combo EPA candidates / washer kWh / dryer kWh | Label docs |\n|---|---|---|---|---|---|---|---:|\n")
+            stream.write(f"Exact PDP SKUs: **{len(population)}**; Dryer EPA rows: **{len(epa_rows)}**; combo EPA rows: **{len(combo_epa_rows)}**; canonical Energy Guide entries in PDP Support: **{len(population) - len(no_docs)}**. All Support document name/type/URL triples are retained in JSON for source review. No selection, comparison, or assessment was made.\n\n")
+            stream.write("| Exact SKU | PDP title | PDP Support document names | Label patterns fitting SKU | Other model-like PDF tokens | Label annual-kWh candidates | Dryer EPA candidates / kWh / CEF / type | Combo EPA candidates / washer kWh / dryer kWh | Label docs |\n|---|---|---|---|---|---|---|---|---:|\n")
             for row in output_rows:
                 label_models = "; ".join(label_model_display(doc)[0] for doc in row["label_documents"]) or "none"
                 other_label_tokens = "; ".join(label_model_display(doc)[1] for doc in row["label_documents"]) or "none"
                 label_energy = "; ".join(", ".join(sorted({e.get("value_raw", "") for e in doc["annual_energy_candidates_raw"] if e.get("value_raw")})) or "no annual-kWh candidate" for doc in row["label_documents"]) or "none"
                 epa = "; ".join(f"{x['model_number_raw']} [PD {x['pd_id']}; row {x['source_row_id']}] / {x['annual_energy_kwh_yr_raw']} / CEF {x['combined_energy_factor_cef_raw']} / {x['type_raw']}" for x in row["epa_model_pattern_candidates"]) or "no positional candidate"
                 combo_epa = "; ".join(f"{x['model_number_raw']} [PD {x['pd_id']}; row {x['source_row_id']}] / W {x['washer_annual_energy_kwh_yr_raw']} / D {x['combo_dryer_annual_energy_kwh_yr_raw']}" for x in row["combo_epa_model_pattern_candidates"]) or "no positional candidate"
-                cells = [row["exact_sku"], row["pdp_title_raw"] or "", label_models, other_label_tokens, label_energy, epa, combo_epa, str(len(row["label_documents"]))]
+                support_names = "; ".join(sorted({str(doc.get("name") or "(unnamed)")
+                                                      for doc in row["pdp_support_documents_raw"]})) or "empty Support array"
+                cells = [row["exact_sku"], row["pdp_title_raw"] or "", support_names,
+                         label_models, other_label_tokens, label_energy, epa, combo_epa,
+                         str(len(row["label_documents"]))]
                 stream.write("| " + " | ".join(str(x).replace("|", "\\|").replace("\n", " ") for x in cells) + " |\n")
     print(json.dumps({"status": "PASS", "population_count": len(population), "epa_row_count": len(epa_rows),
-                      "skus_without_support_document": len(no_docs),
+                      "skus_without_canonical_energyguide_entry": len(no_docs),
                       "epa_candidate_rows": sum(row["epa_model_candidate_count"] for row in output_rows),
                       "combo_epa_candidate_rows": sum(row["combo_epa_model_candidate_count"] for row in output_rows),
                       "numeric_comparison": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"}, sort_keys=True), flush=True)

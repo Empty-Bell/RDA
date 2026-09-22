@@ -112,8 +112,10 @@ selection, wildcard matching, numeric comparison, pass/fail, or severity is
 enabled. Combo washer energy is not projected as dryer energy. These steps run on
 GitHub-hosted `ubuntu-24.04`, with the existing pinned OCR/PDF dependencies and no
 LLM calls. Observation run 35715470080 PASSed and review queue run 35715542396
-PASSed. Five unique PDFs cover 11 of the 54 PDP SKUs; 43 have no PDP Support-
-declared label PDF. Four PDFs produced annual-kWh candidates 94, 95, 103, and 103
+PASSed. Five unique PDFs cover 11 of the 54 PDP SKUs under the then-current
+canonical-name-only Support projection; the remaining Support entries were not
+preserved, so their label-link coverage is unknown. Four PDFs produced
+annual-kWh candidates 94, 95, 103, and 103
 with printed WD/WH model patterns. Keep these as raw evidence and do not project
 them into dryer energy. The PDF linked to DV53BB8900HDA2 is valid but yielded no
 model, annual-kWh, capacity, or US-heading candidate; retrieval did not fail. No
@@ -191,13 +193,14 @@ while `WH46DBH500GVA3` fits Gas PD ID `2788448`, row `row-cdmn.hcfe.icef`
 already documented in the Washer source contract; it is not a dryer-side
 comparison.
 
-Support-label collection coverage is 11 of 54 exact Dryer SKUs whose captured
-PDP Bridge `Support` response declared a document named exactly `Energy Guide`,
-covering five unique PDFs. The remaining 43 had an empty `Support.supports`
-array in that captured response. This is not a search across Samsung Support,
-manuals, other PDP fields, or the web, and must not be described as “PDFs not
-found” or as evidence that a label is absent. It is only the coverage of this
-specific structured PDP source at capture time; it is not a compliance result.
-The standalone DV53BB8900HDA2 document was retrieved successfully but yielded no
-OCR model or annual-energy candidates, which is a separate extraction
-limitation. Neither case is graded here.
+The original Dryer projection filtered Bridge `Support.supports` to entries
+named exactly `Energy Guide` before writing the collection artifact. Therefore
+the observed 11/54 count describes only canonical-name entries; the other 43
+were discarded by our projection and cannot be called empty in Samsung's raw
+response. This is a collection-contract blind spot, not evidence that PDP Bridge
+lacks their document links. Dryer collection now has an explicit option to
+preserve every Support `name`/`type`/`url` triple, and the candidate report will
+show all observed Support document names. A fresh hosted collection is required
+to determine whether alternate labels or PDF URLs explain the 43. No conclusion
+about label absence or compliance is valid before that recapture. The standalone
+DV53BB8900HDA2 PDF still has a distinct OCR candidate-extraction gap.

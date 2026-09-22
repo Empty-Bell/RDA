@@ -127,7 +127,8 @@ def collect(products, output):
                         raise ValueError("Dryer bridge response limit exceeded")
                     if response.status != 200 or "json" not in response.headers.get("content-type", "").lower():
                         raise ValueError("Dryer bridge response unavailable or not JSON")
-                    raw = (json.dumps(project_bridge(response.json()), sort_keys=True, indent=2) + "\n").encode()
+                    raw = (json.dumps(project_bridge(response.json(), include_all_supports=True),
+                                      sort_keys=True, indent=2) + "\n").encode()
                     path = folder / f"bridge-{len(record['bridge_responses'])}.json"
                     path.write_bytes(raw)
                     entry.update(path=path.name, sha256=hashlib.sha256(raw).hexdigest())
@@ -215,6 +216,39 @@ def coverage(products, results):
     return {"population_count": len(population), "attempted_count": len(results), "counts": counts, "rows": rows}
 
 
+def support_inventory(results):
+    """Summarize the complete preserved Support document metadata by name/type."""
+    by_name = {}
+    skus_with_any = set()
+    canonical_energyguide_skus = set()
+    for result in results:
+        if result.get("status") != "VERIFIED_EXACT_IDENTITY":
+            continue
+        sku = result["exact_sku"]
+        facts = result.get("pdp_facts_raw", {})
+        documents = facts.get("support_documents_raw", [])
+        canonical = facts.get("energyguide_documents", [])
+        if documents:
+            skus_with_any.add(sku)
+        if canonical:
+            canonical_energyguide_skus.add(sku)
+        for document in documents:
+            name = str(document.get("name") or "(unnamed)").strip()
+            row = by_name.setdefault(name, {"name_raw": name, "document_count": 0,
+                                            "sku_count": 0, "pdf_count": 0, "skus": set()})
+            row["document_count"] += 1
+            row["pdf_count"] += str(document.get("type") or "").upper() == "PDF"
+            row["skus"].add(sku)
+    inventory = []
+    for name in sorted(by_name, key=str.casefold):
+        row = by_name[name]
+        inventory.append({"name_raw": row["name_raw"], "document_count": row["document_count"],
+                          "sku_count": len(row["skus"]), "pdf_count": row["pdf_count"]})
+    return {"skus_with_any_support_document_count": len(skus_with_any),
+            "skus_with_canonical_energyguide_count": len(canonical_energyguide_skus),
+            "document_name_inventory": inventory}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--recon-root", required=True)
@@ -227,12 +261,15 @@ def main():
     (destination / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (destination / "products.json").write_text(json.dumps(products, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     rows = coverage(products, collect(products, destination))
+    support_docs = [json.loads(path.read_bytes()) for path in sorted((destination / "pdp").glob("*/result.json"))]
+    support_summary = support_inventory(support_docs)
     status = "PASS" if rows["counts"]["FAILED"] == 0 and rows["counts"]["NOT_ATTEMPTED"] == 0 else "FAILED"
     report = {"contract": CONTRACT, "source_run_id": str(args.source_run_id),
               "collection_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
               "captured_at": datetime.now(timezone.utc).isoformat(),
               "scope": "Dryer exact-SKU PDP identity and source facts only; no combo routing, matching or assessment",
-              "assessment": "NOT_EVALUATED", "population": population, "coverage": rows, "status": status}
+              "assessment": "NOT_EVALUATED", "population": population, "coverage": rows,
+              "support_document_inventory": support_summary, "status": status}
     (destination / "collection-summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     summary = os.getenv("GITHUB_STEP_SUMMARY")
     if summary:
@@ -240,6 +277,12 @@ def main():
             stream.write("## Clothes dryer exact-SKU PDP collection\n\n")
             stream.write(f"Status: **{status}**; population: {rows['population_count']}\n\n")
             stream.write(f"Coverage: `{json.dumps(rows['counts'], sort_keys=True)}`\n\n")
+            stream.write(f"PDP Support documents: any document on {support_summary['skus_with_any_support_document_count']}/{rows['population_count']} SKUs; canonical `Energy Guide` entry on {support_summary['skus_with_canonical_energyguide_count']}/{rows['population_count']}. Full Support names, types and URLs are retained in the collection artifact.\n\n")
+            if support_summary["document_name_inventory"]:
+                stream.write("| PDP Support name | SKU count | PDF entries | Total entries |\n|---|---:|---:|---:|\n")
+                for item in support_summary["document_name_inventory"]:
+                    stream.write(f"| {item['name_raw']} | {item['sku_count']} | {item['pdf_count']} | {item['document_count']} |\n")
+                stream.write("\n")
             for row in rows["rows"]:
                 if row["status"] == "FAILED":
                     stream.write(f"- `{row['exact_sku']}`: {row.get('error', 'collection failure')}\n")

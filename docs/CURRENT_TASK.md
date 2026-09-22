@@ -5,16 +5,18 @@
 The TV audit uses model identity only. Dryer source reconnaissance passed on
 hosted Ubuntu in run 35712517039. Exact-SKU PDP collection passed in run
 35712660255: all 54/54 products have verified exact PDP identity, with zero
-failed or unattempted SKUs. The artifact retains PDP Specs/Support, claim channels,
-EnergyGuide links and provenance; it does not EPA-match or assess. Combo washer
+failed or unattempted SKUs. Its original Support projection retained only
+canonical `Energy Guide` entries, so it did not preserve the full raw Support
+document inventory. Combo washer
 Energy Guide kWh is not projected as dryer annual energy. A later duplicate
 collection attempt (35713169010) failed at its upstream source-artifact identity
 guard before PDP collection; use the complete, successful 35712660255 package.
 The EPA Current Samsung dryer capture and PDP-declared EnergyGuide retrieval
 passed together in run 35714849653: 104 Samsung EPA rows, 54-SKU PDP coverage,
-11 declared PDF URLs and 5 unique valid PDFs. OCR run 35715470080 and raw review
+11 canonical-name PDF URLs and 5 unique valid PDFs. OCR run 35715470080 and raw review
 run 35715542396 both PASSed on ubuntu-24.04. Five unique PDFs link to 11 exact
-SKUs; the other 43 of 54 SKUs have no Support-declared EnergyGuide. Four PDFs
+SKUs under that projection; no reliable count for the other PDP Support entries
+can be derived from those artifacts. Four PDFs
 expose yearly-kWh candidates (94, 95, 103, 103), but their printed model patterns
 are WD/WH families, so retain as raw evidence and do not project them as dryer
 energy. The remaining DV53BB8900HDA2-linked PDF yielded no model, annual-kWh,
@@ -730,15 +732,17 @@ a duplicated candidate join. WH46 500 Electric/Gas are likewise separate rows
 unassessed observations; Laundry Center label values 94/95 are washer-side and
 cannot be compared with dryer-side EPA values.
 
-In the captured PDP Bridge response, 11 of 54 SKUs had a Support entry named
-exactly `Energy Guide`, covering five PDFs; the other 43 had an empty
-`Support.supports` array. This was not a search of Samsung Support, manuals,
-other PDP fields, or the web. Therefore the correct statement is “no document
-declared in this captured PDP Support array,” not “PDF link could not be found”
-or “label absent.” The result is source-path coverage only and carries no
-compliance implication. One of the five retrieved PDFs (DV53BB8900HDA2) yielded
-no OCR model/value candidate, a separate extraction gap. Next: decide whether
-to expand document-source discovery beyond the PDP bridge, then close or scope
-the OCR gap and define component-safe comparison gates before Dryer assessment.
-Recommended model: GPT-5.6 Luna low; use Terra medium only if that source-scope
-decision needs policy interpretation.
+The 11/54 Support-label count was not a faithful inventory of raw Bridge data:
+`project_bridge` discarded every Support document unless its name matched
+exactly `Energy Guide`, before collection artifacts were saved. Consequently,
+the previously reported 43 “empty” arrays were artifacts of our projection and
+cannot establish whether Samsung returned differently named documents or URLs.
+I changed Dryer capture to preserve every Support `name`/`type`/`url` triple and
+added a full-population candidate summary of those names. The collection
+workflow now reruns from the latest successful source reconnaissance when this
+collector contract changes. Targeted and full local tests pass (195 tests, 1
+skipped). Next: inspect the fresh hosted inventory, count alternate document
+names/PDFs and EnergyGuide-like URLs, then decide whether retrieval should
+include them. Only after this inventory can label-source coverage be stated.
+Recommended model: GPT-5.6 Luna low; Terra medium only if source interpretation
+changes a policy rule.

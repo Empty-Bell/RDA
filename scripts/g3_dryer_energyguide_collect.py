@@ -30,6 +30,7 @@ def load_documents(collection_root, collection_run_id):
         raise ValueError("Dryer collection artifact does not contain full PDP evidence")
     declarations, seen = [], set()
     sku_coverage = []
+    support_name_counts = {}
     identity = None
     for path in results:
         result = read_json(path)
@@ -47,8 +48,18 @@ def load_documents(collection_root, collection_run_id):
         docs = result.get("pdp_facts_raw", {}).get("energyguide_documents")
         if not isinstance(docs, list):
             raise ValueError("Dryer Support document list is invalid")
+        all_support = result.get("pdp_facts_raw", {}).get("support_documents_raw", docs)
+        if not isinstance(all_support, list):
+            raise ValueError("Dryer raw Support document inventory is invalid")
+        support_names = sorted({str(item.get("name") or "(unnamed)") for item in all_support
+                                if isinstance(item, dict)})
         sku_coverage.append({"exact_sku": sku, "support_document_count": len(docs),
-                             "state": "DOCUMENTS_DECLARED" if docs else "NO_SUPPORT_DOCUMENT_DECLARED"})
+                             "all_support_document_count": len(all_support),
+                             "canonical_energyguide_document_count": len(docs),
+                             "support_document_names": support_names,
+                             "state": "CANONICAL_ENERGYGUIDE_DECLARED" if docs else "NO_CANONICAL_ENERGYGUIDE_DECLARED"})
+        for name in support_names:
+            support_name_counts[name] = support_name_counts.get(name, 0) + 1
         for index, doc in enumerate(docs):
             url = doc.get("url") if isinstance(doc, dict) else None
             parts = urlsplit(url) if isinstance(url, str) else None
@@ -59,7 +70,9 @@ def load_documents(collection_root, collection_run_id):
                                  "name_raw": doc.get("name"), "type_raw": doc.get("type"), "url": url})
     if identity is None:
         raise ValueError("Dryer collection contains no PDP results")
-    return declarations, identity, sku_coverage
+    name_inventory = [{"name_raw": name, "sku_count": support_name_counts[name]}
+                      for name in sorted(support_name_counts, key=str.casefold)]
+    return declarations, identity, sku_coverage, name_inventory
 
 
 def retrieve(url, user_agent):
@@ -107,14 +120,16 @@ def main():
     parser.add_argument("--collection-run-id", required=True)
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
-    declarations, user_agent, sku_coverage = load_documents(args.collection_root, args.collection_run_id)
+    declarations, user_agent, sku_coverage, support_name_inventory = load_documents(
+        args.collection_root, args.collection_run_id)
     collected = collect(declarations, args.out, user_agent)
     report = {"contract": CONTRACT,
               "scope": "Exact-SKU PDP Support-declared Dryer PDF retrieval and byte hashing only; no OCR, selection, matching, or assessment",
               "collection_run_id": str(args.collection_run_id), "retrieval_run_id": os.getenv("GITHUB_RUN_ID"),
               "git_sha": os.getenv("GITHUB_SHA"), "captured_at": datetime.now(timezone.utc).isoformat(),
               "status": "PASS" if collected["failed_url_count"] == 0 else "FAILED",
-              "sku_document_coverage": sku_coverage, "sku_population_count": len(sku_coverage), **collected}
+              "sku_document_coverage": sku_coverage, "sku_population_count": len(sku_coverage),
+              "support_document_name_inventory": support_name_inventory, **collected}
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     (out / "energyguide-summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -122,9 +137,18 @@ def main():
     if summary_path:
         with Path(summary_path).open("a", encoding="utf-8") as stream:
             stream.write("## Dryer EnergyGuide PDF retrieval\n\n")
-            missing_docs = [row["exact_sku"] for row in sku_coverage if row["state"] == "NO_SUPPORT_DOCUMENT_DECLARED"]
-            stream.write(f"Status: **{report['status']}**; target SKUs: {len(sku_coverage)}; declared docs: {len(declarations)}; unique URLs: {report['url_count']}; PDFs: {report['pdf_hash_count']}\n\n")
-            stream.write("SKUs with no PDP Support-declared document: " + (", ".join(f"`{sku}`" for sku in missing_docs) if missing_docs else "none") + "\n\n")
+            missing_docs = [row["exact_sku"] for row in sku_coverage
+                            if row["state"] == "NO_CANONICAL_ENERGYGUIDE_DECLARED"]
+            any_support_count = sum(bool(row.get("all_support_document_count", row["support_document_count"]))
+                                    for row in sku_coverage)
+            stream.write(f"Status: **{report['status']}**; target SKUs: {len(sku_coverage)}; canonical Energy Guide URLs: {len(declarations)}; unique URLs: {report['url_count']}; PDFs: {report['pdf_hash_count']}\n\n")
+            stream.write(f"PDP Support had any document on {any_support_count}/{len(sku_coverage)} SKUs. SKUs with no canonical `Energy Guide` entry in this capture: " + (", ".join(f"`{sku}`" for sku in missing_docs) if missing_docs else "none") + "\n\n")
+            if support_name_inventory:
+                stream.write("Support document names preserved from PDP Bridge:\n\n")
+                stream.write("| Name | SKU count |\n|---|---:|\n")
+                for item in support_name_inventory:
+                    stream.write(f"| {item['name_raw']} | {item['sku_count']} |\n")
+                stream.write("\n")
             for row in report["url_observations"]:
                 if row["status"] == "FAILED":
                     stream.write(f"- `{safe_url(row['url'])}`: {row.get('error', 'retrieval failed')}\n")

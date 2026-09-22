@@ -37,7 +37,8 @@ def review(observation_root, observation_run_id, output):
             or any(coverage_by_sku[sku] != linked_counts.get(sku, 0) for sku in coverage_by_sku)):
         raise ValueError("Dryer per-SKU document counts disagree with exact-SKU PDF links")
     skus_without_documents = [row["exact_sku"] for row in sku_coverage
-                              if row.get("state") == "NO_SUPPORT_DOCUMENT_DECLARED"]
+                              if row.get("state") in ("NO_SUPPORT_DOCUMENT_DECLARED",
+                                                       "NO_CANONICAL_ENERGYGUIDE_DECLARED")]
     by_hash = {}
     for link in sku_docs:
         digest = link.get("pdf_sha256")
@@ -125,7 +126,9 @@ def review(observation_root, observation_run_id, output):
               "captured_at": datetime.now(timezone.utc).isoformat(),
               "scope": "Raw candidate index by PDF hash and exact-SKU membership only; no candidate selection, model matching, numeric comparison, or assessment",
               "status": "PASS", "queue_state": "RAW_CANDIDATES_READY_FOR_REVIEW",
-              "sku_population_count": len(sku_coverage), "skus_without_support_document": skus_without_documents,
+              "sku_population_count": len(sku_coverage),
+              "skus_without_canonical_energyguide_entry": skus_without_documents,
+              "skus_without_support_document": skus_without_documents,
               "sku_document_coverage": sku_coverage, "sku_document_count": len(sku_docs), "unique_pdf_count": len(entries),
               "flagged_pdf_count": sum(bool(entry["review_flags"]) for entry in entries),
               "entries": entries, "table": table}
@@ -150,7 +153,7 @@ def review(observation_root, observation_run_id, output):
     print(json.dumps({"status": "PASS", "sku_document_count": len(sku_docs), "unique_pdf_count": len(entries),
                       "flagged_pdf_count": report["flagged_pdf_count"],
                       "review_table": table,
-                      "skus_without_support_document": skus_without_documents},
+                      "skus_without_canonical_energyguide_entry": skus_without_documents},
                      ensure_ascii=False, sort_keys=True), flush=True)
     return report
 
