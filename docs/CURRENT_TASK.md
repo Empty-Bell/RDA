@@ -1,21 +1,21 @@
 # Compact continuation context
 
-## Latest G3 checkpoint — Clothes Dryer collection started (2026-09-22)
+## Latest G3 checkpoint — Clothes Dryer evidence collection (2026-09-22)
 
-The TV audit now uses model identity only. The next family is Clothes Dryer,
-starting with source-backed exact-SKU PDP collection. Added a hosted source-recon
-workflow that refreshes the Samsung/EPA Dryer observations and automatically
-starts a separate exact-SKU PDP collection workflow after recon succeeds. The
-collector preserves raw Specs/Support, certification claim channels, EnergyGuide
-document links, exact identity evidence and per-SKU coverage; it performs no EPA
-matching, numeric comparison, or assessment. In particular, washer-label kWh on
-washer-dryer combos is not projected as dryer annual energy. Ten existing Dryer
-contract tests plus a source-scope guard pass locally. Hosted Actions validation
-is pending after push. Next: inspect hosted Dryer PDP coverage, then collect the
-current EPA Dryer cohort and labels before defining any comparison/assessment
-behavior. Recommended model for this fixed-schema source/artifact review: GPT-5.6
-Luna low; use GPT-5.6 Terra medium only if source evidence exposes a new policy
-decision. GitHub Actions runtime uses no LLM.
+The TV audit uses model identity only. Dryer source reconnaissance passed on
+hosted Ubuntu in run 35712517039. Exact-SKU PDP collection passed in run
+35712660255: all 54/54 products have verified exact PDP identity, with zero
+failed or unattempted SKUs. The artifact retains PDP Specs/Support, claim channels,
+EnergyGuide links and provenance; it does not EPA-match or assess. Combo washer
+Energy Guide kWh is not projected as dryer annual energy. A later duplicate
+collection attempt (35713169010) failed at its upstream source-artifact identity
+guard before PDP collection; use the complete, successful 35712660255 package.
+The next step is parallel same-run capture of EPA Current Samsung dryer rows and
+PDP-declared EnergyGuide PDFs. Comparison and assessment remain disabled pending
+review of fuel, venting and combo applicability. Ten existing Dryer contract tests
+and the full 184-test suite pass locally (one skipped). Recommended model for
+fixed-schema capture review: GPT-5.6 Luna low; use GPT-5.6 Terra medium only if
+source evidence requires a new policy decision. Actions runtime uses no LLM.
 
 Read AGENTS.md and this file first; inspect only the relevant implementation and
 contract sections. Do not reread chronological phase history or full source files

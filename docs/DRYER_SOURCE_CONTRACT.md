@@ -80,3 +80,20 @@ Compact source observations: docs/evidence/dryer-source-recon.json; fixture hash
 source run IDs: docs/evidence/dryer-fixture-manifest.json. Raw evidence expires 2026-09-30.
 Next bounded group: Ventilating Hood. No LLM calls in hosted runtime. Source coverage
 is population plus two sample PDPs and generic EPA sample, not per-model certification.
+
+## G3 exact-SKU collection (2026-09-22)
+
+Fresh hosted dryer source reconnaissance passed in run 35712517039. The new
+exact-SKU PDP collection passed in run 35712660255: 54/54 verified exact
+identities, zero failed and zero unattempted. It preserves raw exact-SKU
+Specs/Support, independent ENERGY STAR claim channels, EnergyGuide document URLs,
+browser identity and bridge/PF hashes. Washer-energy values found on a washer-dryer
+combo PDP remain raw Specs only and are not projected as dryer annual energy.
+An automatically duplicated collection run 35713169010 stopped at the source
+artifact identity guard before attempting PDP pages; it does not invalidate the
+complete earlier collection artifact.
+
+Next: capture all Samsung rows from EPA Current dataset `t9u7-4d2j` and retrieve
+all exact-SKU PDP Support-declared EnergyGuide PDFs in parallel. This is source
+capture only. Annual-energy field selection, fuel/venting/combination routing,
+model matching and severity assessment remain NOT_EVALUATED.
