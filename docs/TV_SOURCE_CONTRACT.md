@@ -78,13 +78,13 @@ applies; runtime has no LLM calls.
 
 ## G3 handoff after Washer
 
-The bounded TV source discovery above is complete. The first hosted G3 stage now
-refreshes source discovery and then automatically collects every exact-SKU PDP
-(167 SKUs in the captured sample), including the PLP-declared claim flags, exact
-Specs/Support facts, and PDP claim evidence. This stage is still NOT ASSESSED.
-After the hosted capture passes, continue to Support-declared EnergyGuide PDF
-retrieval, full EPA TV current-source capture, and source-candidate comparison;
-show unresolved model/field examples before enabling assessment.
+The automated hosted chain refreshes source discovery, collects every exact-SKU
+PDP (167 in the captured sample), then retrieves Support-declared EnergyGuide
+PDFs and captures the full EPA TV cohort in parallel. If those sources pass,
+the chain observes raw text/layout/OCR and generates a same-run source-candidate
+comparison without grading. PLP claim flags, exact Specs/Support facts, and PDP
+claim evidence stay attached to each SKU. The first hosted recon is in progress;
+no TV collection result is claimed yet.
 
 Apply the approved common rules: comparable annual-kWh disagreement is MEDIUM;
 missing PDP annual kWh while label and EPA values agree is LOW; EPA Current Model

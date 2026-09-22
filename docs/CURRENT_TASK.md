@@ -607,15 +607,18 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   rule emits HIGH automatically. No manual override or inferred certification
   state was used. Washer is ready to hand off to the eventual unified dashboard;
   dashboard implementation remains deferred until all product families finish.
-  Television full-population collection workflow is now wired: a fresh TV source
-  reconnaissance automatically starts the exact-SKU PDP evidence capture. The
-  code is ready for hosted validation; no TV collection results are claimed yet.
+  Television full-population chain is now wired: fresh source reconnaissance
+  automatically starts exact-SKU PDP capture; a successful PDP run starts
+  EnergyGuide PDF retrieval and full EPA TV capture in parallel; their successful
+  completion starts OCR observation and a no-grading source-candidate comparison.
+  The first hosted recon run is in progress; no TV collection/comparison results
+  are claimed yet.
   Bounded source reconnaissance already passed (run 35105667331).
   The approved rules are: comparable annual-energy disagreement = MEDIUM;
   missing PDP annual energy with agreeing label/EPA = LOW; absent EPA current
   model plus any PLP/PDP logo or Spec certification claim = HIGH. TV operating
   power W is retained separately from annual kWh. Recommended model for this
-  fixed-schema hosted workflow review: Luna low; use Terra medium only if the TV
-  collection requires a new source adapter. After PDP capture passes, continue
-  directly to Support EnergyGuide retrieval and full EPA TV current-source capture,
-  then compare candidates and bring unresolved examples forward before assessment.
+  fixed-schema hosted workflow review: Luna low; runtime itself uses no LLM.
+  Candidate comparison will keep TV mode power (W), annual energy (kWh), and
+  label model text separate. Present unresolved identity/field examples before
+  any grading or dashboard integration.

@@ -1,0 +1,64 @@
+name: G3 television label and EPA source capture
+
+on:
+  workflow_run:
+    workflows: [G3 television exact-SKU collection]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  capture:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    concurrency:
+      group: g3-tv-secondary-${{ github.event.workflow_run.id }}-${{ matrix.source }}
+      cancel-in-progress: false
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [energyguide, epa]
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download complete TV PDP artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-tv-collection.yml") | .id')"
+          test "$VALID_RUN" = "$COLLECTION_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-tv-collection-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g3-tv/collection
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-tv/collection.zip
+          unzip -q runtime/g3-tv/collection.zip -d runtime/g3-tv/collection
+          SUMMARY="$(find runtime/g3-tv/collection -name collection-summary.json -type f -print -quit)"
+          test -n "$SUMMARY"
+          echo "COLLECTION_DIR=$(dirname "$SUMMARY")" >> "$GITHUB_ENV"
+      - name: Retrieve Support-declared EnergyGuide PDFs
+        if: matrix.source == 'energyguide'
+        run: python scripts/g3_tv_energyguide_collect.py --collection-root "$COLLECTION_DIR" --collection-run-id "$COLLECTION_RUN_ID" --out runtime/g3-tv/energyguide
+      - name: Capture the complete EPA TV current cohort
+        if: matrix.source == 'epa'
+        run: python scripts/g3_tv_epa_capture.py --out runtime/g3-tv/epa
+      - name: Preserve TV ${{ matrix.source }} evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-tv-${{ matrix.source }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-tv/${{ matrix.source }}/
+          retention-days: 14
+          if-no-files-found: warn
