@@ -12,15 +12,21 @@ collection attempt (35713169010) failed at its upstream source-artifact identity
 guard before PDP collection; use the complete, successful 35712660255 package.
 The EPA Current Samsung dryer capture and PDP-declared EnergyGuide retrieval
 passed together in run 35714849653: 104 Samsung EPA rows, 54-SKU PDP coverage,
-11 declared PDF URLs and 5 unique valid PDFs. New hosted steps now observe PDF
-text/layout/OCR and create a raw candidate index for printed model, annual-kWh,
-and drying-capacity text. They do not select values, match models, compare numbers,
-or assess. The immediate next action is hosted OCR/review queue execution, then
-inspect ambiguous raw candidates before building the dryer comparison table.
-Comparison and assessment remain disabled pending review of fuel, venting, and
-combo applicability. Recommended model for this fixed-contract, evidence-only
-work is GPT-5.6 Luna low; use GPT-5.6 Terra medium only if source evidence raises
-a new policy decision. Actions runtime uses no LLM.
+11 declared PDF URLs and 5 unique valid PDFs. OCR run 35715470080 and raw review
+run 35715542396 both PASSed on ubuntu-24.04. Five unique PDFs link to 11 exact
+SKUs; the other 43 of 54 SKUs have no Support-declared EnergyGuide. Four PDFs
+expose yearly-kWh candidates (94, 95, 103, 103), but their printed model patterns
+are WD/WH families, so retain as raw evidence and do not project them as dryer
+energy. The remaining DV53BB8900HDA2-linked PDF yielded no model, annual-kWh,
+capacity, or US-heading candidate; it was a valid PDF, not a retrieval/DRM failure.
+No capacity candidates were extracted from the five documents. A same-run source
+candidate join now preserves SKU-linked PDP, label, and EPA rows, and surfaces
+strict positional model-pattern inclusions only as candidates. It does not select
+values, compare numbers, route combos, or assess. Next: run the hosted candidate
+join, then inspect its EPA/label table and the DV53 PDF source. Assessment remains
+disabled pending evidence review. Recommended model for this fixed-contract
+evidence work is GPT-5.6 Luna low; use GPT-5.6 Terra medium only if source evidence
+raises a new policy decision. Actions runtime uses no LLM.
 
 Read AGENTS.md and this file first; inspect only the relevant implementation and
 contract sections. Do not reread chronological phase history or full source files

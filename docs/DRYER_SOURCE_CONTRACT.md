@@ -111,7 +111,20 @@ context. These are candidate heuristics only: no OCR correction, candidate
 selection, wildcard matching, numeric comparison, pass/fail, or severity is
 enabled. Combo washer energy is not projected as dryer energy. These steps run on
 GitHub-hosted `ubuntu-24.04`, with the existing pinned OCR/PDF dependencies and no
-LLM calls. Two local sanitized review-queue contract tests pass; hosted evidence
-is pending execution. Recommended model for routine fixed-schema run review:
-GPT-5.6 Luna low; GPT-5.6 Terra medium only if a new source-policy decision is
-needed.
+LLM calls. Observation run 35715470080 PASSed and review queue run 35715542396
+PASSed. Five unique PDFs cover 11 of the 54 PDP SKUs; 43 have no PDP Support-
+declared label PDF. Four PDFs produced annual-kWh candidates 94, 95, 103, and 103
+with printed WD/WH model patterns. Keep these as raw evidence and do not project
+them into dryer energy. The PDF linked to DV53BB8900HDA2 is valid but yielded no
+model, annual-kWh, capacity, or US-heading candidate; retrieval did not fail. No
+capacity candidate was extracted across the five documents. This is an extraction
+observation, not proof that the original PDF visually lacks those elements; its
+preview/source needs inspection before interpreting absence.
+
+The same-run source candidate join is now implemented and waits on the review
+artifact. It preserves literal PDP specs, label candidates, and EPA model/fuel/
+venting/annual-energy/CEF/capacity row fields. Positional `*` inclusion is shown
+only as an explicitly labeled candidate, retaining any exact-SKU suffix. No label
+selection, numeric comparison, dryer/combo routing, pass/fail, or severity is
+enabled. Recommended model for routine fixed-schema run review: GPT-5.6 Luna low;
+GPT-5.6 Terra medium only if a new source-policy decision is needed.

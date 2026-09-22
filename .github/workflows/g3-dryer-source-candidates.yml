@@ -1,0 +1,110 @@
+name: G3 clothes dryer PDP label EPA comparison candidates
+
+on:
+  workflow_dispatch:
+    inputs:
+      review_run_id:
+        description: Successful Dryer raw candidate review run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 clothes dryer EnergyGuide raw candidate review]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_dryer_source_comparison.py'
+      - '.github/workflows/g3-dryer-source-candidates.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: g3-dryer-source-candidates-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  compare-candidates:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REVIEW_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.review_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download same-run PDP, label, and EPA source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$REVIEW_RUN_ID" ]; then
+            REVIEW_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dryer-energyguide-review-queue.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          REVIEW_VALID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${REVIEW_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-dryer-energyguide-review-queue.yml") | .id')"
+          test "$REVIEW_VALID" = "$REVIEW_RUN_ID"
+          mkdir -p runtime/g3-dryer/review
+          REVIEW_ARTIFACT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${REVIEW_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-dryer-energyguide-review-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$REVIEW_ARTIFACT"
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${REVIEW_ARTIFACT}/zip" > runtime/g3-dryer/review.zip
+          unzip -q runtime/g3-dryer/review.zip -d runtime/g3-dryer/review
+          REVIEW_FILE="$(find runtime/g3-dryer/review -name review-queue.json -type f -print -quit)"
+          test -n "$REVIEW_FILE"
+          REVIEW_DIR="$(dirname "$REVIEW_FILE")"
+          COLLECTION_RUN_ID="$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["collection_run_id"])' "$REVIEW_FILE")"
+          SECONDARY_RUN_ID="$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["retrieval_run_id"])' "$REVIEW_FILE")"
+          test -n "$COLLECTION_RUN_ID"
+          test -n "$SECONDARY_RUN_ID"
+
+          COLLECTION_VALID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-dryer-collection.yml") | .id')"
+          test "$COLLECTION_VALID" = "$COLLECTION_RUN_ID"
+          COLLECTION_ARTIFACT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-dryer-collection-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$COLLECTION_ARTIFACT"
+          mkdir -p runtime/g3-dryer/collection
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${COLLECTION_ARTIFACT}/zip" > runtime/g3-dryer/collection.zip
+          unzip -q runtime/g3-dryer/collection.zip -d runtime/g3-dryer/collection
+          COLLECTION_FILE="$(find runtime/g3-dryer/collection -name collection-summary.json -type f -print -quit)"
+          test -n "$COLLECTION_FILE"
+
+          SECONDARY_VALID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SECONDARY_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-dryer-secondary-sources.yml") | .id')"
+          test "$SECONDARY_VALID" = "$SECONDARY_RUN_ID"
+          EPA_ARTIFACT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SECONDARY_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-dryer-epa-"))] | sort_by(.created_at) | last | .id')"
+          LABEL_ARTIFACT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SECONDARY_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-dryer-energyguide-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$EPA_ARTIFACT"
+          test -n "$LABEL_ARTIFACT"
+          mkdir -p runtime/g3-dryer/epa runtime/g3-dryer/retrieval
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${EPA_ARTIFACT}/zip" > runtime/g3-dryer/epa.zip
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${LABEL_ARTIFACT}/zip" > runtime/g3-dryer/label.zip
+          unzip -q runtime/g3-dryer/epa.zip -d runtime/g3-dryer/epa
+          unzip -q runtime/g3-dryer/label.zip -d runtime/g3-dryer/retrieval
+          EPA_FILE="$(find runtime/g3-dryer/epa -name capture-summary.json -type f -print -quit)"
+          test -n "$EPA_FILE"
+          echo "REVIEW_DIR=${REVIEW_DIR}" >> "$GITHUB_ENV"
+          echo "COLLECTION_DIR=$(dirname "$COLLECTION_FILE")" >> "$GITHUB_ENV"
+          echo "COLLECTION_RUN_ID=${COLLECTION_RUN_ID}" >> "$GITHUB_ENV"
+          echo "EPA_DIR=$(dirname "$EPA_FILE")" >> "$GITHUB_ENV"
+          echo "EPA_RUN_ID=${SECONDARY_RUN_ID}" >> "$GITHUB_ENV"
+      - name: Build candidate join without assessment
+        run: >-
+          python scripts/g3_dryer_source_comparison.py
+          --review-root "$REVIEW_DIR"
+          --collection-root "$COLLECTION_DIR"
+          --collection-run-id "$COLLECTION_RUN_ID"
+          --epa-root "$EPA_DIR"
+          --epa-run-id "$EPA_RUN_ID"
+          --out runtime/g3-dryer/comparison
+      - name: Preserve the source comparison
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-dryer-source-candidates-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-dryer/comparison/
+          retention-days: 14
+          if-no-files-found: warn
