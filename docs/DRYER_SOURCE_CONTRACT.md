@@ -235,3 +235,11 @@ show a separately labeled EnergyGuide link in this sample. It does not rule out
 a document link embedded in a generic manual. A follow-up workflow scans all
 eligible no-canonical-entry PDPs in three parallel GitHub-hosted shards and
 reuses the already captured collection artifact. No compliance grade is made.
+
+The full follow-up passed in run `35727102357`: all 43 eligible PDPs were opened
+with exact URL/SKU identity confirmed, and no visible link matched an EnergyGuide
+name. Eight pages contained EnergyGuide-like text; on `DVE45T3200W/A3`, direct
+PDP inspection found the phrase in the Specs section as an `Energy Guide Label`
+row, with value `Electric - 2.4 Kwh`. This is a specs text field, not a document
+link. The remaining seven text hits need the same context check before drawing
+any broader conclusion about PDP label coverage.

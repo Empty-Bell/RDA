@@ -775,3 +775,12 @@ GitHub-hosted jobs; it again reuses the collection artifact and only scans
 rendered PDP links/text. No compliance assessment is made. Local tests cover
 safe target selection and non-overlapping sharding. Recommended model:
 GPT-5.6 Luna low.
+
+The full 43-SKU PDP probe passed in run `35727102357`; all three hosted shards
+completed, and every page passed exact-URL/SKU checks. Across all 43 pages there
+were zero EnergyGuide-named visible link candidates. Eight pages did contain a
+matching phrase in rendered text; inspecting `DVE45T3200W/A3` showed that one
+such phrase is a Specs row named `Energy Guide Label`, not a document link. Next:
+inspect the corresponding spec-row context for the eight pages and distinguish
+spec text from actual downloadable EnergyGuide documents. Recommended model:
+GPT-5.6 Luna low; upgrade to Terra medium only if source interpretation changes.
