@@ -7,7 +7,10 @@ import json
 import os
 from pathlib import Path
 
-from epa_only_rules import model_pattern_candidate
+try:
+    from .epa_only_rules import model_pattern_candidate
+except ImportError:  # direct `python scripts/...py` execution on Actions
+    from epa_only_rules import model_pattern_candidate
 
 CONTRACT = "G3_DRYER_EPA_CLAIM_CANDIDATES_V1"
 DATASETS = {"dryer": "t9u7-4d2j", "combo": "9jai-gs6t"}

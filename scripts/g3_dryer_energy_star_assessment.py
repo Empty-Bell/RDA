@@ -7,7 +7,10 @@ import json
 import os
 from pathlib import Path
 
-from epa_only_rules import epa_registration_state, publication_assessment, publication_points
+try:
+    from .epa_only_rules import epa_registration_state, publication_assessment, publication_points
+except ImportError:  # direct `python scripts/...py` execution on Actions
+    from epa_only_rules import epa_registration_state, publication_assessment, publication_points
 
 
 CONTRACT = "G3_DRYER_ENERGY_STAR_ASSESSMENT_V1"
