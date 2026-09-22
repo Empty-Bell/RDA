@@ -1,0 +1,56 @@
+name: G3 clothes washer source reconnaissance
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/source_recon.py'
+      - 'scripts/source_contract.py'
+      - 'scripts/claim_recon.py'
+      - 'scripts/energyguide_fields.py'
+      - 'scripts/energyguide_quality.py'
+      - 'scripts/browser_runtime.py'
+      - 'scripts/bootstrap.sh'
+      - 'scripts/runtime_integrity.py'
+      - 'runtime-manifest.json'
+      - '.python-version'
+      - 'requirements-*.lock'
+      - 'tests/test_washer_contract.py'
+      - 'tests/fixtures/washer/**'
+      - '.github/workflows/g3-washer-source-recon.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: g3-washer-source-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reconnaissance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Bootstrap locked source runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Re-observe current washer sources
+        run: python scripts/source_recon.py --family washer
+      - name: Preserve washer source evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-washer-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/source-recon/washer/
+          retention-days: 14
+          if-no-files-found: error
