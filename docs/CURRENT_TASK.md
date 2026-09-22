@@ -720,14 +720,21 @@ fuel type is shown. Next, rerun the fast comparison and inspect those rows
 before defining numeric assessment rules. Recommended model: GPT-5.6 Luna low;
 use Terra medium only if the sources create a new policy question.
 
-The corrected hosted summary passed in run `35718321035` (20 seconds). It now
-shows SKU-fitting label patterns separately from unmatched model-like PDF text,
-and displays EPA fuel type. A remaining source anomaly is visible: `WH46DBH100EWA3`
-fits EPA pattern `WH46DBH1**E*` (Electric) but the source row reports 687 kWh/yr
-and CEF 3.48, identical to the matching Gas pattern for `WH46DBH100GWA3`. This
-needs raw EPA row verification before energy comparisons are defined. Also,
-43/54 current Dryer SKUs have no Support-declared EnergyGuide PDF; this is only a
-coverage gap, not a compliance finding. Next: verify the WH46 EPA source rows
-and inspect unresolved label coverage and WD/WH model patterns, then set the
-component-safe comparison gates. Recommended model: GPT-5.6 Luna low for the
-row review; Terra medium only if source interpretation changes a rule.
+The candidate report was rerun after adding source row IDs; run `35720397828`
+passed in 20 seconds. Raw EPA identity is now corroborated: WH46 100 Electric
+is PD ID `2788490`, row `row-4w22_yqwp~ghak`; WH46 100 Gas is PD ID `2788449`,
+row `row-jgca~eq5m.9d2h`. These are two separate EPA Current rows and both
+report 687 kWh/year / CEF 3.48, so the identical numbers are source facts, not
+a duplicated candidate join. WH46 500 Electric/Gas are likewise separate rows
+(PD IDs `2788488` / `2788448`; 608/3.93 and 687/3.48 respectively). All remain
+unassessed observations; Laundry Center label values 94/95 are washer-side and
+cannot be compared with dryer-side EPA values.
+
+Label-link coverage is 11 of 54 SKUs across five PDFs. The other 43 PDP records
+do not declare an EnergyGuide PDF in the current Samsung Support bridge. That
+does not prove a label is absent elsewhere and is not a compliance finding. One
+linked DV53 PDF was retrieved but yielded no OCR model/value candidate, a
+separate extraction gap. Next: close or explicitly scope these source-coverage
+and OCR gaps, then define component-safe comparison gates before any Dryer
+assessment. Recommended model: GPT-5.6 Luna low; use Terra medium only if source
+interpretation requires a policy decision.

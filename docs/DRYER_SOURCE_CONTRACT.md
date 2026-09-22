@@ -173,11 +173,28 @@ all-in-one combo dataset. The summary now separates SKU-compatible label model
 patterns from other model-like PDF tokens and displays EPA fuel type, so e.g.
 document-number-like text is not mistaken for a matching model pattern.
 
-One EPA row needs focused verification before energy comparison: the exact
-pattern candidate for `WH46DBH100EWA3` is `WH46DBH1**E*`, whose captured EPA
-row reports type `Electric`, annual energy `687`, and CEF `3.48`; the matching
-`WH46DBH100GWA3` Gas pattern also reports `687` and `3.48`. This is recorded as
-a source-row question only; neither value has been altered or classified.
-Additionally, 43 of 54 Dryer SKUs have no Support-declared EnergyGuide PDF in
-the current PDP collection. Those SKUs remain without label evidence, not
-assessed as missing-label violations.
+The EPA source-row identity check completed in candidate-join run
+`35720397828`. `WH46DBH100EWA3` fits EPA model pattern `WH46DBH1**E*` (Electric,
+PD ID `2788490`, Current row `row-4w22_yqwp~ghak`); `WH46DBH100GWA3` fits
+`WH46DBH1**G*` (Gas, PD ID `2788449`, Current row `row-jgca~eq5m.9d2h`). Both
+distinct EPA records report 687 kWh/year and CEF 3.48. This verifies that the
+equal values come from two separate source rows, rather than a duplicated join
+row. They remain source observations; no value has been altered and no
+assessment has been made. The associated label candidates (94/95 kWh/year) are
+washer-side Laundry Center values and must not be compared to dryer-side EPA
+values.
+
+The same run exposes the WH46 500 records separately: `WH46DBH500EVA3` fits
+Electric PD ID `2788488`, row `row-ypmp-fu3m~cfdf` (608 kWh/year, CEF 3.93),
+while `WH46DBH500GVA3` fits Gas PD ID `2788448`, row `row-cdmn.hcfe.icef`
+(687 kWh/year, CEF 3.48). Their Support/PDP washer-side value discrepancy is
+already documented in the Washer source contract; it is not a dryer-side
+comparison.
+
+Support-label collection coverage is 11 of 54 exact Dryer SKUs linked to five
+unique PDFs; 43 PDP records have no Support-declared EnergyGuide PDF in this
+collection. This is a source-path coverage gap only: it does not establish that
+no label exists elsewhere or indicate a compliance violation. The standalone
+DV53BB8900HDA2 document was retrieved successfully but yielded no OCR model or
+annual-energy candidates, which is a separate extraction limitation. Neither
+case is graded here.
