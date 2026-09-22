@@ -11,6 +11,11 @@ on:
     workflows: [G3 clothes washer EnergyGuide raw candidate review]
     types: [completed]
     branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_washer_source_comparison.py'
+      - '.github/workflows/g3-washer-source-comparison.yml'
 
 permissions:
   actions: read

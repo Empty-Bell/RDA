@@ -33,6 +33,43 @@ def model_prefix_match(pattern, exact_sku):
             "unmatched_sku_suffix_raw": exact_sku[len(pattern):]}
 
 
+def normalized_pattern_match(pattern, exact_sku):
+    """Diagnostic only: retry positional wildcard matching after removing separators."""
+    if not isinstance(pattern, str) or not isinstance(exact_sku, str):
+        return None
+    compact_pattern = re.sub(r"[^A-Z0-9*]", "", pattern.upper())
+    compact_sku = re.sub(r"[^A-Z0-9]", "", exact_sku.upper())
+    if not compact_pattern or not re.fullmatch(r"[A-Z0-9*]+", compact_pattern):
+        return None
+    expression = "^" + "".join("[A-Z0-9]" if char == "*" else re.escape(char) for char in compact_pattern)
+    if not re.match(expression, compact_sku):
+        return None
+    return {"epa_model_pattern_raw": pattern, "normalized_sku_raw": compact_sku,
+            "normalized_epa_pattern": compact_pattern,
+            "normalization": "PUNCTUATION_REMOVED_FOR_DIAGNOSTIC_ONLY; * = ONE A-Z/0-9 CHARACTER"}
+
+
+def near_epa_patterns(exact_sku, epa_rows, limit=3):
+    sku_compact = re.sub(r"[^A-Z0-9]", "", exact_sku.upper())
+    candidates = []
+    for row in epa_rows:
+        raw = row.get("model_number")
+        if not isinstance(raw, str):
+            continue
+        literal = re.sub(r"[^A-Z0-9]", "", raw.upper().replace("*", ""))
+        common = 0
+        for left, right in zip(sku_compact, literal):
+            if left != right:
+                break
+            common += 1
+        if common >= 5:
+            candidates.append({"model_number_raw": raw, "common_leading_characters_after_punctuation_removal": common,
+                               "annual_energy_raw": row.get("annual_energy_use_kwh_year"),
+                               "markets_raw": row.get("markets"), "pd_id": row.get("pd_id")})
+    return sorted(candidates, key=lambda row: (-row["common_leading_characters_after_punctuation_removal"],
+                                                row["model_number_raw"]))[:limit]
+
+
 def decimal_value(raw):
     if not isinstance(raw, str):
         return None
@@ -167,6 +204,7 @@ def main():
                                  "field_name_raw": field.get("name"), "field_group_raw": field.get("group")})
 
         epa_matches = []
+        epa_normalized_matches = []
         for row in epa_rows:
             model_raw = row.get("model_number")
             match = model_prefix_match(model_raw, sku)
@@ -180,6 +218,12 @@ def main():
                                     "special_type_raw": row.get("special_type"),
                                     "combo_dryer_energy_raw": row.get("estimated_annual_energy_use_kwh_yr_for_the_dryer_in_a_combination_all_in_one_washer_dryer"),
                                     "additional_model_information_raw": row.get("additional_model_information")})
+            normalized_match = normalized_pattern_match(model_raw, sku)
+            if normalized_match:
+                epa_normalized_matches.append({**normalized_match, "pd_id": row.get("pd_id"),
+                                               "annual_energy_raw": row.get("annual_energy_use_kwh_year"),
+                                               "markets_raw": row.get("markets"),
+                                               "strict_match_already_found": bool(match)})
 
         values = {
             "PDP": sorted({x["kwh_decimal_candidate"] for x in pdp_energies if x["kwh_decimal_candidate"] is not None}),
@@ -199,11 +243,16 @@ def main():
             energy_comparison = "SOURCE_VALUES_DIFFER"
         table.append({"exact_sku": sku, "pdp_title_raw": listing.get("modelName"),
                       "pdp_identity_contract": pdp.get("identity_contract"),
+                      "pdp_source_provenance": {"final_url_raw": pdp.get("final_url"),
+                                                "snapshot_sha256": pdp.get("snapshot_sha256"),
+                                                "bridge_sha256": (pdp.get("bridge") or {}).get("sha256")},
                       "pdp_energy_candidates_raw": pdp_energies,
                       "label_document_count": len(label_records), "label_model_patterns_raw": label_patterns,
                       "label_prefix_matches": label_matches, "label_annual_energy_candidates_raw": label_energies,
                       "epa_current_model_matches": epa_matches,
                       "epa_match_count": len(epa_matches), "source_kwh_values": values,
+                      "epa_normalized_pattern_matches_diagnostic_only": epa_normalized_matches,
+                      "epa_near_pattern_candidates_diagnostic_only": near_epa_patterns(sku, epa_rows) if not epa_matches else [],
                       "energy_comparison_candidate": energy_comparison,
                       "model_comparison": {"pdp": "EXACT_SKU_IDENTITY_VERIFIED",
                                            "label": "ONE_OR_MORE_PREFIX_PATTERNS_MATCH" if label_matches else "NO_LABEL_PATTERN_MATCH",
@@ -237,6 +286,15 @@ def main():
                 pdp_values = ", ".join(sorted({x["kwh_decimal_candidate"] for x in row["pdp_energy_candidates_raw"] if x["kwh_decimal_candidate"]}))
                 cells = [row["exact_sku"], pdp_values, label or "no matched label pattern", epa or "no current EPA model row", row["energy_comparison_candidate"]]
                 stream.write("| " + " | ".join(str(cell).replace("|", "\\|").replace("\n", " ") for cell in cells) + " |\n")
+            unresolved_epa = [row for row in table if not row["epa_current_model_matches"]]
+            if unresolved_epa:
+                stream.write("\n### EPA no-row model diagnostics (not matches or findings)\n\n")
+                stream.write("Punctuation-normalized candidates are diagnostic only; the exact-SKU match result above is unchanged.\n\n")
+                stream.write("| Exact SKU | Normalized candidate row(s) | Closest EPA model pattern(s) / common prefix length |\n|---|---|---|\n")
+                for row in unresolved_epa:
+                    normalized = "; ".join(f"{item['epa_model_pattern_raw']} → {item['annual_energy_raw']} ({item['markets_raw']})" for item in row["epa_normalized_pattern_matches_diagnostic_only"]) or "none"
+                    near = "; ".join(f"{item['model_number_raw']} ({item['common_leading_characters_after_punctuation_removal']} chars)" for item in row["epa_near_pattern_candidates_diagnostic_only"]) or "none"
+                    stream.write(f"| {row['exact_sku']} | {normalized} | {near} |\n")
     print(json.dumps({"status": report["status"], "population_count": len(population),
                       "epa_samsung_current_row_count": len(epa_rows), "counts": report["counts"],
                       "comparison_table": table}, ensure_ascii=False, sort_keys=True), flush=True)
