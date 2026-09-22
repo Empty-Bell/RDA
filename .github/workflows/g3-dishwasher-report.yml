@@ -1,10 +1,10 @@
 name: G3 dishwasher canonical report
 on:
  workflow_dispatch:
-  workflow_run:
-    workflows: [G3 dishwasher final assessment]
-    types: [completed]
-    branches: [main]
+ workflow_run:
+  workflows: [G3 dishwasher final assessment]
+  types: [completed]
+  branches: [main]
 permissions: {actions: read, contents: read}
 jobs:
   report:

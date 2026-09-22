@@ -9,7 +9,8 @@ jobs:
  assess:
   runs-on: ubuntu-24.04
   timeout-minutes: 5
-  env: {GH_TOKEN: ${{ github.token }}}
+  env:
+   GH_TOKEN: ${{ github.token }}
   steps:
    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
      with: {persist-credentials: false}
@@ -25,4 +26,7 @@ jobs:
       download g3-dishwasher-model-comparison.yml g3-dishwasher-model-comparison- runtime/model
    - run: python scripts/g3_dishwasher_assessment.py --energy-star "$(find runtime/es -name energy-star-assessment.json -print -quit)" --numeric "$(find runtime/numeric -name numeric-comparison.json -print -quit)" --model "$(find runtime/model -name model-comparison.json -print -quit)" --out runtime/out
    - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-     with: {name: g3-dishwasher-assessment-${{ github.run_id }}-${{ github.run_attempt }},path: runtime/out/,retention-days: 14}
+     with:
+      name: g3-dishwasher-assessment-${{ github.run_id }}-${{ github.run_attempt }}
+      path: runtime/out/
+      retention-days: 14
