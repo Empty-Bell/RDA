@@ -1,0 +1,26 @@
+{
+  "contract": "G3_DISHWASHER_ENERGYGUIDE_VISUAL_MODEL_REVIEW_V1",
+  "status": "APPROVED",
+  "scope": "One byte-identical Samsung EnergyGuide PDF whose image-only OCR omitted two literal asterisks from the second printed model pattern. The raw OCR observation remains unchanged.",
+  "reviews": [
+    {
+      "pdf_sha256": "c9f97a46a624f47d03ccc11f230148b25dc946089da28f2a16472e8dac6a49fe",
+      "source_urls": [
+        "https://images.samsung.com/is/content/samsung/p6pim/us/dw90h89teteaa/energyguide/us-energyguide-dw90h89teteaa-553811644.pdf",
+        "https://images.samsung.com/is/content/samsung/p6pim/us/dw90h89tetraa/energyguide/us-energyguide-dw90h89tetraa-553811310.pdf"
+      ],
+      "review_method": "Human visual review of the original Samsung PDF label image supplied in the audit review.",
+      "visible_model_patterns": [
+        "DW90F8**0***",
+        "DW90H89TE**"
+      ],
+      "raw_ocr_damage": [
+        {
+          "raw_ocr_value": "DW90H89TE",
+          "visible_value": "DW90H89TE**",
+          "reason": "The two printed trailing asterisks are absent from the OCR token."
+        }
+      ]
+    }
+  ]
+}

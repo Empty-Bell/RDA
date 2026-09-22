@@ -41,7 +41,9 @@ def build(package, out):
     rows = []
     for item in source.get("rows", []):
         sku = item["exact_sku"]
-        labels = sorted({x.get("value_raw") for x in item.get("energyguide_model_candidates_raw", []) if isinstance(x.get("value_raw"), str)})
+        raw_labels = sorted({x.get("value_raw") for x in item.get("energyguide_model_candidates_raw", []) if isinstance(x.get("value_raw"), str)})
+        reviewed_labels = sorted({x.get("value_raw") for x in item.get("energyguide_model_patterns_visual_reviewed", []) if isinstance(x.get("value_raw"), str)})
+        labels = reviewed_labels or raw_labels
         epa = sorted({x.get("model_number") for x in item.get("epa_candidates_raw", []) if isinstance(x.get("model_number"), str)})
         pdp_label = relation([sku], labels, lambda a, b: matches_exact(b, a))
         pdp_epa = relation([sku], epa, lambda a, b: matches_exact(b, a))
@@ -51,6 +53,9 @@ def build(package, out):
             "pdp_model_exact_sku": sku,
             "normalized_pdp_model": exact(sku),
             "energyguide_model_patterns_raw": labels,
+            "energyguide_model_patterns_ocr_raw": raw_labels,
+            "energyguide_model_patterns_visual_reviewed": reviewed_labels,
+            "energyguide_model_pattern_source": "HUMAN_VISUAL_REVIEW" if reviewed_labels else "RAW_OCR",
             "epa_current_model_candidates_raw": epa,
             "pdp_vs_energyguide_model": pdp_label,
             "pdp_vs_epa_model": pdp_epa,

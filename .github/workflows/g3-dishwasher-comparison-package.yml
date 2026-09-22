@@ -39,7 +39,7 @@ jobs:
           pdprun="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-dishwasher-collection.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"; download "$pdprun" "g3-dishwasher-collection-" runtime/g3/pkg/pdp
           echo "MATCH_DIR=$(dirname "$(find runtime/g3/pkg/match -name match-report.json -print -quit)")" >> "$GITHUB_ENV"; echo "OBS_DIR=$(dirname "$(find runtime/g3/pkg/obs -name sku-document-index.json -print -quit)")" >> "$GITHUB_ENV"; echo "EPA_DIR=$(dirname "$(find runtime/g3/pkg/epa -name samsung-current-rows.json -print -quit)")" >> "$GITHUB_ENV"; echo "PDP_DIR=$(dirname "$(find runtime/g3/pkg/pdp -name products.json -print -quit)")" >> "$GITHUB_ENV"
       - name: Build same-SKU comparison package
-        run: python scripts/g3_dishwasher_comparison_package.py --pdp-root "$PDP_DIR" --observation-root "$OBS_DIR" --epa-root "$EPA_DIR" --match-root "$MATCH_DIR" --out runtime/g3/comparison
+        run: python scripts/g3_dishwasher_comparison_package.py --pdp-root "$PDP_DIR" --observation-root "$OBS_DIR" --epa-root "$EPA_DIR" --match-root "$MATCH_DIR" --model-review docs/evidence/g3-dishwasher-model-visual-review.json --out runtime/g3/comparison
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: g3-dishwasher-comparison-${{ github.run_id }}-${{ github.run_attempt }}
