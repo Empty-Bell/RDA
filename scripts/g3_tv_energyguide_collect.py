@@ -70,7 +70,8 @@ def load_documents(collection_root, collection_run_id):
 
 
 def retrieve(url, user_agent):
-    request = Request(url, headers={"User-Agent": user_agent, "Accept": "application/pdf,*/*;q=0.8"})
+    request = Request(url, headers={"User-Agent": user_agent, "Accept": "application/pdf,*/*;q=0.8",
+                                   "Accept-Encoding": "identity"})
     with urlopen(request, timeout=45) as response:
         return response.read(), response.url, response.headers.get_content_type(), response.status
 
@@ -88,7 +89,8 @@ def collect(declarations, output, user_agent):
             final = urlsplit(final_url)
             observation.update(final_url=safe_url(final_url), content_type=content_type,
                                http_status=status, byte_count=len(body),
-                               pdf_signature=body[:8].decode("ascii", errors="replace"))
+                               pdf_signature=body[:8].decode("ascii", errors="replace"),
+                               body_prefix_hex=body[:96].hex())
             if status != 200:
                 raise ValueError(f"EnergyGuide HTTP status {status}")
             if not valid_pdf(body):

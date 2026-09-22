@@ -4,11 +4,19 @@ on:
   push:
     paths:
       - '.github/workflows/g3-tv-secondary-sources.yml'
+      - '.github/workflows/g3-tv-energyguide-recovery.yml'
       - 'scripts/g3_tv_energyguide_collect.py'
+      - 'scripts/g3_tv_energyguide_retry.py'
   workflow_run:
     workflows: [G3 television exact-SKU collection, G3 television failed-SKU recovery]
     types: [completed]
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      collection_run_id:
+        description: Complete G3 TV PDP collection run ID (blank selects latest success)
+        required: false
+        type: string
 
 permissions:
   actions: read
