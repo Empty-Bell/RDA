@@ -634,6 +634,10 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   model plus any PLP/PDP logo or Spec certification claim = HIGH. TV operating
   power W is retained separately from annual kWh. Recommended model for this
   fixed-schema hosted workflow review: Luna low; runtime itself uses no LLM.
+  Corrected comparison run 35700837698 failed after OCR succeeded for 162 PDFs:
+  the comparison script shadowed its `epa_watts` parser helper with a markdown
+  rendering variable. The helper-call defect is fixed locally. No source data or
+  classification rule changed; rerun comparison from the retained artifacts.
   Candidate comparison will keep TV mode power (W), annual energy (kWh), and
   label model text separate. Present unresolved identity/field examples before
   any grading or dashboard integration.

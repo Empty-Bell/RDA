@@ -373,9 +373,9 @@ def main():
                 epa_energy = ", ".join(row["label_epa_annual_energy_comparison"]["right_candidates"]) or "—"
                 pdp_typical = ", ".join(x["watts_decimal_candidate"] for x in row["pdp_power_candidates_raw"]
                                          if "Typical" in str(x.get("field_name_raw")) and x["watts_decimal_candidate"]) or "—"
-                epa_watts = ", ".join(row["pdp_typical_vs_epa_on_mode_power_comparison"]["right_candidates"]) or "—"
+                epa_power_watts = ", ".join(row["pdp_typical_vs_epa_on_mode_power_comparison"]["right_candidates"]) or "—"
                 cells = [row["exact_sku"], pdp_typical, label_cell, epa_energy,
-                         row["label_epa_annual_energy_comparison"]["status"], epa_watts]
+                         row["label_epa_annual_energy_comparison"]["status"], epa_power_watts]
                 stream.write("| " + " | ".join(str(cell).replace("|", "\\|").replace("\n", " ") for cell in cells) + " |\n")
             unresolved_epa = [row for row in table if not row["epa_current_model_matches"]]
             if unresolved_epa:
