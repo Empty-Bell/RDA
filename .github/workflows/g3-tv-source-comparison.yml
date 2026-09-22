@@ -43,6 +43,8 @@ jobs:
           python -m pip install --index-url https://pypi.org/simple --no-cache-dir --require-hashes --no-deps --no-build-isolation -r requirements-probe.lock
           python -m pip check
           python scripts/runtime_integrity.py prepare
+      - name: Verify TV inaccessible-label severity and failure gate
+        run: python -m unittest checks/g3/test_tv_energyguide_readability.py -v
       - name: Download exact TV label, EPA, and PDP artifacts
         shell: bash
         run: |

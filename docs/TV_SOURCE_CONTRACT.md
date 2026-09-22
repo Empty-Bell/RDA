@@ -111,6 +111,13 @@ the response prefix, requests identity encoding, and fetches up to eight URLs
 in parallel. EPA capture passed; candidate comparison remains pending until
 all declared documents have valid PDF bytes.
 
+The five responses decode to `NASC A DRM FILE - VER1.00`. Under the existing
+MASTER_PLAN §12 readability rule, each is recorded as `NOT_ACCESSIBLE` and a
+HIGH `ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE`. They do not block OCR and
+same-run candidate comparison for the 162 byte-verified PDFs. The comparison
+must preserve these five explicit HIGH candidates and leave values unavailable
+where no readable label exists; it must not infer label values.
+
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule
 is required. Collection/runtime itself uses no LLM.

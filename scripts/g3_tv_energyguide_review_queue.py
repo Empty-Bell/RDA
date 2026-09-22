@@ -20,7 +20,7 @@ def read_json(path):
 def review(observation_root, observation_run_id, output):
     root = Path(observation_root).resolve()
     summary = read_json(root / "observation-summary.json")
-    if summary.get("status") != "PASS" or str(summary.get("observation_run_id")) != str(observation_run_id):
+    if summary.get("status") not in ("PASS", "PARTIAL") or str(summary.get("observation_run_id")) != str(observation_run_id):
         raise ValueError("TV observation artifact is not the requested successful run")
     source = summary.get("source", {})
     sku_docs = source.get("sku_documents")
@@ -32,14 +32,24 @@ def review(observation_root, observation_run_id, output):
     coverage_by_sku = {row.get("exact_sku"): row.get("support_document_count") for row in sku_coverage
                        if isinstance(row, dict) and isinstance(row.get("exact_sku"), str)}
     linked_counts = Counter(row.get("exact_sku") for row in sku_docs)
+    unreadable_documents = source.get("unreadable_documents", [])
+    if any(not isinstance(row, dict) or row.get("state") != "NOT_ACCESSIBLE"
+           or row.get("severity") != "HIGH"
+           or row.get("issue_code") != "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE"
+           or row.get("reason") != "SAMSUNG_NASCA_SERVER_DRM" for row in unreadable_documents):
+        raise ValueError("TV unreadable-label records do not match the approved NASCA DRM HIGH rule")
+    unreadable_counts = Counter(row.get("exact_sku") for row in unreadable_documents)
     if (len(coverage_by_sku) != len(sku_coverage)
             or not set(linked_counts) <= set(coverage_by_sku)
-            or any(coverage_by_sku[sku] != linked_counts.get(sku, 0) for sku in coverage_by_sku)):
+            or not set(unreadable_counts) <= set(coverage_by_sku)
+            or any(coverage_by_sku[sku] != linked_counts.get(sku, 0) + unreadable_counts.get(sku, 0)
+                   for sku in coverage_by_sku)):
         raise ValueError("TV per-SKU document counts disagree with exact-SKU PDF links")
     skus_without_documents = [row["exact_sku"] for row in sku_coverage
                               if row.get("state") == "NO_SUPPORT_DOCUMENT_DECLARED"]
     skus_without_review_document = [row["exact_sku"] for row in sku_coverage
-                                    if row.get("state") in ("NO_SUPPORT_DOCUMENT_DECLARED", "PDP_NOT_VERIFIED")]
+                                    if row.get("state") in ("NO_SUPPORT_DOCUMENT_DECLARED", "PDP_NOT_VERIFIED")
+                                    or (linked_counts.get(row["exact_sku"], 0) == 0 and unreadable_counts.get(row["exact_sku"], 0) > 0)]
     by_hash = {}
     for link in sku_docs:
         digest = link.get("pdf_sha256")
@@ -129,6 +139,7 @@ def review(observation_root, observation_run_id, output):
               "status": "PASS", "queue_state": "RAW_CANDIDATES_READY_FOR_REVIEW",
               "sku_population_count": len(sku_coverage), "skus_without_support_document": skus_without_documents,
               "skus_without_review_document": skus_without_review_document,
+              "unreadable_documents": unreadable_documents,
               "sku_document_coverage": sku_coverage, "sku_document_count": len(sku_docs), "unique_pdf_count": len(entries),
               "flagged_pdf_count": sum(bool(entry["review_flags"]) for entry in entries),
               "entries": entries, "table": table}
@@ -139,7 +150,7 @@ def review(observation_root, observation_run_id, output):
     if summary_path:
         with Path(summary_path).open("a", encoding="utf-8") as stream:
             stream.write("## TV EnergyGuide raw-candidate review\n\n")
-            stream.write(f"Target SKUs: **{len(sku_coverage)}**; with no Support document: **{len(skus_without_documents)}**; SKU-document links: **{len(sku_docs)}**; unique PDFs: **{len(entries)}**; PDFs with review flags: **{report['flagged_pdf_count']}**. No pass/fail finding or value selection was made.\n\n")
+            stream.write(f"Target SKUs: **{len(sku_coverage)}**; with no Support document: **{len(skus_without_documents)}**; SKU-document links: **{len(sku_docs)}**; unreadable DRM files: **{len(unreadable_documents)}**; unique PDFs: **{len(entries)}**; PDFs with review flags: **{report['flagged_pdf_count']}**. No field value was selected.\n\n")
             if skus_without_documents:
                 stream.write("Exact SKUs with no Support-declared label PDF: " + ", ".join(f"`{sku}`" for sku in skus_without_documents) + "\n\n")
             stream.write("| PDF SHA-256 prefix | Exact SKU(s) | Model text (source layer) | Annual kWh (source layer/role) | Capacity text | Review flags |\n|---|---|---|---|---|---|\n")

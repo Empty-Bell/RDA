@@ -623,8 +623,10 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   URLs claim `application/pdf` but return 70–79 KB bodies beginning `<## NASC`,
   so they are not accepted as PDF evidence. The collector now records the first
   96 response bytes, requests identity encoding, and retrieves up to eight URLs
-  in parallel. Source comparison remains pending until every declared document
-  has valid PDF bytes.
+  in parallel. The five bodies decode to `NASC A DRM FILE - VER1.00`; MASTER_PLAN §12
+  classifies them `NOT_ACCESSIBLE`, HIGH,
+  `ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE`. The 162 readable PDFs continue
+  through OCR and same-run candidate comparison; no label values are inferred.
   Diagnostic run: [35692565164](https://github.com/Empty-Bell/RDA/actions/runs/35692565164).
   Bounded source reconnaissance already passed (run 35105667331).
   The approved rules are: comparable annual-energy disagreement = MEDIUM;

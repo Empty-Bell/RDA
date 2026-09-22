@@ -23,14 +23,25 @@ def _json(path: Path) -> Any:
     return json.loads(path.read_bytes())
 
 
-def verified_pdf_population(root: str | Path, retrieval_run_id: str) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
-    """Verify the successful retrieval artifact and index one copy per PDF hash."""
+def verified_pdf_population(root: str | Path, retrieval_run_id: str, allow_nasca_drm: bool = False) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
+    """Verify a complete retrieval artifact and index one copy per PDF hash."""
     base = Path(root)
     report = _json(base / "energyguide-summary.json")
-    if report.get("status") != "PASS" or str(report.get("retrieval_run_id")) != str(retrieval_run_id):
-        raise ValueError("Dishwasher EnergyGuide artifact is not the requested successful run")
-    if report.get("failed_url_count") != 0:
-        raise ValueError("Dishwasher EnergyGuide artifact includes failed PDF URLs")
+    allowed_statuses = ("PASS", "PARTIAL") if allow_nasca_drm else ("PASS",)
+    if report.get("status") not in allowed_statuses or str(report.get("retrieval_run_id")) != str(retrieval_run_id):
+        raise ValueError("EnergyGuide artifact is not the requested successful or allowed partial run")
+    nasca_unreadable = []
+    if allow_nasca_drm:
+        for item in report.get("url_observations", []):
+            prefix = item.get("body_prefix_hex")
+            try:
+                is_nasca = item.get("status") == "FAILED" and isinstance(prefix, str) and bytes.fromhex(prefix).startswith(b"<## NASCA DRM FILE - VER1.00")
+            except ValueError:
+                is_nasca = False
+            if is_nasca:
+                nasca_unreadable.append(item)
+    if report.get("failed_url_count") != len(nasca_unreadable):
+        raise ValueError("EnergyGuide artifact includes failed URLs other than explicitly allowed NASCA DRM")
     by_hash: dict[str, dict[str, Any]] = {}
     by_url = {item.get("url"): item for item in report.get("url_observations", [])}
     if len(by_url) != report.get("url_count"):
@@ -43,6 +54,8 @@ def verified_pdf_population(root: str | Path, retrieval_run_id: str) -> tuple[di
         observation = by_url.get(url)
         if not isinstance(sku, str) or not isinstance(retrieval, dict) or not observation:
             raise ValueError("EnergyGuide document record lacks exact SKU or retrieval provenance")
+        if observation.get("status") == "FAILED" and observation in nasca_unreadable:
+            continue
         if observation.get("status") != "RETRIEVED_VALID_PDF" or retrieval.get("sha256") != observation.get("sha256"):
             raise ValueError("EnergyGuide SKU document is not linked to a retrieved PDF hash")
         digest = observation.get("sha256")
@@ -65,8 +78,22 @@ def verified_pdf_population(root: str | Path, retrieval_run_id: str) -> tuple[di
                               "pdf_sha256": digest, "url": safe_url(url)})
     if len(by_hash) != report.get("pdf_hash_count"):
         raise ValueError("Unique PDF hash count differs from the retrieval source summary")
+    unreadable_documents = []
+    if nasca_unreadable:
+        unreadable_urls = {item.get("url"): item for item in nasca_unreadable}
+        for record in report.get("records", []):
+            item = unreadable_urls.get(record.get("url"))
+            if item:
+                unreadable_documents.append({"exact_sku": record.get("exact_sku"),
+                                             "source_document_index": record.get("source_document_index"),
+                                             "url": safe_url(record.get("url")),
+                                             "state": "NOT_ACCESSIBLE",
+                                             "severity": "HIGH",
+                                             "issue_code": "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
+                                             "reason": "SAMSUNG_NASCA_SERVER_DRM"})
     return by_hash, {"retrieval_run_id": str(retrieval_run_id), "sku_document_count": len(sku_documents),
-                     "unique_pdf_count": len(by_hash), "sku_documents": sku_documents}
+                     "unique_pdf_count": len(by_hash), "sku_documents": sku_documents,
+                     "unreadable_documents": unreadable_documents}
 
 
 def embedded_lines(page: Any, page_number: int) -> list[dict[str, Any]]:

@@ -181,6 +181,9 @@ def main():
                                       "capacity_candidates_raw": entry.get("capacity_candidates_raw", []),
                                       "review_flags": entry.get("review_flags", [])})
     no_review_document = set(review.get("skus_without_review_document", review.get("skus_without_support_document", [])))
+    unreadable_by_sku = {}
+    for item in review.get("unreadable_documents", []):
+        unreadable_by_sku.setdefault(item.get("exact_sku"), []).append(item)
     if any(not label_by_sku[sku] for sku in population if sku not in no_review_document):
         raise ValueError("A SKU with a Support-declared document is missing its label review record")
 
@@ -191,6 +194,7 @@ def main():
         product = product_by_sku[sku]
         listing = product.get("source_claim_listing_raw", {})
         label_records = label_by_sku[sku]
+        unreadable_labels = unreadable_by_sku.get(sku, [])
         label_matches = []
         label_energies = []
         label_patterns = []
@@ -255,6 +259,9 @@ def main():
             energy_comparison = "AVAILABLE_VALUES_EQUAL_BUT_SOURCE_HAS_MULTIPLE_CANDIDATES"
         else:
             energy_comparison = "SOURCE_VALUES_DIFFER"
+        finding_candidates = ([{"severity": "HIGH", "issue_code": "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
+                                "control": "ENERGYGUIDE_READABILITY", "state": "NOT_ACCESSIBLE",
+                                "evidence": unreadable_labels}] if unreadable_labels else [])
         table.append({"exact_sku": sku, "pdp_title_raw": listing.get("modelName"),
                       "pdp_collection_status": pdp.get("status"), "pdp_collection_error": pdp.get("error"),
                       "pdp_identity_contract": pdp.get("identity_contract"),
@@ -263,6 +270,9 @@ def main():
                                                 "bridge_sha256": (pdp.get("bridge") or {}).get("sha256")},
                       "pdp_energy_candidates_raw": pdp_energies,
                       "label_document_count": len(label_records), "label_model_patterns_raw": label_patterns,
+                      "label_document_accessibility": "NOT_ACCESSIBLE" if unreadable_labels and not label_records else "PARTIALLY_ACCESSIBLE" if unreadable_labels else "ACCESSIBLE" if label_records else "NO_LABEL_DOCUMENT_REVIEWED",
+                      "label_unreadable_documents": unreadable_labels,
+                      "finding_candidates": finding_candidates,
                       "label_prefix_matches": label_matches, "label_annual_energy_candidates_raw": label_energies,
                       "epa_current_model_matches": epa_matches,
                       "epa_match_count": len(epa_matches), "source_kwh_values": values,
@@ -278,9 +288,13 @@ def main():
               "collection_run_id": str(args.collection_run_id), "epa_capture_run_id": str(args.epa_run_id),
               "comparison_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
               "captured_at": datetime.now(timezone.utc).isoformat(), "population_count": len(population),
+              "label_accessibility_counts": {"ACCESSIBLE": sum(not bool(unreadable_by_sku.get(sku)) and bool(label_by_sku[sku]) for sku in population),
+                                             "NOT_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and not label_by_sku[sku] for sku in population),
+                                             "PARTIALLY_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and bool(label_by_sku[sku]) for sku in population)},
+              "finding_candidate_counts": {"ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE": len(review.get("unreadable_documents", []))},
               "epa_samsung_current_row_count": len(epa_rows),
               "model_pattern_contract": "Raw exact SKU is unchanged; each * consumes one A-Z/0-9 character from its beginning; any remaining exact-SKU suffix is retained verbatim and reported.",
-              "scope": "Same-run US TV PDP, Support-label, and EPA current candidate comparison; EPA annual-energy candidates are limited to rows whose market field explicitly lists US/USA/United States; no pass/low/high or compliance decision",
+              "scope": "Same-run US TV PDP, Support-label, and EPA current candidate comparison; EPA annual-energy candidates require an explicit US market; only the approved unreadable-label HIGH candidate is emitted, with no other verdict or compliance assessment",
               "counts": {name: sum(row["energy_comparison_candidate"] == name for row in table)
                          for name in ("ALL_THREE_SOURCES_HAVE_SAME_EXACT_VALUE",
                                       "AVAILABLE_VALUES_EQUAL_BUT_SOURCE_HAS_MULTIPLE_CANDIDATES",
@@ -293,13 +307,16 @@ def main():
     if summary:
         with Path(summary).open("a", encoding="utf-8") as stream:
             stream.write("## TV PDP / label / EPA comparison candidates\n\n")
-            stream.write(f"Exact SKUs: **{len(population)}**; EPA Samsung current rows captured: **{len(epa_rows)}**. No assessment or severity was applied.\n\n")
+            stream.write(f"Exact SKUs: **{len(population)}**; readable EnergyGuide PDFs: **{review.get('unique_pdf_count')}**; NOT_ACCESSIBLE HIGH candidates: **{len(review.get('unreadable_documents', []))}**; EPA Samsung current rows captured: **{len(epa_rows)}**. Other values remain unassessed candidates.\n\n")
             stream.write("| Exact SKU | PDP kWh | Label pattern(s) / kWh | EPA model row(s) / kWh | Comparison candidate |\n|---|---|---|---|---|\n")
             for row in table:
                 label = "; ".join(f"{p}→{','.join(sorted({x['kwh_decimal_candidate'] for x in row['label_annual_energy_candidates_raw'] if x['pdf_sha256'] == doc['pdf_sha256'] and x['kwh_decimal_candidate']}))}" for doc in row["label_prefix_matches"] for p in [doc["pattern_raw"]])
                 epa = "; ".join(f"{item['model_number_raw']}→{item['annual_energy_raw']} ({item['markets_raw']})" for item in row["epa_current_model_matches"])
                 pdp_values = ", ".join(sorted({x["kwh_decimal_candidate"] for x in row["pdp_energy_candidates_raw"] if x["kwh_decimal_candidate"]}))
-                cells = [row["exact_sku"], pdp_values, label or "no matched label pattern", epa or "no current EPA model row", row["energy_comparison_candidate"]]
+                label_cell = ("NOT_ACCESSIBLE — HIGH ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE"
+                              if row["label_document_accessibility"] == "NOT_ACCESSIBLE"
+                              else label or "no matched label pattern")
+                cells = [row["exact_sku"], pdp_values, label_cell, epa or "no current EPA model row", row["energy_comparison_candidate"]]
                 stream.write("| " + " | ".join(str(cell).replace("|", "\\|").replace("\n", " ") for cell in cells) + " |\n")
             unresolved_epa = [row for row in table if not row["epa_current_model_matches"]]
             if unresolved_epa:

@@ -94,7 +94,7 @@ def main():
     parser.add_argument("--retrieval-run-id", required=True)
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
-    pdfs, source = verified_pdf_population(args.retrieval_root, args.retrieval_run_id)
+    pdfs, source = verified_pdf_population(args.retrieval_root, args.retrieval_run_id, allow_nasca_drm=True)
     retrieval_report = json.loads((Path(args.retrieval_root) / "energyguide-summary.json").read_bytes())
     source["collection_run_id"] = retrieval_report.get("collection_run_id")
     source["sku_population_count"] = retrieval_report.get("sku_population_count")
@@ -132,7 +132,7 @@ def main():
               "retrieval_run_id": str(args.retrieval_run_id), "observation_run_id": os.getenv("GITHUB_RUN_ID"),
               "git_sha": os.getenv("GITHUB_SHA"), "captured_at": datetime.now(timezone.utc).isoformat(),
               "scope": "Hash-verified TV EnergyGuide source text, layout, and unreadable-page OCR observations only",
-              "status": "PASS" if not failures and len(observations) == len(pdfs) else "FAILED",
+              "status": "FAILED" if failures or len(observations) != len(pdfs) else "PARTIAL" if source.get("unreadable_documents") else "PASS",
               "field_selection": "NOT_EVALUATED", "identity_matching": "NOT_EVALUATED",
               "assessment": "NOT_EVALUATED", "observed_pdf_count": len(observations),
               "failed_pdf_count": len(failures), "observations": observations, "failures": failures}
@@ -148,7 +148,7 @@ def main():
                 stream.write(f"- `{failure['pdf_sha256']}`: {failure['error']}\n")
     print(json.dumps({"status": report["status"], "sku_document_count": source["sku_document_count"],
                       "unique_pdf_count": len(observations), "failed_pdf_count": len(failures)}, sort_keys=True), flush=True)
-    return 0 if report["status"] == "PASS" else 1
+    return 0 if report["status"] in ("PASS", "PARTIAL") else 1
 
 
 if __name__ == "__main__":

@@ -14,6 +14,7 @@ from runner_probe import safe_url, valid_pdf
 
 
 CONTRACT = "G3_TV_ENERGYGUIDE_RETRIEVAL_V1"
+NASCA_DRM_PREFIX = b"<## NASCA DRM FILE - VER1.00"
 
 
 def read_json(path):
@@ -129,11 +130,18 @@ def main():
     args = parser.parse_args()
     declarations, user_agent, sku_coverage = load_documents(args.collection_root, args.collection_run_id)
     collected = collect(declarations, args.out, user_agent)
+    nasca_drm = [row for row in collected["url_observations"]
+                 if row.get("body_prefix_hex") and bytes.fromhex(row["body_prefix_hex"]).startswith(NASCA_DRM_PREFIX)]
+    other_failures = [row for row in collected["url_observations"]
+                      if row["status"] == "FAILED" and row not in nasca_drm]
     report = {"contract": CONTRACT,
               "scope": "Exact-SKU PDP Support-declared TV PDF retrieval and byte hashing only; no OCR, selection, matching, or assessment",
               "collection_run_id": str(args.collection_run_id), "retrieval_run_id": os.getenv("GITHUB_RUN_ID"),
               "git_sha": os.getenv("GITHUB_SHA"), "captured_at": datetime.now(timezone.utc).isoformat(),
-              "status": "PASS" if collected["failed_url_count"] == 0 else "FAILED",
+              "status": "PASS" if collected["failed_url_count"] == 0 else "PARTIAL" if nasca_drm and not other_failures else "FAILED",
+              "inaccessible_document_issue": {"state": "NOT_ACCESSIBLE", "severity": "HIGH",
+                                               "issue_code": "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
+                                               "count": len(nasca_drm)},
               "sku_document_coverage": sku_coverage, "sku_population_count": len(sku_coverage), **collected}
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -155,7 +163,7 @@ def main():
                               "body_prefix_hex": row.get("body_prefix_hex")}, sort_keys=True), flush=True)
     print(json.dumps({"status": report["status"], "declared_document_count": len(declarations),
                       "url_count": report["url_count"], "pdf_hash_count": report["pdf_hash_count"]}, sort_keys=True), flush=True)
-    return 0 if report["status"] == "PASS" else 1
+    return 0 if report["status"] in ("PASS", "PARTIAL") else 1
 
 
 if __name__ == "__main__":
