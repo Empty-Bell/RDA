@@ -27,7 +27,11 @@ def load_population(recon_root, source_run_id):
     root = Path(recon_root)
     recon = load_json(root / "recon.json")
     if recon.get("status") != "PASS" or str(recon.get("run_id")) != str(source_run_id):
-        raise ValueError("Dryer source artifact is not the requested successful run")
+        raise ValueError(
+            "Dryer source artifact is not the requested successful run: "
+            f"status={recon.get('status')!r}, artifact_run_id={recon.get('run_id')!r}, "
+            f"requested_run_id={source_run_id!r}"
+        )
     if recon.get("scope") != "dryer source contracts only":
         raise ValueError("Source artifact is not scoped to clothes dryers")
     pages_by_offset = {}
@@ -253,3 +257,4 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
