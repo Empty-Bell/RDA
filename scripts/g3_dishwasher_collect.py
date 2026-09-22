@@ -14,7 +14,7 @@ from regaudit.population import canonicalize_products
 from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
-from claim_recon import DOM_SNAPSHOT
+from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
 
 
 CONTRACT = "G3_DISHWASHER_EXACT_SKU_PDP_V1"
@@ -54,12 +54,14 @@ def load_population(recon_root: str | Path, source_run_id: str) -> tuple[list[di
     pages = [pages_by_offset[offset][0] for offset in ordered]
     population = pf_population(pages)
     products = []
+    claim_listings: dict[str, dict[str, Any]] = {}
     for offset in ordered:
         page = pages_by_offset[offset][0]
         digest = pages_by_offset[offset][1]
         for group in page["searchResults"]:
             for variant in group["groupedProductList"]:
                 sku = variant["modelCode"]
+                claim_listings[sku] = {key: variant.get(key) for key in ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")}
                 products.append({"run_id": source_run_id, "exact_sku": sku, "listings": [{
                     "product_group": "dishwasher",
                     "source_family_id": group["group_id"],
@@ -76,6 +78,8 @@ def load_population(recon_root: str | Path, source_run_id: str) -> tuple[list[di
                     "variant_attributes": {"state": "NOT_OBSERVED", "value": None, "error": None},
                 }]})
     canonical = canonicalize_products(products)
+    for product in canonical:
+        product["source_claim_listing_raw"] = claim_listings[product["exact_sku"]]
     if len(canonical) != population["unique_exact_skus"]:
         raise ValueError("Dishwasher exact SKU population projection changed cardinality")
     return canonical, {"source_run_id": source_run_id, "total_groups": population["total_groups"],
@@ -161,7 +165,20 @@ def collect(products: list[dict[str, Any]], output: str | Path) -> list[dict[str
                         page.wait_for_timeout(1000)
                 except Exception:
                     pass
-                snapshot = page.evaluate(DOM_SNAPSHOT)
+                structured_probes = []
+                structured_errors = []
+                inline_scripts = page.locator("script#__NEXT_DATA__").all_text_contents()
+                for inline in inline_scripts:
+                    try:
+                        structured_probes.append({**project_inline_product_claims(json.loads(inline)),
+                                                  "source_url": safe_url(page.url),
+                                                  "source_kind": "public inline NEXT_DATA product array"})
+                    except Exception as error:
+                        structured_errors.append({"error_type": type(error).__name__})
+                snapshot = {"target_sku": sku, **page.evaluate(DOM_SNAPSHOT),
+                            "structured_records": [], "structured_probes": structured_probes,
+                            "structured_errors": structured_errors,
+                            "inline_product_script_count": len(inline_scripts)}
                 raw_snapshot = (json.dumps(snapshot, sort_keys=True, indent=2) + "\n").encode()
                 (folder / "snapshot.json").write_bytes(raw_snapshot)
                 record.update(final_url=safe_url(page.url), http_status=response.status if response else None,
@@ -185,7 +202,12 @@ def collect(products: list[dict[str, Any]], output: str | Path) -> list[dict[str
                 if len({item[0]["sha256"] for item in candidates}) != 1:
                     raise ValueError("Dishwasher bridge changed during same-PDP collection")
                 bridge_entry, facts = candidates[0]
+                listing_raw = product.get("source_claim_listing_raw")
+                if not isinstance(listing_raw, dict):
+                    raise ValueError("Dishwasher PF claim declaration is unavailable")
+                claim_sources = claim_facts(snapshot, sku, listing_raw, facts)
                 record.update(status="VERIFIED_EXACT_IDENTITY", bridge=bridge_entry, pdp_facts_raw=facts,
+                              energy_star_claim_sources_raw=claim_sources,
                               identity_contract="FINAL_URL_AND_CURRENT_JSONLD_AND_EXACT_SPECS_SUPPORT")
             except Exception as error:
                 record["error"] = str(error).splitlines()[0][:300]
