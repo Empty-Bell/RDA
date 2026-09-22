@@ -137,7 +137,10 @@ def review(observation_root, observation_run_id, output):
                 stream.write("| " + " | ".join(cell.replace("|", "\\|").replace("\n", " ") for cell in cells) + " |\n")
             stream.write("\n`models_raw` contains text-like tokens near an explicit printed Models/Model label; all other model-shaped tokens remain separately preserved in the JSON review artifact. Annual kWh rows require nearby yearly-electricity wording and are still unreviewed candidates.\n")
     print(json.dumps({"status": "PASS", "sku_document_count": len(sku_docs), "unique_pdf_count": len(entries),
-                      "flagged_pdf_count": report["flagged_pdf_count"]}, sort_keys=True), flush=True)
+                      "flagged_pdf_count": report["flagged_pdf_count"],
+                      "review_table": table,
+                      "skus_without_support_document": skus_without_documents},
+                     ensure_ascii=False, sort_keys=True), flush=True)
     return report
 
 
