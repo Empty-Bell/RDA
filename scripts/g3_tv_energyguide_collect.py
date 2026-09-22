@@ -147,7 +147,7 @@ def main():
             stream.write("SKUs with no PDP Support-declared document: " + (", ".join(f"`{sku}`" for sku in missing_docs) if missing_docs else "none") + "\n\n")
             for row in report["url_observations"]:
                 if row["status"] == "FAILED":
-            stream.write(f"- `{safe_url(row['url'])}`: {row.get('error', 'retrieval failed')}; response prefix hex `{row.get('body_prefix_hex', '')}`\n")
+                    stream.write(f"- `{safe_url(row['url'])}`: {row.get('error', 'retrieval failed')}; response prefix hex `{row.get('body_prefix_hex', '')}`\n")
     for row in report["url_observations"]:
         if row["status"] == "FAILED":
             print(json.dumps({"failed_energyguide_url": safe_url(row["url"]),
