@@ -591,3 +591,22 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   classify (a) a PDP-vs-label/EPA value conflict and (b) a product absent from the
   current EPA cohort. The 5 PDP-missing cases have label/EPA agreement and follow
   the already requested LOW treatment once Washer assessment is enabled.
+
+- Washer assessment is now enabled under the approved rules: [hosted run 35687295557](https://github.com/Empty-Bell/RDA/actions/runs/35687295557), commit `b9755d8`.
+  All 37 exact SKUs were assessed from the same linked PDP, Support-label and EPA
+  artifacts. Display counts are HIGH 0, MEDIUM 2, LOW 5, PASS 30. The two
+  Laundry Center PDP-vs-label/EPA annual-energy conflicts are MEDIUM. The five
+  SKUs whose PDP annual energy is missing while label and EPA agree are LOW.
+  `WF90F53ADYA5` also has an ENERGY STAR publication consistency LOW because EPA
+  registration and the spec claim are present while PLP and PDP logos are absent;
+  it remains one LOW SKU with two findings.
+  The 8 SKUs absent from EPA current have no PLP logo, PDP logo, or spec
+  certification claim, so the approved condition “EPA absent + any claim present”
+  does not fire and they count as PASS. If a future run observes any of those
+  publication points while the model is still absent from EPA current, the same
+  rule emits HIGH automatically. No manual override or inferred certification
+  state was used. Washer is ready to hand off to the eventual unified dashboard;
+  dashboard implementation remains deferred until all product families finish.
+  Next product-family step in the master-plan order is Television source-contract
+  reconnaissance. Recommended model: Luna low for fixed-schema discovery review;
+  Terra medium only if Samsung's TV source schema requires a new adapter.

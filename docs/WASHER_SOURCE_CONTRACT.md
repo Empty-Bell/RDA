@@ -77,6 +77,29 @@ values remain mapped to the previously requested LOW behavior for later
 assessment. Recommended model for rule definition: Sol medium; Luna low suffices
 for further mechanical source comparison.
 
+## Approved assessment result (2026-09-22)
+
+The final Washer assessment workflow
+[35687295557](https://github.com/Empty-Bell/RDA/actions/runs/35687295557), commit
+`b9755d8`, applied the approved rules to all 37 same-run exact SKUs:
+
+- annual-energy disagreement = MEDIUM;
+- PDP annual-energy missing while label and EPA agree = LOW;
+- EPA current absent and any PLP logo, PDP logo, or spec certification claim
+  present = HIGH;
+- ENERGY STAR registered with any publication point absent = LOW consistency;
+- no finding is displayed and counted as PASS.
+
+Result: HIGH 0, MEDIUM 2, LOW 5, PASS 30. The MEDIUM rows are
+`WH46DBH500EVA3` and `WH46DBH500GVA3`. The LOW rows are
+`WA54CG7105AVUS`, `WA54CG7105AWUS`, `WF90F53ADSA5`, `WF90F53ADYA5`, and
+`WW25FG6B34BEA2`. `WF90F53ADYA5` has both a missing-PDP-energy finding and an
+ENERGY STAR publication-consistency finding, but the SKU display outcome remains
+LOW. The 8 EPA-current-absent rows have all three publication points absent, so
+they are PASS under the approved conditional HIGH rule. The rule remains active:
+if any publication point becomes present while EPA current remains absent, the
+SKU becomes HIGH automatically.
+
 Status: bounded source reconnaissance PASS on hosted Ubuntu (run 35104751514).
 Phase 0 remains RUNNING. Certification matching/compliance NOT_EVALUATED.
 
