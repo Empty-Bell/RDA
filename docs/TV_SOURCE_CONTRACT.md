@@ -182,7 +182,7 @@ field reflects a certified test AEC. This is a strong explanation for systematic
 positive differences, but per-model DOE sample/represented values are not in the
 captured EPA artifact, so it remains a hypothesis pending a field-level contract
 check. The existing 35 MEDIUM rows remain candidates, not confirmed product
-errors.
+errors. See the [35-row per-model evidence review](evidence/g3-tv-energy-basis-review-35704080904.md) for exact label/EPA text, values, deltas, dates, EPA IDs, and label hashes.
 
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule
