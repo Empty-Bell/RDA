@@ -7,9 +7,21 @@ import tempfile
 import unittest
 
 from scripts.g3_dishwasher_energyguide_observe import verified_pdf_population
+from scripts.g3_tv_source_comparison import compare_single_candidates, epa_watts, extract_kwh, extract_watts
 
 
 class TvEnergyGuideReadability(unittest.TestCase):
+    def test_annual_kwh_and_watts_are_compared_only_with_like_units(self):
+        self.assertEqual(extract_kwh("208 W"), None)
+        self.assertEqual(extract_watts("208 W"), "208")
+        self.assertEqual(extract_kwh("408 kWh/year"), "408")
+        self.assertEqual(extract_watts("408 kWh/year"), None)
+        self.assertEqual(epa_watts("117.69"), "117.69")
+        self.assertEqual(compare_single_candidates(["408"], ["408"], "NO_LABEL", "NO_EPA")["status"],
+                         "EXACT_VALUE_MATCH")
+        self.assertEqual(compare_single_candidates(["408"], ["390"], "NO_LABEL", "NO_EPA")["status"],
+                         "VALUES_DIFFER")
+
     def write_fixture(self, root, failed_prefix):
         pdf = b"%PDF-1.7 readable test fixture"
         digest = hashlib.sha256(pdf).hexdigest()

@@ -118,6 +118,14 @@ same-run candidate comparison for the 162 byte-verified PDFs. The comparison
 must preserve these five explicit HIGH candidates and leave values unavailable
 where no readable label exists; it must not infer label values.
 
+TV quantity comparisons must remain unit-compatible: compare a model-matched
+EnergyGuide annual kWh candidate to an exact Current EPA annual kWh candidate;
+compare PDP `Power Consumption (Typical)` W separately to EPA on-mode and
+federal-test W. Never compare PDP W to annual kWh. A unique label/EPA annual-kWh
+difference after both exact/prefix model links and US-market scope are verified
+is a MEDIUM candidate. PDP currently publishes no annual-kWh field for this
+cohort, so absence alone is not a missing-value verdict in this family.
+
 Recommended model for fixed-schema collection review: GPT-5.6 Luna low; use
 GPT-5.6 Terra medium only if a new TV-specific source adapter or comparison rule
 is required. Collection/runtime itself uses no LLM.

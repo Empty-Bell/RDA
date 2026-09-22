@@ -13,6 +13,7 @@ import re
 CONTRACT = "G3_TV_SOURCE_COMPARISON_CANDIDATES_V1"
 MODEL_PATTERN_CHARS = re.compile(r"[A-Z0-9*/?./-]+\Z", re.I)
 ENERGY_TOKEN = re.compile(r"(?<![\w.])(?P<value>\d+(?:[.,]\d+)?)\s*kwh\b", re.I)
+WATT_TOKEN = re.compile(r"(?<![\w.])(?P<value>\d+(?:[.,]\d+)?)\s*w\b", re.I)
 US_MARKET = re.compile(r"\b(?:US|USA|UNITED STATES(?: OF AMERICA)?)\b", re.I)
 
 
@@ -88,6 +89,32 @@ def extract_kwh(raw):
         return None
     match = ENERGY_TOKEN.search(raw)
     return decimal_value(match.group("value")) if match else None
+
+
+def extract_watts(raw):
+    if not isinstance(raw, str):
+        return None
+    match = WATT_TOKEN.search(raw)
+    return decimal_value(match.group("value")) if match else None
+
+
+def epa_watts(raw):
+    if raw is None:
+        return None
+    return extract_watts(str(raw)) or decimal_value(str(raw))
+
+
+def compare_single_candidates(left, right, left_missing, right_missing):
+    left = sorted(set(value for value in left if value is not None))
+    right = sorted(set(value for value in right if value is not None))
+    if not left:
+        return {"status": left_missing, "left_candidates": left, "right_candidates": right}
+    if not right:
+        return {"status": right_missing, "left_candidates": left, "right_candidates": right}
+    if len(left) != 1 or len(right) != 1:
+        return {"status": "MULTIPLE_VALUE_CANDIDATES", "left_candidates": left, "right_candidates": right}
+    return {"status": "EXACT_VALUE_MATCH" if left[0] == right[0] else "VALUES_DIFFER",
+            "left_candidates": left, "right_candidates": right}
 
 
 def us_market_scope(raw):
@@ -222,6 +249,11 @@ def main():
             pdp_energies.append({"value_raw": raw_value, "kwh_decimal_candidate": extract_kwh(raw_value),
                                  "field_name_raw": field.get("name"), "field_group_raw": field.get("group")})
 
+        pdp_power = []
+        for field in pdp_facts.get("power_consumption_raw", []):
+            pdp_power.append({"value_raw": field.get("value"), "watts_decimal_candidate": extract_watts(field.get("value")),
+                              "field_name_raw": field.get("name"), "field_group_raw": field.get("group")})
+
         epa_matches = []
         epa_normalized_matches = []
         for row in epa_rows:
@@ -243,25 +275,39 @@ def main():
                                                "markets_raw": row.get("markets"),
                                                "strict_match_already_found": bool(match)})
 
-        values = {
-            "PDP": sorted({x["kwh_decimal_candidate"] for x in pdp_energies if x["kwh_decimal_candidate"] is not None}),
-            "LABEL": sorted({x["kwh_decimal_candidate"] for x in label_energies if x["kwh_decimal_candidate"] is not None}),
-            "EPA_US_MARKET_CANDIDATE": sorted({x["annual_energy_kwh_decimal_candidate"] for x in epa_matches
-                           if x["market_scope_candidate"] == "US_MARKET_LISTED"
-                           if x["annual_energy_kwh_decimal_candidate"] is not None}),
-        }
-        source_counts = {key: len(value) for key, value in values.items()}
-        if any(count == 0 for count in source_counts.values()):
-            energy_comparison = "MISSING_SOURCE_VALUE_OR_MODEL_ROW"
-        elif len({number for group in values.values() for number in group}) == 1 and all(count == 1 for count in source_counts.values()):
-            energy_comparison = "ALL_THREE_SOURCES_HAVE_SAME_EXACT_VALUE"
-        elif len({number for group in values.values() for number in group}) == 1:
-            energy_comparison = "AVAILABLE_VALUES_EQUAL_BUT_SOURCE_HAS_MULTIPLE_CANDIDATES"
-        else:
-            energy_comparison = "SOURCE_VALUES_DIFFER"
+        epa_us_matches = [row for row in epa_matches if row["market_scope_candidate"] == "US_MARKET_LISTED"]
+        matched_label_hashes = {row.get("pdf_sha256") for row in label_matches}
+        label_kwh = [row["kwh_decimal_candidate"] for row in label_energies
+                     if row.get("pdf_sha256") in matched_label_hashes]
+        epa_kwh = [decimal_value(row.get("annual_energy_raw")) for row in epa_us_matches]
+        label_epa_energy = compare_single_candidates(label_kwh, epa_kwh,
+                                                     "NO_LABEL_ANNUAL_KWH_CANDIDATE",
+                                                     "NO_EXACT_US_EPA_ANNUAL_KWH_CANDIDATE")
+        if unreadable_labels and not label_records:
+            label_epa_energy["status"] = "LABEL_NOT_ACCESSIBLE_HIGH"
+        elif label_records and not label_matches:
+            label_epa_energy["status"] = "LABEL_MODEL_PATTERN_UNMATCHED"
+        epa_on_mode_watts = [epa_watts(row.get("power_consumption_in_on_mode_watts_raw"))
+                             for row in epa_us_matches]
+        epa_federal_watts = [epa_watts(row.get("federal_test_power_watts_raw"))
+                             for row in epa_us_matches]
+        pdp_typical_watts = [row["watts_decimal_candidate"] for row in pdp_power
+                             if "Typical" in str(row.get("field_name_raw"))]
+        pdp_epa_typical_on_mode = compare_single_candidates(pdp_typical_watts, epa_on_mode_watts,
+                                                             "NO_PDP_TYPICAL_WATTS",
+                                                             "NO_EXACT_US_EPA_ON_MODE_WATTS")
+        pdp_epa_typical_federal = compare_single_candidates(pdp_typical_watts, epa_federal_watts,
+                                                             "NO_PDP_TYPICAL_WATTS",
+                                                             "NO_EXACT_US_EPA_FEDERAL_TEST_WATTS")
         finding_candidates = ([{"severity": "HIGH", "issue_code": "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
                                 "control": "ENERGYGUIDE_READABILITY", "state": "NOT_ACCESSIBLE",
                                 "evidence": unreadable_labels}] if unreadable_labels else [])
+        if (label_epa_energy["status"] == "VALUES_DIFFER" and label_matches and epa_us_matches):
+            finding_candidates.append({"severity": "MEDIUM", "issue_code": "ENERGYGUIDE_EPA_ANNUAL_ENERGY_DIFFERENCE_CANDIDATE",
+                                        "control": "ANNUAL_ENERGY", "evidence": label_epa_energy})
+        source_kwh_values = {"PDP": sorted(set(x["kwh_decimal_candidate"] for x in pdp_energies if x["kwh_decimal_candidate"])),
+                             "LABEL": sorted(set(label_epa_energy["left_candidates"])),
+                             "EPA_US_MARKET_CANDIDATE": sorted(set(label_epa_energy["right_candidates"]))}
         table.append({"exact_sku": sku, "pdp_title_raw": listing.get("modelName"),
                       "pdp_collection_status": pdp.get("status"), "pdp_collection_error": pdp.get("error"),
                       "pdp_identity_contract": pdp.get("identity_contract"),
@@ -269,16 +315,20 @@ def main():
                                                 "snapshot_sha256": pdp.get("snapshot_sha256"),
                                                 "bridge_sha256": (pdp.get("bridge") or {}).get("sha256")},
                       "pdp_energy_candidates_raw": pdp_energies,
+                      "pdp_power_candidates_raw": pdp_power,
                       "label_document_count": len(label_records), "label_model_patterns_raw": label_patterns,
                       "label_document_accessibility": "NOT_ACCESSIBLE" if unreadable_labels and not label_records else "PARTIALLY_ACCESSIBLE" if unreadable_labels else "ACCESSIBLE" if label_records else "NO_LABEL_DOCUMENT_REVIEWED",
                       "label_unreadable_documents": unreadable_labels,
                       "finding_candidates": finding_candidates,
                       "label_prefix_matches": label_matches, "label_annual_energy_candidates_raw": label_energies,
                       "epa_current_model_matches": epa_matches,
-                      "epa_match_count": len(epa_matches), "source_kwh_values": values,
+                      "epa_match_count": len(epa_matches), "source_kwh_values": source_kwh_values,
+                      "label_epa_annual_energy_comparison": label_epa_energy,
+                      "pdp_typical_vs_epa_on_mode_power_comparison": pdp_epa_typical_on_mode,
+                      "pdp_typical_vs_epa_federal_test_power_comparison": pdp_epa_typical_federal,
                       "epa_normalized_pattern_matches_diagnostic_only": epa_normalized_matches,
                       "epa_near_pattern_candidates_diagnostic_only": near_epa_patterns(sku, epa_rows) if not epa_matches else [],
-                      "energy_comparison_candidate": energy_comparison,
+                      "energy_comparison_candidate": label_epa_energy["status"],
                       "model_comparison": {"pdp": "EXACT_SKU_IDENTITY_VERIFIED" if pdp.get("status") == "VERIFIED_EXACT_IDENTITY" else "EXACT_SKU_IDENTITY_NOT_VERIFIED",
                                            "label": "ONE_OR_MORE_PREFIX_PATTERNS_MATCH" if label_matches else "NO_LABEL_PATTERN_MATCH",
                                            "epa_current": "ONE_OR_MORE_CURRENT_ROWS_MATCH" if epa_matches else "NO_CURRENT_EPA_MODEL_ROW_MATCH"},
@@ -291,14 +341,20 @@ def main():
               "label_accessibility_counts": {"ACCESSIBLE": sum(not bool(unreadable_by_sku.get(sku)) and bool(label_by_sku[sku]) for sku in population),
                                              "NOT_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and not label_by_sku[sku] for sku in population),
                                              "PARTIALLY_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and bool(label_by_sku[sku]) for sku in population)},
-              "finding_candidate_counts": {"ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE": len(review.get("unreadable_documents", []))},
               "epa_samsung_current_row_count": len(epa_rows),
               "model_pattern_contract": "Raw exact SKU is unchanged; each * consumes one A-Z/0-9 character from its beginning; any remaining exact-SKU suffix is retained verbatim and reported.",
-              "scope": "Same-run US TV PDP, Support-label, and EPA current candidate comparison; EPA annual-energy candidates require an explicit US market; only the approved unreadable-label HIGH candidate is emitted, with no other verdict or compliance assessment",
-              "counts": {name: sum(row["energy_comparison_candidate"] == name for row in table)
-                         for name in ("ALL_THREE_SOURCES_HAVE_SAME_EXACT_VALUE",
-                                      "AVAILABLE_VALUES_EQUAL_BUT_SOURCE_HAS_MULTIPLE_CANDIDATES",
-                                      "SOURCE_VALUES_DIFFER", "MISSING_SOURCE_VALUE_OR_MODEL_ROW")},
+              "scope": "Same-run TV source candidates are compared only across like units: label annual kWh vs EPA annual kWh, and PDP typical W vs EPA on-mode/federal-test W. EPA values require an explicit US market. Annual PDP kWh is reported separately when not published. HIGH unreadable-label and MEDIUM confirmed annual-energy-difference candidates are emitted; no other verdict or compliance assessment",
+              "pdp_annual_energy_source_status": "NOT_PUBLISHED_IN_PDP_SPECS" if not any(row["pdp_energy_candidates_raw"] for row in table) else "PUBLISHED_CANDIDATES_PRESENT",
+              "label_epa_annual_energy_counts": {name: sum(row["label_epa_annual_energy_comparison"]["status"] == name for row in table)
+                         for name in ("EXACT_VALUE_MATCH", "VALUES_DIFFER", "MULTIPLE_VALUE_CANDIDATES",
+                                      "NO_LABEL_ANNUAL_KWH_CANDIDATE", "NO_EXACT_US_EPA_ANNUAL_KWH_CANDIDATE",
+                                      "LABEL_NOT_ACCESSIBLE_HIGH", "LABEL_MODEL_PATTERN_UNMATCHED")},
+              "pdp_epa_power_counts": {name: sum(row["pdp_typical_vs_epa_on_mode_power_comparison"]["status"] == name for row in table)
+                         for name in ("EXACT_VALUE_MATCH", "VALUES_DIFFER", "MULTIPLE_VALUE_CANDIDATES",
+                                      "NO_PDP_TYPICAL_WATTS", "NO_EXACT_US_EPA_ON_MODE_WATTS")},
+              "finding_candidate_counts": {name: sum(item["issue_code"] == name for row in table for item in row["finding_candidates"])
+                                            for name in ("ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
+                                                         "ENERGYGUIDE_EPA_ANNUAL_ENERGY_DIFFERENCE_CANDIDATE")},
               "rows": table}
     destination = Path(args.out)
     destination.mkdir(parents=True, exist_ok=True)
@@ -307,16 +363,19 @@ def main():
     if summary:
         with Path(summary).open("a", encoding="utf-8") as stream:
             stream.write("## TV PDP / label / EPA comparison candidates\n\n")
-            stream.write(f"Exact SKUs: **{len(population)}**; readable EnergyGuide PDFs: **{review.get('unique_pdf_count')}**; NOT_ACCESSIBLE HIGH candidates: **{len(review.get('unreadable_documents', []))}**; EPA Samsung current rows captured: **{len(epa_rows)}**. Other values remain unassessed candidates.\n\n")
-            stream.write("| Exact SKU | PDP kWh | Label pattern(s) / kWh | EPA model row(s) / kWh | Comparison candidate |\n|---|---|---|---|---|\n")
+            stream.write(f"Exact SKUs: **{len(population)}**; readable EnergyGuide PDFs: **{review.get('unique_pdf_count')}**; NOT_ACCESSIBLE HIGH candidates: **{report['finding_candidate_counts']['ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE']}**; label/EPA annual-kWh difference candidates: **{report['finding_candidate_counts']['ENERGYGUIDE_EPA_ANNUAL_ENERGY_DIFFERENCE_CANDIDATE']}**; EPA Samsung current rows captured: **{len(epa_rows)}**.\n\n")
+            stream.write("PDP publishes typical/max/standby **W**, while the EnergyGuide publishes annual **kWh**. These are not compared as if they were the same quantity.\n\n")
+            stream.write("| Exact SKU | PDP typical W | Label annual kWh | EPA annual kWh | Label/EPA status | PDP/EPA on-mode W |\n|---|---|---|---|---|---|\n")
             for row in table:
-                label = "; ".join(f"{p}→{','.join(sorted({x['kwh_decimal_candidate'] for x in row['label_annual_energy_candidates_raw'] if x['pdf_sha256'] == doc['pdf_sha256'] and x['kwh_decimal_candidate']}))}" for doc in row["label_prefix_matches"] for p in [doc["pattern_raw"]])
-                epa = "; ".join(f"{item['model_number_raw']}→{item['annual_energy_raw']} ({item['markets_raw']})" for item in row["epa_current_model_matches"])
-                pdp_values = ", ".join(sorted({x["kwh_decimal_candidate"] for x in row["pdp_energy_candidates_raw"] if x["kwh_decimal_candidate"]}))
                 label_cell = ("NOT_ACCESSIBLE — HIGH ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE"
                               if row["label_document_accessibility"] == "NOT_ACCESSIBLE"
-                              else label or "no matched label pattern")
-                cells = [row["exact_sku"], pdp_values, label_cell, epa or "no current EPA model row", row["energy_comparison_candidate"]]
+                              else ", ".join(row["label_epa_annual_energy_comparison"]["left_candidates"]) or "—")
+                epa_energy = ", ".join(row["label_epa_annual_energy_comparison"]["right_candidates"]) or "—"
+                pdp_typical = ", ".join(x["watts_decimal_candidate"] for x in row["pdp_power_candidates_raw"]
+                                         if "Typical" in str(x.get("field_name_raw")) and x["watts_decimal_candidate"]) or "—"
+                epa_watts = ", ".join(row["pdp_typical_vs_epa_on_mode_power_comparison"]["right_candidates"]) or "—"
+                cells = [row["exact_sku"], pdp_typical, label_cell, epa_energy,
+                         row["label_epa_annual_energy_comparison"]["status"], epa_watts]
                 stream.write("| " + " | ".join(str(cell).replace("|", "\\|").replace("\n", " ") for cell in cells) + " |\n")
             unresolved_epa = [row for row in table if not row["epa_current_model_matches"]]
             if unresolved_epa:
@@ -328,7 +387,10 @@ def main():
                     near = "; ".join(f"{item['model_number_raw']} ({item['common_leading_characters_after_punctuation_removal']} chars)" for item in row["epa_near_pattern_candidates_diagnostic_only"]) or "none"
                     stream.write(f"| {row['exact_sku']} | {normalized} | {near} |\n")
     print(json.dumps({"status": report["status"], "population_count": len(population),
-                      "epa_samsung_current_row_count": len(epa_rows), "counts": report["counts"],
+                      "epa_samsung_current_row_count": len(epa_rows),
+                      "label_epa_annual_energy_counts": report["label_epa_annual_energy_counts"],
+                      "pdp_epa_power_counts": report["pdp_epa_power_counts"],
+                      "finding_candidate_counts": report["finding_candidate_counts"],
                       "comparison_table": table}, ensure_ascii=False, sort_keys=True), flush=True)
     return 0
 
