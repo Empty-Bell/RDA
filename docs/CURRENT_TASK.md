@@ -763,3 +763,11 @@ entry in this PDP Support response, but they do not have empty Support arrays.
 The URL inspection did not download or inspect document bodies, so it only rules
 out EnergyGuide-like URL text among these captured Support entries. No
 assessment was made. Recommended model: GPT-5.6 Luna low.
+
+Examples in the verified 54-SKU population with no canonical EnergyGuide Support
+entry are `DV90F53AESA3`, `DV45DG6000HWA2`, and `DVE45T3200W/A3`. Their exact
+Samsung PDP URLs are provided in the follow-up response. A hosted probe now opens
+only these three PDPs and scans rendered links/text for an EnergyGuide link
+outside Bridge Support. It reuses the successful collection artifact rather than
+repeating the 54-page collection. Local suite: 198 tests passed, 1 skipped.
+Recommended model: GPT-5.6 Luna low.
