@@ -184,8 +184,8 @@ def join_candidates(review_root, collection_root, collection_run_id, epa_root, e
                 label_models = "; ".join(label_model_display(doc)[0] for doc in row["label_documents"]) or "none"
                 other_label_tokens = "; ".join(label_model_display(doc)[1] for doc in row["label_documents"]) or "none"
                 label_energy = "; ".join(", ".join(sorted({e.get("value_raw", "") for e in doc["annual_energy_candidates_raw"] if e.get("value_raw")})) or "no annual-kWh candidate" for doc in row["label_documents"]) or "none"
-                epa = "; ".join(f"{x['model_number_raw']} / {x['annual_energy_kwh_yr_raw']} / CEF {x['combined_energy_factor_cef_raw']} / {x['type_raw']}" for x in row["epa_model_pattern_candidates"]) or "no positional candidate"
-                combo_epa = "; ".join(f"{x['model_number_raw']} / W {x['washer_annual_energy_kwh_yr_raw']} / D {x['combo_dryer_annual_energy_kwh_yr_raw']}" for x in row["combo_epa_model_pattern_candidates"]) or "no positional candidate"
+                epa = "; ".join(f"{x['model_number_raw']} [PD {x['pd_id']}; row {x['source_row_id']}] / {x['annual_energy_kwh_yr_raw']} / CEF {x['combined_energy_factor_cef_raw']} / {x['type_raw']}" for x in row["epa_model_pattern_candidates"]) or "no positional candidate"
+                combo_epa = "; ".join(f"{x['model_number_raw']} [PD {x['pd_id']}; row {x['source_row_id']}] / W {x['washer_annual_energy_kwh_yr_raw']} / D {x['combo_dryer_annual_energy_kwh_yr_raw']}" for x in row["combo_epa_model_pattern_candidates"]) or "no positional candidate"
                 cells = [row["exact_sku"], row["pdp_title_raw"] or "", label_models, other_label_tokens, label_energy, epa, combo_epa, str(len(row["label_documents"]))]
                 stream.write("| " + " | ".join(str(x).replace("|", "\\|").replace("\n", " ") for x in cells) + " |\n")
     print(json.dumps({"status": "PASS", "population_count": len(population), "epa_row_count": len(epa_rows),
