@@ -127,6 +127,10 @@ def publication_assessment(epa_registration, points):
 
 def us_market_state(value):
     """Recognize an explicit United States market without guessing on blanks."""
+    if isinstance(value, (list, tuple, set)):
+        value = ", ".join(str(item) for item in value)
+    elif isinstance(value, dict):
+        value = ", ".join(str(item) for item in value.values())
     if not isinstance(value, str) or not value.strip():
         return "UNKNOWN"
     upper = value.upper()
@@ -151,3 +155,4 @@ def epa_registration_state(dryer_candidates, combo_candidates):
     else:
         state = "UNKNOWN"
     return state, markets
+
