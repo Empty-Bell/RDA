@@ -56,7 +56,14 @@ jobs:
           unzip -q runtime/g3-dryer/source.zip -d runtime/g3-dryer/recon
           RECON_FILE="$(find runtime/g3-dryer/recon -name recon.json -type f -print -quit)"
           test -n "$RECON_FILE"
-          echo "SOURCE_RUN_ID=${SOURCE_RUN_ID}" >> "$GITHUB_ENV"
+          # Trust the run identity recorded inside the validated source
+          # artifact.  The workflow_run event id can refer to a retried or
+          # superseded source execution while the artifact remains the latest
+          # successful snapshot.
+          ARTIFACT_SOURCE_RUN_ID="$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8")).get("run_id") or "")' "$RECON_FILE")"
+          test -n "$ARTIFACT_SOURCE_RUN_ID"
+          test "$ARTIFACT_SOURCE_RUN_ID" = "$SOURCE_RUN_ID"
+          echo "SOURCE_RUN_ID=${ARTIFACT_SOURCE_RUN_ID}" >> "$GITHUB_ENV"
           echo "SOURCE_RECON_DIR=$(dirname "$RECON_FILE")" >> "$GITHUB_ENV"
       - name: Collect exact-SKU PDP facts for the full dryer population
         run: python scripts/g3_dryer_collect.py --recon-root "$SOURCE_RECON_DIR" --source-run-id "$SOURCE_RUN_ID" --out runtime/g3-dryer
@@ -72,3 +79,4 @@ jobs:
             runtime/g3-dryer/pdp/
           retention-days: 14
           if-no-files-found: warn
+
