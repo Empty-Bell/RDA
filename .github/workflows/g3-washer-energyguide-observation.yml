@@ -1,0 +1,84 @@
+name: G3 clothes washer EnergyGuide observation
+
+on:
+  workflow_dispatch:
+    inputs:
+      retrieval_run_id:
+        description: Successful Washer EnergyGuide/EPA source capture run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 clothes washer EnergyGuide and EPA source capture]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_washer_energyguide_observe.py'
+      - 'scripts/g3_dishwasher_energyguide_observe.py'
+      - 'scripts/energyguide_fields.py'
+      - 'requirements-tools.lock'
+      - 'requirements-probe.lock'
+      - 'runtime-manifest.json'
+      - '.github/workflows/g3-washer-energyguide-observation.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: g3-washer-energyguide-observation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RETRIEVAL_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.retrieval_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Install locked PDF/OCR build tools
+        run: python -m pip install --index-url https://pypi.org/simple --no-cache-dir --require-hashes --no-deps -r requirements-tools.lock
+      - name: Install pinned PDF and OCR runtime
+        run: |
+          python -m pip install --index-url https://pypi.org/simple --no-cache-dir --require-hashes --no-deps --no-build-isolation -r requirements-probe.lock
+          python -m pip check
+          python scripts/runtime_integrity.py prepare
+      - name: Download successful Washer PDF retrieval artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$RETRIEVAL_RUN_ID" ]; then
+            RETRIEVAL_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-washer-secondary-sources.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RETRIEVAL_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-washer-secondary-sources.yml") | .id')"
+          test "$VALID_RUN" = "$RETRIEVAL_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RETRIEVAL_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-washer-energyguide-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g3-washer/retrieval
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-washer/retrieval.zip
+          unzip -q runtime/g3-washer/retrieval.zip -d runtime/g3-washer/retrieval
+          SUMMARY_FILE="$(find runtime/g3-washer/retrieval -name energyguide-summary.json -type f -print -quit)"
+          test -n "$SUMMARY_FILE"
+          echo "RETRIEVAL_RUN_ID=${RETRIEVAL_RUN_ID}" >> "$GITHUB_ENV"
+          echo "RETRIEVAL_DIR=$(dirname "$SUMMARY_FILE")" >> "$GITHUB_ENV"
+      - name: Observe every unique PDF hash once
+        run: python scripts/g3_washer_energyguide_observe.py --retrieval-root "$RETRIEVAL_DIR" --retrieval-run-id "$RETRIEVAL_RUN_ID" --out runtime/g3-washer/observation
+      - name: Preserve raw text, OCR, and layout observations
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-washer-energyguide-observation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-washer/observation/
+          retention-days: 14
+          if-no-files-found: warn
