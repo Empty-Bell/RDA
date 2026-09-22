@@ -47,6 +47,7 @@ jobs:
           fi
           VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and (.path == ".github/workflows/g3-tv-collection.yml" or .path == ".github/workflows/g3-tv-recovery.yml")) | .id')"
           test "$VALID_RUN" = "$COLLECTION_RUN_ID"
+          echo "COLLECTION_RUN_ID=${COLLECTION_RUN_ID}" >> "$GITHUB_ENV"
           ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-tv-collection-"))] | sort_by(.created_at) | last | .id')"
           test -n "$ARTIFACT_ID"
           mkdir -p runtime/g3-tv/collection
