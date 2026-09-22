@@ -2,6 +2,8 @@
 
 Comparison run: [35704080904](https://github.com/Empty-Bell/RDA/actions/runs/35704080904), commit `011ee1f`; product family population excludes all `MNA*` models. This file preserves the model-linked annual kWh candidates for source-basis review; it is not a final finding list.
 
+For visual review, open the [per-SKU PDP links and label artifact instructions](g3-tv-energy-visual-review-links-35704080904.md). Each label PDF is keyed by its SHA-256 below.
+
 The run compared 35 readable EnergyGuide annual-kWh candidates to exact US EPA Current model-pattern rows. All 35 label values are higher than EPA values; the median difference is **17.52%**. There is one close case (`QN77S95DAFXZA`, +0.06%) and examples from +11.56% through +22.16%. Each label has a single primary-text annual-energy candidate and its printed model pattern matches the EPA model pattern positionally.
 
 A likely explanation is that the two sources report different statistical rating values. ENERGY STAR V9.1 says EPA Product Finder receives certified AEC values measured under the DOE Federal Test Procedure. FTC television disclosures derive from DOE procedures in 10 CFR Parts 429 and 430; 10 CFR 429.25 calculates a DOE represented AEC from statistically represented power values. This can produce a systematic positive label-to-EPA difference. It is a strong hypothesis, not model-level proof: the Samsung/DOE sample and represented-value submissions were not present in the captured source artifact. Until that field basis is confirmed, keep these as MEDIUM comparison candidates and do not describe them as confirmed product defects.
@@ -45,4 +47,3 @@ Sources: [ENERGY STAR TV Version 9.1 specification](https://www.energystar.gov/s
 | QN83S95HAEXZA | QN83S95HAE | 441 | QN83S95HAE | 370 | 71.00 | 19.19% | 2026-02-03T00:00:00.000 | 4529208 | 5a1629a19b2bc60ad3251fdc497b48890baf5ce6ad34d50a715a48d5b6e77c0c |
 | QN85QN90FAFXZA | QN85QN90FAF | 388 | QN85QN90FAF | 344.87 | 43.13 | 12.51% | 2025-01-23T00:00:00.000 | 3943301 | 78a5a7d649a9b86d3aa90e9b4b860b0690259c127811de5d1fbe235ef154fe10 |
 | QN98QN90FAFXZA | QN98QN90FAF | 425 | QN98QN90FAF | 357.22 | 67.78 | 18.97% | 2025-01-23T00:00:00.000 | 3943302 | 7a8598e5c9982eabfc5269a5cce8ec6026f5e164e7fd98e4937187ece1f58cad |
-
