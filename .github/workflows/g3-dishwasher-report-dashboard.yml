@@ -1,6 +1,9 @@
 name: G3 dishwasher report dashboard
 on:
  workflow_dispatch:
+ push:
+  branches: [main]
+  paths: ['scripts/g3_dishwasher_report_dashboard.py','.github/workflows/g3-dishwasher-report-dashboard.yml']
  workflow_run:
   workflows: [G3 dishwasher canonical report]
   types: [completed]
