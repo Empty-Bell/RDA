@@ -1,7 +1,10 @@
 """TV source fixtures; power/cost/energy remain distinct raw quantities."""
 import json
+import sys
 import unittest
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from scripts.source_contract import pf_population, pdp_facts, epa_contract, energyguide_ocr_reason
 from scripts.g3_tv_collect import verify_identity
 

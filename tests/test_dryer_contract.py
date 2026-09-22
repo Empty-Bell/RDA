@@ -1,7 +1,10 @@
 """Dryer fixtures: combo washer-label energy is not dryer energy."""
 import json
+import sys
 import unittest
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from scripts.source_contract import pf_population, pdp_facts, epa_contract
 from scripts.g3_dryer_collect import load_population
 import tempfile
