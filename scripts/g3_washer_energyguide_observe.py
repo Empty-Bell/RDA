@@ -122,6 +122,8 @@ def main():
         except Exception as error:
             failures.append({"pdf_sha256": digest, "error_type": type(error).__name__,
                              "error": str(error).splitlines()[0][:300]})
+            print(json.dumps({"observation_failure": digest, "error_type": type(error).__name__,
+                              "error": str(error).splitlines()[0][:300]}, sort_keys=True), flush=True)
         print(json.dumps({"processed_unique_pdf": index, "total_unique_pdfs": len(pdfs),
                           "status": "FAILED" if failures and failures[-1]["pdf_sha256"] == digest else "OBSERVED",
                           "sha256": digest}, sort_keys=True), flush=True)
