@@ -224,3 +224,14 @@ canonical Energy Guide entry or EnergyGuide-like URL in captured Support, but
 the Support arrays themselves are populated. This URL-text check does not
 inspect generic downloadcenter PDF bodies, so it cannot make a claim about
 content embedded inside those manuals.
+
+### Rendered PDP EnergyGuide link check (2026-09-22)
+
+Hosted run `35726630384` inspected three examples without canonical Energy Guide
+Support entries (`DV90F53AESA3`, `DV45DG6000HWA2`, `DVE45T3200W/A3`). All three
+pages loaded, displayed their exact SKU, and had zero visible EnergyGuide
+link/text candidates. This proves only that these rendered PDP pages did not
+show a separately labeled EnergyGuide link in this sample. It does not rule out
+a document link embedded in a generic manual. A follow-up workflow scans all
+eligible no-canonical-entry PDPs in three parallel GitHub-hosted shards and
+reuses the already captured collection artifact. No compliance grade is made.

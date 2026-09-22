@@ -11,8 +11,8 @@ from urllib.parse import urlsplit
 from browser_runtime import desktop_context
 
 
-CONTRACT = "G3_DRYER_PDP_ENERGYGUIDE_LINK_PROBE_V1"
-TARGET_SKUS = ("DV90F53AESA3", "DV45DG6000HWA2", "DVE45T3200W/A3")
+CONTRACT = "G3_DRYER_PDP_ENERGYGUIDE_LINK_PROBE_V2"
+SAMPLE_SKUS = ("DV90F53AESA3", "DV45DG6000HWA2", "DVE45T3200W/A3")
 LINK_TERM = re.compile(r"energy\s*guide|energy[-_]?guide|energuide|energy\s*label|download.{0,30}guide", re.I)
 
 
@@ -20,7 +20,7 @@ def read_json(path):
     return json.loads(Path(path).read_bytes())
 
 
-def load_targets(collection_root, collection_run_id, target_skus=TARGET_SKUS):
+def load_targets(collection_root, collection_run_id, target_skus=None):
     root = Path(collection_root)
     summary = read_json(root / "collection-summary.json")
     if (summary.get("status") != "PASS"
@@ -31,6 +31,12 @@ def load_targets(collection_root, collection_run_id, target_skus=TARGET_SKUS):
     products = {row.get("exact_sku"): row for row in read_json(root / "products.json")}
     if len(results) != summary.get("coverage", {}).get("population_count"):
         raise ValueError("PDP link probe collection coverage is incomplete")
+    if target_skus is None:
+        target_skus = sorted(
+            sku for sku, result in results.items()
+            if result.get("status") == "VERIFIED_EXACT_IDENTITY"
+            and not result.get("pdp_facts_raw", {}).get("energyguide_documents")
+        )
     targets = []
     for sku in target_skus:
         result, product = results.get(sku), products.get(sku)
@@ -68,9 +74,12 @@ def inspect_page(page, target):
             "result_scope": "Visible rendered PDP links only; no external support search, document retrieval, or assessment"}
 
 
-def probe(collection_root, collection_run_id, output):
+def probe(collection_root, collection_run_id, output, shard_index=0, shard_count=1):
     from playwright.sync_api import sync_playwright
-    targets = load_targets(collection_root, collection_run_id)
+    if shard_count < 1 or shard_index < 0 or shard_index >= shard_count:
+        raise ValueError("Invalid PDP probe shard index/count")
+    all_targets = load_targets(collection_root, collection_run_id)
+    targets = [target for index, target in enumerate(all_targets) if index % shard_count == shard_index]
     rows = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
@@ -88,8 +97,10 @@ def probe(collection_root, collection_run_id, output):
     report = {"contract": CONTRACT, "status": "PASS", "collection_run_id": str(collection_run_id),
               "probe_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
               "captured_at": datetime.now(timezone.utc).isoformat(),
+              "shard_index": shard_index, "shard_count": shard_count,
+              "population_target_count": len(all_targets),
               "browser_identity": identity, "target_count": len(rows), "rows": rows,
-              "scope": "Three exact-SKU Dryer PDPs without canonical Energy Guide Support entries; visible PDP link scan only; no grading"}
+              "scope": "Exact-SKU Dryer PDPs without canonical Energy Guide Support entries; visible PDP link scan only; no grading"}
     destination = Path(output)
     destination.mkdir(parents=True, exist_ok=True)
     (destination / "pdp-link-probe.json").write_text(
@@ -101,7 +112,7 @@ def probe(collection_root, collection_run_id, output):
             stream.write("| Exact SKU | PDP | Rendered EnergyGuide text | Matching link candidates |\n|---|---|---|---:|\n")
             for row in rows:
                 stream.write(f"| `{row['exact_sku']}` | [PDP]({row['pdp_url']}) | {row['energyguide_term_in_rendered_page_text']} | {len(row['energyguide_link_candidates'])} |\n")
-            stream.write("\nThis checks only visible PDP links/text on three samples; it does not search Samsung Support or retrieve documents.\n")
+            stream.write(f"\nShard {shard_index + 1}/{shard_count}; {len(all_targets)} eligible PDPs across the full population. This checks visible PDP links/text only; it does not search Samsung Support or retrieve documents.\n")
     print(json.dumps({"status": report["status"], "target_count": len(rows),
                       "energyguide_link_candidate_count": sum(len(row["energyguide_link_candidates"]) for row in rows)}, sort_keys=True), flush=True)
     return report
@@ -112,8 +123,11 @@ def main():
     parser.add_argument("--collection-root", required=True)
     parser.add_argument("--collection-run-id", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--shard-index", type=int, default=0)
+    parser.add_argument("--shard-count", type=int, default=1)
     args = parser.parse_args()
-    probe(args.collection_root, args.collection_run_id, args.out)
+    probe(args.collection_root, args.collection_run_id, args.out,
+          shard_index=args.shard_index, shard_count=args.shard_count)
 
 
 if __name__ == "__main__":

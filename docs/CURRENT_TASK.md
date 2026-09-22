@@ -765,9 +765,13 @@ out EnergyGuide-like URL text among these captured Support entries. No
 assessment was made. Recommended model: GPT-5.6 Luna low.
 
 Examples in the verified 54-SKU population with no canonical EnergyGuide Support
-entry are `DV90F53AESA3`, `DV45DG6000HWA2`, and `DVE45T3200W/A3`. Their exact
-Samsung PDP URLs are provided in the follow-up response. A hosted probe now opens
-only these three PDPs and scans rendered links/text for an EnergyGuide link
-outside Bridge Support. It reuses the successful collection artifact rather than
-repeating the 54-page collection. Local suite: 198 tests passed, 1 skipped.
-Recommended model: GPT-5.6 Luna low.
+entry are `DV90F53AESA3`, `DV45DG6000HWA2`, and `DVE45T3200W/A3`. Hosted probe
+`35726630384` opened these three PDPs, confirmed the exact SKU on each page, and
+found 0 EnergyGuide link/text candidates in rendered PDP content. It reused the
+successful collection artifact and completed in 1m07s. This is only a three-PDP
+sample. The next probe now partitions every eligible SKU in the 54-item
+population (43 without canonical Energy Guide entries) across three parallel
+GitHub-hosted jobs; it again reuses the collection artifact and only scans
+rendered PDP links/text. No compliance assessment is made. Local tests cover
+safe target selection and non-overlapping sharding. Recommended model:
+GPT-5.6 Luna low.
