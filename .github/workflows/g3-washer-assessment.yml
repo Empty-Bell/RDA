@@ -1,0 +1,81 @@
+name: G3 clothes washer assessment
+
+on:
+  workflow_dispatch:
+    inputs:
+      comparison_run_id:
+        description: Successful Washer source comparison run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 clothes washer PDP label EPA comparison candidates]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_washer_assessment.py'
+      - '.github/workflows/g3-washer-assessment.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: g3-washer-assessment-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  assess:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COMPARISON_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.comparison_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download exact comparison and PDP source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$COMPARISON_RUN_ID" ]; then
+            COMPARISON_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-washer-source-comparison.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          VALID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COMPARISON_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-washer-source-comparison.yml") | .id')"
+          test "$VALID" = "$COMPARISON_RUN_ID"
+          ARTIFACT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COMPARISON_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-washer-source-comparison-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT"
+          mkdir -p runtime/g3-washer/comparison
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT}/zip" > runtime/g3-washer/comparison.zip
+          unzip -q runtime/g3-washer/comparison.zip -d runtime/g3-washer/comparison
+          COMPARISON_FILE="$(find runtime/g3-washer/comparison -name source-comparison-candidates.json -type f -print -quit)"
+          test -n "$COMPARISON_FILE"
+          COLLECTION_RUN_ID="$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["collection_run_id"])' "$COMPARISON_FILE")"
+          COLLECTION_VALID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-washer-collection.yml") | .id')"
+          test "$COLLECTION_VALID" = "$COLLECTION_RUN_ID"
+          COLLECTION_ARTIFACT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-washer-collection-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$COLLECTION_ARTIFACT"
+          mkdir -p runtime/g3-washer/collection
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${COLLECTION_ARTIFACT}/zip" > runtime/g3-washer/collection.zip
+          unzip -q runtime/g3-washer/collection.zip -d runtime/g3-washer/collection
+          COLLECTION_FILE="$(find runtime/g3-washer/collection -name collection-summary.json -type f -print -quit)"
+          test -n "$COLLECTION_FILE"
+          echo "COMPARISON_FILE=${COMPARISON_FILE}" >> "$GITHUB_ENV"
+          echo "COLLECTION_DIR=$(dirname "$COLLECTION_FILE")" >> "$GITHUB_ENV"
+      - name: Apply approved publication and annual-energy rules
+        run: python scripts/g3_washer_assessment.py --comparison "$COMPARISON_FILE" --collection-root "$COLLECTION_DIR" --out runtime/g3-washer/assessment
+      - name: Preserve Washer assessment
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-washer-assessment-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-washer/assessment/
+          retention-days: 14
+          if-no-files-found: warn
