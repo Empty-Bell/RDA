@@ -109,7 +109,7 @@ def main():
     observations, failures = [], []
     for index, (digest, item) in enumerate(sorted(pdfs.items()), start=1):
         try:
-            observation = observe_pdf(item, destination, engine, ocr_if_no_annual_energy=True)
+            observation = observe_pdf(item, destination, engine)
             path = destination / "pdf" / digest / "observation.json"
             path.write_text(json.dumps(observation, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             observations.append({"pdf_sha256": digest, "status": "OBSERVED",
