@@ -754,6 +754,12 @@ all 54 SKUs have a `User Manual` entry and `Warranty` entry; 11 have a canonical
 The prior projection discarded all but the canonical Energy Guide, creating the
 false empty-array observation. A quick offline inventory now inspects the
 captured Support URL paths for EnergyGuide-like terms without revisiting PDPs or
-downloading documents. Its result is needed to determine whether alternate-name
-entries expose EnergyGuide URLs. No assessment was made. Recommended model:
-GPT-5.6 Luna low.
+downloading documents. Inventory run `35724875187` passed in 9 seconds: all 11
+URLs containing an EnergyGuide-like term belong to the 11 `Energy Guide` PDF
+entries. The other Support URLs are 54 User Manual PDFs, 2 Quick Guide PDFs, 9
+User manual for all HTML links, and 54 Warranty pages; no alternate-name URL
+contained an EnergyGuide-like term. Thus 43 SKUs lack a canonical Energy Guide
+entry in this PDP Support response, but they do not have empty Support arrays.
+The URL inspection did not download or inspect document bodies, so it only rules
+out EnergyGuide-like URL text among these captured Support entries. No
+assessment was made. Recommended model: GPT-5.6 Luna low.

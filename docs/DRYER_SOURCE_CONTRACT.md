@@ -214,9 +214,13 @@ filtered before persistence. A fresh complete collection passed in hosted run
 `35723240890` (54/54 exact PDPs). Its Support inventory has `User Manual` and
 `Warranty` on 54 SKUs each, canonical `Energy Guide` on 11, `Quick Guide` on 2,
 and `User manual for all` on 9. Counts overlap by SKU. This confirms the Support
-arrays were not empty but does not by itself show that alternate-name entries
-are EnergyGuide documents. Workflow
-`g3-dryer-support-url-inventory.yml` now checks the already captured URL hosts
-and paths for EnergyGuide-like terms without reopening product pages or
-fetching documents. Until that result is reviewed, only the 11 canonical-name
-links are known to be EnergyGuide URLs.
+arrays were not empty. URL inventory run `35724875187` checked every preserved
+Support URL's full text without reopening product pages or fetching documents:
+the 11 URLs containing EnergyGuide-like terms were exactly the 11 canonical
+`Energy Guide` PDF entries. Other entries were User Manual PDFs (54), Quick
+Guide PDFs (2), `User manual for all` HTML links (9), and Warranty pages (54);
+none of their URLs contained an EnergyGuide-like term. Therefore 43 PDPs have no
+canonical Energy Guide entry or EnergyGuide-like URL in captured Support, but
+the Support arrays themselves are populated. This URL-text check does not
+inspect generic downloadcenter PDF bodies, so it cannot make a claim about
+content embedded inside those manuals.
