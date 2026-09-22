@@ -172,3 +172,12 @@ ordinary Dryer EPA candidates show separate dryer rows; they do not link to the
 all-in-one combo dataset. The summary now separates SKU-compatible label model
 patterns from other model-like PDF tokens and displays EPA fuel type, so e.g.
 document-number-like text is not mistaken for a matching model pattern.
+
+One EPA row needs focused verification before energy comparison: the exact
+pattern candidate for `WH46DBH100EWA3` is `WH46DBH1**E*`, whose captured EPA
+row reports type `Electric`, annual energy `687`, and CEF `3.48`; the matching
+`WH46DBH100GWA3` Gas pattern also reports `687` and `3.48`. This is recorded as
+a source-row question only; neither value has been altered or classified.
+Additionally, 43 of 54 Dryer SKUs have no Support-declared EnergyGuide PDF in
+the current PDP collection. Those SKUs remain without label evidence, not
+assessed as missing-label violations.

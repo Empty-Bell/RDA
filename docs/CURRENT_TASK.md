@@ -719,3 +719,15 @@ are called pattern candidates, unmatched PDF tokens appear separately, and EPA
 fuel type is shown. Next, rerun the fast comparison and inspect those rows
 before defining numeric assessment rules. Recommended model: GPT-5.6 Luna low;
 use Terra medium only if the sources create a new policy question.
+
+The corrected hosted summary passed in run `35718321035` (20 seconds). It now
+shows SKU-fitting label patterns separately from unmatched model-like PDF text,
+and displays EPA fuel type. A remaining source anomaly is visible: `WH46DBH100EWA3`
+fits EPA pattern `WH46DBH1**E*` (Electric) but the source row reports 687 kWh/yr
+and CEF 3.48, identical to the matching Gas pattern for `WH46DBH100GWA3`. This
+needs raw EPA row verification before energy comparisons are defined. Also,
+43/54 current Dryer SKUs have no Support-declared EnergyGuide PDF; this is only a
+coverage gap, not a compliance finding. Next: verify the WH46 EPA source rows
+and inspect unresolved label coverage and WD/WH model patterns, then set the
+component-safe comparison gates. Recommended model: GPT-5.6 Luna low for the
+row review; Terra medium only if source interpretation changes a rule.
