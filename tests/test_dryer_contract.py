@@ -3,6 +3,8 @@ import json
 import unittest
 from pathlib import Path
 from scripts.source_contract import pf_population, pdp_facts, epa_contract
+from scripts.g3_dryer_collect import load_population
+import tempfile
 
 ROOT = Path(__file__).parent / 'fixtures' / 'dryer'
 
@@ -58,3 +60,9 @@ class DryerContract(unittest.TestCase):
         self.assertEqual(facts['capacity_raw'][0]['value'],'7.6 cu.ft')
         self.assertEqual(facts['energy_consumption_raw'],[])
         self.assertIsNone(facts['energy_star_structured_claim'])
+
+    def test_collection_loader_rejects_non_dryer_source_run(self):
+        with tempfile.TemporaryDirectory() as temp:
+            Path(temp, 'recon.json').write_text('{"status":"PASS","run_id":"123","scope":"washer source contracts only"}', encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'not scoped to clothes dryers'):
+                load_population(temp, '123')
