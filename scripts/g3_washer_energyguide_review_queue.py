@@ -119,6 +119,8 @@ def review(observation_root, observation_run_id, output):
     if len(entries) != summary.get("observed_pdf_count") or len(entries) != len(by_hash):
         raise ValueError("Observed PDF count does not match hash-bound source population")
     report = {"contract": CONTRACT, "observation_run_id": str(observation_run_id),
+              "collection_run_id": source.get("collection_run_id"),
+              "retrieval_run_id": summary.get("retrieval_run_id"),
               "review_queue_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
               "captured_at": datetime.now(timezone.utc).isoformat(),
               "scope": "Raw candidate index by PDF hash and exact-SKU membership only; no candidate selection, model matching, numeric comparison, or assessment",

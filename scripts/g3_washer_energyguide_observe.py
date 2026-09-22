@@ -96,6 +96,7 @@ def main():
     args = parser.parse_args()
     pdfs, source = verified_pdf_population(args.retrieval_root, args.retrieval_run_id)
     retrieval_report = json.loads((Path(args.retrieval_root) / "energyguide-summary.json").read_bytes())
+    source["collection_run_id"] = retrieval_report.get("collection_run_id")
     source["sku_population_count"] = retrieval_report.get("sku_population_count")
     source["sku_document_coverage"] = retrieval_report.get("sku_document_coverage", [])
     if len(source["sku_document_coverage"]) != source["sku_population_count"]:
