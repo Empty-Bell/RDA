@@ -204,3 +204,19 @@ show all observed Support document names. A fresh hosted collection is required
 to determine whether alternate labels or PDF URLs explain the 43. No conclusion
 about label absence or compliance is valid before that recapture. The standalone
 DV53BB8900HDA2 PDF still has a distinct OCR candidate-extraction gap.
+
+### Full PDP Bridge Support inventory correction (2026-09-22)
+
+The source projection previously persisted only Support entries whose name
+matched exactly `Energy Guide`. Therefore the claim that the other 43/54
+products had empty Support arrays was false: the original data had already been
+filtered before persistence. A fresh complete collection passed in hosted run
+`35723240890` (54/54 exact PDPs). Its Support inventory has `User Manual` and
+`Warranty` on 54 SKUs each, canonical `Energy Guide` on 11, `Quick Guide` on 2,
+and `User manual for all` on 9. Counts overlap by SKU. This confirms the Support
+arrays were not empty but does not by itself show that alternate-name entries
+are EnergyGuide documents. Workflow
+`g3-dryer-support-url-inventory.yml` now checks the already captured URL hosts
+and paths for EnergyGuide-like terms without reopening product pages or
+fetching documents. Until that result is reviewed, only the 11 canonical-name
+links are known to be EnergyGuide URLs.

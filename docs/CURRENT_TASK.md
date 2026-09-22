@@ -740,9 +740,20 @@ cannot establish whether Samsung returned differently named documents or URLs.
 I changed Dryer capture to preserve every Support `name`/`type`/`url` triple and
 added a full-population candidate summary of those names. The collection
 workflow now reruns from the latest successful source reconnaissance when this
-collector contract changes. Targeted and full local tests pass (195 tests, 1
+collector contract changes. Targeted and full local tests pass (196 tests, 1
 skipped). Next: inspect the fresh hosted inventory, count alternate document
 names/PDFs and EnergyGuide-like URLs, then decide whether retrieval should
 include them. Only after this inventory can label-source coverage be stated.
 Recommended model: GPT-5.6 Luna low; Terra medium only if source interpretation
 changes a policy rule.
+
+Fresh complete Support capture passed in hosted run `35723240890` (54/54 exact
+PDPs). The original inference that 43 Support arrays were empty is disproven:
+all 54 SKUs have a `User Manual` entry and `Warranty` entry; 11 have a canonical
+`Energy Guide`, 2 have a `Quick Guide`, and 9 have a `User manual for all` entry.
+The prior projection discarded all but the canonical Energy Guide, creating the
+false empty-array observation. A quick offline inventory now inspects the
+captured Support URL paths for EnergyGuide-like terms without revisiting PDPs or
+downloading documents. Its result is needed to determine whether alternate-name
+entries expose EnergyGuide URLs. No assessment was made. Recommended model:
+GPT-5.6 Luna low.
