@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pymupdf
 from energyguide_fields import label_candidates, annual_layout_candidates
-from g3_dishTV_energyguide_observe import embedded_lines, heading_observations, verified_pdf_population
+from g3_dishwasher_energyguide_observe import embedded_lines, heading_observations, verified_pdf_population
 from runner_probe import safe_url
 
 
