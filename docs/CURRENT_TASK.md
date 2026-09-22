@@ -520,3 +520,28 @@ Use git safe.directory override. Git write/network may need sandbox escalation.
   so no new population count is asserted here. Next: full exact-SKU washer PDP
   collection from this successful artifact, preserving combo/standalone source
   identity and leaving certification/measurement assessments disabled.
+
+- Washer continuation checkpoint, all on GitHub-hosted `ubuntu-24.04`:
+  exact-SKU PDP collection [35681575057](https://github.com/Empty-Bell/RDA/actions/runs/35681575057)
+  passed. The collector exits successfully only when every exact SKU in the source
+  population has a verified matching PDP URL, current JSON-LD identity and same-SKU
+  Specs/Support response. No model/energy assessment ran.
+  Parallel source capture [35682498558](https://github.com/Empty-Bell/RDA/actions/runs/35682498558)
+  passed both jobs: all declared Samsung Support EnergyGuide URLs were retrieved as
+  valid PDFs, and EPA `bghd-e2wd` metadata/schema plus the Samsung current-row scan
+  passed count/page/identity stability checks. EnergyGuide result now records an
+  explicit per-exact-SKU count, including SKUs with no Support-declared PDF.
+  Text/layout/OCR observation [35682719846](https://github.com/Empty-Bell/RDA/actions/runs/35682719846)
+  passed for every unique PDF hash; embedded text is preferred and OCR is only the
+  unreadable-page fallback. Neither source candidates nor EPA rows have been matched,
+  selected or assessed. The raw candidate review queue is wired to run after the
+  refreshed observation artifact and will show model text, annual-kWh candidates,
+  capacity text and exact-SKU PDF membership before any washer rules are activated.
+  Existing no-document and combo/standalone cases remain visible; no appliance
+  compliance conclusion is implied by collector success.
+  Next: inspect the Washer EnergyGuide raw-candidate review table and establish
+  source-backed EPA routing/model/annual-energy comparability, keeping all-in-one
+  washer-dryer products distinct until evidence resolves applicability. Do not
+  start the unified dashboard until all product-family source/assessment work is
+  complete. Recommended model for this fixed-schema evidence review: Luna low;
+  use Sol medium only if the source fields require a new comparison policy.

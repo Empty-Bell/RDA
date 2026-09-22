@@ -1,0 +1,65 @@
+name: G3 clothes washer EnergyGuide raw candidate review
+
+on:
+  workflow_dispatch:
+    inputs:
+      observation_run_id:
+        description: Successful Washer EnergyGuide observation run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 clothes washer EnergyGuide observation]
+    types: [completed]
+    branches: [main]
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: g3-washer-energyguide-review-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  review-queue:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      GH_TOKEN: ${{ github.token }}
+      OBSERVATION_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.observation_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download the successful Washer observation artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$OBSERVATION_RUN_ID" ]; then
+            OBSERVATION_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-washer-energyguide-observation.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${OBSERVATION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-washer-energyguide-observation.yml") | .id')"
+          test "$VALID_RUN" = "$OBSERVATION_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${OBSERVATION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-washer-energyguide-observation-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g3-washer/observation
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-washer/observation.zip
+          unzip -q runtime/g3-washer/observation.zip -d runtime/g3-washer/observation
+          SUMMARY_FILE="$(find runtime/g3-washer/observation -name observation-summary.json -type f -print -quit)"
+          test -n "$SUMMARY_FILE"
+          echo "OBSERVATION_RUN_ID=${OBSERVATION_RUN_ID}" >> "$GITHUB_ENV"
+          echo "OBSERVATION_DIR=$(dirname "$SUMMARY_FILE")" >> "$GITHUB_ENV"
+      - name: Build raw model, energy, and capacity candidate index
+        run: python scripts/g3_washer_energyguide_review_queue.py --observation-root "$OBSERVATION_DIR" --observation-run-id "$OBSERVATION_RUN_ID" --out runtime/g3-washer/review
+      - name: Preserve review-ready exact-source table
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-washer-energyguide-review-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-washer/review/
+          retention-days: 14
+          if-no-files-found: warn

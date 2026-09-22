@@ -19,6 +19,11 @@ def main():
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
     pdfs, source = verified_pdf_population(args.retrieval_root, args.retrieval_run_id)
+    retrieval_report = json.loads((Path(args.retrieval_root) / "energyguide-summary.json").read_bytes())
+    source["sku_population_count"] = retrieval_report.get("sku_population_count")
+    source["sku_document_coverage"] = retrieval_report.get("sku_document_coverage", [])
+    if len(source["sku_document_coverage"]) != source["sku_population_count"]:
+        raise ValueError("Washer label document coverage does not include the exact PDP population")
     from rapidocr import RapidOCR
     engine = RapidOCR(params={"EngineConfig.onnxruntime.intra_op_num_threads": 1,
                               "EngineConfig.onnxruntime.inter_op_num_threads": 1})

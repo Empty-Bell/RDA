@@ -29,6 +29,7 @@ def load_documents(collection_root, collection_run_id):
     if not isinstance(expected, int) or len(results) != expected:
         raise ValueError("Washer collection artifact does not contain full PDP evidence")
     declarations, seen = [], set()
+    sku_coverage = []
     identity = None
     for path in results:
         result = read_json(path)
@@ -46,6 +47,8 @@ def load_documents(collection_root, collection_run_id):
         docs = result.get("pdp_facts_raw", {}).get("energyguide_documents")
         if not isinstance(docs, list):
             raise ValueError("Washer Support document list is invalid")
+        sku_coverage.append({"exact_sku": sku, "support_document_count": len(docs),
+                             "state": "DOCUMENTS_DECLARED" if docs else "NO_SUPPORT_DOCUMENT_DECLARED"})
         for index, doc in enumerate(docs):
             url = doc.get("url") if isinstance(doc, dict) else None
             parts = urlsplit(url) if isinstance(url, str) else None
@@ -56,7 +59,7 @@ def load_documents(collection_root, collection_run_id):
                                  "name_raw": doc.get("name"), "type_raw": doc.get("type"), "url": url})
     if identity is None:
         raise ValueError("Washer collection contains no PDP results")
-    return declarations, identity
+    return declarations, identity, sku_coverage
 
 
 def retrieve(url, user_agent):
@@ -104,13 +107,14 @@ def main():
     parser.add_argument("--collection-run-id", required=True)
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
-    declarations, user_agent = load_documents(args.collection_root, args.collection_run_id)
+    declarations, user_agent, sku_coverage = load_documents(args.collection_root, args.collection_run_id)
     collected = collect(declarations, args.out, user_agent)
     report = {"contract": CONTRACT,
               "scope": "Exact-SKU PDP Support-declared Washer PDF retrieval and byte hashing only; no OCR, selection, matching, or assessment",
               "collection_run_id": str(args.collection_run_id), "retrieval_run_id": os.getenv("GITHUB_RUN_ID"),
               "git_sha": os.getenv("GITHUB_SHA"), "captured_at": datetime.now(timezone.utc).isoformat(),
-              "status": "PASS" if collected["failed_url_count"] == 0 else "FAILED", **collected}
+              "status": "PASS" if collected["failed_url_count"] == 0 else "FAILED",
+              "sku_document_coverage": sku_coverage, "sku_population_count": len(sku_coverage), **collected}
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     (out / "energyguide-summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -118,7 +122,9 @@ def main():
     if summary_path:
         with Path(summary_path).open("a", encoding="utf-8") as stream:
             stream.write("## Washer EnergyGuide PDF retrieval\n\n")
-            stream.write(f"Status: **{report['status']}**; declared docs: {len(declarations)}; unique URLs: {report['url_count']}; PDFs: {report['pdf_hash_count']}\n\n")
+            missing_docs = [row["exact_sku"] for row in sku_coverage if row["state"] == "NO_SUPPORT_DOCUMENT_DECLARED"]
+            stream.write(f"Status: **{report['status']}**; target SKUs: {len(sku_coverage)}; declared docs: {len(declarations)}; unique URLs: {report['url_count']}; PDFs: {report['pdf_hash_count']}\n\n")
+            stream.write("SKUs with no PDP Support-declared document: " + (", ".join(f"`{sku}`" for sku in missing_docs) if missing_docs else "none") + "\n\n")
             for row in report["url_observations"]:
                 if row["status"] == "FAILED":
                     stream.write(f"- `{safe_url(row['url'])}`: {row.get('error', 'retrieval failed')}\n")

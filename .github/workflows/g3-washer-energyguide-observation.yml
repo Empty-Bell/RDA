@@ -11,17 +11,6 @@ on:
     workflows: [G3 clothes washer EnergyGuide and EPA source capture]
     types: [completed]
     branches: [main]
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/g3_washer_energyguide_observe.py'
-      - 'scripts/g3_dishwasher_energyguide_observe.py'
-      - 'scripts/energyguide_fields.py'
-      - 'requirements-tools.lock'
-      - 'requirements-probe.lock'
-      - 'runtime-manifest.json'
-      - '.github/workflows/g3-washer-energyguide-observation.yml'
-
 permissions:
   actions: read
   contents: read

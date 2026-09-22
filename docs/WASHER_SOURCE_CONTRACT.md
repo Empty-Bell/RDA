@@ -1,5 +1,18 @@
 # Clothes Washer source reconnaissance
 
+## Current continuation status (2026-09-22)
+
+The source refresh run 35680095563 was followed by a complete exact-SKU PDP
+identity collection in run 35681575057, a parallel Support-PDF/EPA capture in
+run 35682498558, and hash-bound embedded-text/OCR observation in run 35682719846.
+All three workflows passed on GitHub-hosted Ubuntu. Current capture details and
+per-SKU document coverage are preserved in their run artifacts and summaries.
+The scripts do not match label model text to PDP/EPA models, select a yearly-energy
+value, route combo products, or assess compliance. Next is the raw candidate review
+table, then a source-backed determination of washer versus all-in-one combo EPA/label
+applicability. Any previous "next product family" language below is historical and
+does not supersede this active Washer checkpoint.
+
 Status: bounded source reconnaissance PASS on hosted Ubuntu (run 35104751514).
 Phase 0 remains RUNNING. Certification matching/compliance NOT_EVALUATED.
 
