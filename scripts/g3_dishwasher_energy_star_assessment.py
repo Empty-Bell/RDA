@@ -22,7 +22,7 @@ def build(collection_root, match_path, out):
     for result in sorted(results,key=lambda x:x["exact_sku"]):
         sku=result["exact_sku"]; claim=result.get("energy_star_claim_sources_raw") or {}; m=matches.get(sku,{})
         points={"plp_logo":point(claim.get("plp_energy_star_flag_raw")),"pdp_logo":point(pdp_flag(claim)),"spec_certification":spec(claim.get("pdp_spec_energy_star_claim_raw"))}
-        reg="PRESENT" if m.get("match_status")=="MATCHED_CURRENT_EPA_ROW" else "ABSENT" if m.get("match_status")=="NO_CURRENT_EPA_ROW" else "UNKNOWN"
+        reg="PRESENT" if m.get("match_status") in {"MATCHED_CURRENT_EPA_ROW", "MATCHED_CURRENT_EPA_PATTERN_CANDIDATES"} else "ABSENT" if m.get("match_status")=="NO_CURRENT_EPA_ROW" else "UNKNOWN"
         states=[x["state"] for x in points.values()]
         if reg=="PRESENT" and all(x=="PRESENT" for x in states): outcome,severity,issue="PASS",None,None
         elif reg=="PRESENT" and "ABSENT" in states: outcome,severity,issue="LOW","LOW",LOW_ISSUE
