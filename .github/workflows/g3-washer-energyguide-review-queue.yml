@@ -11,11 +11,6 @@ on:
     workflows: [G3 clothes washer EnergyGuide observation]
     types: [completed]
     branches: [main]
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/g3_washer_energyguide_review_queue.py'
-      - '.github/workflows/g3-washer-energyguide-review-queue.yml'
 permissions:
   actions: read
   contents: read

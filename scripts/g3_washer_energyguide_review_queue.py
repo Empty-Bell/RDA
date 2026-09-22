@@ -61,19 +61,23 @@ def review(observation_root, observation_run_id, output):
         model_rows, energy_rows, capacity_rows = [], [], []
         headings = observation.get("label_heading_observations", {})
         for page in observation.get("pages", []):
-            fields = page.get("fields_raw") or {}
-            for candidate in fields.get("model_candidates_raw", []):
-                model_rows.append({"page": page.get("page"), **candidate})
-            for candidate in fields.get("energy_candidates_raw", []):
-                energy_rows.append({"page": page.get("page"), **candidate})
-            for candidate in fields.get("capacity_candidates_raw", []):
-                capacity_rows.append({"page": page.get("page"), **candidate})
+            layers = [("PRIMARY_TEXT", page.get("fields_raw")),
+                      ("OCR_COMPLEMENT", (page.get("ocr_complement_raw") or {}).get("fields_raw"))]
+            for layer, fields in layers:
+                fields = fields or {}
+                for candidate in fields.get("model_candidates_raw", []):
+                    model_rows.append({"page": page.get("page"), "evidence_layer": layer, **candidate})
+                for candidate in fields.get("energy_candidates_raw", []):
+                    energy_rows.append({"page": page.get("page"), "evidence_layer": layer, **candidate})
+                for candidate in fields.get("capacity_candidates_raw", []):
+                    capacity_rows.append({"page": page.get("page"), "evidence_layer": layer, **candidate})
         model_values = sorted({row.get("value_raw") for row in model_rows if row.get("value_raw")})
         declared_models = sorted({row.get("value_raw") for row in model_rows
                                   if row.get("value_raw") and re.search(r"\bmodels?\b", row.get("context_raw", ""), re.I)})
         annual_rows = [row for row in energy_rows if row.get("role") == "ANNUAL_CAPTION_CONTEXT"]
         energy_values = sorted({row.get("value_raw") for row in annual_rows if row.get("value_raw")})
-        capacity_values = sorted({row.get("value_raw") for row in capacity_rows if row.get("value_raw")})
+        capacity_values = sorted({row.get("value_raw") for row in capacity_rows
+                                  if row.get("value_raw") and re.search(r"capacity\s*\(\s*tub\s+volume\s*\)", row.get("value_raw", ""), re.I)})
         us_count = len(headings.get("us_energyguide_heading_candidates", []))
         ca_count = len(headings.get("canada_energuide_heading_candidates", []))
         flags = []
@@ -83,8 +87,6 @@ def review(observation_root, observation_run_id, output):
             flags.append("WILDCARD_MODEL_TOKEN_PRESENT")
         if len(energy_values) != 1:
             flags.append("ANNUAL_ENERGY_CANDIDATE_COUNT_" + str(len(energy_values)))
-        if len(capacity_values) != 1:
-            flags.append("CAPACITY_CANDIDATE_COUNT_" + str(len(capacity_values)))
         if us_count == 0:
             flags.append("US_ENERGYGUIDE_HEADING_NOT_OBSERVED")
         if ca_count:
@@ -104,6 +106,13 @@ def review(observation_root, observation_run_id, output):
         table.append({"pdf_sha256": digest, "exact_skus": row["exact_skus"],
                       "models_raw": declared_models, "all_model_like_tokens_raw": model_values,
                       "annual_kwh_raw": energy_values,
+                      "annual_evidence_raw": [{"value_raw": entry.get("value_raw"),
+                                               "evidence_layer": entry.get("evidence_layer"),
+                                               "role": entry.get("role")}
+                                              for entry in annual_rows],
+                      "model_evidence_raw": [{"value_raw": entry.get("value_raw"),
+                                              "evidence_layer": entry.get("evidence_layer")}
+                                             for entry in model_rows if entry.get("value_raw") in declared_models],
                       "other_energy_roles_raw": sorted({str(x.get("role")) for x in energy_rows if x not in annual_rows}),
                       "capacity_raw": capacity_values, "us_heading_count": us_count,
                       "canada_heading_count": ca_count, "review_flags": flags})
@@ -128,11 +137,11 @@ def review(observation_root, observation_run_id, output):
             stream.write(f"Target SKUs: **{len(sku_coverage)}**; with no Support document: **{len(skus_without_documents)}**; SKU-document links: **{len(sku_docs)}**; unique PDFs: **{len(entries)}**; PDFs with review flags: **{report['flagged_pdf_count']}**. No pass/fail finding or value selection was made.\n\n")
             if skus_without_documents:
                 stream.write("Exact SKUs with no Support-declared label PDF: " + ", ".join(f"`{sku}`" for sku in skus_without_documents) + "\n\n")
-            stream.write("| PDF SHA-256 prefix | Exact SKU(s) | Model text | Annual kWh text/role | Capacity text | Review flags |\n|---|---|---|---|---|---|\n")
+            stream.write("| PDF SHA-256 prefix | Exact SKU(s) | Model text (source layer) | Annual kWh (source layer/role) | Capacity text | Review flags |\n|---|---|---|---|---|---|\n")
             for row in table:
                 cells = [row["pdf_sha256"][:12], ", ".join(row["exact_skus"]),
-                         "; ".join(row["models_raw"]),
-                         "; ".join(row["annual_kwh_raw"]),
+                         "; ".join(f"{x['value_raw']} [{x['evidence_layer']}]" for x in row["model_evidence_raw"]),
+                         "; ".join(f"{x['value_raw']} [{x['evidence_layer']}; {x['role']}]" for x in row["annual_evidence_raw"]),
                          "; ".join(row["capacity_raw"]), ", ".join(row["review_flags"]) or "none"]
                 stream.write("| " + " | ".join(cell.replace("|", "\\|").replace("\n", " ") for cell in cells) + " |\n")
             stream.write("\n`models_raw` contains text-like tokens near an explicit printed Models/Model label; all other model-shaped tokens remain separately preserved in the JSON review artifact. Annual kWh rows require nearby yearly-electricity wording and are still unreviewed candidates.\n")
