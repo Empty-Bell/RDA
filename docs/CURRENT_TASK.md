@@ -782,7 +782,15 @@ were zero EnergyGuide-named visible link candidates. Eight pages did contain a
 matching phrase in rendered text; inspecting `DVE45T3200W/A3` showed that one
 such phrase is a Specs row named `Energy Guide Label`, not a document link.
 
-**Scope correction (2026-09-22):** Clothes dryers are not listed among current
-FTC EnergyGuide-labeled product categories. The FTC proposed adding clothes
-dryers in its 2024 NPRM, and the 2026 Unified Agenda still records the rule as
-in the Proposed Rule Stage. Sources: [FTC current rule summary](https://www.ftc.gov/legal-library/browse/rules/energy-water-use-labeling-consumer-products-under-energy-policy-conservation-act-energy-labeling), [FTC 2024 proposal](https://www.ftc.gov/news-events/news/press-releases/2024/01/federal-trade-commission-seeks-public-comments-improvements-energyguide-labeling-rule), [2026 Unified Agenda](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=3084-AB15&pubId=202510). Therefore the dryer PDP/Support link inventory is source research only; absence of an EnergyGuide link must not be treated as a regulatory omission or finding. The `Energy Guide Label` Specs text is not proof that the FTC-mandated yellow label is required or published. Before further work, decide whether this optional Samsung/EPA data comparison remains useful for the product audit. Recommended model: GPT-5.6 Luna low; use Terra medium only if a policy interpretation needs review.
+**Scope correction (2026-09-22):** The project had already defined Clothes Dryer
+as **EPA ENERGY STAR-focused only**, not part of the combined FTC EnergyGuide +
+EPA ENERGY STAR group. See [MASTER_PLAN §1.1](MASTER_PLAN.md#11-product-groups),
+[the family applicability matrix](APPLICABILITY_EVIDENCE.md#family-evidence-matrix),
+and [SOURCE_COVERAGE](SOURCE_COVERAGE.md). The dryer source contract also marks
+EnergyGuide PDF retrieval `OUT_OF_RECON_SCOPE`; combo washer label evidence stays
+in the washer domain. This is consistent with the current FTC regulatory
+position: the FTC proposed adding clothes dryers in its 2024 NPRM, and the 2026
+Unified Agenda still records that rule as in the Proposed Rule Stage. Sources:
+[FTC current rule summary](https://www.ftc.gov/legal-library/browse/rules/energy-water-use-labeling-consumer-products-under-energy-policy-conservation-act-energy-labeling),
+[FTC 2024 proposal](https://www.ftc.gov/news-events/news/press-releases/2024/01/federal-trade-commission-seeks-public-comments-improvements-energyguide-labeling-rule),
+[2026 Unified Agenda](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=3084-AB15&pubId=202510). The 43-PDP link inventory was only follow-up source debugging; its missing EnergyGuide links are not dryer audit findings. The `Energy Guide Label` Specs text is also not evidence of an FTC obligation. Continue the planned EPA ENERGY STAR dryer certification and claim-consistency work; no decision to drop that work is needed. Recommended model: GPT-5.6 Luna low; use Terra medium only if EPA identity/pattern interpretation creates a policy question.

@@ -245,8 +245,15 @@ link.
 
 ### FTC scope correction (2026-09-22)
 
-This link inventory is not an FTC EnergyGuide compliance audit. The FTC's
-current Energy Labeling Rule summary does not include clothes dryers in the
-required EnergyGuide categories. The FTC's 2024 NPRM proposed new labels for
-previously unlabeled clothes dryers, while the 2026 Unified Agenda lists the
-rulemaking as still in the Proposed Rule Stage. See the [FTC rule summary](https://www.ftc.gov/legal-library/browse/rules/energy-water-use-labeling-consumer-products-under-energy-policy-conservation-act-energy-labeling), [2024 FTC proposal](https://www.ftc.gov/news-events/news/press-releases/2024/01/federal-trade-commission-seeks-public-comments-improvements-energyguide-labeling-rule), and [2026 Unified Agenda](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=3084-AB15&pubId=202510). Do not classify a missing Dryer PDP EnergyGuide link as a regulatory omission or finding. Treat Samsung PDP Specs text such as `Energy Guide Label` as source content only; it does not establish a label obligation or a downloadable label.
+This link inventory is not an FTC EnergyGuide compliance audit. The project
+scope was already explicit: [MASTER_PLAN §1.1](MASTER_PLAN.md#11-product-groups)
+places Clothes Dryer in the EPA ENERGY STAR-focused-only group;
+[APPLICABILITY_EVIDENCE](APPLICABILITY_EVIDENCE.md#family-evidence-matrix)
+keeps combo washer label evidence in the washer domain; and this contract marks
+EnergyGuide PDF retrieval `OUT_OF_RECON_SCOPE`. The FTC's current Energy
+Labeling Rule summary does not include clothes dryers in the required EnergyGuide
+categories. The FTC's 2024 NPRM proposed new labels for previously unlabeled
+clothes dryers, while the 2026 Unified Agenda lists the rulemaking as still in
+the Proposed Rule Stage. See the [FTC rule summary](https://www.ftc.gov/legal-library/browse/rules/energy-water-use-labeling-consumer-products-under-energy-policy-conservation-act-energy-labeling),
+[2024 FTC proposal](https://www.ftc.gov/news-events/news/press-releases/2024/01/federal-trade-commission-seeks-public-comments-improvements-energyguide-labeling-rule),
+and [2026 Unified Agenda](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=3084-AB15&pubId=202510). The 43-PDP EnergyGuide link scan was only follow-up source debugging, not a Dryer audit control. Do not classify missing links as regulatory omissions or findings. Treat Samsung PDP Specs text such as `Energy Guide Label` as source content only; it does not establish a label obligation or a downloadable label. Continue EPA ENERGY STAR dryer certification/claim consistency work as scoped in the master plan.
