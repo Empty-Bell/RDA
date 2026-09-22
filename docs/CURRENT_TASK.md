@@ -511,3 +511,12 @@ Local Python: runtime/g1-venv/Scripts/python.exe (ignored dev venv).
 Local test env PYTHONPATH=src (add scripts for checks/g2).
 Hosted G1 CI installs requirements-g1-tools.lock, runs quality.py plus run.py.
 Use git safe.directory override. Git write/network may need sandbox escalation.
+
+- G3 clothes-washer source refresh workflow added and completed on hosted
+  ubuntu-24.04: run [35680095563](https://github.com/Empty-Bell/RDA/actions/runs/35680095563),
+  commit `fad22a7`, artifact `g3-washer-source-35680095563-1` (ID 10675311144).
+  Bootstrap, current Samsung source observation, EPA metadata/sample checks and
+  artifact upload all passed. Artifact body could not be read via anonymous API,
+  so no new population count is asserted here. Next: full exact-SKU washer PDP
+  collection from this successful artifact, preserving combo/standalone source
+  identity and leaving certification/measurement assessments disabled.
