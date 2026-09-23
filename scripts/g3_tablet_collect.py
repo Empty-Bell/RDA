@@ -5,7 +5,6 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import re
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 from browser_runtime import desktop_context
@@ -115,7 +114,9 @@ def collect(products, output):
             try:
                 response = page.goto(record["requested_url"], wait_until="domcontentloaded", timeout=60000)
                 page.wait_for_timeout(10000)
-                purchase = page.get_by_role("button", name=re.compile(r"^Continue", re.I)).first
+                # Samsung PDPs can expose multiple controls with the same accessible
+                # name. Only the primary PDP Continue button carries the current SKU.
+                purchase = page.locator("#continue_btn")
                 purchase.wait_for(state="visible", timeout=30000)
                 selection = {"selected_controls": page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
                     '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
