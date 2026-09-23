@@ -9,6 +9,8 @@ on:
       - 'scripts/source_contract.py'
       - 'tests/test_claim_attribution.py'
       - '.github/workflows/g3-tablet-collection.yml'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
     inputs:
       source_run_id:
