@@ -142,10 +142,11 @@ jobs:
               for link in focal_plp_links:
                   link_url = str(link.get('url') or '')
                   link_path = urlsplit(link_url).path.lower()
-                  if ('www.samsung.com/' in link_url and '/buy/' in link_path
+                  is_buy_action = str(link.get('text') or '').strip().lower() == 'buy'
+                  if (is_buy_action and 'www.samsung.com/' in link_url and '/buy/' in link_path
                           and focal_sku.lower() in link_path):
                       focal_urls.setdefault(link_url, []).append(
-                          'plp_card_link:' + str(link.get('text') or link.get('aria_label') or link.get('class_name') or '')[:100])
+                          'plp_card_link:Buy')
               plp.close()
               for requested_url, sources in focal_urls.items():
                   page = context.new_page()
@@ -185,8 +186,7 @@ jobs:
           pf_traces = [trace for trace in traces if 'pf_pdp_url' in trace['entry_sources']]
           att_traces = [trace for trace in traces if
                         'pf_pdp_url:' + focal_not_on_plp_sku in trace['entry_sources']]
-          buy_traces = [trace for trace in traces if any(
-              source.startswith('plp_card_link:') for source in trace['entry_sources'])]
+          buy_traces = [trace for trace in traces if 'plp_card_link:Buy' in trace['entry_sources']]
           if not pf_traces:
               raise SystemExit(f'Missing live PF PDP trace for {focal_sku}')
           if not buy_traces:
