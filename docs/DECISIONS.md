@@ -1,3 +1,7 @@
+# Approved family-specific model comparison rule (2026-09-23)
+
+The user approved this rule for Samsung Monitor SKUs: try a literal full-SKU EPA model-pattern match first; if that fails and the PDP SKU starts with one `L`, omit exactly that first character and apply the existing positional EPA pattern rule. Each EPA `*` still consumes one A–Z/0–9 character, and any unmatched PDP suffix remains evidence. This creates no internal-character, repeated-prefix, fuzzy, or other normalization. The rule is Monitor-only and must not be generalized to Computers, Tablets, or another product group without approval. Hosted validation: run 35820239750; 13 EPA Monitor registrations matched through the approved source patterns.
+
 # Open semantic decisions
 
 D01 refrigerator numeric observation is complete. Full-population replay finds
