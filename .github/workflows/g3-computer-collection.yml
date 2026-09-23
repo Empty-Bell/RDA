@@ -1,0 +1,128 @@
+name: G3 computer exact-SKU collection
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_computer_collect.py'
+      - 'scripts/test_g3_computer_collect.py'
+      - '.github/workflows/g3-computer-collection.yml'
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful Phase 0 source reconnaissance run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [Phase 0 product source contracts]
+    types: [completed]
+    branches: [main]
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: g3-computer-collection-${{ github.event.workflow_run.id || github.run_id }}
+  cancel-in-progress: false
+jobs:
+  collect:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2]
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.source_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download current Computer source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$SOURCE_RUN_ID" ]; then
+            SOURCE_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/source-recon.yml/runs?branch=main&status=success&per_page=10" --jq '[.workflow_runs[] | select(.path == ".github/workflows/source-recon.yml" and .conclusion == "success")] | sort_by(.created_at) | last | .id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/source-recon.yml") | .id')"
+          test "$VALID_RUN" = "$SOURCE_RUN_ID"
+          echo "SOURCE_RUN_ID=$SOURCE_RUN_ID" >> "$GITHUB_ENV"
+          for LEG in computer chromebook; do
+            ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/artifacts" --jq "[.artifacts[] | select(.expired == false) | select(.name | startswith(\"source-recon-${LEG}-${SOURCE_RUN_ID}-\"))] | if length == 1 then .[0].id else empty end")"
+            test -n "$ARTIFACT_ID"
+            mkdir -p "runtime/g3-computer/recon/${LEG}"
+            gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > "runtime/g3-computer/${LEG}.zip"
+            unzip -q "runtime/g3-computer/${LEG}.zip" -d "runtime/g3-computer/recon/${LEG}"
+            RECON_FILE="$(find "runtime/g3-computer/recon/${LEG}" -path '*/standalone/*' -prune -o -name recon.json -type f -print -quit)"
+            test -n "$RECON_FILE"
+            ROOT="$(dirname "$RECON_FILE")"
+            if [ ! -d "$ROOT/fixtures" ]; then ROOT="$(dirname "$ROOT")"; fi
+            test -d "$ROOT/fixtures"
+            echo "${LEG^^}_RECON_DIR=$ROOT" >> "$GITHUB_ENV"
+          done
+      - name: Bootstrap locked browser runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Test exact-SKU population and shard coverage
+        run: python -m unittest scripts.test_g3_computer_collect -v
+      - name: Collect assigned exact-SKU PDPs
+        run: >-
+          python scripts/g3_computer_collect.py
+          --computer-recon "$COMPUTER_RECON_DIR"
+          --chromebook-recon "$CHROMEBOOK_RECON_DIR"
+          --source-run-id "$SOURCE_RUN_ID"
+          --shard-index "${{ matrix.shard }}" --shard-count 3
+          --out "runtime/g3-computer/shard-${{ matrix.shard }}"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: g3-computer-collection-${{ github.run_id }}-${{ matrix.shard }}
+          path: runtime/g3-computer/shard-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: warn
+  validate:
+    if: always()
+    needs: [collect]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        continue-on-error: true
+        with:
+          pattern: g3-computer-collection-${{ github.run_id }}-*
+          path: runtime/g3-computer/shards
+          merge-multiple: false
+      - name: Verify all shards completed and cover every exact SKU once
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          paths = sorted(Path('runtime/g3-computer/shards').glob('*/shard-summary.json'))
+          if len(paths) != 3:
+              raise SystemExit(f'Expected 3 shard summaries, found {len(paths)}')
+          rows = [json.loads(path.read_text(encoding='utf-8')) for path in paths]
+          if any(row.get('status') != 'PASS' or row.get('contract') != 'G3_COMPUTER_EXACT_SKU_PDP_V1' for row in rows):
+              raise SystemExit('At least one Computer shard failed its exact-SKU collection contract')
+          expected = set(rows[0].get('all_population_skus', []))
+          assigned = [sku for row in rows for sku in row.get('assigned_skus', [])]
+          if len(expected) != 24 or any(set(row.get('all_population_skus', [])) != expected for row in rows):
+              raise SystemExit('Computer source population is not the approved stable 24-SKU union')
+          if len(assigned) != 24 or set(assigned) != expected:
+              raise SystemExit('Three Computer shards do not cover each source SKU exactly once')
+          if len({row.get('shard_index') for row in rows}) != 3 or any(row.get('source_run_id') != rows[0].get('source_run_id') for row in rows):
+              raise SystemExit('Computer shard identity is duplicated or crosses source runs')
+          print(json.dumps({'status':'PASS','source_run_id':rows[0]['source_run_id'],'population_count':len(expected),
+              'shard_counts':[row['population_count'] for row in sorted(rows,key=lambda item:item['shard_index'])],
+              'coverage_counts':{key:sum(row['coverage_counts'].get(key,0) for row in rows) for key in ('VERIFIED_EXACT_IDENTITY','FAILED')}},sort_keys=True))
+          PY
