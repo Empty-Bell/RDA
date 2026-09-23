@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/g3_monitor_epa_candidates.py'
+      - 'tests/test_g3_monitor_epa_candidates.py'
       - '.github/workflows/g3-monitor-epa-source-candidates.yml'
   workflow_dispatch:
     inputs:
