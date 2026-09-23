@@ -76,7 +76,7 @@ def load_epa(root, run_id):
 
 
 def project_candidate(row, candidate):
-    keep = ("source_row_id", "pd_id", "brand_name", "model_number", "model_name", "display_type",
+    keep = ("source_row_id", "pd_id", "brand_name", "model_number", "model_name", "additional_model_information", "display_type",
             "markets", "date_certified", "screen_size_inches", "on_mode_power_watts", "sleep_mode_power_watts",
             "off_mode_power_watts", "monitor_total_energy", "maximum_total_energy", "maximum_power_delivery_w")
     return {f"{key}_raw": row.get(key) for key in keep} | {"model_pattern_candidate": candidate}
@@ -86,6 +86,7 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
     products, claims, facts, collection = load_collection(collection_root, collection_run_id)
     epa_rows, epa = load_epa(epa_root, epa_run_id)
     records, type_counts = [], Counter()
+    all_epa_type_counts = Counter(str(row.get("display_type") or "(blank)") for row in epa_rows)
     for product in sorted(products, key=lambda row: row["exact_sku"]):
         sku = product["exact_sku"]
         candidates = []
@@ -110,6 +111,7 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
               "skus_with_pattern_candidates": sum(bool(r["epa_display_pattern_candidates"]) for r in records),
               "skus_without_pattern_candidates": sum(not r["epa_display_pattern_candidates"] for r in records),
               "candidate_display_type_counts": dict(sorted(type_counts.items())),
+              "all_epa_display_type_counts": dict(sorted(all_epa_type_counts.items())),
               "source_hashes": {"epa_rows_sha256": epa["rows_sha256"]},
               "model_candidate_contract": "Literal equality or positional pattern candidate; '*' consumes one A-Z/0-9 position. Candidate is not a certification match.",
               "assessment_contract": "No monitor classification, applicability, certification identity, publication consistency, severity, or compliance rule is applied.",
@@ -133,6 +135,11 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
             stream.write("\nEPA patterns are candidate evidence only. Product subtype, applicability, and all audit outcomes remain NOT_EVALUATED.\n")
     print(json.dumps({"status": report["status"], "population_count": len(records), "epa_samsung_rows": len(epa_rows),
                       "pattern_candidate_rows": candidate_rows, "candidate_display_type_counts": report["candidate_display_type_counts"],
+                      "all_epa_display_type_counts": report["all_epa_display_type_counts"],
+                      "epa_model_samples": [{"model_number": row.get("model_number"), "model_name": row.get("model_name"),
+                          "additional_model_information": row.get("additional_model_information"),
+                          "display_type": row.get("display_type"), "markets": row.get("markets"), "pd_id": row.get("pd_id")}
+                          for row in sorted(epa_rows, key=lambda item: (str(item.get("display_type") or ""), str(item.get("model_number") or "")))[:40]],
                       "publication_by_sku": [{"sku": row["exact_sku"],
                           "plp_energy_star_flag_raw": row["energy_star_claim_sources_raw"].get("plp_energy_star_flag_raw"),
                           "pdp_logo_count": len(row["energy_star_claim_sources_raw"].get("rendered_attributed_badges_raw", [])),
