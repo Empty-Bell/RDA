@@ -147,7 +147,12 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
         "captured_at": datetime.now(timezone.utc).isoformat(),
         "population_count": len(records),
         "epa_samsung_row_count": len(epa_rows),
-        "range_pattern_candidate_count": candidate_count,
+        "range_pattern_candidate_row_count": candidate_count,
+        "skus_with_range_pattern_candidates": sum(bool(row["range_epa_pattern_candidates"]) for row in records),
+        "skus_without_range_pattern_candidates": sum(not row["range_epa_pattern_candidates"] for row in records),
+        "skus_with_only_non_range_product_candidates": sum(
+            bool(row["same_pattern_non_range_epa_rows"]) and not row["range_epa_pattern_candidates"]
+            for row in records),
         "same_pattern_non_range_row_count": other_type_count,
         "fuel_and_cooktop_spec_observations": [
             {"name": name, "value": value, "sku_observation_count": count}
@@ -180,10 +185,25 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
                          len(row["same_pattern_non_range_epa_rows"])]
                 stream.write("| " + " | ".join(str(value if value is not None else "(not observed)").replace("|", "\\|") for value in cells) + " |\n")
             stream.write("\nEPA candidates are evidence leads only. Range applicability and every audit outcome remain NOT_EVALUATED.\n")
+    examples = [{"sku": row["exact_sku"],
+                 "pdp_fuel_facts": row["pdp_product_facts_raw"]["fuel_or_cooktop_facts"],
+                 "range_epa_patterns": [{"model": candidate["model_number_raw"],
+                                         "markets": candidate["markets_raw"]}
+                                        for candidate in row["range_epa_pattern_candidates"]],
+                 "other_epa_product_types": sorted({str(candidate["product_type_raw"])
+                                                     for candidate in row["same_pattern_non_range_epa_rows"]})}
+                for row in records if row["range_epa_pattern_candidates"]
+                or row["same_pattern_non_range_epa_rows"]]
     print(json.dumps({"status": report["status"], "source_validation": "PASS",
                       "population_count": len(records), "epa_samsung_rows": len(epa_rows),
-                      "range_pattern_candidates": candidate_count,
-                      "applicability": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"}, sort_keys=True), flush=True)
+                      "range_pattern_candidate_rows": candidate_count,
+                      "skus_with_range_candidates": report["skus_with_range_pattern_candidates"],
+                      "skus_without_range_candidates": report["skus_without_range_pattern_candidates"],
+                      "skus_with_only_other_product_type_candidates": report["skus_with_only_non_range_product_candidates"],
+                      "fuel_observations": report["fuel_and_cooktop_spec_observations"],
+                      "candidate_examples": examples,
+                      "applicability": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"},
+                     ensure_ascii=False, sort_keys=True), flush=True)
     return report
 
 
