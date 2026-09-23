@@ -175,7 +175,8 @@ def build(candidate_path, output):
     print(json.dumps({"status": report["status"], "sku_count": len(records),
                       "counts": report["counts"], "diagnostics": report["diagnostics"],
                       "finding_count": report["finding_count"], "findings": findings,
-                      "model_matches_by_sku": model_matches,\n                      "publication_evidence_by_sku": publication_evidence_by_sku},
+                      "model_matches_by_sku": model_matches,
+                      "publication_evidence_by_sku": publication_evidence_by_sku},
                      ensure_ascii=False, sort_keys=True), flush=True)
     return report
 
