@@ -32,7 +32,14 @@ def assess_record(row):
         monitor_candidates.append(candidate)
     registration, market_states = epa_registration_state(monitor_candidates, [])
     points = publication_points(claim)
-    outcome, findings = publication_assessment(registration, points)
+    points["spec_certification"] = {
+        "state": "NOT_APPLICABLE",
+        "inspection": "MONITOR_FAMILY_SPECS_HAS_NO_ENERGY_STAR_CERTIFICATION_FIELD",
+        "visible_rows_raw": [],
+    }
+    applicable_points = {key: value for key, value in points.items()
+                         if value["state"] != "NOT_APPLICABLE"}
+    outcome, findings = publication_assessment(registration, applicable_points)
     return {
         "exact_sku": sku,
         "pdp_product_facts_raw": row.get("pdp_product_facts_raw", {}),
@@ -94,8 +101,8 @@ def build(candidates_path, output):
             "publication_point_states": {key: dict(value) for key, value in point_counts.items()},
         },
         "rules": {
-            "epa_us_registered_and_all_three_points_present": "PASS",
-            "epa_us_registered_and_any_point_absent": "LOW",
+            "epa_us_registered_and_all_applicable_publication_points_present": "PASS",
+            "epa_us_registered_and_any_applicable_point_absent": "LOW",
             "epa_us_unregistered_and_any_point_present": "HIGH",
             "epa_us_unregistered_and_all_points_absent": "PASS_NO_FINDING",
             "incomplete_or_unknown_evidence": "NOT_EVALUATED",
@@ -116,7 +123,7 @@ def build(candidates_path, output):
         with Path(summary).open("a", encoding="utf-8") as stream:
             stream.write("## Monitor ENERGY STAR publication consistency\n\n")
             stream.write(f"Exact SKUs: **{len(records)}** | HIGH: **{report['counts']['HIGH']}** | LOW: **{report['counts']['LOW']}** | PASS: **{report['counts']['PASS']}** | NOT EVALUATED: **{report['counts']['NOT_EVALUATED']}**\n\n")
-            stream.write("Only US Monitor rows and the approved model match are assessed. Legal applicability and overall product compliance remain NOT_EVALUATED.\n\n")
+            stream.write("Only US Monitor rows and the approved model match are assessed. Specs certification is NOT_APPLICABLE because the complete Monitor Specs arrays have no ENERGY STAR certification field. Legal applicability and overall product compliance remain NOT_EVALUATED.\n\n")
             if findings:
                 stream.write("| Exact SKU | Severity | Issue |\n|---|---|---|\n")
                 for finding in findings:

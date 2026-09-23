@@ -22,11 +22,12 @@ def source_row(sku, candidates, plp="N", badge=False, spec=False,
 
 
 class MonitorEnergyStarAssessmentTests(unittest.TestCase):
-    def test_registered_model_with_all_three_points_passes(self):
+    def test_registered_model_passes_with_specs_field_out_of_scope(self):
         row = source_row("LS1", [{"display_type_raw": "Monitor", "markets_raw": "United States", "match_rule": "LITERAL_PDP_SKU"}],
-                         plp="Y", badge=True, spec=True)
+                         plp="Y", badge=True, spec=False)
         result = assess_record(row)
         self.assertEqual(result["display_outcome"], "PASS")
+        self.assertEqual(result["energy_star_publication"]["points"]["spec_certification"]["state"], "NOT_APPLICABLE")
         self.assertEqual(result["legal_applicability"], "NOT_EVALUATED")
 
     def test_registered_model_missing_publication_points_is_low(self):

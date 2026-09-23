@@ -41,7 +41,14 @@ def assess_record(row):
         raise ValueError("Computer EPA candidate list is missing")
     registration, market_states = computer_registration(candidates)
     points = publication_points(claim)
-    outcome, findings = publication_assessment(registration, points)
+    points["spec_certification"] = {
+        "state": "NOT_APPLICABLE",
+        "inspection": "COMPUTER_FAMILY_SPECS_HAS_NO_ENERGY_STAR_CERTIFICATION_FIELD",
+        "visible_rows_raw": [],
+    }
+    applicable_points = {key: value for key, value in points.items()
+                         if value["state"] != "NOT_APPLICABLE"}
+    outcome, findings = publication_assessment(registration, applicable_points)
     return {
         "exact_sku": sku,
         "selected_configuration_raw": row.get("selected_configuration_raw"),
@@ -103,8 +110,8 @@ def build(candidate_path, output):
             "publication_point_states": {key: dict(value) for key, value in point_counts.items()},
         },
         "rules": {
-            "epa_current_us_notebook_and_all_three_points_present": "PASS",
-            "epa_current_us_notebook_and_any_point_absent": "LOW",
+            "epa_current_us_notebook_and_all_applicable_publication_points_present": "PASS",
+            "epa_current_us_notebook_and_any_applicable_point_absent": "LOW",
             "no_matching_us_epa_notebook_and_any_point_present": "HIGH",
             "no_matching_us_epa_notebook_and_all_points_absent": "PASS_NO_FINDING",
             "unknown_type_market_or_publication_evidence": "NOT_EVALUATED",
@@ -125,7 +132,7 @@ def build(candidate_path, output):
         with Path(summary).open("a", encoding="utf-8") as stream:
             stream.write("## Computer ENERGY STAR publication assessment\n\n")
             stream.write(f"Exact SKUs: **{len(records)}** | HIGH: **{report['counts']['HIGH']}** | LOW: **{report['counts']['LOW']}** | PASS: **{report['counts']['PASS']}** | NOT EVALUATED: **{report['counts']['NOT_EVALUATED']}**\n\n")
-            stream.write("This checks only current U.S. EPA Notebook registration and PLP logo, PDP logo, and Specs certification publication.\n\n")
+            stream.write("This checks current U.S. EPA Notebook registration and PLP/PDP logo publication. Specs certification is NOT_APPLICABLE because the complete Computer Specs arrays have no ENERGY STAR certification field.\n\n")
             stream.write("| Exact SKU | EPA U.S. state | EPA matched token and field | Match rule | PLP | PDP logo | Specs | Result |\n|---|---|---|---|---|---|---|---|\n")
             for record in records:
                 points = record["energy_star_publication"]["points"]
