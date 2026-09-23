@@ -60,6 +60,11 @@ def build(candidate_path, output):
         findings.extend({"exact_sku": row["exact_sku"], **finding} for finding in row_findings)
 
     counts = Counter(record["display_outcome"] for record in records)
+    registration_counts = Counter(record["epa_current_registration"]["state"] for record in records)
+    point_counts = {
+        point: Counter(record["energy_star_publication"]["points"][point]["state"] for record in records)
+        for point in ("plp_logo", "pdp_logo", "spec_certification")
+    }
     report = {
         "contract": CONTRACT,
         "status": "PASS",
@@ -77,6 +82,8 @@ def build(candidate_path, output):
         "affected_sku_count": len({finding["exact_sku"] for finding in findings}),
         "counts": {level: counts.get(level, 0) for level in
                    ("HIGH", "MEDIUM", "LOW", "PASS", "NOT_EVALUATED")},
+        "diagnostics": {"epa_registration_states": dict(registration_counts),
+                        "publication_point_states": {key: dict(value) for key, value in point_counts.items()}},
         "rules": {
             "epa_us_registered_and_all_three_points_present": "PASS",
             "epa_us_registered_and_any_point_absent": "LOW",
@@ -100,6 +107,7 @@ def build(candidate_path, output):
             stream.write(f"Exact SKUs: **{len(records)}** | HIGH: **{report['counts']['HIGH']}** | LOW: **{report['counts']['LOW']}** | PASS: **{report['counts']['PASS']}** | NOT EVALUATED: **{report['counts']['NOT_EVALUATED']}**\n\n")
             stream.write("This assesses only current EPA US model registration and PLP, PDP logo, and PDP Specs publication consistency. It is not a legal compliance conclusion.\n")
     print(json.dumps({"status": "PASS", "counts": report["counts"],
+                      "diagnostics": report["diagnostics"],
                       "finding_count": report["finding_count"]}, sort_keys=True))
     return report
 
@@ -114,3 +122,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
