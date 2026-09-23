@@ -63,6 +63,8 @@ jobs:
           bash scripts/bootstrap.sh
       - name: Capture current EPA Samsung ventilating-fan rows
         run: python scripts/g3_hood_epa_capture.py --out runtime/g3-hood/epa
+      - name: Test approved Hood ENERGY STAR rules
+        run: python -m unittest tests.test_g3_hood_energy_star_assessment -v
       - name: Build raw hood model-pattern candidates
         run: >-
           python scripts/g3_hood_epa_candidates.py
@@ -71,6 +73,11 @@ jobs:
           --epa-root runtime/g3-hood/epa
           --epa-run-id "$GITHUB_RUN_ID"
           --out runtime/g3-hood/epa-source-candidates
+      - name: Apply approved Hood ENERGY STAR publication consistency rules
+        run: >-
+          python scripts/g3_hood_energy_star_assessment.py
+          --candidates runtime/g3-hood/epa-source-candidates/hood-epa-source-candidates.json
+          --out runtime/g3-hood/assessment
       - name: Preserve Hood source evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
