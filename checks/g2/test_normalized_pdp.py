@@ -102,3 +102,35 @@ class NormalizedPdpAdapterTests(unittest.TestCase):
 
         self.assertEqual(self.specs, original_specs)
         self.assertEqual(claims, original_claims)
+
+    def test_refrigerator_energy_consumption_accepts_kwh_without_period(self):
+        self.specs["energy_consumption_raw"] = [
+            {"name": "Energy Consumption", "value": "618kWH"}
+        ]
+        result = normalize_source_pdp(self.specs, None)
+        annual = result["observations"]["pdp_annual_energy_kwh"]
+        self.assertEqual(annual["state"], "VALUE")
+        self.assertEqual(annual["value"]["amount"], 618.0)
+        self.assertEqual(annual["value"]["unit"], "kWh/year")
+
+    def test_identical_duplicate_annual_rows_collapse_but_keep_raw_evidence(self):
+        entries = [
+            {"name": "Energy Consumption", "value": "764 kWh/year"},
+            {"name": "Energy Consumption", "value": "764 kWh/year"},
+        ]
+        self.specs["energy_consumption_raw"] = entries
+        result = normalize_source_pdp(self.specs, None)
+        channel = result["channels"]["pdp_annual_energy_kwh"]
+        self.assertEqual(channel["observation"]["state"], "VALUE")
+        self.assertEqual(channel["observation"]["value"]["amount"], 764.0)
+        self.assertEqual(channel["raw"], entries)
+
+    def test_conflicting_duplicate_annual_rows_stay_unobserved(self):
+        self.specs["energy_consumption_raw"] = [
+            {"name": "Energy Consumption", "value": "618 kWh/year"},
+            {"name": "Energy Consumption", "value": "619 kWh/year"},
+        ]
+        result = normalize_source_pdp(self.specs, None)
+        channel = result["channels"]["pdp_annual_energy_kwh"]
+        self.assertEqual(channel["observation"]["state"], "NOT_OBSERVED")
+        self.assertEqual(channel["reason"], "CONFLICTING_MEASUREMENTS")

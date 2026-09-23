@@ -12,6 +12,7 @@ class PdpFactRecord:
     pdp_url: Observation
     product_title: Observation
     pdp_annual_energy_kwh: Observation
+    pdp_energy_consumption_raw: Observation
     pdp_capacity: Observation
     energyguide_url: Observation
     plp_energy_star_claim: Observation

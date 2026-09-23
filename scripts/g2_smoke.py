@@ -210,6 +210,9 @@ def main():
                 "pdp_url": observation(pdp["final_url"]),
                 "source_bridge_hash": observation(bridge_hash),
                 **normalized_pdp["observations"],
+                "pdp_energy_consumption_raw": observation(
+                    parsed_pdp["energy_consumption_raw"]
+                ),
             },
             [bridge_id, *source_observations.values(), normalization_id],
         )
@@ -444,6 +447,9 @@ def main():
                         "pdp_url": observation(result["final_url"]),
                         "source_bridge_hash": observation(digest),
                         **normalized_pdp["observations"],
+                        "pdp_energy_consumption_raw": observation(
+                            result["pdp_facts_raw"]["energy_consumption_raw"]
+                        ),
                     },
                     [
                         *dict.fromkeys(

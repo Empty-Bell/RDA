@@ -31,6 +31,25 @@ def _amount(observation: dict[str, Any], expected_units: set[str]) -> Decimal | 
         raise ValueError("Comparable measurement amount is invalid") from None
 
 
+def _pdp_annual_energy(fact: dict[str, Any]) -> dict[str, Any]:
+    """Re-normalize preserved refrigerator Energy Consumption source rows."""
+    observations = fact.get("observations", {})
+    source_observation = observations.get("pdp_energy_consumption_raw", {})
+    source_rows = (
+        source_observation.get("value")
+        if source_observation.get("state") == "VALUE"
+        else None
+    )
+    if isinstance(source_rows, list) and source_rows:
+        from regaudit.normalization import measurement
+
+        replayed = measurement(source_rows, "annual_energy")["observation"]
+        if replayed != observations.get("pdp_annual_energy_kwh", {}):
+            raise ValueError("PDP annual normalization does not match preserved source rows")
+        return replayed
+    return observations.get("pdp_annual_energy_kwh", {})
+
+
 def _compare(
     pdp: dict[str, Any],
     label: dict[str, Any],
@@ -117,7 +136,7 @@ def build_comparison_from_inputs(
     for sku in sorted(product_skus):
         observations = pdp_facts[sku].get("observations", {})
         annual_result = _compare(
-            observations.get("pdp_annual_energy_kwh", {}),
+            _pdp_annual_energy(pdp_facts[sku]),
             annual[sku],
             {"kWh/year"},
             {"kWh/year"},

@@ -4,9 +4,9 @@ The user approved this rule for Samsung Monitor SKUs: try a literal full-SKU EPA
 
 # Open semantic decisions
 
-D01 refrigerator numeric observation is complete. Full-population replay finds
-51/51 comparable PDP-versus-label annual-energy values exactly equal; 24 lack a
-PDP annual value. Capacity has 62 equal, seven 0.3–0.5 cu ft differences and six
+D01 refrigerator numeric observation is complete. Full-population replay after
+source normalization finds 64/64 comparable PDP-versus-label annual-energy values
+exactly equal; 11 lack a PDP annual value. Capacity has 62 equal, seven 0.3–0.5 cu ft differences and six
 missing PDP values. The user approved LOW for missing PDP annual energy and
 MEDIUM for every confirmed capacity difference, with exact equality and no
 tolerance. EPA `p5st-her9` corroborates all comparable EnergyGuide values but is

@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - 'src/regaudit/normalization.py'
+      - 'src/regaudit/facts.py'
+      - 'scripts/g2_energyguide_numeric_comparison.py'
       - 'scripts/g2_normalized.py'
       - 'scripts/g2_label_plan.py'
       - 'scripts/g2_label_selection.py'
@@ -14,6 +16,7 @@ on:
       - 'scripts/g2_model_identity.py'
       - 'src/regaudit/report.py'
       - 'checks/g2/test_normalized_pdp.py'
+      - 'checks/g2/test_energyguide_numeric_comparison.py'
       - 'checks/g2/test_label_plan.py'
       - 'checks/g2/test_label_selection.py'
       - 'checks/g2/test_label_activation.py'
