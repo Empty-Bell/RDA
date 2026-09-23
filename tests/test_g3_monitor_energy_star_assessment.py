@@ -23,7 +23,7 @@ def source_row(sku, candidates, plp="N", badge=False, spec=False,
 
 class MonitorEnergyStarAssessmentTests(unittest.TestCase):
     def test_registered_model_with_all_three_points_passes(self):
-        row = source_row("LS1", [{"display_type_raw": "Monitor", "markets_raw": "United States"}],
+        row = source_row("LS1", [{"display_type_raw": "Monitor", "markets_raw": "United States", "match_rule": "LITERAL_PDP_SKU"}],
                          plp="Y", badge=True, spec=True)
         result = assess_record(row)
         self.assertEqual(result["display_outcome"], "PASS")
