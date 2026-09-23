@@ -226,7 +226,7 @@
       "exact_sku": "SM-X930NZAAXAR",
       "src": "//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png$",
       "product_surface": "BUY_CONFIGURATOR_RELATION",
-      "identity_basis": "unique observed primary product surface; sole exact Product JSON-LD; existing PDP identity gate"
+      "identity_basis": "verified exact-SKU PDP; unique observed ENERGY STAR gallery/configurator surface"
     }
   ],
   "expected_probe_status": "BOUNDED_PROJECTION_TRUNCATED"

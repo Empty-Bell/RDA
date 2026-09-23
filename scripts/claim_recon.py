@@ -76,6 +76,10 @@ def badge_attribution(snapshot, exact_jsonld, target):
     attributed = []
     if snapshot.get('target_sku') != target:
         return attributed
+    identified_products = [record for record in snapshot.get('product_jsonld', [])
+                           if record.get('sku') or record.get('mpn')]
+    if identified_products and (len(exact_jsonld) != 1 or len(identified_products) != 1):
+        return attributed
     for candidate in snapshot.get('energy_candidates', []):
         if candidate.get('tag') != 'IMG':
             continue
@@ -86,7 +90,12 @@ def badge_attribution(snapshot, exact_jsonld, target):
             isinstance(item, dict) and re.search(r'Gallery_energyStarContainer|EnergyStar_energyStar', str(item.get('cls') or ''), re.I)
             for item in ancestors
         )
-        if not in_energy_star_container and candidate.get('selector_contract') != 'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2':
+        official_legacy_asset = re.search(
+            r'/us/b2c_pf/badge/energy-star-logo-pdp-', str(candidate.get('src') or ''), re.I
+        )
+        if (not in_energy_star_container
+                and candidate.get('selector_contract') != 'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2'
+                and not official_legacy_asset):
             continue
         attributed.append({'exact_sku': target, 'src': candidate['src'],
                            'product_surface': candidate['product_surface'],

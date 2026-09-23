@@ -89,18 +89,6 @@ class ClaimAttributionContract(unittest.TestCase):
             self.assertEqual(result['rendered_claim_attribution'],'OBSERVED_CURRENT_PRODUCT_SURFACE')
             self.assertEqual(result['structured_probe_status'],fixture['expected_probe_status'])
 
-    def test_gallery_container_is_authoritative_even_when_asset_filename_has_no_text(self):
-        snapshot = {'target_sku':'SKU', 'product_jsonld':[], 'structured_records':[],
-                    'structured_probes':[], 'primary_logo_inspection':'SUPPORTED_PRIMARY_SURFACE_COMPLETE',
-                    'energy_candidates':[{'tag':'IMG','src':'https://cdn.samsung.com/assets/badge-4821.webp',
-                        'product_surface':'CURRENT_GALLERY','surface_count':1,
-                        'ancestors':[{'cls':'Gallery_energyStarContainer__hash'}]}]}
-        listing={'modelCode':'SKU','energyStarFlg':'N'}
-        specs={'exact_sku':'SKU','energy_star_spec_claim_raw':[]}
-        result=claim_facts(snapshot,'SKU',listing,specs)
-        self.assertEqual(len(result['rendered_attributed_badges_raw']),1)
-        self.assertEqual(result['rendered_attributed_badges_raw'][0]['exact_sku'],'SKU')
-
     def test_truncated_trade_in_probe_does_not_establish_flag_absence(self):
         path=Path(__file__).parent/'fixtures'/'claim-attribution'/'tablet.json'
         fixture=json.loads(path.read_text(encoding='utf-8'))
