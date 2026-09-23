@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 
 from epa_only_rules import model_pattern_candidate
 
@@ -79,7 +80,23 @@ def project_candidate(row, candidate):
     keep = ("source_row_id", "pd_id", "brand_name", "model_number", "model_name", "additional_model_information", "display_type",
             "markets", "date_certified", "screen_size_inches", "on_mode_power_watts", "sleep_mode_power_watts",
             "off_mode_power_watts", "monitor_total_energy", "maximum_total_energy", "maximum_power_delivery_w")
-    return {f"{key}_raw": row.get(key) for key in keep} | {"model_pattern_candidate": candidate}
+    return {f"{key}_raw": row.get(key) for key in keep} | {
+        "candidate_source_field": candidate["candidate_source_field"],
+        "model_pattern_candidate": candidate["candidate"],
+    }
+
+
+def additional_model_patterns(value):
+    """Return only standalone model-like tokens explicitly listed by EPA."""
+    if not isinstance(value, str):
+        return []
+    patterns = []
+    for token in re.split(r"[;,]", value):
+        token = token.strip()
+        if (len(token) >= 4 and re.fullmatch(r"[A-Z0-9*./-]+", token, re.I)
+                and re.search(r"[A-Z0-9]", token, re.I) and token not in patterns):
+            patterns.append(token)
+    return patterns
 
 
 def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
@@ -91,12 +108,22 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
         sku = product["exact_sku"]
         candidates = []
         for source in epa_rows:
-            matched = model_pattern_candidate(source.get("model_number"), sku)
-            if matched is None:
-                continue
-            item = project_candidate(source, matched)
-            candidates.append(item)
-            type_counts[str(source.get("display_type") or "(blank)")] += 1
+            declared_patterns = [("model_number", source.get("model_number"))]
+            declared_patterns.extend(("additional_model_information", pattern)
+                                     for pattern in additional_model_patterns(source.get("additional_model_information")))
+            seen = set()
+            for source_field, pattern in declared_patterns:
+                matched = model_pattern_candidate(pattern, sku)
+                if matched is None:
+                    continue
+                signature = (source_field, pattern)
+                if signature in seen:
+                    continue
+                seen.add(signature)
+                item = project_candidate(source, {"candidate_source_field": source_field,
+                                                  "candidate": matched})
+                candidates.append(item)
+                type_counts[str(source.get("display_type") or "(blank)")] += 1
         records.append({"exact_sku": sku, "pdp_product_facts_raw": facts.get(sku, {}),
                         "energy_star_claim_sources_raw": claims[sku],
                         "epa_display_pattern_candidates": candidates,
@@ -113,7 +140,7 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
               "candidate_display_type_counts": dict(sorted(type_counts.items())),
               "all_epa_display_type_counts": dict(sorted(all_epa_type_counts.items())),
               "source_hashes": {"epa_rows_sha256": epa["rows_sha256"]},
-              "model_candidate_contract": "Literal equality or positional pattern candidate; '*' consumes one A-Z/0-9 position. Candidate is not a certification match.",
+              "model_candidate_contract": "Literal equality or positional pattern candidate from either EPA model_number or a standalone model-like token in EPA additional_model_information; '*' consumes one A-Z/0-9 position. Candidate is not a certification match.",
               "assessment_contract": "No monitor classification, applicability, certification identity, publication consistency, severity, or compliance rule is applied.",
               "scope": "Monitor PDP claims and raw EPA display model-pattern candidates. EPA display_type and market remain source evidence; no legal or product-type conclusion.",
               "collection_contract": collection["contract"], "records": records}
