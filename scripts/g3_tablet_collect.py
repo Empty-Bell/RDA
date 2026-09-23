@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 from browser_runtime import desktop_context
