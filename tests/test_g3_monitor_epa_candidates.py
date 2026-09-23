@@ -31,10 +31,11 @@ class MonitorAdditionalModelEvidenceTests(unittest.TestCase):
         self.assertEqual(match["match_rule"], "PDP_SKU_WITH_SINGLE_LEADING_L_OMITTED")
         self.assertEqual(match["candidate_basis"], "POSITIONAL_PREFIX_PATTERN; EACH * = ONE A-Z/0-9 CHARACTER")
 
-    def test_monitor_matching_keeps_literal_match_and_does_not_strip_internal_l(self):
+    def test_monitor_matching_keeps_literal_match_and_does_not_strip_extra_characters(self):
         literal = monitor_model_pattern_candidate("LS27B804PX*", "LS27B804PXNXGO")
         self.assertEqual(literal["match_rule"], "LITERAL_PDP_SKU")
-        self.assertIsNone(monitor_model_pattern_candidate("S27B804PX*", "S27B804PXNXGO"))
+        already_without_l = monitor_model_pattern_candidate("S27B804PX*", "S27B804PXNXGO")
+        self.assertEqual(already_without_l["match_rule"], "LITERAL_PDP_SKU")
         self.assertIsNone(monitor_model_pattern_candidate("S27B804PX*", "LXS27B804PXNXGO"))
 
 
