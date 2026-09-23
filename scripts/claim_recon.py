@@ -224,7 +224,7 @@ DOM_SNAPSHOT = r"""() => {
     ? 'SUPPORTED_PRIMARY_SURFACE_COMPLETE' : 'UNSUPPORTED_OR_AMBIGUOUS_PRIMARY_SURFACE';
   return {headings:Array.from(document.querySelectorAll('h1')).filter(visible).map(e => e.textContent.trim().slice(0,300)),
     product_jsonld:products, jsonld_parse_errors:errors, energy_candidates:candidates,
-    pdp_logo_selector_contract:'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2', pdp_logo_selector:pdpLogoSelector,
+    pdp_logo_selector_contract:'PDP_ENERGY_STAR_GALLERY_OR_CONFIGURATOR_V3', pdp_logo_selector:pdpLogoSelector,
     primary_logo_inspection:primaryLogoInspection, visible_spec_energy_star_rows:specRows,
     spec_surface_inspection:specRoot && specRows.length ? 'SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE' : 'SPEC_TABLE_NOT_MOUNTED_OR_SCHEMA_UNSUPPORTED',
     observation_scope:'current mounted DOM; visible page candidates are not attributed to target SKU'};

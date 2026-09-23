@@ -145,6 +145,8 @@ def collect(products, output):
                 facts = pdp_facts(projected, sku, family="computer")
                 snapshot = {"target_sku": sku, **page.evaluate(DOM_SNAPSHOT),
                     "structured_records": [], "structured_probes": [], "structured_errors": []}
+                if snapshot.get("pdp_logo_selector_contract") != "PDP_ENERGY_STAR_GALLERY_OR_CONFIGURATOR_V3":
+                    raise ValueError("Computer PDP logo snapshot contract is missing or stale")
                 snapshot_raw = (json.dumps(snapshot, sort_keys=True, indent=2) + "\n").encode()
                 (folder / "snapshot.json").write_bytes(snapshot_raw)
                 bridge_raw = (json.dumps(projected, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode()
