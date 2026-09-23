@@ -8,6 +8,8 @@ import os
 from pathlib import Path
 import re
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
+import time
 from urllib.parse import urlencode
 
 
@@ -22,9 +24,18 @@ REQUIRED = {"pd_id", "brand_name", "model_number", "product_type", "cooking_top_
 
 def fetch(url):
     request = Request(url, headers={"User-Agent": "RDA-G3-Range-EPA-Source/1.0", "Accept": "application/json"})
-    with urlopen(request, timeout=45) as response:
-        return response.read(), response.headers.get_content_type(), response.status
-
+    for attempt in range(5):
+        try:
+            with urlopen(request, timeout=45) as response:
+                return response.read(), response.headers.get_content_type(), response.status
+        except HTTPError as error:
+            if error.code not in (429, 500, 502, 503, 504) or attempt == 4:
+                raise
+        except URLError:
+            if attempt == 4:
+                raise
+        time.sleep(min(2 ** attempt, 16))
+    raise RuntimeError("EPA range request retry loop exhausted")
 
 def capture(output, page_size=100):
     destination = Path(output)
