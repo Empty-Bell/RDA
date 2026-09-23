@@ -1,0 +1,93 @@
+name: G3 monitor exact-SKU collection
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful G3 monitor source reconnaissance run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 monitor source reconnaissance]
+    types: [completed]
+    branches: [main]
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: g3-monitor-collection-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.source_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Bootstrap locked browser runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Download successful monitor source artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$SOURCE_RUN_ID" ]; then
+            SOURCE_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-monitor-source-recon.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-monitor-source-recon.yml") | .id')"
+          test "$VALID_RUN" = "$SOURCE_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-monitor-source-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g3-monitor/recon
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-monitor/source.zip
+          unzip -q runtime/g3-monitor/source.zip -d runtime/g3-monitor/recon
+          # The reconnaissance artifact also stores diagnostic recon.json
+          # copies under standalone/. Prefer the canonical root report because
+          # its fixture paths are relative to the artifact root.
+          RECON_FILE="runtime/g3-monitor/recon/recon.json"
+          if [ ! -f "$RECON_FILE" ]; then
+            RECON_FILE="$(find runtime/g3-monitor/recon -path '*/standalone/*' -prune -o -name recon.json -type f -print -quit)"
+          fi
+          test -n "$RECON_FILE"
+          # Trust the run identity recorded inside the validated source
+          # artifact.  The workflow_run event id can refer to a retried or
+          # superseded source execution while the artifact remains the latest
+          # successful snapshot.
+          ARTIFACT_SOURCE_RUN_ID="$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8")).get("run_id") or "")' "$RECON_FILE")"
+          test -n "$ARTIFACT_SOURCE_RUN_ID"
+          test "$ARTIFACT_SOURCE_RUN_ID" = "$SOURCE_RUN_ID"
+          echo "SOURCE_RUN_ID=${ARTIFACT_SOURCE_RUN_ID}" >> "$GITHUB_ENV"
+          SOURCE_RECON_DIR="$(dirname "$RECON_FILE")"
+          if [ ! -d "$SOURCE_RECON_DIR/fixtures" ]; then
+            SOURCE_RECON_DIR="$(dirname "$SOURCE_RECON_DIR")"
+          fi
+          test -d "$SOURCE_RECON_DIR/fixtures"
+          echo "SOURCE_RECON_DIR=${SOURCE_RECON_DIR}" >> "$GITHUB_ENV"
+      - name: Collect exact-SKU PDP facts for the full monitor population
+        run: python scripts/g3_monitor_collect.py --recon-root "$SOURCE_RECON_DIR" --source-run-id "$SOURCE_RUN_ID" --out runtime/g3-monitor
+      - name: Preserve monitor source evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-monitor-collection-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            runtime/g3-monitor/collection-summary.json
+            runtime/g3-monitor/population.json
+            runtime/g3-monitor/products.json
+            runtime/g3-monitor/pdp/
+          retention-days: 14
+          if-no-files-found: warn
+
