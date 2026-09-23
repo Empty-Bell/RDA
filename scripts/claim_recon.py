@@ -136,6 +136,9 @@ def claim_facts(snapshot, target, listing, specs):
     properties = [p for r in exact_jsonld for p in r.get('additionalProperty', [])
                   if ENERGY_STAR.search(p.get('name') or '')]
     result = {'exact_sku': target,
+            'pdp_logo_inspection_raw': snapshot.get('primary_logo_inspection'),
+            'pdp_visible_spec_energy_star_rows_raw': snapshot.get('visible_spec_energy_star_rows', []),
+            'pdp_spec_surface_inspection_raw': snapshot.get('spec_surface_inspection'),
             'listing_title_raw': listing.get('modelName'),
             'pdp_headings_raw': snapshot.get('headings', []),
             'pdp_exact_jsonld_raw': exact_jsonld,

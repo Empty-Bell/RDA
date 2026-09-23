@@ -152,10 +152,30 @@ def build(candidate_path, output):
             "epa_row_id": (item.get("epa_row_raw") or {}).get("source_row_id_raw"),
         } for item in record["epa_current_registration"]["computer_model_pattern_candidates"]],
     } for record in records]
+    publication_evidence_by_sku = []
+    for source_row in rows:
+        claim = source_row["energy_star_claim_sources_raw"]
+        publication_evidence_by_sku.append({
+            "exact_sku": source_row["exact_sku"],
+            "plp_flag": claim.get("plp_energy_star_flag_raw"),
+            "pdp_inspection": claim.get("pdp_logo_inspection_raw"),
+            "pdp_badges": claim.get("rendered_attributed_badges_raw", []),
+            "pdp_candidates": [{
+                "src": item.get("src"), "surface": item.get("product_surface"),
+                "surface_count": item.get("surface_count"),
+                "selector_contract": item.get("selector_contract"),
+            } for item in claim.get("rendered_page_candidates_raw", [])],
+            "pdp_identities": [{
+                "sku": item.get("sku"), "mpn": item.get("mpn")
+            } for item in claim.get("pdp_exact_jsonld_raw", [])],
+            "visible_spec_inspection": claim.get("pdp_spec_surface_inspection_raw"),
+            "visible_spec_rows": claim.get("pdp_visible_spec_energy_star_rows_raw", []),
+            "bridge_spec_claims": claim.get("pdp_spec_energy_star_claim_raw", []),
+        })
     print(json.dumps({"status": report["status"], "sku_count": len(records),
                       "counts": report["counts"], "diagnostics": report["diagnostics"],
                       "finding_count": report["finding_count"], "findings": findings,
-                      "model_matches_by_sku": model_matches},
+                      "model_matches_by_sku": model_matches,\n                      "publication_evidence_by_sku": publication_evidence_by_sku},
                      ensure_ascii=False, sort_keys=True), flush=True)
     return report
 
