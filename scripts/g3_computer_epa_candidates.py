@@ -199,6 +199,8 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
         "candidate_link_count": sum(len(row["epa_computer_model_pattern_candidates"]) for row in records),
         "skus_with_pattern_candidates": sum(bool(row["epa_computer_model_pattern_candidates"]) for row in records),
         "candidate_epa_type_counts": dict(sorted(type_counts.items())),
+        "epa_model_samples": [{key: row.get(key) for key in ("pd_id", "model_number", "model_name",
+            "additional_model_information", "type", "operating_system_name", "markets")} for row in epa_rows],
         "matching_contract": "Literal SKU equality or positional EPA model-number/additional-model token candidate; each * consumes one alphanumeric character; no leading-L omission or other normalization; candidate is source evidence, not a confirmed certification match.",
         "classification": "NOT_EVALUATED pending review of candidate type, OS, market, and model-pattern examples",
         "scope": "Current Samsung Computer PDP evidence and complete current Samsung EPA Computers V9.0 source rows; no legal applicability or severity assessment",
@@ -224,6 +226,7 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
         "epa_samsung_row_count": len(epa_rows), "candidate_link_count": report["candidate_link_count"],
         "skus_with_pattern_candidates": report["skus_with_pattern_candidates"],
         "candidate_epa_type_counts": report["candidate_epa_type_counts"],
+        "epa_model_samples": report["epa_model_samples"],
         "examples": [{"sku": row["exact_sku"], "candidates":[{
             "pattern": c["epa_row_raw"].get("model_number_raw"), "type": c["epa_row_raw"].get("type_raw"),
             "os": c["epa_row_raw"].get("operating_system_name_raw"), "markets": c["epa_row_raw"].get("markets_raw")}
@@ -244,3 +247,4 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
