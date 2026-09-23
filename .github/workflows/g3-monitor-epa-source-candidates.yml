@@ -5,6 +5,8 @@ on:
     paths:
       - 'scripts/g3_monitor_epa_candidates.py'
       - 'tests/test_g3_monitor_epa_candidates.py'
+      - 'scripts/g3_monitor_energy_star_assessment.py'
+      - 'tests/test_g3_monitor_energy_star_assessment.py'
       - '.github/workflows/g3-monitor-epa-source-candidates.yml'
   workflow_dispatch:
     inputs:
@@ -62,9 +64,11 @@ jobs:
         run: |
           mkdir -p runtime
           bash scripts/bootstrap.sh
-      - name: Test Monitor EPA candidate parsing
-        run: python -m unittest discover -s tests -p "test_g3_monitor_epa_candidates.py" -v
-      - name: Capture current EPA Samsung ventilating-fan rows
+      - name: Test approved Monitor ENERGY STAR rules
+        run: |
+          python -m unittest discover -s tests -p "test_g3_monitor_epa_candidates.py" -v
+          python -m unittest discover -s tests -p "test_g3_monitor_energy_star_assessment.py" -v
+      - name: Capture current EPA Samsung Monitor and display rows
         run: python scripts/g3_monitor_epa_capture.py --out runtime/g3-monitor/epa
       - name: Build raw monitor model-pattern candidates
         run: >-
@@ -74,6 +78,11 @@ jobs:
           --epa-root runtime/g3-monitor/epa
           --epa-run-id "$GITHUB_RUN_ID"
           --out runtime/g3-monitor/epa-source-candidates
+      - name: Apply approved Monitor ENERGY STAR publication consistency rules
+        run: >-
+          python scripts/g3_monitor_energy_star_assessment.py
+          --candidates runtime/g3-monitor/epa-source-candidates/monitor-epa-source-candidates.json
+          --out runtime/g3-monitor/assessment
       - name: Preserve Monitor source evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
