@@ -23,12 +23,14 @@ def row(candidates, evidence):
 
 
 class ComputerEnergyStarAssessmentTests(unittest.TestCase):
-    def test_us_notebook_with_all_three_points_is_pass(self):
-        result = assess_record(row([candidate()], claim(True, True, True)))
+    def test_us_notebook_with_all_applicable_points_is_pass(self):
+        result = assess_record(row([candidate()], claim(True, True, False)))
         self.assertEqual(result["display_outcome"], "PASS")
+        self.assertEqual(result["energy_star_publication"]["points"]["spec_certification"]["state"],
+                         "NOT_APPLICABLE")
 
-    def test_registered_notebook_missing_one_point_is_low(self):
-        result = assess_record(row([candidate()], claim(True, False, True)))
+    def test_registered_notebook_missing_plp_is_low(self):
+        result = assess_record(row([candidate()], claim(False, True, False)))
         self.assertEqual(result["display_outcome"], "LOW")
 
     def test_no_matching_epa_row_with_a_publication_claim_is_high(self):
@@ -45,47 +47,17 @@ class ComputerEnergyStarAssessmentTests(unittest.TestCase):
         self.assertEqual(computer_registration([candidate(markets="")])[0], "UNKNOWN")
 
     def test_unknown_pdp_inspection_does_not_create_absence(self):
-        evidence = claim(True, False, True)
+        evidence = claim(True, False, False)
         evidence["pdp_logo_inspection_raw"] = "NOT_EVALUATED"
         result = assess_record(row([candidate()], evidence))
         self.assertEqual(result["display_outcome"], "NOT_EVALUATED")
 
-    def test_computer_specs_certification_field_is_not_applicable(self):
-        row = {
-            "exact_sku": "NP740VJG-KA1US",
-            "energy_star_claim_sources_raw": {
-                "exact_sku": "NP740VJG-KA1US",
-                "plp_energy_star_flag_raw": "Y",
-                "rendered_attributed_badges_raw": [{"src": "energy-star-logo.png"}],
-                "pdp_logo_inspection_raw": "SUPPORTED_PRIMARY_SURFACE_COMPLETE",
-                "pdp_spec_energy_star_claim_raw": [],
-            },
-            "epa_computer_model_pattern_candidates": [
-                candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")
-            ],
-        }
-        result = assess_record(row)
-        self.assertEqual(result["energy_star_publication"]["points"]["spec_certification"]["state"],
-                         "NOT_APPLICABLE")
-        self.assertEqual(result["display_outcome"], "PASS")
-
     def test_computer_plp_absence_still_counts_when_specs_field_not_applicable(self):
-        row = {
-            "exact_sku": "NP740VJG-KA1US",
-            "energy_star_claim_sources_raw": {
-                "exact_sku": "NP740VJG-KA1US",
-                "plp_energy_star_flag_raw": "N",
-                "rendered_attributed_badges_raw": [],
-                "pdp_logo_inspection_raw": None,
-                "pdp_spec_energy_star_claim_raw": [],
-            },
-            "epa_computer_model_pattern_candidates": [
-                candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")
-            ],
-        }
-        result = assess_record(row)
+        result = assess_record(row([candidate()], claim(False, True, False)))
         self.assertEqual(result["energy_star_publication"]["points"]["spec_certification"]["state"],
                          "NOT_APPLICABLE")
         self.assertEqual(result["display_outcome"], "LOW")
 
+
+if __name__ == "__main__":
     unittest.main()
