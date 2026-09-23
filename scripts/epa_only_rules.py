@@ -72,6 +72,13 @@ def publication_points(claim):
 
     visible_specs = claim.get("pdp_visible_spec_energy_star_rows_raw")
     spec_inspection = claim.get("pdp_spec_surface_inspection_raw")
+    # Bridge Data is the authoritative structured Specs surface.  Use it when
+    # the rendered DOM table is not mounted; an empty, complete projected list
+    # is an observed absence rather than an unknown value.
+    bridge_specs = claim.get("pdp_spec_energy_star_claim_raw")
+    if (not isinstance(visible_specs, list) or not visible_specs) and isinstance(bridge_specs, list):
+        visible_specs = bridge_specs
+        spec_inspection = "SUPPORTED_BRIDGE_SPEC_TABLE_COMPLETE"
     if isinstance(visible_specs, list) and visible_specs:
         observed_states = []
         for row in visible_specs:
@@ -93,7 +100,7 @@ def publication_points(claim):
             spec_state = "ABSENT"
         else:
             spec_state = "UNKNOWN"
-    elif spec_inspection == "SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE":
+    elif spec_inspection in ("SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE", "SUPPORTED_BRIDGE_SPEC_TABLE_COMPLETE"):
         spec_state = "ABSENT"
     else:
         spec_state = "UNKNOWN"
