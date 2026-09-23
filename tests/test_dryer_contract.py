@@ -66,6 +66,6 @@ class DryerContract(unittest.TestCase):
 
     def test_collection_loader_rejects_non_dryer_source_run(self):
         with tempfile.TemporaryDirectory() as temp:
-            Path(temp, 'recon.json').write_text('{"status":"PASS","run_id":"123","scope":"washer source contracts only"}', encoding='utf-8')
+            Path(temp, 'recon.json').write_text('{"status":"PASS","run_id":"123","scope":"washer source contracts only","checks":[{"status":"PASS"}]}', encoding='utf-8')
             with self.assertRaisesRegex(ValueError, 'not scoped to clothes dryers'):
                 load_population(temp, '123')
