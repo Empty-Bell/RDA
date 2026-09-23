@@ -21,7 +21,9 @@ def normalize_source_pdp(
             raise ValueError("PDP source record has invalid " + field)
 
     if claim_facts is None:
-        normalized = normalize_pdp(specs, [], [])
+        normalized = normalize_pdp(
+            specs, [], [], allow_refrigerator_energy_rows=True
+        )
         normalized["claim_channel_collection"] = "NOT_COLLECTED_FOR_THIS_PDP_SAMPLE"
         return normalized
 
@@ -41,6 +43,7 @@ def normalize_source_pdp(
         specs,
         [claim_facts["plp_energy_star_flag_raw"]],
         structured,
+        allow_refrigerator_energy_rows=True,
     )
     normalized["claim_channel_collection"] = "COLLECTED_SOURCE_RECORD"
     return normalized
