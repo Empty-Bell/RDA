@@ -38,7 +38,9 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import re
           from pathlib import Path
+          from urllib.parse import urlsplit
 
           root = Path('runtime/source-recon/tablet')
           targets = {
@@ -133,9 +135,11 @@ jobs:
                 }));
               }""")
               for link in focal_plp_links:
-                  if (link.get('url') and 'www.samsung.com/' in link['url']
-                          and ('/buy/' in link['url'].lower() or focal_sku.lower() in link['url'].lower())):
-                      focal_urls.setdefault(link['url'], []).append(
+                  link_url = str(link.get('url') or '')
+                  link_path = urlsplit(link_url).path.lower()
+                  if ('www.samsung.com/' in link_url and '/buy/' in link_path
+                          and focal_sku.lower() in link_path):
+                      focal_urls.setdefault(link_url, []).append(
                           'plp_card_link:' + str(link.get('text') or link.get('aria_label') or link.get('class_name') or '')[:100])
               plp.close()
               for requested_url, sources in focal_urls.items():
@@ -169,6 +173,40 @@ jobs:
               browser.close()
           result['focal_pdp_redirect_traces'] = traces
           result['focal_plp_card_links'] = focal_plp_links
+
+          # Keep this live check as a guard, not just a diagnostic report. If PF
+          # and the exact PLP card Buy link resolve to a different PDP identity,
+          # fail the workflow so the mismatch cannot be mistaken for a clean run.
+          pf_traces = [trace for trace in traces if 'pf_pdp_url' in trace['entry_sources']]
+          buy_traces = [trace for trace in traces if any(
+              source.startswith('plp_card_link:') for source in trace['entry_sources'])]
+          if not pf_traces:
+              raise SystemExit(f'Missing live PF PDP trace for {focal_sku}')
+          if not buy_traces:
+              raise SystemExit(f'Missing SKU-specific PLP card Buy trace for {focal_sku}')
+
+          def canonical_product_url(raw_url):
+              parsed = urlsplit(raw_url)
+              return (parsed.scheme.lower(), (parsed.hostname or '').lower(),
+                      parsed.path.rstrip('/').lower())
+
+          pf_url = canonical_product_url(pf_traces[0]['requested_url'])
+          if not any(canonical_product_url(trace['requested_url']) == pf_url
+                     for trace in buy_traces):
+              raise SystemExit(f'PF PDP and PLP Buy URLs differ for {focal_sku}')
+
+          sku_path = re.compile(r'-sku-' + re.escape(focal_sku.lower()) + r'/?$')
+          for trace in [*pf_traces, *buy_traces]:
+              final = urlsplit(trace.get('final_url') or '')
+              if (trace.get('http_status') != 200
+                      or (trace.get('visible_continue_sku') or '').upper() != focal_sku
+                      or final.scheme.lower() != 'https'
+                      or final.hostname != 'www.samsung.com'
+                      or not sku_path.search(final.path.lower())):
+                  raise SystemExit(
+                      f'PDP identity mismatch for {focal_sku}: '
+                      f'{json.dumps(trace, ensure_ascii=False, sort_keys=True)}')
+
           print(json.dumps(result, ensure_ascii=False, sort_keys=True))
           (root / 'redirect-plp-pf-verification.json').write_text(
               json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
