@@ -39,10 +39,17 @@ def claim(values: list[Any]) -> dict[str, Any]:
     return observed(parsed[0], values)
 
 
-def measurement(entries: list[dict[str, Any]], kind: str) -> dict[str, Any]:
+def measurement(
+    entries: list[dict[str, Any]],
+    kind: str,
+    *,
+    allow_refrigerator_energy_rows: bool = False,
+) -> dict[str, Any]:
     if kind not in ("annual_energy", "capacity"):
         raise ValueError("Unknown measurement kind")
-    if not entries:
+    if not entries or (
+        kind == "annual_energy" and len(entries) != 1 and not allow_refrigerator_energy_rows
+    ):
         return absent("MISSING_OR_MULTIPLE_MEASUREMENTS", entries)
     number = r"(\d+(?:\.\d+)?)"
     if kind == "annual_energy":
@@ -52,7 +59,7 @@ def measurement(entries: list[dict[str, Any]], kind: str) -> dict[str, Any]:
             if not isinstance(name, str) or not isinstance(value, str):
                 return absent("UNSUPPORTED_MEASUREMENT_ENCODING", entries)
             pattern = number + r"\s*kWh\s*/\s*(?:yr|year)"
-            if name == "Energy Consumption":
+            if allow_refrigerator_energy_rows and name == "Energy Consumption":
                 pattern = number + r"\s*kWh(?:\s*/\s*(?:yr|year))?"
             match = re.fullmatch(pattern, value.strip(), re.I)
             if match is None:
@@ -86,10 +93,18 @@ def measurement(entries: list[dict[str, Any]], kind: str) -> dict[str, Any]:
 
 
 def normalize_pdp(
-    specs: dict[str, Any], plp_flags: list[Any], structured_fields: list[dict[str, Any]]
+    specs: dict[str, Any],
+    plp_flags: list[Any],
+    structured_fields: list[dict[str, Any]],
+    *,
+    allow_refrigerator_energy_rows: bool = False,
 ) -> dict[str, Any]:
     channels = {
-        "pdp_annual_energy_kwh": measurement(specs["energy_consumption_raw"], "annual_energy"),
+        "pdp_annual_energy_kwh": measurement(
+            specs["energy_consumption_raw"],
+            "annual_energy",
+            allow_refrigerator_energy_rows=allow_refrigerator_energy_rows,
+        ),
         "pdp_capacity": measurement(specs["capacity_raw"], "capacity"),
         "plp_energy_star_claim": claim(plp_flags),
         "pdp_structured_energy_star_claim": claim([f.get("value") for f in structured_fields]),
