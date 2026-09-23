@@ -92,6 +92,58 @@ jobs:
               'plp_card_count': len(plp_tiles),
               'pf_exact_sku_count': len(exact_pf),
           }
+          # Trace both PF and PLP entry URLs for the one redirecting source SKU
+          # that is itself listed on the PLP. Compare the final URL with the PDP's
+          # visible primary Continue SKU, the exact identity signal used by G3.
+          import sys
+          from urllib.parse import urljoin
+          sys.path.insert(0, 'scripts')
+          from browser_runtime import desktop_context
+          from playwright.sync_api import sync_playwright
+
+          focal_sku = 'SM-X828UZAAVZW'
+          focal_pf = pf_rows.get(focal_sku, {})
+          focal_urls = {}
+          for source_name, raw_url in (
+              ('pf_pdp_url', focal_pf.get('pdpURL')),
+              ('plp_card_url', plp_tiles.get(focal_sku)),
+          ):
+              if raw_url:
+                  focal_urls.setdefault(urljoin('https://www.samsung.com', raw_url), []).append(source_name)
+          traces = []
+          with sync_playwright() as playwright:
+              browser = playwright.chromium.launch(headless=True)
+              context, _ = desktop_context(browser)
+              for requested_url, sources in focal_urls.items():
+                  page = context.new_page()
+                  navigation_requests = []
+                  page.on('request', lambda request: navigation_requests.append({
+                      'url': request.url,
+                      'redirected_from': request.redirected_from.url if request.redirected_from else None,
+                  }) if request.is_navigation_request() else None)
+                  navigation_error = None
+                  try:
+                      response = page.goto(requested_url, wait_until='domcontentloaded', timeout=60000)
+                  except Exception as error:
+                      response = None
+                      navigation_error = f'{type(error).__name__}: {str(error)[:250]}'
+                  try:
+                      page.locator('#continue_btn').wait_for(state='visible', timeout=30000)
+                      continue_sku = page.locator('#continue_btn').get_attribute('data-modelcode')
+                  except Exception:
+                      continue_sku = None
+                  traces.append({
+                      'entry_sources': sources,
+                      'requested_url': requested_url,
+                      'http_status': response.status if response else None,
+                      'final_url': page.url,
+                      'visible_continue_sku': continue_sku,
+                      'navigation_requests': navigation_requests,
+                      'navigation_error': navigation_error,
+                  })
+                  page.close()
+              browser.close()
+          result['focal_pdp_redirect_traces'] = traces
           print(json.dumps(result, ensure_ascii=False, sort_keys=True))
           (root / 'redirect-plp-pf-verification.json').write_text(
               json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
