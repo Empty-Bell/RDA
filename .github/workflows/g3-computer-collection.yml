@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   collect:
-    if: github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     strategy:
@@ -126,3 +126,4 @@ jobs:
               'shard_counts':[row['population_count'] for row in sorted(rows,key=lambda item:item['shard_index'])],
               'coverage_counts':{key:sum(row['coverage_counts'].get(key,0) for row in rows) for key in ('VERIFIED_EXACT_IDENTITY','FAILED')}},sort_keys=True))
           PY
+
