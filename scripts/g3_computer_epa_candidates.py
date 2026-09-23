@@ -212,6 +212,20 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
             "pdp_product_facts_raw": facts[sku], "energy_star_claim_sources_raw": claims[sku],
             "epa_computer_model_pattern_candidates": candidates,
             "registration_and_publication_assessment": "NOT_EVALUATED"})
+    publication_capture = {
+        "pdp_primary_surface_complete": sum(
+            claims[sku].get("pdp_logo_inspection_raw") == "SUPPORTED_PRIMARY_SURFACE_COMPLETE" for sku in skus),
+        "pdp_skus_with_logo_selector_candidates": sum(bool(claims[sku].get("rendered_page_candidates_raw")) for sku in skus),
+        "pdp_skus_with_exactly_attributed_logo": sum(bool(claims[sku].get("rendered_attributed_badges_raw")) for sku in skus),
+        "spec_skus_with_complete_bridge_table": sum(
+            claims[sku].get("pdp_spec_surface_inspection_raw") == "SUPPORTED_BRIDGE_SPEC_TABLE_COMPLETE"
+            for sku in skus),
+        "spec_skus_with_energy_star_rows": sum(bool(claims[sku].get("pdp_spec_energy_star_claim_raw")) for sku in skus),
+        "plp_flags": dict(Counter(str(claims[sku].get("plp_energy_star_flag_raw")) for sku in skus)),
+        "pdp_logo_selector_contracts": dict(Counter(
+            str(candidate.get("selector_contract") or "(missing)")
+            for sku in skus for candidate in claims[sku].get("rendered_page_candidates_raw", []))),
+    }
     report = {"contract": CONTRACT, "status": "SOURCE_CANDIDATES_READY", "source_validation": "PASS",
         "dataset_id": DATASET, "collection_run_id": str(os.getenv("COLLECTION_RUN_ID")),
         "collection_source_run_id": source_run_id, "epa_capture_run_id": epa_summary.get("capture_run_id"),
@@ -220,6 +234,7 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
         "candidate_link_count": sum(len(row["epa_computer_model_pattern_candidates"]) for row in records),
         "skus_with_pattern_candidates": sum(bool(row["epa_computer_model_pattern_candidates"]) for row in records),
         "candidate_epa_type_counts": dict(sorted(type_counts.items())),
+        "publication_capture_diagnostics": publication_capture,
         "epa_model_samples": [{key: row.get(key) for key in ("pd_id", "model_number", "model_name",
             "additional_model_information", "type", "operating_system_name", "markets")} for row in epa_rows],
         "matching_contract": "Literal SKU equality, positional EPA * pattern, or an alphanumeric EPA base model followed by an exact hyphen boundary in the Samsung SKU. No leading-character deletion or fuzzy normalization; candidate is source evidence, not a confirmed certification match.",
@@ -248,6 +263,7 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
         "skus_with_pattern_candidates": report["skus_with_pattern_candidates"],
         "candidate_epa_type_counts": report["candidate_epa_type_counts"],
         "epa_model_samples": report["epa_model_samples"],
+        "publication_capture_diagnostics": publication_capture,
         "examples": [{"sku": row["exact_sku"], "candidates":[{
             "pattern": c["epa_row_raw"].get("model_number_raw"), "type": c["epa_row_raw"].get("type_raw"),
             "os": c["epa_row_raw"].get("operating_system_name_raw"), "markets": c["epa_row_raw"].get("markets_raw")}
