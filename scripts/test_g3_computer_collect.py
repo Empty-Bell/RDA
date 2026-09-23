@@ -6,7 +6,7 @@ import unittest
 
 from scripts.g3_computer_collect import load_population, shard_for
 
-FIXTURES = Path(__file__).parent / "fixtures" / "computer"
+FIXTURES = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "computer"
 
 
 def write_leg(root, family, fixture_name, run_id):
@@ -51,3 +51,4 @@ class ComputerCollectionPopulationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
