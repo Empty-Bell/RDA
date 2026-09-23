@@ -150,6 +150,11 @@ def load_collection(root, expected_run_id):
             claim = result.get("energy_star_claim_sources_raw")
             if not isinstance(claim, dict) or claim.get("exact_sku") != sku:
                 raise ValueError("Computer ENERGY STAR publication claim lacks exact-SKU provenance")
+            claim = {**claim,
+                "pdp_logo_inspection_raw": snapshot.get("primary_logo_inspection"),
+                "pdp_spec_surface_inspection_raw": snapshot.get("spec_surface_inspection"),
+                "pdp_visible_spec_energy_star_rows_raw": snapshot.get("visible_spec_energy_star_rows", []),
+            }
             products[sku] = result; claims[sku] = claim; facts[sku] = computed
     if set(products) != expected:
         raise ValueError("Computer PDP results do not match the full 24-SKU source population")

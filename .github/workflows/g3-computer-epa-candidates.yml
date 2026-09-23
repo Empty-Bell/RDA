@@ -5,6 +5,9 @@ on:
     paths:
       - 'scripts/g3_computer_epa_candidates.py'
       - 'scripts/test_g3_computer_epa_candidates.py'
+      - 'scripts/g3_computer_energy_star_assessment.py'
+      - 'scripts/test_g3_computer_energy_star_assessment.py'
+      - 'scripts/epa_only_rules.py'
       - '.github/workflows/g3-computer-epa-candidates.yml'
   workflow_dispatch:
     inputs:
@@ -66,17 +69,22 @@ jobs:
           mkdir -p runtime
           bash scripts/bootstrap.sh
       - name: Test strict Computer model-pattern candidates
-        run: python -m unittest scripts.test_g3_computer_epa_candidates -v
+        run: python -m unittest scripts.test_g3_computer_epa_candidates scripts.test_g3_computer_energy_star_assessment -v
       - name: Capture EPA current rows and build raw candidate evidence
         run: >-
           python scripts/g3_computer_epa_candidates.py
           --collection-root runtime/g3-computer/collection
           --collection-run-id "$COLLECTION_RUN_ID"
           --out runtime/g3-computer/epa-candidates
+      - name: Assess Computer ENERGY STAR registration and publication
+        run: >-
+          python scripts/g3_computer_energy_star_assessment.py
+          --candidates runtime/g3-computer/epa-candidates/candidates/computer-epa-source-candidates.json
+          --out runtime/g3-computer/assessment
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: g3-computer-epa-candidates-${{ github.run_id }}-${{ github.run_attempt }}
-          path: runtime/g3-computer/epa-candidates/
+          path: runtime/g3-computer/
           retention-days: 14
           if-no-files-found: warn
