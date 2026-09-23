@@ -2,6 +2,7 @@
 
 import copy
 import json
+from dataclasses import fields
 from pathlib import Path
 import sys
 import unittest
@@ -12,6 +13,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from g2_normalized import normalize_source_pdp
+from regaudit.facts import TYPES, validate_observations
 from source_contract import pdp_facts
 
 
@@ -134,3 +136,16 @@ class NormalizedPdpAdapterTests(unittest.TestCase):
         channel = result["channels"]["pdp_annual_energy_kwh"]
         self.assertEqual(channel["observation"]["state"], "NOT_OBSERVED")
         self.assertEqual(channel["reason"], "CONFLICTING_MEASUREMENTS")
+
+    def test_raw_energy_source_rows_are_valid_fact_observations(self):
+        observations = {
+            field.name: {"state": "NOT_OBSERVED", "value": None, "error": None}
+            for field in fields(TYPES["PDP"])
+        }
+        observations["pdp_energy_consumption_raw"] = {
+            "state": "VALUE",
+            "value": [{"name": "Energy Consumption", "value": "685kWh"}],
+            "error": None,
+        }
+
+        validate_observations("PDP", observations, {"a" * 64})
