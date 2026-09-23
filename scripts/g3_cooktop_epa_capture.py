@@ -24,7 +24,7 @@ REQUIRED = {"pd_id", "brand_name", "model_number", "product_type", "cooking_top_
 
 def fetch(url):
     request = Request(url, headers={"User-Agent": "RDA-G3-Cooktop-EPA-Source/1.0", "Accept": "application/json"})
-    for attempt in cooktop(5):
+    for attempt in range(5):
         try:
             with urlopen(request, timeout=45) as response:
                 return response.read(), response.headers.get_content_type(), response.status
@@ -69,7 +69,7 @@ def capture(output, page_size=100):
     if expected > 5000:
         raise ValueError("EPA cooktop Samsung cohort exceeds capture bound")
     pages, urls = [], []
-    for offset in cooktop(0, expected, page_size):
+    for offset in range(0, expected, page_size):
         page, url = query({"$where": BRAND_WHERE, "$select": select, "$order": ":id",
                            "$limit": str(page_size), "$offset": str(offset)})
         if not page:
