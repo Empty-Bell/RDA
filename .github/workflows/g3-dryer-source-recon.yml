@@ -9,6 +9,7 @@ on:
       - 'scripts/source_contract.py'
       - 'scripts/g3_dryer_collect.py'
       - 'scripts/claim_recon.py'
+      - 'scripts/epa_only_rules.py'
       - 'scripts/browser_runtime.py'
       - 'scripts/bootstrap.sh'
       - 'scripts/runtime_integrity.py'
@@ -53,3 +54,4 @@ jobs:
           path: runtime/source-recon/dryer/
           retention-days: 14
           if-no-files-found: error
+
