@@ -11,12 +11,12 @@ def candidate(rule, markets="United States"):
 
 
 class ComputerRegistrationScopeTests(unittest.TestCase):
-    def test_base_model_prefix_does_not_confirm_retail_sku_registration(self):
+    def test_base_model_prefix_confirms_registration_per_approved_rule(self):
         state, markets = computer_registration([
             candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")
         ])
-        self.assertEqual(state, "UNKNOWN")
-        self.assertEqual(markets, ["UNKNOWN"])
+        self.assertEqual(state, "PRESENT")
+        self.assertEqual(markets, ["PRESENT"])
 
     def test_explicit_model_match_with_us_market_can_confirm_registration(self):
         state, markets = computer_registration([

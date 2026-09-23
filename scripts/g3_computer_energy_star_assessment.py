@@ -23,11 +23,8 @@ def computer_registration(candidates):
     if any(str((item.get("epa_row_raw") or {}).get("type_raw") or "").strip().casefold() != "notebook"
            for item in candidates):
         return "UNKNOWN", ["UNKNOWN" for _ in candidates]
-    # A certified EPA base model matching only the prefix before a Samsung retail/configuration
-    # suffix is a family candidate, not proof that this exact retail SKU is in certified scope.
-    if any(((item.get("model_pattern_candidate") or {}).get("match_rule")
-            == "EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX") for item in candidates):
-        return "UNKNOWN", ["UNKNOWN" for _ in candidates]
+    # The approved Samsung convention treats the exact SKU prefix before the first hyphen
+    # as the EPA model designation, including explicit additional-model-information aliases.
     projected = [{"markets_raw": (item.get("epa_row_raw") or {}).get("markets_raw")}
                  for item in candidates]
     return epa_registration_state(projected, [])
@@ -109,7 +106,6 @@ def build(candidate_path, output):
             "epa_current_us_notebook_and_any_point_absent": "LOW",
             "no_matching_us_epa_notebook_and_any_point_present": "HIGH",
             "no_matching_us_epa_notebook_and_all_points_absent": "PASS_NO_FINDING",
-            "epa_base_model_prefix_only_without_exact_sku_scope_evidence": "NOT_EVALUATED",
             "unknown_type_market_or_publication_evidence": "NOT_EVALUATED",
             "overall_product_compliance": "NOT_EVALUATED",
             "legal_applicability": "NOT_EVALUATED",
