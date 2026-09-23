@@ -88,6 +88,19 @@ def _selected_sku(selection, target):
         "selected_controls_raw": controls if isinstance(controls, list) else []}
 
 
+def _observe_selection(page):
+    """Capture the visible PDP selection even when its SKU fails the identity check."""
+    return page.evaluate("""() => {
+      const e = document.querySelector('#continue_btn');
+      return {
+        continue_sku: e?.getAttribute('data-modelcode') || null,
+        continue_visible: !!e && e.getClientRects().length > 0,
+        selected_controls: Array.from(document.querySelectorAll('[data-modelcode][aria-checked="true"]'))
+          .map(x => ({sku: x.getAttribute('data-modelcode'), label: x.getAttribute('aria-label')}))
+      };
+    }""")
+
+
 def collect(products, output):
     from playwright.sync_api import sync_playwright
     destination = Path(output)
@@ -114,15 +127,14 @@ def collect(products, output):
             page.on("response", observe)
             try:
                 response = page.goto(record["requested_url"], wait_until="domcontentloaded", timeout=60000)
+                record.update(final_url=safe_url(page.url), http_status=response.status if response else None)
                 page.wait_for_timeout(10000)
                 # Samsung PDPs can expose multiple controls with the same accessible
                 # name. Only the primary PDP Continue button carries the current SKU.
                 purchase = page.locator("#continue_btn")
                 purchase.wait_for(state="visible", timeout=30000)
-                selection = {"selected_controls": page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
-                    '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
-                    "continue_sku": purchase.get_attribute("data-modelcode") if purchase.count() else None,
-                    "continue_visible": purchase.is_visible() if purchase.count() else False}
+                selection = _observe_selection(page)
+                record["selection_observed_raw"] = selection
                 selection_facts = _selected_sku(selection, sku)
                 final = urlsplit(page.url)
                 slug = re.escape(sku.lower().replace("/", "-"))
@@ -156,6 +168,13 @@ def collect(products, output):
                     energy_star_claim_sources_raw=claims,
                     identity_contract="SELECTED_CONFIG_CONTINUE_SKU_CURRENT_ECOM_GROUP_AND_EXACT_SPECS")
             except Exception as error:
+                # Preserve the page's actual destination and model control for diagnosis;
+                # do not weaken the exact-SKU gate when Samsung serves another variant.
+                try:
+                    record.update(final_url=safe_url(page.url),
+                        selection_observed_raw=_observe_selection(page))
+                except Exception:
+                    pass
                 record["error"] = str(error).splitlines()[0][:300]
             finally:
                 page.close()
@@ -189,7 +208,9 @@ def build_shard(recon_root, source_run_id, shard_index, shard_count, output):
         "rows": results, "status": "PASS" if all(value == "VERIFIED_EXACT_IDENTITY" for value in statuses.values()) else "FAILED"}
     (out / "shard-summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({key: summary[key] for key in ("status", "source_run_id", "shard_index", "shard_count", "population_count", "coverage_counts")}, sort_keys=True), flush=True)
-    failures = [{"exact_sku": row["exact_sku"], "error": row.get("error", "unspecified failure")}
+    failures = [{"exact_sku": row["exact_sku"], "error": row.get("error", "unspecified failure"),
+        "final_url": row.get("final_url"), "http_status": row.get("http_status"),
+        "selection_observed_raw": row.get("selection_observed_raw")}
         for row in results if row["status"] != "VERIFIED_EXACT_IDENTITY"]
     if failures:
         print(json.dumps({"tablet_collection_failures": failures}, ensure_ascii=False, sort_keys=True), flush=True)
