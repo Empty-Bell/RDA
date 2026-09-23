@@ -174,17 +174,17 @@ DOM_SNAPSHOT = r"""() => {
   // Samsung PDPs use two published logo surfaces: a gallery badge and an
   // ENERGY STAR image in the product-detail configurator (common on Galaxy Books).
   const galleryLogoSelector = '#leftColumnInMainContent [class*="Gallery_energyStarContainer"] img';
-  const configuratorLogoSelector = '.pdp-page .q6b6RelationContainer img[class*="EnergyStar_energyStar__"], ' +
-    '.pdp-page .q6b6RelationContainer img[src*="/b2c_pf/badge/energy-star-logo-pdp-"]';
+  const configuratorLogoSelector = '#pdp-page .q6b6RelationContainer img[class*="EnergyStar_energyStar__"], ' +
+    '#pdp-page .q6b6RelationContainer img[src*="/b2c_pf/badge/energy-star-logo-pdp-"]';
   const pdpLogoSelector = galleryLogoSelector + ', ' + configuratorLogoSelector;
   const galleryCount = document.querySelectorAll('[class*="Gallery_outerContainer__"]').length;
-  const relationCount = document.querySelectorAll('.pdp-page .q6b6RelationContainer').length;
+  const relationCount = document.querySelectorAll('#pdp-page .q6b6RelationContainer').length;
   const relationLogoCount = document.querySelectorAll(configuratorLogoSelector).length;
   const candidates = Array.from(document.querySelectorAll(pdpLogoSelector))
     .filter(visible).map(e => {
       const inGallery = !!(e.closest('[class*="Gallery_energyStarContainer__"]') &&
         e.closest('[class*="Gallery_outerContainer__"]'));
-      const inConfigurator = !inGallery && !!e.closest('.pdp-page .q6b6RelationContainer');
+      const inConfigurator = !inGallery && !!e.closest('#pdp-page .q6b6RelationContainer');
       return {tag:e.tagName, text:(e.children.length ? '' : e.textContent || '').trim(),
         alt:e.getAttribute('alt'), label:e.getAttribute('aria-label'),
         ancestors:Array.from((function*(){let p=e;for(let i=0;p && i<5;i++,p=p.parentElement) yield {tag:p.tagName,cls:p.className};})()),
@@ -222,7 +222,7 @@ DOM_SNAPSHOT = r"""() => {
   // On configurator PDPs, a unique product identity plus a mounted details surface
   // is the supported primary surface even when the gallery component is absent.
   const configuratorSurfaceComplete = galleryCount === 0 && relationCount > 0 &&
-    document.querySelector('.pdp-page') && identifiedProductCount === 1;
+    document.querySelector('#pdp-page') && identifiedProductCount === 1;
   const primaryLogoInspection = galleryCount === 1 || configuratorSurfaceComplete
     ? 'SUPPORTED_PRIMARY_SURFACE_COMPLETE' : 'UNSUPPORTED_OR_AMBIGUOUS_PRIMARY_SURFACE';
   return {headings:Array.from(document.querySelectorAll('h1')).filter(visible).map(e => e.textContent.trim().slice(0,300)),

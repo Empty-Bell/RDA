@@ -5,6 +5,7 @@ import tempfile
 import unittest
 
 from scripts.g3_computer_collect import load_population, shard_for
+from scripts.claim_recon import DOM_SNAPSHOT
 
 FIXTURES = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "computer"
 
@@ -47,6 +48,12 @@ class ComputerCollectionPopulationTests(unittest.TestCase):
             write_leg(root / "chromebook", "chromebook", "", "123")
             with self.assertRaisesRegex(ValueError, "requested successful run"):
                 load_population(root / "computer", root / "chromebook", "999")
+
+
+class ComputerPdpSelectorContractTests(unittest.TestCase):
+    def test_pdp_configurator_selectors_use_the_observed_root_id(self):
+        self.assertIn("#pdp-page .q6b6RelationContainer", DOM_SNAPSHOT)
+        self.assertNotIn(".pdp-page .q6b6RelationContainer", DOM_SNAPSHOT)
 
 
 if __name__ == "__main__":
