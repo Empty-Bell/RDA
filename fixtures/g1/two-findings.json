@@ -117,6 +117,11 @@
           "error": null,
           "state": "VALUE",
           "value": "c391a6941cbbba51aa24263aae0008782ee34f98528772982bd1a6fd6c093aa0"
+        },
+        "pdp_energy_consumption_raw": {
+          "error": null,
+          "state": "NOT_OBSERVED",
+          "value": null
         }
       },
       "product_group": "washer",
