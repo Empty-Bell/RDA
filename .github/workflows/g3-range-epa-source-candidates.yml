@@ -5,6 +5,8 @@ on:
     paths:
       - 'scripts/g3_range_epa_capture.py'
       - 'scripts/g3_range_epa_candidates.py'
+      - 'scripts/g3_range_energy_star_assessment.py'
+      - 'tests/test_g3_range_energy_star_assessment.py'
       - '.github/workflows/g3-range-epa-source-candidates.yml'
   workflow_dispatch:
     inputs:
@@ -58,6 +60,8 @@ jobs:
           COLLECTION_DIR="$(dirname "$SUMMARY_FILE")"
           echo "COLLECTION_RUN_ID=${COLLECTION_RUN_ID}" >> "$GITHUB_ENV"
           echo "COLLECTION_DIR=${COLLECTION_DIR}" >> "$GITHUB_ENV"
+      - name: Validate approved Range publication rules
+        run: python -m unittest discover -s tests -p "test_g3_range*.py" -v
       - name: Capture current EPA Samsung residential electric cooking rows
         run: python scripts/g3_range_epa_capture.py --out runtime/g3-range/epa
       - name: Build raw model-pattern candidate report
@@ -68,6 +72,11 @@ jobs:
           --epa-root runtime/g3-range/epa
           --epa-run-id "$GITHUB_RUN_ID"
           --out runtime/g3-range/epa-source-candidates
+      - name: Apply approved Range ENERGY STAR publication consistency rules
+        run: >-
+          python scripts/g3_range_energy_star_assessment.py
+          --candidates runtime/g3-range/epa-source-candidates/range-epa-source-candidates.json
+          --out runtime/g3-range/assessment
       - name: Preserve Range EPA source evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
