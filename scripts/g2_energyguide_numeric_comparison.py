@@ -43,7 +43,9 @@ def _pdp_annual_energy(fact: dict[str, Any]) -> dict[str, Any]:
     if isinstance(source_rows, list) and source_rows:
         from regaudit.normalization import measurement
 
-        replayed = measurement(source_rows, "annual_energy")["observation"]
+        replayed = measurement(
+            source_rows, "annual_energy", allow_refrigerator_energy_rows=True
+        )["observation"]
         if replayed != observations.get("pdp_annual_energy_kwh", {}):
             raise ValueError("PDP annual normalization does not match preserved source rows")
         return replayed
