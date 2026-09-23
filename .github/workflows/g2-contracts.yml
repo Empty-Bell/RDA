@@ -2,6 +2,15 @@ name: G2 source-normalization contracts
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/regaudit/normalization.py'
+      - 'src/regaudit/facts.py'
+      - 'scripts/g2_energyguide_numeric_comparison.py'
+      - 'scripts/g2_normalized.py'
+      - 'checks/g2/test_normalized_pdp.py'
+      - 'checks/g2/test_energyguide_numeric_comparison.py'
   push:
     branches: [main]
     paths:
