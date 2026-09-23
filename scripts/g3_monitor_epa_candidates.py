@@ -99,6 +99,18 @@ def additional_model_patterns(value):
     return patterns
 
 
+def monitor_model_pattern_candidate(pattern, sku):
+    """Compare the PDP SKU literally, then with its approved leading L omitted."""
+    direct = model_pattern_candidate(pattern, sku)
+    if direct is not None:
+        return {**direct, "match_rule": "LITERAL_PDP_SKU"}
+    if isinstance(sku, str) and sku.startswith("L"):
+        without_l = model_pattern_candidate(pattern, sku[1:])
+        if without_l is not None:
+            return {**without_l, "match_rule": "PDP_SKU_WITH_SINGLE_LEADING_L_OMITTED"}
+    return None
+
+
 def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
     products, claims, facts, collection = load_collection(collection_root, collection_run_id)
     epa_rows, epa = load_epa(epa_root, epa_run_id)
@@ -106,45 +118,29 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
     all_epa_type_counts = Counter(str(row.get("display_type") or "(blank)") for row in epa_rows)
     for product in sorted(products, key=lambda row: row["exact_sku"]):
         sku = product["exact_sku"]
-        candidates, leading_l_diagnostics = [], []
+        candidates = []
         for source in epa_rows:
             declared_patterns = [("model_number", source.get("model_number"))]
             declared_patterns.extend(("additional_model_information", pattern)
                                      for pattern in additional_model_patterns(source.get("additional_model_information")))
             seen = set()
-            source_matches_sku = False
             for source_field, pattern in declared_patterns:
-                matched = model_pattern_candidate(pattern, sku)
+                matched = monitor_model_pattern_candidate(pattern, sku)
                 if matched is None:
                     continue
-                source_matches_sku = True
-                signature = (source_field, pattern)
+                signature = (source_field, pattern, matched["match_rule"])
                 if signature in seen:
                     continue
                 seen.add(signature)
                 item = project_candidate(source, {"candidate_source_field": source_field,
-                                                  "candidate": matched})
+                                                  "candidate": matched,
+                                                  "match_rule": matched["match_rule"]})
+                item["match_rule"] = matched["match_rule"]
                 candidates.append(item)
                 type_counts[str(source.get("display_type") or "(blank)")] += 1
-            if sku.startswith("L") and not source_matches_sku:
-                for source_field, pattern in declared_patterns:
-                    matched_without_l = model_pattern_candidate(pattern, sku[1:])
-                    if matched_without_l is not None:
-                        leading_l_diagnostics.append({
-                            "source_row_id_raw": source.get("source_row_id"),
-                            "pd_id_raw": source.get("pd_id"),
-                            "candidate_source_field": source_field,
-                            "model_pattern_raw": pattern,
-                            "epa_model_number_raw": source.get("model_number"),
-                            "epa_additional_model_information_raw": source.get("additional_model_information"),
-                            "display_type_raw": source.get("display_type"),
-                            "markets_raw": source.get("markets"),
-                            "diagnostic_only_match_after_dropping_initial_L": matched_without_l,
-                        })
         records.append({"exact_sku": sku, "pdp_product_facts_raw": facts.get(sku, {}),
                         "energy_star_claim_sources_raw": claims[sku],
                         "epa_display_pattern_candidates": candidates,
-                        "epa_leading_l_only_diagnostics": leading_l_diagnostics,
                         "applicability": "NOT_EVALUATED", "certification_identity": "NOT_EVALUATED",
                         "publication_consistency": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"})
     candidate_rows = sum(len(row["epa_display_pattern_candidates"]) for row in records)
@@ -155,12 +151,11 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
               "epa_model_pattern_candidate_row_count": candidate_rows,
               "skus_with_pattern_candidates": sum(bool(r["epa_display_pattern_candidates"]) for r in records),
               "skus_without_pattern_candidates": sum(not r["epa_display_pattern_candidates"] for r in records),
-              "skus_with_leading_l_only_diagnostics": sum(bool(r["epa_leading_l_only_diagnostics"]) for r in records),
-              "leading_l_only_diagnostic_row_count": sum(len(r["epa_leading_l_only_diagnostics"]) for r in records),
+              "skus_matched_after_leading_l_omission": sum(any(c["match_rule"] == "PDP_SKU_WITH_SINGLE_LEADING_L_OMITTED" for c in r["epa_display_pattern_candidates"]) for r in records),
               "candidate_display_type_counts": dict(sorted(type_counts.items())),
               "all_epa_display_type_counts": dict(sorted(all_epa_type_counts.items())),
               "source_hashes": {"epa_rows_sha256": epa["rows_sha256"]},
-              "model_candidate_contract": "Literal equality or positional pattern candidate from either EPA model_number or a standalone model-like token in EPA additional_model_information; '*' consumes one A-Z/0-9 position. Candidate is not a certification match.",
+              "model_candidate_contract": "Literal equality or positional pattern candidate from either EPA model_number or a standalone model-like token in EPA additional_model_information. For Monitor PDP SKUs only, a single initial L may be omitted before comparison; '*' consumes one A-Z/0-9 position. Candidate is not a certification match.",
               "assessment_contract": "No monitor classification, applicability, certification identity, publication consistency, severity, or compliance rule is applied.",
               "scope": "Monitor PDP claims and raw EPA display model-pattern candidates. EPA display_type and market remain source evidence; no legal or product-type conclusion.",
               "collection_contract": collection["contract"], "records": records}
@@ -183,15 +178,7 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
     print(json.dumps({"status": report["status"], "population_count": len(records), "epa_samsung_rows": len(epa_rows),
                       "pattern_candidate_rows": candidate_rows, "candidate_display_type_counts": report["candidate_display_type_counts"],
                       "all_epa_display_type_counts": report["all_epa_display_type_counts"],
-                      "leading_l_only_diagnostic_sku_count": report["skus_with_leading_l_only_diagnostics"],
-                      "leading_l_only_diagnostic_examples": [{"sku": row["exact_sku"],
-                          "patterns": [{"source_field": x["candidate_source_field"],
-                                        "pattern": x["model_pattern_raw"],
-                                        "epa_model_number": x["epa_model_number_raw"],
-                                        "display_type": x["display_type_raw"],
-                                        "markets": x["markets_raw"], "pd_id": x["pd_id_raw"]}
-                                       for x in row["epa_leading_l_only_diagnostics"]]}
-                          for row in records if row["epa_leading_l_only_diagnostics"]][:30],
+                      "skus_matched_after_leading_l_omission": report["skus_matched_after_leading_l_omission"],
                       "epa_model_samples": [{"model_number": row.get("model_number"), "model_name": row.get("model_name"),
                           "additional_model_information": row.get("additional_model_information"),
                           "display_type": row.get("display_type"), "markets": row.get("markets"), "pd_id": row.get("pd_id")}
