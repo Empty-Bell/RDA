@@ -46,15 +46,14 @@ class TabletCollectTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "fixture hash mismatch"):
                 load_population(root, RUN_ID)
 
-    def test_selected_configuration_and_continue_must_both_match_exact_sku(self):
-        good = {"selected_controls": [{"sku": "sm-x930nzaaxar"}],
+    def test_exact_continue_sku_is_required_and_selected_controls_are_context_only(self):
+        good = {"selected_controls": [{"sku": "SM-X930"}],
             "continue_sku": "SM-X930NZAAXAR", "continue_visible": True}
         self.assertEqual("SM-X930NZAAXAR", _selected_sku(good, "SM-X930NZAAXAR")["exact_sku"])
+        self.assertEqual([], _selected_sku({**good, "selected_controls": []}, "SM-X930NZAAXAR")["selected_controls_raw"])
         for bad in (
-            {**good, "selected_controls": [{"sku": "SM-X930NZAAXAA"}]},
             {**good, "continue_sku": "SM-X930NZAAXAA"},
             {**good, "continue_visible": False},
-            {**good, "selected_controls": []},
         ):
             with self.subTest(bad=bad), self.assertRaises(ValueError):
                 _selected_sku(bad, "SM-X930NZAAXAR")

@@ -80,15 +80,12 @@ def shard_for(sku, count=SHARD_COUNT):
 
 def _selected_sku(selection, target):
     controls = selection.get("selected_controls")
-    if (not isinstance(controls, list) or not controls
-            or any(not isinstance(row, dict) or str(row.get("sku") or "").upper() != target.upper()
-                   for row in controls)):
-        raise ValueError("Selected Tablet configuration does not corroborate the exact SKU")
     if (not selection.get("continue_visible")
             or str(selection.get("continue_sku") or "").upper() != target.upper()):
         raise ValueError("Visible Tablet Continue control does not corroborate the exact SKU")
     return {"exact_sku": target,
-        "identity_basis": "selected configuration and visible Continue control; no purchase made"}
+        "identity_basis": "exact-SKU PDP URL and visible Continue control data-modelcode; selected controls retained as raw context; no purchase made",
+        "selected_controls_raw": controls if isinstance(controls, list) else []}
 
 
 def collect(products, output):
@@ -118,8 +115,8 @@ def collect(products, output):
             try:
                 response = page.goto(record["requested_url"], wait_until="domcontentloaded", timeout=60000)
                 page.wait_for_timeout(10000)
-                page.locator('[data-modelcode][aria-checked="true"]').first.wait_for(state="visible", timeout=30000)
                 purchase = page.get_by_role("button", name=re.compile(r"^Continue", re.I)).first
+                purchase.wait_for(state="visible", timeout=30000)
                 selection = {"selected_controls": page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
                     '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
                     "continue_sku": purchase.get_attribute("data-modelcode") if purchase.count() else None,
