@@ -5,6 +5,7 @@ from collections import Counter
 from datetime import datetime, timezone
 import json
 import os
+import re
 from pathlib import Path
 
 from epa_only_rules import epa_registration_state, publication_assessment, publication_points
