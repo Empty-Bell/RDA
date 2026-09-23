@@ -86,8 +86,11 @@ def publication_points(claim):
                 observed_states.append("UNKNOWN")
                 continue
             cells = row.get("cells") if isinstance(row.get("cells"), list) else []
-            text = " ".join(str(value) for value in [row.get("text"), *cells] if value is not None)
-            final_cell = str(cells[-1]).strip().lower() if len(cells) > 1 else ""
+            text = " ".join(str(value) for value in
+                            [row.get("text"), row.get("name"), row.get("value"), *cells]
+                            if value is not None)
+            raw_value = cells[-1] if len(cells) > 1 else row.get("value")
+            final_cell = str(raw_value).strip().lower() if raw_value is not None else ""
             if (final_cell in FALSE_VALUES or re.search(r"\bnot\s+(?:energy\s+star|certified)\b", text, re.I)):
                 observed_states.append("ABSENT")
             elif final_cell in TRUE_VALUES or re.search(r"\benergy\s+star\b", text, re.I):
