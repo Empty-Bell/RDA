@@ -190,6 +190,10 @@ def build_shard(recon_root, source_run_id, shard_index, shard_count, output):
         "rows": results, "status": "PASS" if all(value == "VERIFIED_EXACT_IDENTITY" for value in statuses.values()) else "FAILED"}
     (out / "shard-summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({key: summary[key] for key in ("status", "source_run_id", "shard_index", "shard_count", "population_count", "coverage_counts")}, sort_keys=True), flush=True)
+    failures = [{"exact_sku": row["exact_sku"], "error": row.get("error", "unspecified failure")}
+        for row in results if row["status"] != "VERIFIED_EXACT_IDENTITY"]
+    if failures:
+        print(json.dumps({"tablet_collection_failures": failures}, ensure_ascii=False, sort_keys=True), flush=True)
     return 0 if summary["status"] == "PASS" else 1
 
 
