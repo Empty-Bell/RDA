@@ -167,6 +167,22 @@ def additional_patterns(value):
     return out
 
 
+def computer_model_candidate(pattern, sku):
+    """Match EPA wildcard patterns or a literal EPA base model at a hyphen boundary."""
+    matched = model_pattern_candidate(pattern, sku)
+    if matched is not None:
+        return {**matched, "match_rule": "EPA_LITERAL_OR_POSITIONAL_PATTERN"}
+    if (isinstance(pattern, str) and isinstance(sku, str) and pattern
+            and re.fullmatch(r"[A-Z0-9]+", pattern, re.I)
+            and sku[:len(pattern)].casefold() == pattern.casefold()
+            and len(sku) > len(pattern) and sku[len(pattern)] == "-"):
+        return {"model_pattern_raw": pattern, "exact_sku_raw": sku,
+            "candidate_basis": "EPA_LITERAL_BASE_MODEL_AT_EXACT_HYPHEN_BOUNDARY",
+            "matched_prefix_raw": sku[:len(pattern)], "remaining_sku_suffix_raw": sku[len(pattern):],
+            "match_rule": "EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX"}
+    return None
+
+
 def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa_summary, output):
     records = []
     type_counts = Counter()
@@ -178,7 +194,7 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
                             for token in additional_patterns(row.get("additional_model_information")))
             seen = set()
             for source_field, pattern in patterns:
-                match = model_pattern_candidate(pattern, sku)
+                match = computer_model_candidate(pattern, sku)
                 signature = (source_field, pattern)
                 if match is None or signature in seen:
                     continue
@@ -201,7 +217,7 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
         "candidate_epa_type_counts": dict(sorted(type_counts.items())),
         "epa_model_samples": [{key: row.get(key) for key in ("pd_id", "model_number", "model_name",
             "additional_model_information", "type", "operating_system_name", "markets")} for row in epa_rows],
-        "matching_contract": "Literal SKU equality or positional EPA model-number/additional-model token candidate; each * consumes one alphanumeric character; no leading-L omission or other normalization; candidate is source evidence, not a confirmed certification match.",
+        "matching_contract": "Literal SKU equality, positional EPA * pattern, or an alphanumeric EPA base model followed by an exact hyphen boundary in the Samsung SKU. No leading-character deletion or fuzzy normalization; candidate is source evidence, not a confirmed certification match.",
         "classification": "NOT_EVALUATED pending review of candidate type, OS, market, and model-pattern examples",
         "scope": "Current Samsung Computer PDP evidence and complete current Samsung EPA Computers V9.0 source rows; no legal applicability or severity assessment",
         "records": records}
@@ -247,4 +263,3 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
