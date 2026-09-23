@@ -218,8 +218,7 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
         "pdp_skus_with_logo_selector_candidates": sum(bool(claims[sku].get("rendered_page_candidates_raw")) for sku in skus),
         "pdp_skus_with_exactly_attributed_logo": sum(bool(claims[sku].get("rendered_attributed_badges_raw")) for sku in skus),
         "spec_skus_with_complete_bridge_table": sum(
-            claims[sku].get("pdp_spec_surface_inspection_raw") == "SUPPORTED_BRIDGE_SPEC_TABLE_COMPLETE"
-            for sku in skus),
+            isinstance(claims[sku].get("pdp_spec_energy_star_claim_raw"), list) for sku in skus),
         "spec_skus_with_energy_star_rows": sum(bool(claims[sku].get("pdp_spec_energy_star_claim_raw")) for sku in skus),
         "plp_flags": dict(Counter(str(claims[sku].get("plp_energy_star_flag_raw")) for sku in skus)),
         "pdp_logo_selector_contracts": dict(Counter(

@@ -5,6 +5,8 @@ on:
     paths:
       - 'scripts/g3_computer_collect.py'
       - 'scripts/test_g3_computer_collect.py'
+      - 'scripts/claim_recon.py'
+      - 'tests/test_claim_attribution.py'
       - '.github/workflows/g3-computer-collection.yml'
   workflow_dispatch:
     inputs:
@@ -126,4 +128,3 @@ jobs:
               'shard_counts':[row['population_count'] for row in sorted(rows,key=lambda item:item['shard_index'])],
               'coverage_counts':{key:sum(row['coverage_counts'].get(key,0) for row in rows) for key in ('VERIFIED_EXACT_IDENTITY','FAILED')}},sort_keys=True))
           PY
-

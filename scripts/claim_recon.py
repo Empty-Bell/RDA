@@ -74,18 +74,23 @@ def project_inline_product_claims(payload):
 
 def badge_attribution(snapshot, exact_jsonld, target):
     attributed = []
-    identified_products = [record for record in snapshot.get('product_jsonld', [])
-                           if record.get('sku') or record.get('mpn')]
-    if len(exact_jsonld) != 1 or len(identified_products) != 1:
+    if snapshot.get('target_sku') != target:
         return attributed
     for candidate in snapshot.get('energy_candidates', []):
-        if candidate.get('tag') != 'IMG' or not re.search(r'/us/b2c_pf/badge/energy-star-logo-pdp-', candidate.get('src') or '', re.I):
+        if candidate.get('tag') != 'IMG':
             continue
         if candidate.get('product_surface') not in ('CURRENT_GALLERY', 'BUY_CONFIGURATOR_RELATION') or candidate.get('surface_count') != 1:
             continue
+        ancestors = candidate.get('ancestors', [])
+        in_energy_star_container = any(
+            isinstance(item, dict) and re.search(r'Gallery_energyStarContainer|EnergyStar_energyStar', str(item.get('cls') or ''), re.I)
+            for item in ancestors
+        )
+        if not in_energy_star_container and candidate.get('selector_contract') != 'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2':
+            continue
         attributed.append({'exact_sku': target, 'src': candidate['src'],
                            'product_surface': candidate['product_surface'],
-                           'identity_basis': 'unique observed primary product surface; sole exact Product JSON-LD; existing PDP identity gate'})
+                           'identity_basis': 'verified exact-SKU PDP; unique observed ENERGY STAR gallery/configurator surface'})
     return attributed
 
 
@@ -154,16 +159,15 @@ DOM_SNAPSHOT = r"""() => {
   // Samsung supplied one PDP selector.  Keep the stable structure, rather than
   // the deployment-specific class suffix or absolute XPath:
   // #leftColumnInMainContent > ...Gallery_energyStarContainer__*... > img
-  const pdpLogoSelector = '#leftColumnInMainContent [class*="Gallery_energyStarContainer"] img[src*="energy-star-logo-pdp"]';
+  const pdpLogoSelector = '#leftColumnInMainContent [class*="Gallery_energyStarContainer"] img';
   const candidates = Array.from(document.querySelectorAll(pdpLogoSelector))
     .filter(visible).map(e => ({tag:e.tagName, text:(e.children.length ? '' : e.textContent || '').trim(),
       alt:e.getAttribute('alt'), label:e.getAttribute('aria-label'),
       ancestors:Array.from((function*(){let p=e;for(let i=0;p && i<5;i++,p=p.parentElement) yield {tag:p.tagName,cls:p.className};})()),
-      selector_contract:'PDP_ENERGY_STAR_GALLERY_IMAGE_V1', selector:pdpLogoSelector,
+      selector_contract:'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2', selector:pdpLogoSelector,
       product_surface:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? 'CURRENT_GALLERY' : e.closest('.q6b6RelationContainer') ? 'BUY_CONFIGURATOR_RELATION' : null,
       surface_count:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? document.querySelectorAll('[class*="Gallery_outerContainer__"]').length : e.closest('.q6b6RelationContainer') ? document.querySelectorAll('.q6b6RelationContainer').length : 0,
       src:e.tagName === 'IMG' ? e.getAttribute('src') : null}))
-    .filter(x => energy.test([x.text,x.alt,x.label,x.src].join(' ')))
     .map(x => ({...x,text:x.text.slice(0,400)})).slice(0,40);
   const products = []; let errors = 0;
   const visit = (x, depth=0) => {
@@ -195,7 +199,7 @@ DOM_SNAPSHOT = r"""() => {
     ? 'SUPPORTED_PRIMARY_SURFACE_COMPLETE' : 'UNSUPPORTED_OR_AMBIGUOUS_PRIMARY_SURFACE';
   return {headings:Array.from(document.querySelectorAll('h1')).filter(visible).map(e => e.textContent.trim().slice(0,300)),
     product_jsonld:products, jsonld_parse_errors:errors, energy_candidates:candidates,
-    pdp_logo_selector_contract:'PDP_ENERGY_STAR_GALLERY_IMAGE_V1', pdp_logo_selector:pdpLogoSelector,
+    pdp_logo_selector_contract:'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2', pdp_logo_selector:pdpLogoSelector,
     primary_logo_inspection:primaryLogoInspection, visible_spec_energy_star_rows:specRows,
     spec_surface_inspection:specRoot && specRows.length ? 'SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE' : 'SPEC_TABLE_NOT_MOUNTED_OR_SCHEMA_UNSUPPORTED',
     observation_scope:'current mounted DOM; visible page candidates are not attributed to target SKU'};
