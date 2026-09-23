@@ -1,5 +1,4 @@
 name: G3 clothes dryer exact-SKU collection
-# Assessment diagnostics trigger
 
 on:
   workflow_dispatch:
@@ -65,7 +64,12 @@ jobs:
           test -n "$ARTIFACT_SOURCE_RUN_ID"
           test "$ARTIFACT_SOURCE_RUN_ID" = "$SOURCE_RUN_ID"
           echo "SOURCE_RUN_ID=${ARTIFACT_SOURCE_RUN_ID}" >> "$GITHUB_ENV"
-          echo "SOURCE_RECON_DIR=$(dirname "$RECON_FILE")" >> "$GITHUB_ENV"
+          SOURCE_RECON_DIR="$(dirname "$RECON_FILE")"
+          if [ ! -d "$SOURCE_RECON_DIR/fixtures" ]; then
+            SOURCE_RECON_DIR="$(dirname "$SOURCE_RECON_DIR")"
+          fi
+          test -d "$SOURCE_RECON_DIR/fixtures"
+          echo "SOURCE_RECON_DIR=${SOURCE_RECON_DIR}" >> "$GITHUB_ENV"
       - name: Collect exact-SKU PDP facts for the full dryer population
         run: python scripts/g3_dryer_collect.py --recon-root "$SOURCE_RECON_DIR" --source-run-id "$SOURCE_RUN_ID" --out runtime/g3-dryer
       - name: Preserve dryer source evidence
