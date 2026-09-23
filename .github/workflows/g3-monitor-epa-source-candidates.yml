@@ -61,6 +61,8 @@ jobs:
         run: |
           mkdir -p runtime
           bash scripts/bootstrap.sh
+      - name: Test Monitor EPA candidate parsing
+        run: python -m unittest discover -s tests -p "test_g3_monitor_epa_candidates.py" -v
       - name: Capture current EPA Samsung ventilating-fan rows
         run: python scripts/g3_monitor_epa_capture.py --out runtime/g3-monitor/epa
       - name: Build raw monitor model-pattern candidates
