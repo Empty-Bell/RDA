@@ -23,6 +23,14 @@ def load_json(path):
     return json.loads(Path(path).read_bytes())
 
 
+def canonical_pdp_url(raw_url):
+    url = urljoin("https://www.samsung.com", raw_url)
+    parts = urlsplit(url)
+    if parts.path and not parts.path.endswith("/"):
+        url = parts._replace(path=parts.path + "/").geturl()
+    return url
+
+
 def load_population(recon_root, source_run_id):
     root = Path(recon_root)
     recon = load_json(root / "recon.json")
@@ -68,7 +76,7 @@ def load_population(recon_root, source_run_id):
                     "product_group": "monitor", "source_family_id": group["group_id"],
                     "representative_sku": group["modelCode"],
                     "sku_role": "REPRESENTATIVE" if sku == group["modelCode"] else "VARIANT",
-                    "plp_url": PLP_URL, "pdp_url": urljoin("https://www.samsung.com", variant["pdpURL"]),
+                    "plp_url": PLP_URL, "pdp_url": canonical_pdp_url(variant["pdpURL"]),
                     "source_pf_search_hash": digest,
                     "source_family_code": {"state": "NOT_OBSERVED", "value": None, "error": None},
                     "commerce_status": {"state": "NOT_OBSERVED", "value": None, "error": None},
