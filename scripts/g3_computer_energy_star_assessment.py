@@ -123,14 +123,36 @@ def build(candidate_path, output):
             stream.write("## Computer ENERGY STAR publication assessment\n\n")
             stream.write(f"Exact SKUs: **{len(records)}** | HIGH: **{report['counts']['HIGH']}** | LOW: **{report['counts']['LOW']}** | PASS: **{report['counts']['PASS']}** | NOT EVALUATED: **{report['counts']['NOT_EVALUATED']}**\n\n")
             stream.write("This checks only current U.S. EPA Notebook registration and PLP logo, PDP logo, and Specs certification publication.\n\n")
-            stream.write("| Exact SKU | EPA U.S. state | PLP | PDP logo | Specs | Result |\n|---|---|---|---|---|---|\n")
+            stream.write("| Exact SKU | EPA U.S. state | EPA matched token and field | Match rule | PLP | PDP logo | Specs | Result |\n|---|---|---|---|---|---|---|---|\n")
             for record in records:
                 points = record["energy_star_publication"]["points"]
                 states = [points[key]["state"] for key in ("plp_logo", "pdp_logo", "spec_certification")]
-                stream.write(f"| {record['exact_sku']} | {record['epa_current_registration']['state']} | {states[0]} | {states[1]} | {states[2]} | {record['display_outcome']} |\n")
+                candidates = record["epa_current_registration"]["computer_model_pattern_candidates"]
+                tokens = sorted({
+                    f"{item.get('candidate_source_field')}:{(item.get('model_pattern_candidate') or {}).get('model_pattern_raw')}"
+                    for item in candidates
+                })
+                rules = sorted({(item.get('model_pattern_candidate') or {}).get('match_rule', "UNKNOWN")
+                                for item in candidates})
+                stream.write(f"| {record['exact_sku']} | {record['epa_current_registration']['state']} | {'; '.join(tokens) or '(none)'} | {'; '.join(rules) or '(none)'} | {states[0]} | {states[1]} | {states[2]} | {record['display_outcome']} |\n")
+    model_matches = [{
+        "exact_sku": record["exact_sku"],
+        "epa_us_registration": record["epa_current_registration"]["state"],
+        "matches": [{
+            "source_field": item.get("candidate_source_field"),
+            "epa_model_number": (item.get("epa_row_raw") or {}).get("model_number_raw"),
+            "matched_pattern": (item.get("model_pattern_candidate") or {}).get("model_pattern_raw"),
+            "match_rule": (item.get("model_pattern_candidate") or {}).get("match_rule"),
+            "epa_type": (item.get("epa_row_raw") or {}).get("type_raw"),
+            "markets": (item.get("epa_row_raw") or {}).get("markets_raw"),
+            "epa_pd_id": (item.get("epa_row_raw") or {}).get("pd_id_raw"),
+            "epa_row_id": (item.get("epa_row_raw") or {}).get("source_row_id_raw"),
+        } for item in record["epa_current_registration"]["computer_model_pattern_candidates"]],
+    } for record in records]
     print(json.dumps({"status": report["status"], "sku_count": len(records),
                       "counts": report["counts"], "diagnostics": report["diagnostics"],
-                      "finding_count": report["finding_count"], "findings": findings},
+                      "finding_count": report["finding_count"], "findings": findings,
+                      "model_matches_by_sku": model_matches},
                      ensure_ascii=False, sort_keys=True), flush=True)
     return report
 
