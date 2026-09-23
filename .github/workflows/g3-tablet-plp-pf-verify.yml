@@ -1,0 +1,95 @@
+name: G3 Tablet same-run PF to PLP verification
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/g3-tablet-plp-pf-verify.yml'
+      - 'scripts/source_recon.py'
+      - 'scripts/source_contract.py'
+      - 'scripts/browser_runtime.py'
+      - 'scripts/claim_recon.py'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Bootstrap locked browser runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      # The broad discovery command in source-recon.yml imports a duplicate computer
+      # test module from scripts/ before reaching tests/. Run this isolated source
+      # capture directly so the tablet PF and rendered PLP evidence share one run.
+      - name: Capture Tablet PF and rendered PLP in one browser session
+        run: python scripts/source_recon.py --family tablet
+      - name: Report exact redirect SKU presence
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('runtime/source-recon/tablet')
+          targets = {
+              'SM-X238UZAAXAA': 'SM-X230NZAIXAR',
+              'SM-X238UZAAXAU': 'SM-X230NZAIXAR',
+              'SM-X238UZAAATT': 'SM-X230NZAIXAR',
+              'SM-X828UZAAATT': 'SM-X820NZAEXAR',
+              'SM-X828UZAAVZW': 'SM-X820NZAEXAR',
+          }
+          recon = json.loads((root / 'recon.json').read_text(encoding='utf-8'))
+          checks = {row['name']: row['status'] for row in recon.get('checks', [])}
+          required = ('plp_request_contract', 'pagination_observation')
+          failed = [name for name in required if checks.get(name) != 'PASS']
+          if failed:
+              raise SystemExit(f'Required same-run PF/PLP capture checks failed: {failed}; see recon.json')
+          exact_pf = set()
+          for path in sorted((root / 'fixtures').glob('pf-*.json')):
+              data = json.loads(path.read_text(encoding='utf-8'))
+              for product in data.get('searchResults', []):
+                  for row in [product, *product.get('groupedProductList', [])]:
+                      if row.get('modelCode'):
+                          exact_pf.add(row['modelCode'].upper())
+          population = json.loads((root / 'population-observation.json').read_text(encoding='utf-8'))
+          plp_tiles = {str(row.get('sku') or '').upper() for row in population.get('rendered_tiles', [])}
+          result = {
+              'captured_at_utc': recon['captured_at'],
+              'run_id': recon.get('run_id'),
+              'family': 'tablet',
+              'definition': 'PF presence is exact modelCode in captured pf_search pages; PLP presence is exact SKU on a rendered product card.',
+              'results': [
+                  {
+                      'redirect_from': source,
+                      'redirect_to': destination,
+                      'redirect_from_in_pf': source in exact_pf,
+                      'redirect_to_in_pf': destination in exact_pf,
+                      'redirect_from_on_plp_card': source in plp_tiles,
+                      'redirect_to_on_plp_card': destination in plp_tiles,
+                  }
+                  for source, destination in targets.items()
+              ],
+              'plp_card_count': len(plp_tiles),
+              'pf_exact_sku_count': len(exact_pf),
+          }
+          print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+          (root / 'redirect-plp-pf-verification.json').write_text(
+              json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: tablet-plp-pf-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/source-recon/tablet/
+          retention-days: 14
+          if-no-files-found: warn
