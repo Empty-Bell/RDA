@@ -194,6 +194,22 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
                                                      for candidate in row["same_pattern_non_range_epa_rows"]})}
                 for row in records if row["range_epa_pattern_candidates"]
                 or row["same_pattern_non_range_epa_rows"]]
+    potential_electric_unmatched = []
+    for row in records:
+        if row["range_epa_pattern_candidates"]:
+            continue
+        fuel_facts = row["pdp_product_facts_raw"]["fuel_or_cooktop_facts"]
+        fuel_values = {str(fact.get("value", "")).strip().casefold()
+                       for fact in fuel_facts if str(fact.get("name", "")).strip().casefold() == "fuel type"}
+        if fuel_values & {"electric", "induction"}:
+            claim = row["energy_star_claim_sources_raw"]
+            potential_electric_unmatched.append({
+                "sku": row["exact_sku"],
+                "fuel_facts": fuel_facts,
+                "plp_energy_star_flag_raw": claim.get("plp_energy_star_flag_raw"),
+                "pdp_rendered_logo_candidate_count": len(claim.get("rendered_attributed_badges_raw", [])),
+                "pdp_visible_spec_claim_rows": claim.get("pdp_visible_spec_energy_star_rows_raw", []),
+            })
     print(json.dumps({"status": report["status"], "source_validation": "PASS",
                       "population_count": len(records), "epa_samsung_rows": len(epa_rows),
                       "range_pattern_candidate_rows": candidate_count,
@@ -202,6 +218,7 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
                       "skus_with_only_other_product_type_candidates": report["skus_with_only_non_range_product_candidates"],
                       "fuel_observations": report["fuel_and_cooktop_spec_observations"],
                       "candidate_examples": examples,
+                      "electric_or_induction_without_epa_candidate": potential_electric_unmatched,
                       "applicability": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"},
                      ensure_ascii=False, sort_keys=True), flush=True)
     return report
