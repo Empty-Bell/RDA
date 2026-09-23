@@ -81,7 +81,9 @@ class EnergyGuideNumericComparisonTests(unittest.TestCase):
             "facts": [{
                 "kind": "PDP", "exact_sku": "SKU-A",
                 "observations": {
-                    "pdp_annual_energy_kwh": measurement(source_rows, "annual_energy")["observation"],
+                    "pdp_annual_energy_kwh": measurement(
+                    source_rows, "annual_energy", allow_refrigerator_energy_rows=True
+                )["observation"],
                     "pdp_energy_consumption_raw": observation(source_rows),
                     "pdp_capacity": observation(state="NOT_OBSERVED"),
                 },
