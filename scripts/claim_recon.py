@@ -74,7 +74,10 @@ def project_inline_product_claims(payload):
 
 def badge_attribution(snapshot, exact_jsonld, target):
     attributed = []
-    if snapshot.get('target_sku') != target:
+    snapshot_target = snapshot.get('target_sku')
+    if snapshot_target is not None and snapshot_target != target:
+        return attributed
+    if snapshot_target is None and len(exact_jsonld) != 1:
         return attributed
     identified_products = [record for record in snapshot.get('product_jsonld', [])
                            if record.get('sku') or record.get('mpn')]
