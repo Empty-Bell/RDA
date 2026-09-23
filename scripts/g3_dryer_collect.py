@@ -26,7 +26,10 @@ def load_json(path):
 def load_population(recon_root, source_run_id):
     root = Path(recon_root)
     recon = load_json(root / "recon.json")
-    if recon.get("status") != "PASS" or str(recon.get("run_id")) != str(source_run_id):
+    checks = recon.get("checks") if isinstance(recon.get("checks"), list) else []
+    checks_pass = bool(checks) and all(item.get("status") == "PASS" for item in checks if isinstance(item, dict))
+    if (recon.get("status") not in ("PASS", "RUNNING") or not checks_pass
+            or str(recon.get("run_id")) != str(source_run_id)):
         raise ValueError(
             "Dryer source artifact is not the requested successful run: "
             f"status={recon.get('status')!r}, artifact_run_id={recon.get('run_id')!r}, "
