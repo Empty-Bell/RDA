@@ -54,7 +54,13 @@ jobs:
           mkdir -p runtime/g3-dryer/recon
           gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-dryer/source.zip
           unzip -q runtime/g3-dryer/source.zip -d runtime/g3-dryer/recon
-          RECON_FILE="$(find runtime/g3-dryer/recon -name recon.json -type f -print -quit)"
+          # The reconnaissance artifact also stores diagnostic recon.json
+          # copies under standalone/. Prefer the canonical root report because
+          # its fixture paths are relative to the artifact root.
+          RECON_FILE="runtime/g3-dryer/recon/recon.json"
+          if [ ! -f "$RECON_FILE" ]; then
+            RECON_FILE="$(find runtime/g3-dryer/recon -path '*/standalone/*' -prune -o -name recon.json -type f -print -quit)"
+          fi
           test -n "$RECON_FILE"
           # Trust the run identity recorded inside the validated source
           # artifact.  The workflow_run event id can refer to a retried or
