@@ -55,14 +55,20 @@ jobs:
           if failed:
               raise SystemExit(f'Required same-run PF/PLP capture checks failed: {failed}; see recon.json')
           exact_pf = set()
+          pf_rows = {}
           for path in sorted((root / 'fixtures').glob('pf-*.json')):
               data = json.loads(path.read_text(encoding='utf-8'))
               for product in data.get('searchResults', []):
                   for row in [product, *product.get('groupedProductList', [])]:
                       if row.get('modelCode'):
-                          exact_pf.add(row['modelCode'].upper())
+                          sku = row['modelCode'].upper()
+                          exact_pf.add(sku)
+                          pf_rows[sku] = {key: row.get(key) for key in
+                              ('modelCode', 'modelName', 'group_id', 'pdpURL', 'consumerUrl',
+                               'ecomFlag', 'stockFlag') if key in row}
           population = json.loads((root / 'population-observation.json').read_text(encoding='utf-8'))
-          plp_tiles = {str(row.get('sku') or '').upper() for row in population.get('rendered_tiles', [])}
+          plp_tiles = {str(row.get('sku') or '').upper(): row.get('url')
+                       for row in population.get('rendered_tiles', [])}
           result = {
               'captured_at_utc': recon['captured_at'],
               'run_id': recon.get('run_id'),
@@ -76,6 +82,10 @@ jobs:
                       'redirect_to_in_pf': destination in exact_pf,
                       'redirect_from_on_plp_card': source in plp_tiles,
                       'redirect_to_on_plp_card': destination in plp_tiles,
+                      'redirect_from_pf_record': pf_rows.get(source),
+                      'redirect_to_pf_record': pf_rows.get(destination),
+                      'redirect_from_plp_card_url': plp_tiles.get(source),
+                      'redirect_to_plp_card_url': plp_tiles.get(destination),
                   }
                   for source, destination in targets.items()
               ],
