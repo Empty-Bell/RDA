@@ -151,7 +151,7 @@ def collect(products, output):
                 (folder / "specs.json").write_bytes(bridge_raw)
                 claims = claim_facts(snapshot, sku, product["source_claim_listing_raw"], facts)
                 record.update(status="VERIFIED_EXACT_IDENTITY", final_url=safe_url(page.url),
-                    selection_identity=selection_facts, specs_url=safe_url(spec_url),
+                    selection_identity=selection_facts, selected_configuration_raw=selection, specs_url=safe_url(spec_url),
                     specs_sha256=hashlib.sha256(bridge_raw).hexdigest(),
                     snapshot_sha256=hashlib.sha256(snapshot_raw).hexdigest(),
                     pdp_facts_raw=facts, energy_star_claim_sources_raw=claims,
@@ -202,3 +202,4 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
