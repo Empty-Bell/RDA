@@ -168,19 +168,29 @@ def claim_facts(snapshot, target, listing, specs):
 DOM_SNAPSHOT = r"""() => {
   const visible = e => !!e.getClientRects().length && getComputedStyle(e).visibility !== 'hidden';
   const energy = /energy[\s_-]*star/i;
-  // Samsung supplied one PDP selector.  Keep the stable structure, rather than
-  // the deployment-specific class suffix or absolute XPath:
-  // #leftColumnInMainContent > ...Gallery_energyStarContainer__*... > img
-  const pdpLogoSelector = '#leftColumnInMainContent [class*="Gallery_energyStarContainer"] img';
+  // Samsung PDPs use two published logo surfaces: a gallery badge and an
+  // ENERGY STAR image in the product-detail configurator (common on Galaxy Books).
+  const galleryLogoSelector = '#leftColumnInMainContent [class*="Gallery_energyStarContainer"] img';
+  const configuratorLogoSelector = '.pdp-page .q6b6RelationContainer img[class*="EnergyStar_energyStar__"], ' +
+    '.pdp-page .q6b6RelationContainer img[src*="/b2c_pf/badge/energy-star-logo-pdp-"]';
+  const pdpLogoSelector = galleryLogoSelector + ', ' + configuratorLogoSelector;
+  const galleryCount = document.querySelectorAll('[class*="Gallery_outerContainer__"]').length;
+  const relationCount = document.querySelectorAll('.pdp-page .q6b6RelationContainer').length;
+  const relationLogoCount = document.querySelectorAll(configuratorLogoSelector).length;
   const candidates = Array.from(document.querySelectorAll(pdpLogoSelector))
-    .filter(visible).map(e => ({tag:e.tagName, text:(e.children.length ? '' : e.textContent || '').trim(),
-      alt:e.getAttribute('alt'), label:e.getAttribute('aria-label'),
-      ancestors:Array.from((function*(){let p=e;for(let i=0;p && i<5;i++,p=p.parentElement) yield {tag:p.tagName,cls:p.className};})()),
-      selector_contract:'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2', selector:pdpLogoSelector,
-      product_surface:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? 'CURRENT_GALLERY' : e.closest('.q6b6RelationContainer') ? 'BUY_CONFIGURATOR_RELATION' : null,
-      surface_count:e.closest('[class*="Gallery_energyStarContainer__"]') && e.closest('[class*="Gallery_outerContainer__"]') ? document.querySelectorAll('[class*="Gallery_outerContainer__"]').length : e.closest('.q6b6RelationContainer') ? document.querySelectorAll('.q6b6RelationContainer').length : 0,
-      src:e.tagName === 'IMG' ? e.getAttribute('src') : null}))
-    .map(x => ({...x,text:x.text.slice(0,400)})).slice(0,40);
+    .filter(visible).map(e => {
+      const inGallery = !!(e.closest('[class*="Gallery_energyStarContainer__"]') &&
+        e.closest('[class*="Gallery_outerContainer__"]'));
+      const inConfigurator = !inGallery && !!e.closest('.pdp-page .q6b6RelationContainer');
+      return {tag:e.tagName, text:(e.children.length ? '' : e.textContent || '').trim(),
+        alt:e.getAttribute('alt'), label:e.getAttribute('aria-label'),
+        ancestors:Array.from((function*(){let p=e;for(let i=0;p && i<5;i++,p=p.parentElement) yield {tag:p.tagName,cls:p.className};})()),
+        selector_contract:inGallery ? 'PDP_ENERGY_STAR_GALLERY_CONTAINER_IMAGE_V2' : 'PDP_ENERGY_STAR_PRODUCT_DETAILS_IMAGE_V1',
+        selector:pdpLogoSelector,
+        product_surface:inGallery ? 'CURRENT_GALLERY' : inConfigurator ? 'BUY_CONFIGURATOR_RELATION' : null,
+        surface_count:inGallery ? galleryCount : inConfigurator ? relationLogoCount : 0,
+        src:e.tagName === 'IMG' ? e.getAttribute('src') : null};
+    }).map(x => ({...x,text:x.text.slice(0,400)})).slice(0,40);
   const products = []; let errors = 0;
   const visit = (x, depth=0) => {
     if (!x || depth > 8) return;
@@ -205,9 +215,12 @@ DOM_SNAPSHOT = r"""() => {
     .filter(visible).map(e => ({tag:e.tagName, text:(e.innerText || '').trim().replace(/\s+/g,' ').slice(0,800),
       cells:Array.from(e.children).filter(visible).map(x => (x.innerText || '').trim().replace(/\s+/g,' ').slice(0,300)).filter(Boolean)}))
     .filter(x => energy.test(x.text)).slice(0,40) : [];
-  const galleryCount = document.querySelectorAll('[class*="Gallery_outerContainer__"]').length;
-  const relationCount = document.querySelectorAll('.q6b6RelationContainer').length;
-  const primaryLogoInspection = galleryCount === 1 || (galleryCount === 0 && relationCount === 1)
+  const identifiedProductCount = products.filter(p => p.sku || p.mpn).length;
+  // On configurator PDPs, a unique product identity plus a mounted details surface
+  // is the supported primary surface even when the gallery component is absent.
+  const configuratorSurfaceComplete = galleryCount === 0 && relationCount > 0 &&
+    document.querySelector('.pdp-page') && identifiedProductCount === 1;
+  const primaryLogoInspection = galleryCount === 1 || configuratorSurfaceComplete
     ? 'SUPPORTED_PRIMARY_SURFACE_COMPLETE' : 'UNSUPPORTED_OR_AMBIGUOUS_PRIMARY_SURFACE';
   return {headings:Array.from(document.querySelectorAll('h1')).filter(visible).map(e => e.textContent.trim().slice(0,300)),
     product_jsonld:products, jsonld_parse_errors:errors, energy_candidates:candidates,

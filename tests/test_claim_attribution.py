@@ -19,6 +19,132 @@ class ClaimAttributionContract(unittest.TestCase):
         self.assertEqual(result['rendered_attributed_badges_raw'][0]['exact_sku'],'SKU')
         self.assertEqual(result['certification_matching'],'NOT_EVALUATED')
 
+    def test_computer_configurator_energy_star_asset_is_attributed_to_exact_pdp(self):
+        self.snapshot['energy_candidates'] = [{
+            'tag': 'IMG',
+            'src': '//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png        self.snapshot['product_jsonld'].append({'sku':'OTHER'})
+        self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
+        self.snapshot['product_jsonld'].pop()
+        self.snapshot['energy_candidates'][0]['surface_count']=2
+        self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
+
+    def test_anonymous_product_schema_shell_does_not_hide_exact_sku_badge(self):
+        self.snapshot['product_jsonld'].extend([{'sku':None,'mpn':None}, {'name':None}])
+        self.assertEqual(self.facts()['rendered_attributed_badges_raw'][0]['exact_sku'],'SKU')
+
+    def test_footer_and_marketing_image_are_not_product_badges(self):
+        self.snapshot['energy_candidates'][0]['product_surface']=None
+        self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
+        self.snapshot['energy_candidates'][0]['product_surface']='CURRENT_GALLERY'
+        self.snapshot['energy_candidates'][0]['src']='/marketing/energy-star-promotion.jpg'
+        self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
+
+    def test_no_logo_observation_stays_unknown(self):
+        self.snapshot['energy_candidates']=[]
+        self.assertEqual(self.facts()['rendered_claim_attribution'],'NOT_EVALUATED')
+
+    def test_nested_raw_flag_keeps_sku_path_and_value(self):
+        probe=project_nested_claim_fields({'data':{'modelCode':'SKU','features':{'energyStarFlg':'N'}}})
+        self.snapshot['structured_probes']=[probe]
+        result=self.facts()
+        self.assertEqual(result['pdp_nested_energy_star_fields_raw'][0]['value'],'N')
+        self.assertEqual(result['pdp_nested_energy_star_fields_raw'][0]['path'],'$.data.features.energyStarFlg')
+        self.assertEqual(result['claim_consistency'],'NOT_EVALUATED')
+
+    def test_nearest_child_identifier_overrides_parent(self):
+        probe=project_nested_claim_fields({'modelCode':'SKU','related':{'sku':'OTHER','energyStarFlg':'Y'}})
+        self.snapshot['structured_probes']=[probe]
+        self.assertEqual(self.facts()['pdp_nested_energy_star_fields_raw'],[])
+
+    def test_unidentified_related_product_does_not_inherit_current_sku(self):
+        probe=project_nested_claim_fields({'modelCode':'SKU','relatedModels':[{'energyStarFlg':'Y'}]})
+        self.snapshot['structured_probes']=[probe]
+        self.assertEqual(probe['fields'][0]['identifiers_raw'],[])
+        self.assertEqual(self.facts()['pdp_nested_energy_star_fields_raw'],[])
+
+    def test_unbound_or_conflicting_identifiers_cannot_supply_current_flag(self):
+        probe=project_nested_claim_fields({'energyStarFlg':'Y','data':{'sku':'OTHER','modelCode':'SKU','energyStarFlg':'Y'}})
+        self.snapshot['structured_probes']=[probe]
+        self.assertEqual(len(probe['fields']),2)
+        self.assertEqual(self.facts()['pdp_nested_energy_star_fields_raw'],[])
+
+    def test_private_branches_and_unrelated_values_are_not_retained(self):
+        probe=project_nested_claim_fields({'modelCode':'SKU','chat':{'energyStarFlg':'secret'},
+                                           'account':{'email':'private'},'features':{'description':'private text','energyStarFlg':True}})
+        self.assertEqual(len(probe['fields']),1)
+        self.assertEqual(probe['fields'][0]['value'],True)
+        self.assertNotIn('private',str(probe))
+        self.assertNotIn('chat',probe['root_sections'])
+
+    def test_bounded_projection_reports_truncation(self):
+        probe=project_nested_claim_fields([{'sku':'SKU','energyStarFlg':'Y'} for _ in range(110)])
+        self.assertTrue(probe['truncated'])
+        self.snapshot['structured_probes']=[probe]
+        self.assertEqual(self.facts()['structured_probe_status'],'BOUNDED_PROJECTION_TRUNCATED')
+
+    def test_hosted_gallery_and_configurator_surfaces(self):
+        root=Path(__file__).parent/'fixtures'/'claim-attribution'
+        for family in ('refrigerator','tablet'):
+            fixture=json.loads((root/(family+'.json')).read_text(encoding='utf-8'))
+            result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
+            self.assertEqual(result['rendered_attributed_badges_raw'],fixture['expected_badges'])
+            self.assertEqual(result['rendered_claim_attribution'],'OBSERVED_CURRENT_PRODUCT_SURFACE')
+            self.assertEqual(result['structured_probe_status'],fixture['expected_probe_status'])
+
+    def test_truncated_trade_in_probe_does_not_establish_flag_absence(self):
+        path=Path(__file__).parent/'fixtures'/'claim-attribution'/'tablet.json'
+        fixture=json.loads(path.read_text(encoding='utf-8'))
+        result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
+        self.assertEqual(result['structured_probe_status'],'BOUNDED_PROJECTION_TRUNCATED')
+        self.assertEqual(result['pdp_structured_claim_status'],'NOT_EVALUATED')
+
+    def test_inline_product_array_ignores_large_unrelated_page_props(self):
+        payload={'props':{'pageProps':{'productData':{'products':[{'modelCode':'SKU','energyStarFlag':'Y'}]},
+                                     'exchangeDevices':[{'private':'ignored'}]*30000}}}
+        probe=project_inline_product_claims(payload)
+        self.assertFalse(probe['truncated'])
+        self.assertEqual(probe['fields'][0]['value'],'Y')
+        self.assertNotIn('private',str(probe))
+
+    def test_inline_product_path_or_identity_drift_is_failure(self):
+        for payload in ({},{'props':{'pageProps':{'productData':{'products':[]}}}},
+                        {'props':{'pageProps':{'productData':{'products':[{'energyStarFlag':'Y'}]}}}}):
+            with self.assertRaises(ValueError): project_inline_product_claims(payload)
+
+    def test_missing_inline_flag_is_distinct_from_negative_value(self):
+        payload={'props':{'pageProps':{'productData':{'products':[{'sku':'SKU'}, {'sku':'OTHER','energyStarFlag':'N'}]}}}}
+        probe=project_inline_product_claims(payload)
+        self.assertFalse(probe['product_claim_records'][0]['energy_star_field_present'])
+        self.assertEqual(probe['fields'][0]['value'],'N')
+
+    def test_hosted_inline_product_flags_retain_exact_sku_and_raw_value(self):
+        root=Path(__file__).parent/'fixtures'/'claim-attribution'
+        for family,target,value in [('computer','NP960UJH-XG7US','Y'),('tv','MRN75R95HAFXZA','N')]:
+            fixture=json.loads((root/('inline-'+family+'.json')).read_text(encoding='utf-8'))
+            products=[{**r['identifiers'],**({'energyStarFlag':r['energyStarFlag']} if r['energy_star_field_present'] else {})}
+                      for r in fixture['product_claim_records']]
+            probe=project_inline_product_claims({'props':{'pageProps':{'productData':{'products':products}}}})
+            self.assertEqual(probe,fixture)
+            current=[f for f in probe['fields'] if f['identifiers_raw'] and all(x.upper()==target for x in f['identifiers_raw'])]
+            self.assertEqual(len(current),1)
+            self.assertEqual(current[0]['value'],value)
+            self.assertFalse(probe['truncated'])
+
+    def test_inline_duplicate_or_missing_target_record_is_extraction_failure(self):
+        for products in ([{'sku':'OTHER','energyStarFlag':'Y'}],
+                         [{'sku':'SKU','energyStarFlag':'Y'},{'sku':'SKU','energyStarFlag':'N'}]):
+            self.snapshot['structured_probes']=[project_inline_product_claims({'props':{'pageProps':{'productData':{'products':products}}}})]
+            with self.assertRaises(ValueError): self.facts()
+,
+            'product_surface': 'BUY_CONFIGURATOR_RELATION',
+            'surface_count': 1,
+            'selector_contract': 'PDP_ENERGY_STAR_PRODUCT_DETAILS_IMAGE_V1',
+            'ancestors': [{'cls': 'EnergyStar_energyStar__nkHUr'}],
+        }]
+        result = self.facts()
+        self.assertEqual(result['rendered_claim_attribution'], 'OBSERVED_CURRENT_PRODUCT_SURFACE')
+        self.assertEqual(result['rendered_attributed_badges_raw'][0]['product_surface'], 'BUY_CONFIGURATOR_RELATION')
+
     def test_related_product_or_duplicate_gallery_prevents_attribution(self):
         self.snapshot['product_jsonld'].append({'sku':'OTHER'})
         self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
