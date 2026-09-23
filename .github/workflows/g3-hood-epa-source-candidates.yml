@@ -1,5 +1,10 @@
 name: G3 hood EPA source candidates
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_hood_epa_candidates.py'
+      - '.github/workflows/g3-hood-epa-source-candidates.yml'
   workflow_dispatch:
     inputs:
       collection_run_id:
