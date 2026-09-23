@@ -1,0 +1,76 @@
+name: G3 hood EPA source candidates
+on:
+  workflow_dispatch:
+    inputs:
+      collection_run_id:
+        description: Successful exact-SKU Hood collection run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 hood exact-SKU collection]
+    types: [completed]
+    branches: [main]
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: g3-hood-epa-candidates-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  candidates:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.collection_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download successful Hood collection artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$COLLECTION_RUN_ID" ]; then
+            COLLECTION_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-hood-collection.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-hood-collection.yml") | .id')"
+          test "$VALID_RUN" = "$COLLECTION_RUN_ID"
+          ARTIFACT_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.expired == false) | select(.name | startswith("g3-hood-collection-"))] | sort_by(.created_at) | last | .id')"
+          test -n "$ARTIFACT_ID"
+          mkdir -p runtime/g3-hood/collection
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-hood/collection.zip
+          unzip -q runtime/g3-hood/collection.zip -d runtime/g3-hood/collection
+          SUMMARY_FILE="$(find runtime/g3-hood/collection -name collection-summary.json -type f -print -quit)"
+          test -n "$SUMMARY_FILE"
+          COLLECTION_DIR="$(dirname "$SUMMARY_FILE")"
+          echo "COLLECTION_RUN_ID=${COLLECTION_RUN_ID}" >> "$GITHUB_ENV"
+          echo "COLLECTION_DIR=${COLLECTION_DIR}" >> "$GITHUB_ENV"
+      - name: Bootstrap EPA capture runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Capture current EPA Samsung ventilating-fan rows
+        run: python scripts/g3_hood_epa_capture.py --out runtime/g3-hood/epa
+      - name: Build raw hood model-pattern candidates
+        run: >-
+          python scripts/g3_hood_epa_candidates.py
+          --collection-root "$COLLECTION_DIR"
+          --collection-run-id "$COLLECTION_RUN_ID"
+          --epa-root runtime/g3-hood/epa
+          --epa-run-id "$GITHUB_RUN_ID"
+          --out runtime/g3-hood/epa-source-candidates
+      - name: Preserve Hood source evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-hood-epa-source-candidates-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-hood/
+          retention-days: 14
+          if-no-files-found: warn
