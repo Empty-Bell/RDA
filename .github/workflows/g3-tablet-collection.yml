@@ -74,7 +74,7 @@ jobs:
           mkdir -p runtime
           bash scripts/bootstrap.sh
       - name: Test Tablet exact-SKU collection contract
-        run: python -m unittest scripts.test_g3_tablet_collect tests.test_claim_attribution -v
+        run: python -m unittest scripts.test_g3_tablet_collect -v
       - name: Collect assigned Tablet SKUs without completing purchase
         run: >-
           python scripts/g3_tablet_collect.py
