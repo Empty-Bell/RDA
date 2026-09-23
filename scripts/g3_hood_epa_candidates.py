@@ -133,6 +133,13 @@ def build(collection_root, collection_run_id, epa_root, epa_run_id, output):
             stream.write("\nEPA patterns are candidate evidence only. Product subtype, applicability, and all audit outcomes remain NOT_EVALUATED.\n")
     print(json.dumps({"status": report["status"], "population_count": len(records), "epa_samsung_rows": len(epa_rows),
                       "pattern_candidate_rows": candidate_rows, "candidate_unit_type_counts": report["candidate_unit_type_counts"],
+                      "publication_by_sku": [{"sku": row["exact_sku"],
+                          "plp_energy_star_flag_raw": row["energy_star_claim_sources_raw"].get("plp_energy_star_flag_raw"),
+                          "pdp_logo_count": len(row["energy_star_claim_sources_raw"].get("rendered_attributed_badges_raw", [])),
+                          "pdp_spec_claim_count": len(row["energy_star_claim_sources_raw"].get("pdp_visible_spec_energy_star_rows_raw", [])),
+                          "epa_candidates": len(row["epa_ventilating_fan_pattern_candidates"]),
+                          "epa_candidate_types": sorted({str(c.get("unit_type_raw") or "(blank)") for c in row["epa_ventilating_fan_pattern_candidates"]})}
+                          for row in records],
                       "applicability": "NOT_EVALUATED", "assessment": "NOT_EVALUATED"}, sort_keys=True), flush=True)
     return report
 
