@@ -1,5 +1,10 @@
 name: G3 Cooktop EPA source candidates
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_cooktop_epa_capture.py'
+      - '.github/workflows/g3-cooktop-epa-source-candidates.yml'
   workflow_dispatch:
     inputs:
       collection_run_id:
