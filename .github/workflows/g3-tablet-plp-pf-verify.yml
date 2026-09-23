@@ -103,10 +103,11 @@ jobs:
 
           focal_sku = 'SM-X828UZAAVZW'
           focal_pf = pf_rows.get(focal_sku, {})
+          focal_plp_links = []
           focal_urls = {}
           for source_name, raw_url in (
               ('pf_pdp_url', focal_pf.get('pdpURL')),
-              ('plp_card_url', plp_tiles.get(focal_sku)),
+              ('plp_card_name_url', plp_tiles.get(focal_sku)),
           ):
               if raw_url:
                   focal_urls.setdefault(urljoin('https://www.samsung.com', raw_url), []).append(source_name)
@@ -114,6 +115,29 @@ jobs:
           with sync_playwright() as playwright:
               browser = playwright.chromium.launch(headless=True)
               context, _ = desktop_context(browser)
+              plp = context.new_page()
+              plp.goto('https://www.samsung.com/us/tablets/all-tablets/',
+                       wait_until='domcontentloaded', timeout=60000)
+              card = plp.locator(f'.pd21-product-card__name[data-modelcode="{focal_sku}"]')
+              card.wait_for(state='visible', timeout=60000)
+              focal_plp_links = card.evaluate("""e => {
+                const list = e.closest('.pd21-product-card__list');
+                let item = e;
+                while (item && list && item.parentElement !== list) item = item.parentElement;
+                if (!list || !item || item.parentElement !== list) return [];
+                return Array.from(item.querySelectorAll('a[href]')).map(a => ({
+                  text: (a.innerText || '').trim().slice(0, 100),
+                  aria_label: a.getAttribute('aria-label'),
+                  class_name: String(a.className || '').slice(0, 160),
+                  url: a.href,
+                }));
+              }""")
+              for link in focal_plp_links:
+                  if (link.get('url') and 'www.samsung.com/' in link['url']
+                          and ('/buy/' in link['url'].lower() or focal_sku.lower() in link['url'].lower())):
+                      focal_urls.setdefault(link['url'], []).append(
+                          'plp_card_link:' + str(link.get('text') or link.get('aria_label') or link.get('class_name') or '')[:100])
+              plp.close()
               for requested_url, sources in focal_urls.items():
                   page = context.new_page()
                   navigation_requests = []
@@ -144,6 +168,7 @@ jobs:
                   page.close()
               browser.close()
           result['focal_pdp_redirect_traces'] = traces
+          result['focal_plp_card_links'] = focal_plp_links
           print(json.dumps(result, ensure_ascii=False, sort_keys=True))
           (root / 'redirect-plp-pf-verification.json').write_text(
               json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
