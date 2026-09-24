@@ -203,11 +203,21 @@ def collect(products, output):
                 if len(unique_groups) != 1:
                     raise ValueError("Current Tablet PDP did not expose one unambiguous ecom-data group_id")
                 record["observed_ecom_group_ids"] = unique_groups
-                specs_url = "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?" + urlencode({
-                    "data_type": "Specs", "store_type": "B2C", "group_id": unique_groups[0],
-                    "modelCode": sku, "version": "v2"})
-                specs_response = context.request.get(specs_url, timeout=30000)
-                if specs_response.status != 200:
+                specs_attempts = []
+                specs_response = None
+                specs_url = None
+                store_types = ["B2C", "B2B"] if record.get("fallback_source") else ["B2C"]
+                for store_type in store_types:
+                    candidate_url = "https://www.samsung.com/us/gapi/v1/bridge/cacheable/bridge-data?" + urlencode({
+                        "data_type": "Specs", "store_type": store_type, "group_id": unique_groups[0],
+                        "modelCode": sku, "version": "v2"})
+                    candidate_response = context.request.get(candidate_url, timeout=30000)
+                    specs_attempts.append({"store_type": store_type, "http_status": candidate_response.status})
+                    if candidate_response.status == 200:
+                        specs_url, specs_response = candidate_url, candidate_response
+                        break
+                record["specs_attempts_raw"] = specs_attempts
+                if specs_response is None or specs_response.status != 200:
                     raise ValueError("Same-page Tablet Specs endpoint did not return HTTP 200")
                 projected = project_computer_specs(specs_response.json())
                 facts = pdp_facts(projected, sku, family="tablet")
