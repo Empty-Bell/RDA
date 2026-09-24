@@ -9,6 +9,8 @@ on:
       - 'scripts/epa_only_rules.py'
       - 'docs/TABLET_SOURCE_CONTRACT.md'
       - '.github/workflows/g3-tablet-epa-candidates.yml'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
     inputs:
       collection_run_id:
