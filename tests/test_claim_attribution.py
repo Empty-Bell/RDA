@@ -22,7 +22,11 @@ class ClaimAttributionContract(unittest.TestCase):
     def test_computer_configurator_energy_star_asset_is_attributed_to_exact_pdp(self):
         self.snapshot['energy_candidates'] = [{
             'tag': 'IMG',
-            'src': '//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png        self.snapshot['product_jsonld'].append({'sku':'OTHER'})
+            'src': '//image-us.samsung.com/us/b2c_pf/badge/energy-star-logo-pdp-m@2x.png?$default-png',
+            'product_surface': 'CURRENT_GALLERY',
+            'surface_count': 1
+        }]
+        self.snapshot['product_jsonld'].append({'sku':'OTHER'})
         self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
         self.snapshot['product_jsonld'].pop()
         self.snapshot['energy_candidates'][0]['surface_count']=2
