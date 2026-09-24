@@ -19,6 +19,17 @@ placeholders and is not population evidence. Preserve exact color/storage/connec
 SKUs and their source PDP URLs. Consumer listing is not exhaustive business, rugged,
 support or carrier catalog coverage.
 
+For the Tablet audit population, include each exact SKU rendered on a current
+Samsung PLP product card once. The same-run `population-observation.json` must
+reconcile every rendered card to one unique PF group, and the card SKU must have
+an exact same-run `pf_search` detail record from which its PDP URL and raw listing
+fields are taken. Other grouped PF variants remain preserved source observations
+but are not separate audited population members unless they appear as their own
+rendered PLP card. This prevents a non-listed backend variant that redirects to a
+listed model from becoming an extra audited product. A listed card SKU remains in
+scope even if its PDP redirects; exact PDP identity must still pass before its
+assessment can be evaluated.
+
 Reuse the hosted-verified Computer selected-SKU/visible Continue control and observed
 ecom-data group provenance contract; do not click purchase controls. Request Specs
 through the observed public pattern and select exactly one matching modelCode in
