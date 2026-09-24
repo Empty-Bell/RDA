@@ -1,4 +1,4 @@
-# Current task continuation — 2026-09-23
+# Current task continuation — 2026-09-24
 
 ## Continuation checkpoint — 2026-09-24
 
@@ -38,7 +38,6 @@ operations and Pages gates remain open.
 
 ---
 
-
 ## Active work
 
 G0 and G1 remain accepted. G2 refrigerator is still the formal open gate; downstream G3/G4 family audits are preparatory and do not accept G2 or whole-product compliance.
@@ -53,7 +52,7 @@ Hosted run [35820239750](https://github.com/Empty-Bell/RDA/actions/runs/35820239
 
 The 13 LOW SKUs: LS27B804PXNXGO, LS27D802UANXGO, LS27H802UANXZA, LS32D708EBNXGO, LS32D800UBNXGO, LS32D804UANXGO, LS32H802UANXZA, LS34C650TANXGO, LS34C650UANXGO, LS34C650VANXGO, LS37D700EANXZA, LS37D800UANXZA, LS40H850TANXZA.
 
-### Next — Computer
+### Prior checkpoint — Computer (superseded above)
 
 Implement the EPA-only per-SKU collection and model/publication comparison for the disjoint Samsung consumer computer population: Galaxy Book and Chromebook source legs. The existing bounded source reconnaissance established 23 Galaxy Book SKUs plus one Chromebook SKU (24 exact SKUs total), with EPA Computers V9.0 dataset `rxdj-2c88`. Preserve the source-leg provenance and exact CPU/RAM/OS configuration; verify PDP identity with selected model controls, visible Continue SKU, and exactly one matching Specs record. Do not collect FTC EnergyGuide or compare battery Wh/adapter W to annual energy. Do not reuse Monitor’s leading-L omission for Computer. Surface genuinely ambiguous model-pattern examples before assigning an EPA absence or HIGH outcome.
 
