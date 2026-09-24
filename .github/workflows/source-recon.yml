@@ -1,6 +1,8 @@
 name: Phase 0 product source contracts
 on:
   workflow_dispatch:
+  pull_request:
+    paths: ['scripts/source_recon.py', 'scripts/source_contract.py', 'scripts/claim_recon.py', 'scripts/energyguide_fields.py', 'scripts/energyguide_quality.py', 'scripts/browser_runtime.py', 'scripts/bootstrap.sh', 'scripts/bootstrap_record.py', 'scripts/runtime_integrity.py', 'runtime-manifest.json', '.python-version', 'requirements-*.lock', 'tests/**', '.github/workflows/source-recon.yml']
   push:
     branches: [main]
     paths: ['scripts/source_recon.py', 'scripts/source_contract.py', 'scripts/claim_recon.py', 'scripts/energyguide_fields.py', 'scripts/energyguide_quality.py', 'scripts/browser_runtime.py', 'scripts/bootstrap.sh', 'scripts/bootstrap_record.py', 'scripts/runtime_integrity.py', 'runtime-manifest.json', '.python-version', 'requirements-*.lock', 'tests/**', '.github/workflows/source-recon.yml']
