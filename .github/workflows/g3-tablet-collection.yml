@@ -85,7 +85,7 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
-          name: g3-tablet-collection-${{ github.run_id }}-${{ matrix.shard }}
+          name: g3-tablet-collection-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.shard }}
           path: runtime/g3-tablet/shard-${{ matrix.shard }}/
           retention-days: 14
           if-no-files-found: warn
@@ -100,7 +100,7 @@ jobs:
       - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
         continue-on-error: true
         with:
-          pattern: g3-tablet-collection-${{ github.run_id }}-*
+          pattern: g3-tablet-collection-${{ github.run_id }}-${{ github.run_attempt }}-*
           path: runtime/g3-tablet/shards
           merge-multiple: false
       - name: Verify shard statuses and exact population coverage
@@ -131,7 +131,7 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
-          name: g3-tablet-collection-validated-${{ github.run_id }}
+          name: g3-tablet-collection-validated-${{ github.run_id }}-${{ github.run_attempt }}
           path: runtime/g3-tablet/shards/
           retention-days: 14
           if-no-files-found: warn
