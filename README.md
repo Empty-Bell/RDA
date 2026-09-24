@@ -1,16 +1,14 @@
 # RDA — Samsung US regulatory audit
 
-Clean-room, GitHub Actions-first implementation. Target: standard GitHub-hosted Ubuntu 24.04 x64.
+Clean-room, GitHub Actions-first audit implementation targeting standard GitHub-hosted Ubuntu 24.04 x64.
 
-Current scope: **Phase 0 runtime/source reconnaissance**, no compliance rules or public dashboard.
+## Current status
 
-The initial push runs `runner-probe.yml`; subsequent manual runs are available in Actions.
-It installs dependencies without cache, tests embedded-text PDF and image-only OCR,
-launches headless Chromium, observes refrigerator PLP network traffic, and probes the official ENERGY STAR catalog.
-Failure diagnostics are uploaded as `phase0-probe-<run_id>-<attempt>` (14 days).
+- **G0 and G1 accepted.** Source reconnaissance, runtime, schema, CLI, fixture and quality gates have acceptance records.
+- **G2 formally open.** The refrigerator has a 75-SKU source and ENERGY STAR vertical slice, but full source comparison, whole-product decisions and operational acceptance remain.
+- **G3 and G4 preparatory.** Later-family source collection and candidate exploration have run; neither gate is formally accepted. G5–G7 have not started.
+- **Dashboard incomplete.** Bounded refrigerator fixture and dishwasher report dashboards exist. The planned unified 11-family dashboard and public Pages publication remain open.
 
-Runtime checks use synthetic labels, explicitly distinct from captured public-source fixtures.
-Probe success is not full Phase 0 acceptance: pagination, exact SKU identity, EnergyGuide provenance,
-11-family EPA adapters, hosted live PDF extraction, and source contract tests still require verification.
+The active checkpoint, current workflow links and remaining tasks are in [docs/CURRENT_TASK.md](docs/CURRENT_TASK.md). Phase history and acceptance boundaries are in [docs/PHASE_STATUS.md](docs/PHASE_STATUS.md); scope and evidence rules are in [docs/MASTER_PLAN.md](docs/MASTER_PLAN.md) and [docs/EXECUTION_GUIDE.md](docs/EXECUTION_GUIDE.md).
 
-See docs/MASTER_PLAN.md, docs/EXECUTION_GUIDE.md, and docs/PHASE_STATUS.md.
+Hosted GitHub Actions runs are the execution evidence. A successful source or candidate workflow does not by itself establish a compliance PASS or close a phase gate.
