@@ -8,7 +8,7 @@ FALSE_VALUES = {"no", "n", "false", "0"}
 MODEL_PATTERN = re.compile(r"[A-Z0-9*/./-]+\Z", re.I)
 LOW_ISSUE = "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT"
 HIGH_ISSUE = "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
-known_non_us
+
 
 def model_pattern_candidate(pattern, exact_sku):
     """Return a reviewable current-EPA identity candidate, never a fuzzy match.
@@ -165,4 +165,3 @@ def epa_registration_state(dryer_candidates, combo_candidates):
     else:
         state = "UNKNOWN"
     return state, markets
-
