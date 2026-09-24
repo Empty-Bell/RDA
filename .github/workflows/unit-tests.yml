@@ -1,13 +1,5 @@
 name: Unit test contracts
 on:
-  push:
-    branches: [main, 'fix/**']
-    paths:
-      - '.github/workflows/**'
-      - '.python-version'
-      - 'requirements-*.lock'
-      - 'scripts/**'
-      - 'tests/**'
   pull_request:
     paths:
       - '.github/workflows/**'
