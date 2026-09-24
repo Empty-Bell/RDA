@@ -120,7 +120,7 @@ def _select_business_variant(page, sku, carrier):
     # The business landing page defaults to Wi-Fi. Select the 5G family and
     # then the exact carrier option; the downstream identity gates remain
     # authoritative and this helper never treats the selector alone as proof.
-    page.get_by_role("button", name="Galaxy Tab A11+ 5G", exact=True).click(timeout=15000)
+    page.locator('[data-testid="handleRelationSelect"][aria-label="Galaxy Tab A11+ 5G"]').click(timeout=15000)
     option = page.locator(f'[data-modelcode="{sku.lower()}" i][aria-label^="Carrier:"]')
     option.wait_for(state="visible", timeout=15000)
     observed = option.get_attribute("aria-label") or ""
@@ -183,7 +183,7 @@ def collect(products, output):
                     group_ids.clear()
                     business_response = page.goto(business_url, wait_until="domcontentloaded", timeout=60000)
                     page.wait_for_timeout(8000)
-                    page.get_by_role("button", name="Galaxy Tab A11+ 5G", exact=True).wait_for(
+                    page.locator('[data-testid="handleRelationSelect"][aria-label="Galaxy Tab A11+ 5G"]').wait_for(
                         state="visible", timeout=20000)
                     _select_business_variant(page, sku, carrier)
                     purchase = page.locator("#continue_btn")
