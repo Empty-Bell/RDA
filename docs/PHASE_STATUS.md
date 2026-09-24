@@ -1,5 +1,18 @@
 # Phase status
 
+Updated 2026-09-24: G0/G1 remain accepted; G2 is formally open. G3/G4 are
+preparatory, and G5–G7 have not started. The completed PR #4 and PR #3 merges
+are implementation checkpoints, not phase acceptance. The latest Computer
+hosted collection [35950176133](https://github.com/Empty-Bell/RDA/actions/runs/35950176133)
+verified 24/24 exact SKUs; downstream EPA/publication candidates
+[35950493442](https://github.com/Empty-Bell/RDA/actions/runs/35950493442)
+reported 19 PASS and 5 LOW, with no whole-product PASS claim. Tablet PR #2
+hosted collection [35950226621](https://github.com/Empty-Bell/RDA/actions/runs/35950226621)
+verified 47/50 exact SKUs; three Galaxy Tab A11+ 5G URLs redirected to a
+different Wi-Fi SKU and remain failed. The unified 11-family dashboard and
+public Pages publication remain open. See CURRENT_TASK.md for the active
+checkpoint and exact blockers.
+
 Updated 2026-09-22: G0/G1 are accepted and G2 remains formally open. G3/G4
 source collection and candidate exploration have begun, but they are preparatory
 work only and do not mean those phase gates are accepted. See CURRENT_TASK.md for
