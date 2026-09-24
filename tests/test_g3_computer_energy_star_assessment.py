@@ -16,14 +16,14 @@ class ComputerRegistrationScopeTests(unittest.TestCase):
             candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")
         ])
         self.assertEqual(state, "PRESENT")
-        self.assertEqual(markets, ["PRESENT"])
+        self.assertEqual(markets, ["US"])
 
     def test_explicit_model_match_with_us_market_can_confirm_registration(self):
         state, markets = computer_registration([
             candidate("EPA_LITERAL_OR_POSITIONAL_PATTERN")
         ])
         self.assertEqual(state, "PRESENT")
-        self.assertEqual(markets, ["PRESENT"])
+        self.assertEqual(markets, ["US"])
 
     def test_computer_specs_certification_field_is_not_applicable(self):
         row = {
@@ -62,5 +62,6 @@ class ComputerRegistrationScopeTests(unittest.TestCase):
         self.assertEqual(result["energy_star_publication"]["points"]["spec_certification"]["state"],
                          "NOT_APPLICABLE")
         self.assertEqual(result["display_outcome"], "LOW")
-
+    
+if __name__ == "__main__":
     unittest.main()

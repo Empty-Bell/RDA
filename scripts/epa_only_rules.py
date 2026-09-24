@@ -165,4 +165,3 @@ def epa_registration_state(dryer_candidates, combo_candidates):
     else:
         state = "UNKNOWN"
     return state, markets
-
