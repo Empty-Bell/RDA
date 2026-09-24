@@ -1,5 +1,44 @@
 # Current task continuation — 2026-09-23
 
+## Continuation checkpoint — 2026-09-24
+
+G0/G1 remain accepted; G2 refrigerator is formally open. PR #4 restored broad
+unittest discovery and was merged as `6a12d9b`; the first post-merge [main source
+recon run](https://github.com/Empty-Bell/RDA/actions/runs/35950026073)
+passed all 12 family jobs. PR #3's same-run Tablet PF/PLP verifier was merged as
+`9569b3c`. These source checks do not close G2, G3 or G4.
+
+Computer exact-SKU collection [35950176133](https://github.com/Empty-Bell/RDA/actions/runs/35950176133)
+used source run 35950026073 and passed 24/24 SKUs across three shards (7/9/8),
+zero failed. Downstream EPA/publication comparison
+[35950493442](https://github.com/Empty-Bell/RDA/actions/runs/35950493442)
+passed on the same 24-SKU population: PASS 19, LOW 5, HIGH 0,
+NOT_EVALUATED 0. The five LOW publication conflicts are NP750XHD-KB1US,
+NP760VJG-KG2US, NP760XJG-KG2US, NP960QHA-KG1US and NP960XJG-KA1US.
+No overall product compliance or G4 acceptance follows from this family slice.
+
+Tablet collection [35950226621](https://github.com/Empty-Bell/RDA/actions/runs/35950226621)
+on PR #2 used source run 35950026073. Of 50 PF exact SKUs in 11 rendered
+groups, 47 verified exact PDP identity and three failed. Samsung redirected
+SM-X238UZAAXAA, SM-X238UZAAXAU and SM-X238UZAAATT to Wi-Fi SKU
+SM-X230NZAIXAR; the visible Continue control also named that Wi-Fi SKU.
+The two previously redirecting S10+ SKUs verified on this rerun. Preserve all
+three failures as source gaps; do not substitute the destination SKU, infer an
+ENERGY STAR result, or claim full Tablet coverage. Same-run PF/PLP and
+selected Buy-link evidence is in
+[35934715471](https://github.com/Empty-Bell/RDA/actions/runs/35934715471).
+PR #2 remains open with the 47/50 result and failure evidence. Next: establish
+an exact PDP source for these three in-scope PF SKUs, or document explicit
+unavailability under the approved population/coverage contract.
+
+The unified 11-family dashboard is still deferred until family source and
+assessment coverage is resolved. Refrigerator fixture and Dishwasher report
+dashboard artifacts are earlier partial slices. The later history, full-run
+operations and Pages gates remain open.
+
+---
+
+
 ## Active work
 
 G0 and G1 remain accepted. G2 refrigerator is still the formal open gate; downstream G3/G4 family audits are preparatory and do not accept G2 or whole-product compliance.
