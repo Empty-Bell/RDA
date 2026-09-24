@@ -37,6 +37,11 @@
             "unit": "kWh/year"
           }
         },
+        "pdp_energy_consumption_raw": {
+          "error": null,
+          "state": "NOT_OBSERVED",
+          "value": null
+        },
         "pdp_capacity": {
           "error": null,
           "state": "NOT_APPLICABLE",

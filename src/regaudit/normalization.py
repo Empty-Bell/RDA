@@ -39,37 +39,72 @@ def claim(values: list[Any]) -> dict[str, Any]:
     return observed(parsed[0], values)
 
 
-def measurement(entries: list[dict[str, Any]], kind: str) -> dict[str, Any]:
+def measurement(
+    entries: list[dict[str, Any]],
+    kind: str,
+    *,
+    allow_refrigerator_energy_rows: bool = False,
+) -> dict[str, Any]:
     if kind not in ("annual_energy", "capacity"):
         raise ValueError("Unknown measurement kind")
-    if len(entries) != 1:
+    if not entries or (
+        kind == "annual_energy" and len(entries) != 1 and not allow_refrigerator_energy_rows
+    ):
         return absent("MISSING_OR_MULTIPLE_MEASUREMENTS", entries)
-    source = entries[0]
-    name, value = source.get("name"), source.get("value")
-    if not isinstance(name, str) or not isinstance(value, str):
-        return absent("UNSUPPORTED_MEASUREMENT_ENCODING", entries)
     number = r"(\d+(?:\.\d+)?)"
     if kind == "annual_energy":
-        match = re.fullmatch(number + r"\s*kWh\s*/\s*(?:yr|year)", value.strip(), re.I)
+        parsed = []
+        for source in entries:
+            name, value = source.get("name"), source.get("value")
+            if not isinstance(name, str) or not isinstance(value, str):
+                return absent("UNSUPPORTED_MEASUREMENT_ENCODING", entries)
+            pattern = number + r"\s*kWh\s*/\s*(?:yr|year)"
+            if allow_refrigerator_energy_rows and name == "Energy Consumption":
+                pattern = number + r"\s*kWh(?:\s*/\s*(?:yr|year))?"
+            match = re.fullmatch(pattern, value.strip(), re.I)
+            if match is None:
+                return absent("AMBIGUOUS_NUMBER_OR_UNIT", entries)
+            amount = float(match.group(1))
+            if not math.isfinite(amount):
+                return absent("NONFINITE_MEASUREMENT", entries)
+            parsed.append((name, amount))
+        if len({amount for _, amount in parsed}) != 1:
+            return absent("CONFLICTING_MEASUREMENTS", entries)
+        name, amount = parsed[0]
         unit = "kWh/year"
     else:
+        if len(entries) != 1:
+            return absent("MISSING_OR_MULTIPLE_MEASUREMENTS", entries)
+        source = entries[0]
+        name, value = source.get("name"), source.get("value")
+        if not isinstance(name, str) or not isinstance(value, str):
+            return absent("UNSUPPORTED_MEASUREMENT_ENCODING", entries)
         if name != "Total Capacity (cu. ft.)":
             return absent("UNSUPPORTED_CAPACITY_FIELD_UNIT", entries)
         match = re.fullmatch(number + r"(?:\s*cu\.?\s*ft\.?)?", value.strip(), re.I)
         unit = "cu ft"
-    if match is None:
-        return absent("AMBIGUOUS_NUMBER_OR_UNIT", entries)
-    amount = float(match.group(1))
-    if not math.isfinite(amount):
-        return absent("NONFINITE_MEASUREMENT", entries)
-    return observed({"amount": amount, "unit": unit, "raw": name + ": " + value}, entries)
+        if match is None:
+            return absent("AMBIGUOUS_NUMBER_OR_UNIT", entries)
+        amount = float(match.group(1))
+        if not math.isfinite(amount):
+            return absent("NONFINITE_MEASUREMENT", entries)
+    raw_value = "; ".join(f"{source['name']}: {source['value']}" for source in entries)
+    return observed({"amount": amount, "unit": unit, "raw": raw_value}, entries)
 
 
 def normalize_pdp(
-    specs: dict[str, Any], plp_flags: list[Any], structured_fields: list[dict[str, Any]]
+    specs: dict[str, Any],
+    plp_flags: list[Any],
+    structured_fields: list[dict[str, Any]],
+    *,
+    allow_refrigerator_energy_rows: bool = False,
 ) -> dict[str, Any]:
     channels = {
-        "pdp_annual_energy_kwh": measurement(specs["energy_consumption_raw"], "annual_energy"),
+        "pdp_annual_energy_kwh": measurement(
+            specs["energy_consumption_raw"],
+            "annual_energy",
+            allow_refrigerator_energy_rows=allow_refrigerator_energy_rows,
+        ),
         "pdp_capacity": measurement(specs["capacity_raw"], "capacity"),
         "plp_energy_star_claim": claim(plp_flags),
         "pdp_structured_energy_star_claim": claim([f.get("value") for f in structured_fields]),

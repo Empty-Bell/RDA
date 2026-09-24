@@ -12,6 +12,7 @@ class PdpFactRecord:
     pdp_url: Observation
     product_title: Observation
     pdp_annual_energy_kwh: Observation
+    pdp_energy_consumption_raw: Observation
     pdp_capacity: Observation
     energyguide_url: Observation
     plp_energy_star_claim: Observation
@@ -86,6 +87,17 @@ def validate_observations(kind: str, data: Any, evidence_hashes: set[str]) -> li
             )
         elif name in URL_FIELDS:
             require(text(value) and value.startswith("https://"), "Source URL must be HTTPS")
+        elif name == "pdp_energy_consumption_raw":
+            require(
+                isinstance(value, list)
+                and all(
+                    isinstance(row, dict)
+                    and isinstance(row.get("name"), str)
+                    and isinstance(row.get("value"), str)
+                    for row in value
+                ),
+                "Raw PDP energy source rows must preserve name/value strings",
+            )
         elif name in MEASUREMENTS:
             require(
                 isinstance(value, dict) and set(value) == {"amount", "unit", "raw"},

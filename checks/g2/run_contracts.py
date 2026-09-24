@@ -20,6 +20,7 @@ def main() -> int:
         loader.discover(str(ROOT / "checks/g2"), pattern=pattern)
         for pattern in (
             "test_normalized_pdp.py",
+            "test_energyguide_numeric_comparison.py",
             "test_label_plan.py",
             "test_label_selection.py",
             "test_label_activation.py",

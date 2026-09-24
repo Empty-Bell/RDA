@@ -8,7 +8,8 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from g2_energyguide_numeric_comparison import build_comparison, render_markdown  # noqa: E402
+from g2_energyguide_numeric_comparison import build_comparison, build_comparison_from_inputs, render_markdown  # noqa: E402
+from regaudit.normalization import measurement  # noqa: E402
 
 
 def observation(value=None, state="VALUE"):
@@ -25,10 +26,12 @@ class EnergyGuideNumericComparisonTests(unittest.TestCase):
             facts = [
                 {"kind": "PDP", "exact_sku": "SKU-A", "observations": {
                     "pdp_annual_energy_kwh": observation({"amount": 700, "unit": "kWh/year"}),
+                    "pdp_energy_consumption_raw": observation([]),
                     "pdp_capacity": observation({"amount": 29, "unit": "cu ft"}),
                 }},
                 {"kind": "PDP", "exact_sku": "SKU-B", "observations": {
                     "pdp_annual_energy_kwh": observation(state="NOT_OBSERVED"),
+                    "pdp_energy_consumption_raw": observation([]),
                     "pdp_capacity": observation({"amount": 22.8, "unit": "cu ft"}),
                 }},
             ]
@@ -69,6 +72,64 @@ class EnergyGuideNumericComparisonTests(unittest.TestCase):
             self.assertFalse(result["assessment_enabled"])
             self.assertEqual(result["overall_product_compliance"], "NOT_EVALUATED")
             self.assertIn("does not apply a tolerance", render_markdown(result))
+
+    def test_comparison_replays_annual_energy_from_preserved_raw_rows(self):
+        source_rows = [{"name": "Energy Consumption", "value": "618kWH"}]
+        bundle = {
+            "manifest": {"run_id": "run-1", "git_sha": "a" * 40},
+            "products": [{"exact_sku": "SKU-A"}],
+            "facts": [{
+                "kind": "PDP", "exact_sku": "SKU-A",
+                "observations": {
+                    "pdp_annual_energy_kwh": measurement(
+                    source_rows, "annual_energy", allow_refrigerator_energy_rows=True
+                )["observation"],
+                    "pdp_energy_consumption_raw": observation(source_rows),
+                    "pdp_capacity": observation(state="NOT_OBSERVED"),
+                },
+            }],
+        }
+        replay = {
+            "contract": "G2_LABEL_ANNOTATION_REPLAY_V1", "status": "PASS",
+            "source": {"execution_run_id": "run-1"},
+            "label_selection_summary": {"records": [{
+                "exact_sku": "SKU-A",
+                "annual_energy_observation": observation({"amount": 618, "unit": "kWh/year"}),
+            }]},
+            "capacity_selection_summary": {"records": [{
+                "exact_sku": "SKU-A", "capacity_observation": observation(state="NOT_OBSERVED"),
+            }]},
+        }
+        result = build_comparison_from_inputs(bundle, replay)
+        self.assertEqual(result["records"][0]["annual_energy_kwh"]["state"], "EQUAL")
+
+    def test_comparison_rejects_normalization_not_replayable_from_raw(self):
+        source_rows = [{"name": "Energy Consumption", "value": "618kWH"}]
+        bundle = {
+            "manifest": {"run_id": "run-1", "git_sha": "a" * 40},
+            "products": [{"exact_sku": "SKU-A"}],
+            "facts": [{
+                "kind": "PDP", "exact_sku": "SKU-A",
+                "observations": {
+                    "pdp_annual_energy_kwh": observation(state="NOT_OBSERVED"),
+                    "pdp_energy_consumption_raw": observation(source_rows),
+                    "pdp_capacity": observation(state="NOT_OBSERVED"),
+                },
+            }],
+        }
+        replay = {
+            "contract": "G2_LABEL_ANNOTATION_REPLAY_V1", "status": "PASS",
+            "source": {"execution_run_id": "run-1"},
+            "label_selection_summary": {"records": [{
+                "exact_sku": "SKU-A",
+                "annual_energy_observation": observation({"amount": 618, "unit": "kWh/year"}),
+            }]},
+            "capacity_selection_summary": {"records": [{
+                "exact_sku": "SKU-A", "capacity_observation": observation(state="NOT_OBSERVED"),
+            }]},
+        }
+        with self.assertRaisesRegex(ValueError, "does not match preserved source"):
+            build_comparison_from_inputs(bundle, replay)
 
 
 if __name__ == "__main__":
