@@ -1,5 +1,19 @@
 # Phase status
 
+Updated 2026-09-24: G0/G1 remain accepted; G2 is formally open. The full
+refrigerator hosted pilot [35954113156](https://github.com/Empty-Bell/RDA/actions/runs/35954113156)
+passed and uploaded evidence artifact
+[10790377994](https://github.com/Empty-Bell/RDA/actions/runs/35954113156/artifacts/10790377994),
+but its phase gate remains NOT_EVALUATED; do not interpret run success as G2
+acceptance or whole-product compliance. G3/G4 remain preparatory, and G5–G7
+have not started. Tablet PR #2's exact-carrier fallback is under hosted
+verification in [run 35956035682](https://github.com/Empty-Bell/RDA/actions/runs/35956035682);
+its unit checks passed in [run 35956035701](https://github.com/Empty-Bell/RDA/actions/runs/35956035701),
+but full exact-SKU coverage is not yet established. Unified 11-family dashboard
+and public Pages publication remain gated. See CURRENT_TASK.md for details.
+
+
+
 Updated 2026-09-24: G0/G1 remain accepted; G2 is formally open. G3/G4 are
 preparatory, and G5–G7 have not started. The completed PR #4 and PR #3 merges
 are implementation checkpoints, not phase acceptance. The latest Computer
