@@ -32,7 +32,7 @@ jobs:
           bash scripts/bootstrap.sh
       - name: Observe source contracts
         run: |
-          python -m unittest discover -s tests -v
+          python -m unittest discover -s tests -t . -v
           python scripts/source_recon.py --family ${{ matrix.family }}
       - name: Observe label degradation and model ROI
         if: contains(fromJSON('["refrigerator","dishwasher","washer","tv"]'), matrix.family)
