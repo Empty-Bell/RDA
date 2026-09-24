@@ -1,5 +1,15 @@
 # Current task continuation — 2026-09-24
 
+## Latest continuation checkpoint — 2026-09-24
+
+The full refrigerator G2 pilot on merged main commit `8197ba83d6f09da3b65c075c1a34fd5a0d6df848` completed successfully in hosted run [35954113156](https://github.com/Empty-Bell/RDA/actions/runs/35954113156). Its evidence artifact is [10790377994](https://github.com/Empty-Bell/RDA/actions/runs/35954113156/artifacts/10790377994), 51.35 MB, SHA-256 `9eb6a459bf7230fc6de567c93184e505f30f7a0b64caff0cf6e1fe3f0a9e6731`, expiring 2026-10-08 UTC. The workflow's phase gate remains NOT_EVALUATED; G2 is still formally open, and this successful run does not accept whole-product compliance.
+
+Tablet PR #2 now has a narrow Samsung US Business exact-carrier PDP fallback for the three A11+ 5G SKUs that redirected to Wi-Fi. It keeps exact final-URL, visible Continue SKU, current ecom group, and Specs identity checks. Contract checks passed on commit `87b9337cb9fc012327798f2596d8a4569e6cde6c` in run [35956035701](https://github.com/Empty-Bell/RDA/actions/runs/35956035701). Full four-shard collection [35956035682](https://github.com/Empty-Bell/RDA/actions/runs/35956035682) is still running; do not claim full Tablet coverage or assessment until its aggregate completes.
+
+Unified dashboard work remains gated by the open G2 acceptance and unfinished family source/assessment slices. Existing bounded dashboard artifacts remain fixture/source-slice deliverables, not the unified 11-family operational dashboard. Public Pages remains unapproved and disabled.
+
+
+
 ## Continuation checkpoint — 2026-09-24
 
 G0/G1 remain accepted; G2 refrigerator is formally open. PR #4 restored broad
