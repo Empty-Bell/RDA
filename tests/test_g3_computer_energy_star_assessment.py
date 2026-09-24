@@ -62,5 +62,6 @@ class ComputerRegistrationScopeTests(unittest.TestCase):
         self.assertEqual(result["energy_star_publication"]["points"]["spec_certification"]["state"],
                          "NOT_APPLICABLE")
         self.assertEqual(result["display_outcome"], "LOW")
-
+    
+if __name__ == "__main__":
     unittest.main()
