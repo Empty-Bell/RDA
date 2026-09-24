@@ -55,7 +55,8 @@ jobs:
           test "$VALID_RUN" = "$COLLECTION_RUN_ID"
           ATTEMPT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq '.run_attempt')"
           echo "COLLECTION_RUN_ID=$COLLECTION_RUN_ID" >> "$GITHUB_ENV"
-          ARTIFACTS="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq --arg run "$COLLECTION_RUN_ID" --arg attempt "$ATTEMPT" '[.artifacts[] | select(.expired == false) | select(.name | test("^g3-tablet-collection-" + $run + "-" + $attempt + "-[0-9]+$"))] | sort_by(.name) | .[].id')"
+          ARTIFACT_PATTERN="^g3-tablet-collection-${COLLECTION_RUN_ID}-${ATTEMPT}-[0-9]+$"
+          ARTIFACTS="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq "[.artifacts[] | select(.expired == false) | select(.name | test(\"${ARTIFACT_PATTERN}\"))] | sort_by(.name) | .[].id")"
           test "$(printf '%s\n' "$ARTIFACTS" | sed '/^$/d' | wc -l)" -eq 4
           INDEX=0
           while IFS= read -r ARTIFACT_ID; do
