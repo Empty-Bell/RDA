@@ -1,0 +1,240 @@
+name: G3 Tablet same-run PF to PLP verification
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/g3-tablet-plp-pf-verify.yml'
+      - 'scripts/source_recon.py'
+      - 'scripts/source_contract.py'
+      - 'scripts/browser_runtime.py'
+      - 'scripts/claim_recon.py'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Bootstrap locked browser runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      # The broad discovery command in source-recon.yml imports a duplicate computer
+      # test module from scripts/ before reaching tests/. Run this isolated source
+      # capture directly so the tablet PF and rendered PLP evidence share one run.
+      - name: Capture Tablet PF and rendered PLP in one browser session
+        run: python scripts/source_recon.py --family tablet
+      - name: Report exact redirect SKU presence
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+          from urllib.parse import urlsplit
+
+          root = Path('runtime/source-recon/tablet')
+          targets = {
+              'SM-X238UZAAXAA': 'SM-X230NZAIXAR',
+              'SM-X238UZAAXAU': 'SM-X230NZAIXAR',
+              'SM-X238UZAAATT': 'SM-X230NZAIXAR',
+              'SM-X828UZAAATT': 'SM-X820NZAEXAR',
+              'SM-X828UZAAVZW': 'SM-X820NZAEXAR',
+          }
+          recon = json.loads((root / 'recon.json').read_text(encoding='utf-8'))
+          checks = {row['name']: row['status'] for row in recon.get('checks', [])}
+          required = ('plp_request_contract', 'pagination_observation')
+          failed = [name for name in required if checks.get(name) != 'PASS']
+          if failed:
+              raise SystemExit(f'Required same-run PF/PLP capture checks failed: {failed}; see recon.json')
+          exact_pf = set()
+          pf_rows = {}
+          for path in sorted((root / 'fixtures').glob('pf-*.json')):
+              data = json.loads(path.read_text(encoding='utf-8'))
+              for product in data.get('searchResults', []):
+                  for row in [product, *product.get('groupedProductList', [])]:
+                      if row.get('modelCode'):
+                          sku = row['modelCode'].upper()
+                          exact_pf.add(sku)
+                          pf_rows[sku] = {key: row.get(key) for key in
+                              ('modelCode', 'modelName', 'group_id', 'pdpURL', 'consumerUrl',
+                               'ecomFlag', 'stockFlag') if key in row}
+          population = json.loads((root / 'population-observation.json').read_text(encoding='utf-8'))
+          plp_tiles = {str(row.get('sku') or '').upper(): row.get('url')
+                       for row in population.get('rendered_tiles', [])}
+          result = {
+              'captured_at_utc': recon['captured_at'],
+              'run_id': recon.get('run_id'),
+              'family': 'tablet',
+              'definition': 'PF presence is exact modelCode in captured pf_search pages; PLP presence is exact SKU on a rendered product card.',
+              'results': [
+                  {
+                      'redirect_from': source,
+                      'redirect_to': destination,
+                      'redirect_from_in_pf': source in exact_pf,
+                      'redirect_to_in_pf': destination in exact_pf,
+                      'redirect_from_on_plp_card': source in plp_tiles,
+                      'redirect_to_on_plp_card': destination in plp_tiles,
+                      'redirect_from_pf_record': pf_rows.get(source),
+                      'redirect_to_pf_record': pf_rows.get(destination),
+                      'redirect_from_plp_card_url': plp_tiles.get(source),
+                      'redirect_to_plp_card_url': plp_tiles.get(destination),
+                  }
+                  for source, destination in targets.items()
+              ],
+              'plp_card_count': len(plp_tiles),
+              'pf_exact_sku_count': len(exact_pf),
+          }
+          # Trace both PF and PLP entry URLs for the one redirecting source SKU
+          # that is itself listed on the PLP. Compare the final URL with the PDP's
+          # visible primary Continue SKU, the exact identity signal used by G3.
+          import sys
+          from urllib.parse import urljoin
+          sys.path.insert(0, 'scripts')
+          from browser_runtime import desktop_context
+          from playwright.sync_api import sync_playwright
+
+          focal_sku = 'SM-X828UZAAVZW'
+          focal_not_on_plp_sku = 'SM-X828UZAAATT'
+          focal_pf = pf_rows.get(focal_sku, {})
+          focal_plp_links = []
+          focal_urls = {}
+          for source_name, raw_url in (
+              ('pf_pdp_url', focal_pf.get('pdpURL')),
+              ('plp_card_name_url', plp_tiles.get(focal_sku)),
+          ):
+              if raw_url:
+                  focal_urls.setdefault(urljoin('https://www.samsung.com', raw_url), []).append(source_name)
+          att_pf = pf_rows.get(focal_not_on_plp_sku, {})
+          if att_pf.get('pdpURL'):
+              focal_urls.setdefault(urljoin('https://www.samsung.com', att_pf['pdpURL']), []).append(
+                  'pf_pdp_url:' + focal_not_on_plp_sku)
+          traces = []
+          with sync_playwright() as playwright:
+              browser = playwright.chromium.launch(headless=True)
+              context, _ = desktop_context(browser)
+              plp = context.new_page()
+              plp.goto('https://www.samsung.com/us/tablets/all-tablets/',
+                       wait_until='domcontentloaded', timeout=60000)
+              card = plp.locator(f'.pd21-product-card__name[data-modelcode="{focal_sku}"]')
+              card.wait_for(state='visible', timeout=60000)
+              focal_plp_links = card.evaluate("""e => {
+                const list = e.closest('.pd21-product-card__list');
+                let item = e;
+                while (item && list && item.parentElement !== list) item = item.parentElement;
+                if (!list || !item || item.parentElement !== list) return [];
+                return Array.from(item.querySelectorAll('a[href]')).map(a => ({
+                  text: (a.innerText || '').trim().slice(0, 100),
+                  aria_label: a.getAttribute('aria-label'),
+                  class_name: String(a.className || '').slice(0, 160),
+                  url: a.href,
+                }));
+              }""")
+              for link in focal_plp_links:
+                  link_url = str(link.get('url') or '')
+                  link_path = urlsplit(link_url).path.lower()
+                  is_buy_action = str(link.get('text') or '').strip().lower() == 'buy'
+                  if (is_buy_action and 'www.samsung.com/' in link_url and '/buy/' in link_path
+                          and focal_sku.lower() in link_path):
+                      focal_urls.setdefault(link_url, []).append(
+                          'plp_card_link:Buy')
+              plp.close()
+              for requested_url, sources in focal_urls.items():
+                  page = context.new_page()
+                  navigation_requests = []
+                  page.on('request', lambda request: navigation_requests.append({
+                      'url': request.url,
+                      'redirected_from': request.redirected_from.url if request.redirected_from else None,
+                  }) if request.is_navigation_request() else None)
+                  navigation_error = None
+                  try:
+                      response = page.goto(requested_url, wait_until='domcontentloaded', timeout=60000)
+                  except Exception as error:
+                      response = None
+                      navigation_error = f'{type(error).__name__}: {str(error)[:250]}'
+                  try:
+                      page.locator('#continue_btn').wait_for(state='visible', timeout=30000)
+                      continue_sku = page.locator('#continue_btn').get_attribute('data-modelcode')
+                  except Exception:
+                      continue_sku = None
+                  traces.append({
+                      'entry_sources': sources,
+                      'requested_url': requested_url,
+                      'http_status': response.status if response else None,
+                      'final_url': page.url,
+                      'visible_continue_sku': continue_sku,
+                      'navigation_requests': navigation_requests,
+                      'navigation_error': navigation_error,
+                  })
+                  page.close()
+              browser.close()
+          result['focal_pdp_redirect_traces'] = traces
+          result['focal_plp_card_links'] = focal_plp_links
+
+          # Keep this live check as a guard, not just a diagnostic report. If PF
+          # and the exact PLP card Buy link resolve to a different PDP identity,
+          # fail the workflow so the mismatch cannot be mistaken for a clean run.
+          pf_traces = [trace for trace in traces if 'pf_pdp_url' in trace['entry_sources']]
+          att_traces = [trace for trace in traces if
+                        'pf_pdp_url:' + focal_not_on_plp_sku in trace['entry_sources']]
+          buy_traces = [trace for trace in traces if 'plp_card_link:Buy' in trace['entry_sources']]
+          if not pf_traces:
+              raise SystemExit(f'Missing live PF PDP trace for {focal_sku}')
+          if not buy_traces:
+              raise SystemExit(f'Missing SKU-specific PLP card Buy trace for {focal_sku}')
+          if not att_traces:
+              raise SystemExit(f'Missing live PF PDP trace for {focal_not_on_plp_sku}')
+
+          def canonical_product_url(raw_url):
+              parsed = urlsplit(raw_url)
+              return (parsed.scheme.lower(), (parsed.hostname or '').lower(),
+                      parsed.path.rstrip('/').lower())
+
+          pf_url = canonical_product_url(pf_traces[0]['requested_url'])
+          if not any(canonical_product_url(trace['requested_url']) == pf_url
+                     for trace in buy_traces):
+              raise SystemExit(f'PF PDP and PLP Buy URLs differ for {focal_sku}')
+
+          sku_path = re.compile(r'-sku-' + re.escape(focal_sku.lower()) + r'/?$')
+          for trace in [*pf_traces, *buy_traces]:
+              final = urlsplit(trace.get('final_url') or '')
+              if (trace.get('http_status') != 200
+                      or (trace.get('visible_continue_sku') or '').upper() != focal_sku
+                      or final.scheme.lower() != 'https'
+                      or final.hostname != 'www.samsung.com'
+                      or not sku_path.search(final.path.lower())):
+                  raise SystemExit(
+                      f'PDP identity mismatch for {focal_sku}: '
+                      f'{json.dumps(trace, ensure_ascii=False, sort_keys=True)}')
+          att_sku_path = re.compile(r'-sku-' + re.escape(focal_not_on_plp_sku.lower()) + r'/?$')
+          for trace in att_traces:
+              final = urlsplit(trace.get('final_url') or '')
+              if (trace.get('http_status') != 200
+                      or (trace.get('visible_continue_sku') or '').upper() != focal_not_on_plp_sku
+                      or final.scheme.lower() != 'https'
+                      or final.hostname != 'www.samsung.com'
+                      or not att_sku_path.search(final.path.lower())):
+                  raise SystemExit(
+                      f'PDP identity mismatch for {focal_not_on_plp_sku}: '
+                      f'{json.dumps(trace, ensure_ascii=False, sort_keys=True)}')
+
+          print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+          (root / 'redirect-plp-pf-verification.json').write_text(
+              json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: tablet-plp-pf-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/source-recon/tablet/
+          retention-days: 14
+          if-no-files-found: warn
