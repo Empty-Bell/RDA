@@ -15,8 +15,16 @@ def make_recon(root, *, status="PASS", run_id=RUN_ID, scope="tablet source contr
     raw = FIXTURE.read_bytes()
     (root / "fixtures").mkdir()
     (root / "fixtures" / "pf-0.json").write_bytes(raw)
+    page = json.loads(raw)
+    groups = page["searchResults"]
+    tiles = [{"sku": group["modelCode"], "url": "/us/tablets/listed/" + group["modelCode"]}
+        for group in groups]
+    (root / "population-observation.json").write_text(json.dumps({
+        "groups": len(groups), "rendered_tiles": tiles,
+        "rendered_tile_groups": [group["group_id"] for group in groups]}, ensure_ascii=False), encoding="utf-8")
     recon = {"status": status, "run_id": run_id, "scope": scope,
-        "checks": [{"name": "plp_request_contract", "status": "PASS"}],
+        "checks": [{"name": "plp_request_contract", "status": "PASS"},
+                   {"name": "pagination_observation", "status": "PASS"}],
         "observations": [{"request_body": {"startIndex": "0"}, "fixture": "fixtures/pf-0.json",
             "fixture_sha256": digest or hashlib.sha256(raw).hexdigest()}]}
     (root / "recon.json").write_text(json.dumps(recon), encoding="utf-8")
@@ -28,8 +36,13 @@ class TabletCollectTests(unittest.TestCase):
             root = Path(temp); make_recon(root)
             products, metadata = load_population(root, RUN_ID)
         skus = [row["exact_sku"] for row in products]
+        expected = {row["modelCode"] for row in json.loads(FIXTURE.read_bytes())["searchResults"]}
         self.assertEqual(len(skus), len(set(skus)))
         self.assertEqual(len(products), metadata["sku_count"])
+        self.assertEqual(metadata["population_basis"], "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS")
+        self.assertGreater(metadata["pf_variant_count"], len(products))
+        self.assertEqual(set(skus), expected)
+        self.assertTrue(all(row["listing"]["sku_role"] == "PLP_RENDERED_CARD" for row in products))
         self.assertEqual("SM-X930NZAAXAR", products[0]["exact_sku"])
         self.assertEqual("tablet source contracts only", metadata["scope"])
 
@@ -45,6 +58,23 @@ class TabletCollectTests(unittest.TestCase):
             root = Path(temp); make_recon(root, digest="0" * 64)
             with self.assertRaisesRegex(ValueError, "fixture hash mismatch"):
                 load_population(root, RUN_ID)
+
+    def test_rendered_plp_population_must_be_complete_unique_and_in_pf(self):
+        for mutate in (
+            lambda data: data.update(rendered_tiles=data["rendered_tiles"][:-1],
+                                     rendered_tile_groups=data["rendered_tile_groups"][:-1]),
+            lambda data: data["rendered_tiles"].append(data["rendered_tiles"][0]),
+            lambda data: data["rendered_tiles"][0].update(sku="UNKNOWN-SKU"),
+            lambda data: data["rendered_tile_groups"].__setitem__(0, "WRONG-GROUP"),
+        ):
+            with self.subTest(mutate=mutate), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp); make_recon(root)
+                observation_path = root / "population-observation.json"
+                observation = json.loads(observation_path.read_text(encoding="utf-8"))
+                mutate(observation)
+                observation_path.write_text(json.dumps(observation), encoding="utf-8")
+                with self.assertRaises(ValueError):
+                    load_population(root, RUN_ID)
 
     def test_exact_continue_sku_is_required_and_selected_controls_are_context_only(self):
         good = {"selected_controls": [{"sku": "SM-X930"}],

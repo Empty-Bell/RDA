@@ -54,29 +54,65 @@ def load_population(root, run_id):
         raise ValueError("Tablet source artifact contains no pf_search pages")
     offsets = sorted(pages)
     population = pf_population([pages[offset][0] for offset in offsets])
-    products = []
+    # The canonical Tablet audit population is the exact SKU rendered on each
+    # Samsung PLP product card. pf_search also returns hidden/backend variants;
+    # those are supporting provenance, not additional PLP-listed models.
+    observation_path = root / "population-observation.json"
+    if not observation_path.is_file():
+        raise ValueError("Tablet source artifact has no rendered PLP population observation")
+    observation = read_json(observation_path)
+    rendered_tiles = observation.get("rendered_tiles")
+    rendered_groups = observation.get("rendered_tile_groups")
+    if (not isinstance(rendered_tiles, list) or not rendered_tiles
+            or observation.get("groups") != population["total_groups"]
+            or len(rendered_tiles) != population["total_groups"]
+            or not isinstance(rendered_groups, list)
+            or len(rendered_groups) != len(rendered_tiles)
+            or len(set(rendered_groups)) != len(rendered_groups)
+            or len(set(rendered_groups)) != population["total_groups"]):
+        raise ValueError("Rendered Tablet PLP cards do not reconcile to the complete PF group population")
+    pf_records = {}
     for offset in offsets:
         page, digest = pages[offset]
         for group in page["searchResults"]:
             for variant in group["groupedProductList"]:
                 sku = variant["modelCode"]
-                products.append({
-                    "run_id": str(run_id), "exact_sku": sku,
-                    "source_claim_listing_raw": {key: variant.get(key) for key in
-                        ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")},
-                    "listing": {"source_family_id": group["group_id"],
-                        "representative_sku": group["modelCode"],
-                        "sku_role": "REPRESENTATIVE" if sku == group["modelCode"] else "VARIANT",
-                        "plp_url": PLP_URL,
-                        "pdp_url": "https://www.samsung.com" + variant["pdpURL"],
-                        "source_pf_search_hash": digest},
-                })
-    skus = [row["exact_sku"] for row in products]
-    if len(skus) != population["unique_exact_skus"] or len(set(skus)) != len(skus):
-        raise ValueError("Tablet exact-SKU population cardinality or uniqueness changed")
+                if sku in pf_records:
+                    raise ValueError("Tablet pf_search contains a duplicate exact SKU")
+                pf_records[sku] = (group, variant, digest)
+    products = []
+    seen_skus = set()
+    for tile_index, tile in enumerate(rendered_tiles):
+        if not isinstance(tile, dict):
+            raise ValueError("Rendered Tablet PLP card row is malformed")
+        sku = str(tile.get("sku") or "").strip()
+        if not sku or sku in seen_skus:
+            raise ValueError("Rendered Tablet PLP cards contain a missing or duplicate exact SKU")
+        seen_skus.add(sku)
+        match = pf_records.get(sku)
+        if match is None:
+            raise ValueError("Rendered Tablet PLP card SKU is absent from same-run pf_search")
+        group, variant, digest = match
+        if str(rendered_groups[tile_index]) != str(group["group_id"]):
+            raise ValueError("Rendered Tablet PLP card does not match its same-run PF group")
+        products.append({
+            "run_id": str(run_id), "exact_sku": sku,
+            "source_claim_listing_raw": {key: variant.get(key) for key in
+                ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")},
+            "listing": {"source_family_id": group["group_id"],
+                "representative_sku": group["modelCode"],
+                "sku_role": "PLP_RENDERED_CARD",
+                "plp_url": PLP_URL,
+                "plp_card_url_raw": tile.get("url"),
+                "pdp_url": "https://www.samsung.com" + variant["pdpURL"],
+                "source_pf_search_hash": digest},
+        })
+    if len(products) != population["total_groups"]:
+        raise ValueError("Tablet audit population does not cover each rendered PLP card exactly once")
     return products, {"source_run_id": str(run_id), "scope": SCOPE, "group_count": population["total_groups"],
-        "sku_count": len(products), "pf_page_count": len(offsets),
-        "pf_page_hashes": [pages[offset][1] for offset in offsets]}
+        "sku_count": len(products), "pf_variant_count": population["unique_exact_skus"],
+        "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS",
+        "pf_page_count": len(offsets), "pf_page_hashes": [pages[offset][1] for offset in offsets]}
 
 
 def shard_for(sku, count=SHARD_COUNT):
