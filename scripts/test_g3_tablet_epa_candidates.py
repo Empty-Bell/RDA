@@ -14,7 +14,8 @@ FIXTURE = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "epa-quer
 class TabletEpaCandidateTests(unittest.TestCase):
     def test_current_epa_fixture_satisfies_computer_schema_contract(self):
         fixture = json.loads(FIXTURE.read_bytes())
-        contract = epa_contract(fixture["metadata_before"], fixture["rows_before"], dataset="rxdj-2c88")
+        rows = [row for page in fixture["pages"] for row in page]
+        contract = epa_contract(fixture["metadata_before"], rows, dataset="rxdj-2c88")
         self.assertEqual("rxdj-2c88", contract["dataset_id"])
         self.assertEqual("NOT_EVALUATED", contract["certification_matching"])
 
@@ -45,7 +46,7 @@ class TabletEpaCandidateTests(unittest.TestCase):
         self.assertEqual("SOURCE_CANDIDATES_READY", report["status"])
         self.assertEqual("NOT_EVALUATED", saved["records"][0]["registration_and_publication_assessment"])
         self.assertEqual(1, len(saved["records"][0]["epa_computer_model_pattern_candidates"]))
-        self.assertIn("NO PREFIX", saved["matching_contract"])
+        self.assertIn("NO_PREFIX", saved["matching_contract"])
 
     def test_collection_source_from_another_or_incomplete_run_is_rejected(self):
         with tempfile.TemporaryDirectory() as temp:
