@@ -19,6 +19,19 @@ class ClaimAttributionContract(unittest.TestCase):
         self.assertEqual(result['rendered_attributed_badges_raw'][0]['exact_sku'],'SKU')
         self.assertEqual(result['certification_matching'],'NOT_EVALUATED')
 
+    def test_computer_configurator_energy_star_asset_is_attributed_to_exact_pdp(self):
+        self.snapshot['energy_candidates']=[{
+            'tag':'IMG',
+            'src':'https://cdn.samsung.com/assets/energy-star-badge.webp',
+            'product_surface':'BUY_CONFIGURATOR_RELATION',
+            'surface_count':1,
+            'selector_contract':'PDP_ENERGY_STAR_PRODUCT_DETAILS_IMAGE_V1',
+            'ancestors':[{'cls':'EnergyStar_energyStar__nkHUr'}],
+        }]
+        result=self.facts()
+        self.assertEqual(result['rendered_claim_attribution'],'OBSERVED_CURRENT_PRODUCT_SURFACE')
+        self.assertEqual(result['rendered_attributed_badges_raw'][0]['product_surface'],'BUY_CONFIGURATOR_RELATION')
+
     def test_related_product_or_duplicate_gallery_prevents_attribution(self):
         self.snapshot['product_jsonld'].append({'sku':'OTHER'})
         self.assertEqual(self.facts()['rendered_attributed_badges_raw'],[])
