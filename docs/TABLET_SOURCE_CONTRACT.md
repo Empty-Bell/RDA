@@ -1,7 +1,8 @@
 # Tablet EPA-focused source reconnaissance
 
-Status: bounded hosted observation and final source regression PASS;
-Phase 0 RUNNING; certification NOT_EVALUATED.
+Status: exact-SKU hosted PDP collection PASS (50/50); EPA candidate capture is
+source-only and certification/registration/publication assessment remains
+NOT_EVALUATED. Formal G3/G4 acceptance is not implied.
 
 Official sources:
 - Samsung https://www.samsung.com/us/tablets/ links All Tablets through
@@ -32,6 +33,16 @@ rows may be desktops from other brands: they establish access/schema only, not
 Tablet candidates or Samsung certification. Type/markets/current status/variant
 matching require later contracts. EnergyGuide is OUT_OF_RECON_SCOPE in this EPA-only
 reconnaissance; this is not a legal applicability finding.
+
+EPA candidate capture may preserve the complete current Samsung Computers V9.0
+cohort and link only a case-sensitive literal full-SKU equality. EPA strings
+containing `*` remain raw and are not interpreted as wildcard matches (open
+DECISIONS D09/D11). Prefix/family equivalence is not applied by this extractor;
+those relationships remain NOT_EVALUATED pending an approved contract.
+Candidate rows remain source evidence; product type,
+US market, certification status, carrier/storage/color variant relationships,
+publication severity, and overall compliance stay NOT_EVALUATED until reviewed
+contracts approve those semantics.
 
 Runtime: standard cold ubuntu-24.04 x64, actual-version desktop Chromium user agent,
 en-US, pinned bootstrap, no LLM calls. Counts and identifiers in evidence are snapshots,

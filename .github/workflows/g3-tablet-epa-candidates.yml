@@ -1,0 +1,89 @@
+name: G3 Tablet EPA source candidates
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_tablet_epa_candidates.py'
+      - 'scripts/test_g3_tablet_epa_candidates.py'
+      - 'scripts/g3_tablet_collect.py'
+      - 'scripts/epa_only_rules.py'
+      - 'docs/TABLET_SOURCE_CONTRACT.md'
+      - '.github/workflows/g3-tablet-epa-candidates.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      collection_run_id:
+        description: Successful Tablet exact-SKU collection run ID (blank uses latest success)
+        required: false
+        type: string
+  workflow_run:
+    workflows: [G3 Tablet exact-SKU collection]
+    types: [completed]
+    branches: [main]
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: g3-tablet-epa-candidates-${{ github.event.workflow_run.id || github.run_id }}
+  cancel-in-progress: false
+jobs:
+  candidates:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COLLECTION_RUN_ID: ${{ github.event.workflow_run.id || github.event.inputs.collection_run_id || '' }}
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download all successful exact-SKU Tablet shards
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$COLLECTION_RUN_ID" ]; then
+            COLLECTION_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-tablet-collection.yml/runs?branch=main&status=success&per_page=10" --jq '[.workflow_runs[] | select(.path == ".github/workflows/g3-tablet-collection.yml" and .conclusion == "success")] | sort_by(.created_at) | last | .id')"
+          fi
+          VALID_RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq 'select(.status == "completed" and .conclusion == "success" and .path == ".github/workflows/g3-tablet-collection.yml") | .id')"
+          test "$VALID_RUN" = "$COLLECTION_RUN_ID"
+          ATTEMPT="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}" --jq '.run_attempt')"
+          echo "COLLECTION_RUN_ID=$COLLECTION_RUN_ID" >> "$GITHUB_ENV"
+          ARTIFACT_PATTERN="^g3-tablet-collection-${COLLECTION_RUN_ID}-${ATTEMPT}-[0-9]+$"
+          ARTIFACTS="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${COLLECTION_RUN_ID}/artifacts" --jq "[.artifacts[] | select(.expired == false) | select(.name | test(\"${ARTIFACT_PATTERN}\"))] | sort_by(.name) | .[].id")"
+          test "$(printf '%s\n' "$ARTIFACTS" | sed '/^$/d' | wc -l)" -eq 4
+          INDEX=0
+          while IFS= read -r ARTIFACT_ID; do
+            test -n "$ARTIFACT_ID" || continue
+            DIR="runtime/g3-tablet/collection/shard-${INDEX}"
+            mkdir -p "$DIR"
+            gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > "runtime/g3-tablet/shard-${INDEX}.zip"
+            unzip -q "runtime/g3-tablet/shard-${INDEX}.zip" -d "$DIR"
+            INDEX=$((INDEX+1))
+          done <<< "$ARTIFACTS"
+          test "$INDEX" -eq 4
+      - name: Bootstrap locked EPA runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Test Tablet EPA candidate source contracts
+        run: python -m unittest scripts.test_g3_tablet_epa_candidates -v
+      - name: Capture current EPA rows and build unevaluated Tablet candidates
+        run: >-
+          python scripts/g3_tablet_epa_candidates.py
+          --collection-root runtime/g3-tablet/collection
+          --collection-run-id "$COLLECTION_RUN_ID"
+          --out runtime/g3-tablet/epa-candidates
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: g3-tablet-epa-source-candidates-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-tablet/epa-candidates/
+          retention-days: 14
+          if-no-files-found: warn
