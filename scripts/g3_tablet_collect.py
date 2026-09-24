@@ -17,6 +17,11 @@ CONTRACT = "G3_TABLET_EXACT_SKU_PDP_V1"
 SCOPE = "tablet source contracts only"
 PLP_URL = "https://www.samsung.com/us/tablets/all-tablets/"
 SHARD_COUNT = 4
+BUSINESS_FALLBACK_SKUS = {
+    "SM-X238UZAAXAA": "Unlocked",
+    "SM-X238UZAAXAU": "T-Mobile",
+    "SM-X238UZAAATT": "AT&T",
+}
 
 
 def read_json(path):
@@ -101,6 +106,41 @@ def _observe_selection(page):
     }""")
 
 
+def _business_url(sku):
+    if sku not in BUSINESS_FALLBACK_SKUS:
+        raise ValueError("No approved exact-SKU Tablet Business fallback")
+    carrier = BUSINESS_FALLBACK_SKUS[sku]
+    slug = sku.lower()
+    path = "galaxy-tab-a11-plus-5g-128gb-gray"
+    return ("https://www.samsung.com/us/business/tablets/galaxy-tab-a11-plus/buy/"
+        f"{path}-sku-{slug}/?modelCode={sku}&quantity=1"), carrier
+
+
+def _select_business_variant(page, sku, carrier):
+    # The business landing page defaults to Wi-Fi. Select the 5G family and
+    # then the exact carrier option; the downstream identity gates remain
+    # authoritative and this helper never treats the selector alone as proof.
+    page.get_by_role("button", name="Galaxy Tab A11+ 5G", exact=True).click(timeout=15000)
+    option = page.locator(f'[data-modelcode="{sku.lower()}" i][aria-label^="Carrier:"]')
+    option.wait_for(state="visible", timeout=15000)
+    observed = option.get_attribute("aria-label") or ""
+    if carrier.lower() not in observed.lower():
+        raise ValueError("Business carrier selector does not match the requested exact-SKU variant")
+    option.click()
+    page.wait_for_timeout(5000)
+
+
+def _matches_exact_pdp(page, response, sku):
+    selection = _observe_selection(page)
+    final = urlsplit(page.url)
+    slug = re.escape(sku.lower().replace("/", "-"))
+    return (response is not None and response.status == 200 and final.scheme == "https"
+        and final.hostname == "www.samsung.com" and "/us/" in final.path
+        and re.search(r"-sku-" + slug + r"/?$", final.path.lower())
+        and selection.get("continue_visible")
+        and str(selection.get("continue_sku") or "").upper() == sku.upper())
+
+
 def collect(products, output):
     from playwright.sync_api import sync_playwright
     destination = Path(output)
@@ -135,12 +175,28 @@ def collect(products, output):
                 purchase.wait_for(state="visible", timeout=30000)
                 selection = _observe_selection(page)
                 record["selection_observed_raw"] = selection
+                if not _matches_exact_pdp(page, response, sku) and sku in BUSINESS_FALLBACK_SKUS:
+                    record["fallback_initial_observation_raw"] = {
+                        "final_url": safe_url(page.url), "selection": selection,
+                        "http_status": response.status if response else None}
+                    business_url, carrier = _business_url(sku)
+                    group_ids.clear()
+                    business_response = page.goto(business_url, wait_until="domcontentloaded", timeout=60000)
+                    page.wait_for_timeout(8000)
+                    page.get_by_role("button", name="Galaxy Tab A11+ 5G", exact=True).wait_for(
+                        state="visible", timeout=20000)
+                    _select_business_variant(page, sku, carrier)
+                    purchase = page.locator("#continue_btn")
+                    purchase.wait_for(state="visible", timeout=30000)
+                    response = business_response
+                    selection = _observe_selection(page)
+                    record.update(final_url=safe_url(page.url), http_status=response.status if response else None,
+                        selection_observed_raw=selection,
+                        fallback_source="Samsung US Business exact carrier PDP",
+                        fallback_carrier=carrier,
+                        fallback_out_of_stock="Out of Stock" in page.locator("body").inner_text())
                 selection_facts = _selected_sku(selection, sku)
-                final = urlsplit(page.url)
-                slug = re.escape(sku.lower().replace("/", "-"))
-                if (response is None or response.status != 200 or final.scheme != "https"
-                        or final.hostname != "www.samsung.com" or "/us/" not in final.path
-                        or not re.search(r"-sku-" + slug + r"/?$", final.path.lower())):
+                if not _matches_exact_pdp(page, response, sku):
                     raise ValueError("Tablet PDP response or final exact-SKU URL is invalid")
                 unique_groups = sorted(set(group_ids))
                 if len(unique_groups) != 1:
