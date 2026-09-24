@@ -68,10 +68,7 @@ class ClaimReconContract(unittest.TestCase):
                 fixture=json.loads((root/(family+'.json')).read_text(encoding='utf-8'))
                 result=claim_facts(fixture['snapshot'],fixture['listing']['modelCode'],fixture['listing'],fixture['specs'])
                 expected=fixture['expected']
-                self.assertEqual(result['exact_sku'],expected['exact_sku'])
-                self.assertEqual(result['plp_energy_star_flag_raw'],expected['plp_energy_star_flag_raw'])
-                self.assertEqual(result['pdp_spec_energy_star_claim_raw'],expected['pdp_spec_energy_star_claim_raw'])
-                self.assertEqual(result['claim_consistency'],expected['claim_consistency'])
+                self.assertEqual({key:result.get(key) for key in expected},expected)
                 self.assertEqual(result['pdp_exact_jsonld_raw'][0]['sku'],result['exact_sku'])
                 self.assertEqual(result['plp_energy_star_flag_raw'],'Y')
                 self.assertEqual(result['pdp_structured_claim_status'],'NOT_EVALUATED')
