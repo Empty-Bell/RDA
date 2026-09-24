@@ -35,9 +35,11 @@ matching require later contracts. EnergyGuide is OUT_OF_RECON_SCOPE in this EPA-
 reconnaissance; this is not a legal applicability finding.
 
 EPA candidate capture may preserve the complete current Samsung Computers V9.0
-cohort and link only literal exact model numbers or the documented positional
-asterisk pattern. A truncated family model such as `SM-X930` does not by itself
-match a longer Tablet SKU. Candidate rows remain source evidence; product type,
+cohort and link only a case-sensitive literal full-SKU equality. EPA strings
+containing `*` remain raw and are not interpreted as wildcard matches (open
+DECISIONS D09/D11). Prefix/family equivalence is not applied by this extractor;
+those relationships remain NOT_EVALUATED pending an approved contract.
+Candidate rows remain source evidence; product type,
 US market, certification status, carrier/storage/color variant relationships,
 publication severity, and overall compliance stay NOT_EVALUATED until reviewed
 contracts approve those semantics.

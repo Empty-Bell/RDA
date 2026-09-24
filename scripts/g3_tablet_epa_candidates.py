@@ -12,7 +12,6 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
-from epa_only_rules import model_pattern_candidate
 from source_contract import epa_contract, pdp_facts, project_computer_specs
 
 DATASET = "rxdj-2c88"
@@ -206,6 +205,14 @@ def additional_patterns(value):
     return patterns
 
 
+def literal_model_candidate(pattern, sku):
+    """Link only byte-identical full model strings; do not interpret EPA stars."""
+    if not isinstance(pattern, str) or not isinstance(sku, str) or pattern != sku:
+        return None
+    return {"model_pattern_raw": pattern, "exact_sku_raw": sku,
+        "candidate_basis": "LITERAL_FULL_SKU_EQUALITY_ONLY"}
+
+
 def build_candidates(skus, products, records, claims, facts, epa_rows, source_run_id, epa_summary, output):
     rows_by_sku = []
     type_counts = Counter()
@@ -216,7 +223,7 @@ def build_candidates(skus, products, records, claims, facts, epa_rows, source_ru
             patterns.extend(("additional_model_information", token)
                 for token in additional_patterns(epa_row.get("additional_model_information")))
             for source_field, pattern in patterns:
-                match = model_pattern_candidate(pattern, sku)
+                match = literal_model_candidate(pattern, sku)
                 signature = (epa_row.get("source_row_id", epa_row.get("pd_id")), source_field, pattern)
                 if match is None or signature in seen:
                     continue
@@ -243,7 +250,7 @@ def build_candidates(skus, products, records, claims, facts, epa_rows, source_ru
         "epa_model_samples": [{key: row.get(key) for key in
             ("pd_id", "model_number", "model_name", "additional_model_information", "type",
              "operating_system_name", "markets")} for row in epa_rows],
-        "matching_contract": "LITERAL_EXACT_OR_POSITIONAL_EPA_ASTERISK_ONLY; NO_PREFIX, HYPHEN, DELETION, OR FUZZY NORMALIZATION",
+        "matching_contract": "CASE_SENSITIVE_LITERAL_FULL_SKU_EQUALITY_ONLY; ASTERISK_STRINGS_RETAINED_RAW_BUT_NOT_INTERPRETED; NO_PREFIX, HYPHEN, DELETION, OR FUZZY NORMALIZATION",
         "classification": "NOT_EVALUATED_PENDING_TYPE_MARKET_CURRENT_STATUS_AND_VARIANT_MATCHING_CONTRACT",
         "scope": "Current exact-SKU Tablet PDP evidence and complete current Samsung EPA Computers V9.0 source rows; no legal applicability or severity assessment",
         "records": rows_by_sku}
@@ -255,7 +262,7 @@ def build_candidates(skus, products, records, claims, facts, epa_rows, source_ru
     if summary_path:
         with Path(summary_path).open("a", encoding="utf-8") as stream:
             stream.write("## Tablet EPA source candidates\n\n")
-            stream.write(f"Exact Tablet SKUs: **{len(rows_by_sku)}**; current Samsung EPA rows: **{len(epa_rows)}**; strict literal/positional candidate links: **{report['candidate_link_count']}**. Registration and publication assessment remain NOT_EVALUATED.\n\n")
+            stream.write(f"Exact Tablet SKUs: **{len(rows_by_sku)}**; current Samsung EPA rows: **{len(epa_rows)}**; literal full-SKU candidate links: **{report['candidate_link_count']}**. Registration and publication assessment remain NOT_EVALUATED.\n\n")
             stream.write("| Exact SKU | EPA model pattern | Type | OS | Markets |\n|---|---|---|---|---|\n")
             for record in rows_by_sku:
                 for candidate in record["epa_computer_model_pattern_candidates"]:
