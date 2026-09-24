@@ -7,8 +7,9 @@ and corrected EnergyGuide profile/numeric assessment [35957085466](https://githu
 all passed. The pilot still reports phase_gate NOT_EVALUATED, so these runs do
 not accept G2 or whole-product compliance. Tablet exact-PDP source collection
 [35956539394](https://github.com/Empty-Bell/RDA/actions/runs/35956539394) passed
-50/50 with no failures and was merged as `3d8e8e5`; Tablet assessment and formal
-G3 acceptance remain open. G3/G4 are preparatory; G5–G7 have not started. The
+50/50 with no failures and was merged as `3d8e8e5`. Main then independently
+passed post-merge collection [35956958505](https://github.com/Empty-Bell/RDA/actions/runs/35956958505).
+Tablet assessment and formal G3 acceptance remain open. G3/G4 are preparatory; G5–G7 have not started. The
 unified 11-family dashboard and public Pages publication remain gated. See
 CURRENT_TASK.md for exact evidence and remaining work.
 
