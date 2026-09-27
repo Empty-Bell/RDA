@@ -2,7 +2,7 @@ name: G3 dishwasher comparison package
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: [G3 dishwasher source match, G3 dishwasher EnergyGuide text observation]
+    workflows: [G3 dishwasher source match]
     types: [completed]
     branches: [main]
   push:
