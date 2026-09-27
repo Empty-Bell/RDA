@@ -6,6 +6,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src"))
 
 from energyguide_fields import annual_layout_candidates, label_candidates, preserve_model_candidate_layers
 from g2_label_activation import (
@@ -17,6 +18,7 @@ from g2_label_activation import (
     summarize_capacity_selection_outcomes,
     summarize_selection_outcomes,
 )
+from regaudit.contracts import Observation, record
 
 
 class LabelActivationTests(unittest.TestCase):
@@ -79,7 +81,9 @@ class LabelActivationTests(unittest.TestCase):
         candidates["model_candidates_raw"].append({"value_raw": "RF23D9960SR"})
         observed = observe_raw_model(candidates)
         self.assertEqual(observed["observation"]["state"], "VALUE")
-        self.assertEqual(observed["observation"]["values"], ["RF23D*9600**", "RF23D9960SR"])
+        self.assertEqual(observed["values_raw"], ["RF23D*9600**", "RF23D9960SR"])
+        self.assertEqual(observed["observation"]["value"], "RF23D*9600**\nRF23D9960SR")
+        self.assertEqual(record(Observation, observed["observation"]).state.value, "VALUE")
         self.assertEqual(len(observed["candidates"]), 2)
 
     def test_model_parser_collects_all_lines_and_delimited_models(self):

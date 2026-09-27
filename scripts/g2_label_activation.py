@@ -28,13 +28,12 @@ def observe_raw_model(candidates: dict[str, Any]) -> dict[str, Any]:
     if any(not isinstance(value, str) or not value for value in values):
         return unavailable("MISSING_OR_AMBIGUOUS_RAW_MODEL_CANDIDATE")
     unique_values = list(dict.fromkeys(values))
-    observation = {"state": "VALUE", "value": unique_values[0], "error": None}
-    if len(unique_values) > 1:
-        observation["values"] = unique_values
+    observation = {"state": "VALUE", "value": "\n".join(unique_values), "error": None}
     return {
         "observation": observation,
         "reason": "RAW_MODEL_CANDIDATES_PRESERVED_NO_IDENTITY_MATCHING",
         "candidates": models,
+        "values_raw": unique_values,
     }
 
 
