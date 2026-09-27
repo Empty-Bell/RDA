@@ -10,7 +10,9 @@ def build(energy,numeric,model,out):
  for sku in sorted(e):
   es,nu,mo=e[sku],n[sku],m[sku]; f=[]
   if es.get('severity'): f.append({'control':'ENERGY_STAR_PUBLICATION','severity':es['severity'],'issue_code':es['issue_code']})
-  if 'DIFFERENT' in (mo['pdp_vs_energyguide_model'],mo['pdp_vs_epa_model'],mo['energyguide_vs_epa_model']): f.append({'control':'MODEL_IDENTITY','severity':'HIGH','issue_code':'MODEL_IDENTITY_MISMATCH'})
+  # A mismatch requires the PDP to disagree with every listed EnergyGuide
+  # pattern. One matching label pattern is sufficient for model identity.
+  if mo['pdp_vs_energyguide_model']=='DIFFERENT' or mo['pdp_vs_epa_model']=='DIFFERENT' or (mo['energyguide_vs_epa_model']=='DIFFERENT' and mo['pdp_vs_energyguide_model']!='EQUAL'): f.append({'control':'MODEL_IDENTITY','severity':'HIGH','issue_code':'MODEL_IDENTITY_MISMATCH'})
   if mo['pdp_vs_epa_model']=='NOT_COMPARABLE': f.append({'control':'EPA_CURRENT','severity':'HIGH','issue_code':'EPA_CURRENT_MODEL_NOT_REGISTERED'})
   if nu['pdp_annual_energy'].get('state')=='NOT_OBSERVED': f.append({'control':'ANNUAL_ENERGY','severity':'LOW','issue_code':'PDP_ANNUAL_ENERGY_MISSING'})
   if 'DIFFERENT' in (nu['pdp_vs_energyguide_energy'],nu['energyguide_vs_epa_energy']): f.append({'control':'ANNUAL_ENERGY','severity':'MEDIUM','issue_code':'ANNUAL_ENERGY_MISMATCH'})

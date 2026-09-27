@@ -20,6 +20,17 @@ def read_json(path):
     return json.loads(Path(path).read_bytes())
 
 
+def split_model_candidates(value):
+    """Split all printed model entries without splitting SKU hyphens/slashes."""
+    if not isinstance(value, str):
+        return []
+    parts = []
+    for line in value.splitlines() or [value]:
+        line = re.sub(r"^\s*models?\s*[:=]?\s*", "", line, flags=re.I)
+        parts.extend(part.strip() for part in re.split(r"[,;|]+", line) if part.strip())
+    return parts
+
+
 def model_prefix_match(pattern, exact_sku):
     if not isinstance(pattern, str) or not MODEL_PATTERN_CHARS.fullmatch(pattern) or not isinstance(exact_sku, str):
         return None
@@ -181,14 +192,15 @@ def main():
         label_patterns = []
         for document in label_records:
             for model in document["model_candidates_raw"]:
-                pattern = model.get("value_raw")
-                if pattern and pattern not in label_patterns:
-                    label_patterns.append(pattern)
-                match = model_prefix_match(pattern, sku)
-                if match:
-                    label_matches.append({**match, "pdf_sha256": document["pdf_sha256"],
-                                          "context_raw": model.get("context_raw"),
-                                          "evidence_layer": model.get("evidence_layer")})
+                raw = model.get("value_raw")
+                for pattern in split_model_candidates(raw):
+                    if pattern not in label_patterns:
+                        label_patterns.append(pattern)
+                    match = model_prefix_match(pattern, sku)
+                    if match:
+                        label_matches.append({**match, "pdf_sha256": document["pdf_sha256"],
+                                              "context_raw": model.get("context_raw"),
+                                              "evidence_layer": model.get("evidence_layer")})
             for energy in document["annual_energy_candidates_raw"]:
                 label_energies.append({"value_raw": energy.get("value_raw"),
                                        "kwh_decimal_candidate": decimal_value(energy.get("value_raw")),

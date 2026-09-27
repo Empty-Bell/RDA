@@ -15,8 +15,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/g3_dishwasher_energyguide_observe.py'
-      - '.github/workflows/g3-dishwasher-energyguide-observation.yml'
       - 'scripts/energyguide_fields.py'
+      - '.github/workflows/g3-dishwasher-energyguide-observation.yml'
       - 'requirements-probe.lock'
       - 'runtime-manifest.json'
 

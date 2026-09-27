@@ -30,6 +30,36 @@ def patterns_overlap(first, second):
     ))
 
 
+def split_patterns(value):
+    """Split model lists while keeping model-internal hyphens and slashes."""
+    if not isinstance(value, str):
+        return []
+    parts = []
+    for line in value.splitlines() or [value]:
+        # "Models" is a heading, while model identifiers can follow on the
+        # same line or on the next lines. Strip the heading only.
+        line = re.sub(r"^\s*models?\s*[:=]?\s*", "", line, flags=re.I)
+        parts.extend(part.strip() for part in re.split(r"[,;|]+", line) if part.strip())
+    return parts
+
+
+def candidate_values(rows):
+    """Keep every raw parser token, including lists packed into one token."""
+    values = []
+    for row in rows or []:
+        raw = row.get("value_raw") if isinstance(row, dict) else row
+        values.extend(split_patterns(raw))
+    return sorted(set(values))
+
+
+def unique_values(rows, key):
+    values = []
+    for row in rows or []:
+        raw = row.get(key) if isinstance(row, dict) else row
+        values.extend(split_patterns(raw))
+    return sorted(set(values))
+
+
 def relation(left, right, comparator):
     if not left or not right:
         return "NOT_COMPARABLE"
@@ -41,10 +71,10 @@ def build(package, out):
     rows = []
     for item in source.get("rows", []):
         sku = item["exact_sku"]
-        raw_labels = sorted({x.get("value_raw") for x in item.get("energyguide_model_candidates_raw", []) if isinstance(x.get("value_raw"), str)})
-        reviewed_labels = sorted({x.get("value_raw") for x in item.get("energyguide_model_patterns_visual_reviewed", []) if isinstance(x.get("value_raw"), str)})
+        raw_labels = candidate_values(item.get("energyguide_model_candidates_raw", []))
+        reviewed_labels = candidate_values(item.get("energyguide_model_patterns_visual_reviewed", []))
         labels = reviewed_labels or raw_labels
-        epa = sorted({x.get("model_number") for x in item.get("epa_candidates_raw", []) if isinstance(x.get("model_number"), str)})
+        epa = unique_values(item.get("epa_candidates_raw", []), "model_number")
         pdp_label = relation([sku], labels, lambda a, b: matches_exact(b, a))
         pdp_epa = relation([sku], epa, lambda a, b: matches_exact(b, a))
         label_epa = relation(labels, epa, patterns_overlap)

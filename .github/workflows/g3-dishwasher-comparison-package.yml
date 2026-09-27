@@ -2,7 +2,7 @@ name: G3 dishwasher comparison package
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: [G3 dishwasher source match]
+    workflows: [G3 dishwasher source match, G3 dishwasher EnergyGuide text observation]
     types: [completed]
     branches: [main]
   push:
@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 8
     env:
       GH_TOKEN: ${{ github.token }}
-      MATCH_RUN_ID: ${{ github.event.workflow_run.id || '' }}
+      MATCH_RUN_ID: ${{ github.event.workflow_run.name == 'G3 dishwasher source match' && github.event.workflow_run.id || '' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with: {persist-credentials: false}

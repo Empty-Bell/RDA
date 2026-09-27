@@ -40,9 +40,15 @@ def label_candidates(text, engine, pdf_sha256):
     models = []
     capacities = []
     for index,line in enumerate(lines):
-        for match in re.finditer(r'\b[A-Z]{1,5}\d[A-Z0-9*?/-]{5,}(?![A-Z0-9*?/-])', line):
-            models.append({'value_raw':match[0],'line':index,'context_raw':line,
-                           'wildcard_count_status':'NOT_EVALUATED' if '*' in match[0] or '?' in match[0] else 'NO_WILDCARD_OBSERVED'})
+        # A single EnergyGuide may list several model families on separate
+        # lines, or delimit them with commas, semicolons, and pipes. Extract
+        # every token independently and preserve its raw source line.
+        for match in re.finditer(r'(?<![A-Z0-9])[A-Z]{1,5}\d[A-Z0-9*?/-]{5,}(?![A-Z0-9*?/-])', line, re.I):
+            value = match[0]
+            if not value:
+                continue
+            models.append({'value_raw':value,'line':index,'context_raw':line,
+                           'wildcard_count_status':'NOT_EVALUATED' if '*' in value or '?' in value else 'NO_WILDCARD_OBSERVED'})
         if re.search(r'capacity|cubic feet|cu\.?\s*ft',line,re.I):
             capacities.append({'value_raw':line,'line':index})
     return {'pdf_sha256':pdf_sha256,'extraction_engine':engine,

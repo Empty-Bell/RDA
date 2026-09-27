@@ -15,22 +15,26 @@ from g2_label_selection import (
 
 
 def observe_raw_model(candidates: dict[str, Any]) -> dict[str, Any]:
-    """Project one parser token only; never normalize, correct, or match identity."""
+    """Preserve every parser token; never normalize, correct, or match identity."""
     digest = candidates.get("pdf_sha256")
     if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
         raise ValueError("Invalid raw model candidate PDF hash")
     models = candidates.get("model_candidates_raw")
     if not isinstance(models, list):
         raise ValueError("Invalid raw model candidates")
-    if len(models) != 1 or not isinstance(models[0], dict):
+    if not models or any(not isinstance(item, dict) for item in models):
         return unavailable("MISSING_OR_AMBIGUOUS_RAW_MODEL_CANDIDATE")
-    value = models[0].get("value_raw")
-    if not isinstance(value, str) or not value:
+    values = [item.get("value_raw") for item in models]
+    if any(not isinstance(value, str) or not value for value in values):
         return unavailable("MISSING_OR_AMBIGUOUS_RAW_MODEL_CANDIDATE")
+    unique_values = list(dict.fromkeys(values))
+    observation = {"state": "VALUE", "value": unique_values[0], "error": None}
+    if len(unique_values) > 1:
+        observation["values"] = unique_values
     return {
-        "observation": {"state": "VALUE", "value": value, "error": None},
-        "reason": "UNIQUE_RAW_MODEL_CANDIDATE_NO_IDENTITY_MATCHING",
-        "candidate": models[0],
+        "observation": observation,
+        "reason": "RAW_MODEL_CANDIDATES_PRESERVED_NO_IDENTITY_MATCHING",
+        "candidates": models,
     }
 
 

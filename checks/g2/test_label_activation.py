@@ -75,9 +75,19 @@ class LabelActivationTests(unittest.TestCase):
         ]
         observed = observe_raw_model(candidates)
         self.assertEqual(observed["observation"]["value"], "RF23D*9600**")
-        self.assertEqual(observed["reason"], "UNIQUE_RAW_MODEL_CANDIDATE_NO_IDENTITY_MATCHING")
+        self.assertEqual(observed["reason"], "RAW_MODEL_CANDIDATES_PRESERVED_NO_IDENTITY_MATCHING")
         candidates["model_candidates_raw"].append({"value_raw": "RF23D9960SR"})
-        self.assertEqual(observe_raw_model(candidates)["observation"]["state"], "NOT_OBSERVED")
+        observed = observe_raw_model(candidates)
+        self.assertEqual(observed["observation"]["state"], "VALUE")
+        self.assertEqual(observed["observation"]["values"], ["RF23D*9600**", "RF23D9960SR"])
+        self.assertEqual(len(observed["candidates"]), 2)
+
+    def test_model_parser_collects_all_lines_and_delimited_models(self):
+        parsed = label_candidates(
+            "Models DW80B70**A*; DW80B70**U*\nDW80B60**U*",
+            "OCR", self.result["sha256"])
+        self.assertEqual([row["value_raw"] for row in parsed["model_candidates_raw"]],
+                         ["DW80B70**A*", "DW80B70**U*", "DW80B60**U*"])
 
     def test_saved_annotations_have_one_mapping_per_replayed_sku(self):
         reviews = load_review_annotations(ROOT / "docs/evidence/g2-label-review-annotations.json")

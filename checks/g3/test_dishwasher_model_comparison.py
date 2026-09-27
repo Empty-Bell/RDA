@@ -36,6 +36,32 @@ class DishwasherModelComparisonTests(unittest.TestCase):
         self.assertEqual(record["energyguide_model_pattern_source"], "HUMAN_VISUAL_REVIEW")
         self.assertEqual(record["pdp_vs_energyguide_model"], "EQUAL")
 
+    def test_any_matching_label_pattern_passes_and_all_patterns_are_preserved(self):
+        package = {"rows": [{"exact_sku": "DW80B7070US/AA",
+            "energyguide_model_candidates_raw": [
+                {"value_raw": "Models DW80B70**A*"},
+                {"value_raw": "DW80B70**U*"},
+                {"value_raw": "DW80B60**U*"},
+            ], "epa_candidates_raw": []}]}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); source = root / "package.json"; source.write_text(json.dumps(package))
+            build(source, root / "out")
+            record = json.loads((root / "out" / "model-comparison.json").read_text())["records"][0]
+        self.assertEqual(record["energyguide_model_patterns_raw"], ["DW80B60**U*", "DW80B70**A*", "DW80B70**U*"])
+        self.assertEqual(record["pdp_vs_energyguide_model"], "EQUAL")
+        self.assertEqual(record["matching_energyguide_patterns"], ["DW80B70**U*"])
+
+    def test_splits_delimited_patterns_inside_a_single_candidate(self):
+        package = {"rows": [{"exact_sku": "DW80B7070US/AA",
+            "energyguide_model_candidates_raw": [{"value_raw": "DW80B70**A*; DW80B70**U*, DW80B60**U*"}],
+            "epa_candidates_raw": []}]}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); source = root / "package.json"; source.write_text(json.dumps(package))
+            build(source, root / "out")
+            record = json.loads((root / "out" / "model-comparison.json").read_text())["records"][0]
+        self.assertEqual(record["pdp_vs_energyguide_model"], "EQUAL")
+        self.assertEqual(len(record["energyguide_model_patterns_raw"]), 3)
+
 
 if __name__ == "__main__":
     unittest.main()
