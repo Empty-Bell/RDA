@@ -74,7 +74,8 @@ def review(observation_root, observation_run_id, output):
         headings = observation.get("label_heading_observations", {})
         for page in observation.get("pages", []):
             layers = [("PRIMARY_TEXT", page.get("fields_raw")),
-                      ("OCR_COMPLEMENT", (page.get("ocr_complement_raw") or {}).get("fields_raw"))]
+                      ("OCR_COMPLEMENT", (page.get("ocr_complement_raw") or {}).get("fields_raw")),
+                      ("MODEL_OCR_COMPLEMENT", (page.get("model_ocr_complement_raw") or {}).get("fields_raw"))]
             for layer, fields in layers:
                 fields = fields or {}
                 for candidate in fields.get("model_candidates_raw", []):

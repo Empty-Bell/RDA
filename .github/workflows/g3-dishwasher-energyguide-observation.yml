@@ -52,6 +52,8 @@ jobs:
           python -m pip install --index-url https://pypi.org/simple --no-cache-dir --require-hashes --no-deps --no-build-isolation -r requirements-probe.lock
           python -m pip check
           python scripts/runtime_integrity.py prepare
+      - name: Verify hybrid embedded-text and OCR model extraction
+        run: python -m unittest checks/g2/test_label_activation.py -v
       - name: Download successful EnergyGuide retrieval artifact
         shell: bash
         run: |

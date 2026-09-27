@@ -59,6 +59,17 @@ def label_candidates(text, engine, pdf_sha256):
             'wildcard_correction':'NOT_APPLIED','compliance':'NOT_EVALUATED'}
 
 
+def preserve_model_candidate_layers(embedded_candidates, ocr_candidates):
+    """Keep raw model tokens from both PDF text and OCR with provenance."""
+    result = []
+    for source_layer, candidates in (("EMBEDDED_TEXT", embedded_candidates), ("IMAGE_OCR", ocr_candidates)):
+        for candidate in candidates or []:
+            if not isinstance(candidate, dict) or not isinstance(candidate.get("value_raw"), str):
+                continue
+            result.append({**candidate, "source_layer": source_layer})
+    return result
+
+
 def annual_layout_candidates(spans, pdf_sha256):
     """Proposed descriptor/unit association in PDF coordinates, never final selection."""
     def rect(span):

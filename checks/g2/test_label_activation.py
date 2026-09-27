@@ -7,7 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from energyguide_fields import annual_layout_candidates, label_candidates
+from energyguide_fields import annual_layout_candidates, label_candidates, preserve_model_candidate_layers
 from g2_label_activation import (
     load_capacity_review_annotations,
     load_review_annotations,
@@ -88,6 +88,13 @@ class LabelActivationTests(unittest.TestCase):
             "OCR", self.result["sha256"])
         self.assertEqual([row["value_raw"] for row in parsed["model_candidates_raw"]],
                          ["DW80B70**A*", "DW80B70**U*", "DW80B60**U*"])
+
+    def test_hybrid_pdf_text_and_ocr_keep_all_model_tokens_with_provenance(self):
+        embedded = label_candidates("Models DW80B70**A*", "PyMuPDF", self.result["sha256"])
+        ocr = label_candidates("DW80B70**A*\nDW80B70**U*\nDW80B60**U*", "RapidOCR", self.result["sha256"])
+        merged = preserve_model_candidate_layers(embedded["model_candidates_raw"], ocr["model_candidates_raw"])
+        self.assertEqual({row["value_raw"] for row in merged}, {"DW80B70**A*", "DW80B70**U*", "DW80B60**U*"})
+        self.assertEqual({row["source_layer"] for row in merged}, {"EMBEDDED_TEXT", "IMAGE_OCR"})
 
     def test_saved_annotations_have_one_mapping_per_replayed_sku(self):
         reviews = load_review_annotations(ROOT / "docs/evidence/g2-label-review-annotations.json")

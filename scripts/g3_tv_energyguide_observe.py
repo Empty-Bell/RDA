@@ -56,20 +56,28 @@ def observe_pdf(item, output, engine):
             has_annual = bool(embedded_fields and any(candidate.get("role") == "ANNUAL_CAPTION_CONTEXT"
                                                        for candidate in embedded_fields.get("energy_candidates_raw", [])))
             complement = None
+            model_ocr_complement = None
             if text_source == "IMAGE_OCR":
                 spans = run_ocr()
-            elif not has_annual:
+            else:
                 ocr_spans = run_ocr()
                 ocr_text = "\n".join(span["text"] for span in ocr_spans)
                 ocr_fields = label_candidates(ocr_text, "RapidOCR", digest) if ocr_text.strip() else None
-                ocr_layout = annual_layout_candidates(ocr_spans, digest)
-                complement = {"reason": "NO_ANNUAL_ENERGY_CANDIDATE_IN_EMBEDDED_TEXT",
-                              "text_raw": ocr_text, "spans_raw": ocr_spans, "fields_raw": ocr_fields,
-                              "annual_layout_candidates_raw": ocr_layout["annual_layout_candidates"],
-                              "selection": "NOT_EVALUATED"}
+                model_ocr_complement = {"reason": "OCR_RUN_ALONGSIDE_EMBEDDED_TEXT_TO_CAPTURE_IMAGE_ONLY_MODEL_LINES",
+                                        "text_raw": ocr_text, "spans_raw": ocr_spans,
+                                        "fields_raw": {"model_candidates_raw": (ocr_fields or {}).get("model_candidates_raw", [])},
+                                        "selection": "NOT_EVALUATED"}
+                if not has_annual:
+                    ocr_layout = annual_layout_candidates(ocr_spans, digest)
+                    complement = {"reason": "NO_ANNUAL_ENERGY_CANDIDATE_IN_EMBEDDED_TEXT",
+                                  "text_raw": ocr_text, "spans_raw": ocr_spans, "fields_raw": ocr_fields,
+                                  "annual_layout_candidates_raw": ocr_layout["annual_layout_candidates"],
+                                  "selection": "NOT_EVALUATED"}
             all_spans.extend(spans)
             if complement:
                 all_spans.extend(complement["spans_raw"])
+            elif model_ocr_complement:
+                all_spans.extend(model_ocr_complement["spans_raw"])
             text = "\n".join(span["text"] for span in spans)
             fields = label_candidates(text, "RapidOCR" if text_source == "IMAGE_OCR" else "PyMuPDF", digest) if text.strip() else None
             layout = annual_layout_candidates(spans, digest)
@@ -78,6 +86,7 @@ def observe_pdf(item, output, engine):
                           "span_count": len(spans), "text_observation": "TEXT_OBSERVED" if text.strip() else "NO_TEXT_OBSERVED",
                           "text_raw": text, "spans_raw": spans, "fields_raw": fields,
                           "embedded_spans_raw": embedded_spans, "ocr_complement_raw": complement,
+                          "model_ocr_complement_raw": model_ocr_complement,
                           "annual_layout_candidates_raw": layout["annual_layout_candidates"],
                           "preview_path": f"pdf/{digest}/{preview_name}"})
     return {"pdf_sha256": digest, "byte_count": len(raw), "page_count": len(pages),

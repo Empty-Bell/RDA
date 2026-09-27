@@ -10,7 +10,7 @@ import re
 from typing import Any
 
 import pymupdf
-from energyguide_fields import label_candidates, annual_layout_candidates
+from energyguide_fields import label_candidates, annual_layout_candidates, preserve_model_candidate_layers
 from runner_probe import safe_url
 
 
@@ -143,35 +143,50 @@ def observe_pdf(item: dict[str, Any], output: Path, engine: Any) -> dict[str, An
         if document.page_count == 0:
             raise ValueError("EnergyGuide PDF has no pages")
         for page_number, page in enumerate(document, start=1):
-            spans = embedded_lines(page, page_number)
-            text_source = "EMBEDDED_TEXT" if any(span["text"].strip() for span in spans) else "IMAGE_OCR"
+            embedded_spans = embedded_lines(page, page_number)
+            embedded_text = "\n".join(span["text"] for span in embedded_spans)
+            has_embedded_text = bool(embedded_text.strip())
             render = page.get_pixmap(matrix=pymupdf.Matrix(2, 2), alpha=False)
             preview_name = f"page-{page_number:02d}-2x.png"
             render.save(target / preview_name)
-            if text_source == "IMAGE_OCR":
-                result = engine(str(target / preview_name))
-                texts = [] if result.txts is None else list(result.txts)
-                boxes = [] if result.boxes is None else list(result.boxes)
-                scores = [] if result.scores is None else list(result.scores)
-                if not (len(texts) == len(boxes) == len(scores)):
-                    raise ValueError("RapidOCR returned mismatched text, box, and score arrays")
-                spans = []
-                for text, box, score in zip(texts, boxes, scores):
-                    points = box.tolist() if hasattr(box, "tolist") else box
-                    normalized = [[float(point[0]) / 2, float(point[1]) / 2] for point in points]
-                    spans.append({"page": page_number, "text": str(text),
+            result = engine(str(target / preview_name))
+            texts = [] if result.txts is None else list(result.txts)
+            boxes = [] if result.boxes is None else list(result.boxes)
+            scores = [] if result.scores is None else list(result.scores)
+            if not (len(texts) == len(boxes) == len(scores)):
+                raise ValueError("RapidOCR returned mismatched text, box, and score arrays")
+            ocr_spans = []
+            for text_value, box, score in zip(texts, boxes, scores):
+                points = box.tolist() if hasattr(box, "tolist") else box
+                normalized = [[float(point[0]) / 2, float(point[1]) / 2] for point in points]
+                ocr_spans.append({"page": page_number, "text": str(text_value),
                                   "bbox": [min(point[0] for point in normalized), min(point[1] for point in normalized),
                                            max(point[0] for point in normalized), max(point[1] for point in normalized)],
                                   "polygon": normalized, "confidence_raw": float(score), "engine": "RapidOCR"})
-                spans.sort(key=lambda span: (span["bbox"][1], span["bbox"][0]))
+            ocr_spans.sort(key=lambda span: (span["bbox"][1], span["bbox"][0]))
+            ocr_text = "\n".join(span["text"] for span in ocr_spans)
+            spans = embedded_spans + ocr_spans if has_embedded_text else ocr_spans
+            text_source = "EMBEDDED_TEXT_AND_IMAGE_OCR" if has_embedded_text else "IMAGE_OCR"
+            text = embedded_text if has_embedded_text else ocr_text
+            fields = label_candidates(text, "PyMuPDF" if has_embedded_text else "RapidOCR", digest) if text.strip() else None
+            model_ocr_complement = None
+            if has_embedded_text and ocr_text.strip():
+                ocr_fields = label_candidates(ocr_text, "RapidOCR", digest)
+                embedded_models = (fields or {}).get("model_candidates_raw", [])
+                model_layers = preserve_model_candidate_layers(embedded_models, ocr_fields.get("model_candidates_raw", []))
+                fields["model_candidates_raw"] = model_layers
+                model_ocr_complement = {"reason": "OCR_RUN_ALONGSIDE_EMBEDDED_TEXT_TO_CAPTURE_IMAGE_ONLY_MODEL_LINES",
+                                        "text_raw": ocr_text, "spans_raw": ocr_spans,
+                                        "fields_raw": {"model_candidates_raw": ocr_fields.get("model_candidates_raw", [])},
+                                        "selection": "NOT_EVALUATED"}
             all_spans.extend(spans)
-            text = "\n".join(span["text"] for span in spans)
-            fields = label_candidates(text, "RapidOCR" if text_source == "IMAGE_OCR" else "PyMuPDF", digest) if text.strip() else None
-            layout = annual_layout_candidates(spans, digest)
+            layout = annual_layout_candidates(embedded_spans if has_embedded_text else ocr_spans, digest)
             pages.append({"page": page_number, "width_points": float(page.rect.width),
                           "height_points": float(page.rect.height), "text_source": text_source,
                           "span_count": len(spans), "text_observation": "TEXT_OBSERVED" if text.strip() else "NO_TEXT_OBSERVED",
                           "text_raw": text, "spans_raw": spans, "fields_raw": fields,
+                          "embedded_text_raw": embedded_text if has_embedded_text else None,
+                          "ocr_text_raw": ocr_text, "model_ocr_complement_raw": model_ocr_complement,
                           "annual_layout_candidates_raw": layout["annual_layout_candidates"],
                           "preview_path": f"pdf/{digest}/{preview_name}"})
     return {"pdf_sha256": digest, "byte_count": len(raw), "page_count": len(pages),
