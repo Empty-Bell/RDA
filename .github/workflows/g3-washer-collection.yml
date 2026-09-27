@@ -60,8 +60,8 @@ jobs:
           mkdir -p runtime/g3-washer/recon
           gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > runtime/g3-washer/source.zip
           unzip -q runtime/g3-washer/source.zip -d runtime/g3-washer/recon
-          RECON_FILE="$(find runtime/g3-washer/recon -name recon.json -type f -print -quit)"
-          test -n "$RECON_FILE"
+          RECON_FILE="runtime/g3-washer/recon/recon.json"
+          test -f "$RECON_FILE"
           echo "SOURCE_RUN_ID=${SOURCE_RUN_ID}" >> "$GITHUB_ENV"
           echo "SOURCE_RECON_DIR=$(dirname "$RECON_FILE")" >> "$GITHUB_ENV"
       - name: Collect exact-SKU PDP facts for the full washer population
