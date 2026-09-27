@@ -12,7 +12,7 @@ on:
     types: [completed]
     branches: [main]
 permissions:
-  actions: write
+  actions: read
   contents: read
 
 concurrency:
@@ -63,9 +63,3 @@ jobs:
           path: runtime/g3-washer/review/
           retention-days: 14
           if-no-files-found: warn
-      - name: Start source comparison after successful review
-        if: success()
-        shell: bash
-        run: |
-          set -euo pipefail
-          gh workflow run g3-washer-source-comparison.yml --ref main -f review_run_id="${GITHUB_RUN_ID}"
