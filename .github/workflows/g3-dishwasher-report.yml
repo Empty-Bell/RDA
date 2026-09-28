@@ -1,7 +1,7 @@
 name: G3 dishwasher canonical report
 on:
  workflow_dispatch:
-permissions: {actions: read, contents: read}
+permissions: {actions: write, contents: read}
 jobs:
   report:
     # The dashboard is triggered only after this report succeeds.
@@ -28,3 +28,7 @@ jobs:
           name: g3-dishwasher-report-${{ github.run_id }}-${{ github.run_attempt }}
           path: runtime/g3/report/out/
           retention-days: 14
+      - name: Publish dashboard after successful report
+        if: success()
+        shell: bash
+        run: gh workflow run g3-dishwasher-report-dashboard.yml --ref main

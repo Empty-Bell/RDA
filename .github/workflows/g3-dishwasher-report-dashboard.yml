@@ -3,15 +3,10 @@ on:
  workflow_dispatch:
  push:
   branches: [main]
-  paths: ['scripts/g3_dishwasher_report_dashboard.py','checks/g3/test_dishwasher_report_dashboard.py','.github/workflows/g3-dishwasher-report-dashboard.yml']
- workflow_run:
-  workflows: [G3 dishwasher canonical report]
-  types: [completed]
-  branches: [main]
+  paths: ['scripts/g3_dishwasher_report_dashboard.py','checks/g3/test_dishwasher_report_dashboard.py']
 permissions: {actions: read, contents: read}
 jobs:
  dashboard:
-  if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
   runs-on: ubuntu-24.04
   timeout-minutes: 5
   env:
