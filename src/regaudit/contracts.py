@@ -316,7 +316,9 @@ class AssessmentRecord:
     automatic_final_legal_conclusion: bool
 
 
-def validate_bundle(data: dict[str, Any], *, synthetic_assessments: bool = False, assessed: bool = False) -> dict[str, Any]:
+def validate_bundle(
+    data: dict[str, Any], *, synthetic_assessments: bool = False, assessed: bool = False
+) -> dict[str, Any]:
     from .facts import validate_observations
 
     require(
@@ -440,8 +442,10 @@ def validate_bundle(data: dict[str, Any], *, synthetic_assessments: bool = False
                     "Assessed finding requires approved issue and severity",
                 )
             else:
-                require(assessment_item.issue_code is None and assessment_item.severity is None,
-                        "Clean control cannot carry a finding")
+                require(
+                    assessment_item.issue_code is None and assessment_item.severity is None,
+                    "Clean control cannot carry a finding",
+                )
         elif not synthetic_assessments:
             require(
                 status == AssessmentStatus.NOT_EVALUATED
