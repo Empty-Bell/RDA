@@ -40,11 +40,13 @@ def pdp_logo_point(claim):
 
 
 def spec_point(rows):
+    if not isinstance(rows, list):
+        return {"state": "UNKNOWN", "raw_rows": rows}
     selected = [row for row in rows or []
                 if "energy star" in str(row.get("name", "")).lower()
                 and "certif" in str(row.get("name", "")).lower()]
     if not selected:
-        return {"state": "ABSENT", "raw_rows": []}
+        return {"state": "NOT_APPLICABLE", "raw_rows": []}
     values = {str(row.get("value", "")).strip().lower() for row in selected}
     if values and values <= TRUE_VALUES:
         state = "PRESENT"
@@ -57,7 +59,7 @@ def spec_point(rows):
 
 def publication_assessment(epa_registered, points):
     states = [point["state"] for point in points.values()]
-    if epa_registered and all(state == "PRESENT" for state in states):
+    if epa_registered and all(state in ("PRESENT", "NOT_APPLICABLE") for state in states):
         return "PASS", []
     if epa_registered and "ABSENT" in states:
         return "LOW", [{"control": "ENERGY_STAR_PUBLICATION", "severity": "LOW",
@@ -65,7 +67,7 @@ def publication_assessment(epa_registered, points):
     if not epa_registered and "PRESENT" in states:
         return "HIGH", [{"control": "ENERGY_STAR_PUBLICATION", "severity": "HIGH",
                          "issue_code": "ENERGY_STAR_CLAIM_WITHOUT_CURRENT_EPA_REGISTRATION"}]
-    if not epa_registered and all(state == "ABSENT" for state in states):
+    if not epa_registered and all(state in ("ABSENT", "NOT_APPLICABLE") for state in states):
         return "PASS", []
     return "NOT_EVALUATED", []
 
@@ -86,7 +88,7 @@ def build(comparison_path, collection_root, out):
             or set(result_by_sku) != {row.get("exact_sku") for row in rows}):
         raise ValueError("Washer assessment source populations differ")
 
-    records, all_findings = [], []
+    records, all_findings, readiness_gaps = [], [], []
     for source in sorted(rows, key=lambda row: row["exact_sku"]):
         sku = source["exact_sku"]
         claim = result_by_sku[sku].get("energy_star_claim_sources_raw") or {}
@@ -100,10 +102,19 @@ def build(comparison_path, collection_root, out):
 
         energy_state = source.get("energy_comparison_candidate")
         values = source.get("source_kwh_values", {})
+        if not source.get("label_prefix_matches"):
+            readiness_gaps.append({"exact_sku": sku, "reason": "NO_MATCHING_PRINTED_LABEL_MODEL"})
+        if not values.get("LABEL"):
+            readiness_gaps.append({"exact_sku": sku, "reason": "LABEL_ANNUAL_ENERGY_UNAVAILABLE"})
+        if epa_registered and not values.get("EPA_US_MARKET_CANDIDATE"):
+            readiness_gaps.append({"exact_sku": sku, "reason": "MATCHED_EPA_ANNUAL_ENERGY_UNAVAILABLE"})
+        if publication_outcome == "NOT_EVALUATED":
+            readiness_gaps.append({"exact_sku": sku, "reason": "PUBLICATION_POINT_UNRESOLVED"})
         if energy_state == "SOURCE_VALUES_DIFFER":
             findings.append({"control": "ANNUAL_ENERGY", "severity": "MEDIUM",
                              "issue_code": "ANNUAL_ENERGY_MISMATCH"})
-        if not values.get("PDP") and values.get("LABEL") and values.get("EPA_US_MARKET_CANDIDATE"):
+        if (not values.get("PDP") and values.get("LABEL")
+                and set(values["LABEL"]) == set(values.get("EPA_US_MARKET_CANDIDATE", []))):
             findings.append({"control": "ANNUAL_ENERGY", "severity": "LOW",
                              "issue_code": "PDP_ANNUAL_ENERGY_MISSING"})
         findings = sorted({(finding["control"], finding["severity"], finding["issue_code"]): finding
@@ -111,6 +122,8 @@ def build(comparison_path, collection_root, out):
                           key=lambda finding: (finding["control"], finding["issue_code"]))
         display_outcome = max((finding["severity"] for finding in findings),
                               key=RANK.__getitem__, default="PASS")
+        if publication_outcome == "NOT_EVALUATED" and not findings:
+            display_outcome = "NOT_EVALUATED"
         record = {
             "exact_sku": sku,
             "display_outcome": display_outcome,
@@ -129,7 +142,8 @@ def build(comparison_path, collection_root, out):
     counts = Counter(record["display_outcome"] for record in records)
     report = {
         "contract": CONTRACT,
-        "status": "PASS",
+        "status": "BLOCKED" if readiness_gaps else "PASS",
+        "readiness_gaps": readiness_gaps,
         "assessment_enabled": True,
         "comparison_run_id": comparison.get("comparison_run_id"),
         "collection_run_id": comparison.get("collection_run_id"),
@@ -140,7 +154,8 @@ def build(comparison_path, collection_root, out):
         "affected_sku_count": len({finding["exact_sku"] for finding in all_findings}),
         "counts": {level: counts.get(level, 0) for level in ("HIGH", "MEDIUM", "LOW", "PASS")},
         "rules": {
-            "energy_star_registered_all_three_points_present": "PASS",
+            "energy_star_registered_all_applicable_points_present": "PASS",
+            "spec_certification_field_missing": "NOT_APPLICABLE; EXPLICIT_NO_ONLY_IS_ABSENT",
             "energy_star_registered_any_point_absent": "LOW",
             "energy_star_not_registered_any_point_present": "HIGH",
             "energy_star_not_registered_all_points_absent": "PASS",
@@ -171,9 +186,9 @@ def build(comparison_path, collection_root, out):
     summary = os.getenv("GITHUB_STEP_SUMMARY")
     if summary:
         Path(summary).write_text(markdown, encoding="utf-8")
-    print(json.dumps({"status": "PASS", "sku_count": len(records), "finding_count": len(all_findings),
+    print(json.dumps({"status": report["status"], "sku_count": len(records), "finding_count": len(all_findings),
                       "counts": report["counts"], "records": records}, ensure_ascii=False, sort_keys=True), flush=True)
-    return 0
+    return 0 if not readiness_gaps else 1
 
 
 def main():
