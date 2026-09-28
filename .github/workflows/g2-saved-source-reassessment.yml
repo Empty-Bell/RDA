@@ -1,0 +1,70 @@
+name: G2 refrigerator approved-rule saved-source reassessment
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Accepted G2 source pilot run ID (blank uses integration manifest)
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g2_energy_star_assessment.py'
+      - 'scripts/g2_reassess_saved_bundle.py'
+      - '.github/workflows/g2-saved-source-reassessment.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  reassess:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ github.event.inputs.source_run_id || '' }}
+      PYTHONPATH: scripts
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download exact accepted G2 source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$SOURCE_RUN_ID" ]; then
+            SOURCE_RUN_ID="$(python - <<'PY'
+          import json
+          rows=json.load(open('docs/integration-manifest.json', encoding='utf-8'))['accepted_snapshot_pending_refresh']
+          print(next(row['formal_run_id'] for row in rows if row['family']=='냉장고'))
+          PY
+          )"
+          fi
+          run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}")"
+          test "$(jq -r '.status' <<< "$run")" = completed
+          test "$(jq -r '.conclusion' <<< "$run")" = success
+          test "$(jq -r '.path' <<< "$run")" = .github/workflows/g2-smoke.yml
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/artifacts" \
+            | jq -c '[.artifacts[] | select(.expired == false and (.name | startswith("g2-pilot-")))] | sort_by(.created_at) | last')"
+          test "$artifact" != null
+          mkdir -p runtime/g2-reassessment
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/$(jq -r '.id' <<< "$artifact")/zip" > runtime/g2-reassessment/source.zip
+          expected="$(jq -r '.digest' <<< "$artifact")"
+          actual="sha256:$(sha256sum runtime/g2-reassessment/source.zip | cut -d' ' -f1)"
+          test "$actual" = "$expected"
+          echo "SOURCE_RUN_ID=${SOURCE_RUN_ID}" >> "$GITHUB_ENV"
+      - name: Apply current approved refrigerator controls
+        run: python scripts/g2_reassess_saved_bundle.py --source-zip runtime/g2-reassessment/source.zip --out runtime/g2-reassessment/result
+      - name: Preserve reassessment result
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g2-saved-reassessment-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g2-reassessment/result/
+          retention-days: 14
+          if-no-files-found: warn

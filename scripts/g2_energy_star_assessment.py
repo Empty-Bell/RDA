@@ -29,7 +29,7 @@ def _spec_point(raw_rows: object, evidence: dict | None) -> dict:
         and "certif" in str(row.get("name", "")).lower()
     ]
     if not certification_rows:
-        return {"state": "ABSENT", "raw_rows": raw_rows}
+        return {"state": "NOT_APPLICABLE", "raw_rows": raw_rows}
     values = [str(row.get("value", "")).strip().lower() for row in certification_rows]
     positive = {"yes", "y", "true"}
     negative = {"no", "n", "false"}
@@ -61,7 +61,7 @@ def _epa_registration(candidate: dict) -> dict:
 def _decide(registration: str, points: dict) -> tuple[str, str | None, str | None]:
     states = [point["state"] for point in points.values()]
     if registration == "PRESENT":
-        if all(state == "PRESENT" for state in states):
+        if all(state in ("PRESENT", "NOT_APPLICABLE") for state in states):
             return "PASS", None, None
         if "ABSENT" in states:
             return "LOW", "LOW", LOW_ISSUE
@@ -69,7 +69,7 @@ def _decide(registration: str, points: dict) -> tuple[str, str | None, str | Non
     if registration == "ABSENT":
         if "PRESENT" in states:
             return "HIGH", "HIGH", HIGH_ISSUE
-        if all(state == "ABSENT" for state in states):
+        if all(state in ("ABSENT", "NOT_APPLICABLE") for state in states):
             return "NO_FINDING", None, None
     return "NOT_EVALUATED", None, None
 
@@ -173,7 +173,8 @@ def build_assessment(
             "certification rows and Current Model Index patterns"
         ),
         "decision_rule": {
-            "registered_all_three_present": "PASS",
+            "registered_all_applicable_points_present": "PASS",
+            "spec_certification_field_missing": "NOT_APPLICABLE; EXPLICIT_NO_ONLY_IS_ABSENT",
             "registered_any_confirmed_absent": {"outcome": "LOW", "issue_code": LOW_ISSUE},
             "unregistered_any_present": {"outcome": "HIGH", "issue_code": HIGH_ISSUE},
             "unregistered_all_absent": "NO_FINDING",
