@@ -1,0 +1,35 @@
+{
+  "contract": "RDA_INTEGRATION_MANIFEST_V1",
+  "accepted_family_artifacts": [
+    {
+      "family": "식기세척기",
+      "run_id": "36393493953",
+      "workflow_path": ".github/workflows/g3-dishwasher-assessment.yml",
+      "artifact_prefix": "g3-dishwasher-assessment-",
+      "report_file": "assessment.json",
+      "report_contract": "G3_DISHWASHER_FINAL_ASSESSMENT_V1"
+    },
+    {
+      "family": "세탁기",
+      "run_id": "36406707383",
+      "workflow_path": ".github/workflows/g3-washer-assessment.yml",
+      "artifact_prefix": "g3-washer-assessment-",
+      "report_file": "assessment.json",
+      "report_contract": "G3_WASHER_ASSESSMENT_V1"
+    },
+    {
+      "family": "TV",
+      "run_id": "36411631059",
+      "workflow_path": ".github/workflows/g3-tv-assessment.yml",
+      "artifact_prefix": "g3-tv-assessment-",
+      "report_file": "assessment.json",
+      "report_contract": "G3_TV_ASSESSMENT_V1"
+    }
+  ],
+  "accepted_snapshot_pending_refresh": [
+    {"family": "냉장고", "formal_run_id": "36376187192", "reason": "PAGES_RUN_PRECEDES_FORMAL_G2_ACCEPTANCE"}
+  ],
+  "family_acceptance_pending": [
+    "레인지", "쿡탑", "의류건조기", "후드", "모니터", "컴퓨터", "태블릿"
+  ]
+}

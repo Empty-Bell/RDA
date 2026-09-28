@@ -1,0 +1,85 @@
+name: Dashboard accepted-family integration gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/integration-manifest.json'
+      - 'docs/model-data.json'
+      - 'docs/report-data.csv'
+      - 'docs/report-all-fields.csv'
+      - 'docs/report-data.xlsx'
+      - 'scripts/dashboard_integration_gate.py'
+      - '.github/workflows/dashboard-integration.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download exact accepted family assessment artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' > "$RUNNER_TEMP/accepted-artifacts.tsv"
+          import json
+          for item in json.load(open('docs/integration-manifest.json', encoding='utf-8'))['accepted_family_artifacts']:
+              print('\t'.join(str(item[key]) for key in ('family', 'run_id', 'workflow_path', 'artifact_prefix', 'report_file')))
+          PY
+          while IFS=$'\t' read -r family run_id workflow prefix report_file; do
+            run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}")"
+            test "$(jq -r '.status' <<< "$run")" = completed
+            test "$(jq -r '.conclusion' <<< "$run")" = success
+            test "$(jq -r '.path' <<< "$run")" = "$workflow"
+            artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/artifacts" \
+              | jq -c --arg prefix "$prefix" '[.artifacts[] | select(.expired == false and (.name | startswith($prefix)))] | sort_by(.created_at) | last')"
+            test "$artifact" != null
+            artifact_id="$(jq -r '.id' <<< "$artifact")"
+            expected_digest="$(jq -r '.digest' <<< "$artifact")"
+            mkdir -p "runtime/integration/${family}"
+            gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${artifact_id}/zip" > "runtime/integration/${family}.zip"
+            actual_digest="sha256:$(sha256sum "runtime/integration/${family}.zip" | cut -d' ' -f1)"
+            test "$actual_digest" = "$expected_digest"
+            unzip -q "runtime/integration/${family}.zip" -d "runtime/integration/${family}"
+            test -f "runtime/integration/${family}/${report_file}"
+          done < "$RUNNER_TEMP/accepted-artifacts.tsv"
+      - name: Reconcile accepted artifacts and all Pages exports
+        run: python scripts/dashboard_integration_gate.py --docs docs --manifest docs/integration-manifest.json --artifacts-root runtime/integration --out runtime/integration/report
+      - name: Show integration readiness
+        if: always()
+        shell: bash
+        run: |
+          if [ -f runtime/integration/report/integration-report.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d=json.load(open('runtime/integration/report/integration-report.json', encoding='utf-8'))
+          print('# Dashboard integration gate')
+          print(f"Execution: **{d['execution_status']}**; formal readiness: **{d['formal_readiness']}**")
+          print(f"Dashboard Run #{d['dashboard_run_number']}: {d['model_count']} models across {d['family_count']} families")
+          print(f"Accepted family artifacts: {len(d['accepted_family_artifacts'])}; pending family gates: {len(d['pending_family_gates'])}")
+          for item in d['pending_family_gates']:
+              print(f"- {item['family']}: {item['reason']}")
+          PY
+          fi
+      - name: Preserve integration report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: dashboard-integration-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/integration/report/
+          retention-days: 14
+          if-no-files-found: warn
