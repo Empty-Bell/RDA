@@ -53,7 +53,12 @@ the same run and retains prior attempts. In accepted run `36438033553`, all
 165 TV PDPs verified exact identity without invoking a retry. The TV label
 comparison had zero readiness gaps.
 
-This record accepts the source-bound controls and dashboard integration. It
-does not close G5 history, G6 operational hardening/scheduling or the separate
-G7 hosted publication gate. It does not turn control PASS into an overall
-product compliance verdict.
+The [hosted dashboard integration gate](https://github.com/Empty-Bell/RDA/actions/runs/36443526583)
+also passed with `single_source_run=true`, no pending family gates and no
+integrity errors. The [Pages deployment](https://github.com/Empty-Bell/RDA/actions/runs/36443523560)
+passed; the [live dashboard](https://empty-bell.github.io/RDA/) served Run #20
+with 557 models, and its JSON, both CSV exports, Excel file and a model
+evidence URL returned HTTP 200. **G7 publication is accepted for Run #20.**
+
+This record does not close G5 history or G6 operational hardening/scheduling.
+It does not turn control PASS into an overall product compliance verdict.

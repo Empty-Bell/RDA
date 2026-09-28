@@ -7,9 +7,13 @@ the unified source gate and Run #20 local dashboard integration gate each
 reported zero integrity errors. The G3 FTC+EPA families (Dishwasher, Washer,
 TV) and the seven G4 EPA-focused families share that source run with the
 accepted G2 refrigerator. See [UNIFIED_ACCEPTANCE_RUN20.md](UNIFIED_ACCEPTANCE_RUN20.md).
-Whole-product legal compliance remains NOT_EVALUATED. G5 history and G6
-operational hardening remain separate acceptance work; G7 publication needs
-the hosted deployment check. Older mixed-run checkpoints below are historical.
+Whole-product legal compliance remains NOT_EVALUATED. The
+[hosted integration gate](https://github.com/Empty-Bell/RDA/actions/runs/36443526583)
+and [GitHub Pages deployment](https://github.com/Empty-Bell/RDA/actions/runs/36443523560)
+passed. Live Run #20 JSON, both CSV exports, Excel and a model evidence URL
+returned HTTP 200, so G7 publication is accepted for this snapshot. G5 history
+and G6 operational hardening remain separate acceptance work. Older mixed-run
+checkpoints below are historical.
 
 Current 2026-09-28 dashboard integration: Run #19 covers all 11 accepted
 family control artifacts and 557 exact models (479 PASS / 29 HIGH / 11 MEDIUM /

@@ -12,8 +12,11 @@ yielded matching model text and one formerly missing document became
 accessible. No other family grade changed. See
 [UNIFIED_ACCEPTANCE_RUN20.md](UNIFIED_ACCEPTANCE_RUN20.md). G3/G4 bounded
 controls are accepted from this one execution; whole-product legal compliance
-is NOT_EVALUATED. The remaining work is hosted Pages/integration publication
-verification, then G5 history and G6 operational hardening acceptance.
+is NOT_EVALUATED. The [hosted integration gate](https://github.com/Empty-Bell/RDA/actions/runs/36443526583)
+and [Pages deployment](https://github.com/Empty-Bell/RDA/actions/runs/36443523560)
+passed, and the live Run #20 JSON, CSV/Excel exports and sample evidence URL
+returned HTTP 200. G7 publication is accepted for Run #20. Remaining phase
+work is G5 history and G6 operational hardening acceptance.
 
 ## Dashboard Run #19 integrated — 2026-09-28
 
