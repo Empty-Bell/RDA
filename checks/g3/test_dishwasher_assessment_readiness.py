@@ -1,6 +1,9 @@
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
-from scripts.g3_dishwasher_assessment import readiness
+from scripts.g3_dishwasher_assessment import build,readiness
 
 
 class DishwasherReadinessTests(unittest.TestCase):
@@ -45,6 +48,18 @@ class DishwasherReadinessTests(unittest.TestCase):
         energy,numeric,model=self.sources()
         model["records"][0].update(normalized_pdp_model="DW80CG5450SR",pdp_vs_energyguide_model="DIFFERENT",energyguide_model_patterns_visual_reviewed=["DW80CG54******"])
         self.assertIn("MODEL_PATTERN_SUFFIX_POLICY_UNAPPROVED",{gap["code"] for gap in readiness(energy,numeric,model)["gaps"]})
+
+    def test_missing_pdp_gets_low_only_with_label_epa_agreement(self):
+        energy,numeric,model=self.sources()
+        numeric["rows"][0].update(pdp_annual_energy={"state":"NOT_OBSERVED"},energyguide_vs_epa_energy="NOT_COMPARABLE")
+        model["records"][0].update(pdp_vs_epa_model="EQUAL",energyguide_vs_epa_model="EQUAL")
+        with tempfile.TemporaryDirectory() as temp:
+            paths=[Path(temp)/name for name in ("energy.json","numeric.json","model.json")]
+            for path,data in zip(paths,(energy,numeric,model)): path.write_text(json.dumps(data))
+            build(*paths,Path(temp)/"out")
+            report=json.loads((Path(temp)/"out"/"assessment.json").read_text())
+        self.assertEqual(report["counts"]["PASS"],1)
+        self.assertEqual(report["finding_count"],0)
 
 
 if __name__ == "__main__":
