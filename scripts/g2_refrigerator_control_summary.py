@@ -23,7 +23,7 @@ def _index(records: Any, name: str) -> dict[str, dict[str, Any]]:
 
 def build_summary(report: dict[str, Any]) -> dict[str, Any]:
     """Replay all attached control sections into one exact-SKU projection."""
-    if report.get("assessment_enabled") is not False:
+    if type(report.get("assessment_enabled")) is not bool:
         raise ValueError("Control summary cannot enable product compliance")
     run_id = report.get("run_id")
     rows = report.get("rows")

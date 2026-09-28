@@ -57,7 +57,7 @@ def attach_numeric_assessment(
 
 
 def add_numeric_section(report: dict[str, Any], section: dict[str, Any]) -> dict[str, Any]:
-    if report.get("assessment_enabled") is not False:
+    if type(report.get("assessment_enabled")) is not bool:
         raise ValueError("Numeric section cannot enable whole-product compliance")
     if section.get("source_run_id") != report.get("run_id"):
         raise ValueError("Numeric section belongs to another execution")

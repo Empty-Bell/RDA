@@ -79,7 +79,7 @@ def add_energy_star_section(report: dict[str, Any], section: dict[str, Any]) -> 
     energy_skus = [row.get("exact_sku") for row in section.get("records", [])]
     if len(skus) != len(set(skus)) or set(skus) != set(energy_skus):
         raise ValueError("Energy Star report section SKU coverage differs from canonical report")
-    if report.get("assessment_enabled") is not False or section.get("overall_product_compliance") != "NOT_EVALUATED":
+    if type(report.get("assessment_enabled")) is not bool or section.get("overall_product_compliance") != "NOT_EVALUATED":
         raise ValueError("Energy Star section cannot enable overall compliance")
     report["energy_star_publication"] = section
     return report

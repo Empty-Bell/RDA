@@ -1,5 +1,14 @@
 # Current task continuation — 2026-09-24
 
+## Refrigerator canonical controls — 2026-09-28
+
+The approved ENERGY STAR publication, EnergyGuide numeric, and label-model
+controls are now wired into the versioned canonical FTC/EPA assessment bundle.
+The earlier successful 75-SKU run replayed locally as 227 assessments and 36
+findings across 32 SKUs, with acceptance readiness `READY_FOR_FORMAL_REVIEW`.
+Hosted execution and acceptance replay are the remaining evidence gates. The
+dashboard continues to leave whole-product legal compliance unevaluated.
+
 ## Refrigerator live rerun — 2026-09-28
 
 The 29-minute G2 failure [36369246125](https://github.com/Empty-Bell/RDA/actions/runs/36369246125) came from two temporary wrong-model PDP redirects, not the new label-prefix rule. Exact-SKU coverage was 73/75; a late numeric input-coverage error hid the source cause. The pipeline now probes those two source-observed SKUs early, stops with their redirect URLs if they recur, and refuses downstream collection after any PDP identity failure. [Rerun 36371823748](https://github.com/Empty-Bell/RDA/actions/runs/36371823748) succeeded with PDP 75/75 and EnergyGuide model-prefix 75/75; [acceptance 36373795904](https://github.com/Empty-Bell/RDA/actions/runs/36373795904) and [quality review 36373795963](https://github.com/Empty-Bell/RDA/actions/runs/36373795963) passed. Formal G2 remains blocked only on canonical FTC/EPA assessment activation and completion. See [G2_FORMAL_READINESS_2026-09-28.md](G2_FORMAL_READINESS_2026-09-28.md).

@@ -30,9 +30,9 @@ def _energyguide_source_observations(bundle: dict[str, Any]) -> dict[str, list[d
 
 
 def summarize_bundle(
-    bundle: dict[str, Any], *, synthetic_assessments: bool = False
+    bundle: dict[str, Any], *, synthetic_assessments: bool = False, assessed: bool = False
 ) -> dict[str, Any]:
-    validate_bundle(bundle, synthetic_assessments=synthetic_assessments)
+    validate_bundle(bundle, synthetic_assessments=synthetic_assessments, assessed=assessed)
     rows: dict[str, Any] = {
         p["exact_sku"]: {
             "exact_sku": p["exact_sku"],
@@ -63,7 +63,7 @@ def summarize_bundle(
         }
     return {
         "run_id": bundle["manifest"]["run_id"],
-        "assessment_enabled": False,
+        "assessment_enabled": assessed,
         "synthetic": synthetic_assessments,
         "counts": {
             "product_count": len(rows),
@@ -78,7 +78,7 @@ def summarize_bundle(
 
 def verify_report_source_observations(bundle: dict[str, Any], report: dict[str, Any]) -> None:
     """Replay report EnergyGuide entries from the stored same-run source facts."""
-    validate_bundle(bundle)
+    validate_bundle(bundle, assessed=bundle["manifest"]["assessment_enabled"])
     rows = report.get("rows")
     if not isinstance(rows, list):
         raise ContractError("Report rows missing")

@@ -50,6 +50,20 @@ def phase_readiness(bundle: dict[str, Any], report: dict[str, Any]) -> dict[str,
         domain_counts[domain] = len(evaluated & skus)
         if evaluated != skus:
             gaps.append(f"CANONICAL_{domain}_ASSESSMENT_INCOMPLETE")
+    for control in ("ENERGY_STAR_PUBLICATION", "ENERGYGUIDE_NUMERIC", "ENERGYGUIDE_MODEL_PREFIX"):
+        evaluated = {item.get("exact_sku") for item in assessments if isinstance(item, dict)
+                     and item.get("control_id") == control
+                     and item.get("assessment_status") in {"NO_EXCEPTION_OBSERVED", "FINDING"}}
+        if evaluated != skus:
+            gaps.append(f"CANONICAL_{control}_INCOMPLETE")
+
+    control_summary = report.get("refrigerator_control_summary", {})
+    expected_findings = {(record.get("exact_sku"), finding.get("issue_code"), finding.get("severity"))
+                         for record in control_summary.get("records", []) for finding in record.get("findings", [])}
+    canonical_findings = {(item.get("exact_sku"), item.get("issue_code"), item.get("severity"))
+                          for item in assessments if isinstance(item, dict) and item.get("assessment_status") == "FINDING"}
+    if canonical_findings != expected_findings or len(canonical_findings) != control_summary.get("counts", {}).get("finding_count"):
+        gaps.append("CANONICAL_FINDINGS_DIFFER_FROM_CONTROL_SUMMARY")
 
     model = report.get("energyguide_model_pattern", {})
     model_records = model.get("records", [])
@@ -75,8 +89,8 @@ def validate(bundle: dict[str, Any], report: dict[str, Any], site: str | Path) -
     run_id = bundle.get("manifest", {}).get("run_id")
     if not isinstance(run_id, str) or report.get("run_id") != run_id:
         raise ValueError("Acceptance inputs belong to different executions")
-    if report.get("assessment_enabled") is not False:
-        raise ValueError("Acceptance cannot enable product compliance")
+    if report.get("assessment_enabled") != bundle.get("manifest", {}).get("assessment_enabled"):
+        raise ValueError("Canonical report assessment mode differs from bundle")
     product_skus = _unique_skus(bundle.get("products"), "Bundle product")
     report_skus = _unique_skus(report.get("rows"), "Report")
     if product_skus != report_skus:
@@ -145,6 +159,12 @@ def validate_artifact(artifact: str | Path, output_dir: str | Path) -> dict[str,
     run_root = bundle_paths[0].parent
     bundle = _read_json(bundle_paths[0])
     report = _read_json(run_root / "report.json")
+    if bundle.get("manifest", {}).get("assessment_enabled") is True:
+        from regaudit.contracts import validate_bundle, verify_evidence_files
+        from regaudit.report import verify_report_source_observations
+        validate_bundle(bundle, assessed=True)
+        verify_evidence_files(bundle, run_root)
+        verify_report_source_observations(bundle, report)
     result = validate(bundle, report, run_root / "site")
     result["artifact_bundle"] = bundle_paths[0].relative_to(destination).as_posix()
     return result

@@ -170,11 +170,11 @@ class RunManifest:
             and (self.playwright_version is None or text(self.playwright_version)),
             "Invalid runtime version",
         )
+        require(type(self.assessment_enabled) is bool, "Invalid assessment flag")
         require(
-            type(self.assessment_enabled) is bool and not self.assessment_enabled,
-            "Assessment engine not enabled in Phase 1",
+            text(self.rule_version) if self.assessment_enabled else self.rule_version is None,
+            "Assessed runs require a rule version; collection runs cannot claim one",
         )
-        require(self.rule_version is None, "No approved rule version in this draft")
         object.__setattr__(
             self, "overall_execution_status", PipelineStatus(self.overall_execution_status)
         )
@@ -316,7 +316,7 @@ class AssessmentRecord:
     automatic_final_legal_conclusion: bool
 
 
-def validate_bundle(data: dict[str, Any], *, synthetic_assessments: bool = False) -> dict[str, Any]:
+def validate_bundle(data: dict[str, Any], *, synthetic_assessments: bool = False, assessed: bool = False) -> dict[str, Any]:
     from .facts import validate_observations
 
     require(
@@ -325,6 +325,7 @@ def validate_bundle(data: dict[str, Any], *, synthetic_assessments: bool = False
         "Invalid bundle envelope",
     )
     manifest = record(RunManifest, data["manifest"])
+    require(manifest.assessment_enabled is assessed, "Assessment mode does not match manifest")
     for key in ("products", "facts", "evidence", "assessments"):
         require(isinstance(data[key], list), "Bundle collections must be arrays")
     products: dict[str, set[str]] = {}
@@ -424,7 +425,24 @@ def validate_bundle(data: dict[str, Any], *, synthetic_assessments: bool = False
             "Automatic legal conclusion prohibited",
         )
         status = AssessmentStatus(assessment_item.assessment_status)
-        if not synthetic_assessments:
+        if assessed:
+            require(
+                status in (AssessmentStatus.NO_EXCEPTION_OBSERVED, AssessmentStatus.FINDING)
+                and text(assessment_item.rule_id)
+                and assessment_item.rule_version == manifest.rule_version
+                and assessment_item.evidence_ids,
+                "Assessed control requires a rule, final control outcome, and evidence",
+            )
+            if status == AssessmentStatus.FINDING:
+                require(
+                    assessment_item.issue_code in ISSUES
+                    and assessment_item.severity in ("HIGH", "MEDIUM", "LOW"),
+                    "Assessed finding requires approved issue and severity",
+                )
+            else:
+                require(assessment_item.issue_code is None and assessment_item.severity is None,
+                        "Clean control cannot carry a finding")
+        elif not synthetic_assessments:
             require(
                 status == AssessmentStatus.NOT_EVALUATED
                 and assessment_item.rule_id is None
@@ -445,10 +463,7 @@ def validate_bundle(data: dict[str, Any], *, synthetic_assessments: bool = False
             manifest.overall_execution_status != PipelineStatus.SUCCESS,
             "Source error cannot become execution SUCCESS",
         )
-        require(
-            all(a["assessment_status"] == "NOT_EVALUATED" for a in data["assessments"]),
-            "Error bundle cannot claim evaluated status in draft",
-        )
+        require(not assessed, "Source error cannot claim assessed run")
     json.dumps(data, allow_nan=False)
     return data
 

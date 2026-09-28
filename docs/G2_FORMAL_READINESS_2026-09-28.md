@@ -1,5 +1,22 @@
 # G2 refrigerator formal acceptance readiness — 2026-09-28
 
+## Canonical control activation — pending hosted execution
+
+The three previously approved refrigerator controls now write versioned canonical
+assessment records for every exact SKU: EPA ENERGY STAR publication, FTC
+EnergyGuide numeric, and FTC EnergyGuide model-prefix inclusion. Each EPA
+assessment cites the same-run raw Current Model Index pages; each FTC assessment
+cites the same-run PDP and label evidence. A source error or unresolved control
+stops the run before the canonical manifest can claim `SUCCESS`. Product-level
+legal compliance remains `NOT_EVALUATED`.
+
+An offline replay using the successful 75-SKU artifact from run 36371823748
+produced 227 canonical assessments, including 36 findings across 32 SKUs. The
+new report and dashboard replay passed with 75/75 FTC and EPA domain coverage,
+75/75 label-model coverage, and no readiness gaps. This checks the integration
+against saved evidence; a fresh hosted run and its acceptance replay remain
+necessary before recording formal G2 acceptance.
+
 ## Resolved live rerun — 36371823748
 
 At commit `5ed39d9`, [pilot run 36371823748](https://github.com/Empty-Bell/RDA/actions/runs/36371823748) succeeded. Its preserved artifact (ID 10950421626) confirms all 75 exact SKUs passed PDP identity, including both early watched SKUs at their original exact-model URLs. The full EnergyGuide model-prefix control reports 75 PASS, zero NOT_EVALUATED. The numeric control reports 59 PASS, seven MEDIUM and nine LOW display outcomes. The joined control summary retains 36 findings across 32 SKUs (14 HIGH, seven MEDIUM, 15 LOW).

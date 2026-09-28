@@ -31,7 +31,7 @@ def attach_model_pattern_assessment(bundle: dict[str, Any], assessment: dict[str
 
 
 def add_model_pattern_section(report: dict[str, Any], section: dict[str, Any]) -> dict[str, Any]:
-    if report.get("assessment_enabled") is not False or section.get("source_run_id") != report.get("run_id"):
+    if type(report.get("assessment_enabled")) is not bool or section.get("source_run_id") != report.get("run_id"):
         raise ValueError("Model-pattern section cannot enable or cross canonical product compliance")
     report["energyguide_model_pattern"] = section
     return report

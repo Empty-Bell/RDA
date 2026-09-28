@@ -41,6 +41,7 @@ from g2_energyguide_numeric_report_adapter import attach_numeric_assessment, add
 from g2_energyguide_model_pattern_assessment import build_assessment as build_model_pattern_assessment
 from g2_energyguide_model_report_adapter import attach_model_pattern_assessment, add_model_pattern_section
 from g2_refrigerator_control_summary import build_summary as build_control_summary, add_control_summary
+from g2_canonical_assessment import promote as promote_canonical_assessments
 from g2_dashboard_build import build as build_dashboard
 
 
@@ -317,27 +318,6 @@ def main():
                 original_capacity_selection_id,
             ],
         )
-        for domain in ("FTC", "EPA"):
-            bundle["assessments"].append(
-                {
-                    "assessment_id": "a-" + domain,
-                    "run_id": run_id,
-                    "product_group": "refrigerator",
-                    "exact_sku": sku,
-                    "regulatory_domain": domain,
-                    "control_id": "PILOT_COLLECTION_SCOPE",
-                    "rule_id": None,
-                    "rule_version": None,
-                    "assessment_status": "NOT_EVALUATED",
-                    "severity": None,
-                    "issue_code": None,
-                    "reason": "Rule evaluation disabled; dataset context does not establish certification match",
-                    "expected": None,
-                    "observed": None,
-                    "evidence_ids": [bridge_id] if domain == "FTC" else [],
-                    "automatic_final_legal_conclusion": False,
-                }
-            )
         # G2a requires an exact-SKU PDP identity collection for the entire current
         # population. The coverage gate below rejects any unattempted SKU.
         selected = select_sample(products, sku, limit=len(products))
@@ -673,7 +653,12 @@ def main():
         with model_pattern_path.open("x", encoding="utf-8", newline="\n") as stream:
             stream.write(dumps(model_pattern_assessment))
         model_pattern_section = attach_model_pattern_assessment(bundle, model_pattern_assessment, model_pattern_path)
-        report = summarize_bundle(bundle)
+        promote_canonical_assessments(
+            bundle, energy_star_assessment, numeric_assessment, model_pattern_assessment,
+            energy_star_out / "epa-current-index", evidence,
+        )
+        verify_evidence_files(bundle, out)
+        report = summarize_bundle(bundle, assessed=True)
         add_energy_star_section(report, energy_star_section)
         add_numeric_section(report, numeric_section)
         add_model_pattern_section(report, model_pattern_section)
@@ -686,6 +671,8 @@ def main():
                 stream.write(dumps(data))
         checkpoint.update(
             status="PASS" if not pdp_coverage["counts"]["FAILED"] else "FAILED",
+            phase_gate="PENDING_ACCEPTANCE_REPLAY",
+            rule_evaluation="CANONICAL_CONTROLS_EVALUATED",
             population_groups=parsed["total_groups"],
             population_skus=len(products),
             collected_pdp_skus=[
@@ -699,11 +686,11 @@ def main():
             collected_label_skus=sorted({sku, *[result["exact_sku"] for result in labels]}),
             label_selection_summary=label_selection_summary,
             capacity_selection_summary=capacity_selection_summary,
-            sku_certification_matching="NOT_EVALUATED_IN_CANONICAL_BUNDLE",
+            sku_certification_matching="EVALUATED_IN_CANONICAL_BUNDLE",
             energy_star_publication_points={
                 "sampled_sku_count": len(publication_points["records"]),
                 "point_states": publication_points["states"],
-                "assessment_status": "NOT_EVALUATED",
+                "assessment_status": "EVALUATED",
             },
             energy_star_assessment_counts=energy_star_section["display_counts"],
             energy_star_assessment_coverage=energy_star_section["coverage"],

@@ -14,7 +14,7 @@ from g2_refrigerator_control_summary import add_control_summary, build_summary  
 
 class RefrigeratorAcceptanceTests(unittest.TestCase):
     def inputs(self):
-        bundle = {"manifest": {"run_id": "run-1", "runner": "ubuntu-24.04"}, "products": [{"exact_sku": "SKU-A"}, {"exact_sku": "SKU-B"}]}
+        bundle = {"manifest": {"run_id": "run-1", "runner": "ubuntu-24.04", "assessment_enabled": False}, "products": [{"exact_sku": "SKU-A"}, {"exact_sku": "SKU-B"}]}
         report = {"run_id": "run-1", "assessment_enabled": False, "rows": [{"exact_sku": "SKU-A"}, {"exact_sku": "SKU-B"}],
                   "energy_star_publication": {"source_run_id": "run-1", "records": [
                       {"exact_sku": "SKU-A", "outcome": "HIGH", "severity": "HIGH", "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"},
@@ -41,15 +41,21 @@ class RefrigeratorAcceptanceTests(unittest.TestCase):
         bundle["manifest"].update({"overall_execution_status": "SUCCESS", "assessment_enabled": True})
         report["assessment_enabled"] = True
         bundle["assessments"] = [
-            {"exact_sku": sku, "regulatory_domain": domain, "assessment_status": "NO_EXCEPTION_OBSERVED"}
-            for sku in ("SKU-A", "SKU-B") for domain in ("FTC", "EPA")
+            {"exact_sku": sku, "regulatory_domain": domain, "control_id": control,
+             "assessment_status": "FINDING" if sku == "SKU-A" and control == "ENERGY_STAR_PUBLICATION" else "NO_EXCEPTION_OBSERVED",
+             "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE" if sku == "SKU-A" and control == "ENERGY_STAR_PUBLICATION" else None,
+             "severity": "HIGH" if sku == "SKU-A" and control == "ENERGY_STAR_PUBLICATION" else None}
+            for sku in ("SKU-A", "SKU-B")
+            for domain, control in (("EPA", "ENERGY_STAR_PUBLICATION"), ("FTC", "ENERGYGUIDE_NUMERIC"), ("FTC", "ENERGYGUIDE_MODEL_PREFIX"))
         ]
+        next(item for item in bundle["assessments"] if item["exact_sku"] == "SKU-B" and item["control_id"] == "ENERGYGUIDE_NUMERIC").update(
+            assessment_status="FINDING", issue_code="PDP_ANNUAL_ENERGY_MISSING", severity="LOW")
         report["energyguide_model_pattern"]["records"] = [
             {"exact_sku": sku, "display_outcome": "PASS"} for sku in ("SKU-A", "SKU-B")
         ]
         self.assertEqual(phase_readiness(bundle, report)["status"], "READY_FOR_FORMAL_REVIEW")
-        bundle["assessments"][0]["assessment_status"] = "NOT_EVALUATED"
-        self.assertIn("CANONICAL_FTC_ASSESSMENT_INCOMPLETE", phase_readiness(bundle, report)["gaps"])
+        bundle["assessments"][1]["assessment_status"] = "NOT_EVALUATED"
+        self.assertIn("CANONICAL_ENERGYGUIDE_NUMERIC_INCOMPLETE", phase_readiness(bundle, report)["gaps"])
         bundle["assessments"][0]["assessment_status"] = "NO_EXCEPTION_OBSERVED"
         report["energyguide_model_pattern"]["records"].pop()
         self.assertIn("ENERGYGUIDE_MODEL_ASSESSMENT_INCOMPLETE", phase_readiness(bundle, report)["gaps"])
