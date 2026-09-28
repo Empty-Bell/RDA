@@ -1,5 +1,17 @@
 # Current task continuation — 2026-09-24
 
+## Dashboard integration and G2 current-rule correction — 2026-09-28
+
+The hosted dashboard integration gate `36416109111` reconciled Run #17, all
+557 model grades/exports, and the accepted Dishwasher, Washer and TV artifacts
+with zero integrity errors. It identified the refrigerator Pages result as
+older than formal G2 acceptance. A source-bound hosted replay `36416717198`
+applied the approved missing-Specs-field rule to the accepted 75-SKU G2 bundle:
+43 PASS, 14 HIGH, 7 MEDIUM, 11 LOW; zero readiness gaps. Mixed Pages Run #18
+now incorporates that result. The integration manifest includes four accepted
+family artifacts; seven other family acceptance gates remain open. See
+[G2_ACCEPTANCE_RECORD.md](G2_ACCEPTANCE_RECORD.md).
+
 ## G3 TV family accepted and Pages refreshed — 2026-09-28
 
 Hosted TV final assessment has zero readiness gaps: 165 exact SKUs, 158/158

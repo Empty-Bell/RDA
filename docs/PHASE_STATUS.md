@@ -1,5 +1,15 @@
 # Phase status
 
+Current 2026-09-28 integration checkpoint: G0/G1/G2 are accepted for their
+recorded scopes. G2 refrigerator was re-evaluated from its accepted frozen
+source under the current Specs-field rule in hosted run `36416717198`, giving
+43 PASS, 14 HIGH, 7 MEDIUM and 11 LOW with no readiness gaps. Dishwasher,
+Washer and TV family controls have separate hosted acceptance records. G3
+overall remains **BLOCKED** on seven remaining family acceptance gates and a
+single coherent source execution. Mixed Pages Run #18 is an integrated
+presentation of family runs, not a single audit source run. Older checkpoints
+below are historical.
+
 Updated 2026-09-28 after the printed-label fixed-prefix approval:
 **the G3 dishwasher family control is PASS** for its 21-SKU scope; see
 [G3_DISHWASHER_ACCEPTANCE_RECORD.md](G3_DISHWASHER_ACCEPTANCE_RECORD.md).

@@ -2,6 +2,15 @@
   "contract": "RDA_INTEGRATION_MANIFEST_V1",
   "accepted_family_artifacts": [
     {
+      "family": "냉장고",
+      "run_id": "36416717198",
+      "source_workflow_run_id": "36376187192",
+      "workflow_path": ".github/workflows/g2-saved-source-reassessment.yml",
+      "artifact_prefix": "g2-saved-reassessment-",
+      "report_file": "reassessment.json",
+      "report_contract": "G2_REFRIGERATOR_SAVED_SOURCE_REASSESSMENT_V1"
+    },
+    {
       "family": "식기세척기",
       "run_id": "36393493953",
       "workflow_path": ".github/workflows/g3-dishwasher-assessment.yml",
@@ -26,9 +35,7 @@
       "report_contract": "G3_TV_ASSESSMENT_V1"
     }
   ],
-  "accepted_snapshot_pending_refresh": [
-    {"family": "냉장고", "formal_run_id": "36376187192", "reason": "PAGES_RUN_PRECEDES_FORMAL_G2_ACCEPTANCE"}
-  ],
+  "accepted_snapshot_pending_refresh": [],
   "family_acceptance_pending": [
     "레인지", "쿡탑", "의류건조기", "후드", "모니터", "컴퓨터", "태블릿"
   ]

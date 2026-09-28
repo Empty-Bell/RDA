@@ -40,8 +40,8 @@ jobs:
           if [ -z "$SOURCE_RUN_ID" ]; then
             SOURCE_RUN_ID="$(python - <<'PY'
           import json
-          rows=json.load(open('docs/integration-manifest.json', encoding='utf-8'))['accepted_snapshot_pending_refresh']
-          print(next(row['formal_run_id'] for row in rows if row['family']=='냉장고'))
+          rows=json.load(open('docs/integration-manifest.json', encoding='utf-8'))['accepted_family_artifacts']
+          print(next(row['source_workflow_run_id'] for row in rows if row['family']=='냉장고'))
           PY
           )"
           fi

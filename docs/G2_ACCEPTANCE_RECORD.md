@@ -1,5 +1,26 @@
 # Phase 2 / G2 refrigerator acceptance — PASS, 2026-09-28
 
+## Current-rule amendment — 2026-09-28
+
+The user-approved rule distinguishes a missing Specs ENERGY STAR certification
+field from an explicit `No`. The earlier 36-finding report used the previous
+interpretation and is retained below as historical acceptance evidence. The
+accepted G2 source bundle from run `36376187192` was re-evaluated without
+recollecting or altering raw evidence in hosted
+[reassessment 36416717198](https://github.com/Empty-Bell/RDA/actions/runs/36416717198).
+The current-rule result has 75/75 exact SKUs, zero readiness gaps, 34 findings,
+and **43 PASS, 14 HIGH, 7 MEDIUM, 11 LOW**. The seven MEDIUM findings are
+confirmed PDP/EnergyGuide capacity differences; missing PDP annual-energy
+values account for the additional LOW outcomes. All model grades now follow
+the highest approved finding severity. The original source archive and
+acceptance replay remain preserved; the revised control projection supersedes
+their old field-absence interpretation for the dashboard.
+
+The hosted reassessment artifact is `10967176219`, SHA-256
+`12bf3cb33b7547ec752883aa9200f5c22f8c39db1f1f58d7cd5ac59bfc14ce36`
+(GitHub retention through 2026-10-12 UTC). Whole-product legal compliance
+remains `NOT_EVALUATED`.
+
 The cross-family printed-label fixed-prefix update was replayed in hosted
 [G2 acceptance run 36396477314](https://github.com/Empty-Bell/RDA/actions/runs/36396477314)
 and [label quality review 36396477343](https://github.com/Empty-Bell/RDA/actions/runs/36396477343).
