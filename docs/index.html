@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <title>US Samsung.com Regulatory Disclosure Audit</title>
+  <link rel="stylesheet" href="./styles.css?v=20260928a">
+  <script defer src="./app.js?v=20260928a"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="Audit 홈"><span class="brand-mark">S</span><span>Regulatory Audit</span></a>
+      <nav aria-label="페이지 내 이동"><a href="#overview">Summary</a><a href="#heatmap">제품군</a><a href="#queue">Action queue</a><a href="#report">Report data</a></nav>
+      <span class="nav-status"><i></i> Reviewed family snapshot</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">SAMSUNG US / REGULATORY DISCLOSURE</span>
+          <h1><span class="flag" aria-label="미국">🇺🇸</span> US Samsung.com<br><span>Regulatory Disclosure Audit</span></h1>
+          <p>공개 정보의 문제를 찾고, 판정에 사용한 값을 바로 비교합니다. 제품군별 검토 결과를 모은 스냅샷이며 단일 감사 실행 결과는 아닙니다.</p>
+          <a class="hero-cta" href="#queue">조치 대상 보기 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="run-card"><span>통합 스냅샷 빌드</span><strong>RUN <b id="run-number">—</b></strong><time id="run-date">Loading…</time><small id="hero-coverage">모델별 근거 로딩 중</small></div>
+      </div>
+    </section>
+
+    <section id="overview" class="shell section">
+      <div class="section-head"><div><span class="section-index">01 / STATUS</span><h2>현재 상태</h2><p>모델 단위 판정. PASS, HIGH, MEDIUM, LOW는 중복 없이 집계됩니다.</p></div></div>
+      <div class="kpi-grid" id="kpis"></div>
+      <div class="status-bar"><div class="status-bar-head"><strong>판정 분포</strong><span id="pass-caption">—</span></div><div class="distribution-bar" id="distribution-bar" role="img" aria-label="전체 모델의 판정 등급 구성"></div><div class="distribution-legend" id="distribution-legend"></div></div>
+      <div class="run-trend" id="run-trend"></div>
+    </section>
+
+    <section id="heatmap" class="shell section">
+      <div class="section-head"><div><span class="section-index">02 / SCOPE</span><h2>제품군별 문제 위치</h2><p>숫자를 선택하면 해당 모델 목록으로 이동합니다.</p></div></div>
+      <div class="heatmap-card"><div class="heatmap-grid" id="heatmap-grid"></div></div>
+    </section>
+
+    <section id="queue" class="shell section queue-section">
+      <div class="section-head"><div><span class="section-index">03 / RESOLVE</span><h2>Action queue</h2><p>이슈를 열어 잘못된 값과 조치 방향을 확인하세요.</p></div><strong class="section-count" id="queue-count">—</strong></div>
+      <div class="issue-mix" id="issue-mix" aria-label="이슈 유형별 빠른 필터"></div>
+      <div class="toolbar"><div class="filter-group"><label class="sr-only" for="queue-family">제품군</label><select id="queue-family"><option value="all">전체 제품군</option></select><label class="sr-only" for="queue-severity">심각도</label><select id="queue-severity"><option value="all">전체 심각도</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></div><label class="search-wrap"><span>⌕</span><input id="queue-search" type="search" placeholder="모델 또는 이슈 검색" aria-label="조치 목록 검색"></label></div>
+      <div class="queue-list" id="queue-list"></div><div class="empty-state" id="queue-empty" hidden>조건에 해당하는 조치 건이 없습니다.</div><div class="list-footer"><span id="queue-range"></span><button class="text-button" id="queue-more" type="button">더 보기 ↓</button></div>
+    </section>
+
+    <section id="report" class="shell section">
+      <div class="section-head"><div><span class="section-index">04 / INVENTORY</span><h2>Report data</h2><p>전체 모델을 빠르게 찾고, 필요한 건만 상세 확인합니다.</p></div><strong class="section-count" id="report-count">—</strong></div>
+      <div class="toolbar report-toolbar"><div class="filter-group"><label class="sr-only" for="report-family">제품군</label><select id="report-family"><option value="all">전체 제품군</option></select><label class="sr-only" for="report-grade">판정</label><select id="report-grade"><option value="all">전체 판정</option><option>PASS</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></div><label class="search-wrap"><span>⌕</span><input id="report-search" type="search" placeholder="모델 검색" aria-label="전체 모델 검색"></label><div class="download-group"><button id="filtered-csv" class="outline-button" type="button">현재 목록 CSV ↓</button><a class="outline-button" href="./report-all-fields.csv" download>전체 원본 CSV ↓</a><a class="outline-button dark" href="./report-data.xlsx" download>Excel ↓</a></div></div>
+      <div class="table-card"><div class="table-scroll"><table><thead><tr><th>제품군</th><th>모델</th><th>판정</th><th>판정 포인트</th><th>PDP</th><th>라벨</th><th>상세</th></tr></thead><tbody id="report-rows"></tbody></table></div><div id="report-detail" class="report-detail" hidden></div><div class="empty-state" id="report-empty" hidden>조건에 해당하는 모델이 없습니다.</div><div class="table-pagination"><button id="page-prev" type="button" aria-label="이전 페이지">←</button><span id="page-label">—</span><button id="page-next" type="button" aria-label="다음 페이지">→</button></div></div>
+      <p class="export-note">전체 원본 <strong id="field-count">—</strong>개 필드는 모델 상세의 “원본 전체 보기” 또는 CSV·Excel에서 확인할 수 있습니다.</p>
+    </section>
+
+    <section id="source" class="shell section source-section"><div class="section-head"><div><span class="section-index">05 / AUDIT TRAIL</span><h2>출처와 기준</h2><p>제품군별 원본 실행과 판정 기준을 확인합니다.</p></div></div><details class="source-disclosure"><summary>출처 및 판정 방법 보기 <span aria-hidden="true">⌄</span></summary><div class="method-copy" id="method-copy"></div><div class="source-runs" id="source-runs"></div></details></section>
+  </main>
+
+  <footer class="footer"><div class="shell"><strong>Regulatory Audit</strong><span>Samsung US disclosure evidence · Reviewed snapshot</span><a href="#top">맨 위로 ↑</a></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
