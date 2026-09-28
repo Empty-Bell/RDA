@@ -42,7 +42,7 @@ jobs:
           retention-days: 14
           if-no-files-found: error
       - name: Continue source match beyond workflow chain limit
-        if: success() && github.event_name == 'workflow_run'
+        if: success() && github.event_name != 'push'
         shell: bash
         run: |
           set -euo pipefail

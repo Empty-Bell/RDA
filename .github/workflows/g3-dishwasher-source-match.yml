@@ -1,10 +1,6 @@
 name: G3 dishwasher source match
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: [G3 dishwasher EPA current source capture]
-    types: [completed]
-    branches: [main]
   push:
     branches: [main]
     paths:
@@ -16,7 +12,6 @@ permissions:
   contents: read
 jobs:
   match:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 8
     env:

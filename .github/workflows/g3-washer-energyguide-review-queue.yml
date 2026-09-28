@@ -64,7 +64,7 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
       - name: Continue source comparison beyond workflow chain limit
-        if: success() && github.event_name == 'workflow_run'
+        if: success()
         shell: bash
         run: |
           set -euo pipefail
