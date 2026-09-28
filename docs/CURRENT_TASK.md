@@ -1,5 +1,17 @@
 # Current task continuation — 2026-09-24
 
+## G2 refrigerator accepted — 2026-09-28
+
+G2 is **PASS for the current refrigerator population and approved controls**.
+[Hosted run 36376187192](https://github.com/Empty-Bell/RDA/actions/runs/36376187192),
+[acceptance replay 36378375953](https://github.com/Empty-Bell/RDA/actions/runs/36378375953)
+and [label quality review 36378375934](https://github.com/Empty-Bell/RDA/actions/runs/36378375934)
+passed at commit `5c1553f`: 75 models, FTC/EPA 75/75, 36 findings,
+zero formal-readiness gaps. See [G2_ACCEPTANCE_RECORD.md](G2_ACCEPTANCE_RECORD.md).
+The historical blocked checkpoints below are superseded for G2. Next work is
+the remaining G3/G4 family gates and unified dashboard refresh; product-level
+legal compliance remains unevaluated.
+
 ## Refrigerator canonical controls — 2026-09-28
 
 The approved ENERGY STAR publication, EnergyGuide numeric, and label-model

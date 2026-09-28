@@ -1,5 +1,15 @@
 # 남은 마일스톤 — 2026-09-17
 
+## 2026-09-28 현재 상태
+
+G2 냉장고 관통은 [호스팅 실행 36376187192](https://github.com/Empty-Bell/RDA/actions/runs/36376187192)와
+[수락 재생 36378375953](https://github.com/Empty-Bell/RDA/actions/runs/36378375953)으로
+**PASS** 처리했다. 현재 모집단 75개 모델의 FTC/EPA 판정이 각각 75/75이며
+이슈 36건을 원본 증거와 함께 보존했다. 범위와 남은 정책 항목은
+[G2_ACCEPTANCE_RECORD.md](G2_ACCEPTANCE_RECORD.md)에 기록했다. 아래
+2026-09-17 표의 G2 진행 중 표기는 당시 기록이다. 다음 공식 gate는 G3/G4의
+나머지 제품군 수락이다.
+
 현재 **Phase 0 / G0 PASS**, **Phase 1 / G1 PASS**, G2 진행 중, Phase 3–7 미착수다.
 종료 기록: G0_ACCEPTANCE_RECORD.md, 통합 hosted checkpoint 35169843199.
 11개 제품군 PLP 조사와 대표 PDP/라벨/EPA 샘플, 런타임 고정·cold/recovery,

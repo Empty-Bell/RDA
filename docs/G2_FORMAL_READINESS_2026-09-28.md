@@ -1,5 +1,19 @@
 # G2 refrigerator formal acceptance readiness — 2026-09-28
 
+## Final hosted result — G2 PASS for approved refrigerator scope
+
+[Hosted run 36376187192](https://github.com/Empty-Bell/RDA/actions/runs/36376187192)
+and [acceptance replay 36378375953](https://github.com/Empty-Bell/RDA/actions/runs/36378375953)
+passed at `5c1553f`. The downloaded artifact digest was verified and its
+canonical bundle inspected directly: 75 products, 150 PDP/label facts,
+227 assessed control records, 36 findings (14 HIGH, seven MEDIUM, 15 LOW),
+32 affected SKUs, and 1,501 evidence records. FTC and EPA each cover all
+75 SKUs; the label model control covers all 75. Acceptance readiness has zero
+gaps. The [EnergyGuide quality review](https://github.com/Empty-Bell/RDA/actions/runs/36378375934)
+also passed. [G2_ACCEPTANCE_RECORD.md](G2_ACCEPTANCE_RECORD.md) is the formal
+scope and evidence record. Historical blocked sections below are retained as
+the sequence leading to the final run.
+
 ## Canonical control activation — pending hosted execution
 
 The three previously approved refrigerator controls now write versioned canonical
