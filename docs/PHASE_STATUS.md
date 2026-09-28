@@ -1,5 +1,14 @@
 # Phase status
 
+Updated 2026-09-28: G2 remains formally open. Latest hosted refrigerator pilot
+[36357733075](https://github.com/Empty-Bell/RDA/actions/runs/36357733075)
+and saved-artifact replay
+[36359469658](https://github.com/Empty-Bell/RDA/actions/runs/36359469658)
+passed. The canonical FTC/EPA assessments are still disabled, and reviewed
+EnergyGuide model assessment covers six of 75 SKUs. The acceptance replay now
+reports formal readiness separately as `BLOCKED`; details and decisions are in
+[G2_FORMAL_READINESS_2026-09-28.md](G2_FORMAL_READINESS_2026-09-28.md).
+
 Updated 2026-09-24: G0/G1 remain accepted; G2 remains formally open. Full
 refrigerator pilot [35954113156](https://github.com/Empty-Bell/RDA/actions/runs/35954113156),
 saved-bundle acceptance replay [35956287917](https://github.com/Empty-Bell/RDA/actions/runs/35956287917),

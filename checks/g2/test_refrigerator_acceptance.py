@@ -8,7 +8,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from g2_dashboard_build import build  # noqa: E402
-from g2_refrigerator_acceptance import validate, validate_artifact  # noqa: E402
+from g2_refrigerator_acceptance import phase_readiness, validate, validate_artifact  # noqa: E402
 from g2_refrigerator_control_summary import add_control_summary, build_summary  # noqa: E402
 
 
@@ -33,6 +33,26 @@ class RefrigeratorAcceptanceTests(unittest.TestCase):
             result = validate(bundle, report, directory)
         self.assertEqual(result["exact_sku_count"], 2)
         self.assertEqual(result["finding_count"], 2)
+        self.assertEqual(result["phase_readiness"]["status"], "BLOCKED")
+        self.assertIn("CANONICAL_ASSESSMENT_DISABLED", result["phase_readiness"]["gaps"])
+
+    def test_phase_readiness_requires_complete_domain_and_model_coverage(self):
+        bundle, report = self.inputs()
+        bundle["manifest"].update({"overall_execution_status": "SUCCESS", "assessment_enabled": True})
+        report["assessment_enabled"] = True
+        bundle["assessments"] = [
+            {"exact_sku": sku, "regulatory_domain": domain, "assessment_status": "NO_EXCEPTION_OBSERVED"}
+            for sku in ("SKU-A", "SKU-B") for domain in ("FTC", "EPA")
+        ]
+        report["energyguide_model_pattern"]["records"] = [
+            {"exact_sku": sku, "display_outcome": "PASS"} for sku in ("SKU-A", "SKU-B")
+        ]
+        self.assertEqual(phase_readiness(bundle, report)["status"], "READY_FOR_FORMAL_REVIEW")
+        bundle["assessments"][0]["assessment_status"] = "NOT_EVALUATED"
+        self.assertIn("CANONICAL_FTC_ASSESSMENT_INCOMPLETE", phase_readiness(bundle, report)["gaps"])
+        bundle["assessments"][0]["assessment_status"] = "NO_EXCEPTION_OBSERVED"
+        report["energyguide_model_pattern"]["records"].pop()
+        self.assertIn("ENERGYGUIDE_MODEL_ASSESSMENT_INCOMPLETE", phase_readiness(bundle, report)["gaps"])
 
     def test_rejects_missing_compact_evidence(self):
         bundle, report = self.inputs()

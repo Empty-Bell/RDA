@@ -1,5 +1,9 @@
 # Current task continuation — 2026-09-24
 
+## G2 formal readiness — 2026-09-28
+
+The latest successful 75-SKU refrigerator pilot and acceptance replay were inspected from their saved hosted artifacts. Artifact replay passes, while formal G2 readiness is `BLOCKED`: the canonical FTC/EPA assessment remains disabled and the reviewed EnergyGuide model check covers six SKUs. The acceptance result now exposes those gaps separately from replay `PASS`. See [G2_FORMAL_READINESS_2026-09-28.md](G2_FORMAL_READINESS_2026-09-28.md) for evidence, implementation order, and the two model/document identity decisions needed before rule activation.
+
 ## Dashboard population review — 2026-09-28
 
 The published 557 model keys were reconciled against the selected source populations for all 11 families with zero missing or extra keys; see [DASHBOARD_POPULATION_REVIEW_2026-09-28.md](DASHBOARD_POPULATION_REVIEW_2026-09-28.md). Tablet's 50 PF grouped SKUs include 11 rendered PLP card SKUs, which are the approved audited population. TV's 167 raw SKUs become 165 after the documented two-model MNA exclusion. This is a saved-source reconciliation, not a new live PLP run or formal G2–G4 acceptance.

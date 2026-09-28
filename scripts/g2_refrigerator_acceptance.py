@@ -9,6 +9,7 @@ from typing import Any
 
 
 CONTRACT = "G2_REFRIGERATOR_ACCEPTANCE_V1"
+READINESS_CONTRACT = "G2_REFRIGERATOR_PHASE_READINESS_V1"
 
 
 def _read_json(path: Path) -> Any:
@@ -22,6 +23,51 @@ def _unique_skus(rows: Any, label: str) -> set[str]:
     if len(skus) != len(rows) or any(not isinstance(sku, str) for sku in skus) or len(set(skus)) != len(skus):
         raise ValueError(f"{label} exact SKU coverage is invalid")
     return set(skus)
+
+
+def phase_readiness(bundle: dict[str, Any], report: dict[str, Any]) -> dict[str, Any]:
+    """Expose the formal G2 gaps without treating a replay PASS as phase acceptance."""
+    skus = _unique_skus(bundle.get("products"), "Bundle product")
+    manifest = bundle.get("manifest", {})
+    gaps = []
+    if manifest.get("overall_execution_status") != "SUCCESS":
+        gaps.append("CANONICAL_EXECUTION_NOT_COMPLETE")
+    if manifest.get("assessment_enabled") is not True or report.get("assessment_enabled") is not True:
+        gaps.append("CANONICAL_ASSESSMENT_DISABLED")
+
+    assessments = bundle.get("assessments", [])
+    if not isinstance(assessments, list):
+        raise ValueError("Canonical assessments are invalid")
+    domain_counts = {}
+    for domain in ("FTC", "EPA"):
+        evaluated = {
+            item.get("exact_sku")
+            for item in assessments
+            if isinstance(item, dict)
+            and item.get("regulatory_domain") == domain
+            and item.get("assessment_status") in {"NO_EXCEPTION_OBSERVED", "FINDING", "NOT_APPLICABLE"}
+        }
+        domain_counts[domain] = len(evaluated & skus)
+        if evaluated != skus:
+            gaps.append(f"CANONICAL_{domain}_ASSESSMENT_INCOMPLETE")
+
+    model = report.get("energyguide_model_pattern", {})
+    model_records = model.get("records", [])
+    if not isinstance(model_records, list):
+        raise ValueError("EnergyGuide model assessment records are invalid")
+    model_skus = _unique_skus(model_records, "EnergyGuide model assessment")
+    if model_skus != skus or any(item.get("display_outcome") == "NOT_EVALUATED" for item in model_records):
+        gaps.append("ENERGYGUIDE_MODEL_ASSESSMENT_INCOMPLETE")
+
+    return {
+        "contract": READINESS_CONTRACT,
+        "status": "READY_FOR_FORMAL_REVIEW" if not gaps else "BLOCKED",
+        "run_id": manifest.get("run_id"),
+        "population": len(skus),
+        "canonical_domain_evaluated": domain_counts,
+        "energyguide_model_records": len(model_skus),
+        "gaps": gaps,
+    }
 
 
 def validate(bundle: dict[str, Any], report: dict[str, Any], site: str | Path) -> dict[str, Any]:
@@ -78,7 +124,8 @@ def validate(bundle: dict[str, Any], report: dict[str, Any], site: str | Path) -
         if len(list(csv.DictReader(stream))) != len(data_rows):
             raise ValueError("Report data CSV count differs")
     return {"contract": CONTRACT, "status": "PASS", "run_id": run_id,
-            "exact_sku_count": len(report_skus), "finding_count": len(findings)}
+            "exact_sku_count": len(report_skus), "finding_count": len(findings),
+            "phase_readiness": phase_readiness(bundle, report)}
 
 
 def validate_artifact(artifact: str | Path, output_dir: str | Path) -> dict[str, Any]:
