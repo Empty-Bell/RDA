@@ -13,6 +13,7 @@ on:
       - '.github/workflows/g3-dishwasher-epa-capture.yml'
 
 permissions:
+  actions: write
   contents: read
 
 jobs:
@@ -21,6 +22,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 8
     env:
+      GH_TOKEN: ${{ github.token }}
       PYTHONUNBUFFERED: '1'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -39,3 +41,9 @@ jobs:
           path: runtime/g3-dishwasher/epa/
           retention-days: 14
           if-no-files-found: error
+      - name: Continue source match beyond workflow chain limit
+        if: success() && github.event_name == 'workflow_run'
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run g3-dishwasher-source-match.yml --ref main
