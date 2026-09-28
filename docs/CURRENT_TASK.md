@@ -1,5 +1,9 @@
 # Current task continuation — 2026-09-24
 
+## Pages publication checkpoint — 2026-09-28
+
+At user request, a reviewed 11-family, 557-model static snapshot was published at [GitHub Pages](https://empty-bell.github.io/RDA/) from `main:/docs` in commit `0589ef4`. [Pages deployment run 36363908516](https://github.com/Empty-Bell/RDA/actions/runs/36363908516) succeeded. The snapshot includes 496 PASS, 30 HIGH, 2 MEDIUM, and 29 LOW records, with model-level evidence and CSV/Excel exports. The source family runs differ; dashboard Run #15 is a local integration build number, not a unified audit execution. Current G2/G3/G4 formal gates and automated cross-family refresh remain open. The earlier checkpoints below describe their historical state when written.
+
 ## Latest continuation checkpoint — 2026-09-24
 
 The full refrigerator G2 pilot on merged main commit `8197ba83d6f09da3b65c075c1a34fd5a0d6df848` completed successfully in hosted run [35954113156](https://github.com/Empty-Bell/RDA/actions/runs/35954113156). Its evidence artifact is [10790377994](https://github.com/Empty-Bell/RDA/actions/runs/35954113156/artifacts/10790377994), 51.35 MB, SHA-256 `9eb6a459bf7230fc6de567c93184e505f30f7a0b64caff0cf6e1fe3f0a9e6731`, expiring 2026-10-08 UTC. The workflow's phase gate remains NOT_EVALUATED; G2 is still formally open, and this successful run does not accept whole-product compliance.
@@ -8,7 +12,7 @@ The G2 refrigerator acceptance replay [35956287917](https://github.com/Empty-Bel
 
 Tablet PR #2 was squash-merged as `3d8e8e5`. Its hosted collection [run 35956539394](https://github.com/Empty-Bell/RDA/actions/runs/35956539394) consumed source run 35950026073 and validated all 50 exact Tablet SKUs across 11 groups and four shards (8/13/13/16): 50 VERIFIED_EXACT_IDENTITY, 0 FAILED. Aggregate evidence is [artifact 10790593448](https://github.com/Empty-Bell/RDA/actions/runs/35956539394/artifacts/10790593448), SHA-256 `205ba251c30bfd827a5a950e61fb7d55b531f8614666b47596a99b4520a86e1a`, expiring 2026-10-08 UTC. Unit contracts passed in [run 35956539406](https://github.com/Empty-Bell/RDA/actions/runs/35956539406). Post-merge main run [35956958505](https://github.com/Empty-Bell/RDA/actions/runs/35956958505) independently passed the same 50/50 population and aggregate validator (artifact [10790746767](https://github.com/Empty-Bell/RDA/actions/runs/35956958505/artifacts/10790746767)). This remains collection evidence only; Tablet EPA registration comparison and formal G3 acceptance remain open.
 
-Unified dashboard work remains gated by the open G2 acceptance and unfinished family source/assessment slices. Existing bounded dashboard artifacts remain fixture/source-slice deliverables, not the unified 11-family operational dashboard. Public Pages remains unapproved and disabled.
+At this 2026-09-24 checkpoint, unified dashboard work was gated by the open G2 acceptance and unfinished family source/assessment slices. Existing bounded dashboard artifacts were fixture/source-slice deliverables. Pages had not yet been approved or enabled; see the 2026-09-28 publication checkpoint above.
 
 
 
