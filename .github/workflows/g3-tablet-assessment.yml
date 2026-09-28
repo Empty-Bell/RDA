@@ -1,0 +1,68 @@
+name: G3 Tablet PLP EPA final assessment
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_run_id:
+        description: Successful Tablet EPA source candidate run ID (blank uses latest success)
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/g3_tablet_assessment.py'
+      - '.github/workflows/g3-tablet-assessment.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  assess:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      CANDIDATE_RUN_ID: ${{ github.event.inputs.candidate_run_id || '' }}
+      PYTHONPATH: scripts
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download exact Tablet candidates and EPA Current rows
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$CANDIDATE_RUN_ID" ]; then
+            CANDIDATE_RUN_ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/g3-tablet-epa-candidates.yml/runs?branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id')"
+          fi
+          run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${CANDIDATE_RUN_ID}")"
+          test "$(jq -r '.status' <<< "$run")" = completed
+          test "$(jq -r '.conclusion' <<< "$run")" = success
+          test "$(jq -r '.path' <<< "$run")" = .github/workflows/g3-tablet-epa-candidates.yml
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${CANDIDATE_RUN_ID}/artifacts" \
+            | jq -c '[.artifacts[] | select(.expired == false and (.name | startswith("g3-tablet-epa-source-candidates-")))] | sort_by(.created_at) | last')"
+          test "$artifact" != null
+          mkdir -p runtime/g3-tablet/source
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/$(jq -r '.id' <<< "$artifact")/zip" > runtime/g3-tablet/source.zip
+          expected="$(jq -r '.digest' <<< "$artifact")"
+          actual="sha256:$(sha256sum runtime/g3-tablet/source.zip | cut -d' ' -f1)"
+          test "$actual" = "$expected"
+          unzip -q runtime/g3-tablet/source.zip -d runtime/g3-tablet/source
+      - name: Apply approved exact Tablet model and publication controls
+        run: >-
+          python scripts/g3_tablet_assessment.py
+          --candidates runtime/g3-tablet/source/candidates/tablet-epa-source-candidates.json
+          --epa-root runtime/g3-tablet/source/epa-current-source
+          --out runtime/g3-tablet/assessment
+      - name: Preserve Tablet assessment
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-tablet-assessment-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-tablet/assessment/
+          retention-days: 14
+          if-no-files-found: warn
