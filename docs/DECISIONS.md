@@ -10,6 +10,14 @@ audited population, or rule change cannot confirm resolution. A finding that
 returns after RESOLVED is REOPENED. Keep this lifecycle separate from the
 current-run PASS/HIGH/MEDIUM/LOW grade; it adds no compliance issue code.
 
+Operational retention (2026-09-29): preserve each successful unified run's
+raw family artifacts and validated site artifact for 90 days in GitHub Actions.
+Keep cumulative compact finding history and the current per-model evidence in
+Git. After raw artifact expiry, show that the run cannot be replayed from raw
+sources; do not claim full raw provenance is still available. Enable the weekly
+schedule only after three consecutive distinct complete source runs pass source,
+dashboard, browser and public Pages checks.
+
 Printed EnergyGuide model identity approval (2026-09-28, all product families):
 the user confirmed that a printed label model and PDP model belong to the same
 model group when their fixed prefix agrees, even if the printed trailing star

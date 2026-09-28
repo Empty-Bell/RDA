@@ -81,7 +81,8 @@ def build(docs, assessment_path, numeric_path, model_path, energy_path, package_
         detail.update(grade=outcome, assessment=a[sku], source_comparison=p[sku],
                       model_comparison=m[sku], numeric_comparison=n[sku],
                       energy_star_assessment=e[sku], source_run=str(run_id))
-        detail_path = old_detail_path.with_name(f"{run_id}_{sku.replace('/', '_')}.json")
+        from refresh_pages_refrigerator import evidence_name
+        detail_path = old_detail_path.with_name(evidence_name(run_id, record["family"], sku))
         record["evidence_url"] = "./evidence/" + detail_path.name
         detail_path.write_text(json.dumps(detail, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     family = next(item for item in snapshot["families"] if item["family"] == "식기세척기")

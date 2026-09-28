@@ -45,7 +45,7 @@ jobs:
             runtime/source-recon/${{ matrix.family }}/
             runtime/source-recon/chromebook/
             runtime/g2/
-          retention-days: 14
+          retention-days: 90
           if-no-files-found: warn
 
   integrate:
@@ -80,5 +80,125 @@ jobs:
         with:
           name: unified-full-audit-report-${{ github.run_id }}-${{ github.run_attempt }}
           path: runtime/unified-gate/
-          retention-days: 14
+          retention-days: 90
           if-no-files-found: warn
+
+  build:
+    name: Build validated Pages snapshot from this run
+    needs: [family, integrate]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+    env:
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Install spreadsheet export dependency
+        run: python -m pip install --no-cache-dir openpyxl==3.1.5 playwright==1.63.0
+      - name: Install browser for desktop and mobile smoke
+        run: python -m playwright install --with-deps chromium
+      - name: Download source artifacts from this execution
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          pattern: unified-family-${{ github.run_id }}-${{ github.run_attempt }}-*
+          path: runtime/
+          merge-multiple: true
+      - name: Download accepted source gate
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          name: unified-full-audit-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/unified-gate/
+      - name: Build and gate exactly one source snapshot
+        run: |
+          python scripts/test_audit_history.py
+          python scripts/test_operations.py > runtime/operations-test.log
+          python scripts/unified_pages_refresh.py --docs docs --artifacts-root runtime --unified-report runtime/unified-gate/unified-report.json --out runtime/validated-site --attempt '${{ github.run_attempt }}'
+          python scripts/publication_bundle.py create --docs runtime/validated-site/docs --run-id '${{ github.run_id }}' --source-sha '${{ github.sha }}'
+          python scripts/publication_bundle.py verify --docs runtime/validated-site/docs --run-id '${{ github.run_id }}' --source-sha '${{ github.sha }}'
+          test "$(du -sb runtime/validated-site/docs | cut -f1)" -le 1073741824
+      - name: Verify desktop, mobile, filters, links and browser errors before publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m http.server 8765 --bind 127.0.0.1 --directory runtime/validated-site/docs > runtime/site-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          python scripts/pages_smoke.py --base http://127.0.0.1:8765/ --run-id '${{ github.run_id }}'
+      - name: Preserve validated site for recovery
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: validated-site-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/validated-site/docs/
+          retention-days: 90
+          if-no-files-found: error
+      - name: Upload exact validated Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: runtime/validated-site/docs/
+
+  persist:
+    name: Save the validated snapshot and guard publication order
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          name: validated-site-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/published-docs/
+      - name: Verify artifact identity and prevent an older run overwriting main
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/publication_bundle.py verify --docs runtime/published-docs --run-id '${{ github.run_id }}' --source-sha '${{ github.sha }}'
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = '${{ github.sha }}'
+          cp -a runtime/published-docs/. docs/
+          git add docs
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish validated unified audit run ${{ github.run_id }}'
+          git push origin HEAD:main
+
+  deploy:
+    name: Deploy only the validated artifact
+    needs: [build, persist]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  public-smoke:
+    name: Confirm the public project path has this run
+    needs: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Verify the public Pages bundle and source identity
+        run: python scripts/pages_smoke.py --base https://empty-bell.github.io/RDA/ --run-id '${{ github.run_id }}' --no-browser

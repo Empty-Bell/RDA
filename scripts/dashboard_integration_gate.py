@@ -60,10 +60,19 @@ def build(docs, manifest_path, artifacts_root, out, unified_report_path=None):
         if any(counts[name, level] != family.get(level.lower()) for level in GRADES):
             errors.append(f"FAMILY_GRADE_COUNT_MISMATCH:{name}")
     record_by_key = dict(zip(keys, records))
+    enforce_unique_evidence = (docs / "publication-manifest.json").is_file()
+    evidence_paths = [row.get("evidence_url") for row in records]
+    if enforce_unique_evidence and len(set(evidence_paths)) != len(evidence_paths):
+        errors.append("EVIDENCE_PATH_REUSED_ACROSS_MODELS")
     for row in records:
         evidence = row.get("evidence_url", "")
         if not evidence.startswith("./evidence/") or not (docs / evidence[2:]).is_file():
             errors.append(f"EVIDENCE_FILE_MISSING:{row['family']}:{row['model']}")
+        else:
+            detail = read(docs / evidence[2:])
+            if (enforce_unique_evidence and
+                    (detail.get("family") != row["family"] or detail.get("model") != row["model"])):
+                errors.append(f"EVIDENCE_IDENTITY_DIFFERS:{row['family']}:{row['model']}")
 
     csv_keys = {}
     with (docs / "report-data.csv").open("r", encoding="utf-8-sig", newline="") as stream:

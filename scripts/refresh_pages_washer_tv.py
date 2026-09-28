@@ -95,7 +95,8 @@ def build(args):
                   "source_run": run_id, "previous_evidence_url": prior,
                   "prior_raw_evidence": {key: value for key, value in prior_detail.items()
                                          if key in {"snapshot", "bridge", "energyguide_retrieval"}}}
-        detail_path = docs / "evidence" / f"{run_id}_{sku.replace('/', '_')}.json"
+        from refresh_pages_refrigerator import evidence_name
+        detail_path = docs / "evidence" / evidence_name(run_id, family, sku)
         detail_path.write_text(json.dumps(detail, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
         record["evidence_url"] = "./evidence/" + detail_path.name
 

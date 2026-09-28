@@ -95,7 +95,8 @@ def build(docs, assessment_path, source_path, collection_root):
                   "previous_evidence_url": prior_url,
                   "prior_raw_evidence": {key: value for key, value in prior.items()
                                          if key not in {"model", "family", "grade", "assessment", "source_run"}}}
-        detail_path = docs / "evidence" / f"{run_id}_{sku.replace('/', '_')}.json"
+        from refresh_pages_refrigerator import evidence_name
+        detail_path = docs / "evidence" / evidence_name(run_id, FAMILY, sku)
         detail_path.write_text(json.dumps(detail, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
         record["evidence_url"] = "./evidence/" + detail_path.name
     family = next(row for row in snapshot["families"] if row["family"] == FAMILY)

@@ -11,6 +11,13 @@ from refresh_pages_washer_tv import flat
 
 
 FAMILY = "냉장고"
+FAMILY_SLUG = {"냉장고": "refrigerator", "식기세척기": "dishwasher", "세탁기": "washer",
+               "TV": "tv", "레인지": "range", "쿡탑": "cooktop", "의류건조기": "dryer",
+               "후드": "hood", "모니터": "monitor", "컴퓨터": "computer", "태블릿": "tablet"}
+
+
+def evidence_name(run_id, family, sku):
+    return f"{run_id}_{FAMILY_SLUG[family]}_{sku.replace('/', '_')}.json"
 HEADERS = ["family", "model", "grade", "pdp_model", "pdp_title", "pdp_energy", "pdp_capacity",
            "pdp_logo", "plp_logo", "plp_logo_raw", "spec_certification", "label_model", "label_energy",
            "label_energy_state", "label_capacity", "epa_registration", "epa_match_status", "epa_model",
@@ -83,7 +90,7 @@ def build(docs, assessment_path, source_zip):
                   "previous_evidence_url": prior_url,
                   "prior_raw_evidence": {key: value for key, value in prior.items()
                                          if key not in {"model", "family", "grade", "assessment", "source_run"}}}
-        detail_path = docs / "evidence" / f"{run_id}_{sku.replace('/', '_')}.json"
+        detail_path = docs / "evidence" / evidence_name(run_id, FAMILY, sku)
         detail_path.write_text(json.dumps(detail, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
         record["evidence_url"] = "./evidence/" + detail_path.name
 
