@@ -1,5 +1,11 @@
 # G2 refrigerator formal acceptance readiness — 2026-09-28
 
+## Resolved live rerun — 36371823748
+
+At commit `5ed39d9`, [pilot run 36371823748](https://github.com/Empty-Bell/RDA/actions/runs/36371823748) succeeded. Its preserved artifact (ID 10950421626) confirms all 75 exact SKUs passed PDP identity, including both early watched SKUs at their original exact-model URLs. The full EnergyGuide model-prefix control reports 75 PASS, zero NOT_EVALUATED. The numeric control reports 59 PASS, seven MEDIUM and nine LOW display outcomes. The joined control summary retains 36 findings across 32 SKUs (14 HIGH, seven MEDIUM, 15 LOW).
+
+[Acceptance replay 36373795904](https://github.com/Empty-Bell/RDA/actions/runs/36373795904) and [EnergyGuide quality review 36373795963](https://github.com/Empty-Bell/RDA/actions/runs/36373795963) also succeeded. Acceptance replay verifies 75 exact SKUs and 36 findings; phase readiness remains `BLOCKED` solely because the canonical FTC/EPA assessment engine is disabled (0/75 for each domain) and the canonical bundle is `PARTIAL`. The live redirect failure in the preceding run was intermittent at the observed times; the early watch remains in place for recurrence.
+
 ## New live source incident — run 36369246125
 
 [Run 36369246125](https://github.com/Empty-Bell/RDA/actions/runs/36369246125)

@@ -1,5 +1,14 @@
 # Phase status
 
+Updated 2026-09-28 after successful rerun
+[36371823748](https://github.com/Empty-Bell/RDA/actions/runs/36371823748):
+the two previously redirected refrigerator PDPs opened their exact models;
+full PDP identity and EnergyGuide model-prefix coverage are each 75/75.
+[Acceptance replay 36373795904](https://github.com/Empty-Bell/RDA/actions/runs/36373795904)
+and [quality review 36373795963](https://github.com/Empty-Bell/RDA/actions/runs/36373795963)
+passed. G2 formal gate remains open because canonical FTC/EPA assessment is
+disabled. The early wrong-model redirect watch remains active.
+
 Updated 2026-09-28 after run
 [36369246125](https://github.com/Empty-Bell/RDA/actions/runs/36369246125):
 G2 remains formally open. Live refrigerator PDP identity was 73/75; two
