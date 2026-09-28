@@ -1,5 +1,13 @@
 # Phase status
 
+Current 2026-09-28 dashboard integration: Run #19 covers all 11 accepted
+family control artifacts and 557 exact models (479 PASS / 29 HIGH / 11 MEDIUM /
+38 LOW). The local integrity gate passed with no family gate pending. G3
+overall remains **BLOCKED** solely because this mixed-family snapshot joins
+different source collection runs; a unified 11-family source execution has not
+been completed. See [DASHBOARD_INTEGRATION_RUN19.md](DASHBOARD_INTEGRATION_RUN19.md).
+Older checkpoints below are historical.
+
 Current 2026-09-28 integration checkpoint: G0/G1/G2 are accepted for their
 recorded scopes. G2 refrigerator was re-evaluated from its accepted frozen
 source under the current Specs-field rule in hosted run `36416717198`, giving

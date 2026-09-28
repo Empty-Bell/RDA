@@ -126,7 +126,9 @@ def build(docs, manifest_path, artifacts_root, out):
         errors.append("INTEGRATION_MANIFEST_FAMILY_COVERAGE_DIFFERS")
     result = {"contract": "RDA_DASHBOARD_INTEGRATION_GATE_V1",
               "execution_status": "FAIL" if errors else "PASS",
-              "formal_readiness": "BLOCKED" if errors or pending else "READY_FOR_FORMAL_REVIEW",
+              "formal_readiness": "BLOCKED",
+              "snapshot_readiness": "BLOCKED" if errors or pending else "READY_FOR_FORMAL_REVIEW",
+              "pending_integration_gates": ["UNIFIED_SOURCE_EXECUTION_NOT_PRESENT"],
               "integration_run_id": os.getenv("GITHUB_RUN_ID"),
               "captured_at": datetime.now(timezone.utc).isoformat(),
               "dashboard_run_number": snapshot.get("run_number"),

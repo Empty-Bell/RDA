@@ -33,10 +33,29 @@
       "artifact_prefix": "g3-tv-assessment-",
       "report_file": "assessment.json",
       "report_contract": "G3_TV_ASSESSMENT_V1"
+    },
+    {
+      "family": "레인지", "run_id": "36417820738", "workflow_path": ".github/workflows/g3-epa-saved-source-reassessment.yml", "artifact_prefix": "g3-epa-saved-reassessment-", "report_file": "range/assessment.json", "report_contract": "G3_EPA_FAMILY_SAVED_SOURCE_REASSESSMENT_V1"
+    },
+    {
+      "family": "쿡탑", "run_id": "36417820738", "workflow_path": ".github/workflows/g3-epa-saved-source-reassessment.yml", "artifact_prefix": "g3-epa-saved-reassessment-", "report_file": "cooktop/assessment.json", "report_contract": "G3_EPA_FAMILY_SAVED_SOURCE_REASSESSMENT_V1"
+    },
+    {
+      "family": "의류건조기", "run_id": "36417820738", "workflow_path": ".github/workflows/g3-epa-saved-source-reassessment.yml", "artifact_prefix": "g3-epa-saved-reassessment-", "report_file": "dryer/assessment.json", "report_contract": "G3_EPA_FAMILY_SAVED_SOURCE_REASSESSMENT_V1"
+    },
+    {
+      "family": "후드", "run_id": "36417820738", "workflow_path": ".github/workflows/g3-epa-saved-source-reassessment.yml", "artifact_prefix": "g3-epa-saved-reassessment-", "report_file": "hood/assessment.json", "report_contract": "G3_EPA_FAMILY_SAVED_SOURCE_REASSESSMENT_V1"
+    },
+    {
+      "family": "모니터", "run_id": "36417820738", "workflow_path": ".github/workflows/g3-epa-saved-source-reassessment.yml", "artifact_prefix": "g3-epa-saved-reassessment-", "report_file": "monitor/assessment.json", "report_contract": "G3_EPA_FAMILY_SAVED_SOURCE_REASSESSMENT_V1"
+    },
+    {
+      "family": "컴퓨터", "run_id": "36417820738", "workflow_path": ".github/workflows/g3-epa-saved-source-reassessment.yml", "artifact_prefix": "g3-epa-saved-reassessment-", "report_file": "computer/assessment.json", "report_contract": "G3_EPA_FAMILY_SAVED_SOURCE_REASSESSMENT_V1"
+    },
+    {
+      "family": "태블릿", "run_id": "36418451410", "workflow_path": ".github/workflows/g3-tablet-assessment.yml", "artifact_prefix": "g3-tablet-assessment-", "report_file": "assessment.json", "report_contract": "G3_TABLET_FINAL_ASSESSMENT_V1"
     }
   ],
   "accepted_snapshot_pending_refresh": [],
-  "family_acceptance_pending": [
-    "레인지", "쿡탑", "의류건조기", "후드", "모니터", "컴퓨터", "태블릿"
-  ]
+  "family_acceptance_pending": []
 }
