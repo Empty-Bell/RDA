@@ -17,6 +17,8 @@ on:
       - 'scripts/test_operations.py'
       - 'scripts/publication_bundle.py'
       - 'scripts/reconcile_history_ruleset.py'
+      - 'scripts/g3_range_collect.py'
+      - 'scripts/test_range_retry.py'
       - 'scripts/dashboard_integration_gate.py'
       - '.github/workflows/dashboard-integration.yml'
 
@@ -31,6 +33,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -42,6 +45,8 @@ jobs:
         run: python scripts/test_audit_history.py
       - name: Inject source, OCR, EPA, artifact and publication failures
         run: python scripts/test_operations.py > runtime-operations-test.log
+      - name: Verify bounded exact-SKU Range retry
+        run: python scripts/test_range_retry.py
       - name: Verify current publication bundle identity and hashes
         shell: bash
         run: |

@@ -32,7 +32,9 @@ Only a successful build can persist the snapshot and deploy it to Pages.
 Keep this workflow manually dispatched until three consecutive complete
 source runs with different run IDs pass the source, dashboard and public Pages
 checks. A failed run resets the streak. Once that condition is met, enable a
-weekly schedule; each scheduled run uses the same gates and publication path.
+weekly Monday 09:13 KST schedule (Monday 00:13 UTC); each scheduled run uses
+the same gates and publication path. The minute avoids GitHub's top-of-hour
+schedule congestion.
 
 ## Known historical correction
 

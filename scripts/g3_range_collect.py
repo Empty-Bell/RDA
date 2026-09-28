@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
@@ -223,6 +224,33 @@ def coverage(products, results):
     return {"population_count": len(population), "attempted_count": len(results), "counts": counts, "rows": rows}
 
 
+def retry_failed(products, destination, results, collector=collect):
+    """Retry transient PDP failures without weakening exact-SKU identity."""
+    by_sku = {product["exact_sku"]: product for product in products}
+    for attempt in (2, 3):
+        failed = [row for row in results if row["status"] == "FAILED"]
+        if not failed:
+            break
+        retry_root = destination / "retries" / f"attempt-{attempt}"
+        retried = collector([by_sku[row["exact_sku"]] for row in failed], retry_root)
+        updates = {row["exact_sku"]: row for row in retried}
+        if len(updates) != len(retried) or set(updates) != {row["exact_sku"] for row in failed}:
+            raise ValueError("Range retry returned a different exact-SKU population")
+        for index, prior in enumerate(results):
+            candidate = updates.get(prior["exact_sku"])
+            if not candidate or candidate["status"] != "VERIFIED_EXACT_IDENTITY":
+                continue
+            sku_path = quote(prior["exact_sku"], safe="")
+            first = destination / "pdp" / sku_path
+            archive = destination / "retries" / "previous-attempts" / sku_path / f"attempt-{attempt - 1}"
+            archive.parent.mkdir(parents=True, exist_ok=True)
+            shutil.move(str(first), str(archive))
+            shutil.copytree(retry_root / "pdp" / sku_path, first)
+            candidate["collection_attempt"] = attempt
+            results[index] = candidate
+    return results
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--recon-root", required=True)
@@ -234,7 +262,8 @@ def main():
     destination.mkdir(parents=True, exist_ok=True)
     (destination / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (destination / "products.json").write_text(json.dumps(products, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    rows = coverage(products, collect(products, destination))
+    results = retry_failed(products, destination, collect(products, destination))
+    rows = coverage(products, results)
     status = "PASS" if rows["counts"]["FAILED"] == 0 and rows["counts"]["NOT_ATTEMPTED"] == 0 else "FAILED"
     report = {"contract": CONTRACT, "source_run_id": str(args.source_run_id),
               "collection_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
