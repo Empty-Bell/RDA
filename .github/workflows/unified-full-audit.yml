@@ -1,0 +1,84 @@
+name: Unified 11-family full audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: unified-full-audit
+  cancel-in-progress: false
+
+jobs:
+  family:
+    name: Acquire and assess ${{ matrix.family }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        family: [refrigerator, dishwasher, washer, tv, range, cooktop, dryer, hood, monitor, computer, tablet]
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Bootstrap locked browser, PDF and OCR runtime
+        run: |
+          mkdir -p runtime
+          bash scripts/bootstrap.sh
+      - name: Acquire current sources and apply approved family controls
+        run: python scripts/unified_family_run.py --family '${{ matrix.family }}'
+      - name: Preserve this family's raw sources and assessment
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: unified-family-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.family }}
+          path: |
+            runtime/unified/${{ matrix.family }}/
+            runtime/source-recon/${{ matrix.family }}/
+            runtime/source-recon/chromebook/
+            runtime/g2/
+          retention-days: 14
+          if-no-files-found: warn
+
+  integrate:
+    name: Verify one source run and 11 graded populations
+    if: always()
+    needs: [family]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download source and assessment artifacts from this run only
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        continue-on-error: true
+        with:
+          pattern: unified-family-${{ github.run_id }}-${{ github.run_attempt }}-*
+          path: runtime/
+          merge-multiple: true
+      - name: Reconcile all family artifacts and source identities
+        if: always()
+        run: python scripts/unified_run_gate.py --root runtime --run-id '${{ github.run_id }}' --out runtime/unified-gate
+      - name: Require all family jobs to have succeeded
+        if: always()
+        run: test '${{ needs.family.result }}' = success
+      - name: Preserve integrated execution report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: unified-full-audit-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/unified-gate/
+          retention-days: 14
+          if-no-files-found: warn
