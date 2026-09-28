@@ -1,5 +1,16 @@
 # Phase status
 
+Current 2026-09-29: **G3/G4 bounded control execution PASS** from the
+[single hosted 11-family run 36438033553](https://github.com/Empty-Bell/RDA/actions/runs/36438033553).
+All 557 exact models have one grade: 485 PASS / 23 HIGH / 11 MEDIUM / 38 LOW;
+the unified source gate and Run #20 local dashboard integration gate each
+reported zero integrity errors. The G3 FTC+EPA families (Dishwasher, Washer,
+TV) and the seven G4 EPA-focused families share that source run with the
+accepted G2 refrigerator. See [UNIFIED_ACCEPTANCE_RUN20.md](UNIFIED_ACCEPTANCE_RUN20.md).
+Whole-product legal compliance remains NOT_EVALUATED. G5 history and G6
+operational hardening remain separate acceptance work; G7 publication needs
+the hosted deployment check. Older mixed-run checkpoints below are historical.
+
 Current 2026-09-28 dashboard integration: Run #19 covers all 11 accepted
 family control artifacts and 557 exact models (479 PASS / 29 HIGH / 11 MEDIUM /
 38 LOW). The local integrity gate passed with no family gate pending. G3

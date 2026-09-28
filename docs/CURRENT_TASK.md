@@ -1,5 +1,20 @@
 # Current task continuation — 2026-09-24
 
+## Unified 11-family run and dashboard Run #20 — 2026-09-29
+
+[Hosted run 36438033553](https://github.com/Empty-Bell/RDA/actions/runs/36438033553)
+passed all 11 fresh family collection/assessment jobs and the same-run gate:
+557 exact SKUs, 485 PASS / 23 HIGH / 11 MEDIUM / 38 LOW, zero integrity
+errors. The source-bound Run #20 dashboard build and integration gate passed
+locally with zero pending family gates. TV changed from 157 PASS / 8 HIGH to
+163 PASS / 2 HIGH because five formerly unreadable EnergyGuide documents
+yielded matching model text and one formerly missing document became
+accessible. No other family grade changed. See
+[UNIFIED_ACCEPTANCE_RUN20.md](UNIFIED_ACCEPTANCE_RUN20.md). G3/G4 bounded
+controls are accepted from this one execution; whole-product legal compliance
+is NOT_EVALUATED. The remaining work is hosted Pages/integration publication
+verification, then G5 history and G6 operational hardening acceptance.
+
 ## Dashboard Run #19 integrated — 2026-09-28
 
 All 11 families now have source-bound accepted control artifacts. The 557-model
