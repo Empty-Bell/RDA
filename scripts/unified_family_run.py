@@ -6,6 +6,7 @@ substitutes an earlier successful artifact or silently fills a failed source.
 
 import argparse
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import os
@@ -79,6 +80,21 @@ def source_and_collection(family, run_id, root):
     collection = root / "collection"
     if family in {"computer", "tablet", "tv"}:
         shard_count = {"computer": 3, "tablet": 4, "tv": 8}[family]
+        if family == "tv":
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                futures = [executor.submit(
+                    run, "g3_tv_collect_shard", "--recon-root", source,
+                    "--source-run-id", run_id, "--shard-index", index,
+                    "--shard-count", shard_count,
+                    "--out", collection / f"g3-tv-collection-shard-{index}",
+                ) for index in range(shard_count)]
+                for future in futures:
+                    future.result()
+            run("g3_tv_aggregate_shards", "--recon-root", source,
+                "--source-run-id", run_id, "--shards-root", collection,
+                "--out", root / "combined")
+            single_summary(root / "combined", run_id)
+            return root / "combined"
         for index in range(shard_count):
             target = collection / f"shard-{index}"
             if family == "computer":
@@ -90,16 +106,6 @@ def source_and_collection(family, run_id, root):
                 run("g3_tablet_collect", "--recon-root", source,
                     "--source-run-id", run_id, "--shard-index", index,
                     "--shard-count", shard_count, "--out", target)
-            else:
-                run("g3_tv_collect_shard", "--recon-root", source,
-                    "--source-run-id", run_id, "--shard-index", index,
-                    "--shard-count", shard_count, "--out", target)
-        if family == "tv":
-            run("g3_tv_aggregate_shards", "--recon-root", source,
-                "--source-run-id", run_id, "--shards-root", collection,
-                "--out", root / "combined")
-            single_summary(root / "combined", run_id)
-            return root / "combined"
         summaries = [read(path) for path in sorted(collection.glob("shard-*/shard-summary.json"))]
         if len(summaries) != shard_count or any(item.get("status") != "PASS" for item in summaries):
             raise ValueError(f"Incomplete {family} exact-SKU shards")

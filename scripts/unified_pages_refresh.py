@@ -5,8 +5,10 @@ the published docs tree is never changed until its integration gate passes.
 """
 
 import argparse
+import csv
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import shutil
 from types import SimpleNamespace
@@ -16,6 +18,7 @@ from g3_epa_family_reassessment import build as reassess_epa
 from refresh_pages_refrigerator import build as refresh_refrigerator
 from refresh_pages_dishwasher import build as refresh_dishwasher
 from refresh_pages_washer_tv import build as refresh_washer_tv
+from refresh_pages_washer_tv import flat
 from refresh_pages_epa_families import build as refresh_epa
 from refresh_pages_tablet import build as refresh_tablet
 
@@ -42,6 +45,7 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
     if (gate.get("contract") != "RDA_UNIFIED_FULL_RUN_GATE_V1" or gate.get("execution_status") != "PASS"
             or gate.get("single_source_run") is not True or gate.get("family_count") != len(SLUGS)):
         raise ValueError("Unified source execution has not passed")
+    os.environ["GITHUB_RUN_ID"] = run_id
     if out.exists():
         raise ValueError("Output directory must be new to preserve the previous build")
     docs = out / "docs"
@@ -81,6 +85,35 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
                    tablet / "collection")
 
     after = read(docs / "model-data.json")
+    # Earlier snapshots remain available by URL. Re-embedding their full raw
+    # payload in every new evidence file would multiply export size each run.
+    field_count = 0
+    with (docs / "report-all-fields.csv").open("w", encoding="utf-8-sig", newline="") as stream:
+        writer = csv.writer(stream)
+        writer.writerow(["family", "model", "grade", "source", "field_path", "value"])
+        for record in after["records"]:
+            detail_path = docs / record["evidence_url"].removeprefix("./")
+            detail = read(detail_path)
+            if str(detail.get("source_run")) != run_id:
+                raise ValueError(f"Stale model evidence in unified build: {record['family']} {record['model']}")
+            detail.pop("prior_raw_evidence", None)
+            detail_path.write_text(json.dumps(detail, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+            for section, value in detail.items():
+                if section in {"model", "family", "grade", "source_run"}:
+                    continue
+                for path, field in flat(value):
+                    writer.writerow([record["family"], record["model"], record["grade"], section, path, field])
+                    field_count += 1
+    after["field_count"] = field_count
+    from openpyxl import Workbook
+    workbook = Workbook(write_only=True)
+    for title, path in (("Models", docs / "report-data.csv"),
+                        ("All Fields", docs / "report-all-fields.csv")):
+        sheet = workbook.create_sheet(title)
+        with path.open("r", encoding="utf-8-sig", newline="") as stream:
+            for row in csv.reader(stream):
+                sheet.append(row)
+    workbook.save(docs / "report-data.xlsx")
     prior = {(row["family"], row["model"]): row for row in before["records"]}
     current = {(row["family"], row["model"]): row for row in after["records"]}
     if len(current) != len(after["records"]):

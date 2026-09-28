@@ -28,7 +28,9 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     (out / "pdp").mkdir(exist_ok=True)
     results, seen_shards = [], set()
-    for summary_path in sorted(shards.glob("g3-tv-collection-shard-*/shard-summary.json")):
+    summary_paths = sorted(set(shards.glob("g3-tv-collection-shard-*/shard-summary.json"))
+                           | set(shards.glob("shard-*/shard-summary.json")))
+    for summary_path in summary_paths:
         shard_root = summary_path.parent
         shard = read(summary_path)
         index, count = shard["shard_index"], shard["shard_count"]
