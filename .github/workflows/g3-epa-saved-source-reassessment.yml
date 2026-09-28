@@ -1,0 +1,65 @@
+name: G3 EPA families current-rule saved-source reassessment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/epa_only_rules.py'
+      - 'scripts/g3_epa_family_reassessment.py'
+      - 'docs/g3-epa-family-replay-manifest.json'
+      - '.github/workflows/g3-epa-saved-source-reassessment.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  reassess:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PYTHONPATH: scripts
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download exact six family source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' > "$RUNNER_TEMP/g3-epa-families.tsv"
+          import json
+          for item in json.load(open('docs/g3-epa-family-replay-manifest.json', encoding='utf-8'))['families']:
+              print('\t'.join(str(item[key]) for key in ('slug', 'source_run_id', 'workflow_path', 'artifact_prefix')))
+          PY
+          while IFS=$'\t' read -r slug run_id workflow prefix; do
+            run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}")"
+            test "$(jq -r '.status' <<< "$run")" = completed
+            test "$(jq -r '.conclusion' <<< "$run")" = success
+            test "$(jq -r '.path' <<< "$run")" = "$workflow"
+            artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/artifacts" \
+              | jq -c --arg prefix "$prefix" '[.artifacts[] | select(.expired == false and (.name | startswith($prefix)))] | sort_by(.created_at) | last')"
+            test "$artifact" != null
+            mkdir -p "runtime/g3-epa-saved/${slug}"
+            gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/$(jq -r '.id' <<< "$artifact")/zip" > "runtime/g3-epa-saved/${slug}.zip"
+            expected="$(jq -r '.digest' <<< "$artifact")"
+            actual="sha256:$(sha256sum "runtime/g3-epa-saved/${slug}.zip" | cut -d' ' -f1)"
+            test "$actual" = "$expected"
+            unzip -q "runtime/g3-epa-saved/${slug}.zip" -d "runtime/g3-epa-saved/${slug}"
+          done < "$RUNNER_TEMP/g3-epa-families.tsv"
+      - name: Apply current approved publication rules to frozen sources
+        run: python scripts/g3_epa_family_reassessment.py --manifest docs/g3-epa-family-replay-manifest.json --source-root runtime/g3-epa-saved --out runtime/g3-epa-reassessment
+      - name: Preserve six family results
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: g3-epa-saved-reassessment-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runtime/g3-epa-reassessment/
+          retention-days: 14
+          if-no-files-found: warn

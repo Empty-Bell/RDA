@@ -104,7 +104,7 @@ def publication_points(claim):
         else:
             spec_state = "UNKNOWN"
     elif spec_inspection in ("SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE", "SUPPORTED_BRIDGE_SPEC_TABLE_COMPLETE"):
-        spec_state = "ABSENT"
+        spec_state = "NOT_APPLICABLE"
     else:
         spec_state = "UNKNOWN"
 
@@ -118,7 +118,9 @@ def publication_points(claim):
 
 
 def publication_assessment(epa_registration, points):
-    states = [item["state"] for item in points.values()]
+    states = [item["state"] for item in points.values() if item["state"] != "NOT_APPLICABLE"]
+    if not states:
+        return "NOT_EVALUATED", []
     if epa_registration == "PRESENT":
         if all(state == "PRESENT" for state in states):
             return "PASS", []
