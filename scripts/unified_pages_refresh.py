@@ -142,11 +142,13 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
         path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(artifact_root / item["report_file"], path)
     result_code = integration_gate(docs, docs / "integration-manifest.json",
-                                   local_artifacts, out / "integration-gate")
+                                   local_artifacts, out / "integration-gate", unified_report)
     if result_code:
         raise ValueError("Unified Pages snapshot differs from source assessments")
     report = read(out / "integration-gate/integration-report.json")
-    if len(report["accepted_family_artifacts"]) != len(SLUGS):
+    if (len(report["accepted_family_artifacts"]) != len(SLUGS)
+            or report["formal_readiness"] != "READY_FOR_FORMAL_REVIEW"
+            or report["single_source_run"] is not True):
         raise ValueError("Unified Pages snapshot lacks a family artifact")
     print(json.dumps({"status": "PASS", "run_id": run_id,
                       "dashboard_run_number": after["run_number"],

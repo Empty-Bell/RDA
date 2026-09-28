@@ -57,8 +57,31 @@ jobs:
             unzip -q "runtime/integration/${family}.zip" -d "runtime/integration/${family}"
             test -f "runtime/integration/${family}/${report_file}"
           done < "$RUNNER_TEMP/accepted-artifacts.tsv"
+      - name: Download and verify unified source gate when declared
+        shell: bash
+        run: |
+          set -euo pipefail
+          run_id="$(python -c 'import json; print(json.load(open("docs/integration-manifest.json", encoding="utf-8")).get("unified_source_run_id") or "")')"
+          if [ -n "$run_id" ]; then
+            artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/artifacts" \
+              | jq -c --arg prefix "unified-full-audit-report-${run_id}-" '[.artifacts[] | select(.expired == false and (.name | startswith($prefix)))] | sort_by(.created_at) | last')"
+            test "$artifact" != null
+            mkdir -p runtime/unified-report
+            gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/$(jq -r '.id' <<< "$artifact")/zip" > runtime/unified-report.zip
+            expected="$(jq -r '.digest' <<< "$artifact")"
+            actual="sha256:$(sha256sum runtime/unified-report.zip | cut -d' ' -f1)"
+            test "$actual" = "$expected"
+            unzip -q runtime/unified-report.zip -d runtime/unified-report
+            test -f runtime/unified-report/unified-report.json
+          fi
       - name: Reconcile accepted artifacts and all Pages exports
-        run: python scripts/dashboard_integration_gate.py --docs docs --manifest docs/integration-manifest.json --artifacts-root runtime/integration --out runtime/integration/report
+        shell: bash
+        run: |
+          args=(--docs docs --manifest docs/integration-manifest.json --artifacts-root runtime/integration --out runtime/integration/report)
+          if [ -f runtime/unified-report/unified-report.json ]; then
+            args+=(--unified-report runtime/unified-report/unified-report.json)
+          fi
+          python scripts/dashboard_integration_gate.py "${args[@]}"
       - name: Show integration readiness
         if: always()
         shell: bash
@@ -71,6 +94,7 @@ jobs:
           print(f"Execution: **{d['execution_status']}**; formal readiness: **{d['formal_readiness']}**")
           print(f"Dashboard Run #{d['dashboard_run_number']}: {d['model_count']} models across {d['family_count']} families")
           print(f"Accepted family artifacts: {len(d['accepted_family_artifacts'])}; pending family gates: {len(d['pending_family_gates'])}")
+          print(f"One source execution: {d['single_source_run']}")
           for item in d['pending_family_gates']:
               print(f"- {item['family']}: {item['reason']}")
           PY

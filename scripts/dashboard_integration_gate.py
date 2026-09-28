@@ -34,7 +34,7 @@ def grade(row):
     return row.get("display_outcome", row.get("grade"))
 
 
-def build(docs, manifest_path, artifacts_root, out):
+def build(docs, manifest_path, artifacts_root, out, unified_report_path=None):
     docs, artifacts_root, out = map(Path, (docs, artifacts_root, out))
     manifest, snapshot = read(manifest_path), read(docs / "model-data.json")
     if manifest.get("contract") != "RDA_INTEGRATION_MANIFEST_V1":
@@ -124,11 +124,30 @@ def build(docs, manifest_path, artifacts_root, out):
     covered = {item["family"] for item in accepted + pending}
     if covered != set(family_by_name) or len(covered) != len(accepted) + len(pending):
         errors.append("INTEGRATION_MANIFEST_FAMILY_COVERAGE_DIFFERS")
+    unified_run_id = manifest.get("unified_source_run_id")
+    unified = read(unified_report_path) if unified_report_path else None
+    if unified_run_id:
+        if unified is None:
+            errors.append("UNIFIED_SOURCE_REPORT_MISSING")
+        elif (unified.get("contract") != "RDA_UNIFIED_FULL_RUN_GATE_V1"
+              or unified.get("execution_status") != "PASS"
+              or unified.get("single_source_run") is not True
+              or str(unified.get("run_id")) != str(unified_run_id)
+              or unified.get("family_count") != len(families)
+              or unified.get("model_count") != len(records)
+              or unified.get("grade_counts") != {level: sum(row["grade"] == level for row in records) for level in GRADES}
+              or {item["family"] for item in unified.get("families", [])}
+                 != {"refrigerator", "dishwasher", "washer", "tv", "range", "cooktop",
+                     "dryer", "hood", "monitor", "computer", "tablet"}
+              or any(item["run_id"] != str(unified_run_id) for item in accepted)):
+            errors.append("UNIFIED_SOURCE_REPORT_DIFFERS")
+    single_source = bool(unified_run_id and unified and "UNIFIED_SOURCE_REPORT_DIFFERS" not in errors
+                         and "UNIFIED_SOURCE_REPORT_MISSING" not in errors)
     result = {"contract": "RDA_DASHBOARD_INTEGRATION_GATE_V1",
               "execution_status": "FAIL" if errors else "PASS",
-              "formal_readiness": "BLOCKED",
+              "formal_readiness": "READY_FOR_FORMAL_REVIEW" if single_source and not errors and not pending else "BLOCKED",
               "snapshot_readiness": "BLOCKED" if errors or pending else "READY_FOR_FORMAL_REVIEW",
-              "pending_integration_gates": ["UNIFIED_SOURCE_EXECUTION_NOT_PRESENT"],
+              "pending_integration_gates": [] if single_source else ["UNIFIED_SOURCE_EXECUTION_NOT_PRESENT"],
               "integration_run_id": os.getenv("GITHUB_RUN_ID"),
               "captured_at": datetime.now(timezone.utc).isoformat(),
               "dashboard_run_number": snapshot.get("run_number"),
@@ -137,7 +156,7 @@ def build(docs, manifest_path, artifacts_root, out):
               "raw_export_field_count": field_count,
               "accepted_family_artifacts": accepted,
               "pending_family_gates": pending, "integrity_errors": errors,
-              "single_source_run": False,
+              "single_source_run": single_source,
               "overall_product_compliance": "NOT_EVALUATED"}
     out.mkdir(parents=True, exist_ok=True)
     (out / "integration-report.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -149,5 +168,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for option in ("docs", "manifest", "artifacts-root", "out"):
         parser.add_argument("--" + option, required=True)
+    parser.add_argument("--unified-report")
     args = parser.parse_args()
-    raise SystemExit(build(args.docs, args.manifest, args.artifacts_root, args.out))
+    raise SystemExit(build(args.docs, args.manifest, args.artifacts_root, args.out, args.unified_report))
