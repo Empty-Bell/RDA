@@ -1,5 +1,9 @@
 # Current task continuation — 2026-09-24
 
+## Dashboard population review — 2026-09-28
+
+The published 557 model keys were reconciled against the selected source populations for all 11 families with zero missing or extra keys; see [DASHBOARD_POPULATION_REVIEW_2026-09-28.md](DASHBOARD_POPULATION_REVIEW_2026-09-28.md). Tablet's 50 PF grouped SKUs include 11 rendered PLP card SKUs, which are the approved audited population. TV's 167 raw SKUs become 165 after the documented two-model MNA exclusion. This is a saved-source reconciliation, not a new live PLP run or formal G2–G4 acceptance.
+
 ## Pages publication checkpoint — 2026-09-28
 
 At user request, a reviewed 11-family, 557-model static snapshot was published at [GitHub Pages](https://empty-bell.github.io/RDA/) from `main:/docs` in commit `0589ef4`. [Pages deployment run 36363908516](https://github.com/Empty-Bell/RDA/actions/runs/36363908516) succeeded. The snapshot includes 496 PASS, 30 HIGH, 2 MEDIUM, and 29 LOW records, with model-level evidence and CSV/Excel exports. The source family runs differ; dashboard Run #15 is a local integration build number, not a unified audit execution. Current G2/G3/G4 formal gates and automated cross-family refresh remain open. The earlier checkpoints below describe their historical state when written.
