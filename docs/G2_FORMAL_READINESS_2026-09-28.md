@@ -8,6 +8,14 @@ The downloaded artifact was replayed locally against the acceptance validator. I
 
 The acceptance validator now reports an explicit `phase_readiness` alongside artifact replay `PASS`. For this saved run it reports `BLOCKED`: canonical execution incomplete, canonical assessment disabled, FTC evaluated 0/75, EPA evaluated 0/75, and EnergyGuide model assessment 6/75. `READY_FOR_FORMAL_REVIEW`, when eventually reported, will mean only these minimum completeness checks passed. Formal phase acceptance also requires the full reviewed control matrix and hosted evidence; it cannot be inferred from this field alone.
 
+Subsequent user approval resolved the abbreviated-prefix question. The model
+assessment now reads all printed model tokens separated by line breaks, commas
+or semicolons and accepts any token that agrees with the beginning of the
+normalized PDP identifier. Offline replay of the saved 75-SKU artifact yields
+75 PASS and zero NOT_EVALUATED. This is a new control-level result, pending a
+fresh hosted pilot; the older artifact and readiness result above remain
+historically accurate. Canonical FTC/EPA assessment is still disabled.
+
 ## Remaining work in order
 
 1. **EnergyGuide model coverage:** select every printed model token in each eligible PDF, including multiple lines and comma/semicolon lists. Compare the exact PDP SKU against all tokens using only approved suffix and wildcard rules. One matching token passes this control. Preserve source text, PDF hash, every token, and match evidence. Short family-only strings and unclear OCR need an explicit identity policy or reviewed source evidence; they must not be silently treated as mismatches or passes.
@@ -16,7 +24,7 @@ The acceptance validator now reports an explicit `phase_readiness` alongside art
 
 ## Decisions needed before completing rule activation
 
-- **Label model identity:** A label sometimes prints only a shortened family identifier, such as `RF18A5101`, while the PDP exact SKU is `RF18A5101SR/AA`. Should this count as a model match, or remain unresolved until the label or Samsung supplies an explicit variant mapping? The already-approved rule that *any one of multiple printed models may match* does not by itself define this shorter-identifier case.
-- **FTC label/document rule boundaries:** Confirm whether a PDF that is valid and has selected annual energy/capacity but has no resolved exact-SKU model link should be a `MEDIUM`/`HIGH` finding or remain unevaluated pending identity review. A technical collection failure remains a pipeline failure, not a product `PASS`.
+- **Label model identity: resolved.** The user approved prefix matching; `RF18A5101` now matches `RF18A5101SR/AA` after the approved suffix normalization.
+- **FTC label/document rule boundaries:** The latest 75-SKU corpus has no remaining model-inclusion uncertainty under the approved prefix rule, so no decision on an unmatched label is needed for this run. A future valid but unmatched or unreadable label will need a separately approved severity rule before it becomes a product finding. A technical collection failure remains a pipeline failure, not a product `PASS`.
 
 No new issue code or severity is inferred in this readiness review.

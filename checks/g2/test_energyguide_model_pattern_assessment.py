@@ -6,37 +6,47 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from g2_energyguide_model_pattern_assessment import build_assessment  # noqa: E402
-from g2_label_activation import load_capacity_review_annotations  # noqa: E402
 
 
 class ModelPatternAssessmentTests(unittest.TestCase):
-    def review(self):
-        return {"contract": "CAPACITY_MODEL_REVIEW_PROJECTION_ONLY", "records": [{
-            "pdf_sha256": "a" * 64,
-            "exact_skus": ["RF90F23AEWAA", "RF90F23AECEAA", "RF90F23AECRAA"],
-            "model_review": "SOURCE_LABEL_EXPLICITLY_LISTS_TWO_PATTERNS_IDENTITY_NOT_EVALUATED",
-            "model_text_raw": "Models RF90F23AE*, RF90F23AE**",
-            "model_tokens_raw": ["RF90F23AE*", "RF90F23AE**"],
-        }]}
+    def inputs(self):
+        values = {
+            "RF18A5101SR/AA": "RF18A5101",
+            "RF90F23AECEAA": "RF90F23BE*; RF90F23AE*, RF90F23AE**",
+            "RF27CG5400SRAA": "RF27CG5400*",
+        }
+        bundle = {
+            "manifest": {"run_id": "run-1"},
+            "products": [{"exact_sku": sku} for sku in values],
+            "facts": [{"kind": "ENERGYGUIDE", "exact_sku": sku, "observations": {
+                "label_model_raw": {"state": "VALUE", "value": raw},
+                "document_sha256": {"state": "VALUE", "value": "a" * 64},
+            }} for sku, raw in values.items()],
+        }
+        review = {"contract": "CAPACITY_MODEL_REVIEW_PROJECTION_ONLY", "records": []}
+        return bundle, review
 
-    def test_each_reviewed_sku_passes_when_one_pattern_matches(self):
-        result = build_assessment({"manifest": {"run_id": "run-1"}}, self.review())
+    def test_full_population_prefix_and_multiple_tokens(self):
+        bundle, review = self.inputs()
+        result = build_assessment(bundle, review)
         self.assertEqual(result["counts"]["display"], {"PASS": 3, "NOT_EVALUATED": 0})
         by_sku = {row["exact_sku"]: row for row in result["records"]}
-        self.assertEqual(by_sku["RF90F23AEWAA"]["matching_patterns"], ["RF90F23AE*"])
-        self.assertEqual(by_sku["RF90F23AECEAA"]["matching_patterns"], ["RF90F23AE**"])
-        self.assertEqual(by_sku["RF90F23AECRAA"]["assessment"], "MODEL_PATTERN_INCLUDED")
+        self.assertEqual(by_sku["RF18A5101SR/AA"]["matching_patterns"], ["RF18A5101"])
+        self.assertEqual(by_sku["RF90F23AECEAA"]["matching_patterns"], ["RF90F23AE*", "RF90F23AE**"])
+        self.assertEqual(by_sku["RF27CG5400SRAA"]["matching_patterns"], ["RF27CG5400*"])
 
-    def test_pattern_outside_reviewed_group_is_not_assessed(self):
-        review = self.review()
-        review["records"][0]["model_review"] = "RENDER_AND_RAW_DESCRIPTOR_AGREE_IDENTITY_NOT_EVALUATED"
-        with self.assertRaisesRegex(ValueError, "scope"):
-            build_assessment({"manifest": {"run_id": "run-1"}}, review)
+    def test_nonmatching_tokens_remain_unresolved(self):
+        bundle, review = self.inputs()
+        bundle["facts"][0]["observations"]["label_model_raw"]["value"] = "RF19A5101"
+        result = build_assessment(bundle, review)
+        self.assertEqual(result["counts"]["display"], {"PASS": 2, "NOT_EVALUATED": 1})
 
-    def test_repository_review_projection_emits_the_six_approved_passes(self):
-        path = ROOT / "docs/evidence/g2-capacity-model-review.json"
-        sku_index = load_capacity_review_annotations(path)
-        source_projection = __import__("json").loads(path.read_bytes())
-        result = build_assessment({"manifest": {"run_id": "run-1"}}, source_projection)
-        self.assertEqual(result["counts"]["display"], {"PASS": 6, "NOT_EVALUATED": 0})
-        self.assertTrue({row["exact_sku"] for row in result["records"]}.issubset(sku_index))
+    def test_missing_fact_or_changed_review_pdf_fails(self):
+        bundle, review = self.inputs()
+        bundle["facts"].pop()
+        with self.assertRaisesRegex(ValueError, "cover"):
+            build_assessment(bundle, review)
+        bundle, review = self.inputs()
+        review["records"] = [{"exact_skus": ["RF18A5101SR/AA"], "pdf_sha256": "b" * 64}]
+        with self.assertRaisesRegex(ValueError, "hash differs"):
+            build_assessment(bundle, review)

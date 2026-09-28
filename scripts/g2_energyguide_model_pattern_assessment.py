@@ -1,6 +1,7 @@
-"""Assess only the reviewed EnergyGuide model-pattern groups approved for inclusion."""
+"""Compare every refrigerator EnergyGuide model token with its exact PDP SKU."""
 
 import json
+import re
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -8,17 +9,28 @@ from typing import Any
 from g2_samsung_suffix import normalize_terminal_aa
 
 
-CONTRACT = "G2_ENERGYGUIDE_REVIEW_BOUND_MODEL_PATTERN_ASSESSMENT_V1"
-REVIEW_KIND = "SOURCE_LABEL_EXPLICITLY_LISTS_TWO_PATTERNS_IDENTITY_NOT_EVALUATED"
+CONTRACT = "G2_ENERGYGUIDE_MODEL_PREFIX_ASSESSMENT_V2"
+REVIEW_CONTRACT = "CAPACITY_MODEL_REVIEW_PROJECTION_ONLY"
+TOKEN = re.compile(r"[A-Z0-9][A-Z0-9*]*\Z")
 
 
-def _matches(pattern: str, identifier: str) -> bool:
-    """`*` means exactly one upper-case alphanumeric character in this reviewed slice."""
-    if not isinstance(pattern, str) or not isinstance(identifier, str) or len(pattern) != len(identifier):
+def _tokens(raw: str) -> list[str]:
+    """Keep every model in a model field, including line/comma/semicolon lists."""
+    if not isinstance(raw, str):
+        return []
+    pieces = re.split(r"[,;\r\n]+", raw)
+    values = [part.strip() for part in pieces]
+    return list(dict.fromkeys(value for value in values if TOKEN.fullmatch(value)))
+
+
+def _matches_prefix(pattern: str, identifier: str) -> bool:
+    """The printed token must agree from its first through last position."""
+    if not pattern or len(pattern) > len(identifier):
         return False
     return all(
-        (token == "*" and value.isascii() and value.isalnum() and (value.isupper() or value.isdigit()) or token == value)
-        for token, value in zip(pattern, identifier)
+        (symbol == "*" and character.isascii() and character.isalnum()
+         and (character.isupper() or character.isdigit())) or symbol == character
+        for symbol, character in zip(pattern, identifier)
     )
 
 
@@ -26,52 +38,79 @@ def build_assessment(bundle: dict[str, Any], review: dict[str, Any]) -> dict[str
     run_id = bundle.get("manifest", {}).get("run_id")
     if not isinstance(run_id, str) or not run_id:
         raise ValueError("Canonical bundle run ID is missing")
-    if review.get("contract") != "CAPACITY_MODEL_REVIEW_PROJECTION_ONLY":
+    if review.get("contract") != REVIEW_CONTRACT:
         raise ValueError("Model review contract is invalid")
-    records = []
+    products = bundle.get("products")
+    if not isinstance(products, list) or not products:
+        raise ValueError("Canonical product population is missing")
+    skus = [item.get("exact_sku") for item in products if isinstance(item, dict)]
+    if len(skus) != len(products) or len(set(skus)) != len(skus):
+        raise ValueError("Canonical product SKU population is invalid")
+    facts = [item for item in bundle.get("facts", []) if item.get("kind") == "ENERGYGUIDE"]
+    by_sku = {item.get("exact_sku"): item for item in facts}
+    if len(by_sku) != len(facts) or set(by_sku) != set(skus):
+        raise ValueError("EnergyGuide model facts do not cover the product population")
+
+    reviewed = {}
     for group in review.get("records", []):
-        if group.get("model_review") != REVIEW_KIND:
-            continue
-        pdf_sha256 = group.get("pdf_sha256")
-        patterns = group.get("model_tokens_raw")
-        skus = group.get("exact_skus")
-        if (not isinstance(pdf_sha256, str) or not isinstance(patterns, list) or len(patterns) != 2
-                or not all(isinstance(x, str) and x for x in patterns)
-                or not isinstance(skus, list) or not skus):
-            raise ValueError("Reviewed model-pattern group is malformed")
-        for exact_sku in skus:
-            normalized = normalize_terminal_aa(exact_sku)
-            identifier = normalized["normalized_identifier"]
-            matching = [pattern for pattern in patterns if _matches(pattern, identifier)]
-            records.append({
-                "exact_sku": exact_sku,
-                "normalized_identifier": identifier,
-                "normalization": normalized,
-                "label_pdf_sha256": pdf_sha256,
-                "label_model_text": group.get("model_text_raw"),
-                "approved_patterns": patterns,
-                "matching_patterns": matching,
-                "display_outcome": "PASS" if matching else "NOT_EVALUATED",
-                "assessment": "MODEL_PATTERN_INCLUDED" if matching else "MODEL_PATTERN_NOT_INCLUDED",
-            })
-    skus = [record["exact_sku"] for record in records]
-    if not records or len(skus) != len(set(skus)):
-        raise ValueError("Reviewed model-pattern SKU scope is invalid")
+        if not isinstance(group, dict):
+            raise ValueError("Model review record is invalid")
+        for sku in group.get("exact_skus", []):
+            if sku in reviewed:
+                raise ValueError("Model review SKU is duplicated")
+            reviewed[sku] = group
+
+    records = []
+    for sku in sorted(skus):
+        observations = by_sku[sku].get("observations", {})
+        model = observations.get("label_model_raw", {})
+        document = observations.get("document_sha256", {})
+        if model.get("state") != "VALUE" or document.get("state") != "VALUE":
+            raise ValueError("Selected EnergyGuide model or PDF hash is unavailable")
+        raw = model.get("value")
+        sha256 = document.get("value")
+        if not isinstance(sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", sha256):
+            raise ValueError("EnergyGuide PDF hash is invalid")
+        tokens = _tokens(raw)
+        if not tokens:
+            raise ValueError("Selected EnergyGuide model tokens are invalid")
+        group = reviewed.get(sku)
+        if group is not None:
+            if group.get("pdf_sha256") != sha256:
+                raise ValueError("Reviewed EnergyGuide PDF hash differs from live fact")
+            reviewed_tokens = group.get("model_tokens_raw")
+            if reviewed_tokens is not None and set(tokens) != set(reviewed_tokens):
+                raise ValueError("Reviewed model tokens differ from live fact")
+        normalized = normalize_terminal_aa(sku)
+        identifier = normalized["normalized_identifier"]
+        matches = [token for token in tokens if _matches_prefix(token, identifier)]
+        records.append({
+            "exact_sku": sku,
+            "normalized_identifier": identifier,
+            "normalization": normalized,
+            "label_pdf_sha256": sha256,
+            "label_model_text": raw,
+            "approved_patterns": tokens,
+            "matching_patterns": matches,
+            "display_outcome": "PASS" if matches else "NOT_EVALUATED",
+            "assessment": "MODEL_PREFIX_INCLUDED" if matches else "MODEL_PREFIX_NOT_INCLUDED",
+        })
+
     counts = Counter(record["display_outcome"] for record in records)
     return {
         "contract": CONTRACT,
         "status": "PASS",
-        "source": {"execution_run_id": run_id, "review_projection_contract": review["contract"]},
+        "source": {"execution_run_id": run_id, "review_projection_contract": REVIEW_CONTRACT},
         "scope": {
-            "assessment_mode": "REVIEW_BOUND_TWO_PATTERN_INCLUSION_ONLY",
-            "wildcard_grammar": "STAR_MATCHES_EXACTLY_ONE_UPPERCASE_ALPHANUMERIC_CHARACTER",
-            "reviewed_label_hashes_only": sorted({record["label_pdf_sha256"] for record in records}),
+            "assessment_mode": "ALL_SELECTED_LABEL_MODEL_TOKENS_PREFIX_INCLUSION",
+            "wildcard_grammar": "STAR_MATCHES_ONE_UPPERCASE_ALPHANUMERIC_CHARACTER",
+            "suffix_rule": "ONLY_TERMINAL_AA_OR_SLASH_AA_REMOVAL",
         },
-        "decision_rule": "PASS when one explicitly reviewed label pattern matches after approved terminal AA removal; no broader model matching is enabled.",
+        "decision_rule": "PASS when any complete printed token matches the normalized PDP model prefix; unresolved tokens do not become a mismatch finding.",
         "counts": {"population": len(records), "display": {key: counts.get(key, 0) for key in ("PASS", "NOT_EVALUATED")}},
         "assessment_enabled": True,
         "overall_product_compliance": "NOT_EVALUATED",
-        "records": sorted(records, key=lambda item: item["exact_sku"]),
+        "records": records,
     }
 
 

@@ -10,11 +10,11 @@ from g2_energyguide_model_report_adapter import attach_model_pattern_assessment,
 
 
 class ModelPatternReportAdapterTests(unittest.TestCase):
-    def test_attaches_only_reviewed_sku_slice(self):
+    def test_attaches_full_sku_scope(self):
         bundle = {"manifest": {"run_id": "run-1"}, "products": [{"exact_sku": "SKU-A"}, {"exact_sku": "SKU-B"}]}
-        assessment = {"contract": "G2_ENERGYGUIDE_REVIEW_BOUND_MODEL_PATTERN_ASSESSMENT_V1", "status": "PASS", "assessment_enabled": True,
-                      "source": {"execution_run_id": "run-1"}, "counts": {"display": {"PASS": 1, "NOT_EVALUATED": 0}},
-                      "records": [{"exact_sku": "SKU-A", "display_outcome": "PASS", "assessment": "MODEL_PATTERN_INCLUDED", "matching_patterns": ["SKU-*"], "label_pdf_sha256": "a" * 64}]}
+        assessment = {"contract": "G2_ENERGYGUIDE_MODEL_PREFIX_ASSESSMENT_V2", "status": "PASS", "assessment_enabled": True,
+                      "source": {"execution_run_id": "run-1"}, "counts": {"display": {"PASS": 2, "NOT_EVALUATED": 0}},
+                      "records": [{"exact_sku": sku, "display_outcome": "PASS", "assessment": "MODEL_PREFIX_INCLUDED", "matching_patterns": ["SKU-"], "label_pdf_sha256": "a" * 64} for sku in ("SKU-A", "SKU-B")]}
         with tempfile.NamedTemporaryFile(delete=False) as artifact:
             artifact.write(b"assessment")
             artifact_path = artifact.name
@@ -22,6 +22,6 @@ class ModelPatternReportAdapterTests(unittest.TestCase):
             section = attach_model_pattern_assessment(bundle, assessment, artifact_path)
             report = {"run_id": "run-1", "assessment_enabled": False, "rows": [{"exact_sku": "SKU-A"}, {"exact_sku": "SKU-B"}]}
             add_model_pattern_section(report, section)
-            self.assertEqual(report["energyguide_model_pattern"]["coverage"], {"reviewed_exact_skus": 1})
+            self.assertEqual(report["energyguide_model_pattern"]["coverage"], {"assessed_exact_skus": 2})
         finally:
             Path(artifact_path).unlink(missing_ok=True)
