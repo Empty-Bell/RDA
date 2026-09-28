@@ -1,5 +1,15 @@
 # Approved family-specific model comparison rule (2026-09-23)
 
+History resolution approval (2026-09-29): the user chose independent source
+reconfirmation without manual review. When a finding is absent in one complete
+validated run, its current model grade may be PASS but history keeps the
+finding OPEN with a confirmation candidate. RESOLVED requires a distinct later
+complete source run to observe the same exact SKU under the same implemented
+ruleset without that finding. A failed run, same-run replay, model leaving the
+audited population, or rule change cannot confirm resolution. A finding that
+returns after RESOLVED is REOPENED. Keep this lifecycle separate from the
+current-run PASS/HIGH/MEDIUM/LOW grade; it adds no compliance issue code.
+
 Printed EnergyGuide model identity approval (2026-09-28, all product families):
 the user confirmed that a printed label model and PDP model belong to the same
 model group when their fixed prefix agrees, even if the printed trailing star

@@ -21,6 +21,7 @@ from refresh_pages_washer_tv import build as refresh_washer_tv
 from refresh_pages_washer_tv import flat
 from refresh_pages_epa_families import build as refresh_epa
 from refresh_pages_tablet import build as refresh_tablet
+from audit_history import advance as advance_history, model_transitions, rule_fingerprint
 
 
 SLUGS = {
@@ -118,7 +119,7 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
     current = {(row["family"], row["model"]): row for row in after["records"]}
     if len(current) != len(after["records"]):
         raise ValueError("Unified dashboard has duplicate exact models")
-    changed, new, resolved = [], [], []
+    changed = []
     for key in sorted(prior.keys() & current.keys()):
         old, row = prior[key], current[key]
         old_issues = {item["issue_code"] for item in old.get("findings", [])}
@@ -127,21 +128,24 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
             item = {"family": key[0], "model": key[1],
                     "previous_grade": old["grade"], "grade": row["grade"]}
             changed.append(item)
-            if not old_issues and new_issues:
-                new.append(item)
-            if old_issues and not new_issues:
-                resolved.append(item)
     after["run_number"] = before["run_number"] + 1
     after["built_at"] = datetime.now(timezone.utc).isoformat()
     after["source_note"] = (
         f"All 11 families were freshly collected and assessed from unified GitHub Actions run {run_id}. "
         "Each exact SKU has one PASS/HIGH/MEDIUM/LOW control grade; whole-product legal compliance is not evaluated."
     )
+    history, finding_transitions = advance_history(
+        read(docs_source / "history.json"), after, run_id,
+        rule_fingerprint(Path(__file__).resolve().parents[1]))
+    write(docs / "history.json", history)
+    lifecycle = model_transitions(finding_transitions, before, after)
     after["run_comparison"] = {
         "available": True, "current_run": after["run_number"],
         "previous_run": before["run_number"], "previous_built_at": before["built_at"],
-        "source_runs_changed": True, "new": new, "resolved": resolved,
-        "recurred": [], "changed": changed,
+        "source_runs_changed": True, "new": lifecycle["new"],
+        "resolved": lifecycle["resolved"], "recurred": lifecycle["recurred"],
+        "pending_confirmation": lifecycle["pending_confirmation"],
+        "changed": changed,
         "scope_added": [{"family": f, "model": m} for f, m in sorted(current.keys() - prior.keys())],
         "scope_removed": [{"family": f, "model": m} for f, m in sorted(prior.keys() - current.keys())],
     }

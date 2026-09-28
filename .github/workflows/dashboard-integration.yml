@@ -10,6 +10,10 @@ on:
       - 'docs/report-data.csv'
       - 'docs/report-all-fields.csv'
       - 'docs/report-data.xlsx'
+      - 'docs/history.json'
+      - 'docs/app.js'
+      - 'scripts/audit_history.py'
+      - 'scripts/test_audit_history.py'
       - 'scripts/dashboard_integration_gate.py'
       - '.github/workflows/dashboard-integration.yml'
 
@@ -31,6 +35,8 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version-file: '.python-version'
+      - name: Replay finding history lifecycle cases
+        run: python scripts/test_audit_history.py
       - name: Download exact accepted family assessment artifacts
         shell: bash
         run: |

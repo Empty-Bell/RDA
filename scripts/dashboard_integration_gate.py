@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 import os
 
+from audit_history import CONTRACT as HISTORY_CONTRACT, snapshot_facts
+
 
 GRADES = ("PASS", "HIGH", "MEDIUM", "LOW")
 
@@ -125,6 +127,31 @@ def build(docs, manifest_path, artifacts_root, out, unified_report_path=None):
     if covered != set(family_by_name) or len(covered) != len(accepted) + len(pending):
         errors.append("INTEGRATION_MANIFEST_FAMILY_COVERAGE_DIFFERS")
     unified_run_id = manifest.get("unified_source_run_id")
+    history_path = docs / "history.json"
+    if unified_run_id:
+        if not history_path.is_file():
+            errors.append("VALIDATED_HISTORY_MISSING")
+        else:
+            history = read(history_path)
+            runs = history.get("validated_runs", [])
+            latest = runs[-1] if runs else {}
+            models, _, digest = snapshot_facts(snapshot)
+            if (history.get("contract") != HISTORY_CONTRACT
+                    or latest.get("run_id") != str(unified_run_id)
+                    or latest.get("run_number") != snapshot.get("run_number")
+                    or latest.get("model_count") != len(records)
+                    or latest.get("snapshot_digest") != digest
+                    or {tuple(row) for row in latest.get("population", [])} != set(models)):
+                errors.append("VALIDATED_HISTORY_DIFFERS")
+            for kind in ("new", "resolved", "recurred", "pending_confirmation"):
+                expected = {(event["family"], event["model"])
+                            for event in history.get("events", [])
+                            if event.get("run_id") == str(unified_run_id)
+                            and event.get("kind") == kind.upper()}
+                actual = {(row["family"], row["model"])
+                          for row in snapshot.get("run_comparison", {}).get(kind, [])}
+                if expected != actual:
+                    errors.append(f"HISTORY_TRANSITIONS_DIFFER:{kind}")
     unified = read(unified_report_path) if unified_report_path else None
     if unified_run_id:
         if unified is None:
