@@ -39,3 +39,13 @@ Nine distinct source-label PDFs were visually reviewed. US-panel annual values f
 All seven previous model HIGH candidates now have visually verified printed patterns. One source prints `DW80BB7070*` for PDP `DW80BB707012AA`; another prints `DW80CG54******` for PDP `DW80CG5450SRAA`. The approved refrigerator prefix rule is family-specific. The dishwasher outcome awaits the user's trailing-wildcard decision; no model grade is changed yet.
 
 The source-match report and comparison package now require byte-identical EPA and label inputs. ENERGY STAR, numeric and model controls carry a shared collection-plus-match fingerprint; the comparison controls also carry the exact package SHA-256. The final gate checks these before issuing a report. Hosted numeric comparison [36387187973](https://github.com/Empty-Bell/RDA/actions/runs/36387187973) completed with 21/21 US label values, 20 equal PDP/label pairs, one missing PDP value, and two label/EPA differences. Final readiness [36387214479](https://github.com/Empty-Bell/RDA/actions/runs/36387214479) is BLOCKED only on the seven dishwasher model-pattern suffix decisions. The follow-up assessment run [36387784389](https://github.com/Empty-Bell/RDA/actions/runs/36387784389) passed its workflow after tightening the missing-PDP rule, while formal readiness remains BLOCKED.
+
+## Closed after user approval
+
+The user approved the shared printed-label fixed-prefix rule across product
+families, including unequal trailing-star and PDP suffix lengths. The hosted
+[model comparison](https://github.com/Empty-Bell/RDA/actions/runs/36393471484)
+now matches all 21 dishwasher PDP models to at least one visually reviewed
+label token. [Final readiness](https://github.com/Empty-Bell/RDA/actions/runs/36393493953)
+has zero gaps. The accepted dishwasher family result is recorded in
+[G3_DISHWASHER_ACCEPTANCE_RECORD.md](G3_DISHWASHER_ACCEPTANCE_RECORD.md).

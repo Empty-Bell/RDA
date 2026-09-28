@@ -38,3 +38,13 @@ those seven SKUs after visual review and the approved rule.
 G3 overall remains open for the other product families. The mixed-family
 GitHub Pages snapshot is a collection of family run results, not one unified
 audit execution.
+
+The mixed-family [GitHub Pages dashboard](https://empty-bell.github.io/RDA/)
+was refreshed as snapshot Run #16. [Pages deployment
+36401802250](https://github.com/Empty-Bell/RDA/actions/runs/36401802250)
+succeeded, and a direct read of its published `model-data.json` returned the
+same dishwasher counts and final assessment run ID. The 557-model dashboard,
+557-row CSV, 458,747-field CSV, and two-sheet Excel export were reconciled;
+the Excel and CSV downloads returned HTTP 200 from Pages. Prior-run JSON
+evidence remains unchanged; the 21 current dishwasher details are saved under
+the final assessment run ID.

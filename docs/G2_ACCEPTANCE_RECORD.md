@@ -1,5 +1,12 @@
 # Phase 2 / G2 refrigerator acceptance — PASS, 2026-09-28
 
+The cross-family printed-label fixed-prefix update was replayed in hosted
+[G2 acceptance run 36396477314](https://github.com/Empty-Bell/RDA/actions/runs/36396477314)
+and [label quality review 36396477343](https://github.com/Empty-Bell/RDA/actions/runs/36396477343).
+The acceptance artifact remains PASS with 75 exact SKUs, 36 findings,
+FTC/EPA 75/75, 75 label-model records and no readiness gaps.
+
+
 **Accepted scope:** the current US Samsung refrigerator population and the
 approved ENERGY STAR publication, EnergyGuide numeric, and EnergyGuide model
 identity controls. This is an audit execution and evidence gate. It does not
