@@ -1,6 +1,7 @@
 """Project exact dishwasher SKUs to current EPA literal and positional-pattern rows."""
 
 import argparse
+import hashlib
 import json
 import re
 from datetime import datetime, timezone
@@ -75,6 +76,8 @@ def build(observation_root, epa_root, out):
     states = ("MATCHED_CURRENT_EPA_ROW", "MATCHED_CURRENT_EPA_PATTERN_CANDIDATES", "NO_CURRENT_EPA_ROW",
               "AMBIGUOUS_CURRENT_EPA_ROWS", "UNRESOLVED_CURRENT_EPA_PATTERN_ENCODING")
     report = {"contract": "G3_DISHWASHER_CURRENT_EPA_MATCH_V2", "created_at": datetime.now(timezone.utc).isoformat(),
+              "source_observation_sha256": hashlib.sha256((Path(observation_root)/"sku-document-index.json").read_bytes()).hexdigest(),
+              "source_epa_sha256": hashlib.sha256((Path(epa_root)/"samsung-current-rows.json").read_bytes()).hexdigest(),
               "scope": "Exact SKU to current EPA literal or approved positional-pattern candidates only; no certification or compliance assessment",
               "pattern_grammar": "STAR_OR_QUESTION_MATCHES_EXACTLY_ONE_UPPERCASE_ALPHANUMERIC_CHARACTER",
               "status": "PASS", "sku_count": len(rows), "epa_row_count": len(epa),

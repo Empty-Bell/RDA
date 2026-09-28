@@ -5,13 +5,13 @@ from scripts.g3_dishwasher_assessment import readiness
 
 class DishwasherReadinessTests(unittest.TestCase):
     def sources(self):
-        energy = {"status": "PASS", "source_run_id": "run-1", "records": [
+        energy = {"status": "PASS", "source_bundle_fingerprint": "sha256:bundle-1", "records": [
             {"exact_sku": "SKU-A", "outcome": "PASS"}]}
-        numeric = {"status": "PASS", "source_run_id": "run-1", "rows": [
+        numeric = {"status": "PASS", "source_bundle_fingerprint": "sha256:bundle-1", "source_package_sha256": "a" * 64, "rows": [
             {"exact_sku": "SKU-A", "energyguide_annual_energy": {"state": "VALUE", "value": "225"},
              "pdp_annual_energy": {"state": "VALUE", "value": "225"},
              "pdp_vs_energyguide_energy": "EQUAL"}]}
-        model = {"status": "PASS", "source_run_id": "run-1", "records": [
+        model = {"status": "PASS", "source_bundle_fingerprint": "sha256:bundle-1", "source_package_sha256": "a" * 64, "records": [
             {"exact_sku": "SKU-A", "pdp_vs_energyguide_model": "EQUAL",
              "energyguide_model_pattern_source": "HUMAN_VISUAL_REVIEW"}]}
         return energy, numeric, model
@@ -29,12 +29,22 @@ class DishwasherReadinessTests(unittest.TestCase):
 
     def test_unreviewed_ocr_mismatch_and_mixed_runs_block(self):
         energy, numeric, model = self.sources()
-        model["source_run_id"] = "run-2"
+        model["source_bundle_fingerprint"] = "sha256:bundle-2"
         model["records"][0].update(pdp_vs_energyguide_model="DIFFERENT",
                                    energyguide_model_pattern_source="RAW_OCR")
         codes = {gap["code"] for gap in readiness(energy, numeric, model)["gaps"]}
-        self.assertIn("CONTROL_SOURCE_RUN_UNBOUND", codes)
+        self.assertIn("CONTROL_SOURCE_BUNDLE_UNBOUND", codes)
         self.assertIn("RAW_OCR_MODEL_MISMATCH_UNREVIEWED", codes)
+
+    def test_different_comparison_packages_block(self):
+        energy, numeric, model = self.sources()
+        model["source_package_sha256"] = "b" * 64
+        self.assertIn("CONTROL_COMPARISON_PACKAGE_DIFFERS", {gap["code"] for gap in readiness(energy,numeric,model)["gaps"]})
+
+    def test_visual_prefix_with_unresolved_star_count_stays_blocked(self):
+        energy,numeric,model=self.sources()
+        model["records"][0].update(normalized_pdp_model="DW80CG5450SR",pdp_vs_energyguide_model="DIFFERENT",energyguide_model_patterns_visual_reviewed=["DW80CG54******"])
+        self.assertIn("MODEL_PATTERN_SUFFIX_POLICY_UNAPPROVED",{gap["code"] for gap in readiness(energy,numeric,model)["gaps"]})
 
 
 if __name__ == "__main__":

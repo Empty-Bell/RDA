@@ -1,4 +1,7 @@
 # Current task continuation — 2026-09-24
+## G3 dishwasher label review — 2026-09-28
+
+Visual review resolved US EnergyGuide annual values across all 21 SKUs. Two former PASS candidates have confirmed label/PDP versus EPA differences and are MEDIUM candidates. Source provenance checks and a dashboard caution are staged. Seven model outcomes await the dishwasher-specific trailing-wildcard decision; then rerun and inspect the hosted chain. See [G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md](G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md).
 
 ## G3 dishwasher readiness — 2026-09-28
 

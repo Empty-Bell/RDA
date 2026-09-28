@@ -31,3 +31,11 @@ models and only then update the public dashboard grades.
 
 No new severity or issue code is assigned to the missing observations. A
 source gap cannot be silently interpreted as PASS or HIGH.
+
+## Follow-up: visual label review
+
+Nine distinct source-label PDFs were visually reviewed. US-panel annual values for all 21 SKUs are keyed by PDF SHA-256 in [`evidence/g3-dishwasher-energyguide-visual-review.json`](evidence/g3-dishwasher-energyguide-visual-review.json). A replay against the saved package finds 20 PDP/label annual pairs equal and one PDP value absent. `DW50T6060US/AA` and `DW60R2014US/AA` have label/PDP values of 259 and 265 kWh/year versus 240 kWh/year in the EPA candidate rows. Under the approved G3 numeric rule these are MEDIUM candidates, pending hosted replay.
+
+All seven previous model HIGH candidates now have visually verified printed patterns. One source prints `DW80BB7070*` for PDP `DW80BB707012AA`; another prints `DW80CG54******` for PDP `DW80CG5450SRAA`. The approved refrigerator prefix rule is family-specific. The dishwasher outcome awaits the user's trailing-wildcard decision; no model grade is changed yet.
+
+The source-match report and comparison package now require byte-identical EPA and label inputs. ENERGY STAR, numeric and model controls carry a shared collection-plus-match fingerprint; the comparison controls also carry the exact package SHA-256. The final gate checks these before issuing a report. A new hosted chain and final readiness artifact remain required.

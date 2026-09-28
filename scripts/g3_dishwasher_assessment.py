@@ -1,4 +1,4 @@
-import argparse,json,os
+import argparse,json,os,re
 from collections import Counter
 from pathlib import Path
 RANK={"LOW":1,"MEDIUM":2,"HIGH":3}
@@ -8,9 +8,12 @@ def readiness(energy, numeric, model):
  """Block final verdicts until each source control is complete and bound."""
  sources={"energy_star":energy,"numeric":numeric,"model":model}
  gaps=[]
- runs={name:source.get('source_run_id') for name,source in sources.items()}
- if any(not isinstance(run,str) or not run for run in runs.values()) or len(set(runs.values()))!=1:
-  gaps.append({'code':'CONTROL_SOURCE_RUN_UNBOUND','source_runs':runs})
+ fingerprints={name:source.get('source_bundle_fingerprint') for name,source in sources.items()}
+ if any(not isinstance(fp,str) or not fp.startswith('sha256:') for fp in fingerprints.values()) or len(set(fingerprints.values()))!=1:
+  gaps.append({'code':'CONTROL_SOURCE_BUNDLE_UNBOUND','source_bundle_fingerprints':fingerprints})
+ packages={name:source.get('source_package_sha256') for name,source in sources.items() if name in ('numeric','model')}
+ if any(not isinstance(digest,str) or len(digest)!=64 for digest in packages.values()) or len(set(packages.values()))!=1:
+  gaps.append({'code':'CONTROL_COMPARISON_PACKAGE_DIFFERS','source_package_sha256':packages})
  indices={}
  for name,source in sources.items():
   if source.get('status')!='PASS': gaps.append({'code':'CONTROL_SOURCE_NOT_PASS','control':name})
@@ -30,6 +33,11 @@ def readiness(energy, numeric, model):
  for sku,row in sorted(indices.get('model',{}).items()):
   if row.get('pdp_vs_energyguide_model')=='DIFFERENT' and row.get('energyguide_model_pattern_source')!='HUMAN_VISUAL_REVIEW':
    gaps.append({'code':'RAW_OCR_MODEL_MISMATCH_UNREVIEWED','exact_sku':sku})
+  if row.get('pdp_vs_energyguide_model')=='DIFFERENT' and row.get('energyguide_model_pattern_source')=='HUMAN_VISUAL_REVIEW':
+   identifier=row.get('normalized_pdp_model','')
+   patterns=row.get('energyguide_model_patterns_visual_reviewed',[])
+   if any(identifier.startswith(re.split(r'[*?]',re.sub(r'[^A-Z0-9*?]','',value.upper()),maxsplit=1)[0]) for value in patterns if isinstance(value,str) and ('*' in value or '?' in value)):
+    gaps.append({'code':'MODEL_PATTERN_SUFFIX_POLICY_UNAPPROVED','exact_sku':sku})
   if row.get('pdp_vs_energyguide_model')=='NOT_COMPARABLE':
    gaps.append({'code':'ENERGYGUIDE_MODEL_UNRESOLVED','exact_sku':sku})
  for sku,row in sorted(indices.get('energy_star',{}).items()):

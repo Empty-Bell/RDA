@@ -1,6 +1,7 @@
 """Compare PDP exact SKU, raw EnergyGuide patterns, and current EPA models."""
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -96,6 +97,8 @@ def build(package, out):
     comparisons = ("pdp_vs_energyguide_model", "pdp_vs_epa_model", "energyguide_vs_epa_model")
     report = {
         "contract": "G3_DISHWASHER_MODEL_COMPARISON_V2", "status": "PASS",
+        "source_bundle_fingerprint": source.get("source_bundle_fingerprint"),
+        "source_package_sha256": hashlib.sha256(Path(package).read_bytes()).hexdigest(),
         "scope": "PDP exact SKU, raw EnergyGuide model patterns, and current EPA candidate model comparison only; no severity or compliance assessment",
         "counts": {name: {state: sum(row[name] == state for row in rows) for state in ("EQUAL", "DIFFERENT", "NOT_COMPARABLE")} for name in comparisons},
         "records": rows,

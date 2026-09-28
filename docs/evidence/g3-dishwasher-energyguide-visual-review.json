@@ -1,0 +1,16 @@
+{
+  "contract": "G3_DISHWASHER_US_ENERGYGUIDE_VISUAL_REVIEW_V1",
+  "status": "APPROVED",
+  "review_method": "Human visual inspection of the US EnergyGuide panel in page-01-2x.png from the immutable source PDF observation artifact; Canadian EnerGuide values excluded.",
+  "reviews": [
+    {"pdf_sha256":"ac8ce05b5acd63cbe17efba3276106e5c231b44716394c6125f84f8407d5d1b9","us_annual_energy_kwh":259,"visible_model_patterns":["DW50T6060**"]},
+    {"pdf_sha256":"010f855e310f6e1e374aada1a689701ffebe5ed4bffcbbc8ebf663aadd9ee177","us_annual_energy_kwh":265,"visible_model_patterns":["DW60R2014**"]},
+    {"pdf_sha256":"d1fae51498dc7ff60ca4a637c42c0249d5672bc1e87232131abedb50d1a5a27a","us_annual_energy_kwh":225,"visible_model_patterns":["DW70H83YE**"]},
+    {"pdf_sha256":"6fdcac4fc11d112435475548b79199151cc70f49eadce03f3020ff5e34ff9bf9","us_annual_energy_kwh":239,"visible_model_patterns":["DW80B70**A*","DW80B70**U*","DW80B60**U*"]},
+    {"pdf_sha256":"801f30ad346514ac1356d07f843b68244a8bdec2f12ea12248134d97ca8c4808","us_annual_energy_kwh":239,"visible_model_patterns":["DW80BB7070*","DW80B70**A*","DW80B70**U*","DW80B60**U*"]},
+    {"pdf_sha256":"c24bb4db4ba38bd9f915d5e5f18f3b15f433f38f812c08b271f77cc2d11588e9","us_annual_energy_kwh":239,"visible_model_patterns":["DW80CB54******","DW80CG54******","DW80CG50******"]},
+    {"pdf_sha256":"6ed1af2e794274b3c7bbc7a665eb38f63b0b54e40b562173e61a11d34fd43f07","us_annual_energy_kwh":239,"visible_model_patterns":["DW80CG4051**","DW80CG4021**"]},
+    {"pdf_sha256":"fa6be00fcbad37f662ffeb80d9efc6b641d72c04e3801eba24548e1e42164591","us_annual_energy_kwh":225,"visible_model_patterns":["DW90F8**0***"]},
+    {"pdf_sha256":"c9f97a46a624f47d03ccc11f230148b25dc946089da28f2a16472e8dac6a49fe","us_annual_energy_kwh":225,"visible_model_patterns":["DW90F8**0***","DW90H89TE**"]}
+  ]
+}

@@ -10,6 +10,22 @@ from g3_dishwasher_numeric_comparison import build  # noqa: E402
 
 
 class DishwasherNumericComparisonTests(unittest.TestCase):
+    def test_visual_us_annual_value_overrides_unclassified_ocr_candidate(self):
+        package = {"contract": "G3_DISHWASHER_COMPARISON_PACKAGE_V1", "status": "PASS", "rows": [{
+            "exact_sku": "DW50T6060US/AA",
+            "pdp_energy_raw": [{"value": "259"}],
+            "energyguide_energy_candidates_raw": [{"value_raw": "33", "role": "ANNUAL_CAPTION_CONTEXT"}],
+            "energyguide_energy_visual_reviewed": [{"pdf_sha256": "a" * 64, "value": 259}],
+            "epa_candidates_raw": [{"annual_energy_use_kwh_year": "240"}],
+        }]}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); source = root / "package.json"; source.write_text(json.dumps(package))
+            build(source, root / "out")
+            row = json.loads((root / "out" / "numeric-comparison.json").read_text())["rows"][0]
+        self.assertEqual(row["energyguide_annual_energy"], {"state": "VALUE", "value": "259"})
+        self.assertEqual(row["pdp_vs_energyguide_energy"], "EQUAL")
+        self.assertEqual(row["energyguide_vs_epa_energy"], "DIFFERENT")
+
     def test_compares_annual_energy_and_excludes_capacity_place_settings(self):
         package = {"contract": "G3_DISHWASHER_COMPARISON_PACKAGE_V1", "status": "PASS", "rows": [{
             "exact_sku": "DW80B7070US/AA",

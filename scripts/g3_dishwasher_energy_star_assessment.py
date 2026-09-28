@@ -1,5 +1,5 @@
 """Apply the approved three-point Energy Star rule to dishwasher source inputs."""
-import argparse, json
+import argparse, hashlib, json
 from pathlib import Path
 
 LOW_ISSUE="SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT"
@@ -16,6 +16,10 @@ def pdp_flag(claim):
     values=list(dict.fromkeys(values)); return values[0] if len(values)==1 else None
 
 def build(collection_root, match_path, out):
+    h=hashlib.sha256()
+    for path in (Path(collection_root)/"products.json",Path(match_path)):
+        h.update(path.read_bytes());h.update(b"\0")
+    source_bundle_fingerprint="sha256:"+h.hexdigest()
     results=[json.loads(p.read_bytes()) for p in Path(collection_root).glob("pdp/*/result.json")]
     match=json.loads(Path(match_path).read_bytes()); matches={x["exact_sku"]:x for x in match.get("rows",[])}
     records=[]
@@ -31,7 +35,7 @@ def build(collection_root, match_path, out):
         else: outcome,severity,issue="NOT_EVALUATED",None,None
         records.append({"exact_sku":sku,"epa_current_registration":{"state":reg,"match_status":m.get("match_status"),"candidate_pd_ids":m.get("candidate_pd_ids",[])},"publication_points":points,"outcome":outcome,"severity":severity,"issue_code":issue})
     counts={x:sum(r["outcome"]==x for r in records) for x in ("PASS","LOW","HIGH","NO_FINDING","NOT_EVALUATED")}
-    report={"contract":"G3_DISHWASHER_ENERGY_STAR_ASSESSMENT_V1","status":"PASS","scope":"Exact-SKU PF, PDP Next, Bridge Specs and current EPA row candidates","rule":{"registered_all_three_present":"PASS","registered_any_absent":"LOW","unregistered_any_present":"HIGH","unregistered_all_absent":"NO_FINDING","unknown":"NOT_EVALUATED"},"counts":counts,"records":records,"overall_product_compliance":"NOT_EVALUATED"}
+    report={"contract":"G3_DISHWASHER_ENERGY_STAR_ASSESSMENT_V1","status":"PASS","source_bundle_fingerprint":source_bundle_fingerprint,"scope":"Exact-SKU PF, PDP Next, Bridge Specs and current EPA row candidates","rule":{"registered_all_three_present":"PASS","registered_any_absent":"LOW","unregistered_any_present":"HIGH","unregistered_all_absent":"NO_FINDING","unknown":"NOT_EVALUATED"},"counts":counts,"records":records,"overall_product_compliance":"NOT_EVALUATED"}
     target=Path(out);target.mkdir(parents=True,exist_ok=True);(target/"energy-star-assessment.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8");print(json.dumps({"status":"PASS","counts":counts},sort_keys=True))
 
 if __name__=="__main__":
