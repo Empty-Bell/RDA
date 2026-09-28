@@ -42,7 +42,10 @@ to the exact PDP SKUs. TV now has 163 PASS and two HIGH. The remaining TV HIGH
 models are `QN77S84FAEXZA` (ENERGY STAR eligibility candidate) and
 `UN50U8000HFXZA` (EnergyGuide document missing candidate). All other family
 grades are unchanged from Run #19. The dashboard's previous-run comparison
-lists exactly these six resolutions.
+records exactly these six HIGH-to-PASS changes. They are **current-source PASS
+transitions**, not verified long-term issue resolutions. G5 must define when
+a transition is formally RESOLVED and distinguish source accessibility from
+rule changes.
 
 ## Source handling and limits
 
@@ -58,7 +61,10 @@ also passed with `single_source_run=true`, no pending family gates and no
 integrity errors. The [Pages deployment](https://github.com/Empty-Bell/RDA/actions/runs/36443523560)
 passed; the [live dashboard](https://empty-bell.github.io/RDA/) served Run #20
 with 557 models, and its JSON, both CSV exports, Excel file and a model
-evidence URL returned HTTP 200. **G7 publication is accepted for Run #20.**
+evidence URL returned HTTP 200. This verifies the live Run #20 publication,
+but does not formally accept G7: the execution guide requires G6 first and a
+validated immutable bundle, filter and mobile checks.
 
 This record does not close G5 history or G6 operational hardening/scheduling.
 It does not turn control PASS into an overall product compliance verdict.
+

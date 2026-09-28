@@ -2,6 +2,9 @@
 
 ## Unified 11-family run and dashboard Run #20 — 2026-09-29
 
+Finding stability, the three unified-run outcomes and the remaining G5–G7
+acceptance work are detailed in [RUN20_RELIABILITY_REVIEW.md](RUN20_RELIABILITY_REVIEW.md).
+
 [Hosted run 36438033553](https://github.com/Empty-Bell/RDA/actions/runs/36438033553)
 passed all 11 fresh family collection/assessment jobs and the same-run gate:
 557 exact SKUs, 485 PASS / 23 HIGH / 11 MEDIUM / 38 LOW, zero integrity
@@ -15,8 +18,10 @@ controls are accepted from this one execution; whole-product legal compliance
 is NOT_EVALUATED. The [hosted integration gate](https://github.com/Empty-Bell/RDA/actions/runs/36443526583)
 and [Pages deployment](https://github.com/Empty-Bell/RDA/actions/runs/36443523560)
 passed, and the live Run #20 JSON, CSV/Excel exports and sample evidence URL
-returned HTTP 200. G7 publication is accepted for Run #20. Remaining phase
-work is G5 history and G6 operational hardening acceptance.
+returned HTTP 200. The site is published, but formal G7 acceptance remains
+open until G6 and the immutable-bundle, filter and mobile checks in the
+execution guide pass. Remaining phase work is G5 history, G6 operational
+hardening and G7 formal publication acceptance.
 
 ## Dashboard Run #19 integrated — 2026-09-28
 

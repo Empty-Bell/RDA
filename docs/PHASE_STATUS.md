@@ -11,9 +11,10 @@ Whole-product legal compliance remains NOT_EVALUATED. The
 [hosted integration gate](https://github.com/Empty-Bell/RDA/actions/runs/36443526583)
 and [GitHub Pages deployment](https://github.com/Empty-Bell/RDA/actions/runs/36443523560)
 passed. Live Run #20 JSON, both CSV exports, Excel and a model evidence URL
-returned HTTP 200, so G7 publication is accepted for this snapshot. G5 history
-and G6 operational hardening remain separate acceptance work. Older mixed-run
-checkpoints below are historical.
+returned HTTP 200. The snapshot is publicly deployed; formal G7 acceptance
+remains open because G6 is a prerequisite and the immutable-bundle, filter and
+mobile checks are not complete. G5 history and G6 operational hardening also
+remain separate acceptance work. Older mixed-run checkpoints below are historical.
 
 Current 2026-09-28 dashboard integration: Run #19 covers all 11 accepted
 family control artifacts and 557 exact models (479 PASS / 29 HIGH / 11 MEDIUM /
