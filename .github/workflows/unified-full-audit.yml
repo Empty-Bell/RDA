@@ -14,7 +14,7 @@ jobs:
   family:
     name: Acquire and assess ${{ matrix.family }}
     runs-on: ubuntu-24.04
-    timeout-minutes: 360
+    timeout-minutes: 120
     strategy:
       fail-fast: false
       matrix:
@@ -192,7 +192,7 @@ jobs:
     name: Confirm the public project path has this run
     needs: deploy
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -200,5 +200,9 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version-file: '.python-version'
+      - name: Install browser for published desktop and mobile checks
+        run: |
+          python -m pip install --no-cache-dir playwright==1.63.0
+          python -m playwright install --with-deps chromium
       - name: Verify the public Pages bundle and source identity
-        run: python scripts/pages_smoke.py --base https://empty-bell.github.io/RDA/ --run-id '${{ github.run_id }}' --no-browser
+        run: python scripts/pages_smoke.py --base https://empty-bell.github.io/RDA/ --run-id '${{ github.run_id }}'

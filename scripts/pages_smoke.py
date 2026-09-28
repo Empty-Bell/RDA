@@ -44,6 +44,7 @@ def check(base, run_id, browser_check=True):
             page = context.new_page()
             failures = []
             page.on("pageerror", lambda error: failures.append(str(error)))
+            page.on("console", lambda message: failures.append(message.text) if message.type == "error" else None)
             page.goto(base + "?run=" + run_id + "#queue", wait_until="networkidle", timeout=60000)
             page.locator("#run-number").wait_for(timeout=20000)
             if str(model["run_number"]) not in page.locator("#run-number").inner_text():
@@ -54,7 +55,10 @@ def check(base, run_id, browser_check=True):
             if page.locator("#queue-list .queue-item").count() == 0:
                 raise ValueError(f"{mode}: severity filter did not render")
             page.locator("#queue-list .queue-item").first.locator("summary").click()
-            page.locator("#queue-list .queue-item").first.locator(".evidence-mount").locator("*", has_text="PDP").first.wait_for(timeout=20000)
+            page.wait_for_function("document.querySelector('#queue-list .queue-item .evidence-mount')?.children.length > 0",
+                                   timeout=20000)
+            if page.locator("#queue-list .queue-item .evidence-mount a[href]").count() == 0:
+                raise ValueError(f"{mode}: expanded evidence has no source link")
             page.locator("#report-grade").select_option("PASS")
             if page.locator("#report-rows .report-row").count() == 0:
                 raise ValueError(f"{mode}: report filter did not render")

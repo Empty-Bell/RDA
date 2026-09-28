@@ -20,10 +20,12 @@ Only a successful build can persist the snapshot and deploy it to Pages.
   history in Git. Once raw artifacts expire, the compact evidence and run
   identity remain, but raw source replay for that run is unavailable.
 - `publication-manifest.json` and the validated-site artifact identify the
-  exact deployed source run. To recover from a bad deployment, retrieve the
-  latest previously validated-site artifact, verify its manifest and hashes,
-  then deploy that artifact through a controlled Pages workflow. Do not rerun
-  collection or silently label an older run as current.
+  exact deployed source run. To recover from a bad deployment, dispatch
+  `Verify or restore a validated Pages bundle` with the prior successful
+  unified source run ID and attempt. Run it first with `deploy=false` to
+  check the artifact digest, source Git SHA and per-file hashes; then set
+  `deploy=true` to restore that exact bundle. Do not rerun collection or
+  silently label an older run as current.
 
 ## Schedule activation
 
@@ -40,3 +42,20 @@ evidence files without changing its 557 model grades or finding counts. The
 publication manifest now rejects reused evidence paths and mismatched
 family/model identities. Previously published unqualified URLs may still exist
 as historical files; current model links point to qualified evidence.
+
+## Measured baseline and limits
+
+The accepted Run 36438033553 used about 133 MB across 12 artifacts. Its
+slowest family jobs (TV and Refrigerator) took about 30 and 29 minutes.
+Family jobs have a 120-minute cap, and the validated site directory has a
+1 GiB build cap. A cap breach fails the workflow and cannot publish.
+
+Ruleset fingerprints normalize CRLF/LF line endings before hashing Python
+source. A platform-only checkout difference must not reset independent
+finding confirmation; the Run #21 history replay and source-digest checks are
+recorded in `G5_ACCEPTANCE_RECORD.md`.
+
+Publication bundle V2 also normalizes text line endings before hashing so a
+Windows Git checkout and the deployed Linux artifact verify to the same
+canonical content. XLSX remains byte-hashed. Legacy V1 bundles remain
+verifiable from their exact hosted artifacts for rollback.

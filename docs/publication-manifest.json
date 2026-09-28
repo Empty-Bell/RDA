@@ -1,5 +1,5 @@
 {
-  "contract": "RDA_VALIDATED_PAGES_BUNDLE_V1",
+  "contract": "RDA_VALIDATED_PAGES_BUNDLE_V2",
   "dashboard_run_number": 21,
   "files": {
     "app.js": "7072dc902e8ebf7b9b5ff42a536c677986a4e5095223d88facf9521dea0e930a",
@@ -560,12 +560,12 @@
     "evidence/36453890712_washer_WH46DBH500EVA3.json": "619c87a67c021f98004ddc617a6aa5324b734f9c001b72245e05785d6a113b3f",
     "evidence/36453890712_washer_WH46DBH500GVA3.json": "2c6c14192d16c69174db3480a2aa62935eb1571f7fd35790d393202d8b2f8a70",
     "evidence/36453890712_washer_WW25FG6B34BEA2.json": "2677b2670b892718413f060f60c6950946e4ab1f99c5d4b992b110391946a957",
-    "history.json": "87ebe759bf320fbfc28e3a0b23e76208d2334ec6a89b613b080f0f57c41e3bc3",
+    "history.json": "7f7f7cd6eef5db0eed331c135f8385511cbcf0cd43ea7faa2debfdf23dec6c3d",
     "index.html": "b79e64cc2d2f274166ac0d6efbc2ddffcab44b1eae84703684e31c7620a048be",
     "integration-manifest.json": "d4f81635d8f423eb6bee8e4f15cb488daaa623ef272a9580a427f1d90456a274",
-    "model-data.json": "bc7af68ed3622732a1c1ee7c2d153c51216c3e19235b594e47fb3f9666efa3d4",
-    "report-all-fields.csv": "61090391c734398068384641de4a504dd1b7c8cde267710854a0dfb29b44f3c1",
-    "report-data.csv": "289c8cd1c9017d84bdeeace63b4c6152aade22ae1658d7f30b25bbdaa32022c2",
+    "model-data.json": "f9d1e5a35157c95d58570ff56727596d53a28244e41a904aa3744a6815af2856",
+    "report-all-fields.csv": "704beffae791c6a92bd18ee73f0bcbaa461c3d6c61eac797552f4901def5de7c",
+    "report-data.csv": "824dd72ab859eddedcc1a05bff7cf1ed3826bb444e14a401902a18aa5b11a043",
     "report-data.xlsx": "7a0085dea6bda80c21302f45e16c04c128125d9ea4d239ecaadd9614e80aa6bb",
     "styles.css": "434b21d852105f5b2112676a8bd4a3fc9fe0f57151b1e2fcc0d7dfd41b8f9fc6"
   },

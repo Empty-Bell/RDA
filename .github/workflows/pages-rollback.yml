@@ -1,0 +1,81 @@
+name: Verify or restore a validated Pages bundle
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful unified full audit run ID containing the validated site
+        required: true
+        type: string
+      source_attempt:
+        description: Run attempt number
+        required: true
+        default: '1'
+        type: string
+      deploy:
+        description: Deploy this previously validated bundle after verification
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+      SOURCE_ATTEMPT: ${{ inputs.source_attempt }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Download and verify the exact successful source run artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$SOURCE_ATTEMPT" =~ ^[0-9]+$ ]]
+          run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}")"
+          test "$(jq -r '.path' <<< "$run")" = '.github/workflows/unified-full-audit.yml'
+          test "$(jq -r '.conclusion' <<< "$run")" = success
+          source_sha="$(jq -r '.head_sha' <<< "$run")"
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/artifacts?per_page=100" \
+            | jq -c --arg name "validated-site-${SOURCE_RUN_ID}-${SOURCE_ATTEMPT}" \
+              '[.artifacts[] | select(.expired == false and .name == $name)] | first')"
+          test "$artifact" != null
+          mkdir -p runtime/rollback
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/$(jq -r '.id' <<< "$artifact")/zip" > runtime/site.zip
+          test "sha256:$(sha256sum runtime/site.zip | cut -d' ' -f1)" = "$(jq -r '.digest' <<< "$artifact")"
+          unzip -q runtime/site.zip -d runtime/rollback
+          python scripts/publication_bundle.py verify --docs runtime/rollback --run-id "$SOURCE_RUN_ID" --source-sha "$source_sha"
+          echo "Validated rollback bundle: run ${SOURCE_RUN_ID}, attempt ${SOURCE_ATTEMPT}" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload verified bundle for an explicitly requested restore
+        if: inputs.deploy
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: runtime/rollback/
+
+  deploy:
+    if: inputs.deploy
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Restore the verified artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

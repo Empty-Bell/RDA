@@ -1,8 +1,10 @@
 """Lifecycle contracts for validated audit history."""
 
 import unittest
+from pathlib import Path
+import tempfile
 
-from audit_history import advance, empty
+from audit_history import advance, empty, rule_fingerprint
 
 
 def snapshot(number, models):
@@ -16,19 +18,33 @@ def snapshot(number, models):
 
 
 class HistoryLifecycleTest(unittest.TestCase):
+    def test_rule_fingerprint_is_checkout_line_ending_independent(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source = Path(temp) / "src" / "rule.py"
+            source.parent.mkdir()
+            source.write_bytes(b"a = 1\nb = 2\n")
+            unix = rule_fingerprint(temp)
+            source.write_bytes(b"a = 1\r\nb = 2\r\n")
+            self.assertEqual(rule_fingerprint(temp), unix)
+
     def test_independent_confirmation_and_reopening(self):
         history, first = advance(empty(), snapshot(1, [("M1", "LABEL_MISSING")]), "run-1", "rules-a")
         self.assertEqual(len(first["new"]), 1)
         history, second = advance(history, snapshot(2, [("M1", "LABEL_MISSING")]), "run-2", "rules-a")
         self.assertFalse(second["resolved"])
+        self.assertEqual(history["findings"][0]["first_seen_at"], "2026-09-01T00:00:00+00:00")
+        self.assertEqual(history["findings"][0]["latest_seen_at"], "2026-09-02T00:00:00+00:00")
         history, candidate = advance(history, snapshot(3, [("M1", None)]), "run-3", "rules-a")
         self.assertEqual(len(candidate["pending_confirmation"]), 1)
         self.assertEqual(history["findings"][0]["state"], "OPEN")
+        self.assertEqual(history["findings"][0]["confirmation_candidate"]["observed_at"],
+                         "2026-09-03T00:00:00+00:00")
         history, _ = advance(history, snapshot(4, [("M1", None)]), "failed-4", "rules-a", failed=True)
         self.assertEqual(history["findings"][0]["state"], "OPEN")
         history, confirmed = advance(history, snapshot(4, [("M1", None)]), "run-4", "rules-a")
         self.assertEqual(len(confirmed["resolved"]), 1)
         self.assertEqual(history["findings"][0]["resolved_run"], "run-4")
+        self.assertEqual(history["findings"][0]["resolved_at"], "2026-09-04T00:00:00+00:00")
         history, reopened = advance(history, snapshot(5, [("M1", "LABEL_MISSING")]), "run-5", "rules-a")
         self.assertEqual(len(reopened["recurred"]), 1)
         self.assertEqual(history["findings"][0]["state"], "REOPENED")

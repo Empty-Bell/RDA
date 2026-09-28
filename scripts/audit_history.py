@@ -40,7 +40,9 @@ def rule_fingerprint(repo_root):
     digest = hashlib.sha256()
     for path in paths:
         digest.update(path.relative_to(root).as_posix().encode() + b"\0")
-        digest.update(hashlib.sha256(path.read_bytes()).digest())
+        # A checkout on Windows may use CRLF while hosted Linux uses LF.
+        # The implemented Python rule is the same in both checkouts.
+        digest.update(hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).digest())
     return digest.hexdigest()
 
 

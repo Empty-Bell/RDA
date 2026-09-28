@@ -6,17 +6,22 @@ import json
 from pathlib import Path
 
 
-CONTRACT = "RDA_VALIDATED_PAGES_BUNDLE_V1"
+CONTRACT = "RDA_VALIDATED_PAGES_BUNDLE_V2"
+LEGACY_CONTRACT = "RDA_VALIDATED_PAGES_BUNDLE_V1"
+TEXT_SUFFIXES = {".html", ".js", ".css", ".json", ".csv"}
 CRITICAL = ("index.html", "app.js", "styles.css", "model-data.json",
             "history.json", "integration-manifest.json", "report-data.csv",
             "report-all-fields.csv", "report-data.xlsx")
 
 
-def digest(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def digest(path, contract=CONTRACT):
+    data = path.read_bytes()
+    if contract == CONTRACT and path.suffix.lower() in TEXT_SUFFIXES:
+        data = data.replace(b"\r\n", b"\n")
+    return hashlib.sha256(data).hexdigest()
 
 
-def inspect(docs, run_id, source_sha):
+def inspect(docs, run_id, source_sha, contract=CONTRACT):
     docs = Path(docs)
     model = json.loads((docs / "model-data.json").read_text(encoding="utf-8"))
     history = json.loads((docs / "history.json").read_text(encoding="utf-8"))
@@ -34,7 +39,7 @@ def inspect(docs, run_id, source_sha):
         path = docs / name
         if not path.is_file():
             raise ValueError(f"Pages file missing: {name}")
-        files[name] = digest(path)
+        files[name] = digest(path, contract)
     for row in model["records"]:
         path = docs / row["evidence_url"].removeprefix("./")
         if not path.is_file():
@@ -42,8 +47,8 @@ def inspect(docs, run_id, source_sha):
         detail = json.loads(path.read_text(encoding="utf-8"))
         if detail.get("family") != row["family"] or detail.get("model") != row["model"]:
             raise ValueError(f"Evidence identity differs: {row['family']} {row['model']}")
-        files[path.relative_to(docs).as_posix()] = digest(path)
-    return {"contract": CONTRACT, "run_id": str(run_id), "source_git_sha": source_sha,
+        files[path.relative_to(docs).as_posix()] = digest(path, contract)
+    return {"contract": contract, "run_id": str(run_id), "source_git_sha": source_sha,
             "dashboard_run_number": model["run_number"], "model_count": len(model["records"]),
             "files": dict(sorted(files.items()))}
 
@@ -57,7 +62,10 @@ def create(docs, run_id, source_sha):
 
 def verify(docs, run_id, source_sha):
     expected = json.loads((Path(docs) / "publication-manifest.json").read_text(encoding="utf-8"))
-    actual = inspect(docs, run_id, source_sha)
+    contract = expected.get("contract")
+    if contract not in {CONTRACT, LEGACY_CONTRACT}:
+        raise ValueError("Unsupported validated Pages bundle contract")
+    actual = inspect(docs, run_id, source_sha, contract)
     if expected != actual:
         raise ValueError("Validated Pages bundle hash or source identity differs")
     return actual

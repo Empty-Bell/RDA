@@ -1,5 +1,17 @@
 # Phase status
 
+Current 2026-09-29: **G5 PASS** under independent source reconfirmation.
+Run #20 first removed six TV EnergyGuide access findings; distinct complete
+[Run #21](https://github.com/Empty-Bell/RDA/actions/runs/36453890712) found
+them absent again, so all six are RESOLVED in the corrected history. Grades
+remain 485 PASS / 23 HIGH / 11 MEDIUM / 38 LOW across 557 models. A
+Windows/Linux line-ending difference in the ruleset fingerprint was corrected
+without changing assessment logic; see [G5_ACCEPTANCE_RECORD.md](G5_ACCEPTANCE_RECORD.md).
+G6 operations and G7 validated Pages publication have one successful full
+end-to-end execution; rollback rehearsal, public mobile/browser checks and the
+three-run schedule prerequisite are still being completed. Older entries below
+are historical.
+
 Current 2026-09-29: **G3/G4 bounded control execution PASS** from the
 [single hosted 11-family run 36438033553](https://github.com/Empty-Bell/RDA/actions/runs/36438033553).
 All 557 exact models have one grade: 485 PASS / 23 HIGH / 11 MEDIUM / 38 LOW;

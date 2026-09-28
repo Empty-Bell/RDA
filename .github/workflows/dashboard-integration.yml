@@ -14,6 +14,9 @@ on:
       - 'docs/app.js'
       - 'scripts/audit_history.py'
       - 'scripts/test_audit_history.py'
+      - 'scripts/test_operations.py'
+      - 'scripts/publication_bundle.py'
+      - 'scripts/reconcile_history_ruleset.py'
       - 'scripts/dashboard_integration_gate.py'
       - '.github/workflows/dashboard-integration.yml'
 
@@ -37,6 +40,14 @@ jobs:
           python-version-file: '.python-version'
       - name: Replay finding history lifecycle cases
         run: python scripts/test_audit_history.py
+      - name: Inject source, OCR, EPA, artifact and publication failures
+        run: python scripts/test_operations.py > runtime-operations-test.log
+      - name: Verify current publication bundle identity and hashes
+        shell: bash
+        run: |
+          run_id="$(python -c 'import json; print(json.load(open("docs/publication-manifest.json"))["run_id"])')"
+          source_sha="$(python -c 'import json; print(json.load(open("docs/publication-manifest.json"))["source_git_sha"])')"
+          python scripts/publication_bundle.py verify --docs docs --run-id "$run_id" --source-sha "$source_sha"
       - name: Download exact accepted family assessment artifacts
         shell: bash
         run: |
