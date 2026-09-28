@@ -1,14 +1,9 @@
 name: G3 dishwasher canonical report
 on:
  workflow_dispatch:
- workflow_run:
-  workflows: [G3 dishwasher final assessment]
-  types: [completed]
-  branches: [main]
 permissions: {actions: read, contents: read}
 jobs:
   report:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     # The dashboard is triggered only after this report succeeds.
     runs-on: ubuntu-24.04
     timeout-minutes: 5

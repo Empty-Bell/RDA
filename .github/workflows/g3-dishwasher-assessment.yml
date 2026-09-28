@@ -5,7 +5,7 @@ on:
   workflows: [G3 dishwasher EnergyGuide model comparison]
   types: [completed]
   branches: [main]
-permissions: {actions: read, contents: read}
+permissions: {actions: write, contents: read}
 jobs:
  assess:
   if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
@@ -32,3 +32,7 @@ jobs:
       name: g3-dishwasher-assessment-${{ github.run_id }}-${{ github.run_attempt }}
       path: runtime/out/
       retention-days: 14
+   - name: Start canonical report after successful assessment
+     if: success()
+     shell: bash
+     run: gh workflow run g3-dishwasher-report.yml --ref main
