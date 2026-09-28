@@ -11,6 +11,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/g3_washer_source_comparison.py'
+      - 'scripts/energyguide_model_identity.py'
+      - 'checks/g3/test_energyguide_model_identity.py'
       - '.github/workflows/g3-washer-source-comparison.yml'
 
 permissions:

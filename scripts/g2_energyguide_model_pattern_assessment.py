@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from g2_samsung_suffix import normalize_terminal_aa
+from energyguide_model_identity import matches_printed_model
 
 
 CONTRACT = "G2_ENERGYGUIDE_MODEL_PREFIX_ASSESSMENT_V2"
@@ -24,14 +25,8 @@ def _tokens(raw: str) -> list[str]:
 
 
 def _matches_prefix(pattern: str, identifier: str) -> bool:
-    """The printed token must agree from its first through last position."""
-    if not pattern or len(pattern) > len(identifier):
-        return False
-    return all(
-        (symbol == "*" and character.isascii() and character.isalnum()
-         and (character.isupper() or character.isdigit())) or symbol == character
-        for symbol, character in zip(pattern, identifier)
-    )
+    """Apply the approved shared printed-label/PDP model inclusion rule."""
+    return matches_printed_model(pattern, identifier, strip_terminal_aa=True)
 
 
 def build_assessment(bundle: dict[str, Any], review: dict[str, Any]) -> dict[str, Any]:
@@ -83,7 +78,7 @@ def build_assessment(bundle: dict[str, Any], review: dict[str, Any]) -> dict[str
                 raise ValueError("Reviewed model tokens differ from live fact")
         normalized = normalize_terminal_aa(sku)
         identifier = normalized["normalized_identifier"]
-        matches = [token for token in tokens if _matches_prefix(token, identifier)]
+        matches = [token for token in tokens if _matches_prefix(token, sku)]
         records.append({
             "exact_sku": sku,
             "normalized_identifier": identifier,
@@ -103,7 +98,7 @@ def build_assessment(bundle: dict[str, Any], review: dict[str, Any]) -> dict[str
         "source": {"execution_run_id": run_id, "review_projection_contract": REVIEW_CONTRACT},
         "scope": {
             "assessment_mode": "ALL_SELECTED_LABEL_MODEL_TOKENS_PREFIX_INCLUSION",
-            "wildcard_grammar": "STAR_MATCHES_ONE_UPPERCASE_ALPHANUMERIC_CHARACTER",
+            "wildcard_grammar": "FIXED_POSITIONS_MATCH; TRAILING_STARS_MAY_BE_EMPTY_OR_COVER_PDP_SUFFIX",
             "suffix_rule": "ONLY_TERMINAL_AA_OR_SLASH_AA_REMOVAL",
         },
         "decision_rule": "PASS when any complete printed token matches the normalized PDP model prefix; unresolved tokens do not become a mismatch finding.",

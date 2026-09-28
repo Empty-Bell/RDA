@@ -37,7 +37,7 @@ def readiness(energy, numeric, model):
    identifier=row.get('normalized_pdp_model','')
    patterns=row.get('energyguide_model_patterns_visual_reviewed',[])
    if any(identifier.startswith(re.split(r'[*?]',re.sub(r'[^A-Z0-9*?]','',value.upper()),maxsplit=1)[0]) for value in patterns if isinstance(value,str) and ('*' in value or '?' in value)):
-    gaps.append({'code':'MODEL_PATTERN_SUFFIX_POLICY_UNAPPROVED','exact_sku':sku})
+    gaps.append({'code':'MODEL_PREFIX_COMPARISON_STALE','exact_sku':sku})
   if row.get('pdp_vs_energyguide_model')=='NOT_COMPARABLE':
    gaps.append({'code':'ENERGYGUIDE_MODEL_UNRESOLVED','exact_sku':sku})
  for sku,row in sorted(indices.get('energy_star',{}).items()):

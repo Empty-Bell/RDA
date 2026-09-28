@@ -41,6 +41,12 @@ class ModelPatternAssessmentTests(unittest.TestCase):
         result = build_assessment(bundle, review)
         self.assertEqual(result["counts"]["display"], {"PASS": 2, "NOT_EVALUATED": 1})
 
+    def test_extra_trailing_stars_may_be_empty(self):
+        bundle,review=self.inputs()
+        bundle["facts"][0]["observations"]["label_model_raw"]["value"]="RF18A5101SR*****"
+        result=build_assessment(bundle,review)
+        self.assertEqual(result["counts"]["display"],{"PASS":3,"NOT_EVALUATED":0})
+
     def test_missing_fact_or_changed_review_pdf_fails(self):
         bundle, review = self.inputs()
         bundle["facts"].pop()

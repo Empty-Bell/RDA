@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/g3-tv-source-comparison.yml'
       - 'scripts/g3_tv_source_comparison.py'
+      - 'scripts/energyguide_model_identity.py'
+      - 'checks/g3/test_energyguide_model_identity.py'
       - 'scripts/g3_tv_energyguide_collect.py'
       - 'scripts/g3_tv_energyguide_observe.py'
       - 'scripts/g3_tv_energyguide_review_queue.py'
@@ -53,7 +55,7 @@ jobs:
           python -m pip check
           python scripts/runtime_integrity.py prepare
       - name: Verify TV inaccessible-label severity and failure gate
-        run: python -m unittest checks/g3/test_tv_energyguide_readability.py -v
+        run: python -m unittest checks/g3/test_tv_energyguide_readability.py checks/g3/test_energyguide_model_identity.py -v
       - name: Download exact TV label, EPA, and PDP artifacts
         shell: bash
         run: |

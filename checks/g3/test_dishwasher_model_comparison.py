@@ -10,6 +10,17 @@ from g3_dishwasher_model_comparison import build, matches_exact, patterns_overla
 
 
 class DishwasherModelComparisonTests(unittest.TestCase):
+    def test_printed_label_prefix_can_match_with_different_star_count(self):
+        package = {"rows": [{"exact_sku": "DW80CG5450SRAA",
+            "energyguide_model_patterns_visual_reviewed": [{"value_raw": "DW80CB54******; DW80CG54******"}],
+            "epa_candidates_raw": []}]}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); source = root / "package.json"; source.write_text(json.dumps(package))
+            build(source, root / "out")
+            record = json.loads((root / "out" / "model-comparison.json").read_text())["records"][0]
+        self.assertEqual(record["pdp_vs_energyguide_model"], "EQUAL")
+        self.assertEqual(record["matching_energyguide_patterns"], ["DW80CG54******"])
+
     def test_preserves_wildcards_and_compares_all_three_sources(self):
         self.assertTrue(matches_exact("DW90F8**0***", "DW90F89P0USRAA"))
         self.assertTrue(patterns_overlap("DW90F8**0***", "DW90F89P0USR"))

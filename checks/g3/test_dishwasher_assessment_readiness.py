@@ -44,10 +44,10 @@ class DishwasherReadinessTests(unittest.TestCase):
         model["source_package_sha256"] = "b" * 64
         self.assertIn("CONTROL_COMPARISON_PACKAGE_DIFFERS", {gap["code"] for gap in readiness(energy,numeric,model)["gaps"]})
 
-    def test_visual_prefix_with_unresolved_star_count_stays_blocked(self):
+    def test_old_model_comparison_with_matching_fixed_prefix_stays_blocked(self):
         energy,numeric,model=self.sources()
         model["records"][0].update(normalized_pdp_model="DW80CG5450SR",pdp_vs_energyguide_model="DIFFERENT",energyguide_model_patterns_visual_reviewed=["DW80CG54******"])
-        self.assertIn("MODEL_PATTERN_SUFFIX_POLICY_UNAPPROVED",{gap["code"] for gap in readiness(energy,numeric,model)["gaps"]})
+        self.assertIn("MODEL_PREFIX_COMPARISON_STALE",{gap["code"] for gap in readiness(energy,numeric,model)["gaps"]})
 
     def test_missing_pdp_gets_low_only_with_label_epa_agreement(self):
         energy,numeric,model=self.sources()

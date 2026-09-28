@@ -8,6 +8,8 @@ import os
 from pathlib import Path
 import re
 
+from energyguide_model_identity import matches_printed_model, normalize_label, normalize_pdp
+
 
 CONTRACT = "G3_TV_MODEL_IDENTITY_CANDIDATES_V1"
 MODEL_PATTERN_CHARS = re.compile(r"[A-Z0-9*/?./-]+\Z", re.I)
@@ -41,6 +43,18 @@ def model_prefix_match(pattern, exact_sku):
             "match_kind": "POSITIONAL_PREFIX; * = ONE A-Z/0-9 CHARACTER",
             "matched_prefix_raw": exact_sku[:len(pattern)],
             "unmatched_sku_suffix_raw": exact_sku[len(pattern):]}
+
+
+def label_model_match(pattern, exact_sku):
+    """Apply the shared printed-label rule; EPA candidates remain positional."""
+    if not matches_printed_model(pattern, exact_sku):
+        return None
+    compact_pattern, compact_sku = normalize_label(pattern), normalize_pdp(exact_sku)
+    length = min(len(compact_pattern), len(compact_sku))
+    return {"pattern_raw": pattern, "exact_sku_raw": exact_sku,
+            "match_kind": "PRINTED_LABEL_FIXED_PREFIX; TRAILING_STARS_AND_PDP_SUFFIX_ALLOWED",
+            "matched_prefix_raw": compact_sku[:length],
+            "unmatched_sku_suffix_raw": compact_sku[length:]}
 
 
 def normalized_pattern_match(pattern, exact_sku):
@@ -187,7 +201,7 @@ def main():
                 for pattern in split_model_candidates(raw):
                     if pattern not in label_patterns:
                         label_patterns.append(pattern)
-                    match = model_prefix_match(pattern, sku)
+                    match = label_model_match(pattern, sku)
                     if match:
                         label_matches.append({**match, "pdf_sha256": document["pdf_sha256"],
                                               "context_raw": model.get("context_raw"),

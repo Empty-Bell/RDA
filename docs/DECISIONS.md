@@ -1,5 +1,18 @@
 # Approved family-specific model comparison rule (2026-09-23)
 
+Printed EnergyGuide model identity approval (2026-09-28, all product families):
+the user confirmed that a printed label model and PDP model belong to the same
+model group when their fixed prefix agrees, even if the printed trailing star
+count and remaining PDP suffix length differ. Keep all printed model tokens;
+one matching token is sufficient. Fixed characters appearing after internal
+stars must still match the corresponding PDP positions, so a conflicting
+variant letter is not ignored. Trailing stars can cover zero remaining PDP
+characters; an unmatched PDP configuration suffix is allowed. This shared
+rule applies only to label/PDP model inclusion. EPA Current registration must
+continue to use its independent dataset-specific matching and valid-search
+requirements; a label match alone never establishes EPA registration.
+
+
 Refrigerator EnergyGuide model identity approval (2026-09-28): the user approved
 a printed label model token as matching when it agrees with the beginning of
 the PDP model after the already approved terminal `AA`/`/AA` normalization.

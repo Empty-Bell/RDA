@@ -6,6 +6,8 @@ import json
 import re
 from pathlib import Path
 
+from energyguide_model_identity import matches_printed_model
+
 
 def exact(value):
     value = re.sub(r"[^A-Z0-9]", "", str(value).upper())
@@ -76,7 +78,7 @@ def build(package, out):
         reviewed_labels = candidate_values(item.get("energyguide_model_patterns_visual_reviewed", []))
         labels = reviewed_labels or raw_labels
         epa = unique_values(item.get("epa_candidates_raw", []), "model_number")
-        pdp_label = relation([sku], labels, lambda a, b: matches_exact(b, a))
+        pdp_label = relation([sku], labels, lambda a, b: matches_printed_model(b, a, strip_terminal_aa=True))
         pdp_epa = relation([sku], epa, lambda a, b: matches_exact(b, a))
         label_epa = relation(labels, epa, patterns_overlap)
         rows.append({
@@ -91,7 +93,7 @@ def build(package, out):
             "pdp_vs_energyguide_model": pdp_label,
             "pdp_vs_epa_model": pdp_epa,
             "energyguide_vs_epa_model": label_epa,
-            "matching_energyguide_patterns": [x for x in labels if matches_exact(x, sku)],
+            "matching_energyguide_patterns": [x for x in labels if matches_printed_model(x, sku, strip_terminal_aa=True)],
             "assessment": "NOT_EVALUATED",
         })
     comparisons = ("pdp_vs_energyguide_model", "pdp_vs_epa_model", "energyguide_vs_epa_model")

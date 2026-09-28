@@ -19,6 +19,7 @@ on:
       - 'scripts/g2_energyguide_numeric_assessment.py'
       - 'scripts/g2_energyguide_numeric_report_adapter.py'
       - 'scripts/g2_energyguide_model_pattern_assessment.py'
+      - 'scripts/energyguide_model_identity.py'
       - 'scripts/g2_energyguide_model_report_adapter.py'
       - 'scripts/g2_refrigerator_control_summary.py'
       - 'scripts/g2_samsung_suffix.py'
