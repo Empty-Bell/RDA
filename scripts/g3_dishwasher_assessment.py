@@ -3,8 +3,50 @@ from collections import Counter
 from pathlib import Path
 RANK={"LOW":1,"MEDIUM":2,"HIGH":3}
 def load(p): return json.loads(Path(p).read_bytes())
+
+def readiness(energy, numeric, model):
+ """Block final verdicts until each source control is complete and bound."""
+ sources={"energy_star":energy,"numeric":numeric,"model":model}
+ gaps=[]
+ runs={name:source.get('source_run_id') for name,source in sources.items()}
+ if any(not isinstance(run,str) or not run for run in runs.values()) or len(set(runs.values()))!=1:
+  gaps.append({'code':'CONTROL_SOURCE_RUN_UNBOUND','source_runs':runs})
+ indices={}
+ for name,source in sources.items():
+  if source.get('status')!='PASS': gaps.append({'code':'CONTROL_SOURCE_NOT_PASS','control':name})
+  records=source.get('rows' if name=='numeric' else 'records',[])
+  if not isinstance(records,list) or not records:
+   gaps.append({'code':'CONTROL_RECORDS_MISSING','control':name});continue
+  index={row.get('exact_sku'):row for row in records if isinstance(row,dict)}
+  if len(index)!=len(records) or None in index: gaps.append({'code':'CONTROL_SKU_DUPLICATE_OR_MISSING','control':name})
+  indices[name]=index
+ if len(indices)!=3 or set(indices['energy_star'])!=set(indices['numeric']) or set(indices['energy_star'])!=set(indices['model']):
+  gaps.append({'code':'CONTROL_SKU_COVERAGE_DIFFERS'})
+ for sku,row in sorted(indices.get('numeric',{}).items()):
+  if row.get('energyguide_annual_energy',{}).get('state')!='VALUE':
+   gaps.append({'code':'US_ENERGYGUIDE_ANNUAL_UNRESOLVED','exact_sku':sku})
+  if row.get('pdp_vs_energyguide_energy')=='NOT_COMPARABLE' and row.get('pdp_annual_energy',{}).get('state')=='VALUE':
+   gaps.append({'code':'PDP_LABEL_NUMERIC_UNRESOLVED','exact_sku':sku})
+ for sku,row in sorted(indices.get('model',{}).items()):
+  if row.get('pdp_vs_energyguide_model')=='DIFFERENT' and row.get('energyguide_model_pattern_source')!='HUMAN_VISUAL_REVIEW':
+   gaps.append({'code':'RAW_OCR_MODEL_MISMATCH_UNREVIEWED','exact_sku':sku})
+  if row.get('pdp_vs_energyguide_model')=='NOT_COMPARABLE':
+   gaps.append({'code':'ENERGYGUIDE_MODEL_UNRESOLVED','exact_sku':sku})
+ for sku,row in sorted(indices.get('energy_star',{}).items()):
+  if row.get('outcome')=='NOT_EVALUATED': gaps.append({'code':'ENERGY_STAR_UNRESOLVED','exact_sku':sku})
+ return {'contract':'G3_DISHWASHER_FORMAL_READINESS_V1','status':'BLOCKED' if gaps else 'READY_FOR_ASSESSMENT',
+         'sku_count':len(indices.get('energy_star',{})),'gaps':gaps}
+
 def build(energy,numeric,model,out):
- e={x['exact_sku']:x for x in load(energy)['records']}; n={x['exact_sku']:x for x in load(numeric)['rows']}; m={x['exact_sku']:x for x in load(model)['records']}
+ es_source,nu_source,mo_source=load(energy),load(numeric),load(model)
+ gate=readiness(es_source,nu_source,mo_source)
+ d=Path(out);d.mkdir(parents=True,exist_ok=True)
+ (d/'readiness.json').write_text(json.dumps(gate,indent=2)+'\n',encoding='utf-8')
+ if gate['status']!='READY_FOR_ASSESSMENT':
+  print(json.dumps({'status':'BLOCKED','sku_count':gate['sku_count'],
+                    'gap_count':len(gate['gaps']),'gap_codes':dict(Counter(x['code'] for x in gate['gaps']))},sort_keys=True))
+  return
+ e={x['exact_sku']:x for x in es_source['records']}; n={x['exact_sku']:x for x in nu_source['rows']}; m={x['exact_sku']:x for x in mo_source['records']}
  if not e or set(e)!=set(n) or set(e)!=set(m): raise ValueError('Assessment SKU coverage differs')
  rows=[]; all_findings=[]
  for sku in sorted(e):
@@ -29,6 +71,6 @@ def build(energy,numeric,model,out):
   labels=', '.join(mo.get('energyguide_model_patterns_raw',[])) or 'none observed';epa_models=', '.join(mo.get('epa_current_model_candidates_raw',[])) or 'none matched'
   md.append(f"| {sku} | {row['display_outcome']} | {mo['pdp_vs_energyguide_model']} | {mo['pdp_vs_epa_model']} | {mo['energyguide_vs_epa_model']} | {nu['pdp_vs_energyguide_energy']} | {nu['energyguide_vs_epa_energy']} | {', '.join(x['issue_code'] for x in row['findings']) or '—'} |")
   details.append({'exact_sku':sku,'outcome':row['display_outcome'],'energyguide_patterns_raw':mo.get('energyguide_model_patterns_raw',[]),'epa_models_raw':mo.get('epa_current_model_candidates_raw',[]),'model_comparisons':[mo[k] for k in ('pdp_vs_energyguide_model','pdp_vs_epa_model','energyguide_vs_epa_model')],'energy_comparisons':[nu[k] for k in ('pdp_vs_energyguide_energy','energyguide_vs_epa_energy')],'issue_codes':[f['issue_code'] for f in row['findings']]})
- d=Path(out);d.mkdir(parents=True,exist_ok=True);(d/'assessment.json').write_text(json.dumps(report,indent=2)+'\n');(d/'assessment.md').write_text('\n'.join(md)+'\n');(d/'evidence-by-sku.json').write_text(json.dumps(details,indent=2)+'\n');summary=os.getenv('GITHUB_STEP_SUMMARY');Path(summary).write_text('\n'.join(md)+'\n',encoding='utf-8') if summary else None;print(json.dumps({'status':'PASS','sku_count':len(rows),'finding_count':len(all_findings),'counts':report['counts'],'by_sku':details},sort_keys=True))
+ (d/'assessment.json').write_text(json.dumps(report,indent=2)+'\n');(d/'assessment.md').write_text('\n'.join(md)+'\n');(d/'evidence-by-sku.json').write_text(json.dumps(details,indent=2)+'\n');summary=os.getenv('GITHUB_STEP_SUMMARY');Path(summary).write_text('\n'.join(md)+'\n',encoding='utf-8') if summary else None;print(json.dumps({'status':'PASS','sku_count':len(rows),'finding_count':len(all_findings),'counts':report['counts'],'by_sku':details},sort_keys=True))
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--energy-star',required=True);p.add_argument('--numeric',required=True);p.add_argument('--model',required=True);p.add_argument('--out',required=True);a=p.parse_args();build(a.energy_star,a.numeric,a.model,a.out)

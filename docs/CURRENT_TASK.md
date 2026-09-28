@@ -1,5 +1,15 @@
 # Current task continuation — 2026-09-24
 
+## G3 dishwasher readiness — 2026-09-28
+
+After G2 acceptance, the dishwasher candidate chain was replayed. Its
+21-model final report cannot be formally accepted: 15 US EnergyGuide annual
+values remain unselected, seven raw-OCR model mismatches lack visual
+confirmation, and the three control inputs lack one shared source run ID.
+The assessment now emits a BLOCKED readiness artifact instead of issuing
+new PASS/HIGH results from those gaps. See
+[G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md](G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md).
+
 ## G2 refrigerator accepted — 2026-09-28
 
 G2 is **PASS for the current refrigerator population and approved controls**.

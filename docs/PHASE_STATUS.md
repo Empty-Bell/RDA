@@ -1,5 +1,13 @@
 # Phase status
 
+Updated 2026-09-28 after G2 acceptance: G0/G1/G2 are accepted for their
+recorded scopes; see [G2_ACCEPTANCE_RECORD.md](G2_ACCEPTANCE_RECORD.md).
+G3 remains **BLOCKED** pending source and control closure. Dishwasher's
+21-model candidate assessment has 15 unselected US label annual values,
+seven unreviewed OCR model mismatches and unbound control run identities;
+see [G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md](G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md).
+Older G2 open statements below are historical checkpoints.
+
 Updated 2026-09-28 after successful rerun
 [36371823748](https://github.com/Empty-Bell/RDA/actions/runs/36371823748):
 the two previously redirected refrigerator PDPs opened their exact models;
