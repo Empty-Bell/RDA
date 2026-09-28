@@ -1,0 +1,162 @@
+"""Build one reviewable Pages snapshot from one accepted unified source run.
+
+This is a source-bound build step. It writes to a separate output directory;
+the published docs tree is never changed until its integration gate passes.
+"""
+
+import argparse
+from datetime import datetime, timezone
+import json
+from pathlib import Path
+import shutil
+from types import SimpleNamespace
+
+from dashboard_integration_gate import build as integration_gate
+from g3_epa_family_reassessment import build as reassess_epa
+from refresh_pages_refrigerator import build as refresh_refrigerator
+from refresh_pages_dishwasher import build as refresh_dishwasher
+from refresh_pages_washer_tv import build as refresh_washer_tv
+from refresh_pages_epa_families import build as refresh_epa
+from refresh_pages_tablet import build as refresh_tablet
+
+
+SLUGS = {
+    "냉장고": "refrigerator", "식기세척기": "dishwasher", "세탁기": "washer",
+    "TV": "tv", "레인지": "range", "쿡탑": "cooktop", "의류건조기": "dryer",
+    "후드": "hood", "모니터": "monitor", "컴퓨터": "computer", "태블릿": "tablet",
+}
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def write(path, value):
+    Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def build(docs_source, artifact_root, unified_report, out, attempt):
+    docs_source, artifact_root, out = map(Path, (docs_source, artifact_root, out))
+    gate = read(unified_report)
+    run_id = str(gate.get("run_id", ""))
+    if (gate.get("contract") != "RDA_UNIFIED_FULL_RUN_GATE_V1" or gate.get("execution_status") != "PASS"
+            or gate.get("single_source_run") is not True or gate.get("family_count") != len(SLUGS)):
+        raise ValueError("Unified source execution has not passed")
+    if out.exists():
+        raise ValueError("Output directory must be new to preserve the previous build")
+    docs = out / "docs"
+    shutil.copytree(docs_source, docs)
+    before = read(docs / "model-data.json")
+    source = artifact_root / "unified"
+    g2 = source / "refrigerator"
+    refresh_refrigerator(docs, g2 / "assessment/reassessment.json", g2 / "g2-control-source.zip")
+    dishwasher = source / "dishwasher"
+    refresh_dishwasher(
+        docs, dishwasher / "assessment/assessment.json",
+        dishwasher / "numeric/numeric-comparison.json",
+        dishwasher / "model/model-comparison.json",
+        dishwasher / "energy-star/energy-star-assessment.json",
+        dishwasher / "package/comparison-package.json", run_id,
+    )
+    refresh_washer_tv(SimpleNamespace(
+        docs=str(docs),
+        washer_assessment=str(source / "washer/assessment/assessment.json"),
+        washer_comparison=str(source / "washer/comparison/source-comparison-candidates.json"),
+        washer_collection=str(source / "washer/collection"),
+        tv_assessment=str(source / "tv/assessment/assessment.json"),
+        tv_comparison=str(source / "tv/comparison/source-comparison-candidates.json"),
+        tv_collection=str(source / "tv/combined"),
+    ))
+    epa_manifest = read(docs_source / "g3-epa-family-replay-manifest.json")
+    for item in epa_manifest["families"]:
+        item["source_run_id"] = run_id
+    manifest_path = out / "unified-epa-manifest.json"
+    write(manifest_path, epa_manifest)
+    epa_assessments = out / "epa-reassessment"
+    reassess_epa(manifest_path, source, epa_assessments)
+    refresh_epa(docs, manifest_path, epa_assessments, source)
+    tablet = source / "tablet"
+    refresh_tablet(docs, tablet / "assessment/assessment.json",
+                   tablet / "epa-candidates/candidates/tablet-epa-source-candidates.json",
+                   tablet / "collection")
+
+    after = read(docs / "model-data.json")
+    prior = {(row["family"], row["model"]): row for row in before["records"]}
+    current = {(row["family"], row["model"]): row for row in after["records"]}
+    if len(current) != len(after["records"]):
+        raise ValueError("Unified dashboard has duplicate exact models")
+    changed, new, resolved = [], [], []
+    for key in sorted(prior.keys() & current.keys()):
+        old, row = prior[key], current[key]
+        old_issues = {item["issue_code"] for item in old.get("findings", [])}
+        new_issues = {item["issue_code"] for item in row.get("findings", [])}
+        if old["grade"] != row["grade"] or old_issues != new_issues:
+            item = {"family": key[0], "model": key[1],
+                    "previous_grade": old["grade"], "grade": row["grade"]}
+            changed.append(item)
+            if not old_issues and new_issues:
+                new.append(item)
+            if old_issues and not new_issues:
+                resolved.append(item)
+    after["run_number"] = before["run_number"] + 1
+    after["built_at"] = datetime.now(timezone.utc).isoformat()
+    after["source_note"] = (
+        f"All 11 families were freshly collected and assessed from unified GitHub Actions run {run_id}. "
+        "Each exact SKU has one PASS/HIGH/MEDIUM/LOW control grade; whole-product legal compliance is not evaluated."
+    )
+    after["run_comparison"] = {
+        "available": True, "current_run": after["run_number"],
+        "previous_run": before["run_number"], "previous_built_at": before["built_at"],
+        "source_runs_changed": True, "new": new, "resolved": resolved,
+        "recurred": [], "changed": changed,
+        "scope_added": [{"family": f, "model": m} for f, m in sorted(current.keys() - prior.keys())],
+        "scope_removed": [{"family": f, "model": m} for f, m in sorted(prior.keys() - current.keys())],
+    }
+    for family in after["families"]:
+        family["note"] = f"통합 실행 {run_id}의 현재 원본과 승인된 판정 규칙을 적용했습니다."
+    (docs / "model-data.json").write_text(
+        json.dumps(after, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+
+    accepted = []
+    for family, slug in SLUGS.items():
+        if family in {"냉장고", "식기세척기", "세탁기", "TV", "태블릿"}:
+            filename = "reassessment.json" if family == "냉장고" else "assessment.json"
+        else:
+            filename = "energy-star-assessment.json"
+        report_file = f"unified/{slug}/assessment/{filename}"
+        report = read(artifact_root / report_file)
+        accepted.append({"family": family, "run_id": run_id,
+                         "workflow_path": ".github/workflows/unified-full-audit.yml",
+                         "artifact_prefix": f"unified-family-{run_id}-{attempt}-{slug}",
+                         "report_file": report_file,
+                         "report_contract": report["contract"]})
+    manifest = {"contract": "RDA_INTEGRATION_MANIFEST_V1",
+                "unified_source_run_id": run_id,
+                "accepted_family_artifacts": accepted,
+                "accepted_snapshot_pending_refresh": [],
+                "family_acceptance_pending": []}
+    write(docs / "integration-manifest.json", manifest)
+    local_artifacts = out / "integration-input"
+    for item in accepted:
+        path = local_artifacts / item["family"] / item["report_file"]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(artifact_root / item["report_file"], path)
+    result_code = integration_gate(docs, docs / "integration-manifest.json",
+                                   local_artifacts, out / "integration-gate")
+    if result_code:
+        raise ValueError("Unified Pages snapshot differs from source assessments")
+    report = read(out / "integration-gate/integration-report.json")
+    if len(report["accepted_family_artifacts"]) != len(SLUGS):
+        raise ValueError("Unified Pages snapshot lacks a family artifact")
+    print(json.dumps({"status": "PASS", "run_id": run_id,
+                      "dashboard_run_number": after["run_number"],
+                      "model_count": len(after["records"]),
+                      "changed": len(changed)}, ensure_ascii=False), flush=True)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    for name in ("docs", "artifacts-root", "unified-report", "out", "attempt"):
+        parser.add_argument("--" + name, required=True)
+    args = parser.parse_args()
+    build(args.docs, args.artifacts_root, args.unified_report, args.out, args.attempt)
