@@ -27,14 +27,15 @@ Only a successful build can persist the snapshot and deploy it to Pages.
   `deploy=true` to restore that exact bundle. Do not rerun collection or
   silently label an older run as current.
 
-## Schedule activation
+## Schedule
 
-Keep this workflow manually dispatched until three consecutive complete
-source runs with different run IDs pass the source, dashboard and public Pages
-checks. A failed run resets the streak. Once that condition is met, enable a
-weekly Monday 09:13 KST schedule (Monday 00:13 UTC); each scheduled run uses
-the same gates and publication path. The minute avoids GitHub's top-of-hour
-schedule congestion.
+The workflow runs weekly Monday 09:13 KST (Monday 00:13 UTC) using the same
+source, dashboard and public Pages gates as manual dispatch. It was activated
+after three consecutive distinct complete successful runs following the
+failed Range source run: 36461106905, 36465858969 and 36470031260. A failed
+scheduled collection still blocks publication and leaves the last validated
+dashboard available. The minute avoids GitHub's top-of-hour schedule
+congestion.
 
 ## Known historical correction
 

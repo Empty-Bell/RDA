@@ -2,6 +2,8 @@ name: Unified 11-family full audit
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '13 0 * * 1'
 
 permissions:
   contents: read

@@ -1,16 +1,18 @@
 # Phase status
 
-Current 2026-09-29: **G5 PASS** under independent source reconfirmation.
-Run #20 first removed six TV EnergyGuide access findings; distinct complete
-[Run #21](https://github.com/Empty-Bell/RDA/actions/runs/36453890712) found
-them absent again, so all six are RESOLVED in the corrected history. Grades
-remain 485 PASS / 23 HIGH / 11 MEDIUM / 38 LOW across 557 models. A
-Windows/Linux line-ending difference in the ruleset fingerprint was corrected
-without changing assessment logic; see [G5_ACCEPTANCE_RECORD.md](G5_ACCEPTANCE_RECORD.md).
-G6 operations and G7 validated Pages publication have one successful full
-end-to-end execution; rollback rehearsal, public mobile/browser checks and the
-three-run schedule prerequisite are still being completed. Older entries below
-are historical.
+Current 2026-09-29: **G5, G6 and G7 PASS** for the approved bounded audit
+scope. [Runs #22](https://github.com/Empty-Bell/RDA/actions/runs/36461106905),
+[#23](https://github.com/Empty-Bell/RDA/actions/runs/36465858969) and
+[#24](https://github.com/Empty-Bell/RDA/actions/runs/36470031260) are three
+consecutive distinct full 11-family successes after a failed exact-SKU Range
+redirect run. Each passed source, integration, publication and public desktop/
+mobile checks. All three have the same 557 exact models, 485 PASS / 23 HIGH /
+11 MEDIUM / 38 LOW, and zero per-model grade/finding-code changes. Run #24 is
+live on [GitHub Pages](https://empty-bell.github.io/RDA/). The weekly Monday
+09:13 KST schedule is enabled. G5's six TV findings are RESOLVED only after
+independent reconfirmation. See [G5_ACCEPTANCE_RECORD.md](G5_ACCEPTANCE_RECORD.md)
+and [G6_G7_ACCEPTANCE_RECORD.md](G6_G7_ACCEPTANCE_RECORD.md). Older entries
+below are historical.
 
 Current 2026-09-29: **G3/G4 bounded control execution PASS** from the
 [single hosted 11-family run 36438033553](https://github.com/Empty-Bell/RDA/actions/runs/36438033553).

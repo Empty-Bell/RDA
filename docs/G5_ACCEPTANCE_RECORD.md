@@ -29,3 +29,10 @@ No assessment/comparison rule files changed between the historical snapshot
 commit `c533b1f` and the Run #21 source commit `8597057`; all three saved
 snapshot grade/finding digests were verified before replay. The correction
 changes only lifecycle history and Run #21 comparison presentation.
+
+Three later distinct complete runs, [#22](https://github.com/Empty-Bell/RDA/actions/runs/36461106905),
+[#23](https://github.com/Empty-Bell/RDA/actions/runs/36465858969) and
+[#24](https://github.com/Empty-Bell/RDA/actions/runs/36470031260), kept the
+same 557 exact models and identical per-model grades/finding codes. The six
+independently resolved TV findings remain `RESOLVED`; 82 other finding keys
+remain `OPEN` in Run #24 history.

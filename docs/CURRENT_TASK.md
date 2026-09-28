@@ -1,5 +1,19 @@
 # Current task continuation — 2026-09-24
 
+## G5–G7 closed — 2026-09-29
+
+G5 history, G6 operations and G7 validated GitHub Pages publication are
+**PASS** for the approved bounded controls. Three distinct consecutive full
+11-family executions [#22](https://github.com/Empty-Bell/RDA/actions/runs/36461106905),
+[#23](https://github.com/Empty-Bell/RDA/actions/runs/36465858969) and
+[#24](https://github.com/Empty-Bell/RDA/actions/runs/36470031260) passed.
+The latest [dashboard](https://empty-bell.github.io/RDA/) has 557 models:
+485 PASS / 23 HIGH / 11 MEDIUM / 38 LOW. Exact model populations, grades and
+finding-code sets were unchanged across all three. The Monday 09:13 KST
+weekly schedule now uses the same publication gates. See
+[G6_G7_ACCEPTANCE_RECORD.md](G6_G7_ACCEPTANCE_RECORD.md). Earlier entries
+below describe historical checkpoints.
+
 ## Unified 11-family run and dashboard Run #20 — 2026-09-29
 
 Finding stability, the three unified-run outcomes and the remaining G5–G7
