@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/g2_population.py'
       - 'scripts/g2_pdp.py'
+      - 'docs/evidence/g2-pdp-redirect-watch.json'
       - 'scripts/g2_epa_current_index_samsung_capture.py'
       - 'scripts/g2_energy_star_publication_points.py'
       - 'scripts/g2_energy_star_source_capture.py'

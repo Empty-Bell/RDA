@@ -1,0 +1,9 @@
+{
+  "contract": "G2_PDP_REDIRECT_WATCH_V1",
+  "source_run_id": 36369246125,
+  "exact_skus": [
+    "RF90F23BECRAA",
+    "RF90F29AEWAA"
+  ],
+  "purpose": "Probe observed wrong-model redirects before the full refrigerator PDP collection; never change the audited population or verdict."
+}

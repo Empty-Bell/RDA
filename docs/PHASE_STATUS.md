@@ -1,5 +1,12 @@
 # Phase status
 
+Updated 2026-09-28 after run
+[36369246125](https://github.com/Empty-Bell/RDA/actions/runs/36369246125):
+G2 remains formally open. Live refrigerator PDP identity was 73/75; two
+PF-listed variants redirected to a different exact model. The source failure
+is preserved, not counted as PASS. See the incident at the top of
+[G2_FORMAL_READINESS_2026-09-28.md](G2_FORMAL_READINESS_2026-09-28.md).
+
 Updated 2026-09-28: G2 remains formally open. Latest hosted refrigerator pilot
 [36357733075](https://github.com/Empty-Bell/RDA/actions/runs/36357733075)
 and saved-artifact replay

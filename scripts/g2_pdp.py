@@ -58,6 +58,36 @@ def coverage(products, results):
             'population_count':len(population),'attempted_count':len(results),'counts':counts,'rows':rows}
 
 
+def require_full_identity_coverage(products, results):
+    """Stop before downstream collection when an exact PDP is unavailable."""
+    result = coverage(products, results)
+    if result['counts']['NOT_ATTEMPTED']:
+        raise ValueError('G2a PDP identity collection left exact SKUs unattempted')
+    failed = [item for item in results if item['status'] == 'FAILED']
+    if failed:
+        details = []
+        for item in failed:
+            target = item.get('requested_url', '')
+            final = item.get('final_url', '')
+            relation = f' redirected to {final}' if final and final != target.rstrip('/') else ''
+            details.append(f"{item['exact_sku']}{relation}")
+        raise ValueError('Exact PDP identity failed for ' + ', '.join(details))
+    return result
+
+
+def select_redirect_watch(products, watch):
+    """Choose source-observed redirect risks only while still in the live scope."""
+    if watch.get('contract') != 'G2_PDP_REDIRECT_WATCH_V1':
+        raise ValueError('PDP redirect watch contract is invalid')
+    skus = watch.get('exact_skus')
+    if not isinstance(skus, list) or not skus or any(not isinstance(sku, str) or not sku for sku in skus) or len(set(skus)) != len(skus):
+        raise ValueError('PDP redirect watch SKU list is invalid')
+    by_sku = {product['exact_sku']: product for product in products}
+    if len(by_sku) != len(products):
+        raise ValueError('PDP redirect watch population has duplicate SKUs')
+    return [by_sku[sku] for sku in skus if sku in by_sku]
+
+
 def collect_samples(products, output):
     from playwright.sync_api import sync_playwright
     output=Path(output);output.mkdir(parents=True,exist_ok=False)

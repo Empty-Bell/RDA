@@ -2,7 +2,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
-from g2_pdp import coverage, select_sample, verify_identity
+from g2_pdp import coverage, require_full_identity_coverage, select_redirect_watch, select_sample, verify_identity
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -66,6 +66,22 @@ class Coverage(unittest.TestCase):
         r=coverage(self.products,[{'exact_sku':'A','status':'VERIFIED_EXACT_IDENTITY'},{'exact_sku':'B','status':'FAILED'}])
         self.assertEqual(r['counts'],{'VERIFIED_EXACT_IDENTITY':1,'FAILED':1,'NOT_ATTEMPTED':2})
         self.assertEqual(sum(r['counts'].values()),r['population_count'])
+    def test_full_identity_gate_reports_wrong_model_redirect_before_downstream_work(self):
+        results=[{'exact_sku':sku,'status':'VERIFIED_EXACT_IDENTITY'} for sku in ('A','B','C')]
+        results.append({'exact_sku':'D','status':'FAILED',
+                        'requested_url':'https://www.samsung.com/us/example-sku-d',
+                        'final_url':'https://www.samsung.com/us/example-sku-other/'})
+        with self.assertRaisesRegex(ValueError,'D redirected to https://www.samsung.com/us/example-sku-other/'):
+            require_full_identity_coverage(self.products,results)
+    def test_full_identity_gate_rejects_missing_attempts(self):
+        with self.assertRaisesRegex(ValueError,'unattempted'):
+            require_full_identity_coverage(self.products,[{'exact_sku':'A','status':'VERIFIED_EXACT_IDENTITY'}])
+    def test_redirect_watch_only_probes_models_still_in_live_population(self):
+        watch={'contract':'G2_PDP_REDIRECT_WATCH_V1','exact_skus':['D','OLD']}
+        self.assertEqual([item['exact_sku'] for item in select_redirect_watch(self.products,watch)],['D'])
+        watch['exact_skus']=['D','D']
+        with self.assertRaisesRegex(ValueError,'watch SKU list'):
+            select_redirect_watch(self.products,watch)
     def test_unknown_sku(self):
         with self.assertRaises(ValueError):coverage(self.products,[{'exact_sku':'OTHER','status':'FAILED'}])
     def test_duplicate_result(self):

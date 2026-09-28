@@ -1,5 +1,33 @@
 # G2 refrigerator formal acceptance readiness — 2026-09-28
 
+## New live source incident — run 36369246125
+
+[Run 36369246125](https://github.com/Empty-Bell/RDA/actions/runs/36369246125)
+failed after about 29 minutes. The preserved artifact
+`g2-pilot-36369246125-1` (ID 10948868293) shows 75/75 PDP attempts,
+73 exact identities and two failures:
+
+| Requested exact SKU | Live final PDP SKU | Observation |
+|---|---|---|
+| `RF90F23BECRAA` | `RF90F29BECRAA` | 23-cu.ft. request redirected to 29-cu.ft. product |
+| `RF90F29AEWAA` | `RF90F29AECRAA` | White-glass request redirected to another color |
+
+Both SKUs remain in the 75-SKU PF grouped population but are not separate
+rendered PLP cards in this capture. The preceding successful pilot had verified
+both exact PDP URLs; this is a changed Samsung source response. Their saved
+redirected pages contain another SKU's current page identity, so neither is
+eligible for a PASS or for borrowing the destination model's facts. No source
+scope change or new compliance issue code is inferred. The originally reported
+`Comparison inputs do not cover the exact-SKU population` was a late secondary
+error after these two PDP failures. The collector now writes PDP coverage and
+stops before EPA/label OCR when any exact PDP identity fails, reporting the
+requested SKU and final redirect URL in the checkpoint.
+The two source-observed SKUs are also checked in a small early PDP preflight
+while they remain in the live PF population. A repeat redirect now stops before
+the other PDP visits; a successful preflight still requires the ordinary full
+collection and exact identity gate. This watch does not exclude products or
+alter a regulatory result.
+
 ## Source and result
 
 Latest successful hosted refrigerator pilot: [run 36357733075](https://github.com/Empty-Bell/RDA/actions/runs/36357733075), commit `4ca94072`, artifact `g2-pilot-36357733075-1` (ID 10945720032), bundle run ID `52b6584e4c1244928eb2d057affd14fb`. Its saved report/dashboard replay passed [run 36359469658](https://github.com/Empty-Bell/RDA/actions/runs/36359469658). The replay proves artifact consistency, not G2 phase acceptance.

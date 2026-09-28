@@ -18,7 +18,7 @@ from regaudit.facts import TYPES
 from regaudit.report import summarize_bundle, verify_report_source_observations
 from g2_population import observation, population_records
 from source_recon import FAMILIES
-from g2_pdp import select_sample, collect_samples, coverage, verify_identity
+from g2_pdp import select_sample, select_redirect_watch, collect_samples, coverage, require_full_identity_coverage, verify_identity
 from g2_normalized import normalize_source_pdp
 from g2_label_collect import collect_energyguide_documents
 from g2_label_activation import (
@@ -341,6 +341,13 @@ def main():
         # G2a requires an exact-SKU PDP identity collection for the entire current
         # population. The coverage gate below rejects any unattempted SKU.
         selected = select_sample(products, sku, limit=len(products))
+        redirect_watch = json.loads(
+            (ROOT / "docs/evidence/g2-pdp-redirect-watch.json").read_text(encoding="utf-8")
+        )
+        watched = select_redirect_watch(products, redirect_watch)
+        if watched:
+            watched_results = collect_samples(watched, out / "pdp-preflight")
+            require_full_identity_coverage(watched, watched_results)
         samples = [
             {
                 "exact_sku": sku,
@@ -352,6 +359,10 @@ def main():
         samples.extend(
             collect_samples([p for p in selected if p["exact_sku"] != sku], out / "pdp-samples")
         )
+        pdp_coverage = coverage(products, samples)
+        with (out / "pdp-coverage.json").open("x", encoding="utf-8", newline="\n") as stream:
+            stream.write(dumps(pdp_coverage))
+        require_full_identity_coverage(products, samples)
         current_index_dir = out / "epa-current-index"
         current_index_env = {**os.environ, "RDA_EXECUTION_ID": run_id}
         subprocess.run(
@@ -600,15 +611,10 @@ def main():
                 refs,
                 label_sku,
             )
-        pdp_coverage = coverage(products, samples)
-        if pdp_coverage["counts"]["NOT_ATTEMPTED"]:
-            raise ValueError("G2a PDP identity collection left exact SKUs unattempted")
         label_selection_summary = summarize_selection_outcomes(label_selection_outcomes)
         capacity_selection_summary = summarize_capacity_selection_outcomes(
             capacity_selection_outcomes
         )
-        with (out / "pdp-coverage.json").open("x", encoding="utf-8", newline="\n") as stream:
-            stream.write(dumps(pdp_coverage))
         bundle["manifest"]["completed_at"] = datetime.now(timezone.utc).isoformat()
         validate_bundle(bundle)
         verify_evidence_files(bundle, out)
@@ -714,6 +720,7 @@ def main():
         )
     except Exception as error:
         checkpoint["error_class"] = type(error).__name__
+        checkpoint["error_message"] = str(error)
         print("G2_PILOT_FAILED: " + str(error), file=sys.stderr)
     finally:
         (out / "checkpoint.json").write_text(dumps(checkpoint), encoding="utf-8")
