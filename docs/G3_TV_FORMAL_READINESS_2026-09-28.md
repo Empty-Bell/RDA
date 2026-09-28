@@ -1,4 +1,8 @@
-# G3 TV family formal readiness — BLOCKED, 2026-09-28
+# G3 TV family formal readiness — historical BLOCKED checkpoint, 2026-09-28
+
+This checkpoint was superseded by the source-bound hosted final assessment and
+[G3_TV_ACCEPTANCE_RECORD.md](G3_TV_ACCEPTANCE_RECORD.md). The accepted current
+result is 157 PASS / 8 HIGH, with zero readiness gaps.
 
 The latest hosted [TV source comparison](https://github.com/Empty-Bell/RDA/actions/runs/36401803388) passed for the approved 165-SKU, MNA-excluded listing population. It binds PDP collection `36292869106`, label/EPA source capture `36292945283`, and comparison/label review `36401803388`. All 165 PDP identities are verified. Of 158 readable EnergyGuide labels, all 158 printed model patterns include the exact PDP SKU under the approved fixed-prefix rule. The 35 US-market EPA Current model matches are kept separate; 130 SKUs have no matching Current model row. TV annual-energy and power values are outside the approved TV comparison scope.
 

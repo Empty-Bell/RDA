@@ -1,5 +1,15 @@
 # Current task continuation — 2026-09-24
 
+## G3 TV family accepted and Pages refreshed — 2026-09-28
+
+Hosted TV final assessment has zero readiness gaps: 165 exact SKUs, 158/158
+readable printed-label model matches, 157 PASS and eight HIGH. One old dashboard
+HIGH, `QN83S90DAEXZA`, is PASS on the current complete Specs inventory because
+the certification field is absent and both logos are explicitly `N`. See
+[G3_TV_ACCEPTANCE_RECORD.md](G3_TV_ACCEPTANCE_RECORD.md). Mixed-family Pages
+Run #17 now uses the hosted Washer and TV final assessments. G3 overall remains
+open for other family gates and unified execution.
+
 ## G3 washer family accepted — 2026-09-28
 
 The hosted Washer comparison matched 37/37 printed-label model identities, and
