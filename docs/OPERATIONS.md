@@ -8,6 +8,11 @@ the publication manifest's run ID, source Git SHA, model count and SHA-256 hashe
 Desktop/mobile browser checks run on that exact site directory before upload.
 Only a successful build can persist the snapshot and deploy it to Pages.
 
+The header language switch changes the dashboard's presentation between Korean
+and English and remembers the choice in the browser. Model IDs, source values,
+evidence JSON and CSV/Excel exports retain their collected values and field
+names so audit provenance does not depend on the viewer's language.
+
 ## Failure behavior
 
 - Any collection, OCR, EPA, assessment or artifact failure makes a family job
