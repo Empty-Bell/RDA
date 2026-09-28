@@ -1,5 +1,24 @@
 # Current task continuation — 2026-09-24
 
+## G3 washer family accepted — 2026-09-28
+
+The hosted Washer comparison matched 37/37 printed-label model identities, and
+the hosted final assessment has zero readiness gaps. The accepted bounded family
+result is 30 PASS, 0 HIGH, 2 MEDIUM, 5 LOW. Seven absent Specs certification
+fields are distinguished from explicit `No`; the five missing-PDP-energy LOW
+cases have agreeing label/EPA values. See
+[G3_WASHER_ACCEPTANCE_RECORD.md](G3_WASHER_ACCEPTANCE_RECORD.md). G3 overall
+remains open; TV and remaining family gates follow.
+
+## G3 TV final assessor pending — 2026-09-28
+
+The latest hosted comparison verifies 165/165 PDP identities and 158/158 readable
+label model inclusions. Five DRM labels and two absent Support label documents
+retain HIGH candidates; two other EPA-absent models have prior ENERGY STAR
+publication HIGH evidence. The Pages 156 PASS / 9 HIGH TV snapshot is not yet
+a source-bound hosted final assessment. See
+[G3_TV_FORMAL_READINESS_2026-09-28.md](G3_TV_FORMAL_READINESS_2026-09-28.md).
+
 ## G3 dishwasher family accepted — 2026-09-28
 
 After the user approved the printed-label fixed-prefix rule across families,
