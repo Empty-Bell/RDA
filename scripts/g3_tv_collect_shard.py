@@ -4,6 +4,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import shutil
 
 from g3_tv_collect import collect, coverage, load_population
 
@@ -29,6 +30,26 @@ def main():
     (out / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (out / "products.json").write_text(json.dumps(selected, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     results = collect(selected, out)
+    by_sku = {product["exact_sku"]: product for product in selected}
+    for attempt in (2, 3):
+        failed = [result for result in results if result["status"] == "FAILED"]
+        if not failed:
+            break
+        retry_root = out / "retries" / f"attempt-{attempt}"
+        retried = collect([by_sku[result["exact_sku"]] for result in failed], retry_root)
+        updated = {result["exact_sku"]: result for result in retried}
+        for index, result in enumerate(results):
+            candidate = updated.get(result["exact_sku"])
+            if candidate is None or candidate["status"] != "VERIFIED_EXACT_IDENTITY":
+                continue
+            sku = result["exact_sku"]
+            first = out / "pdp" / sku
+            archive = out / "retries" / "previous-attempts" / sku / f"attempt-{attempt - 1}"
+            archive.parent.mkdir(parents=True, exist_ok=True)
+            shutil.move(str(first), str(archive))
+            shutil.copytree(retry_root / "pdp" / sku, first)
+            candidate["collection_attempt"] = attempt
+            results[index] = candidate
     rows = coverage(selected, results)
     errors = Counter(row.get("error", "(no error detail)") for row in rows["rows"] if row["status"] == "FAILED")
     summary = {"source_run_id": str(args.source_run_id), "shard_index": args.shard_index,
