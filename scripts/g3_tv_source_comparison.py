@@ -258,7 +258,7 @@ def main():
                                              "NOT_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and not label_by_sku[sku] for sku in population),
                                              "PARTIALLY_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and bool(label_by_sku[sku]) for sku in population)},
               "epa_samsung_current_row_count": len(epa_rows),
-              "model_pattern_contract": "Raw exact SKU is unchanged; each * consumes one A-Z/0-9 character from its beginning; any remaining exact-SKU suffix is retained verbatim and reported.",
+              "model_pattern_contract": "Printed EnergyGuide model inclusion uses matching fixed positions; trailing stars may be empty and PDP configuration suffix length may differ. EPA candidate matching remains positional and separate. Raw tokens and exact SKU are retained.",
               "scope": "TV model identity audit only: PDP exact SKU identity, EnergyGuide printed model patterns and EPA Current model patterns with US-market scope. No PDP, EnergyGuide, or EPA energy values are compared or emitted. HIGH unreadable-label candidates remain separate operational findings.",
               "model_match_counts": {
                   "label_model_pattern_matched": sum(row["model_comparison"]["label"] == "MODEL_PATTERN_MATCHED" for row in table),

@@ -1,5 +1,13 @@
 # Phase status
 
+Updated 2026-09-28 after the printed-label fixed-prefix approval:
+**the G3 dishwasher family control is PASS** for its 21-SKU scope; see
+[G3_DISHWASHER_ACCEPTANCE_RECORD.md](G3_DISHWASHER_ACCEPTANCE_RECORD.md).
+The hosted final gate has no gaps and reports 12 PASS, 7 HIGH, 2 MEDIUM,
+0 LOW. G3 as a whole remains **BLOCKED** while other families are open.
+Older dishwasher BLOCKED statements below are historical checkpoints.
+
+
 Updated 2026-09-28 after G2 acceptance: G0/G1/G2 are accepted for their
 recorded scopes; see [G2_ACCEPTANCE_RECORD.md](G2_ACCEPTANCE_RECORD.md).
 G3 remains **BLOCKED** pending source and control closure. Dishwasher's

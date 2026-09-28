@@ -290,7 +290,7 @@ def main():
               "comparison_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),
               "captured_at": datetime.now(timezone.utc).isoformat(), "population_count": len(population),
               "epa_samsung_current_row_count": len(epa_rows),
-              "model_pattern_contract": "Raw exact SKU is unchanged; each * consumes one A-Z/0-9 character from its beginning; any remaining exact-SKU suffix is retained verbatim and reported.",
+              "model_pattern_contract": "Printed EnergyGuide model inclusion uses matching fixed positions; trailing stars may be empty and PDP configuration suffix length may differ. EPA candidate matching remains positional and separate. Raw tokens and exact SKU are retained.",
               "scope": "Same-run US Washer PDP, Support-label, and EPA current candidate comparison; EPA annual-energy candidates are limited to rows whose market field explicitly lists US/USA/United States; no routing, pass/low/high, or compliance decision",
               "counts": {name: sum(row["energy_comparison_candidate"] == name for row in table)
                          for name in ("ALL_THREE_SOURCES_HAVE_SAME_EXACT_VALUE",

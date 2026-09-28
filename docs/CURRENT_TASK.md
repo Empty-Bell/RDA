@@ -1,4 +1,14 @@
 # Current task continuation — 2026-09-24
+
+## G3 dishwasher family accepted — 2026-09-28
+
+After the user approved the printed-label fixed-prefix rule across families,
+hosted dishwasher model comparison matched 21/21 and final readiness had no
+gaps. The accepted family control result is 12 PASS, 7 HIGH, 2 MEDIUM,
+0 LOW. See [G3_DISHWASHER_ACCEPTANCE_RECORD.md](G3_DISHWASHER_ACCEPTANCE_RECORD.md).
+G3 overall remains open for other product families. The mixed-family Pages
+snapshot is being refreshed from this accepted dishwasher run.
+
 ## G3 dishwasher label review — 2026-09-28
 
 Visual review resolved US EnergyGuide annual values across all 21 SKUs. Two former PASS candidates have confirmed label/PDP versus EPA differences and are MEDIUM candidates. Source provenance checks and a dashboard caution are staged. Seven model outcomes await the dishwasher-specific trailing-wildcard decision; then rerun and inspect the hosted chain. See [G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md](G3_DISHWASHER_FORMAL_READINESS_2026-09-28.md).
