@@ -22,6 +22,7 @@ from refresh_pages_washer_tv import flat
 from refresh_pages_epa_families import build as refresh_epa
 from refresh_pages_tablet import build as refresh_tablet
 from audit_history import advance as advance_history, model_transitions, rule_fingerprint
+from report_projection import HEADERS as REPORT_HEADERS, korean_description, projection as report_projection
 
 
 SLUGS = {
@@ -106,6 +107,17 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
                     writer.writerow([record["family"], record["model"], record["grade"], section, path, field])
                     field_count += 1
     after["field_count"] = field_count
+    report_rows = []
+    for position, record in enumerate(after["records"], 1):
+        detail = read(docs / record["evidence_url"].removeprefix("./"))
+        row = report_projection(record, detail, position)
+        record["report"] = row
+        record["report_description_ko"] = korean_description(row["Description"])
+        report_rows.append(row)
+    with (docs / "report-data.csv").open("w", encoding="utf-8-sig", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=REPORT_HEADERS)
+        writer.writeheader()
+        writer.writerows(report_rows)
     from openpyxl import Workbook
     workbook = Workbook(write_only=True)
     for title, path in (("Models", docs / "report-data.csv"),

@@ -13,6 +13,13 @@ and English and remembers the choice in the browser. Model IDs, source values,
 evidence JSON and CSV/Excel exports retain their collected values and field
 names so audit provenance does not depend on the viewer's language.
 
+Report Data projects each model's current assessment and compact evidence into
+one wide row. It keeps the current PASS/HIGH/MEDIUM/LOW grade, issue codes,
+source values, available links, EPA candidate rows and a field comparison in
+the table and CSV/Excel model sheet. A blank numeric cell means that value was
+not present in the accepted evidence; values are never copied from another
+source to fill a gap. The All Fields export retains every collected field.
+
 ## Failure behavior
 
 - Any collection, OCR, EPA, assessment or artifact failure makes a family job

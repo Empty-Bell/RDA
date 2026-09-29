@@ -27,6 +27,8 @@
     "숫자를 선택하면 해당 모델 목록으로 이동합니다.": "Select a count to open the matching models.",
     "이슈를 열어 잘못된 값과 조치 방향을 확인하세요.": "Open an issue to see the conflicting evidence and next action.",
     "전체 모델을 빠르게 찾고, 필요한 건만 상세 확인합니다.": "Find any model and open its evidence when needed.",
+    "모델별 수집값, 판정 코드와 비교 설명을 한 행에서 확인합니다. 값이 없으면 원본에서 수집되지 않은 항목입니다.": "Review collected values, finding codes and comparisons in each model row. A blank means the source did not provide that value.",
+    "—는 해당 실행의 근거에서 확인되지 않은 값입니다.": "— means the value was not available in this run's evidence.",
     "제품군별 원본 실행과 판정 기준을 확인합니다.": "Review source runs and grading rules by product family.",
     "이슈 유형별 빠른 필터": "Quick filters by issue type",
     "모델 또는 이슈 검색": "Search model or issue", "조치 목록 검색": "Search action queue",

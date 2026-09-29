@@ -77,7 +77,7 @@ def build(docs, manifest_path, artifacts_root, out, unified_report_path=None):
     csv_keys = {}
     with (docs / "report-data.csv").open("r", encoding="utf-8-sig", newline="") as stream:
         for row in csv.DictReader(stream):
-            key = (row["family"], row["model"])
+            key = (row.get("Product Family", row.get("family")), row.get("SKU", row.get("model")))
             if key in csv_keys:
                 errors.append(f"CSV_DUPLICATE_MODEL:{key[0]}:{key[1]}")
             csv_keys[key] = row
@@ -85,8 +85,12 @@ def build(docs, manifest_path, artifacts_root, out, unified_report_path=None):
         errors.append("CSV_MODEL_POPULATION_DIFFERS")
     else:
         for key, row in csv_keys.items():
-            if row["grade"] != record_by_key[key]["grade"]:
+            if row.get("Severity", row.get("grade")) != record_by_key[key]["grade"]:
                 errors.append(f"CSV_GRADE_DIFFERS:{key[0]}:{key[1]}")
+            projected = record_by_key[key].get("report")
+            if projected and any(row.get(column, "") != str(value if value is not None else "")
+                                 for column, value in projected.items()):
+                errors.append(f"CSV_REPORT_DIFFERS:{key[0]}:{key[1]}")
     field_count = 0
     with (docs / "report-all-fields.csv").open("r", encoding="utf-8-sig", newline="") as stream:
         for row in csv.DictReader(stream):
