@@ -63,13 +63,14 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version-file: '.python-version'
-      - name: Download source and assessment artifacts from this run only
+      - name: Download family artifacts from every attempt of this run
         uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
         continue-on-error: true
         with:
-          pattern: unified-family-${{ github.run_id }}-${{ github.run_attempt }}-*
-          path: runtime/
-          merge-multiple: true
+          pattern: unified-family-${{ github.run_id }}-*-*
+          path: runtime/family-artifacts/
+      - name: Select the latest successful attempt for each family
+        run: python scripts/merge_unified_family_artifacts.py --artifacts-root runtime/family-artifacts --run-id '${{ github.run_id }}' --out runtime
       - name: Reconcile all family artifacts and source identities
         if: always()
         run: python scripts/unified_run_gate.py --root runtime --run-id '${{ github.run_id }}' --out runtime/unified-gate
@@ -106,12 +107,13 @@ jobs:
         run: python -m pip install --no-cache-dir openpyxl==3.1.5 playwright==1.63.0
       - name: Install browser for desktop and mobile smoke
         run: python -m playwright install --with-deps chromium
-      - name: Download source artifacts from this execution
+      - name: Download source artifacts from every attempt of this execution
         uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
         with:
-          pattern: unified-family-${{ github.run_id }}-${{ github.run_attempt }}-*
-          path: runtime/
-          merge-multiple: true
+          pattern: unified-family-${{ github.run_id }}-*-*
+          path: runtime/family-artifacts/
+      - name: Select the latest successful source attempt for each family
+        run: python scripts/merge_unified_family_artifacts.py --artifacts-root runtime/family-artifacts --run-id '${{ github.run_id }}' --out runtime
       - name: Download accepted source gate
         uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
         with:
