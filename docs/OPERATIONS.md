@@ -21,6 +21,13 @@ not present in the accepted evidence; values are never copied from another
 source to fill a gap. The All Fields export retains every collected field.
 The refrigerator source archive includes its EPA numeric projection so current
 EPA annual kWh and capacity can be projected from the same run and PD_ID join.
+Report Data uses an internal vertical scroll area and collapsed Description/EPA
+candidate cells so each model remains one compact row. The full values remain
+available by expanding those cells or opening model evidence. EG link and OCR
+status are blank for families outside the EnergyGuide collection scope. OCR
+`VALUE` means an annual kWh value was extracted, not that values match. EPA
+status and matched model rows are projected from each family's own assessment
+schema; a current registration does not require an identical printed PDP SKU.
 
 ## Failure behavior
 

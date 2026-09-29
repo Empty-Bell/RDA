@@ -28,6 +28,8 @@
     "이슈를 열어 잘못된 값과 조치 방향을 확인하세요.": "Open an issue to see the conflicting evidence and next action.",
     "전체 모델을 빠르게 찾고, 필요한 건만 상세 확인합니다.": "Find any model and open its evidence when needed.",
     "모델별 수집값, 판정 코드와 비교 설명을 한 행에서 확인합니다. 값이 없으면 원본에서 수집되지 않은 항목입니다.": "Review collected values, finding codes and comparisons in each model row. A blank means the source did not provide that value.",
+    "근거·조치 보기": "View evidence and action", "VALUE · kWh 추출됨": "VALUE · kWh extracted",
+    "EnergyGuide 연간 kWh 값 추출됨. 다른 출처와의 일치 판정은 아닙니다.": "An annual kWh value was extracted from EnergyGuide. This does not mean it matches another source.",
     "—는 해당 실행의 근거에서 확인되지 않은 값입니다.": "— means the value was not available in this run's evidence.",
     "제품군별 원본 실행과 판정 기준을 확인합니다.": "Review source runs and grading rules by product family.",
     "이슈 유형별 빠른 필터": "Quick filters by issue type",
@@ -167,6 +169,7 @@
     let result = source;
     if (target === "en") {
       result = result.replace(/변경 모델 (\d[\d,]*)개 보기/g, "View $1 changed models")
+        .replace(/후보 (\d[\d,]*)건/g, "$1 candidates")
         .replace(/(\d[\d,]*)개 제품군/g, "$1 product families")
         .replace(/(\d[\d,]*)개 모델/g, "$1 models")
         .replace(/(\d[\d,]*)개 필드/g, "$1 fields")
