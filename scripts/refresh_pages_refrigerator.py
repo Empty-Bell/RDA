@@ -31,30 +31,29 @@ def read(path):
 def source_report(path):
     with zipfile.ZipFile(path) as archive:
         reports = [name for name in archive.namelist() if name.endswith("/report.json")]
-        bundles = [name for name in archive.namelist() if name.endswith("/bundle.json")]
-        if len(reports) != 1 or len(bundles) != 1:
-            raise ValueError("Accepted G2 artifact has no unique canonical report and bundle")
-        return json.loads(archive.read(reports[0])), json.loads(archive.read(bundles[0]))
+        numeric = [name for name in archive.namelist() if name.endswith("/projection.json")]
+        if len(reports) != 1 or len(numeric) != 1:
+            raise ValueError("Accepted G2 artifact has no unique canonical report and EPA numeric projection")
+        return json.loads(archive.read(reports[0])), json.loads(archive.read(numeric[0]))
 
 
 def build(docs, assessment_path, source_zip):
     docs = Path(docs)
     assessment = read(assessment_path)
-    source, bundle = source_report(source_zip)
+    source, epa_numeric = source_report(source_zip)
     snapshot = read(docs / "model-data.json")
     if (assessment.get("status") != "PASS" or assessment.get("readiness_gaps")
             or assessment.get("source_execution_id") != source.get("run_id")
-            or bundle.get("manifest", {}).get("run_id") != source.get("run_id")
+            or epa_numeric.get("contract") != "G2_EPA_REFRIGERATOR_NUMERIC_ENRICHMENT_V1"
+            or epa_numeric.get("status") != "PASS"
+            or epa_numeric.get("source_run_id") != source.get("run_id")
             or assessment.get("sku_count") != len(source.get("rows", []))):
         raise ValueError("Refrigerator reassessment is not bound to complete G2 source")
     a = {row["exact_sku"]: row for row in assessment["records"]}
     s = {row["exact_sku"]: row for row in source["rows"]}
-    epa_facts = {}
-    for fact in bundle.get("facts", []):
-        if fact.get("kind") == "EPA":
-            epa_facts.setdefault(fact["exact_sku"], []).append(fact)
+    epa_values = {row["exact_sku"]: row for row in epa_numeric.get("records", [])}
     records = [row for row in snapshot["records"] if row["family"] == FAMILY]
-    if (set(a) != set(s) or set(a) != {row["model"] for row in records}
+    if (set(a) != set(s) or set(a) != set(epa_values) or set(a) != {row["model"] for row in records}
             or len(a) != assessment["sku_count"] or sum(assessment["counts"].values()) != len(a)):
         raise ValueError("Refrigerator source or Pages population differs")
     old_run, old_time = snapshot["run_number"], snapshot["built_at"]
@@ -93,7 +92,7 @@ def build(docs, assessment_path, source_zip):
                 raw["epa_energy"] = f"{evidence['epa_amount']} kWh/year" if evidence.get("epa_amount") is not None else None
         detail = {"model": sku, "family": FAMILY, "grade": grade,
                   "assessment": current, "frozen_canonical_source_row": s[sku],
-                  "source_epa_facts": epa_facts.get(sku, []),
+                  "source_epa_numeric": epa_values[sku],
                   "source_run": run_id, "source_workflow_run_id": assessment["source_workflow_run_id"],
                   "previous_evidence_url": prior_url,
                   "prior_raw_evidence": {key: value for key, value in prior.items()

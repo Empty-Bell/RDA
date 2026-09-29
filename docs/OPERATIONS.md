@@ -19,8 +19,8 @@ source values, available links, EPA candidate rows and a field comparison in
 the table and CSV/Excel model sheet. A blank numeric cell means that value was
 not present in the accepted evidence; values are never copied from another
 source to fill a gap. The All Fields export retains every collected field.
-The refrigerator source archive includes its canonical typed bundle so current
-EPA annual kWh and candidate identities can be projected from the same run.
+The refrigerator source archive includes its EPA numeric projection so current
+EPA annual kWh and capacity can be projected from the same run and PD_ID join.
 
 ## Failure behavior
 

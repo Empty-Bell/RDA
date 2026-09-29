@@ -92,26 +92,18 @@ def projection(record, detail, position):
         eg_status = "LINKED_UNVERIFIED"
     registration = (assessment.get("energy_star_publication") or {}).get("epa_current_index_registration") or {}
     candidates = registration.get("candidates") or []
-    epa_rows = []
-    for fact in detail.get("source_epa_facts") or []:
-        source = fact.get("observations") or {}
-        annual = observed(source, "annual_energy_kwh")
-        epa_rows.append({
-            "epa_dataset_id": observed(source, "dataset_id"),
-            "epa_unique_id": observed(source, "epa_unique_id"),
-            "model_number": observed(source, "model_number"),
-            "annual_energy_use_kwh_yr": annual.get("amount") if isinstance(annual, dict) else annual,
-            "markets": observed(source, "markets"),
-            "certification_status": observed(source, "certification_status"),
-        })
+    epa_numeric = detail.get("source_epa_numeric") or {}
     pdp_kwh = energy_number(raw.get("pdp_energy"))
     label_kwh = (ocr_energy or {}).get("amount") if isinstance(ocr_energy, dict) else number(raw.get("label_energy"))
     label_capacity = (ocr_capacity or {}).get("amount") if isinstance(ocr_capacity, dict) else number(raw.get("label_capacity"))
     epa_kwh = number(raw.get("epa_energy"))
-    if epa_kwh is None:
-        epa_values = {row["annual_energy_use_kwh_yr"] for row in epa_rows if row["annual_energy_use_kwh_yr"] is not None}
-        epa_kwh = next(iter(epa_values)) if len(epa_values) == 1 else None
+    annual_value = epa_numeric.get("annual_energy_kwh") or {}
+    if epa_kwh is None and annual_value.get("state") == "VALUE":
+        epa_kwh = annual_value.get("amount")
     epa_capacity = number(raw.get("epa_capacity"))
+    capacity_value = epa_numeric.get("capacity_cu_ft") or {}
+    if epa_capacity is None and capacity_value.get("state") == "VALUE":
+        epa_capacity = capacity_value.get("amount")
     numeric_findings = (assessment.get("energyguide_numeric") or {}).get("findings") or []
     for finding in numeric_findings:
         evidence = finding.get("evidence") or {}
@@ -158,6 +150,6 @@ def projection(record, detail, position):
         "OCR Status": ocr_status,
         "EPA kWh": display_number(epa_kwh), "EPA Capacity (cu.ft)": display_number(epa_capacity),
         "EPA Status": registration.get("state") or raw.get("epa_registration") or record.get("epa_registration"),
-        "EPA Match": json.dumps(epa_rows or candidates, ensure_ascii=False) if epa_rows or candidates else raw.get("epa_match_status"),
+        "EPA Match": json.dumps(candidates, ensure_ascii=False) if candidates else raw.get("epa_match_status"),
         "Description": description,
     }
