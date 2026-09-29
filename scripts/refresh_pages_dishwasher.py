@@ -8,6 +8,19 @@ from decimal import Decimal
 from pathlib import Path
 
 
+MODEL_IDENTITY_POLICY = (
+    "Printed EnergyGuide/PDP model identity accepts a matching fixed prefix "
+    "despite trailing-star and remaining-suffix length differences; "
+    "EPA Current registration uses separate source matching."
+)
+
+
+def normalized_grade_policy(policy):
+    """Keep the dishwasher model-identity policy exactly once across runs."""
+    base = policy.replace(MODEL_IDENTITY_POLICY, "").strip()
+    return f"{base} {MODEL_IDENTITY_POLICY}".strip()
+
+
 def read(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
@@ -92,7 +105,7 @@ def build(docs, assessment_path, numeric_path, model_path, energy_path, package_
     snapshot["run_number"] = old_run + 1
     snapshot["built_at"] = datetime.now(timezone.utc).isoformat()
     snapshot["source_note"] = "Latest reviewed grade evidence by family; dishwasher refreshed from bound hosted G3 controls. Source runs across families are not one unified run."
-    snapshot["grade_policy"] += " Printed EnergyGuide/PDP model identity accepts a matching fixed prefix despite trailing-star and remaining-suffix length differences; EPA Current registration uses separate source matching."
+    snapshot["grade_policy"] = normalized_grade_policy(snapshot["grade_policy"])
     snapshot["run_comparison"] = {"available": True, "current_run": old_run + 1, "previous_run": old_run,
         "previous_built_at": old_time, "source_runs_changed": True,
         "new": [item for item in changes if item["previous_grade"] == "PASS" and item["grade"] != "PASS"],
