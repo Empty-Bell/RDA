@@ -173,3 +173,30 @@ def collect_samples(products, output):
             results.append(result)
         context.close();browser.close()
     return results
+
+
+def retry_failed_samples(products, results, retry_root, collector=collect_samples, sleep=None):
+    """Retry only failed refrigerator PDP identities and retain prior captures."""
+    import time
+    by_sku = {product["exact_sku"]: product for product in products}
+    if len(by_sku) != len(products):
+        raise ValueError("G2 retry population has duplicate exact SKUs")
+    if len(results) != len(products) or {row.get("exact_sku") for row in results} != set(by_sku):
+        raise ValueError("G2 initial PDP collection does not cover the population")
+    sleep = sleep or time.sleep
+    for attempt in (2, 3):
+        failed = [row for row in results if row.get("status") == "FAILED"]
+        if not failed:
+            break
+        sleep(2 ** (attempt - 2))
+        expected = {row["exact_sku"] for row in failed}
+        retried = collector([by_sku[sku] for sku in sorted(expected)], Path(retry_root) / f"attempt-{attempt}")
+        updates = {row.get("exact_sku"): row for row in retried}
+        if len(updates) != len(retried) or set(updates) != expected:
+            raise ValueError("G2 retry returned a different exact-SKU population")
+        for index, previous in enumerate(results):
+            candidate = updates.get(previous["exact_sku"])
+            if candidate and candidate.get("status") == "VERIFIED_EXACT_IDENTITY":
+                candidate["collection_attempt"] = attempt
+                results[index] = candidate
+    return results

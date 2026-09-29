@@ -15,6 +15,7 @@ from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
 from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
+from exact_sku_retry import retry_failed
 
 
 CONTRACT = "G3_DISHWASHER_EXACT_SKU_PDP_V1"
@@ -249,7 +250,7 @@ def main() -> int:
     destination.mkdir(parents=True, exist_ok=True)
     (destination / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (destination / "products.json").write_text(json.dumps(products, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    results = collect(products, destination)
+    results = retry_failed(products, destination, collect(products, destination), collect)
     result_coverage = coverage(products, results)
     report = {"contract": CONTRACT, "source_run_id": args.source_run_id,
               "collection_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),

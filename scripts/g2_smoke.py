@@ -18,7 +18,7 @@ from regaudit.facts import TYPES
 from regaudit.report import summarize_bundle, verify_report_source_observations
 from g2_population import observation, population_records
 from source_recon import FAMILIES
-from g2_pdp import select_sample, select_redirect_watch, collect_samples, coverage, require_full_identity_coverage, verify_identity
+from g2_pdp import select_sample, select_redirect_watch, collect_samples, retry_failed_samples, coverage, require_full_identity_coverage, verify_identity
 from g2_normalized import normalize_source_pdp
 from g2_label_collect import collect_energyguide_documents
 from g2_label_activation import (
@@ -326,7 +326,10 @@ def main():
         )
         watched = select_redirect_watch(products, redirect_watch)
         if watched:
-            watched_results = collect_samples(watched, out / "pdp-preflight")
+            watched_results = retry_failed_samples(
+                watched, collect_samples(watched, out / "pdp-preflight"),
+                out / "pdp-preflight-retries",
+            )
             require_full_identity_coverage(watched, watched_results)
         samples = [
             {
@@ -339,6 +342,7 @@ def main():
         samples.extend(
             collect_samples([p for p in selected if p["exact_sku"] != sku], out / "pdp-samples")
         )
+        samples = retry_failed_samples(products, samples, out / "pdp-sample-retries")
         pdp_coverage = coverage(products, samples)
         with (out / "pdp-coverage.json").open("x", encoding="utf-8", newline="\n") as stream:
             stream.write(dumps(pdp_coverage))

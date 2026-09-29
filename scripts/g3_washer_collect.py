@@ -13,6 +13,7 @@ from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
 from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
+from exact_sku_retry import retry_failed
 
 
 PLP_URL = "https://www.samsung.com/us/laundry/washers/"
@@ -226,7 +227,7 @@ def main():
     destination.mkdir(parents=True, exist_ok=True)
     (destination / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (destination / "products.json").write_text(json.dumps(products, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    rows = coverage(products, collect(products, destination))
+    rows = coverage(products, retry_failed(products, destination, collect(products, destination), collect))
     status = "PASS" if rows["counts"]["FAILED"] == 0 and rows["counts"]["NOT_ATTEMPTED"] == 0 else "FAILED"
     report = {"contract": CONTRACT, "source_run_id": str(args.source_run_id),
               "collection_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),

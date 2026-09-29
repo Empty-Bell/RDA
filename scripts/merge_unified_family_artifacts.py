@@ -16,15 +16,11 @@ FAMILIES = (
 )
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--artifacts-root", required=True, type=Path)
-    parser.add_argument("--run-id", required=True)
-    parser.add_argument("--out", required=True, type=Path)
-    args = parser.parse_args()
-    pattern = re.compile(rf"unified-family-{re.escape(args.run_id)}-(\d+)-({'|'.join(FAMILIES)})$")
+def merge(artifacts_root, run_id, out):
+    artifacts_root, out = Path(artifacts_root), Path(out)
+    pattern = re.compile(rf"unified-family-{re.escape(run_id)}-(\d+)-({'|'.join(FAMILIES)})$")
     selected = {}
-    for artifact in args.artifacts_root.iterdir():
+    for artifact in artifacts_root.iterdir():
         match = pattern.fullmatch(artifact.name)
         if not match or not artifact.is_dir():
             continue
@@ -41,10 +37,20 @@ def main():
         for source in artifact.rglob("*"):
             if not source.is_file():
                 continue
-            target = args.out / source.relative_to(artifact)
+            target = out / source.relative_to(artifact)
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, target)
         print(f"{family}: selected attempt {attempt}", flush=True)
+    return {family: attempt for family, (attempt, _) in selected.items()}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--artifacts-root", required=True, type=Path)
+    parser.add_argument("--run-id", required=True)
+    parser.add_argument("--out", required=True, type=Path)
+    args = parser.parse_args()
+    merge(args.artifacts_root, args.run_id, args.out)
 
 
 if __name__ == "__main__":

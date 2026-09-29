@@ -13,8 +13,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  preflight:
+    name: Validate report code before live collection
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Check report projection against every published model schema
+        run: python scripts/report_projection_preflight.py --docs docs
+      - name: Check bounded retry and projection contracts
+        run: python -m unittest tests.test_exact_sku_retry tests.test_g2_pdp_retry tests.test_report_projection_contract tests.test_retry_unified_run tests.test_unified_artifact_merge -v
+
   family:
     name: Acquire and assess ${{ matrix.family }}
+    needs: preflight
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     strategy:
@@ -52,7 +71,7 @@ jobs:
 
   integrate:
     name: Verify one source run and 11 graded populations
-    if: always()
+    if: ${{ always() && needs.family.result != 'skipped' }}
     needs: [family]
     runs-on: ubuntu-24.04
     timeout-minutes: 30

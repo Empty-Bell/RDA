@@ -31,6 +31,21 @@ schema; a current registration does not require an identical printed PDP SKU.
 
 ## Failure behavior
 
+- A short report projection preflight checks all currently published model
+  evidence and the retry contracts before the 11 live collectors start. This
+  catches known schema/code regressions before a 30-minute source run. The
+  same-run build still checks the freshly collected evidence.
+- Refrigerator, Range, TV, Washer, Dishwasher, Dryer, Hood, Monitor and
+  Cooktop PDP collectors retry only failed exact SKUs twice within the same
+  run. A retry must independently prove the requested SKU. Raw captures from
+  unsuccessful attempts remain in the family artifact; a different variant is
+  never substituted.
+- If a family job fails after those bounded retries, `Bounded unified source
+  recovery` re-runs only failed jobs and their dependencies, at most two more
+  workflow attempts. The integration/build jobs combine the latest complete
+  family artifact from each attempt of the same run ID. Transient artifact,
+  dependency-install and Pages-service failures are also eligible for bounded
+  job re-runs. Report-code, grade and browser-behavior failures are not.
 - Any collection, OCR, EPA, assessment or artifact failure makes a family job
   or the source gate fail. The build and deploy jobs are skipped; the last
   validated Pages deployment remains available.
@@ -40,6 +55,10 @@ schema; a current registration does not require an identical printed PDP SKU.
   90 days. `docs/` keeps the compact current evidence and cumulative finding
   history in Git. Once raw artifacts expire, the compact evidence and run
   identity remain, but raw source replay for that run is unavailable.
+- Persistent wrong-model redirects, missing authoritative source data and
+  deterministic code errors cannot be converted into a valid PASS by retrying.
+  After the retry limit, the run remains failed and the last validated Pages
+  snapshot stays available. Recovery never borrows another run's source data.
 - `publication-manifest.json` and the validated-site artifact identify the
   exact deployed source run. To recover from a bad deployment, dispatch
   `Verify or restore a validated Pages bundle` with the prior successful
