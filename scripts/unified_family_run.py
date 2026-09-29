@@ -44,6 +44,7 @@ def single_summary(root, run_id):
 
 def assess_refrigerator(root, source):
     paths = (
+        source / "bundle.json",
         source / "report.json",
         source / "energy-star-source/three-point-input-review.json",
         source / "energy-star-source/energy-star-assessment.json",
