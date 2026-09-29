@@ -99,6 +99,8 @@ def epa_candidates(detail, assessment):
                   detail.get("source_comparison") or {}, detail.get("frozen_source_candidate") or {},
                   detail.get("source_candidate") or {})
     for container in containers:
+        if not isinstance(container, dict):
+            continue
         for key in ("candidates", *EPA_CANDIDATE_KEYS):
             rows = container.get(key)
             if isinstance(rows, list) and rows:
