@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 from claim_recon import DOM_SNAPSHOT, claim_facts
@@ -169,6 +170,29 @@ def collect(products, output):
     return results
 
 
+def retry_failed(products, results, output, *, retries=2):
+    """Retry only failed exact SKUs in fresh browser contexts, preserving attempts."""
+    destination = Path(output)
+    by_sku = {row["exact_sku"]: row for row in products}
+    current = {row["exact_sku"]: row for row in results}
+    for attempt in range(1, retries + 1):
+        failed = [by_sku[sku] for sku, row in current.items() if row["status"] == "FAILED"]
+        if not failed:
+            break
+        retry_root = destination / f"retry-{attempt}"
+        attempted = collect(failed, retry_root)
+        for row in attempted:
+            sku = row["exact_sku"]
+            if row["status"] != "VERIFIED_EXACT_IDENTITY":
+                continue
+            original = destination / "pdp" / quote(sku, safe="")
+            recovered = retry_root / "pdp" / quote(sku, safe="")
+            for name in ("result.json", "snapshot.json", "specs.json"):
+                shutil.copy2(recovered / name, original / name)
+            current[sku] = row
+    return [current[row["exact_sku"]] for row in results]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--computer-recon", required=True)
@@ -185,7 +209,7 @@ def main():
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
     (out / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (out / "products.json").write_text(json.dumps(selected, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    results = collect(selected, out)
+    results = retry_failed(selected, collect(selected, out), out)
     statuses = {row["exact_sku"]: row["status"] for row in results}
     if len(statuses) != len(selected) or set(statuses) != {row["exact_sku"] for row in selected}:
         raise ValueError("Computer shard result coverage does not match its assigned SKUs")
