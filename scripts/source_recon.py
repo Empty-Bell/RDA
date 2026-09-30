@@ -220,6 +220,21 @@ def main():
 
         def pagination():
             assert captured_pf, 'No request to paginate'
+            def activate_more(locator, before_count):
+                for attempt in range(3):
+                    try:
+                        locator.first.click(timeout=6000, force=attempt > 0)
+                        return True
+                    except Exception:
+                        if len(captured_pf) > before_count:
+                            return True
+                        page.wait_for_timeout(1000 * (attempt + 1))
+                try:
+                    locator.first.evaluate('(button) => button.click()', timeout=5000)
+                    return True
+                except Exception:
+                    return False
+
             all_products = {}
             rounds = []
             for round_no in range(8):
@@ -238,11 +253,13 @@ def main():
                 button = page.get_by_role('button', name=re.compile(r'view more|load more|show more', re.I))
                 if button.count() and button.first.is_visible():
                     if button.first.is_enabled():
-                        button.first.click(timeout=10000)
+                        if not activate_more(button, before):
+                            break
                 else:
                     link = page.get_by_text(re.compile(r'^view more$', re.I))
                     if link.count() and link.first.is_visible():
-                        link.first.click(timeout=10000)
+                        if not activate_more(link, before):
+                            break
                     else:
                         break
                 page.wait_for_timeout(3500)
