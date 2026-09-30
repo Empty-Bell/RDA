@@ -1,92 +1,92 @@
 {
   "contract": "RDA_INTEGRATION_MANIFEST_V1",
-  "unified_source_run_id": "36569480177",
+  "unified_source_run_id": "36693683213",
   "accepted_family_artifacts": [
     {
       "family": "냉장고",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-refrigerator",
+      "artifact_prefix": "unified-family-36693683213-2-refrigerator",
       "report_file": "unified/refrigerator/assessment/reassessment.json",
       "report_contract": "G2_REFRIGERATOR_SAVED_SOURCE_REASSESSMENT_V1"
     },
     {
       "family": "식기세척기",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-dishwasher",
+      "artifact_prefix": "unified-family-36693683213-2-dishwasher",
       "report_file": "unified/dishwasher/assessment/assessment.json",
       "report_contract": "G3_DISHWASHER_FINAL_ASSESSMENT_V1"
     },
     {
       "family": "세탁기",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-washer",
+      "artifact_prefix": "unified-family-36693683213-2-washer",
       "report_file": "unified/washer/assessment/assessment.json",
       "report_contract": "G3_WASHER_ASSESSMENT_V1"
     },
     {
       "family": "TV",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-tv",
+      "artifact_prefix": "unified-family-36693683213-2-tv",
       "report_file": "unified/tv/assessment/assessment.json",
       "report_contract": "G3_TV_ASSESSMENT_V1"
     },
     {
       "family": "레인지",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-range",
+      "artifact_prefix": "unified-family-36693683213-2-range",
       "report_file": "unified/range/assessment/energy-star-assessment.json",
       "report_contract": "G3_RANGE_ENERGY_STAR_ASSESSMENT_V1"
     },
     {
       "family": "쿡탑",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-cooktop",
+      "artifact_prefix": "unified-family-36693683213-2-cooktop",
       "report_file": "unified/cooktop/assessment/energy-star-assessment.json",
       "report_contract": "G3_COOKTOP_ENERGY_STAR_ASSESSMENT_V1"
     },
     {
       "family": "의류건조기",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-dryer",
+      "artifact_prefix": "unified-family-36693683213-2-dryer",
       "report_file": "unified/dryer/assessment/energy-star-assessment.json",
       "report_contract": "G3_DRYER_ENERGY_STAR_ASSESSMENT_V1"
     },
     {
       "family": "후드",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-hood",
+      "artifact_prefix": "unified-family-36693683213-2-hood",
       "report_file": "unified/hood/assessment/energy-star-assessment.json",
       "report_contract": "G3_HOOD_ENERGY_STAR_ASSESSMENT_V1"
     },
     {
       "family": "모니터",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-monitor",
+      "artifact_prefix": "unified-family-36693683213-2-monitor",
       "report_file": "unified/monitor/assessment/energy-star-assessment.json",
       "report_contract": "G3_MONITOR_ENERGY_STAR_ASSESSMENT_V1"
     },
     {
       "family": "컴퓨터",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-computer",
+      "artifact_prefix": "unified-family-36693683213-2-computer",
       "report_file": "unified/computer/assessment/energy-star-assessment.json",
       "report_contract": "G3_COMPUTER_ENERGY_STAR_ASSESSMENT_V1"
     },
     {
       "family": "태블릿",
-      "run_id": "36569480177",
+      "run_id": "36693683213",
       "workflow_path": ".github/workflows/unified-full-audit.yml",
-      "artifact_prefix": "unified-family-36569480177-1-tablet",
+      "artifact_prefix": "unified-family-36693683213-2-tablet",
       "report_file": "unified/tablet/assessment/assessment.json",
       "report_contract": "G3_TABLET_FINAL_ASSESSMENT_V1"
     }
