@@ -6,6 +6,7 @@ REGISTERED_STATES = {
     "MATCHED_RAW_LITERAL_CANDIDATES",
     "MATCHED_APPROVED_NORMALIZED_LITERAL_CANDIDATES",
     "MATCHED_CURRENT_INDEX_POSITIONAL_PATTERN_CANDIDATES",
+    "MATCHED_CURRENT_FAMILY_POSITIONAL_PATTERN",
 }
 UNREGISTERED_STATE = "COMPLETE_NO_LITERAL_OR_PATTERN_CANDIDATE"
 LOW_ISSUE = "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT"
@@ -47,6 +48,7 @@ def _epa_registration(candidate: dict) -> dict:
             candidate.get("raw_literal_candidates", [])
             + candidate.get("approved_normalized_literal_candidates", [])
             + candidate.get("current_index_pattern_candidates", [])
+            + candidate.get("current_family_candidates", [])
         )
         return {"state": "PRESENT", "candidate_projection_state": state, "candidates": rows}
     if state == UNREGISTERED_STATE:
@@ -167,10 +169,11 @@ def build_assessment(
     return {
         "contract": "G2_ENERGY_STAR_THREE_POINT_ASSESSMENT_V1",
         "source_run_id": review["source_run_id"],
-        "source_scope": "Exact-SKU Samsung declarations and complete same-run Current Model Index only",
+        "source_scope": ("Exact-SKU Samsung declarations, complete same-run Current Model Index, "
+                         "and verified US refrigerator/freezer family rows when the Index omits a model"),
         "source_observation_method": (
             "PLP PF energyStarFlg, PDP Next energyStarFlag, exact-SKU Bridge Specs "
-            "certification rows and Current Model Index patterns"
+            "certification rows, Current Model Index patterns, and verified official family patterns"
         ),
         "decision_rule": {
             "registered_all_applicable_points_present": "PASS",

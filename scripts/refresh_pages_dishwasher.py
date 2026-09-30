@@ -101,7 +101,10 @@ def build(docs, assessment_path, numeric_path, model_path, energy_path, package_
     family = next(item for item in snapshot["families"] if item["family"] == "식기세척기")
     family.update({key.lower(): assessment["counts"][key] for key in ("PASS", "HIGH", "MEDIUM", "LOW")})
     family.update(run_id=str(run_id), run_url=f"https://github.com/Empty-Bell/RDA/actions/runs/{run_id}",
-                  grade_state="assessed", note="원본 US EnergyGuide 라벨 21개 모델명 일치. EPA 미등록·ENERGY STAR 표기 7 HIGH, 라벨/PDP와 EPA 연간 사용량 차이 2 MEDIUM. 호스팅 출처 지문과 판정 게이트 통과.")
+                  grade_state="assessed", note=("원본 US EnergyGuide 라벨 21개 모델명 일치. "
+                    f"EPA 공식 모델군 확인을 포함한 재판정: PASS {assessment['counts']['PASS']} / "
+                    f"HIGH {assessment['counts']['HIGH']} / MEDIUM {assessment['counts']['MEDIUM']} / "
+                    f"LOW {assessment['counts']['LOW']}. 호스팅 출처 지문과 판정 게이트 통과."))
     snapshot["run_number"] = old_run + 1
     snapshot["built_at"] = datetime.now(timezone.utc).isoformat()
     snapshot["source_note"] = "Latest reviewed grade evidence by family; dishwasher refreshed from bound hosted G3 controls. Source runs across families are not one unified run."

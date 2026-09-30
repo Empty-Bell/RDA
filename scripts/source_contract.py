@@ -135,10 +135,11 @@ def pdp_facts(data, target, family='refrigerator'):
         for item in group['specList']:
             fields.append({'group': group.get('groupName'), 'name': item.get('name'), 'value': item.get('value')})
     documents = [] if specs_only else [x for x in support[0]['supports'] if re.fullmatch(r'energy\s*guide', x.get('name', ''), re.I)]
-    if family == 'washer':
+    if family in ('washer', 'dishwasher'):
         # Some current Washer Specs use an explicit annual kWh field instead
         # of the older Energy Guide Label field. Never use a per-cycle value.
-        annual_names = {'Energy Consumption (annual)', 'Energy Consumption'}
+        annual_names = ({'Energy Consumption (annual)', 'Energy Consumption'} if family == 'washer'
+                        else {'Annual Energy Consumption', 'Energy Consumption (annual)'})
         energy_rows = [x for x in fields if x['name'] == energy_name or (
             x['name'] in annual_names and re.search(r'\bkwh\s*/\s*(?:year|yr)\b', str(x.get('value') or ''), re.I)
         )]

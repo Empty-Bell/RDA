@@ -196,6 +196,12 @@ def projection(record, detail, position):
     capacity_value = epa_numeric.get("capacity_cu_ft") or {}
     epa_capacity = (capacity_value.get("amount") if capacity_value.get("state") == "VALUE"
                     else None if epa_numeric else number(raw.get("epa_capacity")))
+    family_rows = detail.get("source_epa_family") or []
+    if family_rows:
+        if epa_kwh is None:
+            epa_kwh = number(family_rows[0].get("annual_energy_use_kwh_yr"))
+        if epa_capacity is None:
+            epa_capacity = number(family_rows[0].get("capacity_total_volume_ft3"))
     if epa_kwh is None and not epa_numeric:
         epa_kwh = candidate_number(candidates, ("annual_energy_consumption_kwh_yr_raw",
                                                 "annual_energy_kwh_decimal_candidate", "annual_energy_raw",

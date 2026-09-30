@@ -8,7 +8,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT / "src"), str(ROOT / "scripts")]
 from g3_dishwasher_collect import coverage, load_population, prepare_output, sku_directory_name, verify_identity  # noqa: E402
-from source_contract import project_bridge  # noqa: E402
+from source_contract import pdp_facts, project_bridge  # noqa: E402
 
 
 class DishwasherCollectionTests(unittest.TestCase):
@@ -48,6 +48,14 @@ class DishwasherCollectionTests(unittest.TestCase):
         self.assertEqual(facts["capacity_raw"][0]["value"], "16")
         with self.assertRaisesRegex(ValueError, "another exact SKU"):
             verify_identity(sku, "https://www.samsung.com/us/dishwashers/model-sku-other", snapshot, bridge)
+
+    def test_explicit_annual_consumption_field_is_collected(self):
+        sku = "DW90F89P0USRAA"
+        bridge = project_bridge(json.loads((ROOT / "tests/fixtures/dishwasher/bridge-specs-support.json").read_text(encoding="utf-8")))
+        spec = next(item for item in bridge["Specs"] if item["modelCode"] == sku)
+        spec["fullSpecs"][0]["specList"].append({"name": "Annual Energy Consumption", "value": "239 kWh/year"})
+        values = [row["value"] for row in pdp_facts(bridge, sku, family="dishwasher")["energy_consumption_raw"]]
+        self.assertIn("239 kWh/year", values)
 
     def test_coverage_keeps_failed_and_unattempted_distinct(self):
         products = [{"exact_sku": sku} for sku in ("A", "B", "C")]

@@ -45,6 +45,33 @@ def model_prefix_match(pattern, exact_sku):
             "unmatched_sku_suffix_raw": exact_sku[len(pattern):]}
 
 
+def explicit_additional_models(row, exact_sku):
+    """Use only an EPA row's explicitly listed Samsung TV model identifiers."""
+    if (str(row.get("brand_name") or "").upper() != "SAMSUNG"
+            or us_market_scope(row.get("markets")) != "US_MARKET_LISTED"
+            or not (row.get("date_certified") or row.get("date_qualified"))):
+        return []
+    found = []
+    for entry in str(row.get("additional_model_information") or "").split(";"):
+        fields = [value.strip().upper() for value in entry.split(",")]
+        if len(fields) < 2 or fields[0] != fields[1]:
+            continue
+        model = fields[1]
+        if (len(model) < 8 or not re.fullmatch(r"[A-Z0-9]+", model)
+                or exact_sku.upper() != model + "XZA"):
+            continue
+        found.append({"pattern_raw": model, "exact_sku_raw": exact_sku,
+                      "match_kind": "EPA_EXPLICIT_ADDITIONAL_MODEL_WITH_SAMSUNG_XZA_SUFFIX",
+                      "matched_prefix_raw": model, "unmatched_sku_suffix_raw": "XZA",
+                      "pd_id": row.get("pd_id"), "model_number_raw": model,
+                      "certified_row_model_number_raw": row.get("model_number"),
+                      "additional_model_information_raw": row.get("additional_model_information"),
+                      "markets_raw": row.get("markets"), "market_scope_candidate": "US_MARKET_LISTED",
+                      "date_qualified_raw": row.get("date_qualified"),
+                      "diagonal_viewable_screen_size_inches_raw": row.get("diagonal_viewable_screen_size_inches")})
+    return found
+
+
 def label_model_match(pattern, exact_sku):
     """Apply the shared printed-label rule; EPA candidates remain positional."""
     if not matches_printed_model(pattern, exact_sku):
@@ -216,6 +243,8 @@ def main():
                                     "markets_raw": row.get("markets"), "market_scope_candidate": us_market_scope(row.get("markets")),
                                     "date_qualified_raw": row.get("date_qualified"),
                                     "diagonal_viewable_screen_size_inches_raw": row.get("diagonal_viewable_screen_size_inches")})
+            if not match:
+                epa_matches.extend(explicit_additional_models(row, sku))
             normalized_match = normalized_pattern_match(model_raw, sku)
             if normalized_match:
                 epa_normalized_matches.append({**normalized_match, "pd_id": row.get("pd_id"),
@@ -258,8 +287,8 @@ def main():
                                              "NOT_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and not label_by_sku[sku] for sku in population),
                                              "PARTIALLY_ACCESSIBLE": sum(bool(unreadable_by_sku.get(sku)) and bool(label_by_sku[sku]) for sku in population)},
               "epa_samsung_current_row_count": len(epa_rows),
-              "model_pattern_contract": "Printed EnergyGuide model inclusion uses matching fixed positions; trailing stars may be empty and PDP configuration suffix length may differ. EPA candidate matching remains positional and separate. Raw tokens and exact SKU are retained.",
-              "scope": "TV model identity audit only: PDP exact SKU identity, EnergyGuide printed model patterns and EPA Current model patterns with US-market scope. No PDP, EnergyGuide, or EPA energy values are compared or emitted. HIGH unreadable-label candidates remain separate operational findings.",
+              "model_pattern_contract": "Printed EnergyGuide model inclusion uses matching fixed positions; trailing stars may be empty and PDP configuration suffix length may differ. EPA primary model matching remains positional. Explicit US-market EPA additional TV model entries require exact core plus XZA. Raw tokens and exact SKU are retained.",
+              "scope": "TV model identity audit only: PDP exact SKU identity, EnergyGuide printed model patterns, EPA Current primary models and explicitly listed additional models with US-market scope. No PDP, EnergyGuide, or EPA energy values are compared or emitted. HIGH unreadable-label candidates remain separate operational findings.",
               "model_match_counts": {
                   "label_model_pattern_matched": sum(row["model_comparison"]["label"] == "MODEL_PATTERN_MATCHED" for row in table),
                   "label_model_pattern_unmatched": sum(row["model_comparison"]["label"] == "MODEL_PATTERN_UNMATCHED" for row in table),

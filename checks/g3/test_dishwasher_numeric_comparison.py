@@ -6,10 +6,14 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from g3_dishwasher_numeric_comparison import build  # noqa: E402
+from g3_dishwasher_numeric_comparison import build, number  # noqa: E402
 
 
 class DishwasherNumericComparisonTests(unittest.TestCase):
+    def test_explicit_annual_kwh_unit_is_numeric(self):
+        self.assertEqual(number("239 kWh/year"), "239")
+        self.assertIsNone(number("2.3 kWh/cycle"))
+
     def test_visual_us_annual_value_overrides_unclassified_ocr_candidate(self):
         package = {"contract": "G3_DISHWASHER_COMPARISON_PACKAGE_V1", "status": "PASS", "rows": [{
             "exact_sku": "DW50T6060US/AA",

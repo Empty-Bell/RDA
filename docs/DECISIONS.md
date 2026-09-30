@@ -1,5 +1,25 @@
 # Approved family-specific model comparison rule (2026-09-23)
 
+EPA family-source correction (2026-09-30): the user confirmed all 22 current
+EPA-related HIGH models belong to registered model groups and instructed us to
+remove the false positives without accepting weak prefix coincidences. For
+Refrigerator/Freezer and Dishwasher, a complete same-run official ENERGY STAR
+family listing can establish registration when a US-market Samsung row has a
+verified model inclusion. Apply terminal-AA normalization only to the Samsung
+sales SKU. A positional row requires at least eight fixed leading characters;
+for a row consisting of a fixed prefix followed only by trailing stars, a
+different star/suffix length is accepted only with at least eight fixed leading
+characters and an independent annual-kWh agreement. Reject conflicting fixed
+positions, non-US rows, missing certification date, ambiguous candidate IDs,
+and incomplete source retrieval. Retain the Index omission and family row as
+separate evidence. This approval supersedes the earlier Index-only source rule
+for these two product groups. For TV, an official US-market certified row's
+`additional_model_information` may establish registration when it explicitly
+lists the exact core TV model twice in the structured entry and the verified
+Samsung sales SKU equals that core plus `XZA`. Preserve both the representative
+certified model and the explicitly listed additional model as evidence. Other
+groups retain their existing contracts.
+
 History resolution approval (2026-09-29): the user chose independent source
 reconfirmation without manual review. When a finding is absent in one complete
 validated run, its current model grade may be PASS but history keeps the

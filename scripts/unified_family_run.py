@@ -43,6 +43,8 @@ def single_summary(root, run_id):
 
 
 def assess_refrigerator(root, source):
+    family_source = root / "epa-family-current"
+    run("g2_epa_family_current_capture", "--out", family_source)
     paths = (
         source / "report.json",
         source / "energy-star-source/epa-numeric/projection.json",
@@ -56,6 +58,7 @@ def assess_refrigerator(root, source):
                 raise ValueError(f"Missing G2 source control: {path}")
             output.write(path, "g2/" + path.name)
     run("g2_reassess_saved_bundle", "--source-zip", archive,
+        "--family-source", family_source,
         "--out", root / "assessment")
     return root / "assessment/reassessment.json"
 
@@ -185,7 +188,7 @@ def assess_dishwasher(run_id, root, collection):
     run("g3_dishwasher_energyguide_observe", "--retrieval-root", root / "energyguide",
         "--retrieval-run-id", run_id, "--out", root / "observation")
     run("g3_dishwasher_source_match", "--observation-root", root / "observation",
-        "--epa-root", root / "epa", "--out", root / "match")
+        "--epa-root", root / "epa", "--pdp-root", collection, "--out", root / "match")
     run("g3_dishwasher_comparison_package", "--pdp-root", collection,
         "--observation-root", root / "observation", "--epa-root", root / "epa",
         "--match-root", root / "match",

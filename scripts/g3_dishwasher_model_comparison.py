@@ -79,8 +79,10 @@ def build(package, out):
         labels = reviewed_labels or raw_labels
         epa = unique_values(item.get("epa_candidates_raw", []), "model_number")
         pdp_label = relation([sku], labels, lambda a, b: matches_printed_model(b, a, strip_terminal_aa=True))
-        pdp_epa = relation([sku], epa, lambda a, b: matches_exact(b, a))
-        label_epa = relation(labels, epa, patterns_overlap)
+        pdp_epa = ("EQUAL" if item.get("epa_match_status") == "MATCHED_CURRENT_EPA_FAMILY_PATTERN" and epa
+                   else relation([sku], epa, lambda a, b: matches_exact(b, a)))
+        label_epa = ("EQUAL" if pdp_label == "EQUAL" and pdp_epa == "EQUAL"
+                     else relation(labels, epa, patterns_overlap))
         rows.append({
             "exact_sku": sku,
             "pdp_model_exact_sku": sku,

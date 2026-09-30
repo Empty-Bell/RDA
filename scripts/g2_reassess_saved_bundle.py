@@ -3,6 +3,7 @@
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -10,6 +11,7 @@ import zipfile
 
 from g2_energy_star_assessment import build_assessment
 from g2_refrigerator_control_summary import build_summary
+from epa_family_model_match import annual_number, unique_supported_rows
 
 
 RANK = {"PASS": 0, "LOW": 1, "MEDIUM": 2, "HIGH": 3}
@@ -22,7 +24,28 @@ def unique_json(archive, suffix):
     return json.loads(archive.read(names[0]))
 
 
-def build(source_zip, out):
+def family_rows(source_root, run_id):
+    source_root = Path(source_root)
+    summary = json.loads((source_root / "capture-summary.json").read_text(encoding="utf-8"))
+    if (summary.get("contract") != "RDA_EPA_REFRIGERATION_FAMILY_CURRENT_V1"
+            or summary.get("status") != "PASS"
+            or str(summary.get("capture_run_id")) != str(os.getenv("GITHUB_RUN_ID"))
+            or {item.get("dataset_id") for item in summary.get("sources", [])} != {"p5st-her9", "8t9c-g3tn"}):
+        raise ValueError("Same-run refrigerator/freezer family source is unavailable")
+    rows = []
+    for item in summary["sources"]:
+        dataset = item["dataset_id"]
+        body = (source_root / f"{dataset}-rows.json").read_bytes()
+        metadata = (source_root / f"{dataset}-metadata.json").read_bytes()
+        if (hashlib.sha256(body).hexdigest() != item["rows_sha256"]
+                or hashlib.sha256(metadata).hexdigest() != item["metadata_sha256"]):
+            raise ValueError("EPA family source hash differs")
+        for row in json.loads(body):
+            rows.append({**row, "source_dataset_id": dataset, "source_url": item["rows_url"]})
+    return rows
+
+
+def build(source_zip, out, family_source=None):
     with zipfile.ZipFile(source_zip) as archive:
         report = unique_json(archive, "/report.json")
         review = unique_json(archive, "/three-point-input-review.json")
@@ -35,8 +58,45 @@ def build(source_zip, out):
             or original_energy.get("source_run_id") != run_id
             or any(section.get("source_run_id") != run_id for section in (numeric, model))):
         raise ValueError("Frozen G2 control sections do not share one source execution")
+    if family_source is not None:
+        official = family_rows(family_source, run_id)
+        for item in review["records"]:
+            candidate = item["epa_current_index_candidate"]
+            if candidate.get("candidate_projection_state") != "COMPLETE_NO_LITERAL_OR_PATTERN_CANDIDATE":
+                continue
+            matches = unique_supported_rows(item["exact_sku"], official)
+            if len({match["source_row"]["pd_id"] for match in matches}) != 1:
+                continue
+            row = matches[0]["source_row"]
+            candidate["candidate_projection_state"] = "MATCHED_CURRENT_FAMILY_POSITIONAL_PATTERN"
+            candidate["current_family_candidates"] = [{
+                "pd_id": row["pd_id"], "model_number_raw": row["model_number"],
+                "annual_energy_use_kwh_yr": row.get("annual_energy_use_kwh_yr"),
+                "capacity_total_volume_ft3": row.get("capacity_total_volume_ft3"),
+                "markets": row.get("markets"), "source_dataset_id": row["source_dataset_id"],
+                "source_url": row["source_url"], "match_kind": matches[0]["match_kind"],
+            }]
     revised_energy = build_assessment(review, expected_exact_skus=population,
                                       query_completeness="COMPLETE_OBSERVED_QUERY")
+    source_by_sku = {item["exact_sku"]: item for item in report["rows"]}
+    for record in revised_energy["records"]:
+        family_candidates = [item for item in record["epa_current_index_registration"].get("candidates", [])
+                             if item.get("source_dataset_id")]
+        if not family_candidates:
+            continue
+        official = annual_number(family_candidates[0].get("annual_energy_use_kwh_yr"))
+        label_values = {annual_number(observation.get("annual_energy_kwh", {}).get("value", {}).get("amount"))
+                        for observation in source_by_sku[record["exact_sku"]].get("energyguide_source_observations", [])
+                        if observation.get("annual_energy_kwh", {}).get("state") == "VALUE"}
+        label_values.discard(None)
+        if official is not None and label_values and official not in label_values:
+            numeric_record = next(item for item in numeric["records"] if item["exact_sku"] == record["exact_sku"])
+            numeric_record["findings"].append({"field": "annual_energy_kwh", "severity": "MEDIUM",
+                                               "issue_code": "ANNUAL_ENERGY_MISMATCH",
+                                               "evidence": {"label_amount": float(sorted(label_values)[0]),
+                                                            "epa_amount": float(official),
+                                                            "epa_source_dataset_id": family_candidates[0]["source_dataset_id"]}})
+            numeric_record["display_outcome"] = "MEDIUM"
     projected = dict(report)
     projected["energy_star_publication"] = revised_energy
     summary = build_summary(projected)
@@ -63,6 +123,7 @@ def build(source_zip, out):
     result = {"contract": "G2_REFRIGERATOR_SAVED_SOURCE_REASSESSMENT_V1",
               "status": "BLOCKED" if gaps else "PASS", "readiness_gaps": gaps,
               "source_execution_id": run_id, "source_workflow_run_id": os.getenv("SOURCE_RUN_ID"),
+              "epa_family_source": str(family_source) if family_source is not None else None,
               "reassessment_run_id": os.getenv("GITHUB_RUN_ID"),
               "captured_at": datetime.now(timezone.utc).isoformat(),
               "sku_count": population, "counts": {level: counts.get(level, 0) for level in RANK},
@@ -80,6 +141,7 @@ def build(source_zip, out):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source-zip", required=True)
+    parser.add_argument("--family-source")
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
-    raise SystemExit(build(args.source_zip, args.out))
+    raise SystemExit(build(args.source_zip, args.out, args.family_source))

@@ -14,7 +14,7 @@
 
 제품군 CSV는 `https://data.energystar.gov/api/views/<ID>/rows.csv?accessType=DOWNLOAD`에서 받았다. URL에 `api/views`가 들어가지만 공식 데이터 웹 페이지의 **Download → CSV** 원본 경로이며, 판정 파이프라인의 `/resource/<ID>.json` 질의와는 별도로 내려받아 비교했다. 파일은 로컬 `runtime/epa-independent-recheck/`에 보관한다. SHA-256: 냉장고 `1D28F7F66207D52AEBC9B288C34602B77011CE4972F799EDBDABDE5D26414AF3`, 냉동고 `C4E121173E2509469CE783AE086203A4F1D552E4792974EC3E0B3007F0E0E551`, 식기세척기 `E48AF66A19B7150EF395DAFE5E51CBBFEBC5CFDF78826C2BA73006A87E0B336E`, TV `208BC47C07D773F0AFCAF7A45581C8D9C8F5DEFC78DAA1F8906CDB14AB97A452`. Model Index의 Samsung 한정 API JSON SHA-256은 `74F2CA34F316A553B2040DE5CED5DBC1BC5EC9F1A66703CBFACC9D06AD169D6A`이다.
 
-현재 파이프라인의 등록 판정 출처는 Model Index `8wj2-sec8`이다. 제품군 CSV를 대조하니 **14개 냉장고·냉동고는 미국 시장의 인증 행과 모델 패턴이 일치하지만 Index에는 그 행이 없다.** 따라서 이 14개를 단정적으로 “EPA 미등록”이라고 표시하는 것은 공식 출처끼리의 충돌을 숨기는 것이다. **7개 식기세척기는 Index와 제품군 목록 모두에 관련 모델군이 있지만 현재 EPA 패턴 규칙에서는 판매 SKU와 자리수까지 일치하지 않는다.** 이들 역시 “EPA 등록/후보 모델 수집값 없음”이라고 설명하면 부정확하다. TV 1개는 두 출처 모두에서 대응 행을 찾지 못했다.
+기존 Run #30의 등록 판정은 Model Index `8wj2-sec8`에 의존했다. 공식 제품군 CSV에는 **14개 냉장고·냉동고의 미국 시장 인증 행**, 그리고 **7개 식기세척기의 관련 모델군 행**이 있다. TV 1개도 대표 `Model Number` 검색만으로는 빠지지만, 공식 TV 인증 행의 `Additional Model Information`에 정확한 모델이 명시돼 있다. 따라서 22건 모두를 “EPA 미등록”으로 표시한 이전 결과는 오검출이다.
 
 ## 22개 HIGH의 행별 대조
 
@@ -43,10 +43,10 @@
 | DW80CG5450SRAA | DW80CG545***** | 2453103 | 아니요 | 있음 |
 | DW80CG5451MTAA | DW80CG545***** | 2453103 | 아니요 | 있음 |
 | DW80CG5451SRAA | DW80CG545***** | 2453103 | 아니요 | 있음 |
-| QN77S84FAEXZA | 대응 행 없음 | — | — | 없음 |
+| QN77S84FAEXZA | 대표 QN77S85FAE 행의 추가 모델 QN77S84FAE | 3994365 | 명시적 추가 모델 | 직접 모델행 없음 |
 
-식기세척기 7건의 고정 접두어는 10–11글자이고 제품군 CSV의 연간 에너지 239 kWh/년은 7건 모두의 PDP·EnergyGuide 수집값 239와 일치한다. 따라서 **한두 글자만 같아 통과한 결과는 아니다.** 다만 현행 EPA 규칙의 별표 자리수 차이 때문에 이 7개 판매 SKU의 등록 범위는 추가 판정 기준이 필요하다. 냉장고·냉동고 14건의 공식 인증 행은 모두 `Markets`에 `United States`가 있으며 인증일은 2024–2026년이다.
+식기세척기 7건의 고정 접두어는 최소 9글자이고 제품군 CSV의 연간 에너지 239 kWh/년은 7건 모두의 PDP·EnergyGuide 수집값 239와 일치한다. 따라서 **한두 글자만 같아 통과한 결과는 아니다.** 냉장고·냉동고 14건의 공식 인증 행은 모두 `Markets`에 `United States`가 있으며 인증일은 2024–2026년이다. TV 행은 [ENERGY STAR 공식 제품 상세 PDF](https://www.energystar.gov/productfinder/product/certified-televisions/details/3994365/export/pdf/download)에도 `QN77S84FAE`가 추가 모델로 명시돼 있다.
 
-## 판정상 남은 결정
+## 승인된 보완 규칙
 
-2026-09-30 현재 Run #30의 HIGH 22건을 전부 실제 “미등록”으로 해석해서는 안 된다. 제품군 목록을 EPA 판정 근거로 포함할지, 별표 자리수가 다른 식기세척기 모델군의 고정 접두어를 판매 SKU 등록 범위로 인정할지 결정해야 한다. 그 기준을 확정하면 집계와 Action queue 문구를 함께 갱신한다. 원본 CSV의 모델군 존재만으로 SKU 인증 범위를 과도하게 확정하지 않는다.
+사용자는 이 22개 모델의 등록 모델군 포함을 확인하고 오검출 방지를 승인했다. 냉장고·냉동고는 현행 공식 제품군 행과 자리별 모델 패턴의 일치, 식기세척기는 긴 고정 접두어·미국 시장·독립적인 239 kWh 일치, TV는 인증 행에 명시된 추가 모델명과 Samsung 판매 접미어 `XZA`의 정확한 결합을 요구한다. 짧은 접두어, 중간 고정 문자 충돌, 다른 연간 사용량, 비미국 행, 인증일 누락 또는 여러 상충하는 후보는 자동 PASS하지 않는다. 현재 게시된 Run #30은 이전 규칙으로 생성된 스냅샷이며 보완 규칙은 다음 검증된 통합 실행에서 반영된다.

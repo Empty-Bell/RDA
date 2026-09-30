@@ -4,7 +4,10 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 def number(value):
-    try: return str(Decimal(str(value).replace(",", "").strip()).normalize())
+    raw=str(value or "").strip()
+    annual=re.fullmatch(r"(\d+(?:[.,]\d+)?)\s*kwh\s*/\s*(?:year|yr)",raw,re.I)
+    if annual: raw=annual.group(1)
+    try: return str(Decimal(raw.replace(",", "")).normalize())
     except (InvalidOperation, AttributeError): return None
 
 def unique(values):

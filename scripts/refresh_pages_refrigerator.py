@@ -82,6 +82,12 @@ def build(docs, assessment_path, source_zip):
         raw.update(epa_registration=registration["state"], pdp_logo=points["pdp_logo"]["state"],
                    plp_logo=points["plp_logo"]["state"],
                    epa_model=" · ".join(str(row.get("model_number_raw", "")) for row in registration.get("candidates", [])) or None)
+        family_rows = [row for row in registration.get("candidates", []) if row.get("source_dataset_id")]
+        if family_rows:
+            raw["epa_energy"] = (f"{family_rows[0]['annual_energy_use_kwh_yr']} kWh/year"
+                                 if family_rows[0].get("annual_energy_use_kwh_yr") is not None else None)
+            raw["epa_capacity"] = (f"{family_rows[0]['capacity_total_volume_ft3']} cu.ft."
+                                   if family_rows[0].get("capacity_total_volume_ft3") is not None else None)
         for finding in current["energyguide_numeric"].get("findings", []):
             evidence = finding.get("evidence") or {}
             if finding.get("field") == "capacity_cu_ft":
@@ -93,6 +99,7 @@ def build(docs, assessment_path, source_zip):
         detail = {"model": sku, "family": FAMILY, "grade": grade,
                   "assessment": current, "frozen_canonical_source_row": s[sku],
                   "source_epa_numeric": epa_values[sku],
+                  "source_epa_family": family_rows,
                   "source_run": run_id, "source_workflow_run_id": assessment["source_workflow_run_id"],
                   "previous_evidence_url": prior_url,
                   "prior_raw_evidence": {key: value for key, value in prior.items()
@@ -105,7 +112,10 @@ def build(docs, assessment_path, source_zip):
     family.update({level.lower(): assessment["counts"][level] for level in ("PASS", "HIGH", "MEDIUM", "LOW")})
     family.update(run_id=run_id, run_url=f"https://github.com/Empty-Bell/RDA/actions/runs/{run_id}",
                   grade_state="assessed",
-                  note="승인 규칙으로 수락된 G2 원본을 재판정: PASS 43 / HIGH 14 / MEDIUM 7 / LOW 11. 용량 차이와 PDP 연간 사용량 누락 포함; Specs 필드 부재는 No와 구분.")
+                  note=(f"같은 실행의 EPA 현행 Index와 냉장고·냉동고 공식 제품군 행을 교차 확인: "
+                        f"PASS {assessment['counts']['PASS']} / HIGH {assessment['counts']['HIGH']} / "
+                        f"MEDIUM {assessment['counts']['MEDIUM']} / LOW {assessment['counts']['LOW']}. "
+                        "용량 차이와 PDP 연간 사용량 누락 포함; Specs 필드 부재는 No와 구분."))
     snapshot["run_number"] = old_run + 1
     snapshot["built_at"] = datetime.now(timezone.utc).isoformat()
     snapshot["source_note"] = "Current-rule refrigerator replay and accepted G3 family controls; family source runs differ and are not one unified collection."

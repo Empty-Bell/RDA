@@ -7,6 +7,8 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+from epa_family_model_match import unique_supported_rows
+
 
 def j(path):
     return json.loads(Path(path).read_bytes())
@@ -36,7 +38,7 @@ def row_reference(row):
             "normalized_model_identifier": normalize_identifier(row.get("model_number"))}
 
 
-def build(observation_root, epa_root, out):
+def build(observation_root, epa_root, out, pdp_root=None):
     obs = j(Path(observation_root) / "sku-document-index.json")
     epa = j(Path(epa_root) / "samsung-current-rows.json")
     if not isinstance(epa, list):
@@ -54,26 +56,54 @@ def build(observation_root, epa_root, out):
         else:
             literal_rows.setdefault(normalize_identifier(model), []).append(reference)
     skus = sorted({x["exact_sku"] for x in obs.get("sku_documents", [])})
+    pdp_by_sku = {}
+    if pdp_root is not None:
+        for path in Path(pdp_root).glob("pdp/*/result.json"):
+            result = j(path)
+            if result.get("exact_sku") in pdp_by_sku:
+                raise ValueError("Duplicate dishwasher PDP SKU")
+            pdp_by_sku[result["exact_sku"]] = result
+        if set(pdp_by_sku) != set(skus):
+            raise ValueError("Dishwasher PDP and EnergyGuide SKU populations differ")
     rows = []
     for sku in skus:
         normalized_sku = normalize_identifier(sku)
         literal_candidates = literal_rows.get(normalized_sku, [])
         pattern_candidates = [reference for pattern, reference in positional_rows if positional_pattern_matches(pattern, sku)]
+        family_candidates = []
+        if pdp_by_sku and not literal_candidates and not pattern_candidates:
+            facts = pdp_by_sku[sku].get("pdp_facts_raw", {})
+            pdp_energy = [field.get("value") for field in facts.get("energy_consumption_raw", [])]
+            pdp_energy += [field.get("value") for field in facts.get("spec_fields_raw", [])
+                           if field.get("name") in {"Annual Energy Consumption", "Energy Consumption (annual)"}
+                           and re.search(r"\bkwh\s*/\s*(?:year|yr)\b", str(field.get("value") or ""), re.I)]
+            matched = unique_supported_rows(sku, epa, annual_values=pdp_energy,
+                                            allow_trailing_star_group=True)
+            if len({item["source_row"]["pd_id"] for item in matched}) == 1:
+                family_candidates = [{**row_reference(item["source_row"]),
+                                      "match_kind": item["match_kind"],
+                                      "annual_energy_use_kwh_year": item["source_row"].get("annual_energy_use_kwh_year"),
+                                      "markets": item["source_row"].get("markets")}
+                                     for item in matched]
         if literal_candidates:
             candidates, state = literal_candidates, "MATCHED_CURRENT_EPA_ROW" if len(literal_candidates) == 1 else "AMBIGUOUS_CURRENT_EPA_ROWS"
         elif pattern_candidates:
             candidates, state = pattern_candidates, "MATCHED_CURRENT_EPA_PATTERN_CANDIDATES" if len(pattern_candidates) == 1 else "AMBIGUOUS_CURRENT_EPA_ROWS"
+        elif family_candidates:
+            candidates, state = family_candidates, "MATCHED_CURRENT_EPA_FAMILY_PATTERN"
         elif unsupported_pattern_rows:
             candidates, state = [], "UNRESOLVED_CURRENT_EPA_PATTERN_ENCODING"
         else:
             candidates, state = [], "NO_CURRENT_EPA_ROW"
         rows.append({"exact_sku": sku, "normalized_sku": normalized_sku,
                      "literal_candidates": literal_candidates, "positional_pattern_candidates": pattern_candidates,
+                     "family_pattern_candidates": family_candidates,
                      "unsupported_pattern_references": unsupported_pattern_rows, "candidate_count": len(candidates),
                      "candidate_pd_ids": [x["pd_id"] for x in candidates],
                      "candidate_model_numbers": [x["model_number_raw"] for x in candidates],
                      "match_status": state, "assessment": "NOT_EVALUATED"})
-    states = ("MATCHED_CURRENT_EPA_ROW", "MATCHED_CURRENT_EPA_PATTERN_CANDIDATES", "NO_CURRENT_EPA_ROW",
+    states = ("MATCHED_CURRENT_EPA_ROW", "MATCHED_CURRENT_EPA_PATTERN_CANDIDATES",
+              "MATCHED_CURRENT_EPA_FAMILY_PATTERN", "NO_CURRENT_EPA_ROW",
               "AMBIGUOUS_CURRENT_EPA_ROWS", "UNRESOLVED_CURRENT_EPA_PATTERN_ENCODING")
     report = {"contract": "G3_DISHWASHER_CURRENT_EPA_MATCH_V2", "created_at": datetime.now(timezone.utc).isoformat(),
               "source_observation_sha256": hashlib.sha256((Path(observation_root)/"sku-document-index.json").read_bytes()).hexdigest(),
@@ -91,6 +121,7 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--observation-root", required=True)
     p.add_argument("--epa-root", required=True)
+    p.add_argument("--pdp-root")
     p.add_argument("--out", required=True)
     a = p.parse_args()
-    build(a.observation_root, a.epa_root, a.out)
+    build(a.observation_root, a.epa_root, a.out, a.pdp_root)
