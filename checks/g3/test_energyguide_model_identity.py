@@ -21,6 +21,8 @@ class PrintedModelIdentityTests(unittest.TestCase):
         self.assertFalse(matches_printed_model("DW80B70**A*", "DW80B7070US/AA"))
         self.assertFalse(matches_printed_model("DW80CG54******", "DW80CB5450SRAA"))
         self.assertFalse(matches_printed_model("******", "DW80CG5450SRAA"))
+        self.assertFalse(matches_printed_model("D*", "DW80CG5450SRAA"))
+        self.assertFalse(matches_printed_model("DW*", "DW80CG5450SRAA"))
 
     def test_washer_and_tv_label_apply_rule_without_changing_epa_rule(self):
         for label, epa in ((washer_label_match, washer_epa_match), (tv_label_match, tv_epa_match)):

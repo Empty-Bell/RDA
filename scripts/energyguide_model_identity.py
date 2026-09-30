@@ -26,7 +26,10 @@ def matches_printed_model(label_model, pdp_model, *, strip_terminal_aa=False):
     pattern = normalize_label(label_model)
     identifier = normalize_pdp(pdp_model, strip_terminal_aa=strip_terminal_aa)
     fixed_prefix = re.split(r"[*?]", pattern, maxsplit=1)[0]
-    if not fixed_prefix or not identifier.startswith(fixed_prefix):
+    # A one- or two-character OCR fragment is not model identity evidence.
+    # Six fixed characters is the minimum observed in the accepted corpus;
+    # shorter future captures remain unresolved instead of becoming PASS.
+    if len(fixed_prefix) < 6 or not identifier.startswith(fixed_prefix):
         return False
     if not all(token in "*?" or token == character for token, character in zip(pattern, identifier)):
         return False

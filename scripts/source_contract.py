@@ -135,9 +135,18 @@ def pdp_facts(data, target, family='refrigerator'):
         for item in group['specList']:
             fields.append({'group': group.get('groupName'), 'name': item.get('name'), 'value': item.get('value')})
     documents = [] if specs_only else [x for x in support[0]['supports'] if re.fullmatch(r'energy\s*guide', x.get('name', ''), re.I)]
+    if family == 'washer':
+        # Some current Washer Specs use an explicit annual kWh field instead
+        # of the older Energy Guide Label field. Never use a per-cycle value.
+        annual_names = {'Energy Consumption (annual)', 'Energy Consumption'}
+        energy_rows = [x for x in fields if x['name'] == energy_name or (
+            x['name'] in annual_names and re.search(r'\bkwh\s*/\s*(?:year|yr)\b', str(x.get('value') or ''), re.I)
+        )]
+    else:
+        energy_rows = [x for x in fields if energy_name is not None and x['name'] == energy_name]
     return {'exact_sku': target,
             'spec_fields_raw': fields,
-            'energy_consumption_raw': [x for x in fields if energy_name is not None and x['name'] == energy_name],
+            'energy_consumption_raw': energy_rows,
             'capacity_raw': [x for x in fields if capacity_name is not None and x['name'] == capacity_name],
             'screen_size_raw': [x for x in fields if x['name'] == 'Screen Size'],
             'screen_size_class_raw': [x for x in fields if x['name'] == 'Screen Size (Class)'],

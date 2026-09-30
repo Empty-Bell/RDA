@@ -63,6 +63,18 @@ class WasherContract(unittest.TestCase):
         self.assertEqual(len(facts['energy_star_spec_claim_raw']), 2)  # Certified and Most Efficient distinct raw claims
         self.assertIn('wf90f53adsa5', facts['energyguide_documents'][0]['url'])
 
+    def test_explicit_annual_kwh_is_collected_but_per_cycle_is_not(self):
+        source = json.loads((ROOT / 'bridge-combo.json').read_text(encoding='utf-8'))
+        spec = next(row for row in source['Specs'] if row['modelCode'] == 'WD90F53AVBUS')
+        spec['fullSpecs'][0]['specList'].extend([
+            {'name': 'Energy Consumption (annual)', 'value': '120 kWh/year'},
+            {'name': 'Energy Consumption (per cycle)', 'value': '2.25 kWh'},
+        ])
+        facts = pdp_facts(source, 'WD90F53AVBUS', family='washer')
+        names = [row['name'] for row in facts['energy_consumption_raw']]
+        self.assertIn('Energy Consumption (annual)', names)
+        self.assertNotIn('Energy Consumption (per cycle)', names)
+
     def test_long_partial_embedded_text_requires_ocr(self):
         observed = json.loads((ROOT / 'partial-text-energyguide.json').read_text(encoding='utf-8'))
         self.assertGreater(len(observed['embedded_text']), 500)
