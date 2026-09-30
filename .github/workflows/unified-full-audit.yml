@@ -15,8 +15,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  schedule_window:
+    name: Check one-time trial window
+    runs-on: ubuntu-24.04
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - id: check
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        shell: bash
+        run: |
+          if [[ "$SCHEDULE" == '0 21 30 9 *' && "$(date -u +%Y)" != '2026' ]]; then
+            echo 'proceed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'proceed=true' >> "$GITHUB_OUTPUT"
+          fi
+
   preflight:
     name: Validate report code before live collection
+    needs: schedule_window
+    if: needs.schedule_window.outputs.proceed == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
