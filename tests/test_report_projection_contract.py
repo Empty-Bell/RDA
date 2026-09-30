@@ -22,3 +22,14 @@ class ReportProjectionContractTest(unittest.TestCase):
         description = describe(["ANNUAL_ENERGY_MISMATCH"], values)
         self.assertIn("PDP=259; EnergyGuide=259; EPA=240", description)
         self.assertNotIn("assessment=not assessed", description)
+
+    def test_washer_label_candidate_is_shown_when_no_canonical_ocr_amount(self):
+        record = {"family": "세탁기", "model": "WF45B6300AP/US", "grade": "PASS",
+                  "findings": [], "raw_summary": {"pdp_energy": "93 kWh/Year",
+                                                  "label_energy": "93", "epa_energy": "93"},
+                  "label_urls": ["https://example.com/label.pdf"],
+                  "epa_registration": "PRESENT"}
+        detail = {"source_comparison": {"ocr_energy": {"state": "NOT_CAPTURED"}}}
+        row = projection(record, detail, 1)
+        self.assertEqual(row["OCR kWh"], 93)
+        self.assertEqual(row["OCR Status"], "VALUE")

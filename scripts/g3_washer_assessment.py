@@ -108,12 +108,16 @@ def build(comparison_path, collection_root, out):
             readiness_gaps.append({"exact_sku": sku, "reason": "LABEL_ANNUAL_ENERGY_UNAVAILABLE"})
         if epa_registered and not values.get("EPA_US_MARKET_CANDIDATE"):
             readiness_gaps.append({"exact_sku": sku, "reason": "MATCHED_EPA_ANNUAL_ENERGY_UNAVAILABLE"})
+        if (source.get("pdp_energy_selected_field") not in (None, "NO_ANNUAL_ENERGY_FIELD")
+                and not values.get("PDP")):
+            readiness_gaps.append({"exact_sku": sku, "reason": "SELECTED_PDP_ANNUAL_ENERGY_UNPARSEABLE"})
         if publication_outcome == "NOT_EVALUATED":
             readiness_gaps.append({"exact_sku": sku, "reason": "PUBLICATION_POINT_UNRESOLVED"})
         if energy_state == "SOURCE_VALUES_DIFFER":
             findings.append({"control": "ANNUAL_ENERGY", "severity": "MEDIUM",
                              "issue_code": "ANNUAL_ENERGY_MISMATCH"})
-        if (not values.get("PDP") and values.get("LABEL")
+        if (source.get("pdp_energy_selected_field") in (None, "NO_ANNUAL_ENERGY_FIELD")
+                and not values.get("PDP") and values.get("LABEL")
                 and set(values["LABEL"]) == set(values.get("EPA_US_MARKET_CANDIDATE", []))):
             findings.append({"control": "ANNUAL_ENERGY", "severity": "LOW",
                              "issue_code": "PDP_ANNUAL_ENERGY_MISSING"})

@@ -115,6 +115,25 @@ def extract_kwh(raw):
     return decimal_value(match.group("value")) if match else None
 
 
+def select_pdp_annual_energy(rows):
+    """Use the label-aligned Specs field before generic consumption fields."""
+    named = [row for row in rows if isinstance(row, dict)]
+    priorities = ("Energy Guide Label", "Energy Consumption (annual)", "Energy Consumption")
+    for name in priorities:
+        selected = [row for row in named if str(row.get("name") or "").strip().casefold() == name.casefold()]
+        if selected:
+            return selected, name
+    return [], "NO_ANNUAL_ENERGY_FIELD"
+
+
+def selected_annual_value(row):
+    raw = row.get("value")
+    parsed = extract_kwh(raw)
+    if parsed is None and str(row.get("name") or "").strip().casefold() == "energy guide label":
+        return decimal_value(raw)
+    return parsed
+
+
 def us_market_scope(raw):
     if isinstance(raw, list):
         values = [str(value) for value in raw]
@@ -228,6 +247,10 @@ def main():
             raw_value = field.get("value")
             pdp_energies.append({"value_raw": raw_value, "kwh_decimal_candidate": extract_kwh(raw_value),
                                  "field_name_raw": field.get("name"), "field_group_raw": field.get("group")})
+        selected_pdp_energies, pdp_energy_field = select_pdp_annual_energy(
+            pdp_facts.get("energy_consumption_raw", []))
+        selected_pdp_values = sorted({value for row in selected_pdp_energies
+                                      if (value := selected_annual_value(row)) is not None})
 
         epa_matches = []
         epa_normalized_matches = []
@@ -252,7 +275,7 @@ def main():
                                                "strict_match_already_found": bool(match)})
 
         values = {
-            "PDP": sorted({x["kwh_decimal_candidate"] for x in pdp_energies if x["kwh_decimal_candidate"] is not None}),
+            "PDP": selected_pdp_values,
             "LABEL": sorted({x["kwh_decimal_candidate"] for x in label_energies if x["kwh_decimal_candidate"] is not None}),
             "EPA_US_MARKET_CANDIDATE": sorted({x["annual_energy_kwh_decimal_candidate"] for x in epa_matches
                            if x["market_scope_candidate"] == "US_MARKET_LISTED"
@@ -273,6 +296,8 @@ def main():
                                                 "snapshot_sha256": pdp.get("snapshot_sha256"),
                                                 "bridge_sha256": (pdp.get("bridge") or {}).get("sha256")},
                       "pdp_energy_candidates_raw": pdp_energies,
+                      "pdp_energy_selected_field": pdp_energy_field,
+                      "pdp_energy_selected_values": selected_pdp_values,
                       "label_document_count": len(label_records), "label_model_patterns_raw": label_patterns,
                       "label_prefix_matches": label_matches, "label_annual_energy_candidates_raw": label_energies,
                       "epa_current_model_matches": epa_matches,

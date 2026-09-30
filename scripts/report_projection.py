@@ -188,7 +188,11 @@ def projection(record, detail, position):
     epa_model = raw.get("epa_model")
     epa_numeric = detail.get("source_epa_numeric") or {}
     pdp_kwh = energy_number(raw.get("pdp_energy"))
-    label_kwh = (ocr_energy or {}).get("amount") if isinstance(ocr_energy, dict) else number(raw.get("label_energy"))
+    label_kwh = (ocr_energy or {}).get("amount") if isinstance(ocr_energy, dict) else None
+    if label_kwh is None:
+        label_kwh = number(raw.get("label_energy"))
+    if label_kwh is None and re.fullmatch(r"\d+(?:\.\d+)?", str(raw.get("label_energy") or "")):
+        label_kwh = float(raw["label_energy"])
     label_capacity = (ocr_capacity or {}).get("amount") if isinstance(ocr_capacity, dict) else number(raw.get("label_capacity"))
     annual_value = epa_numeric.get("annual_energy_kwh") or {}
     epa_kwh = (annual_value.get("amount") if annual_value.get("state") == "VALUE"
@@ -224,6 +228,8 @@ def projection(record, detail, position):
         ocr_status = None
     elif document_status == "SOURCE_PDF_PARSED":
         ocr_status = "OCR_NUMERIC_DIFFERENCE" if numeric_findings else "OCR_PARSED"
+    elif label_kwh is not None:
+        ocr_status = "VALUE"
     else:
         ocr_status = raw.get("label_energy_state") or "NOT_CAPTURED"
     listings = frozen.get("listings") or []

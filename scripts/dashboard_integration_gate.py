@@ -36,6 +36,13 @@ def grade(row):
     return row.get("display_outcome", row.get("grade"))
 
 
+def contradictory_annual_finding(row):
+    issues = {finding.get("issue_code") for finding in row.get("findings", [])}
+    annual = row.get("annual_energy") or {}
+    return ("ANNUAL_ENERGY_MISMATCH" in issues
+            and annual.get("comparison_candidate") == "ALL_THREE_SOURCES_HAVE_SAME_EXACT_VALUE")
+
+
 def build(docs, manifest_path, artifacts_root, out, unified_report_path=None):
     docs, artifacts_root, out = map(Path, (docs, artifacts_root, out))
     manifest, snapshot = read(manifest_path), read(docs / "model-data.json")
@@ -65,6 +72,8 @@ def build(docs, manifest_path, artifacts_root, out, unified_report_path=None):
     if enforce_unique_evidence and len(set(evidence_paths)) != len(evidence_paths):
         errors.append("EVIDENCE_PATH_REUSED_ACROSS_MODELS")
     for row in records:
+        if contradictory_annual_finding(row):
+            errors.append(f"CONTRADICTORY_ANNUAL_ENERGY_FINDING:{row['family']}:{row['model']}")
         evidence = row.get("evidence_url", "")
         if not evidence.startswith("./evidence/") or not (docs / evidence[2:]).is_file():
             errors.append(f"EVIDENCE_FILE_MISSING:{row['family']}:{row['model']}")

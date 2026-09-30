@@ -8,7 +8,7 @@ HIGH_ISSUE="CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
 def point(value): return {"state":{"Y":"PRESENT","N":"ABSENT"}.get(value,"UNKNOWN"),"raw_value":value}
 def spec(rows):
     rows=[x for x in rows or [] if "energy star" in str(x.get("name","")).lower() and "certif" in str(x.get("name","")).lower()]
-    if not rows:return {"state":"ABSENT","raw_rows":[]}
+    if not rows:return {"state":"NOT_APPLICABLE","raw_rows":[]}
     values={str(x.get("value","")).strip().lower() for x in rows}
     return {"state":"PRESENT" if values and values<={"yes","y","true"} else "ABSENT" if values and values<={"no","n","false"} else "UNKNOWN","raw_rows":rows}
 def pdp_flag(claim):
@@ -28,10 +28,10 @@ def build(collection_root, match_path, out):
         points={"plp_logo":point(claim.get("plp_energy_star_flag_raw")),"pdp_logo":point(pdp_flag(claim)),"spec_certification":spec(claim.get("pdp_spec_energy_star_claim_raw"))}
         reg="PRESENT" if m.get("match_status") in {"MATCHED_CURRENT_EPA_ROW", "MATCHED_CURRENT_EPA_PATTERN_CANDIDATES", "MATCHED_CURRENT_EPA_FAMILY_PATTERN"} else "ABSENT" if m.get("match_status")=="NO_CURRENT_EPA_ROW" else "UNKNOWN"
         states=[x["state"] for x in points.values()]
-        if reg=="PRESENT" and all(x=="PRESENT" for x in states): outcome,severity,issue="PASS",None,None
+        if reg=="PRESENT" and all(x in ("PRESENT","NOT_APPLICABLE") for x in states): outcome,severity,issue="PASS",None,None
         elif reg=="PRESENT" and "ABSENT" in states: outcome,severity,issue="LOW","LOW",LOW_ISSUE
         elif reg=="ABSENT" and "PRESENT" in states: outcome,severity,issue="HIGH","HIGH",HIGH_ISSUE
-        elif reg=="ABSENT" and all(x=="ABSENT" for x in states): outcome,severity,issue="NO_FINDING",None,None
+        elif reg=="ABSENT" and all(x in ("ABSENT","NOT_APPLICABLE") for x in states): outcome,severity,issue="NO_FINDING",None,None
         else: outcome,severity,issue="NOT_EVALUATED",None,None
         records.append({"exact_sku":sku,"epa_current_registration":{"state":reg,"match_status":m.get("match_status"),"candidate_pd_ids":m.get("candidate_pd_ids",[])},"publication_points":points,"outcome":outcome,"severity":severity,"issue_code":issue})
     counts={x:sum(r["outcome"]==x for r in records) for x in ("PASS","LOW","HIGH","NO_FINDING","NOT_EVALUATED")}

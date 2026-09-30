@@ -3,10 +3,30 @@ import json
 import unittest
 from pathlib import Path
 from scripts.source_contract import pf_population, pdp_facts, epa_contract, energyguide_ocr_reason
+from scripts.g3_washer_source_comparison import select_pdp_annual_energy, selected_annual_value
 
 ROOT = Path(__file__).parent / 'fixtures' / 'washer'
 
 class WasherContract(unittest.TestCase):
+    def test_energy_guide_label_value_has_priority_over_generic_consumption(self):
+        rows = [
+            {'name': 'Energy Consumption (annual)', 'value': '608 kWh/year'},
+            {'name': 'Energy Guide Label', 'value': '94 kWh/Year'},
+            {'name': 'Energy Consumption', 'value': '608 kWh/year'},
+        ]
+        selected, field = select_pdp_annual_energy(rows)
+        self.assertEqual(field, 'Energy Guide Label')
+        self.assertEqual([selected_annual_value(row) for row in selected], ['94'])
+
+    def test_generic_annual_value_is_used_only_without_label_field(self):
+        rows = [
+            {'name': 'Energy Consumption (annual)', 'value': '120 kWh/year'},
+            {'name': 'Energy Consumption', 'value': '121 kWh/year'},
+        ]
+        selected, field = select_pdp_annual_energy(rows)
+        self.assertEqual(field, 'Energy Consumption (annual)')
+        self.assertEqual([selected_annual_value(row) for row in selected], ['120'])
+
     def setUp(self):
         self.pages = [json.loads((ROOT / f'pf-page-{i}.json').read_text(encoding='utf-8')) for i in range(2)]
         self.bridge = json.loads((ROOT / 'bridge-combo.json').read_text(encoding='utf-8'))
