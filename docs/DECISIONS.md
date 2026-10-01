@@ -239,6 +239,16 @@ Battery Wh, adapter rated W, mode W, TEC kWh and TEC allowance/limit differ (D01
 TEC metadata does not specify the period in its column label; verify test basis before
 annual normalization/comparison. No adapter/battery-derived annual PDP energy.
 
+Computer scope follow-up (2026-10-01, D05/D08): scheduled unified run 36795898093
+observed `NP740VJG-KA1US` in the PF grouped variant list with `stockFlag=N`, while
+its requested PDP redirected to a different Galaxy Book SKU. Exact configuration
+identity failed on every bounded retry across three workflow attempts. The current
+rule still includes PF grouped variants; whether a nonselectable variant remains in
+the denominator, is excluded only when absent from a rendered PLP card, or is
+excluded by stock state requires a scope decision. A redirected model must never be
+accepted as this SKU. Until the scope rule is settled, the source run remains FAILED
+and the last validated dashboard snapshot remains published.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |
