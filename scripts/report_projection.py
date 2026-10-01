@@ -34,7 +34,7 @@ ACTION = {
     "ENERGYGUIDE_DOCUMENT_MISSING_CANDIDATE": ("Add or reconnect the EnergyGuide document for this SKU.", "해당 SKU의 EnergyGuide 문서를 연결하거나 링크를 수정하세요."),
     "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE": ("Replace the unreadable EnergyGuide PDF or repair its link.", "열 수 없는 EnergyGuide PDF를 교체하거나 링크를 수정하세요."),
     "MODEL_IDENTITY_MISMATCH": ("Check every printed label model against the PDP SKU and correct the label link if needed.", "라벨에 적힌 모든 모델과 PDP SKU를 대조하고 잘못 연결된 라벨을 수정하세요."),
-    "PDP_LINK_WRONG_MODEL": ("Correct the PLP option link so it opens this exact SKU's PDP.", "PLP 옵션 링크가 해당 SKU의 PDP로 열리도록 수정하세요."),
+    "PDP_LINK_WRONG_MODEL": ("Check this option's stock status and restore navigation to its exact-SKU PDP.", "이 옵션의 재고 상태를 확인하고 해당 SKU의 PDP로 이동하도록 수정하세요."),
 }
 
 
@@ -49,6 +49,7 @@ def korean_description(description):
         ("PDP logo=", "PDP 로고="), ("PLP logo=", "PLP 로고="),
         ("PDP spec=", "PDP Specs="),
         ("PDP model=", "PDP 모델="), ("EnergyGuide models=", "EnergyGuide 모델="),
+        ("PLP stock flag=", "PLP 재고="),
         ("model comparison=", "모델 대조="),
         ("Annual kWh:", "연간 kWh:"), ("PDP annual kWh=", "PDP 연간 kWh="),
         ("Capacity (cu.ft):", "용량 (cu.ft):"),
@@ -145,7 +146,7 @@ def describe(issue_codes, values, model_assessment=None, redirect=None):
             line += f"; model comparison={model_assessment}"
         lines.append(line)
     if "PDP_LINK_WRONG_MODEL" in issue_codes and redirect:
-        lines.append(f"PLP SKU={shown(values['SKU'])}; requested PDP={shown(redirect.get('requested_url'))}; redirected to={shown(redirect.get('final_url'))}")
+        lines.append(f"PLP SKU={shown(values['SKU'])}; PLP stock flag={shown(redirect.get('plp_stock_flag_raw'))}; requested PDP={shown(redirect.get('requested_url'))}; redirected to={shown(redirect.get('final_url'))}")
     if "ANNUAL_ENERGY_MISMATCH" in issue_codes:
         lines.append("Annual kWh: PDP={}; EnergyGuide={}; EPA={}".format(
             *(shown(values[key]) for key in ("PDP kWh", "OCR kWh", "EPA kWh"))))

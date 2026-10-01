@@ -223,6 +223,7 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
             "pdp_product_facts_raw": facts[sku], "energy_star_claim_sources_raw": claims[sku],
             "pdp_identity_failure": ({key: products[sku].get(key) for key in
                                       ("requested_url", "final_url", "redirect_observations")}
+                                     | {"plp_stock_flag_raw": (products[sku].get("source_claim_listing_raw") or {}).get("stockFlag")}
                                      if products[sku].get("status") == "PDP_REDIRECT_CONFIRMED" else None),
             "epa_computer_model_pattern_candidates": candidates,
             "registration_and_publication_assessment": "NOT_EVALUATED"})

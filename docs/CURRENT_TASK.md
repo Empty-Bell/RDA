@@ -1,5 +1,26 @@
 # Current task continuation — 2026-09-24
 
+## Computer PLP option navigation reclassification — 2026-10-01
+
+Unified run [36824247885](https://github.com/Empty-Bell/RDA/actions/runs/36824247885)
+completed all 11 families, integration, Pages deployment, and public smoke in
+one attempt after a manual `workflow_dispatch`. No operator action occurred
+after dispatch. It was not a scheduled unattended start.
+
+Two Galaxy Book6 14-inch PLP option SKUs, `NP740VJG-KA1US` and
+`NP740VJG-KG2US`, each reached the unrelated `NP960UJH-XG2US` buy page in
+three fresh browser attempts. A separate live browser check reproduced both
+destinations. Switching that configurator to Galaxy Book6 exposes the 14-inch
+choice as `Out of Stock`. The saved PLP PF source nevertheless includes both
+options and marks KA1US `stockFlag=N` and KG2US `stockFlag=Y`; both have
+`energyStarFlg=Y` and a current US EPA base-model match. This is a SKU
+navigation/availability discrepancy, not evidence of an ENERGY STAR
+registration failure. `PDP_LINK_WRONG_MODEL` is therefore MEDIUM, with PDP
+logo UNKNOWN and PLP stock flag preserved in the evidence. Do not borrow the
+redirected model's logo, or turn an unverified exact PDP into PASS. The site
+owner needs to reconcile PLP stock, the buy-page configurator, and exact-SKU
+links to resolve the underlying navigation defect.
+
 ## G5–G7 closed — 2026-09-29
 
 G5 history, G6 operations and G7 validated GitHub Pages publication are

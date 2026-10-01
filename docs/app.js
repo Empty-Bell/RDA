@@ -14,7 +14,7 @@ const issueNames = {
   ANNUAL_ENERGY_MISMATCH:"연간 에너지 불일치",
   ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE:"라벨 파일 열람 불가",
   ENERGYGUIDE_DOCUMENT_MISSING_CANDIDATE:"라벨 문서 누락",
-  PDP_LINK_WRONG_MODEL:"PLP 링크가 다른 모델 PDP로 이동"
+  PDP_LINK_WRONG_MODEL:"PLP 옵션의 PDP 이동 불일치"
 };
 const actions = {
   CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE:"ENERGY STAR 표시의 EPA 등록 근거를 확인하세요.",
@@ -27,7 +27,7 @@ const actions = {
   ANNUAL_ENERGY_MISMATCH:"PDP·라벨·EPA의 연간 에너지 수치를 대조해 잘못된 값을 수정하세요.",
   ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE:"라벨 링크가 열리는지 확인하고 접근 가능한 파일로 교체하세요.",
   ENERGYGUIDE_DOCUMENT_MISSING_CANDIDATE:"해당 모델의 EnergyGuide 문서와 연결 위치를 확인하세요.",
-  PDP_LINK_WRONG_MODEL:"PLP 옵션 링크가 해당 SKU의 PDP를 열도록 수정하세요."
+  PDP_LINK_WRONG_MODEL:"옵션 재고와 PDP 이동 경로를 확인하고 해당 SKU의 페이지로 연결하세요."
 };
 let data;
 let queueVisible = 12;
@@ -55,7 +55,7 @@ function modelPatterns(value){return [...new Set(String(value||"").split(/\s*(?:
 function nearestPattern(base,patterns){return modelPatterns(patterns).sort((a,b)=>mismatchScore(base,a)-mismatchScore(base,b))[0]||""}
 function highlightModel(value,reference,patternSide=false){const raw=String(value||"");if(!raw)return '<span class="missing">수집값 없음</span>';const compare=normalizeModel(raw),other=normalizeModel(reference);let normalizedIndex=0;let html="";for(const char of raw){if(!/[A-Za-z0-9*]/.test(char)){html+=esc(char);continue}const upper=char.toUpperCase(),peer=other[normalizedIndex];let different=upper!=="*"&&peer!=="*"&&peer!==undefined&&upper!==peer;if(!patternSide&&peer===undefined&&!other.endsWith("*"))different=true;if(patternSide&&peer===undefined&&upper!=="*")different=true;html+=different?`<mark class="mismatch">${esc(char)}</mark>`:esc(char);normalizedIndex++}return html}
 function modelComparison(record){const s=record.raw_summary||{};const pdp=s.pdp_model||record.model;const patterns=modelPatterns(s.label_model);const label=nearestPattern(pdp,s.label_model);const matched=patterns.filter(pattern=>mismatchScore(pdp,pattern)===0);const epa=s.epa_model||"";const allPatterns=patterns.length?patterns.map(pattern=>`<span class="model-candidate ${mismatchScore(pdp,pattern)===0?"matched":""}">${highlightModel(pattern,pdp,true)}${mismatchScore(pdp,pattern)===0?" <b>일치</b>":""}</span>`).join(""):null;return `<div class="compare-block"><h4>모델명 대조</h4>${evidenceLine("PDP 모델",highlightModel(pdp,matched[0]||label),"html")}${evidenceLine(`EnergyGuide 모델 패턴${patterns.length>1?` (${patterns.length})`:""}`,allPatterns,"html")}${epa?evidenceLine("EPA 모델 패턴",epa):""}<p class="compare-foot">${matched.length?"라벨 후보 중 하나 이상이 PDP 모델과 일치합니다.":"빨간 글씨만 가장 가까운 패턴과의 문자 차이입니다."} *는 한 자리 모델 문자 후보입니다.</p></div>`}
-function redirectEvidence(record){const final=record.raw_summary?.pdp_redirect_final_url||"",observed=final.match(/-sku-([^/?#]+)/i)?.[1]?.toUpperCase()||final;return `<div class="compare-block"><h4>PLP → PDP 모델 연결</h4>${evidenceLine("PLP 옵션 SKU",record.model)}${evidenceLine("이동한 PDP 모델",highlightModel(observed,record.model),"html")}${final?`<p class="compare-foot">실제 이동 주소: ${esc(final)}</p>`:""}</div>`}
+function redirectEvidence(record){const final=record.raw_summary?.pdp_redirect_final_url||"",stock=record.raw_summary?.pdp_redirect_plp_stock_flag,observed=final.match(/-sku-([^/?#]+)/i)?.[1]?.toUpperCase()||final;return `<div class="compare-block"><h4>PLP → PDP 모델 연결</h4>${evidenceLine("PLP 옵션 SKU",record.model)}${stock?evidenceLine("PLP 재고 표시",stock,"status"):""}${evidenceLine("이동한 PDP 모델",highlightModel(observed,record.model),"html")}${final?`<p class="compare-foot">실제 이동 주소: ${esc(final)}</p>`:""}</div>`}
 function energyNumber(value){const raw=String(value||"");const annual=raw.match(/(?:annual[^:·]*|energy\s+(?:usage|consumption)[^:·]*):\s*(\d+(?:\.\d+)?)/i);if(annual)return annual[1];const withUnit=raw.match(/(\d+(?:\.\d+)?)\s*kwh/i);if(withUnit)return withUnit[1];const pieces=raw.split(/\s*·\s*/);const numbers=pieces.map(part=>part.match(/\b(\d+(?:\.\d+)?)\b/)?.[1]).filter(Boolean);const unique=[...new Set(numbers.map(n=>String(Number(n))))];return unique.length===1?unique[0]:numbers.length===1?numbers[0]:null}
 function energyDisplay(value){if(value===null||value===undefined||value==="")return "미수집";const number=energyNumber(value);if(number)return `${number} kWh/year`;return /\d/.test(String(value))?"복수 후보값 · 원본 확인":String(value)}
 function highlightEnergy(value,baseline){if(value===null||value===undefined||value==="")return '<span class="missing-alert">수집값 없음</span>';const raw=String(value),number=energyNumber(raw);if(!number||!baseline||Number(number)===Number(baseline))return esc(raw);const pattern=new RegExp(`(?<![\\d.])${number.replace(".","\\.")}(?![\\d.])`,"g");let last=0,html="";for(const match of raw.matchAll(pattern)){html+=esc(raw.slice(last,match.index))+`<mark class="mismatch">${esc(match[0])}</mark>`;last=match.index+match[0].length}return html+esc(raw.slice(last))}

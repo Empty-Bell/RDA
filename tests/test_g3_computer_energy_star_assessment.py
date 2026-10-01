@@ -11,7 +11,7 @@ def candidate(rule, markets="United States"):
 
 
 class ComputerRegistrationScopeTests(unittest.TestCase):
-    def test_confirmed_wrong_model_pdp_is_high_without_borrowing_its_logo(self):
+    def test_confirmed_wrong_model_pdp_is_medium_without_borrowing_its_logo(self):
         row = {
             "exact_sku": "NP740VJG-KG2US",
             "energy_star_claim_sources_raw": {"exact_sku": "NP740VJG-KG2US",
@@ -23,7 +23,8 @@ class ComputerRegistrationScopeTests(unittest.TestCase):
             },
         }
         result = assess_record(row)
-        self.assertEqual(result["display_outcome"], "HIGH")
+        self.assertEqual(result["display_outcome"], "MEDIUM")
+        self.assertEqual(result["findings"][0]["severity"], "MEDIUM")
         self.assertEqual(result["findings"][0]["issue_code"], "PDP_LINK_WRONG_MODEL")
         self.assertEqual(result["energy_star_publication"]["points"]["pdp_logo"]["state"], "UNKNOWN")
 

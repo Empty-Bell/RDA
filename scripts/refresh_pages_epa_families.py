@@ -64,7 +64,8 @@ def build(docs, manifest_path, assessments_root, sources_root):
         record["raw_summary"].update(epa_registration=registration,
                                      plp_logo=points["plp_logo"]["state"],
                                      pdp_logo=points["pdp_logo"]["state"],
-                                     pdp_redirect_final_url=(current.get("pdp_identity_failure") or {}).get("final_url"))
+                                     pdp_redirect_final_url=(current.get("pdp_identity_failure") or {}).get("final_url"),
+                                     pdp_redirect_plp_stock_flag=(current.get("pdp_identity_failure") or {}).get("plp_stock_flag_raw"))
         detail = {"model": sku, "family": family, "grade": grade,
                   "assessment": current, "frozen_source_candidate": candidate,
                   "source_run": run_id, "source_workflow_run_id": report["source_run_id"],

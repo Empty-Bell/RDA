@@ -7,16 +7,18 @@ from report_projection import describe, projection
 
 class ReportProjectionContractTest(unittest.TestCase):
     def test_wrong_pdp_link_description_shows_both_model_urls(self):
-        record = {"family": "컴퓨터", "model": "NP740VJG-KG2US", "grade": "HIGH",
+        record = {"family": "컴퓨터", "model": "NP740VJG-KG2US", "grade": "MEDIUM",
                   "findings": [{"issue_code": "PDP_LINK_WRONG_MODEL"}],
                   "pdp_url": "https://www.samsung.com/us/book-sku-np740vjg-kg2us"}
         detail = {"assessment": {"pdp_identity_failure": {
             "requested_url": record["pdp_url"],
             "final_url": "https://www.samsung.com/us/book-sku-np960ujh-xg2us/",
+            "plp_stock_flag_raw": "N",
         }}}
         row = projection(record, detail, 1)
         self.assertIn("NP740VJG-KG2US", row["Description"])
         self.assertIn("np960ujh-xg2us", row["Description"])
+        self.assertIn("PLP stock flag=N", row["Description"])
 
     def test_string_epa_registration_and_source_status_are_supported(self):
         record = {"family": "레인지", "model": "NSE6DB850212AA", "grade": "PASS",
