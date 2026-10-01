@@ -13,6 +13,7 @@ from claim_recon import DOM_SNAPSHOT, claim_facts
 from source_contract import computer_selection, pdp_facts, pf_population, project_computer_specs
 from browser_runtime import desktop_context
 from runner_probe import safe_url
+from plp_population import rendered_card_skus
 
 CONTRACT = "G3_COMPUTER_EXACT_SKU_PDP_V1"
 PLP_URLS = {
@@ -52,26 +53,59 @@ def load_leg(root, family, run_id):
         raise ValueError(f"Computer {family} source artifact contains no PF pages")
     offsets = sorted(pages)
     population = pf_population([pages[offset][0] for offset in offsets])
-    products = []
+    pf_records = {}
     for offset in offsets:
         page, digest = pages[offset]
         for group in page["searchResults"]:
             for variant in group["groupedProductList"]:
                 sku = variant["modelCode"]
-                products.append({
-                    "run_id": str(run_id), "source_leg": family, "exact_sku": sku,
-                    "source_claim_listing_raw": {key: variant.get(key) for key in
-                        ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")},
-                    "listing": {"product_group": family, "source_family_id": group["group_id"],
-                        "representative_sku": group["modelCode"],
-                        "sku_role": "REPRESENTATIVE" if sku == group["modelCode"] else "VARIANT",
-                        "plp_url": PLP_URLS[family], "pdp_url": "https://www.samsung.com" + variant["pdpURL"],
-                        "source_pf_search_hash": digest},
-                })
-    if len(products) != population["unique_exact_skus"]:
-        raise ValueError(f"Computer {family} exact-SKU population cardinality changed")
+                if sku in pf_records:
+                    raise ValueError(f"Computer {family} PF search contains a duplicate exact SKU")
+                pf_records[sku] = (group, variant, digest)
+    observation_path = root / "population-observation.json"
+    if not observation_path.is_file():
+        raise ValueError(f"Computer {family} source artifact has no rendered PLP population observation")
+    observation = read_json(observation_path)
+    observed_cards = rendered_card_skus(root, population)
+    tiles = observation.get("rendered_tiles")
+    groups = observation.get("rendered_tile_groups")
+    if (not isinstance(tiles, list) or not tiles
+            or observation.get("groups") != population["total_groups"]
+            or len(tiles) != population["total_groups"]
+            or not isinstance(groups, list) or len(groups) != len(tiles)
+            or len(set(groups)) != population["total_groups"]):
+        raise ValueError(f"Computer {family} rendered PLP cards do not reconcile to PF groups")
+    products = []
+    seen = set()
+    for index, tile in enumerate(tiles):
+        if not isinstance(tile, dict):
+            raise ValueError(f"Computer {family} malformed rendered PLP card")
+        sku = str(tile.get("sku") or "").strip()
+        if not sku or sku in seen:
+            raise ValueError(f"Computer {family} missing or duplicate rendered PLP SKU")
+        seen.add(sku)
+        match = pf_records.get(sku)
+        if match is None:
+            raise ValueError(f"Computer {family} rendered PLP SKU absent from same-run PF search")
+        group, variant, digest = match
+        if str(groups[index]) != str(group["group_id"]):
+            raise ValueError(f"Computer {family} rendered PLP card/PF group mismatch")
+        products.append({
+            "run_id": str(run_id), "source_leg": family, "exact_sku": sku,
+            "source_claim_listing_raw": {key: variant.get(key) for key in
+                ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")},
+            "listing": {"product_group": family, "source_family_id": group["group_id"],
+                "representative_sku": group["modelCode"], "sku_role": "PLP_RENDERED_CARD",
+                "plp_url": PLP_URLS[family], "plp_card_url_raw": tile.get("url"),
+                "pdp_url": "https://www.samsung.com" + variant["pdpURL"],
+                "source_pf_search_hash": digest},
+        })
+    if seen != set(observed_cards):
+        raise ValueError(f"Computer {family} PLP membership differs from card claim observation")
     return products, {"family": family, "source_run_id": str(run_id),
         "group_count": population["total_groups"], "sku_count": len(products),
+        "pf_variant_count": population["unique_exact_skus"],
+        "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS",
         "pf_page_count": len(offsets), "pf_page_hashes": [pages[offset][1] for offset in offsets]}
 
 
@@ -82,10 +116,11 @@ def load_population(computer_root, chromebook_root, run_id):
     skus = [row["exact_sku"] for row in products]
     if len(skus) != len(set(skus)):
         raise ValueError("Computer and Chromebook listings overlap or duplicate exact SKUs")
-    if len(book) != 23 or len(chrome) != 1 or len(products) != 24:
-        raise ValueError("Computer recon population changed; review source scope before collection")
+    if not book or not chrome:
+        raise ValueError("Computer or Chromebook rendered PLP population is empty")
     return products, {"source_run_id": str(run_id), "unique_exact_skus": len(products),
-        "source_legs": [book_meta, chrome_meta], "membership": "Galaxy Book plus separately listed Chromebook; exact SKU union"}
+        "source_legs": [book_meta, chrome_meta],
+        "membership": "Exact SKU rendered on Galaxy Book or Chromebook PLP card"}
 
 
 def shard_for(sku, count):

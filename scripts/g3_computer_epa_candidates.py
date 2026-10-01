@@ -122,8 +122,8 @@ def load_collection(root, expected_run_id):
         raise ValueError("Computer collection shards are incomplete or from the wrong run")
     expected = set(summaries[0].get("all_population_skus", []))
     assigned = [sku for row in summaries for sku in row.get("assigned_skus", [])]
-    if len(expected) != 24 or len(assigned) != 24 or set(assigned) != expected or len(set(assigned)) != 24:
-        raise ValueError("Computer collection shards do not cover the 24 exact SKUs once")
+    if not expected or len(assigned) != len(expected) or set(assigned) != expected or len(set(assigned)) != len(expected):
+        raise ValueError("Computer collection shards do not cover each rendered PLP SKU once")
     if len({row.get("source_run_id") for row in summaries}) != 1 or any(
             set(row.get("all_population_skus", [])) != expected for row in summaries):
         raise ValueError("Computer collection source-run/population identity changed across shards")
@@ -157,7 +157,7 @@ def load_collection(root, expected_run_id):
             }
             products[sku] = result; claims[sku] = claim; facts[sku] = computed
     if set(products) != expected:
-        raise ValueError("Computer PDP results do not match the full 24-SKU source population")
+        raise ValueError("Computer PDP results do not match the rendered PLP source population")
     return sorted(expected), products, claims, facts, str(summaries[0]["source_run_id"])
 
 

@@ -19,6 +19,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urljoin, urlsplit
 
 from source_contract import pdp_facts, pf_population, project_bridge
+from plp_population import rendered_card_skus
 
 
 PF_URL = "https://sribsrch.ecom.samsung.com/estoresearch-api/v1/scom/us/pf_search"
@@ -273,6 +274,7 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         source_body = (pf_source / fixture).read_bytes()
         record.update(_write_raw(raw, f"pf/page-{number:02d}.json", source_body))
     population = pf_population(pages)
+    cards = rendered_card_skus(pf_source, population)
     groups = [group for page in pages for group in page["searchResults"]]
     pf_source_by_sku = {}
     for page, page_source in zip(pages, page_records):
@@ -288,6 +290,8 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
     products = []
     for group in groups:
         for variant in group["groupedProductList"]:
+            if variant["modelCode"] not in cards:
+                continue
             products.append({
                 "group": group,
                 "variant": variant,
@@ -310,6 +314,8 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         next_record = _write_raw(raw, f"next/sku-{number:02d}.html", next_body)
         next_record.update({"url": product["pdp_url"], "status": status})
         declaration = project_sku_declaration(group, variant, next_body, bridge)
+        declaration["sku_role"] = "PLP_RENDERED_CARD"
+        declaration["plp_card_url_raw"] = cards[sku].get("url")
         declaration["source_evidence_refs"] = {
             "plp_logo_source": product["pf_source_evidence"],
             "pdp_logo_source": {
@@ -326,7 +332,7 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         }
         declarations.append(declaration)
         group_records.append({"exact_sku": sku, "source_family_id": group["group_id"], "bridge": bridge_record, "next": next_record})
-    if len(declarations) != population["unique_exact_skus"] or len({x["exact_sku"] for x in declarations}) != len(declarations):
+    if len(declarations) != len(cards) or len({x["exact_sku"] for x in declarations}) != len(declarations):
         raise ValueError("Exact SKU declaration coverage is incomplete or duplicated")
     result = {
         "contract": "G2_ENERGY_STAR_DIRECT_SOURCE_DECLARATIONS_V1",
@@ -341,7 +347,9 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         "session_browser_identity": session_identity,
         "pf_population_handoff": "CURRENT_PF_API_RESPONSE_FROM_SEPARATE_SESSION_COLLECTOR",
         "header_profile": HEADER_PROFILE,
-        "population": {"total_groups": population["total_groups"], "unique_exact_skus": population["unique_exact_skus"], "pf_pages": page_records},
+        "population": {"total_groups": population["total_groups"], "unique_exact_skus": len(cards),
+                       "pf_variant_count": population["unique_exact_skus"],
+                       "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS", "pf_pages": page_records},
         "groups": group_records,
         "declarations": declarations,
         "rule_evaluation": "NOT_EVALUATED",
@@ -368,7 +376,7 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         from g2_energy_star_assessment import build_assessment
         assessment = build_assessment(
             review,
-            expected_exact_skus=population["unique_exact_skus"],
+            expected_exact_skus=len(cards),
             query_completeness=binding["scan_query_completeness"],
         )
         (out / "energy-star-assessment.json").write_text(

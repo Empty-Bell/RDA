@@ -23,7 +23,9 @@ comparison or annual normalization. Do not infer certification currency from dat
 
 Static search HTML placeholders/no-results are not a live zero population.
 Accept browser-observed terminal pf_search pages only after unique API groups
-reconcile with rendered product-card groups. Preserve exact SKU configurations;
+reconcile with rendered product-card groups. Only exact SKUs on rendered PLP
+product cards enter the audit denominator. PF grouped variants remain source
+provenance, but unrendered variants are excluded. Preserve exact SKU configurations;
 same product name or family does not establish the same CPU/RAM/OS configuration.
 Consumer listing coverage does not prove exhaustive business/support catalog coverage.
 Purchase configurators use selected [data-modelcode][aria-checked=true] controls and
@@ -76,7 +78,8 @@ and docs/evidence/computer-fixture-manifest.json.
 Final acceptance: run https://github.com/Empty-Bell/RDA/actions/runs/35114575198,
 commit deabaff76e980ba33c97e54a3fd4ad31ba60532f. 103 tests and all four live checks
 for each Computer source leg passed; all 11 source jobs for 10 product groups succeeded
-on cold standard ubuntu-24.04 runners. Current listing union recomputed as 24 exact SKUs.
+on cold standard ubuntu-24.04 runners. That historical PF grouped-variant union
+was 24 exact SKUs. Current audit membership is recomputed from rendered PLP cards.
 Galaxy Book job 104856607424, artifact 10455345030, 18506 bytes, ZIP SHA256
 b82dd71da3fbd9b3f17636555c615c988f34b97742489661ecb0a0b9c88e7cc2.
 Chromebook job 104856607323, artifact 10455330019, 13296 bytes, ZIP SHA256

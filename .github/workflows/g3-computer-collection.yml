@@ -116,9 +116,9 @@ jobs:
               raise SystemExit('At least one Computer shard failed its exact-SKU collection contract')
           expected = set(rows[0].get('all_population_skus', []))
           assigned = [sku for row in rows for sku in row.get('assigned_skus', [])]
-          if len(expected) != 24 or any(set(row.get('all_population_skus', [])) != expected for row in rows):
-              raise SystemExit('Computer source population is not the approved stable 24-SKU union')
-          if len(assigned) != 24 or set(assigned) != expected:
+          if not expected or any(set(row.get('all_population_skus', [])) != expected for row in rows):
+              raise SystemExit('Computer rendered-PLP population is empty or inconsistent across shards')
+          if len(assigned) != len(expected) or set(assigned) != expected:
               raise SystemExit('Three Computer shards do not cover each source SKU exactly once')
           if len({row.get('shard_index') for row in rows}) != 3 or any(row.get('source_run_id') != rows[0].get('source_run_id') for row in rows):
               raise SystemExit('Computer shard identity is duplicated or crosses source runs')

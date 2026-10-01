@@ -4,13 +4,14 @@ import json
 from urllib.parse import urljoin
 from source_contract import pf_population
 from regaudit.population import canonicalize_products
+from plp_population import select_rendered_products
 
 
 def observation(value=None):
     return {'state':'NOT_OBSERVED' if value is None else 'VALUE','value':value,'error':None}
 
 
-def population_records(pages, run_id, plp_url):
+def population_records(pages, run_id, plp_url, rendered_cards=None):
     parsed=pf_population([json.loads(raw) for raw in pages])
     records=[]
     for raw in pages:
@@ -30,4 +31,6 @@ def population_records(pages, run_id, plp_url):
                 }]})
     products=canonicalize_products(records)
     if len(products)!=parsed['unique_exact_skus']:raise ValueError('Population adapter lost SKU identities')
+    if rendered_cards is not None:
+        products=select_rendered_products(products, rendered_cards)
     return products,parsed

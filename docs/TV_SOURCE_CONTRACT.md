@@ -125,12 +125,14 @@ difference after both exact/prefix model links and US-market scope are verified
 is a MEDIUM candidate. PDP currently publishes no annual-kWh field for this
 cohort, so absence alone is not a missing-value verdict in this family.
 
-The corrected MNA-excluded collection passed hosted validation in run
+Historical MNA-excluded collection passed hosted validation in run
 35703343706 at commit 011ee1f: 165/165 exact-SKU PDPs verified. The new
 population evidence retains the source count and explicitly records excluded
 model prefixes and exact SKUs. Business scope excludes every exact TV SKU whose
 model code begins `MNA`; the two baseline models were `MNA101MS1BCXZA` and
-`MNA89MS1BACXZA`.
+`MNA89MS1BACXZA`. The 2026-10-01 user scope decision supersedes that rule:
+any exact SKU rendered on a TV PLP product card is in scope, including `MNA`.
+PF grouped variants without their own rendered card are excluded.
 
 Downstream label/EPA capture run 35704036734 passed: 165 documents declared,
 160 valid readable PDFs, five NASCA DRM labels and a successful EPA Current

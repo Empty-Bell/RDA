@@ -287,7 +287,7 @@ def main():
             # observed per-card name selector, not arbitrary PDP links/navigation.
             page.wait_for_function('(n) => document.querySelectorAll(".pd21-product-card__name").length >= n',
                                    arg=total, timeout=20000)
-            tiles = page.locator('.pd21-product-card__name').evaluate_all(
+            tiles = page.locator('.pd21-product-card__name:visible').evaluate_all(
                 '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),url:e.href}))')
             save('plp-claim-observation.json', {'cards': page.evaluate(PLP_SNAPSHOT),
                  'attribution': 'rendered card SKU only; no offscreen/variant absence inference'})

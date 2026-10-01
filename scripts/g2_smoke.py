@@ -17,6 +17,7 @@ from regaudit.contracts import dumps, validate_bundle, verify_evidence_files
 from regaudit.facts import TYPES
 from regaudit.report import summarize_bundle, verify_report_source_observations
 from g2_population import observation, population_records
+from plp_population import rendered_card_skus
 from source_recon import FAMILIES
 from g2_pdp import select_sample, select_redirect_watch, collect_samples, retry_failed_samples, coverage, require_full_identity_coverage, verify_identity
 from g2_normalized import normalize_source_pdp
@@ -90,8 +91,11 @@ def main():
             pages[offset] = raw
             page_sources[offset] = entry["url"]
         ordered = sorted(pages)
+        ordered_pages = [pages[i] for i in ordered]
+        from source_contract import pf_population
+        cards = rendered_card_skus(source, pf_population([json.loads(raw) for raw in ordered_pages]))
         products, parsed = population_records(
-            [pages[i] for i in ordered], run_id, FAMILIES["refrigerator"]["plp"]
+            ordered_pages, run_id, FAMILIES["refrigerator"]["plp"], cards
         )
         config, config_hash = load_configuration(ROOT)
         label_reviews = load_review_annotations(

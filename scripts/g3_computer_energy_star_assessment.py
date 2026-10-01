@@ -12,7 +12,6 @@ from epa_only_rules import epa_registration_state, publication_assessment, publi
 
 SOURCE_CONTRACT = "G3_COMPUTER_EPA_SOURCE_CANDIDATES_V1"
 CONTRACT = "G3_COMPUTER_ENERGY_STAR_ASSESSMENT_V1"
-EXPECTED_POPULATION = 24
 
 
 def computer_registration(candidates):
@@ -73,9 +72,9 @@ def build(candidate_path, output):
             or source.get("status") != "SOURCE_CANDIDATES_READY"
             or source.get("source_validation") != "PASS"
             or not isinstance(rows, list)
-            or len(rows) != EXPECTED_POPULATION
+            or not rows
             or len(rows) != source.get("population_count")):
-        raise ValueError("Computer source candidates are not a complete validated 24-SKU artifact")
+        raise ValueError("Computer source candidates are not a complete validated rendered-PLP artifact")
     skus = [row.get("exact_sku") for row in rows]
     if not all(isinstance(sku, str) and sku for sku in skus) or len(set(skus)) != len(skus):
         raise ValueError("Computer source candidates contain missing or duplicate exact SKUs")

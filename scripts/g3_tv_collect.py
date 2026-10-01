@@ -9,6 +9,7 @@ import re
 from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
+from plp_population import rendered_card_skus, select_rendered_products
 from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
@@ -17,7 +18,6 @@ from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
 
 PLP_URL = "https://www.samsung.com/us/tvs/all-tvs/"
 CONTRACT = "G3_TV_EXACT_SKU_PDP_V1"
-EXCLUDED_TV_MODEL_PREFIXES = ("MNA",)
 
 
 def load_json(path):
@@ -50,15 +50,12 @@ def load_population(recon_root, source_run_id):
     offsets = sorted(pages_by_offset)
     pages = [pages_by_offset[offset][0] for offset in offsets]
     population = pf_population(pages)
-    products, listing_by_sku, excluded_skus = [], {}, set()
+    products, listing_by_sku = [], {}
     for offset in offsets:
         page, digest = pages_by_offset[offset]
         for group in page["searchResults"]:
             for variant in group["groupedProductList"]:
                 sku = variant["modelCode"]
-                if sku.startswith(EXCLUDED_TV_MODEL_PREFIXES):
-                    excluded_skus.add(sku)
-                    continue
                 listing_by_sku[sku] = {key: variant.get(key) for key in
                                        ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")}
                 products.append({"run_id": source_run_id, "exact_sku": sku, "listings": [{
@@ -75,16 +72,15 @@ def load_population(recon_root, source_run_id):
                     "variant_attributes": {"state": "NOT_OBSERVED", "value": None, "error": None},
                 }]})
     canonical = canonicalize_products(products)
+    canonical = select_rendered_products(canonical, rendered_card_skus(root, population))
     for product in canonical:
         product["source_claim_listing_raw"] = listing_by_sku[product["exact_sku"]]
-    expected_in_scope = population["unique_exact_skus"] - len(excluded_skus)
-    if len(canonical) != expected_in_scope:
-        raise ValueError("TV exact-SKU population cardinality changed")
+    if not canonical:
+        raise ValueError("TV rendered PLP population is empty")
     return canonical, {"source_run_id": str(source_run_id), "total_groups": population["total_groups"],
                        "source_unique_exact_skus": population["unique_exact_skus"],
                        "unique_exact_skus": len(canonical),
-                       "excluded_model_prefixes": list(EXCLUDED_TV_MODEL_PREFIXES),
-                       "excluded_exact_skus": sorted(excluded_skus),
+                       "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS",
                        "pf_page_count": len(pages),
                        "pf_page_hashes": [pages_by_offset[offset][1] for offset in offsets]}
 

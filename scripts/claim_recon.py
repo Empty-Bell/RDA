@@ -233,7 +233,8 @@ DOM_SNAPSHOT = r"""() => {
     observation_scope:'current mounted DOM; visible page candidates are not attributed to target SKU'};
 }"""
 
-PLP_SNAPSHOT = r"""() => Array.from(document.querySelectorAll('.pd21-product-card__name')).map(e => {
+PLP_SNAPSHOT = r"""() => Array.from(document.querySelectorAll('.pd21-product-card__name'))
+  .filter(e => e.getClientRects().length > 0).map(e => {
   // `.pd21-product-card` is the page-wide product finder, rather than one SKU
   // card. The accepted boundary is its list's immediate child containing this
   // model-code anchor; this stops one card borrowing another card's badge.

@@ -9,6 +9,7 @@ import re
 from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
+from plp_population import rendered_card_skus, select_rendered_products
 from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
@@ -79,12 +80,14 @@ def load_population(recon_root, source_run_id):
                     "variant_attributes": {"state": "NOT_OBSERVED", "value": None, "error": None},
                 }]})
     canonical = canonicalize_products(products)
+    canonical = select_rendered_products(canonical, rendered_card_skus(root, population))
     for product in canonical:
         product["source_claim_listing_raw"] = listing_by_sku[product["exact_sku"]]
-    if len(canonical) != population["unique_exact_skus"]:
-        raise ValueError("Hood exact-SKU population cardinality changed")
+    if not canonical:
+        raise ValueError("Hood rendered PLP population is empty")
     return canonical, {"source_run_id": str(source_run_id), "total_groups": population["total_groups"],
-                       "unique_exact_skus": population["unique_exact_skus"], "pf_page_count": len(pages),
+                       "unique_exact_skus": len(canonical), "pf_variant_count": population["unique_exact_skus"],
+                       "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS", "pf_page_count": len(pages),
                        "pf_page_hashes": [pages_by_offset[offset][1] for offset in offsets]}
 
 
