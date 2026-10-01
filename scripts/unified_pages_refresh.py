@@ -5,6 +5,7 @@ the published docs tree is never changed until its integration gate passes.
 """
 
 import argparse
+import copy
 import csv
 from datetime import datetime, timezone
 import json
@@ -40,6 +41,90 @@ def write(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def reconcile_plp_population(docs, source, gate):
+    """Stage the current source population before the family refreshers run."""
+    snapshot_path = docs / "model-data.json"
+    snapshot = read(snapshot_path)
+    run_id = str(gate["run_id"])
+    totals = {}
+    for family, slug in SLUGS.items():
+        manifest = read(source / slug / "unified-family-manifest.json")
+        if manifest.get("family") != slug or str(manifest.get("run_id")) != run_id:
+            raise ValueError(f"{family} scope source does not match the unified run")
+        relative = str(manifest.get("assessment_path") or "")
+        prefix = f"runtime/unified/{slug}/"
+        if not relative.startswith(prefix):
+            raise ValueError(f"{family} assessment path is outside its source artifact")
+        report = read(source / slug / relative.removeprefix(prefix))
+        rows = report.get("records", report.get("rows"))
+        if not isinstance(rows, list) or len(rows) != manifest.get("sku_count"):
+            raise ValueError(f"{family} assessment population is incomplete")
+        desired = {row["exact_sku"] for row in rows}
+        if len(desired) != len(rows):
+            raise ValueError(f"{family} assessment has duplicate exact models")
+        previous = {row["model"]: row for row in snapshot["records"] if row["family"] == family}
+        removed = set(previous) - desired
+        added = desired - set(previous)
+        if not previous and added:
+            raise ValueError(f"{family} has no dashboard record template")
+        for record in list(snapshot["records"]):
+            if record["family"] == family and record["model"] in removed:
+                snapshot["records"].remove(record)
+        source_results = {}
+        for path in (source / slug).rglob("result.json"):
+            result = read(path)
+            sku = result.get("exact_sku")
+            if sku in desired:
+                url = result.get("final_url") or result.get("requested_url")
+                if isinstance(url, str) and url.startswith("https://www.samsung.com/us/"):
+                    source_results[sku] = result
+        for sku in sorted(added):
+            if sku not in source_results:
+                raise ValueError(f"{family} new PLP model has no verified PDP URL: {sku}")
+            result = source_results[sku]
+            facts = result.get("pdp_facts_raw") or {}
+            claims = result.get("energy_star_claim_sources_raw") or {}
+            label_urls = [item["url"] for item in facts.get("energyguide_documents", [])
+                          if isinstance(item, dict) and isinstance(item.get("url"), str)]
+            record = copy.deepcopy(next(iter(previous.values())))
+            record.update(model=sku, grade="PASS", findings=[],
+                          pdp_url=result.get("final_url") or result["requested_url"],
+                          label_urls=label_urls, epa_registration=None, points={},
+                          run_id=None, run_url=None,
+                          model_name=claims.get("listing_title_raw"), annual_energy=None,
+                          collection_status=result.get("status"),
+                          spec_rows=len(facts.get("spec_fields_raw") or []),
+                          label_count=len(label_urls))
+            record.pop("report", None)
+            record.pop("report_description_ko", None)
+            record["raw_summary"] = {key: None for key in record["raw_summary"]}
+            energy_rows = (facts.get("energy_consumption_raw") or []) + (facts.get("power_consumption_raw") or [])
+            capacity_rows = facts.get("capacity_raw") or []
+            render_rows = lambda rows: " · ".join(f"{item.get('name')}: {item.get('value')}" for item in rows
+                                                if isinstance(item, dict) and item.get("value")) or None
+            headings = claims.get("pdp_headings_raw") or []
+            record["raw_summary"].update(
+                pdp_model=sku, pdp_title=headings[0] if headings else None,
+                pdp_energy=render_rows(energy_rows), pdp_capacity=render_rows(capacity_rows),
+                plp_logo_raw=claims.get("plp_energy_star_flag_raw"),
+                pdp_logo_badges=claims.get("rendered_attributed_badges_raw") or [],
+                label_urls=label_urls)
+            seed_name = f"scope-seed_{slug}_{sku.replace('/', '_')}.json"
+            seed_path = docs / "evidence" / seed_name
+            write(seed_path, {"model": sku, "family": family, "scope_added": True})
+            record["evidence_url"] = "./evidence/" + seed_name
+            snapshot["records"].append(record)
+        for record in snapshot["records"]:
+            if record["family"] == family and record["model"] in source_results:
+                result = source_results[record["model"]]
+                record["pdp_url"] = result.get("final_url") or result["requested_url"]
+        next(entry for entry in snapshot["families"] if entry["family"] == family)["population"] = len(desired)
+        totals[family] = len(desired)
+    if len(snapshot["records"]) != gate["model_count"] or sum(totals.values()) != gate["model_count"]:
+        raise ValueError("Staged PLP population does not match the accepted unified source count")
+    write(snapshot_path, snapshot)
+
+
 def build(docs_source, artifact_root, unified_report, out, attempt):
     docs_source, artifact_root, out = map(Path, (docs_source, artifact_root, out))
     gate = read(unified_report)
@@ -54,6 +139,7 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
     shutil.copytree(docs_source, docs)
     before = read(docs / "model-data.json")
     source = artifact_root / "unified"
+    reconcile_plp_population(docs, source, gate)
     g2 = source / "refrigerator"
     refresh_refrigerator(docs, g2 / "assessment/reassessment.json", g2 / "g2-control-source.zip")
     dishwasher = source / "dishwasher"
