@@ -12,9 +12,10 @@ def select(root, kind, run_id, destination, source_sha=None):
     prefix = "unified-full-audit-report" if kind == "gate" else "validated-site"
     pattern = re.compile(rf"{prefix}-{re.escape(run_id)}-(\d+)$")
     choices = []
-    for directory in root.iterdir():
+    directories = [root, *(item for item in root.iterdir() if item.is_dir())]
+    for directory in directories:
         match = pattern.fullmatch(directory.name)
-        if not match or not directory.is_dir():
+        if directory != root and not match:
             continue
         file = directory / ("unified-report.json" if kind == "gate" else "publication-manifest.json")
         if not file.is_file():
@@ -27,7 +28,7 @@ def select(root, kind, run_id, destination, source_sha=None):
             continue
         if kind == "site" and report.get("source_git_sha") != source_sha:
             continue
-        choices.append((int(match.group(1)), directory))
+        choices.append((int(match.group(1)) if match else 0, directory))
     if not choices:
         raise ValueError(f"No validated {kind} artifact for run {run_id}")
     attempt, selected = max(choices)

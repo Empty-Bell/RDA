@@ -7,6 +7,26 @@ from select_unified_artifact import select
 
 
 class SelectUnifiedArtifactTest(unittest.TestCase):
+    def test_single_gate_unpacks_at_root(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            base = Path(temporary)
+            root = base / "artifacts"
+            root.mkdir()
+            (root / "unified-report.json").write_text(json.dumps({
+                "run_id": "123", "execution_status": "PASS", "single_source_run": True,
+            }), encoding="utf-8")
+            self.assertEqual(select(root, "gate", "123", base / "out"), 0)
+
+    def test_single_site_unpacks_at_root(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            base = Path(temporary)
+            root = base / "artifacts"
+            root.mkdir()
+            (root / "publication-manifest.json").write_text(json.dumps({
+                "run_id": "123", "source_git_sha": "good",
+            }), encoding="utf-8")
+            self.assertEqual(select(root, "site", "123", base / "out", "good"), 0)
+
     def test_gate_uses_latest_passing_attempt(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
