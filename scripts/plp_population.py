@@ -41,8 +41,4 @@ def select_rendered_products(products, cards):
     selected = [product for product in products if product["exact_sku"] in cards]
     if len(selected) != len(cards) or {product["exact_sku"] for product in selected} != set(cards):
         raise ValueError("Collector products do not cover each rendered PLP card exactly once")
-    for product in selected:
-        for listing in product.get("listings", []):
-            listing["sku_role"] = "PLP_RENDERED_CARD"
-            listing["plp_card_url_raw"] = cards[product["exact_sku"]].get("url")
     return selected
