@@ -82,6 +82,12 @@ def build(args):
         raw.update(epa_registration=record["epa_registration"],
                    pdp_logo=record["points"]["pdp_logo"], plp_logo=record["points"]["plp_logo"])
         if family == "세탁기":
+            record["annual_energy"] = assessment["annual_energy"]
+            selected_values = comparison.get("pdp_energy_selected_values") or []
+            raw["pdp_energy"] = (
+                " · ".join(f"{comparison['pdp_energy_selected_field']}: {value} kWh/year"
+                           for value in selected_values) or None
+            )
             raw.update(label_model=" · ".join(comparison.get("label_model_patterns_raw", [])) or None,
                        epa_model=" · ".join(assessment["epa_current_registration"]["matched_models_raw"]) or None)
         else:

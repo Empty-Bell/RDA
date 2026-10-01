@@ -1,0 +1,101 @@
+name: Republish validated Pages snapshot
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    outputs:
+      run_id: ${{ steps.identity.outputs.run_id }}
+      source_sha: ${{ steps.identity.outputs.source_sha }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - id: identity
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          manifest = json.load(open('docs/publication-manifest.json', encoding='utf-8'))
+          print(f"run_id={manifest['run_id']}")
+          print(f"source_sha={manifest['source_git_sha']}")
+          PY
+      - name: Verify every source-bound file and current projection
+        env:
+          PYTHONPATH: 'src:scripts'
+        run: |
+          python scripts/publication_bundle.py verify --docs docs --run-id '${{ steps.identity.outputs.run_id }}' --source-sha '${{ steps.identity.outputs.source_sha }}'
+          python scripts/report_projection_preflight.py --docs docs
+      - name: Verify desktop, mobile and filters
+        env:
+          PYTHONPATH: 'src:scripts'
+        run: |
+          python -m pip install --no-cache-dir playwright==1.63.0
+          python -m playwright install --with-deps chromium
+          python -m http.server 8765 --bind 127.0.0.1 --directory docs > /tmp/rda-site.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          python scripts/pages_smoke.py --base http://127.0.0.1:8765/ --run-id '${{ steps.identity.outputs.run_id }}'
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/
+
+  deploy:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  public-smoke:
+    needs: [verify, deploy]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Confirm public files match the validated manifest
+        env:
+          PYTHONPATH: 'src:scripts'
+        run: |
+          python - <<'PY'
+          import json
+          import time
+          from urllib.request import Request, urlopen
+          expected = json.load(open('docs/publication-manifest.json', encoding='utf-8'))
+          base = 'https://empty-bell.github.io/RDA/'
+          names = ('app.js', 'styles.css', 'model-data.json', 'report-data.csv')
+          for attempt in range(18):
+              try:
+                  remote = json.load(urlopen(Request(base + 'publication-manifest.json?check=' + str(time.time()), headers={'Cache-Control': 'no-cache'}), timeout=20))
+                  if remote != expected:
+                      raise ValueError('Public manifest differs')
+                  for name in names:
+                      body = urlopen(Request(base + name + '?check=' + str(time.time()), headers={'Cache-Control': 'no-cache'}), timeout=20).read()
+                      import hashlib
+                      actual = hashlib.sha256(body.replace(b'\r\n', b'\n')).hexdigest()
+                      if actual != expected['files'][name]:
+                          raise ValueError(f'Public {name} differs')
+                  break
+              except Exception:
+                  if attempt == 17:
+                      raise
+                  time.sleep(10)
+          print(f"PASS: public Run #{expected['dashboard_run_number']} matches validated files")
+          PY

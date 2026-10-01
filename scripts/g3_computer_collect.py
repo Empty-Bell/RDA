@@ -125,6 +125,8 @@ def collect(products, output):
                     '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
                     "continue_sku": purchase.get_attribute("data-modelcode") if purchase.count() else None,
                     "continue_visible": purchase.is_visible() if purchase.count() else False}
+                record["final_url"] = safe_url(page.url)
+                record["selected_configuration_raw"] = selection
                 selection_facts = computer_selection(selection, sku)
                 final = urlsplit(page.url)
                 slug = re.escape(sku.lower().replace("/", "-"))
@@ -161,6 +163,11 @@ def collect(products, output):
                     identity_contract="SELECTED_CONFIG_CONTINUE_SKU_CURRENT_ECOM_GROUP_AND_EXACT_SPECS")
             except Exception as error:
                 record["error"] = str(error).splitlines()[0][:300]
+                record["final_url"] = safe_url(page.url)
+                if "Selected computer configuration missing or differs from target SKU" in record["error"]:
+                    record["failure_class"] = "EXACT_SKU_NOT_SELECTABLE_ON_CURRENT_PDP"
+                else:
+                    record["failure_class"] = "SOURCE_COLLECTION_FAILED"
             finally:
                 page.close()
                 (folder / "result.json").write_text(json.dumps(record, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")

@@ -61,7 +61,7 @@
     "현재 PASS 전환은 다음 독립 수집 전까지 재확인 중으로 표시합니다.": "A transition to PASS stays pending until the next independent collection.",
     "비교할 이전 스냅샷이 없어 변화 건수는 표시하지 않습니다.": "No previous snapshot is available for a change count.",
     "전체": "All", "조치 항목 없음": "No action needed",
-    "합계": "Total", "수집/비교/판정": "Collection/comparison/assessment",
+    "합계": "Total", "통과율": "Pass rate", "수집/비교/판정": "Collection/comparison/assessment",
     "모델별 이력을 저장합니다.": "Model history is recorded.",
     "전체 원본": "All raw", "개 필드는 모델 상세의": " fields are available in model details under",
     "또는 CSV·Excel에서 확인할 수 있습니다.": "or in CSV and Excel exports.",

@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '13 0 * * 1'
-    # One-time 2026-10-01 06:00 KST trial; remove after verifying the published run.
-    - cron: '0 21 30 9 *'
 
 permissions:
   contents: read
@@ -15,27 +13,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  schedule_window:
-    name: Check one-time trial window
-    runs-on: ubuntu-24.04
-    outputs:
-      proceed: ${{ steps.check.outputs.proceed }}
-    steps:
-      - id: check
-        env:
-          SCHEDULE: ${{ github.event.schedule }}
-        shell: bash
-        run: |
-          if [[ "$SCHEDULE" == '0 21 30 9 *' && "$(date -u +%Y)" != '2026' ]]; then
-            echo 'proceed=false' >> "$GITHUB_OUTPUT"
-          else
-            echo 'proceed=true' >> "$GITHUB_OUTPUT"
-          fi
-
   preflight:
     name: Validate report code before live collection
-    needs: schedule_window
-    if: needs.schedule_window.outputs.proceed == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
@@ -77,6 +56,25 @@ jobs:
           bash scripts/bootstrap.sh
       - name: Acquire current sources and apply approved family controls
         run: python scripts/unified_family_run.py --family '${{ matrix.family }}'
+      - name: Summarize computer exact-SKU source failures
+        if: ${{ failure() && matrix.family == 'computer' }}
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          print('### Computer source identity failures')
+          seen = set()
+          for path in Path('runtime/unified/computer').rglob('result.json'):
+              row = json.loads(path.read_text(encoding='utf-8'))
+              if row.get('status') != 'FAILED' or row.get('exact_sku') in seen:
+                  continue
+              seen.add(row['exact_sku'])
+              print(f"- `{row['exact_sku']}`: {row.get('failure_class', 'SOURCE_COLLECTION_FAILED')}; ")
+              print(f"  requested `{row.get('requested_url')}`; observed `{row.get('final_url')}`")
+          if not seen:
+              print('- No per-SKU result was saved; inspect collection logs.')
+          PY
       - name: Preserve this family's raw sources and assessment
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a

@@ -187,7 +187,14 @@ def projection(record, detail, position):
     candidates = epa_candidates(detail, assessment)
     epa_model = raw.get("epa_model")
     epa_numeric = detail.get("source_epa_numeric") or {}
-    pdp_kwh = energy_number(raw.get("pdp_energy"))
+    if record["family"] == "세탁기":
+        # The washer Specs also contain gallons/year and kWh/cycle. Only the
+        # source comparison's validated annual kWh may populate this column.
+        assessed_values = (record.get("annual_energy") or {}).get("source_kwh_values") or {}
+        annual_values = {float(value) for value in assessed_values.get("PDP", [])}
+        pdp_kwh = next(iter(annual_values)) if len(annual_values) == 1 else None
+    else:
+        pdp_kwh = energy_number(raw.get("pdp_energy"))
     label_kwh = (ocr_energy or {}).get("amount") if isinstance(ocr_energy, dict) else None
     if label_kwh is None:
         label_kwh = number(raw.get("label_energy"))
