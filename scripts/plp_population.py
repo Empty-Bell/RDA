@@ -42,3 +42,16 @@ def select_rendered_products(products, cards):
     if len(selected) != len(cards) or {product["exact_sku"] for product in selected} != set(cards):
         raise ValueError("Collector products do not cover each rendered PLP card exactly once")
     return selected
+
+
+def select_listed_products(products, cards, expected_count):
+    """Keep every PLP group option while proving every visible card has a source SKU."""
+    by_sku = {product["exact_sku"]: product for product in products}
+    if (len(by_sku) != len(products) or len(products) != expected_count
+            or not cards or not set(cards) <= set(by_sku)):
+        raise ValueError("PLP group options or rendered cards have incomplete exact-SKU coverage")
+    for sku, card in cards.items():
+        product = by_sku[sku]
+        for listing in product.get("listings", []):
+            listing["plp_card_url_raw"] = card.get("url")
+    return products

@@ -76,36 +76,25 @@ def load_leg(root, family, run_id):
             or len(set(groups)) != population["total_groups"]):
         raise ValueError(f"Computer {family} rendered PLP cards do not reconcile to PF groups")
     products = []
-    seen = set()
-    for index, tile in enumerate(tiles):
-        if not isinstance(tile, dict):
-            raise ValueError(f"Computer {family} malformed rendered PLP card")
-        sku = str(tile.get("sku") or "").strip()
-        if not sku or sku in seen:
-            raise ValueError(f"Computer {family} missing or duplicate rendered PLP SKU")
-        seen.add(sku)
-        match = pf_records.get(sku)
-        if match is None:
-            raise ValueError(f"Computer {family} rendered PLP SKU absent from same-run PF search")
-        group, variant, digest = match
-        if str(groups[index]) != str(group["group_id"]):
-            raise ValueError(f"Computer {family} rendered PLP card/PF group mismatch")
+    for sku, (group, variant, digest) in pf_records.items():
+        tile = observed_cards.get(sku)
         products.append({
             "run_id": str(run_id), "source_leg": family, "exact_sku": sku,
             "source_claim_listing_raw": {key: variant.get(key) for key in
                 ("modelCode", "modelName", "ecomFlag", "stockFlag", "energyStarFlg")},
             "listing": {"product_group": family, "source_family_id": group["group_id"],
-                "representative_sku": group["modelCode"], "sku_role": "PLP_RENDERED_CARD",
-                "plp_url": PLP_URLS[family], "plp_card_url_raw": tile.get("url"),
+                "representative_sku": group["modelCode"],
+                "sku_role": "PLP_RENDERED_CARD" if tile else "PLP_GROUP_OPTION",
+                "plp_url": PLP_URLS[family], "plp_card_url_raw": tile.get("url") if tile else None,
                 "pdp_url": "https://www.samsung.com" + variant["pdpURL"],
                 "source_pf_search_hash": digest},
         })
-    if seen != set(observed_cards):
-        raise ValueError(f"Computer {family} PLP membership differs from card claim observation")
+    if len(products) != population["unique_exact_skus"]:
+        raise ValueError(f"Computer {family} PLP group option population is incomplete")
     return products, {"family": family, "source_run_id": str(run_id),
         "group_count": population["total_groups"], "sku_count": len(products),
         "pf_variant_count": population["unique_exact_skus"],
-        "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS",
+        "population_basis": "RENDERED_PLP_CARDS_AND_GROUP_OPTIONS",
         "pf_page_count": len(offsets), "pf_page_hashes": [pages[offset][1] for offset in offsets]}
 
 
@@ -120,7 +109,7 @@ def load_population(computer_root, chromebook_root, run_id):
         raise ValueError("Computer or Chromebook rendered PLP population is empty")
     return products, {"source_run_id": str(run_id), "unique_exact_skus": len(products),
         "source_legs": [book_meta, chrome_meta],
-        "membership": "Exact SKU rendered on Galaxy Book or Chromebook PLP card"}
+        "membership": "Exact SKU on Galaxy Book or Chromebook PLP card or group option"}
 
 
 def shard_for(sku, count):

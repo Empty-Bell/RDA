@@ -63,6 +63,10 @@ def reconcile_plp_population(docs, source, gate):
         if len(desired) != len(rows):
             raise ValueError(f"{family} assessment has duplicate exact models")
         previous = {row["model"]: row for row in snapshot["records"] if row["family"] == family}
+        if len(previous) >= 20 and len(desired) < len(previous) * 0.75:
+            raise ValueError(
+                f"{family} source population dropped from {len(previous)} to {len(desired)}; "
+                "review PLP group options before publishing")
         removed = set(previous) - desired
         added = desired - set(previous)
         if not previous and added:

@@ -239,17 +239,16 @@ Battery Wh, adapter rated W, mode W, TEC kWh and TEC allowance/limit differ (D01
 TEC metadata does not specify the period in its column label; verify test basis before
 annual normalization/comparison. No adapter/battery-derived annual PDP energy.
 
-Computer scope decision (2026-10-01, D05/D08): the user confirmed that exact SKU
-membership on a rendered Samsung PLP product card is the sole inclusion criterion.
-The same criterion applies to every product family in the unified audit.
-The PF grouped variant list supplies provenance for those cards but does not add
-models to the audit denominator. Stock state and a redirect do not independently
-change membership. Scheduled run 36795898093 included `NP740VJG-KA1US` only because
-it was a PF grouped variant; the current successful source reconnaissance
-36806134422 shows 11 Galaxy Book PLP cards, none with that SKU, and one Chromebook
-PLP card. Its PDP redirected to a different SKU, which must never be accepted as
-the requested model. The collector now limits assessment to the observed 12 cards
-and still fails if card/PF identity or an included PDP exact SKU cannot be verified.
+PLP scope correction (2026-10-01, D05/D08): include every exact SKU on a rendered
+Samsung PLP card **or in that card's PLP group options**. The user explicitly
+confirmed that color/size option SKUs are included. The former card-only filter
+incorrectly reduced the unified population from 557 to 241 on the same source
+observations. Retain the separately approved TV `MNA` prefix exclusion even when
+an MNA card is rendered, and the separately accepted 11-card Tablet scope until
+Tablet option visibility is independently established. Stock state and PDP
+redirect do not change PLP membership; a redirected PDP must never be accepted
+as verified evidence for the requested SKU. A failed exact PDP identity remains
+a source failure to recover or investigate, never a fabricated PASS.
 
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|

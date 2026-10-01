@@ -11,7 +11,7 @@ from typing import Any
 from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
-from plp_population import rendered_card_skus, select_rendered_products
+from plp_population import rendered_card_skus, select_listed_products
 from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
@@ -80,14 +80,14 @@ def load_population(recon_root: str | Path, source_run_id: str) -> tuple[list[di
                     "variant_attributes": {"state": "NOT_OBSERVED", "value": None, "error": None},
                 }]})
     canonical = canonicalize_products(products)
-    canonical = select_rendered_products(canonical, rendered_card_skus(root, population))
+    canonical = select_listed_products(canonical, rendered_card_skus(root, population), population["unique_exact_skus"])
     for product in canonical:
         product["source_claim_listing_raw"] = claim_listings[product["exact_sku"]]
     if not canonical:
         raise ValueError("Dishwasher rendered PLP population is empty")
     return canonical, {"source_run_id": source_run_id, "total_groups": population["total_groups"],
                        "unique_exact_skus": len(canonical), "pf_variant_count": population["unique_exact_skus"],
-                       "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS",
+                       "population_basis": "RENDERED_PLP_CARDS_AND_GROUP_OPTIONS",
                        "pf_page_count": len(pages), "pf_page_hashes": [pages_by_offset[i][1] for i in ordered]}
 
 

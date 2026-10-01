@@ -23,8 +23,10 @@ The published Run #15 is a reviewed multi-run snapshot, not a current same-run a
 
 This section records the 2026-09-28 snapshot. The 2026-10-01 user decision
 supersedes its population rule: every family now includes only exact SKUs on
-rendered PLP product cards; hidden PF grouped variants are source context, and
-TV `MNA` cards are no longer excluded by model prefix.
+rendered PLP product cards and their grouped option SKUs; TV `MNA` models
+retain the separately approved model-prefix exclusion. The 2026-10-01
+card-only Run #33 undercount (241 versus the earlier 557) is superseded by
+the user's explicit confirmation that PLP group options are in scope.
 
 - **Tablet:** The source PF page records 50 grouped exact SKUs across 11 groups. The approved audit population is the 11 exact SKUs actually rendered on PLP cards; the other 39 grouped options are retained as source observations, not separately graded products. The four shards of [collection run 36294491520](https://github.com/Empty-Bell/RDA/actions/runs/36294491520) contain 11 unique `PLP_RENDERED_CARD` products, exactly matching all 11 published Tablet keys. This follows [TABLET_SOURCE_CONTRACT.md](TABLET_SOURCE_CONTRACT.md), which also keeps a rendered card in scope if its PDP redirects until exact PDP identity is resolved. [Tablet assessment run 36294606864](https://github.com/Empty-Bell/RDA/actions/runs/36294606864) grades those 11.
 - **TV:** The PF source had 167 exact SKUs. The documented TV business scope excludes the two `MNA` SKUs `MNA101MS1BCXZA` and `MNA89MS1BACXZA`, leaving 165. The 165 published keys exactly match the post-exclusion collection. See [TV_SOURCE_CONTRACT.md](TV_SOURCE_CONTRACT.md) and [collection run 35703343706](https://github.com/Empty-Bell/RDA/actions/runs/35703343706).

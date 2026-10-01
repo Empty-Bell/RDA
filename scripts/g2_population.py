@@ -4,7 +4,7 @@ import json
 from urllib.parse import urljoin
 from source_contract import pf_population
 from regaudit.population import canonicalize_products
-from plp_population import select_rendered_products
+from plp_population import select_listed_products
 
 
 def observation(value=None):
@@ -32,5 +32,5 @@ def population_records(pages, run_id, plp_url, rendered_cards=None):
     products=canonicalize_products(records)
     if len(products)!=parsed['unique_exact_skus']:raise ValueError('Population adapter lost SKU identities')
     if rendered_cards is not None:
-        products=select_rendered_products(products, rendered_cards)
+        products=select_listed_products(products, rendered_cards, parsed['unique_exact_skus'])
     return products,parsed

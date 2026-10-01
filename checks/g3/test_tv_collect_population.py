@@ -13,7 +13,7 @@ from source_contract import pf_population  # noqa: E402
 
 
 class TelevisionPopulationTests(unittest.TestCase):
-    def test_rendered_mna_card_is_included_and_hidden_variant_is_excluded(self):
+    def test_approved_mna_exclusion_applies_even_to_rendered_card(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             pages = []
@@ -49,11 +49,14 @@ class TelevisionPopulationTests(unittest.TestCase):
 
         skus = {row["exact_sku"] for row in products}
         self.assertNotIn("MNA101MS1BCXZA", skus)
-        self.assertIn("MNA89MS1BACXZA", skus)
+        self.assertNotIn("MNA89MS1BACXZA", skus)
         self.assertIn("MRN75R95HAFXZA", skus)
         self.assertEqual(summary["source_unique_exact_skus"], expected_source_count)
-        self.assertEqual(summary["unique_exact_skus"], len(groups))
-        self.assertEqual(summary["population_basis"], "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS")
+        self.assertEqual(summary["unique_exact_skus"], expected_source_count - 2)
+        self.assertEqual(summary["population_basis"], "RENDERED_PLP_CARDS_AND_GROUP_OPTIONS_EXCEPT_TV_MNA")
+        self.assertEqual(summary["excluded_model_prefixes"], ["MNA"])
+        self.assertEqual(summary["excluded_rendered_card_skus"], ["MNA89MS1BACXZA"])
+        self.assertEqual(summary["excluded_exact_skus"], ["MNA101MS1BCXZA", "MNA89MS1BACXZA"])
 
 
 if __name__ == "__main__":

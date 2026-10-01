@@ -37,8 +37,9 @@ class DishwasherCollectionTests(unittest.TestCase):
             self.fixture_recon(root)
             products, summary = load_population(root, "source-1")
         self.assertEqual(summary["total_groups"], 9)
-        self.assertEqual(len(products), 9)
+        self.assertEqual(len(products), 21)
         self.assertEqual(summary["pf_variant_count"], 21)
+        self.assertEqual(summary["population_basis"], "RENDERED_PLP_CARDS_AND_GROUP_OPTIONS")
         self.assertTrue(all(product["listings"][0]["product_group"] == "dishwasher" for product in products))
 
     def test_rejects_tampered_pf_fixture(self):

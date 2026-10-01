@@ -9,7 +9,7 @@ import re
 from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
-from plp_population import rendered_card_skus, select_rendered_products
+from plp_population import rendered_card_skus, select_listed_products
 from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
@@ -18,6 +18,7 @@ from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
 
 PLP_URL = "https://www.samsung.com/us/tvs/all-tvs/"
 CONTRACT = "G3_TV_EXACT_SKU_PDP_V1"
+EXCLUDED_TV_MODEL_PREFIXES = ("MNA",)
 
 
 def load_json(path):
@@ -72,7 +73,11 @@ def load_population(recon_root, source_run_id):
                     "variant_attributes": {"state": "NOT_OBSERVED", "value": None, "error": None},
                 }]})
     canonical = canonicalize_products(products)
-    canonical = select_rendered_products(canonical, rendered_card_skus(root, population))
+    cards = rendered_card_skus(root, population)
+    excluded_skus = {sku for sku in listing_by_sku
+                     if sku.startswith(EXCLUDED_TV_MODEL_PREFIXES)}
+    canonical = select_listed_products(canonical, cards, population["unique_exact_skus"])
+    canonical = [product for product in canonical if product["exact_sku"] not in excluded_skus]
     for product in canonical:
         product["source_claim_listing_raw"] = listing_by_sku[product["exact_sku"]]
     if not canonical:
@@ -80,7 +85,10 @@ def load_population(recon_root, source_run_id):
     return canonical, {"source_run_id": str(source_run_id), "total_groups": population["total_groups"],
                        "source_unique_exact_skus": population["unique_exact_skus"],
                        "unique_exact_skus": len(canonical),
-                       "population_basis": "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS",
+                       "population_basis": "RENDERED_PLP_CARDS_AND_GROUP_OPTIONS_EXCEPT_TV_MNA",
+                       "excluded_model_prefixes": list(EXCLUDED_TV_MODEL_PREFIXES),
+                       "excluded_exact_skus": sorted(excluded_skus),
+                       "excluded_rendered_card_skus": sorted(set(cards) & excluded_skus),
                        "pf_page_count": len(pages),
                        "pf_page_hashes": [pages_by_offset[offset][1] for offset in offsets]}
 

@@ -130,9 +130,9 @@ Historical MNA-excluded collection passed hosted validation in run
 population evidence retains the source count and explicitly records excluded
 model prefixes and exact SKUs. Business scope excludes every exact TV SKU whose
 model code begins `MNA`; the two baseline models were `MNA101MS1BCXZA` and
-`MNA89MS1BACXZA`. The 2026-10-01 user scope decision supersedes that rule:
-any exact SKU rendered on a TV PLP product card is in scope, including `MNA`.
-PF grouped variants without their own rendered card are excluded.
+`MNA89MS1BACXZA`. The user reaffirmed this explicit TV exception on 2026-10-01.
+All other TV models require membership on a rendered PLP product card or its
+PLP group options. The user confirmed option SKUs remain in scope.
 
 Downstream label/EPA capture run 35704036734 passed: 165 documents declared,
 160 valid readable PDFs, five NASCA DRM labels and a successful EPA Current
