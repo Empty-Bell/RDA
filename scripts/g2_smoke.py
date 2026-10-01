@@ -157,13 +157,14 @@ def main():
             )
             return identity, digest
 
+        scoped_skus = {product["exact_sku"] for product in products}
         for offset in ordered:
             members = {
                 r["modelCode"]
                 for g in json.loads(pages[offset])["searchResults"]
                 for r in g["groupedProductList"]
             }
-            for sku in sorted(members):
+            for sku in sorted(members & scoped_skus):
                 evidence(pages[offset], page_sources[offset], sku, "projected-public-pf-response")
         pdp = json.loads((source / "pdp-observation.json").read_bytes())
         sku = pdp["target_sku"]
