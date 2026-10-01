@@ -206,6 +206,7 @@ def retry_failed(products, results, output, *, retries=2):
     destination = Path(output)
     by_sku = {row["exact_sku"]: row for row in products}
     current = {row["exact_sku"]: row for row in results}
+    attempts = {row["exact_sku"]: [row] for row in results}
     for attempt in range(1, retries + 1):
         failed = [by_sku[sku] for sku, row in current.items() if row["status"] == "FAILED"]
         if not failed:
@@ -214,6 +215,7 @@ def retry_failed(products, results, output, *, retries=2):
         attempted = collect(failed, retry_root)
         for row in attempted:
             sku = row["exact_sku"]
+            attempts[sku].append(row)
             if row["status"] != "VERIFIED_EXACT_IDENTITY":
                 continue
             original = destination / "pdp" / quote(sku, safe="")
@@ -221,6 +223,31 @@ def retry_failed(products, results, output, *, retries=2):
             for name in ("result.json", "snapshot.json", "specs.json"):
                 shutil.copy2(recovered / name, original / name)
             current[sku] = row
+    for sku, row in current.items():
+        observations = attempts[sku]
+        if row["status"] != "FAILED" or len(observations) != retries + 1:
+            continue
+        final_urls = {item.get("final_url") for item in observations}
+        requested = by_sku[sku]["listing"]["pdp_url"]
+        if (len(final_urls) != 1 or None in final_urls
+                or any(item.get("failure_class") != "EXACT_SKU_NOT_SELECTABLE_ON_CURRENT_PDP"
+                       for item in observations)):
+            continue
+        final_url = next(iter(final_urls))
+        final_path = urlsplit(final_url)
+        if (final_url == requested or final_path.scheme != "https"
+                or final_path.hostname != "www.samsung.com"
+                or not re.search(r"-sku-[a-z0-9/-]+/?$", final_path.path.lower())):
+            continue
+        terminal = {**row, "status": "PDP_REDIRECT_CONFIRMED",
+                    "source_claim_listing_raw": by_sku[sku]["source_claim_listing_raw"],
+                    "redirect_observations": [{"requested_url": item.get("requested_url"),
+                                               "final_url": item.get("final_url"),
+                                               "selected_configuration_raw": item.get("selected_configuration_raw")}
+                                              for item in observations]}
+        (destination / "pdp" / quote(sku, safe="") / "result.json").write_text(
+            json.dumps(terminal, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+        current[sku] = terminal
     return [current[row["exact_sku"]] for row in results]
 
 
@@ -250,8 +277,9 @@ def main():
         "all_population_skus": sorted(row["exact_sku"] for row in products),
         "assigned_skus": sorted(statuses),
         "coverage_counts": {state: sum(value == state for value in statuses.values())
-            for state in ("VERIFIED_EXACT_IDENTITY", "FAILED")},
-        "rows": results, "status": "PASS" if all(value == "VERIFIED_EXACT_IDENTITY" for value in statuses.values()) else "FAILED"}
+            for state in ("VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED", "FAILED")},
+        "rows": results, "status": "PASS" if all(value in {"VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED"}
+                                           for value in statuses.values()) else "FAILED"}
     (out / "shard-summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({key: summary[key] for key in ("status", "source_run_id", "shard_index", "shard_count", "population_count", "coverage_counts")}, sort_keys=True), flush=True)
     return 0 if summary["status"] == "PASS" else 1

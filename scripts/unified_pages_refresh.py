@@ -41,6 +41,12 @@ def write(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def target_pdp_url(result):
+    if result.get("status") == "PDP_REDIRECT_CONFIRMED":
+        return result.get("requested_url")
+    return result.get("final_url") or result.get("requested_url")
+
+
 def source_pdp_results(source, slug, desired):
     paths = list((source / slug).rglob("result.json"))
     if slug == "refrigerator":
@@ -49,9 +55,10 @@ def source_pdp_results(source, slug, desired):
     for path in paths:
         result = read(path)
         sku = result.get("exact_sku")
-        if sku not in desired or result.get("status") != "VERIFIED_EXACT_IDENTITY":
+        if sku not in desired or result.get("status") not in {
+                "VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED"}:
             continue
-        url = result.get("final_url") or result.get("requested_url")
+        url = target_pdp_url(result)
         if isinstance(url, str) and url.startswith("https://www.samsung.com/us/"):
             results[sku] = result
     if slug == "refrigerator":
@@ -117,7 +124,7 @@ def reconcile_plp_population(docs, source, gate):
                           if isinstance(item, dict) and isinstance(item.get("url"), str)]
             record = copy.deepcopy(next(iter(previous.values())))
             record.update(model=sku, grade="PASS", findings=[],
-                          pdp_url=result.get("final_url") or result["requested_url"],
+                          pdp_url=target_pdp_url(result),
                           label_urls=label_urls, epa_registration=None, points={},
                           run_id=None, run_url=None,
                           model_name=claims.get("listing_title_raw"), annual_energy=None,
@@ -146,7 +153,7 @@ def reconcile_plp_population(docs, source, gate):
         for record in snapshot["records"]:
             if record["family"] == family and record["model"] in source_results:
                 result = source_results[record["model"]]
-                record["pdp_url"] = result.get("final_url") or result["requested_url"]
+                record["pdp_url"] = target_pdp_url(result)
         next(entry for entry in snapshot["families"] if entry["family"] == family)["population"] = len(desired)
         totals[family] = len(desired)
     if len(snapshot["records"]) != gate["model_count"] or sum(totals.values()) != gate["model_count"]:

@@ -10,6 +10,40 @@ import g3_computer_collect as computer
 
 
 class ComputerCollectRetryTest(unittest.TestCase):
+    def test_three_same_wrong_model_redirects_become_actionable_high_source(self):
+        sku = "NP740VJG-KG2US"
+        requested = "https://www.samsung.com/us/computers/book-sku-np740vjg-kg2us"
+        final = "https://www.samsung.com/us/computers/other-sku-np960ujh-xg2us/"
+        product = {"exact_sku": sku, "listing": {"pdp_url": requested},
+                   "source_claim_listing_raw": {"energyStarFlg": "Y"}}
+        failure = {"exact_sku": sku, "status": "FAILED", "requested_url": requested,
+                   "final_url": final, "failure_class": "EXACT_SKU_NOT_SELECTABLE_ON_CURRENT_PDP"}
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            folder = root / "pdp" / sku
+            folder.mkdir(parents=True)
+            with patch.object(computer, "collect", return_value=[failure.copy()]):
+                rows = computer.retry_failed([product], [failure], root)
+            self.assertEqual(rows[0]["status"], "PDP_REDIRECT_CONFIRMED")
+            self.assertEqual(len(rows[0]["redirect_observations"]), 3)
+            self.assertEqual(json.loads((folder / "result.json").read_text())["status"],
+                             "PDP_REDIRECT_CONFIRMED")
+
+    def test_changing_redirect_target_remains_collection_failure(self):
+        sku = "NP740VJG-KG2US"
+        requested = "https://www.samsung.com/us/computers/book-sku-np740vjg-kg2us"
+        base = {"exact_sku": sku, "status": "FAILED", "requested_url": requested,
+                "failure_class": "EXACT_SKU_NOT_SELECTABLE_ON_CURRENT_PDP"}
+        product = {"exact_sku": sku, "listing": {"pdp_url": requested},
+                   "source_claim_listing_raw": {"energyStarFlg": "Y"}}
+        with tempfile.TemporaryDirectory() as temporary:
+            first = {**base, "final_url": "https://www.samsung.com/us/book-sku-other1/"}
+            next_rows = iter([{**base, "final_url": "https://www.samsung.com/us/book-sku-other2/"},
+                              {**base, "final_url": "https://www.samsung.com/us/book-sku-other2/"}])
+            with patch.object(computer, "collect", side_effect=lambda *_: [next(next_rows)]):
+                rows = computer.retry_failed([product], [first], temporary)
+            self.assertEqual(rows[0]["status"], "FAILED")
+
     def test_retries_only_failed_sku_and_promotes_exact_verified_capture(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

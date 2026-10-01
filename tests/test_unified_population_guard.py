@@ -3,10 +3,16 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from unified_pages_refresh import reconcile_plp_population, source_pdp_results
+from unified_pages_refresh import reconcile_plp_population, source_pdp_results, target_pdp_url
 
 
 class UnifiedPopulationGuardTests(unittest.TestCase):
+    def test_wrong_model_redirect_keeps_target_link(self):
+        self.assertEqual(target_pdp_url({"status": "PDP_REDIRECT_CONFIRMED",
+                         "requested_url": "https://www.samsung.com/us/target",
+                         "final_url": "https://www.samsung.com/us/other"}),
+                         "https://www.samsung.com/us/target")
+
     def test_refrigerator_expansion_finds_same_run_g2_pdp(self):
         with tempfile.TemporaryDirectory() as temporary:
             source = Path(temporary) / "unified"

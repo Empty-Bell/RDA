@@ -63,7 +63,8 @@ def build(docs, manifest_path, assessments_root, sources_root):
                       points={key: point["state"] for key, point in points.items()})
         record["raw_summary"].update(epa_registration=registration,
                                      plp_logo=points["plp_logo"]["state"],
-                                     pdp_logo=points["pdp_logo"]["state"])
+                                     pdp_logo=points["pdp_logo"]["state"],
+                                     pdp_redirect_final_url=(current.get("pdp_identity_failure") or {}).get("final_url"))
         detail = {"model": sku, "family": family, "grade": grade,
                   "assessment": current, "frozen_source_candidate": candidate,
                   "source_run": run_id, "source_workflow_run_id": report["source_run_id"],

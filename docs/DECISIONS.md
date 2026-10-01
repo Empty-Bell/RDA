@@ -249,6 +249,12 @@ Tablet option visibility is independently established. Stock state and PDP
 redirect do not change PLP membership; a redirected PDP must never be accepted
 as verified evidence for the requested SKU. A failed exact PDP identity remains
 a source failure to recover or investigate, never a fabricated PASS.
+For a PLP-listed Computer option whose requested PDP repeatedly resolves to
+the same different exact model across the initial capture and both fresh
+retries, keep the option in scope and issue HIGH `PDP_LINK_WRONG_MODEL` with
+both URLs. PDP logos and Specs from the redirected model are UNKNOWN for the
+requested SKU and must not be borrowed. Other PDP failures remain source
+failures eligible for bounded retry.
 
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|

@@ -11,6 +11,22 @@ def candidate(rule, markets="United States"):
 
 
 class ComputerRegistrationScopeTests(unittest.TestCase):
+    def test_confirmed_wrong_model_pdp_is_high_without_borrowing_its_logo(self):
+        row = {
+            "exact_sku": "NP740VJG-KG2US",
+            "energy_star_claim_sources_raw": {"exact_sku": "NP740VJG-KG2US",
+                                               "plp_energy_star_flag_raw": "Y"},
+            "epa_computer_model_pattern_candidates": [],
+            "pdp_identity_failure": {
+                "requested_url": "https://www.samsung.com/us/computers/book-sku-np740vjg-kg2us",
+                "final_url": "https://www.samsung.com/us/computers/book-sku-np960ujh-xg2us/",
+            },
+        }
+        result = assess_record(row)
+        self.assertEqual(result["display_outcome"], "HIGH")
+        self.assertEqual(result["findings"][0]["issue_code"], "PDP_LINK_WRONG_MODEL")
+        self.assertEqual(result["energy_star_publication"]["points"]["pdp_logo"]["state"], "UNKNOWN")
+
     def test_base_model_prefix_confirms_registration_per_approved_rule(self):
         state, markets = computer_registration([
             candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")

@@ -38,6 +38,30 @@ def assess_record(row):
         raise ValueError("Computer publication evidence lacks exact-SKU provenance")
     if not isinstance(candidates, list):
         raise ValueError("Computer EPA candidate list is missing")
+    redirect = row.get("pdp_identity_failure")
+    if isinstance(redirect, dict):
+        if not redirect.get("requested_url") or not redirect.get("final_url"):
+            raise ValueError("Computer PDP redirect finding lacks source URLs")
+        registration, market_states = computer_registration(candidates)
+        plp_raw = claim.get("plp_energy_star_flag_raw")
+        plp_state = "PRESENT" if plp_raw == "Y" else "ABSENT" if plp_raw == "N" else "UNKNOWN"
+        return {
+            "exact_sku": sku,
+            "selected_configuration_raw": row.get("selected_configuration_raw"),
+            "pdp_product_facts_raw": {}, "pdp_identity_failure": redirect,
+            "epa_current_registration": {"state": registration,
+                "computer_model_pattern_candidates": candidates,
+                "candidate_market_states": market_states},
+            "energy_star_publication": {"outcome": "NOT_EVALUATED", "points": {
+                "plp_logo": {"state": plp_state, "raw_value": plp_raw},
+                "pdp_logo": {"state": "UNKNOWN", "inspection": "WRONG_MODEL_PDP"},
+                "spec_certification": {"state": "NOT_APPLICABLE", "inspection": "WRONG_MODEL_PDP"}}},
+            "display_outcome": "HIGH",
+            "findings": [{"control": "PDP_IDENTITY", "severity": "HIGH",
+                          "issue_code": "PDP_LINK_WRONG_MODEL"}],
+            "overall_product_compliance": "NOT_EVALUATED",
+            "legal_applicability": "NOT_EVALUATED",
+        }
     registration, market_states = computer_registration(candidates)
     points = publication_points(claim)
     points["spec_certification"] = {

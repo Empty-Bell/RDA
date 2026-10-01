@@ -34,6 +34,7 @@ ACTION = {
     "ENERGYGUIDE_DOCUMENT_MISSING_CANDIDATE": ("Add or reconnect the EnergyGuide document for this SKU.", "해당 SKU의 EnergyGuide 문서를 연결하거나 링크를 수정하세요."),
     "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE": ("Replace the unreadable EnergyGuide PDF or repair its link.", "열 수 없는 EnergyGuide PDF를 교체하거나 링크를 수정하세요."),
     "MODEL_IDENTITY_MISMATCH": ("Check every printed label model against the PDP SKU and correct the label link if needed.", "라벨에 적힌 모든 모델과 PDP SKU를 대조하고 잘못 연결된 라벨을 수정하세요."),
+    "PDP_LINK_WRONG_MODEL": ("Correct the PLP option link so it opens this exact SKU's PDP.", "PLP 옵션 링크가 해당 SKU의 PDP로 열리도록 수정하세요."),
 }
 
 
@@ -125,7 +126,7 @@ def candidate_number(candidates, keys):
     return next(iter(values)) if len(values) == 1 else None
 
 
-def describe(issue_codes, values, model_assessment=None):
+def describe(issue_codes, values, model_assessment=None, redirect=None):
     if not issue_codes:
         return "[Basis] No automated issues found"
     lines = []
@@ -143,6 +144,8 @@ def describe(issue_codes, values, model_assessment=None):
         if model_assessment:
             line += f"; model comparison={model_assessment}"
         lines.append(line)
+    if "PDP_LINK_WRONG_MODEL" in issue_codes and redirect:
+        lines.append(f"PLP SKU={shown(values['SKU'])}; requested PDP={shown(redirect.get('requested_url'))}; redirected to={shown(redirect.get('final_url'))}")
     if "ANNUAL_ENERGY_MISMATCH" in issue_codes:
         lines.append("Annual kWh: PDP={}; EnergyGuide={}; EPA={}".format(
             *(shown(values[key]) for key in ("PDP kWh", "OCR kWh", "EPA kWh"))))
@@ -260,5 +263,6 @@ def projection(record, detail, position):
                       else raw.get("epa_match_status") or
                       ("REGISTERED_MODEL_OBSERVED" if record.get("epa_registration") == "PRESENT" and epa_model else None)),
     }
-    values["Description"] = describe(issue_codes, values, model_assessment)
+    values["Description"] = describe(issue_codes, values, model_assessment,
+                                      assessment.get("pdp_identity_failure"))
     return values

@@ -131,8 +131,19 @@ def load_collection(root, expected_run_id):
     for shard in dirs:
         for path in sorted((shard / "pdp").glob("*/result.json")):
             result = json.loads(path.read_bytes()); sku = result.get("exact_sku")
-            if sku not in expected or sku in products or result.get("status") != "VERIFIED_EXACT_IDENTITY":
+            if sku not in expected or sku in products or result.get("status") not in {
+                    "VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED"}:
                 raise ValueError("Computer PDP result is missing, duplicated, failed, or outside population")
+            if result["status"] == "PDP_REDIRECT_CONFIRMED":
+                observations = result.get("redirect_observations")
+                if (not isinstance(observations, list) or len(observations) != 3
+                        or any(item.get("final_url") != result.get("final_url") for item in observations)):
+                    raise ValueError("Computer redirect finding lacks three consistent observations")
+                products[sku] = result
+                claims[sku] = {"exact_sku": sku,
+                               "plp_energy_star_flag_raw": (result.get("source_claim_listing_raw") or {}).get("energyStarFlg")}
+                facts[sku] = {}
+                continue
             config = result.get("selected_configuration_raw")
             if not isinstance(config, dict) or computer_selection(config, sku).get("exact_sku") != sku:
                 raise ValueError("Computer selected configuration provenance is missing or invalid")
@@ -208,8 +219,11 @@ def build_candidates(skus, products, claims, facts, epa_rows, source_run_id, epa
                     "epa_row_raw": {f"{key}_raw": value for key, value in row.items()}})
                 type_counts[str(row.get("type") or "(blank)")] += 1
         records.append({"exact_sku": sku, "source_leg": products[sku].get("source_leg"),
-            "selected_configuration_raw": products[sku].get("selected_configuration_raw"),
+            "selected_configuration_raw": products[sku].get("selected_configuration_raw") or {},
             "pdp_product_facts_raw": facts[sku], "energy_star_claim_sources_raw": claims[sku],
+            "pdp_identity_failure": ({key: products[sku].get(key) for key in
+                                      ("requested_url", "final_url", "redirect_observations")}
+                                     if products[sku].get("status") == "PDP_REDIRECT_CONFIRMED" else None),
             "epa_computer_model_pattern_candidates": candidates,
             "registration_and_publication_assessment": "NOT_EVALUATED"})
     report = {"contract": CONTRACT, "status": "SOURCE_CANDIDATES_READY", "source_validation": "PASS",
