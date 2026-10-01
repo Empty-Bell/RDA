@@ -312,8 +312,6 @@ def capture(out: Path, run_id: str, *, include_epa: bool, pf_source: Path) -> di
         next_record = _write_raw(raw, f"next/sku-{number:02d}.html", next_body)
         next_record.update({"url": product["pdp_url"], "status": status})
         declaration = project_sku_declaration(group, variant, next_body, bridge)
-        declaration["sku_role"] = "PLP_RENDERED_CARD" if sku in cards else "PLP_GROUP_OPTION"
-        declaration["plp_card_url_raw"] = cards[sku].get("url") if sku in cards else None
         declaration["source_evidence_refs"] = {
             "plp_logo_source": product["pf_source_evidence"],
             "pdp_logo_source": {

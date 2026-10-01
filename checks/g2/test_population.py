@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import unittest
 from g2_population import population_records
+from plp_population import select_listed_products
+from regaudit.contracts import ListingProvenance, record
 from source_contract import pdp_facts
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -11,6 +13,18 @@ PLP='https://www.samsung.com/us/home-appliances/refrigerators/all-refrigerators/
 
 
 class Population(unittest.TestCase):
+    def test_plp_option_selection_preserves_strict_listing_schema(self):
+        products, parsed = population_records(self.pages, 'run', PLP)
+        representative = next(product for product in products
+                              if product['listings'][0]['sku_role'] == 'REPRESENTATIVE')
+        selected = select_listed_products(products,
+                                          {representative['exact_sku']: {'url': '/card'}},
+                                          parsed['unique_exact_skus'])
+        self.assertEqual(len(selected), parsed['unique_exact_skus'])
+        for product in selected:
+            for listing in product['listings']:
+                record(ListingProvenance, listing)
+
     def setUp(self):self.pages=[p.read_bytes() for p in sorted((ROOT/'tests/fixtures/refrigerator').glob('pf-page-*.json'))]
     def mutate(self,edit):
         pages=[json.loads(raw) for raw in self.pages];edit(pages)
