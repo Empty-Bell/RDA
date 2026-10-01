@@ -51,9 +51,20 @@ def check(base, run_id, browser_check=True):
                 raise ValueError(f"{mode}: displayed run number differs")
             if page.locator("#queue-list .queue-item").count() == 0:
                 raise ValueError(f"{mode}: action queue did not render")
-            page.locator("#queue-severity").select_option("HIGH")
-            if page.locator("#queue-list .queue-item").count() == 0:
-                raise ValueError(f"{mode}: severity filter did not render")
+            active_grade = None
+            for candidate in ("HIGH", "MEDIUM", "LOW"):
+                page.locator("#queue-severity").select_option(candidate)
+                expected = sum(row["grade"] == candidate for row in model["records"])
+                shown = page.locator("#queue-list .queue-item").count()
+                if expected and shown == 0:
+                    raise ValueError(f"{mode}: {candidate} severity filter did not render")
+                if not expected and (shown or not page.locator("#queue-empty").is_visible()):
+                    raise ValueError(f"{mode}: empty {candidate} severity state did not render")
+                if expected and active_grade is None:
+                    active_grade = candidate
+            if active_grade is None:
+                raise ValueError(f"{mode}: no actionable grade was available for evidence smoke")
+            page.locator("#queue-severity").select_option(active_grade)
             page.locator("#queue-list .queue-item").first.locator("summary").click()
             page.wait_for_function("document.querySelector('#queue-list .queue-item .evidence-mount')?.children.length > 0",
                                    timeout=20000)
