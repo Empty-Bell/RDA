@@ -1,4 +1,4 @@
-"""TV collection population scope exclusions."""
+"""TV collection population follows rendered PLP cards."""
 import hashlib
 import json
 from pathlib import Path
@@ -13,7 +13,7 @@ from source_contract import pf_population  # noqa: E402
 
 
 class TelevisionPopulationTests(unittest.TestCase):
-    def test_business_excluded_mna_sku_is_retained_as_exclusion_evidence(self):
+    def test_rendered_mna_card_is_included_and_hidden_variant_is_excluded(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             pages = []
@@ -34,18 +34,26 @@ class TelevisionPopulationTests(unittest.TestCase):
                                                    for i in range(2)])["unique_exact_skus"]
             (root / "recon.json").write_text(json.dumps({"status": "PASS", "run_id": "source-1",
                 "scope": "tv source contracts only", "observations": pages}), encoding="utf-8")
+            groups = [group for index in range(2) for group in
+                      json.loads((root / f"pf-page-{index}.json").read_text(encoding="utf-8"))["searchResults"]]
+            (root / "population-observation.json").write_text(json.dumps({
+                "groups": len(groups),
+                "rendered_tiles": [{"sku": group["modelCode"], "url": group["pdpURL"]} for group in groups],
+                "rendered_tile_groups": [group["group_id"] for group in groups],
+            }), encoding="utf-8")
+            (root / "plp-claim-observation.json").write_text(json.dumps({
+                "cards": [{"sku": group["modelCode"]} for group in groups]
+            }), encoding="utf-8")
 
             products, summary = load_population(root, "source-1")
 
         skus = {row["exact_sku"] for row in products}
         self.assertNotIn("MNA101MS1BCXZA", skus)
+        self.assertIn("MNA89MS1BACXZA", skus)
         self.assertIn("MRN75R95HAFXZA", skus)
         self.assertEqual(summary["source_unique_exact_skus"], expected_source_count)
-        self.assertEqual(summary["unique_exact_skus"],
-                         expected_source_count - len(summary["excluded_exact_skus"]))
-        self.assertIn("MNA101MS1BCXZA", summary["excluded_exact_skus"])
-        self.assertTrue(all(not sku.startswith("MNA") for sku in skus))
-        self.assertEqual(summary["excluded_model_prefixes"], ["MNA"])
+        self.assertEqual(summary["unique_exact_skus"], len(groups))
+        self.assertEqual(summary["population_basis"], "EXACT_SKUS_ON_RENDERED_PLP_PRODUCT_CARDS")
 
 
 if __name__ == "__main__":

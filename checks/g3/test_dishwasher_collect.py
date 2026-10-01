@@ -21,6 +21,15 @@ class DishwasherCollectionTests(unittest.TestCase):
                  "observations": [{"request_body": {"startIndex": 0}, "fixture": "fixtures/pf-page-0.json",
                                    "fixture_sha256": hashlib.sha256(target.read_bytes()).hexdigest()}]}
         (root / "recon.json").write_text(json.dumps(recon), encoding="utf-8")
+        groups = json.loads(target.read_bytes())["searchResults"]
+        (root / "population-observation.json").write_text(json.dumps({
+            "groups": len(groups),
+            "rendered_tiles": [{"sku": group["modelCode"], "url": group["pdpURL"]} for group in groups],
+            "rendered_tile_groups": [group["group_id"] for group in groups],
+        }), encoding="utf-8")
+        (root / "plp-claim-observation.json").write_text(json.dumps({
+            "cards": [{"sku": group["modelCode"]} for group in groups]
+        }), encoding="utf-8")
 
     def test_builds_exact_population_from_hash_bound_pf_fixtures(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -28,7 +37,8 @@ class DishwasherCollectionTests(unittest.TestCase):
             self.fixture_recon(root)
             products, summary = load_population(root, "source-1")
         self.assertEqual(summary["total_groups"], 9)
-        self.assertEqual(len(products), 21)
+        self.assertEqual(len(products), 9)
+        self.assertEqual(summary["pf_variant_count"], 21)
         self.assertTrue(all(product["listings"][0]["product_group"] == "dishwasher" for product in products))
 
     def test_rejects_tampered_pf_fixture(self):
