@@ -41,6 +41,38 @@ def write(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def source_pdp_results(source, slug, desired):
+    paths = list((source / slug).rglob("result.json"))
+    if slug == "refrigerator":
+        paths.extend((source.parent / "g2").glob("*/pdp-samples/*/result.json"))
+    results = {}
+    for path in paths:
+        result = read(path)
+        sku = result.get("exact_sku")
+        if sku not in desired or result.get("status") != "VERIFIED_EXACT_IDENTITY":
+            continue
+        url = result.get("final_url") or result.get("requested_url")
+        if isinstance(url, str) and url.startswith("https://www.samsung.com/us/"):
+            results[sku] = result
+    if slug == "refrigerator":
+        bundles = list((source.parent / "g2").glob("*/bundle.json"))
+        if len(bundles) != 1:
+            raise ValueError("Refrigerator source has no unique same-run G2 bundle")
+        bundle = read(bundles[0])
+        for product in bundle.get("products", []):
+            sku = product.get("exact_sku")
+            if sku not in desired or sku in results:
+                continue
+            listings = product.get("listings") or []
+            urls = {item.get("pdp_url") for item in listings if isinstance(item, dict)}
+            if len(urls) == 1:
+                url = next(iter(urls))
+                if isinstance(url, str) and url.startswith("https://www.samsung.com/us/"):
+                    results[sku] = {"exact_sku": sku, "requested_url": url,
+                                    "status": "SOURCE_LISTED_PDP_CAPTURE_NOT_EXPORTED"}
+    return results
+
+
 def reconcile_plp_population(docs, source, gate):
     """Stage the current source population before the family refreshers run."""
     snapshot_path = docs / "model-data.json"
@@ -74,14 +106,7 @@ def reconcile_plp_population(docs, source, gate):
         for record in list(snapshot["records"]):
             if record["family"] == family and record["model"] in removed:
                 snapshot["records"].remove(record)
-        source_results = {}
-        for path in (source / slug).rglob("result.json"):
-            result = read(path)
-            sku = result.get("exact_sku")
-            if sku in desired:
-                url = result.get("final_url") or result.get("requested_url")
-                if isinstance(url, str) and url.startswith("https://www.samsung.com/us/"):
-                    source_results[sku] = result
+        source_results = source_pdp_results(source, slug, desired)
         for sku in sorted(added):
             if sku not in source_results:
                 raise ValueError(f"{family} new PLP model has no verified PDP URL: {sku}")
