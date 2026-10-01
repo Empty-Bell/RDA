@@ -17,6 +17,7 @@ jobs:
     timeout-minutes: 20
     env:
       PYTHONUNBUFFERED: '1'
+      PYTHONPATH: 'src:scripts'
     strategy:
       fail-fast: false
       matrix:
