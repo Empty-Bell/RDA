@@ -1,5 +1,19 @@
 # Current task continuation — 2026-09-24
 
+## Scheduled automation trial — 2026-10-03
+
+Run 37101384398 completed all 11 families, integration, Pages publication and
+public smoke without intervention after manual dispatch. Public dashboard Run
+35 is the baseline; a manual start does not establish scheduled operation.
+
+The user requested a real scheduled verification. Add a trial for October 3,
+2026 at 19:23 KST (10:23 UTC), preserving Monday 09:13 KST. A year guard
+prevents annual replay of the temporary cron. Observe the actual `schedule`
+event, all jobs, and a newer public dashboard bound to that execution. Do not
+manually dispatch or retry the trial. Wait for terminal status before cleanup;
+remove the trial cron and its guard after verification, retaining the weekly
+schedule. Monitor quietly while pending/running; report completion or failure.
+
 ## Automatic Computer workflow failure fix — 2026-10-03
 
 Latest GitHub failure remains automatic run 36824646614 (Oct 1); no newer run
