@@ -2,6 +2,20 @@
 
 ## Scheduled automation trial — 2026-10-03
 
+Verified October 4 at 00:54 KST: scheduled run
+[37130823550](https://github.com/Empty-Bell/RDA/actions/runs/37130823550)
+completed successfully at 00:44:27 KST. GitHub created the actual schedule event
+at 23:46:30 KST, 4 hours 23 minutes 30 seconds after the intended trigger.
+Attempt 1 failed in TV source acquisition; the existing bounded recovery
+workflow automatically reran failed work as github-actions[bot]. Attempt 2
+passed all 11 families, integration, build, persist, deployment and public smoke.
+No manual dispatch or rerun was performed by this monitor. Public model-data
+and publication-manifest both show Run 36, 557 models, with every family bound
+to the scheduled execution. Automatic recovery/publication is verified; precise
+scheduled start timing is not reliable in this trial. After completion, remove
+the temporary October 3 cron and year guard, retain Monday 09:13 KST, and pause
+the trial monitor. No audit data or assessment logic changes in cleanup.
+
 Run 37101384398 completed all 11 families, integration, Pages publication and
 public smoke without intervention after manual dispatch. Public dashboard Run
 35 is the baseline; a manual start does not establish scheduled operation.

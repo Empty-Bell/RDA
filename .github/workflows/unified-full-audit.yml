@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '13 0 * * 1'
-    # One-time scheduled automation trial: 2026-10-03 19:23 KST.
-    - cron: '23 10 3 10 *'
 
 permissions:
   contents: read
@@ -15,28 +13,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  schedule_window:
-    name: Check scheduled trial window
-    runs-on: ubuntu-24.04
-    timeout-minutes: 2
-    outputs:
-      proceed: ${{ steps.window.outputs.proceed }}
-    steps:
-      - id: window
-        env:
-          TRIGGER_SCHEDULE: ${{ github.event.schedule }}
-        shell: bash
-        run: |
-          if [[ "$TRIGGER_SCHEDULE" == '23 10 3 10 *' && "$(date -u +%Y)" != '2026' ]]; then
-            echo 'proceed=false' >> "$GITHUB_OUTPUT"
-          else
-            echo 'proceed=true' >> "$GITHUB_OUTPUT"
-          fi
-
   preflight:
     name: Validate report code before live collection
-    needs: schedule_window
-    if: needs.schedule_window.outputs.proceed == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
