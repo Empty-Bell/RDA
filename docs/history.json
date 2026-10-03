@@ -945,6 +945,312 @@
       "model": "NP740VJG-KG2US",
       "control": "PDP_IDENTITY",
       "issue_code": "PDP_LINK_WRONG_MODEL"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "TV",
+      "model": "QN77S84FAEXZA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF25C5A01SRAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF27CG5B30SRAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF32CG5B30SRAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF32CG5D00SRAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H25GERAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H25HERAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H25KERAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H30GEEAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H30GERAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H30HERAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H30KEEAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF70H30KERAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RF80H30CERAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "냉장고",
+      "model": "RZ40H11PETAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "세탁기",
+      "model": "WA54CG7105AVUS",
+      "control": "ANNUAL_ENERGY",
+      "issue_code": "PDP_ANNUAL_ENERGY_MISSING"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "세탁기",
+      "model": "WA54CG7105AWUS",
+      "control": "ANNUAL_ENERGY",
+      "issue_code": "PDP_ANNUAL_ENERGY_MISSING"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "세탁기",
+      "model": "WF45B6300AP/US",
+      "control": "ANNUAL_ENERGY",
+      "issue_code": "ANNUAL_ENERGY_MISMATCH"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "세탁기",
+      "model": "WF45B6300AW/US",
+      "control": "ANNUAL_ENERGY",
+      "issue_code": "ANNUAL_ENERGY_MISMATCH"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "세탁기",
+      "model": "WH46DBH100EWA3",
+      "control": "ANNUAL_ENERGY",
+      "issue_code": "ANNUAL_ENERGY_MISMATCH"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80BB707012AA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80BB707012AA",
+      "control": "EPA_CURRENT",
+      "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CB545012AA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CB545012AA",
+      "control": "EPA_CURRENT",
+      "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5420SRAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5420SRAA",
+      "control": "EPA_CURRENT",
+      "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5450MTAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5450MTAA",
+      "control": "EPA_CURRENT",
+      "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5450SRAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5450SRAA",
+      "control": "EPA_CURRENT",
+      "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5451MTAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5451MTAA",
+      "control": "EPA_CURRENT",
+      "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5451SRAA",
+      "control": "ENERGY_STAR_PUBLICATION",
+      "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE"
+    },
+    {
+      "run_id": "37130823550",
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "kind": "PENDING_CONFIRMATION",
+      "family": "식기세척기",
+      "model": "DW80CG5451SRAA",
+      "control": "EPA_CURRENT",
+      "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED"
     }
   ],
   "failed_runs": [],
@@ -995,13 +1301,17 @@
       "state": "RESOLVED"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "TV",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "QN77S84FAEXZA",
@@ -1062,8 +1372,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "ENERGYGUIDE_DOCUMENT_MISSING_CANDIDATE",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "UN50U8000HFXZA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1077,8 +1387,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF23DB9750QLAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1092,8 +1402,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ENERGYGUIDE_CAPACITY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF23DB990012AA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1107,8 +1417,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ENERGYGUIDE_CAPACITY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF23DB9900QDAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1122,8 +1432,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF25C5551SR/AA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1137,21 +1447,25 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ENERGYGUIDE_CAPACITY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF25C5551SR/AA",
       "resolved_at": null,
       "resolved_run": null,
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF25C5A01SRAA",
@@ -1167,8 +1481,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF27CG5010S9AA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1182,8 +1496,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF27CG5100SRAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1197,8 +1511,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF27CG5400SRAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1212,21 +1526,25 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF27CG5900SRAA",
       "resolved_at": null,
       "resolved_run": null,
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF27CG5B30SRAA",
@@ -1242,8 +1560,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ENERGYGUIDE_CAPACITY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF29DB990012AA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1257,8 +1575,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ENERGYGUIDE_CAPACITY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF29DB9900QDAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1272,8 +1590,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF30BB6600QLAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1287,8 +1605,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF32CG5100SRAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1302,21 +1620,25 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RF32CG5900SRAA",
       "resolved_at": null,
       "resolved_run": null,
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF32CG5B30SRAA",
@@ -1325,13 +1647,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF32CG5D00SRAA",
@@ -1340,13 +1666,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H25GERAA",
@@ -1355,13 +1685,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H25HERAA",
@@ -1370,13 +1704,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H25KERAA",
@@ -1385,13 +1723,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H30GEEAA",
@@ -1400,13 +1742,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H30GERAA",
@@ -1415,13 +1761,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H30HERAA",
@@ -1430,13 +1780,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H30KEEAA",
@@ -1445,13 +1799,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF70H30KERAA",
@@ -1460,13 +1818,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RF80H30CERAA",
@@ -1482,8 +1844,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RM80F23VMRAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1497,8 +1859,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ENERGYGUIDE_CAPACITY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RS22T5561SR/AA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1512,8 +1874,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RS23CB7600QLAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1527,8 +1889,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ENERGYGUIDE_CAPACITY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RS23CB7600QLAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1542,8 +1904,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RS28CB760012AA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1557,21 +1919,25 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "RS28CB7600QLAA",
       "resolved_at": null,
       "resolved_run": null,
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "냉장고",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "RZ40H11PETAA",
@@ -1587,8 +1953,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NSE80H63SEAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1602,8 +1968,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NSE80H63SRAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1617,8 +1983,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NSE80H63SWAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1632,8 +1998,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NSE90H63DRAA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1647,8 +2013,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS27B804PXNXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1662,8 +2028,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS27D802UANXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1677,8 +2043,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS27H802UANXZA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1692,8 +2058,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS32D708EBNXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1707,8 +2073,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS32D800UBNXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1722,8 +2088,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS32D804UANXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1737,8 +2103,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS32H802UANXZA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1752,8 +2118,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS34C650TANXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1767,8 +2133,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS34C650UANXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1782,8 +2148,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS34C650VANXGO",
       "resolved_at": null,
       "resolved_run": null,
@@ -1797,8 +2163,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS37D700EANXZA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1812,8 +2178,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS37D800UANXZA",
       "resolved_at": null,
       "resolved_run": null,
@@ -1827,21 +2193,25 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "LS40H850TANXZA",
       "resolved_at": null,
       "resolved_run": null,
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ANNUAL_ENERGY",
       "family": "세탁기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "WA54CG7105AVUS",
@@ -1850,13 +2220,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ANNUAL_ENERGY",
       "family": "세탁기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "WA54CG7105AWUS",
@@ -1876,8 +2250,12 @@
       "latest_seen_run": "36693683213",
       "resolved_at": null,
       "resolved_run": null,
-      "confirmation_candidate": null,
-      "last_observation": "RULESET_CHANGED"
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
+      "last_observation": "ABSENT_PENDING_CONFIRMATION"
     },
     {
       "family": "세탁기",
@@ -1891,8 +2269,12 @@
       "latest_seen_run": "36693683213",
       "resolved_at": null,
       "resolved_run": null,
-      "confirmation_candidate": null,
-      "last_observation": "RULESET_CHANGED"
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
+      "last_observation": "ABSENT_PENDING_CONFIRMATION"
     },
     {
       "confirmation_candidate": null,
@@ -1902,8 +2284,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "WF90F53ADSA5",
       "resolved_at": null,
       "resolved_run": null,
@@ -1917,8 +2299,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "WF90F53ADYA5",
       "resolved_at": null,
       "resolved_run": null,
@@ -1932,8 +2314,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "ENERGY_STAR_PUBLICATION_INCONSISTENT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "WF90F53ADYA5",
       "resolved_at": null,
       "resolved_run": null,
@@ -1951,8 +2333,12 @@
       "latest_seen_run": "36693683213",
       "resolved_at": null,
       "resolved_run": null,
-      "confirmation_candidate": null,
-      "last_observation": "RULESET_CHANGED"
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
+      "last_observation": "ABSENT_PENDING_CONFIRMATION"
     },
     {
       "confirmation_candidate": null,
@@ -1962,8 +2348,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "ANNUAL_ENERGY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "WH46DBH500EVA3",
       "resolved_at": null,
       "resolved_run": null,
@@ -1977,8 +2363,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "ANNUAL_ENERGY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "WH46DBH500GVA3",
       "resolved_at": null,
       "resolved_run": null,
@@ -1992,8 +2378,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "PDP_ANNUAL_ENERGY_MISSING",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "WW25FG6B34BEA2",
       "resolved_at": null,
       "resolved_run": null,
@@ -2007,8 +2393,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "ANNUAL_ENERGY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "DW50T6060US/AA",
       "resolved_at": null,
       "resolved_run": null,
@@ -2022,21 +2408,25 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "ANNUAL_ENERGY_MISMATCH",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "DW60R2014US/AA",
       "resolved_at": null,
       "resolved_run": null,
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80BB707012AA",
@@ -2045,13 +2435,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "EPA_CURRENT",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80BB707012AA",
@@ -2060,13 +2454,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CB545012AA",
@@ -2075,13 +2473,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "EPA_CURRENT",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CB545012AA",
@@ -2090,13 +2492,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5420SRAA",
@@ -2105,13 +2511,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "EPA_CURRENT",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5420SRAA",
@@ -2120,13 +2530,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5450MTAA",
@@ -2135,13 +2549,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "EPA_CURRENT",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5450MTAA",
@@ -2150,13 +2568,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5450SRAA",
@@ -2165,13 +2587,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "EPA_CURRENT",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5450SRAA",
@@ -2180,13 +2606,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5451MTAA",
@@ -2195,13 +2625,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "EPA_CURRENT",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5451MTAA",
@@ -2210,13 +2644,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "ENERGY_STAR_PUBLICATION",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "CRITICAL_ENERGY_STAR_ELIGIBILITY_CANDIDATE",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5451SRAA",
@@ -2225,13 +2663,17 @@
       "state": "OPEN"
     },
     {
-      "confirmation_candidate": null,
+      "confirmation_candidate": {
+        "run_id": "37130823550",
+        "observed_at": "2026-10-03T15:42:49.569139+00:00",
+        "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe"
+      },
       "control": "EPA_CURRENT",
       "family": "식기세척기",
       "first_seen_at": "2026-09-28T12:02:33.469001+00:00",
       "first_seen_run": "dashboard-19",
       "issue_code": "EPA_CURRENT_MODEL_NOT_REGISTERED",
-      "last_observation": "RULESET_CHANGED",
+      "last_observation": "ABSENT_PENDING_CONFIRMATION",
       "latest_seen_at": "2026-09-29T13:13:45.374780+00:00",
       "latest_seen_run": "36569480177",
       "model": "DW80CG5451SRAA",
@@ -2247,8 +2689,8 @@
       "state": "OPEN",
       "first_seen_at": "2026-10-01T06:52:31.404589+00:00",
       "first_seen_run": "36824247885",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "resolved_at": null,
       "resolved_run": null,
       "confirmation_candidate": null,
@@ -2262,8 +2704,8 @@
       "state": "OPEN",
       "first_seen_at": "2026-10-01T06:52:31.404589+00:00",
       "first_seen_run": "36824247885",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "resolved_at": null,
       "resolved_run": null,
       "confirmation_candidate": null,
@@ -2277,8 +2719,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NP750XHD-KB1US",
       "resolved_at": null,
       "resolved_run": null,
@@ -2292,8 +2734,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NP760VJG-KG2US",
       "resolved_at": null,
       "resolved_run": null,
@@ -2307,8 +2749,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NP760XJG-KG2US",
       "resolved_at": null,
       "resolved_run": null,
@@ -2322,8 +2764,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NP960QHA-KG1US",
       "resolved_at": null,
       "resolved_run": null,
@@ -2337,8 +2779,8 @@
       "first_seen_run": "dashboard-19",
       "issue_code": "SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT",
       "last_observation": "PRESENT",
-      "latest_seen_at": "2026-10-03T06:30:41.742208+00:00",
-      "latest_seen_run": "37101384398",
+      "latest_seen_at": "2026-10-03T15:42:49.569139+00:00",
+      "latest_seen_run": "37130823550",
       "model": "NP960XJG-KA1US",
       "resolved_at": null,
       "resolved_run": null,
@@ -43984,6 +44426,2256 @@
         [
           "태블릿",
           "SM-X930NZSEXAR"
+        ]
+      ]
+    },
+    {
+      "run_id": "37130823550",
+      "run_number": 36,
+      "observed_at": "2026-10-03T15:42:49.569139+00:00",
+      "ruleset": "1038336d6b2c32fc70d1e66226912c310cedef63fe8d4af6b64583a219777ffe",
+      "snapshot_digest": "4f4fdd4b8ad22258c881ddcb28678bcbd38c0192f94e7a671afa4c52e987ae3b",
+      "model_count": 557,
+      "population": [
+        [
+          "TV",
+          "MRN100R85HFXZA"
+        ],
+        [
+          "TV",
+          "MRN115MR95FXZA"
+        ],
+        [
+          "TV",
+          "MRN55R85HAFXZA"
+        ],
+        [
+          "TV",
+          "MRN65R85HAFXZA"
+        ],
+        [
+          "TV",
+          "MRN65R95HAFXZA"
+        ],
+        [
+          "TV",
+          "MRN75R85HAFXZA"
+        ],
+        [
+          "TV",
+          "MRN75R95HAFXZA"
+        ],
+        [
+          "TV",
+          "MRN85R85HAFXZA"
+        ],
+        [
+          "TV",
+          "MRN85R95HAFXZA"
+        ],
+        [
+          "TV",
+          "QN100QN80FFXZA"
+        ],
+        [
+          "TV",
+          "QN100QN80HFXZA"
+        ],
+        [
+          "TV",
+          "QN115QN90FFXZA"
+        ],
+        [
+          "TV",
+          "QN32Q8FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN42S90FAEXZA"
+        ],
+        [
+          "TV",
+          "QN42S90HAEXZA"
+        ],
+        [
+          "TV",
+          "QN43LS03FAFXZA"
+        ],
+        [
+          "TV",
+          "QN43Q7FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN43Q8FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN43QEF1AFXZA"
+        ],
+        [
+          "TV",
+          "QN43QN70HAFXZA"
+        ],
+        [
+          "TV",
+          "QN43QN90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN48S85HAEXZA"
+        ],
+        [
+          "TV",
+          "QN48S90FAEXZA"
+        ],
+        [
+          "TV",
+          "QN48S90HAEXZA"
+        ],
+        [
+          "TV",
+          "QN50LS03FAFXZA"
+        ],
+        [
+          "TV",
+          "QN50Q7FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN50Q8FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN50QEF1AFXZA"
+        ],
+        [
+          "TV",
+          "QN50QN70HAFXZA"
+        ],
+        [
+          "TV",
+          "QN50QN90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55LS03FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55LS03HEFXZA"
+        ],
+        [
+          "TV",
+          "QN55LS03HWFXZA"
+        ],
+        [
+          "TV",
+          "QN55LST7DAFXZA"
+        ],
+        [
+          "TV",
+          "QN55Q6FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN55Q7FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN55Q8FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN55QEF1AFXZA"
+        ],
+        [
+          "TV",
+          "QN55QN1EFAFXZA"
+        ],
+        [
+          "TV",
+          "QN55QN70FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55QN70HAFXZA"
+        ],
+        [
+          "TV",
+          "QN55QN80FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55QN80HAFXZA"
+        ],
+        [
+          "TV",
+          "QN55QN90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55S84FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55S85FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55S85HAEXZA"
+        ],
+        [
+          "TV",
+          "QN55S90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN55S90HAEXZA"
+        ],
+        [
+          "TV",
+          "QN55S95HAFXZA"
+        ],
+        [
+          "TV",
+          "QN65LS03FAFXZA"
+        ],
+        [
+          "TV",
+          "QN65LS03FWFXZA"
+        ],
+        [
+          "TV",
+          "QN65LS03HEFXZA"
+        ],
+        [
+          "TV",
+          "QN65LS03HWFXZA"
+        ],
+        [
+          "TV",
+          "QN65LST7DAFXZA"
+        ],
+        [
+          "TV",
+          "QN65LST9DAFXZA"
+        ],
+        [
+          "TV",
+          "QN65Q6FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN65Q7FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN65Q8FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QEF1AFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN1EFAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN1EHAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN70FAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN70HAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN80FAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN80HAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN900FFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN65QN990FFXZA"
+        ],
+        [
+          "TV",
+          "QN65S85FAFXZA"
+        ],
+        [
+          "TV",
+          "QN65S85HAEXZA"
+        ],
+        [
+          "TV",
+          "QN65S90DAFXZA"
+        ],
+        [
+          "TV",
+          "QN65S90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN65S90HAEXZA"
+        ],
+        [
+          "TV",
+          "QN65S95HAFXZA"
+        ],
+        [
+          "TV",
+          "QN75LS03FWFXZA"
+        ],
+        [
+          "TV",
+          "QN75LS03HEFXZA"
+        ],
+        [
+          "TV",
+          "QN75LS03HWFXZA"
+        ],
+        [
+          "TV",
+          "QN75LST7DAFXZA"
+        ],
+        [
+          "TV",
+          "QN75LST9DAFXZA"
+        ],
+        [
+          "TV",
+          "QN75Q6FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN75Q7FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN75Q8FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QEF1AFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN1EFAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN1EHAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN70FAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN70HAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN80FAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN80HAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN900FFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN75QN990FFXZA"
+        ],
+        [
+          "TV",
+          "QN77S84FAEXZA"
+        ],
+        [
+          "TV",
+          "QN77S85FAEXZA"
+        ],
+        [
+          "TV",
+          "QN77S85HAEXZA"
+        ],
+        [
+          "TV",
+          "QN77S90DAFXZA"
+        ],
+        [
+          "TV",
+          "QN77S90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN77S90HAEXZA"
+        ],
+        [
+          "TV",
+          "QN77S95DAFXZA"
+        ],
+        [
+          "TV",
+          "QN77S95HAFXZA"
+        ],
+        [
+          "TV",
+          "QN83S85FAEXZA"
+        ],
+        [
+          "TV",
+          "QN83S85HAEXZA"
+        ],
+        [
+          "TV",
+          "QN83S90DAEXZA"
+        ],
+        [
+          "TV",
+          "QN83S90FAEXZA"
+        ],
+        [
+          "TV",
+          "QN83S90HAEXZA"
+        ],
+        [
+          "TV",
+          "QN83S95HAEXZA"
+        ],
+        [
+          "TV",
+          "QN85LS03FWFXZA"
+        ],
+        [
+          "TV",
+          "QN85LS03HEFXZA"
+        ],
+        [
+          "TV",
+          "QN85LS03HWFXZA"
+        ],
+        [
+          "TV",
+          "QN85Q6FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN85Q7FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN85Q8FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QEF1AFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN1EFAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN1EHAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN70FAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN70HAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN80FAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN80HAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN900FFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN85QN990HFXZA"
+        ],
+        [
+          "TV",
+          "QN98LS03HEFXZA"
+        ],
+        [
+          "TV",
+          "QN98Q7FAAFXZA"
+        ],
+        [
+          "TV",
+          "QN98QN90FAFXZA"
+        ],
+        [
+          "TV",
+          "QN98QN990FFXZA"
+        ],
+        [
+          "TV",
+          "UN100M90HFXZA"
+        ],
+        [
+          "TV",
+          "UN32F6000FFXZA"
+        ],
+        [
+          "TV",
+          "UN32H5000FFXZA"
+        ],
+        [
+          "TV",
+          "UN40F6000FFXZA"
+        ],
+        [
+          "TV",
+          "UN43M70HAFXZA"
+        ],
+        [
+          "TV",
+          "UN43U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN43U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN50M70HAFXZA"
+        ],
+        [
+          "TV",
+          "UN50U7900FFXZA"
+        ],
+        [
+          "TV",
+          "UN50U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN50U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN55M70HAFXZA"
+        ],
+        [
+          "TV",
+          "UN55M80HAFXZA"
+        ],
+        [
+          "TV",
+          "UN55U7900FFXZA"
+        ],
+        [
+          "TV",
+          "UN55U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN55U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN58U7900FFXZA"
+        ],
+        [
+          "TV",
+          "UN58U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN58U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN65M70HAFXZA"
+        ],
+        [
+          "TV",
+          "UN65M80HAFXZA"
+        ],
+        [
+          "TV",
+          "UN65U7900FFXZA"
+        ],
+        [
+          "TV",
+          "UN65U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN65U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN70U7900FFXZA"
+        ],
+        [
+          "TV",
+          "UN70U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN70U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN75M70HAFXZA"
+        ],
+        [
+          "TV",
+          "UN75M80HAFXZA"
+        ],
+        [
+          "TV",
+          "UN75U7900FFXZA"
+        ],
+        [
+          "TV",
+          "UN75U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN75U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN85M70HAFXZA"
+        ],
+        [
+          "TV",
+          "UN85M80HAFXZA"
+        ],
+        [
+          "TV",
+          "UN85U7900FFXZA"
+        ],
+        [
+          "TV",
+          "UN85U8000FFXZA"
+        ],
+        [
+          "TV",
+          "UN85U8000HFXZA"
+        ],
+        [
+          "TV",
+          "UN98U9000HFXZA"
+        ],
+        [
+          "냉장고",
+          "RF18A5101MT/AA"
+        ],
+        [
+          "냉장고",
+          "RF18A5101S9/AA"
+        ],
+        [
+          "냉장고",
+          "RF18A5101SR/AA"
+        ],
+        [
+          "냉장고",
+          "RF22A4111SR/AA"
+        ],
+        [
+          "냉장고",
+          "RF22A4221SR/AA"
+        ],
+        [
+          "냉장고",
+          "RF23BB860012AA"
+        ],
+        [
+          "냉장고",
+          "RF23BB86004MAA"
+        ],
+        [
+          "냉장고",
+          "RF23BB8600QLAA"
+        ],
+        [
+          "냉장고",
+          "RF23DB9600QLAA"
+        ],
+        [
+          "냉장고",
+          "RF23DB9750QLAA"
+        ],
+        [
+          "냉장고",
+          "RF23DB990012AA"
+        ],
+        [
+          "냉장고",
+          "RF23DB9900QDAA"
+        ],
+        [
+          "냉장고",
+          "RF24BB6600QLAA"
+        ],
+        [
+          "냉장고",
+          "RF25C5551SR/AA"
+        ],
+        [
+          "냉장고",
+          "RF25C5A01SRAA"
+        ],
+        [
+          "냉장고",
+          "RF27CG5010S9AA"
+        ],
+        [
+          "냉장고",
+          "RF27CG5100SRAA"
+        ],
+        [
+          "냉장고",
+          "RF27CG5400SRAA"
+        ],
+        [
+          "냉장고",
+          "RF27CG5900SRAA"
+        ],
+        [
+          "냉장고",
+          "RF27CG5B10SRAA"
+        ],
+        [
+          "냉장고",
+          "RF27CG5B30SRAA"
+        ],
+        [
+          "냉장고",
+          "RF28R7201SR/AA"
+        ],
+        [
+          "냉장고",
+          "RF29BB860012AA"
+        ],
+        [
+          "냉장고",
+          "RF29BB86004MAA"
+        ],
+        [
+          "냉장고",
+          "RF29BB8600QLAA"
+        ],
+        [
+          "냉장고",
+          "RF29DB9600QLAA"
+        ],
+        [
+          "냉장고",
+          "RF29DB990012AA"
+        ],
+        [
+          "냉장고",
+          "RF29DB9900QDAA"
+        ],
+        [
+          "냉장고",
+          "RF30BB660012AA"
+        ],
+        [
+          "냉장고",
+          "RF30BB6600QLAA"
+        ],
+        [
+          "냉장고",
+          "RF32CG5100SRAA"
+        ],
+        [
+          "냉장고",
+          "RF32CG5900SRAA"
+        ],
+        [
+          "냉장고",
+          "RF32CG5B10SRAA"
+        ],
+        [
+          "냉장고",
+          "RF32CG5B30SRAA"
+        ],
+        [
+          "냉장고",
+          "RF32CG5D00SRAA"
+        ],
+        [
+          "냉장고",
+          "RF70F23DERAA"
+        ],
+        [
+          "냉장고",
+          "RF70F29DERAA"
+        ],
+        [
+          "냉장고",
+          "RF70H25GERAA"
+        ],
+        [
+          "냉장고",
+          "RF70H25HERAA"
+        ],
+        [
+          "냉장고",
+          "RF70H25KERAA"
+        ],
+        [
+          "냉장고",
+          "RF70H30GEEAA"
+        ],
+        [
+          "냉장고",
+          "RF70H30GERAA"
+        ],
+        [
+          "냉장고",
+          "RF70H30HERAA"
+        ],
+        [
+          "냉장고",
+          "RF70H30KEEAA"
+        ],
+        [
+          "냉장고",
+          "RF70H30KERAA"
+        ],
+        [
+          "냉장고",
+          "RF80H30CERAA"
+        ],
+        [
+          "냉장고",
+          "RF90F23AECEAA"
+        ],
+        [
+          "냉장고",
+          "RF90F23AECRAA"
+        ],
+        [
+          "냉장고",
+          "RF90F23AEWAA"
+        ],
+        [
+          "냉장고",
+          "RF90F23BECRAA"
+        ],
+        [
+          "냉장고",
+          "RF90F23EECRAA"
+        ],
+        [
+          "냉장고",
+          "RF90F29AECEAA"
+        ],
+        [
+          "냉장고",
+          "RF90F29AECRAA"
+        ],
+        [
+          "냉장고",
+          "RF90F29AEWAA"
+        ],
+        [
+          "냉장고",
+          "RF90F29BECRAA"
+        ],
+        [
+          "냉장고",
+          "RM80F22WEWAA"
+        ],
+        [
+          "냉장고",
+          "RM80F23VMRAA"
+        ],
+        [
+          "냉장고",
+          "RS22T5201SR/AA"
+        ],
+        [
+          "냉장고",
+          "RS22T5561SR/AA"
+        ],
+        [
+          "냉장고",
+          "RS23A500ASR/AA"
+        ],
+        [
+          "냉장고",
+          "RS23CB7600QLAA"
+        ],
+        [
+          "냉장고",
+          "RS27T5200SG/AA"
+        ],
+        [
+          "냉장고",
+          "RS27T5200SR/AA"
+        ],
+        [
+          "냉장고",
+          "RS27T5561SR/AA"
+        ],
+        [
+          "냉장고",
+          "RS28A500ASR/AA"
+        ],
+        [
+          "냉장고",
+          "RS28CB760012AA"
+        ],
+        [
+          "냉장고",
+          "RS28CB7600QLAA"
+        ],
+        [
+          "냉장고",
+          "RS70H27SDRAA"
+        ],
+        [
+          "냉장고",
+          "RT16A6195SR/AA"
+        ],
+        [
+          "냉장고",
+          "RT18DG6500SRAA"
+        ],
+        [
+          "냉장고",
+          "RT18DG6700SRAA"
+        ],
+        [
+          "냉장고",
+          "RT70F18LASRAA"
+        ],
+        [
+          "냉장고",
+          "RT70F18LRSRAA"
+        ],
+        [
+          "냉장고",
+          "RZ11M7074SA/AA"
+        ],
+        [
+          "냉장고",
+          "RZ40H11PETAA"
+        ],
+        [
+          "레인지",
+          "NE63A6111SS/AA"
+        ],
+        [
+          "레인지",
+          "NE63A6311SS/AA"
+        ],
+        [
+          "레인지",
+          "NE63A6511SG/AA"
+        ],
+        [
+          "레인지",
+          "NE63A6511SS/AA"
+        ],
+        [
+          "레인지",
+          "NE63A6751SG/AA"
+        ],
+        [
+          "레인지",
+          "NE63A6751SS/AA"
+        ],
+        [
+          "레인지",
+          "NSE6DB830012AA"
+        ],
+        [
+          "레인지",
+          "NSE6DB850212AA"
+        ],
+        [
+          "레인지",
+          "NSE6DB870012AA"
+        ],
+        [
+          "레인지",
+          "NSE6DG8100SRAA"
+        ],
+        [
+          "레인지",
+          "NSE6DG8300SRAA"
+        ],
+        [
+          "레인지",
+          "NSE6DG8502MTAA"
+        ],
+        [
+          "레인지",
+          "NSE6DG8502SRAA"
+        ],
+        [
+          "레인지",
+          "NSE6DG8550SRAA"
+        ],
+        [
+          "레인지",
+          "NSE6DG8700SRAA"
+        ],
+        [
+          "레인지",
+          "NSE70H63SRAA"
+        ],
+        [
+          "레인지",
+          "NSE80H63SEAA"
+        ],
+        [
+          "레인지",
+          "NSE80H63SRAA"
+        ],
+        [
+          "레인지",
+          "NSE80H63SWAA"
+        ],
+        [
+          "레인지",
+          "NSE80H63XRAA"
+        ],
+        [
+          "레인지",
+          "NSE90H63DRAA"
+        ],
+        [
+          "레인지",
+          "NSE90H63SRAA"
+        ],
+        [
+          "레인지",
+          "NSE90H63SWAA"
+        ],
+        [
+          "레인지",
+          "NSG6DB830012AA"
+        ],
+        [
+          "레인지",
+          "NSG6DB850012AA"
+        ],
+        [
+          "레인지",
+          "NSG6DB870012AA"
+        ],
+        [
+          "레인지",
+          "NSG6DG8100MTAA"
+        ],
+        [
+          "레인지",
+          "NSG6DG8100SRAA"
+        ],
+        [
+          "레인지",
+          "NSG6DG8300SRAA"
+        ],
+        [
+          "레인지",
+          "NSG6DG8500MTAA"
+        ],
+        [
+          "레인지",
+          "NSG6DG8500SRAA"
+        ],
+        [
+          "레인지",
+          "NSG6DG8550SRAA"
+        ],
+        [
+          "레인지",
+          "NSG6DG8700SRAA"
+        ],
+        [
+          "레인지",
+          "NSG70H60SRAA"
+        ],
+        [
+          "레인지",
+          "NSG80H60SEAA"
+        ],
+        [
+          "레인지",
+          "NSG80H60SRAA"
+        ],
+        [
+          "레인지",
+          "NSG80H60SWAA"
+        ],
+        [
+          "레인지",
+          "NSG80H60XRAA"
+        ],
+        [
+          "레인지",
+          "NSG90H60DRAA"
+        ],
+        [
+          "레인지",
+          "NSG90H60SRAA"
+        ],
+        [
+          "레인지",
+          "NSG90H60SWAA"
+        ],
+        [
+          "레인지",
+          "NSG90H63SRAA"
+        ],
+        [
+          "레인지",
+          "NSI6DB930012AA"
+        ],
+        [
+          "레인지",
+          "NSI6DB950012AA"
+        ],
+        [
+          "레인지",
+          "NSI6DB990012AA"
+        ],
+        [
+          "레인지",
+          "NSI6DG9300SRAA"
+        ],
+        [
+          "레인지",
+          "NSI6DG9500MTAA"
+        ],
+        [
+          "레인지",
+          "NSI6DG9500SRAA"
+        ],
+        [
+          "레인지",
+          "NSI6DG9550SRAA"
+        ],
+        [
+          "레인지",
+          "NSI6DG9900SRAA"
+        ],
+        [
+          "레인지",
+          "NSY6DG8550SRAA"
+        ],
+        [
+          "레인지",
+          "NX60A6111SS/AA"
+        ],
+        [
+          "레인지",
+          "NX60A6311SS/AA"
+        ],
+        [
+          "레인지",
+          "NX60A6511SG/AA"
+        ],
+        [
+          "레인지",
+          "NX60A6511SS/AA"
+        ],
+        [
+          "레인지",
+          "NX60A6711SS/AA"
+        ],
+        [
+          "레인지",
+          "NX60A6751SG/AA"
+        ],
+        [
+          "레인지",
+          "NX60A6751SS/AA"
+        ],
+        [
+          "모니터",
+          "LC34G55TWWNXZA"
+        ],
+        [
+          "모니터",
+          "LF32TU874VNXGO"
+        ],
+        [
+          "모니터",
+          "LS24D300GANXZA"
+        ],
+        [
+          "모니터",
+          "LS24D368GANXZA"
+        ],
+        [
+          "모니터",
+          "LS24DG302ENXZA"
+        ],
+        [
+          "모니터",
+          "LS25BG402ENXGO"
+        ],
+        [
+          "모니터",
+          "LS27B804PXNXGO"
+        ],
+        [
+          "모니터",
+          "LS27C900PANXZA"
+        ],
+        [
+          "모니터",
+          "LS27CG552ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27D300GANXZA"
+        ],
+        [
+          "모니터",
+          "LS27D368GANXZA"
+        ],
+        [
+          "모니터",
+          "LS27D396GANXZA"
+        ],
+        [
+          "모니터",
+          "LS27D802UANXGO"
+        ],
+        [
+          "모니터",
+          "LS27DG302ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27DG500ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27DG602SNXZA"
+        ],
+        [
+          "모니터",
+          "LS27DG610SNXZA"
+        ],
+        [
+          "모니터",
+          "LS27DG702ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG500SNXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG502ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG532ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG602SNXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG60DENXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG706ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG810SNXZA"
+        ],
+        [
+          "모니터",
+          "LS27FG900XNXZA"
+        ],
+        [
+          "모니터",
+          "LS27FM502ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27FM503ENXZA"
+        ],
+        [
+          "모니터",
+          "LS27H70DEANXZA"
+        ],
+        [
+          "모니터",
+          "LS27H800EFAXZA"
+        ],
+        [
+          "모니터",
+          "LS27H802UANXZA"
+        ],
+        [
+          "모니터",
+          "LS27HG612SNXZA"
+        ],
+        [
+          "모니터",
+          "LS27HG802EFXZA"
+        ],
+        [
+          "모니터",
+          "LS27HG802SNXZA"
+        ],
+        [
+          "모니터",
+          "LS32CG552ENXZA"
+        ],
+        [
+          "모니터",
+          "LS32D396GANXZA"
+        ],
+        [
+          "모니터",
+          "LS32D708EBNXGO"
+        ],
+        [
+          "모니터",
+          "LS32D800UBNXGO"
+        ],
+        [
+          "모니터",
+          "LS32D804UANXGO"
+        ],
+        [
+          "모니터",
+          "LS32DG302ENXZA"
+        ],
+        [
+          "모니터",
+          "LS32DG502ENXZA"
+        ],
+        [
+          "모니터",
+          "LS32DG702ENXZA"
+        ],
+        [
+          "모니터",
+          "LS32FG502ENXZA"
+        ],
+        [
+          "모니터",
+          "LS32FG810SNXZA"
+        ],
+        [
+          "모니터",
+          "LS32FM502ENXZA"
+        ],
+        [
+          "모니터",
+          "LS32FM503ENXZA"
+        ],
+        [
+          "모니터",
+          "LS32FM701UNXZA"
+        ],
+        [
+          "모니터",
+          "LS32FM702UNXZA"
+        ],
+        [
+          "모니터",
+          "LS32FM703UNXZA"
+        ],
+        [
+          "모니터",
+          "LS32FM803UNXZA"
+        ],
+        [
+          "모니터",
+          "LS32FM902SNXZA"
+        ],
+        [
+          "모니터",
+          "LS32H704EANXZA"
+        ],
+        [
+          "모니터",
+          "LS32H802UANXZA"
+        ],
+        [
+          "모니터",
+          "LS32HG732SNXZA"
+        ],
+        [
+          "모니터",
+          "LS32HG802ESXZA"
+        ],
+        [
+          "모니터",
+          "LS32HG802SNXZA"
+        ],
+        [
+          "모니터",
+          "LS34C502GANXZA"
+        ],
+        [
+          "모니터",
+          "LS34C650TANXGO"
+        ],
+        [
+          "모니터",
+          "LS34C650UANXGO"
+        ],
+        [
+          "모니터",
+          "LS34C650VANXGO"
+        ],
+        [
+          "모니터",
+          "LS34DG856SNXZA"
+        ],
+        [
+          "모니터",
+          "LS37D700EANXZA"
+        ],
+        [
+          "모니터",
+          "LS37D800UANXZA"
+        ],
+        [
+          "모니터",
+          "LS37FG75DENXZA"
+        ],
+        [
+          "모니터",
+          "LS40FG75DENXZA"
+        ],
+        [
+          "모니터",
+          "LS40H850TANXZA"
+        ],
+        [
+          "모니터",
+          "LS43FM702UNXZA"
+        ],
+        [
+          "모니터",
+          "LS43FM703UNXZA"
+        ],
+        [
+          "모니터",
+          "LS43FM70YUNXZA"
+        ],
+        [
+          "모니터",
+          "LS49CG954ENXZA"
+        ],
+        [
+          "모니터",
+          "LS49DG910SNXZA"
+        ],
+        [
+          "모니터",
+          "LS49DG956SNXGO"
+        ],
+        [
+          "모니터",
+          "LS49FG910ENXZA"
+        ],
+        [
+          "모니터",
+          "LS55CG970NNXGO"
+        ],
+        [
+          "모니터",
+          "LS57CG952NNXZA"
+        ],
+        [
+          "모니터",
+          "LU32J590UQNXZA"
+        ],
+        [
+          "세탁기",
+          "WA40A3005AW/A4"
+        ],
+        [
+          "세탁기",
+          "WA41A3000AW/A4"
+        ],
+        [
+          "세탁기",
+          "WA44A3205AW/A4"
+        ],
+        [
+          "세탁기",
+          "WA45T3200AW/A4"
+        ],
+        [
+          "세탁기",
+          "WA46CG3505AVA4"
+        ],
+        [
+          "세탁기",
+          "WA46CG3505AWA4"
+        ],
+        [
+          "세탁기",
+          "WA47CG3500AVA4"
+        ],
+        [
+          "세탁기",
+          "WA47CG3500AWA4"
+        ],
+        [
+          "세탁기",
+          "WA51DG5505AWUS"
+        ],
+        [
+          "세탁기",
+          "WA52DG5500AWUS"
+        ],
+        [
+          "세탁기",
+          "WA54CG7105AVUS"
+        ],
+        [
+          "세탁기",
+          "WA54CG7105AWUS"
+        ],
+        [
+          "세탁기",
+          "WA54CG7150ADA4"
+        ],
+        [
+          "세탁기",
+          "WA55CG7100AVUS"
+        ],
+        [
+          "세탁기",
+          "WA55CG7100AWUS"
+        ],
+        [
+          "세탁기",
+          "WA55CG7500AEUS"
+        ],
+        [
+          "세탁기",
+          "WD53DBA900HBA1"
+        ],
+        [
+          "세탁기",
+          "WD53DBA900HYA1"
+        ],
+        [
+          "세탁기",
+          "WD53DBA900HZA1"
+        ],
+        [
+          "세탁기",
+          "WD90F53AVBUS"
+        ],
+        [
+          "세탁기",
+          "WD90F53AVSUS"
+        ],
+        [
+          "세탁기",
+          "WD90F53AVYUS"
+        ],
+        [
+          "세탁기",
+          "WF45B6300AP/US"
+        ],
+        [
+          "세탁기",
+          "WF45B6300AW/US"
+        ],
+        [
+          "세탁기",
+          "WF45T6000AV/A5"
+        ],
+        [
+          "세탁기",
+          "WF45T6000AW/A5"
+        ],
+        [
+          "세탁기",
+          "WF50BG8300AEUS"
+        ],
+        [
+          "세탁기",
+          "WF50BG8300AVUS"
+        ],
+        [
+          "세탁기",
+          "WF53BB8700AVUS"
+        ],
+        [
+          "세탁기",
+          "WF53BB8900ADUS"
+        ],
+        [
+          "세탁기",
+          "WF90F53ADSA5"
+        ],
+        [
+          "세탁기",
+          "WF90F53ADYA5"
+        ],
+        [
+          "세탁기",
+          "WH46DBH100EWA3"
+        ],
+        [
+          "세탁기",
+          "WH46DBH100GWA3"
+        ],
+        [
+          "세탁기",
+          "WH46DBH500EVA3"
+        ],
+        [
+          "세탁기",
+          "WH46DBH500GVA3"
+        ],
+        [
+          "세탁기",
+          "WW25FG6B34BEA2"
+        ],
+        [
+          "식기세척기",
+          "DW50T6060US/AA"
+        ],
+        [
+          "식기세척기",
+          "DW60R2014US/AA"
+        ],
+        [
+          "식기세척기",
+          "DW70H83YEURAA"
+        ],
+        [
+          "식기세척기",
+          "DW80B7070UG/AA"
+        ],
+        [
+          "식기세척기",
+          "DW80B7070US/AA"
+        ],
+        [
+          "식기세척기",
+          "DW80B7071US/AA"
+        ],
+        [
+          "식기세척기",
+          "DW80BB707012AA"
+        ],
+        [
+          "식기세척기",
+          "DW80CB545012AA"
+        ],
+        [
+          "식기세척기",
+          "DW80CG4021SRAA"
+        ],
+        [
+          "식기세척기",
+          "DW80CG4051SRAA"
+        ],
+        [
+          "식기세척기",
+          "DW80CG5420SRAA"
+        ],
+        [
+          "식기세척기",
+          "DW80CG5450MTAA"
+        ],
+        [
+          "식기세척기",
+          "DW80CG5450SRAA"
+        ],
+        [
+          "식기세척기",
+          "DW80CG5451MTAA"
+        ],
+        [
+          "식기세척기",
+          "DW80CG5451SRAA"
+        ],
+        [
+          "식기세척기",
+          "DW90F89P0USRAA"
+        ],
+        [
+          "식기세척기",
+          "DW90F89T0U12AA"
+        ],
+        [
+          "식기세척기",
+          "DW90F89T0UMTAA"
+        ],
+        [
+          "식기세척기",
+          "DW90F89T0USRAA"
+        ],
+        [
+          "식기세척기",
+          "DW90H89TETEAA"
+        ],
+        [
+          "식기세척기",
+          "DW90H89TETRAA"
+        ],
+        [
+          "의류건조기",
+          "DV25B6900EW/A2"
+        ],
+        [
+          "의류건조기",
+          "DV25B6900HW/A2"
+        ],
+        [
+          "의류건조기",
+          "DV25FG60BVBEA2"
+        ],
+        [
+          "의류건조기",
+          "DV25FG62B0BEA2"
+        ],
+        [
+          "의류건조기",
+          "DV45DG6000HWA2"
+        ],
+        [
+          "의류건조기",
+          "DV53BB8900HDA2"
+        ],
+        [
+          "의류건조기",
+          "DV90F53AESA3"
+        ],
+        [
+          "의류건조기",
+          "DV90F53AEYA3"
+        ],
+        [
+          "의류건조기",
+          "DV90F53AGSA3"
+        ],
+        [
+          "의류건조기",
+          "DV90F53AGYA3"
+        ],
+        [
+          "의류건조기",
+          "DVE41A3000W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVE45B6300P/A3"
+        ],
+        [
+          "의류건조기",
+          "DVE45B6300W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVE45T3200W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVE45T6000V/A3"
+        ],
+        [
+          "의류건조기",
+          "DVE45T6000W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVE47CG3500VA3"
+        ],
+        [
+          "의류건조기",
+          "DVE47CG3500WA3"
+        ],
+        [
+          "의류건조기",
+          "DVE50BG8300EA3"
+        ],
+        [
+          "의류건조기",
+          "DVE50BG8300VA3"
+        ],
+        [
+          "의류건조기",
+          "DVE52A5500W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVE53BB8700VA3"
+        ],
+        [
+          "의류건조기",
+          "DVE53BB8900DA3"
+        ],
+        [
+          "의류건조기",
+          "DVE54CG7150DA3"
+        ],
+        [
+          "의류건조기",
+          "DVE55CG7100VA3"
+        ],
+        [
+          "의류건조기",
+          "DVE55CG7100WA3"
+        ],
+        [
+          "의류건조기",
+          "DVE55CG7500EA3"
+        ],
+        [
+          "의류건조기",
+          "DVG41A3000W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVG45B6300P/A3"
+        ],
+        [
+          "의류건조기",
+          "DVG45B6300W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVG45T3200W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVG45T6000V/A3"
+        ],
+        [
+          "의류건조기",
+          "DVG45T6000W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVG47CG3500VA3"
+        ],
+        [
+          "의류건조기",
+          "DVG47CG3500WA3"
+        ],
+        [
+          "의류건조기",
+          "DVG50BG8300EA3"
+        ],
+        [
+          "의류건조기",
+          "DVG50BG8300VA3"
+        ],
+        [
+          "의류건조기",
+          "DVG52A5500W/A3"
+        ],
+        [
+          "의류건조기",
+          "DVG53BB8700VA3"
+        ],
+        [
+          "의류건조기",
+          "DVG53BB8900DA3"
+        ],
+        [
+          "의류건조기",
+          "DVG54CG7150DA3"
+        ],
+        [
+          "의류건조기",
+          "DVG55CG7100VA3"
+        ],
+        [
+          "의류건조기",
+          "DVG55CG7100WA3"
+        ],
+        [
+          "의류건조기",
+          "DVG55CG7500EA3"
+        ],
+        [
+          "의류건조기",
+          "WD53DBA900HBA1"
+        ],
+        [
+          "의류건조기",
+          "WD53DBA900HYA1"
+        ],
+        [
+          "의류건조기",
+          "WD53DBA900HZA1"
+        ],
+        [
+          "의류건조기",
+          "WD90F53AVBUS"
+        ],
+        [
+          "의류건조기",
+          "WD90F53AVSUS"
+        ],
+        [
+          "의류건조기",
+          "WD90F53AVYUS"
+        ],
+        [
+          "의류건조기",
+          "WH46DBH100EWA3"
+        ],
+        [
+          "의류건조기",
+          "WH46DBH100GWA3"
+        ],
+        [
+          "의류건조기",
+          "WH46DBH500EVA3"
+        ],
+        [
+          "의류건조기",
+          "WH46DBH500GVA3"
+        ],
+        [
+          "컴퓨터",
+          "NP740VJG-KA1US"
+        ],
+        [
+          "컴퓨터",
+          "NP740VJG-KG2US"
+        ],
+        [
+          "컴퓨터",
+          "NP750QHA-KA1US"
+        ],
+        [
+          "컴퓨터",
+          "NP750XHD-KB1US"
+        ],
+        [
+          "컴퓨터",
+          "NP750XQB-KA2US"
+        ],
+        [
+          "컴퓨터",
+          "NP760VJG-KA1US"
+        ],
+        [
+          "컴퓨터",
+          "NP760VJG-KG2US"
+        ],
+        [
+          "컴퓨터",
+          "NP760XJG-KG2US"
+        ],
+        [
+          "컴퓨터",
+          "NP940XJG-KG1US"
+        ],
+        [
+          "컴퓨터",
+          "NP940XJG-KG2US"
+        ],
+        [
+          "컴퓨터",
+          "NP960QHA-KG1US"
+        ],
+        [
+          "컴퓨터",
+          "NP960UJG-KG2US"
+        ],
+        [
+          "컴퓨터",
+          "NP960UJH-XG2US"
+        ],
+        [
+          "컴퓨터",
+          "NP960UJH-XG3US"
+        ],
+        [
+          "컴퓨터",
+          "NP960UJH-XG7US"
+        ],
+        [
+          "컴퓨터",
+          "NP960UJH-XG8US"
+        ],
+        [
+          "컴퓨터",
+          "NP960XGL-XG1US"
+        ],
+        [
+          "컴퓨터",
+          "NP960XGL-XG2US"
+        ],
+        [
+          "컴퓨터",
+          "NP960XJG-KA1US"
+        ],
+        [
+          "컴퓨터",
+          "NP960XJG-KA2US"
+        ],
+        [
+          "컴퓨터",
+          "NP960XJG-KG1US"
+        ],
+        [
+          "컴퓨터",
+          "NP960XMB-KB1US"
+        ],
+        [
+          "컴퓨터",
+          "NP960XRD-KB1US"
+        ],
+        [
+          "컴퓨터",
+          "XE550XGA-KC1US"
+        ],
+        [
+          "쿡탑",
+          "CC70F30S2DAA"
+        ],
+        [
+          "쿡탑",
+          "CC70F36S2DAA"
+        ],
+        [
+          "쿡탑",
+          "NA30N6555TG/AA"
+        ],
+        [
+          "쿡탑",
+          "NA30N6555TS/AA"
+        ],
+        [
+          "쿡탑",
+          "NA30N7755TG/AA"
+        ],
+        [
+          "쿡탑",
+          "NA30N7755TS/AA"
+        ],
+        [
+          "쿡탑",
+          "NA30R5310FS/AA"
+        ],
+        [
+          "쿡탑",
+          "NA36N6555TG/AA"
+        ],
+        [
+          "쿡탑",
+          "NA36N6555TS/AA"
+        ],
+        [
+          "쿡탑",
+          "NA36N7755TG/AA"
+        ],
+        [
+          "쿡탑",
+          "NA36N7755TS/AA"
+        ],
+        [
+          "쿡탑",
+          "NA36R5310FS/AA"
+        ],
+        [
+          "쿡탑",
+          "NZ30FG5332RKAA"
+        ],
+        [
+          "쿡탑",
+          "NZ30FG6332RKAA"
+        ],
+        [
+          "쿡탑",
+          "NZ30K7570RS/AA"
+        ],
+        [
+          "쿡탑",
+          "NZ30K7880US/AA"
+        ],
+        [
+          "쿡탑",
+          "NZ36FG5332RKAA"
+        ],
+        [
+          "쿡탑",
+          "NZ36FG6432RKAA"
+        ],
+        [
+          "쿡탑",
+          "NZ36K7570RS/AA"
+        ],
+        [
+          "쿡탑",
+          "NZ36K7880US/AA"
+        ],
+        [
+          "태블릿",
+          "SM-X230NZAIXAR"
+        ],
+        [
+          "태블릿",
+          "SM-X230NZAVXAR"
+        ],
+        [
+          "태블릿",
+          "SM-X238UZAAVZW"
+        ],
+        [
+          "태블릿",
+          "SM-X400NZAAXAR"
+        ],
+        [
+          "태블릿",
+          "SM-X520NLBAXAR"
+        ],
+        [
+          "태블릿",
+          "SM-X528UZAAATT"
+        ],
+        [
+          "태블릿",
+          "SM-X620NLBAXAR"
+        ],
+        [
+          "태블릿",
+          "SM-X730NZAAXAR"
+        ],
+        [
+          "태블릿",
+          "SM-X820NZAEXAR"
+        ],
+        [
+          "태블릿",
+          "SM-X828UZAAVZW"
+        ],
+        [
+          "태블릿",
+          "SM-X930NZAAXAR"
+        ],
+        [
+          "후드",
+          "NK30B3000US/AA"
+        ],
+        [
+          "후드",
+          "NK30B3500US/AA"
+        ],
+        [
+          "후드",
+          "NK30CB600W12AA"
+        ],
+        [
+          "후드",
+          "NK30CB600W33AA"
+        ],
+        [
+          "후드",
+          "NK30CB600WCGAA"
+        ],
+        [
+          "후드",
+          "NK30CB700W12AA"
+        ],
+        [
+          "후드",
+          "NK30CB700WCGAA"
+        ],
+        [
+          "후드",
+          "NK30N7000US/AA"
+        ],
+        [
+          "후드",
+          "NK30R5000WG/AA"
+        ],
+        [
+          "후드",
+          "NK30R5000WS/AA"
+        ],
+        [
+          "후드",
+          "NK36CB600WCGAA"
+        ],
+        [
+          "후드",
+          "NK36CB700W12AA"
+        ],
+        [
+          "후드",
+          "NK36CB700W33AA"
+        ],
+        [
+          "후드",
+          "NK36CB700WCGAA"
+        ],
+        [
+          "후드",
+          "NK36N7000UG/AA"
+        ],
+        [
+          "후드",
+          "NK36N7000US/AA"
+        ]
+      ],
+      "scope_added": [
+        [
+          "태블릿",
+          "SM-X230NZAVXAR"
+        ]
+      ],
+      "scope_removed": [
+        [
+          "태블릿",
+          "SM-X230NZALXAR"
         ]
       ]
     }
