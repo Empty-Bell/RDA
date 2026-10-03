@@ -23,7 +23,23 @@ concurrency:
   group: g3-computer-collection-${{ github.event.workflow_run.id || github.run_id }}
   cancel-in-progress: false
 jobs:
+  preflight:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONPATH: 'src:scripts'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: '.python-version'
+      - name: Check population and identity contracts before browser bootstrap
+        run: python -m unittest scripts.test_g3_computer_collect tests.test_g3_computer_collect_retry tests.test_g3_computer_redirect_pipeline tests.test_g3_computer_energy_star_assessment -v
   collect:
+    needs: preflight
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 35
@@ -70,8 +86,6 @@ jobs:
         run: |
           mkdir -p runtime
           bash scripts/bootstrap.sh
-      - name: Test exact-SKU population and shard coverage
-        run: python -m unittest scripts.test_g3_computer_collect -v
       - name: Collect assigned exact-SKU PDPs
         run: >-
           python scripts/g3_computer_collect.py
@@ -124,6 +138,6 @@ jobs:
               raise SystemExit('Computer shard identity is duplicated or crosses source runs')
           print(json.dumps({'status':'PASS','source_run_id':rows[0]['source_run_id'],'population_count':len(expected),
               'shard_counts':[row['population_count'] for row in sorted(rows,key=lambda item:item['shard_index'])],
-              'coverage_counts':{key:sum(row['coverage_counts'].get(key,0) for row in rows) for key in ('VERIFIED_EXACT_IDENTITY','FAILED')}},sort_keys=True))
+              'coverage_counts':{key:sum(row['coverage_counts'].get(key,0) for row in rows) for key in ('VERIFIED_EXACT_IDENTITY','PDP_REDIRECT_CONFIRMED','FAILED')}},sort_keys=True))
           PY
 

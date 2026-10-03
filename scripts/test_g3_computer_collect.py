@@ -33,16 +33,22 @@ def write_leg(root, family, fixture_name, run_id):
 
 
 class ComputerCollectionPopulationTests(unittest.TestCase):
-    def test_union_contains_only_rendered_plp_card_skus(self):
+    def test_union_contains_rendered_cards_and_all_group_option_skus(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             write_leg(root / "computer", "computer", "", "123")
             write_leg(root / "chromebook", "chromebook", "", "123")
             products, summary = load_population(root / "computer", root / "chromebook", "123")
-        self.assertEqual(len(products), 12)
-        self.assertEqual(len({row["exact_sku"] for row in products}), 12)
-        self.assertEqual(summary["unique_exact_skus"], 12)
-        self.assertNotIn("NP740VJG-KA1US", {row["exact_sku"] for row in products})
+        expected = {variant["modelCode"]
+            for fixture in ("pf-page-0.json", "pf-chromebook-page-0.json")
+            for group in json.loads((FIXTURES / fixture).read_bytes())["searchResults"]
+            for variant in group["groupedProductList"]}
+        self.assertEqual({row["exact_sku"] for row in products}, expected)
+        self.assertEqual(len(products), len(expected))
+        self.assertEqual(summary["unique_exact_skus"], len(expected))
+        self.assertIn("NP740VJG-KA1US", expected)
+        self.assertEqual(sum(row["listing"]["sku_role"] == "PLP_RENDERED_CARD" for row in products), 12)
+        self.assertTrue(any(row["listing"]["sku_role"] == "PLP_GROUP_OPTION" for row in products))
         self.assertEqual(summary["source_legs"][0]["pf_variant_count"], 23)
         self.assertEqual({row["source_leg"] for row in products}, {"computer", "chromebook"})
 

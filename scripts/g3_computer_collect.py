@@ -116,6 +116,48 @@ def shard_for(sku, count):
     return int.from_bytes(hashlib.sha256(sku.encode("utf-8")).digest()[:4], "big") % count
 
 
+def read_selection(page):
+    purchase = page.get_by_role("button", name=re.compile(r"^Continue")).first
+    return {"selected_controls": page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
+        '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
+        "continue_sku": purchase.get_attribute("data-modelcode") if purchase.count() else None,
+        "continue_visible": purchase.is_visible() if purchase.count() else False}
+
+
+def settled_identity(samples, target):
+    """Four consecutive observations must agree; a URL alone never proves identity."""
+    if len(samples) < 4:
+        return False
+    recent = samples[-4:]
+    if any(row.get("observation_error") for row in recent):
+        return False
+    if any((row.get("url"), row.get("selection")) !=
+           (recent[0].get("url"), recent[0].get("selection")) for row in recent):
+        return False
+    try:
+        computer_selection(recent[-1]["selection"], target)
+    except (ValueError, KeyError):
+        return False
+    path = urlsplit(recent[-1]["url"]).path.lower()
+    return bool(re.search(r"-sku-" + re.escape(target.lower().replace("/", "-")) + r"/?$", path))
+
+
+def observe_identity(page, target, samples):
+    # Keep observing wrong defaults for the full window: hydration can replace them.
+    for second in range(31):
+        sample = {"elapsed_seconds": second, "url": safe_url(page.url)}
+        try:
+            sample["selection"] = read_selection(page)
+        except Exception as error:
+            sample["observation_error"] = str(error).splitlines()[0][:200]
+        samples.append(sample)
+        if second >= 10 and settled_identity(samples, target):
+            return sample["selection"]
+        if second < 30:
+            page.wait_for_timeout(1000)
+    return samples[-1].get("selection", {})
+
+
 def collect(products, output):
     from playwright.sync_api import sync_playwright
     destination = Path(output)
@@ -124,34 +166,47 @@ def collect(products, output):
     results = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
-        context, browser_identity = desktop_context(browser)
         for product in products:
+            # Isolate cookies/storage per SKU, including every retry.
+            context, browser_identity = desktop_context(browser)
             sku = product["exact_sku"]
             folder = pdp_root / quote(sku, safe="")
             folder.mkdir(parents=True, exist_ok=False)
             record = {"exact_sku": sku, "source_leg": product["source_leg"], "status": "FAILED",
                 "requested_url": product["listing"]["pdp_url"], "browser_identity": browser_identity,
-                "observed_ecom_group_ids": [], "captured_at": datetime.now(timezone.utc).isoformat()}
+                "observed_ecom_group_ids": [], "context_scope": "FRESH_PER_SKU",
+                "identity_observations": [], "navigation_observations": [], "captured_at": datetime.now(timezone.utc).isoformat()}
             page = context.new_page()
             group_ids = []
             def observe(response):
+                if response.request.resource_type == "document" and response.frame == page.main_frame:
+                    record["navigation_observations"].append({"url": safe_url(response.url),
+                        "status": response.status})
                 parsed = urlsplit(response.url)
                 if (parsed.hostname == "www.samsung.com" and parsed.path.endswith("/ecom-data")
                         and response.request.resource_type in ("xhr", "fetch")):
                     group_ids.extend(parse_qs(parsed.query).get("group_id", []))
+                    captures = record.setdefault("ecom_response_observations", [])
+                    if len(captures) < 10:
+                        capture = {"url": safe_url(response.url), "status": response.status}
+                        captures.append(capture)
+                        try:
+                            raw = response.body()
+                            filename = f"ecom-response-{len(captures)}.json"
+                            (folder / filename).write_bytes(raw)
+                            capture.update(fixture=filename, sha256=hashlib.sha256(raw).hexdigest())
+                        except Exception as error:
+                            capture["capture_error"] = str(error).splitlines()[0][:200]
             page.on("response", observe)
             try:
                 response = page.goto(record["requested_url"], wait_until="domcontentloaded", timeout=60000)
-                page.wait_for_timeout(10000)
-                page.locator('[data-modelcode][aria-checked="true"]').first.wait_for(state="visible", timeout=30000)
-                purchase = page.get_by_role("button", name=re.compile(r"^Continue")).first
-                selection = {"selected_controls": page.locator('[data-modelcode][aria-checked="true"]').evaluate_all(
-                    '(els) => els.map(e => ({sku:e.getAttribute("data-modelcode"),label:e.getAttribute("aria-label")}))'),
-                    "continue_sku": purchase.get_attribute("data-modelcode") if purchase.count() else None,
-                    "continue_visible": purchase.is_visible() if purchase.count() else False}
+                record["initial_http_status"] = response.status if response else None
+                selection = observe_identity(page, sku, record["identity_observations"])
                 record["final_url"] = safe_url(page.url)
                 record["selected_configuration_raw"] = selection
                 selection_facts = computer_selection(selection, sku)
+                if not settled_identity(record["identity_observations"], sku):
+                    raise ValueError("Computer identity did not stabilize during observation window")
                 final = urlsplit(page.url)
                 slug = re.escape(sku.lower().replace("/", "-"))
                 if (response is None or response.status != 200 or final.scheme != "https"
@@ -178,6 +233,9 @@ def collect(products, output):
                 (folder / "snapshot.json").write_bytes(snapshot_raw)
                 bridge_raw = (json.dumps(projected, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode()
                 (folder / "specs.json").write_bytes(bridge_raw)
+                # Reject state changes during the Specs/snapshot requests as well.
+                if read_selection(page) != selection or safe_url(page.url) != record["final_url"]:
+                    raise ValueError("Computer selected identity changed during evidence capture")
                 claims = claim_facts(snapshot, sku, product["source_claim_listing_raw"], facts)
                 record.update(status="VERIFIED_EXACT_IDENTITY", final_url=safe_url(page.url),
                     selection_identity=selection_facts, selected_configuration_raw=selection, specs_url=safe_url(spec_url),
@@ -189,14 +247,22 @@ def collect(products, output):
                 record["error"] = str(error).splitlines()[0][:300]
                 record["final_url"] = safe_url(page.url)
                 if "Selected computer configuration missing or differs from target SKU" in record["error"]:
-                    record["failure_class"] = "EXACT_SKU_NOT_SELECTABLE_ON_CURRENT_PDP"
+                    record["failure_class"] = "SELECTED_SKU_DIFFERS_FROM_REQUESTED"
                 else:
                     record["failure_class"] = "SOURCE_COLLECTION_FAILED"
             finally:
+                record["observed_ecom_group_ids"] = sorted(set(group_ids))
+                if record["status"] == "FAILED":
+                    try:
+                        (folder / "failure-dom.json").write_text(json.dumps(
+                            page.evaluate(DOM_SNAPSHOT), ensure_ascii=False, indent=2), encoding="utf-8")
+                        page.screenshot(path=str(folder / "failure.png"), full_page=False, timeout=10000)
+                    except Exception as error:
+                        record["diagnostic_capture_error"] = str(error).splitlines()[0][:200]
                 page.close()
+                context.close()
                 (folder / "result.json").write_text(json.dumps(record, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
             results.append(record)
-        context.close()
         browser.close()
     return results
 
@@ -220,8 +286,12 @@ def retry_failed(products, results, output, *, retries=2):
                 continue
             original = destination / "pdp" / quote(sku, safe="")
             recovered = retry_root / "pdp" / quote(sku, safe="")
-            for name in ("result.json", "snapshot.json", "specs.json"):
-                shutil.copy2(recovered / name, original / name)
+            # Preserve the first failed attempt before promoting a recovered capture.
+            archived = destination / "initial-attempt" / "pdp" / quote(sku, safe="")
+            shutil.copytree(original, archived)
+            for captured_file in recovered.iterdir():
+                if captured_file.is_file():
+                    shutil.copy2(captured_file, original / captured_file.name)
             current[sku] = row
     for sku, row in current.items():
         observations = attempts[sku]
@@ -230,8 +300,13 @@ def retry_failed(products, results, output, *, retries=2):
         final_urls = {item.get("final_url") for item in observations}
         requested = by_sku[sku]["listing"]["pdp_url"]
         if (len(final_urls) != 1 or None in final_urls
-                or any(item.get("failure_class") != "EXACT_SKU_NOT_SELECTABLE_ON_CURRENT_PDP"
+                or any(item.get("failure_class") != "SELECTED_SKU_DIFFERS_FROM_REQUESTED"
                        for item in observations)):
+            continue
+        if any(item.get("initial_http_status") != 200 or not settled_identity(
+                item.get("identity_observations", []),
+                (item.get("selected_configuration_raw") or {}).get("continue_sku") or "")
+               for item in observations):
             continue
         final_url = next(iter(final_urls))
         final_path = urlsplit(final_url)
@@ -240,6 +315,8 @@ def retry_failed(products, results, output, *, retries=2):
                 or not re.search(r"-sku-[a-z0-9/-]+/?$", final_path.path.lower())):
             continue
         terminal = {**row, "status": "PDP_REDIRECT_CONFIRMED",
+                    "root_cause": "UNDETERMINED",
+                    "observation_scope": "Repeated routing observed; option unavailability not established",
                     "source_claim_listing_raw": by_sku[sku]["source_claim_listing_raw"],
                     "redirect_observations": [{"requested_url": item.get("requested_url"),
                                                "final_url": item.get("final_url"),

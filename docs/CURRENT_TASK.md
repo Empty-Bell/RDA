@@ -1,5 +1,42 @@
 # Current task continuation — 2026-09-24
 
+## Automatic Computer workflow failure fix — 2026-10-03
+
+Latest GitHub failure remains automatic run 36824646614 (Oct 1); no newer run
+was present at inspection. All three collection jobs stopped before collection:
+legacy scripts.test_g3_computer_collect expected 12 rendered cards while approved
+card + option scope produced 24 fixture SKUs. Unified preflight omitted that test,
+so unified passed while the standalone successor failed deterministically.
+
+Fix the test to independently derive every PF variant SKU, retain rendered-card
+role checks, and run the same Computer tests in standalone preflight (before
+browser bootstrap) and unified preflight. Include redirects in coverage summary.
+Previously local SKU-isolation/stability/evidence changes and MEDIUM routing
+presentation are included. Local 15 Computer checks and 282 source tests pass
+(1 skip). Hosted verification pending; do not declare gate accepted yet.
+
+
+## Computer live regression test complete — 2026-10-01
+
+User requested live verification including affected models. Local Windows with
+same Chromium version: affected NP740VJG-KA1US/KG2US each reproduced 3/3;
+NP760VJG-KG2US control verified 3/3. KA1US actual PLP option/review route also
+reproduced 2/2. Current PF and ecom inventory both show affected SKUs out of stock.
+Synthetic browser-only N->Y inventory changes did not restore either exact SKU;
+do not claim inventory is the sole cause. 11 tests pass. No push/hosted run.
+Full evidence and caveats: COMPUTER_ROUTING_DIAGNOSIS_2026-10-01.md, live tests.
+
+## Computer inconsistent-run investigation — 2026-10-01
+
+Historical successful 36709610552 and scheduled 36795898093 have identical
+collector code, browser version and predecessor SKU ordering. KA1US changed
+stock Y->N and failed, while KG2US initially still succeeded. Later both fail.
+Local collector now isolates every SKU, observes stable identity, preserves
+failed attempt evidence and ecom responses, and does not call unselected SKU
+unselectable. Local tests do not establish the external root cause or hosted
+resolution. Prior push was blocked by approval review; these changes are not
+published. See COMPUTER_ROUTING_DIAGNOSIS_2026-10-01.md.
+
 ## Computer PLP option navigation reclassification — 2026-10-01
 
 Unified run [36824247885](https://github.com/Empty-Bell/RDA/actions/runs/36824247885)
@@ -9,7 +46,7 @@ after dispatch. It was not a scheduled unattended start.
 
 Two Galaxy Book6 14-inch PLP option SKUs, `NP740VJG-KA1US` and
 `NP740VJG-KG2US`, each reached the unrelated `NP960UJH-XG2US` buy page in
-three fresh browser attempts. A separate live browser check reproduced both
+three browser attempts (contexts were fresh per batch, not per SKU). A separate live browser check reproduced both
 destinations. Switching that configurator to Galaxy Book6 exposes the 14-inch
 choice as `Out of Stock`. The saved PLP PF source nevertheless includes both
 options and marks KA1US `stockFlag=N` and KG2US `stockFlag=Y`; both have
@@ -17,9 +54,9 @@ options and marks KA1US `stockFlag=N` and KG2US `stockFlag=Y`; both have
 navigation/availability discrepancy, not evidence of an ENERGY STAR
 registration failure. `PDP_LINK_WRONG_MODEL` is therefore MEDIUM, with PDP
 logo UNKNOWN and PLP stock flag preserved in the evidence. Do not borrow the
-redirected model's logo, or turn an unverified exact PDP into PASS. The site
-owner needs to reconcile PLP stock, the buy-page configurator, and exact-SKU
-links to resolve the underlying navigation defect.
+redirected model's logo, or turn an unverified exact PDP into PASS. Root cause remains undetermined. PLP stock and configurator availability differ,
+but this does not establish whether timing, session state, or site routing is responsible.
+See COMPUTER_ROUTING_DIAGNOSIS_2026-10-01.md for the historical comparison and local mitigations.
 
 ## G5–G7 closed — 2026-09-29
 
