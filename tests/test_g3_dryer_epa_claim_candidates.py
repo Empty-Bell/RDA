@@ -97,19 +97,24 @@ class DryerEpaClaimCandidateContract(unittest.TestCase):
                 from scripts.g3_dryer_epa_claim_candidates import load_epa
                 load_epa(epa, "202", "dryer")
 
-    def test_hosted_workflow_contains_only_epa_claim_candidate_steps(self):
-        workflow = (Path(__file__).parents[1] / ".github/workflows/g3-dryer-secondary-sources.yml").read_text()
-        self.assertIn("g3_dryer_epa_capture.py", workflow)
-        self.assertIn("g3_dryer_combo_epa_capture.py", workflow)
-        self.assertIn("g3_dryer_epa_claim_candidates.py", workflow)
-        self.assertIn("g3_dryer_energy_star_assessment.py", workflow)
-        self.assertIn("workflows: [G3 clothes dryer exact-SKU collection]", workflow)
-        self.assertNotIn("\n  push:", workflow)
-        self.assertNotIn("EnergyGuide", workflow)
-        self.assertNotIn("energyguide", workflow.lower())
-        collection_workflow = (Path(__file__).parents[1] / ".github/workflows/g3-dryer-collection.yml").read_text()
-        self.assertIn("workflows: [G3 clothes dryer source reconnaissance]", collection_workflow)
-        self.assertNotIn("\n  push:", collection_workflow)
+    def test_unified_hosted_dryer_path_contains_only_epa_claim_candidate_steps(self):
+        root = Path(__file__).parents[1]
+        workflow = (root / ".github/workflows/unified-full-audit.yml").read_text()
+        self.assertIn(
+            "family: [refrigerator, dishwasher, washer, tv, range, cooktop, dryer, hood, monitor, computer, tablet]",
+            workflow,
+        )
+        self.assertIn("unified_family_run.py --family", workflow)
+
+        runner = (root / "scripts/unified_family_run.py").read_text()
+        dryer_block = runner.split('if family == "dryer":', 1)[1].split(
+            'if family in {"computer", "tablet"}:', 1
+        )[0]
+        self.assertIn('run("g3_dryer_epa_capture"', dryer_block)
+        self.assertIn('run("g3_dryer_combo_epa_capture"', dryer_block)
+        self.assertIn('run("g3_dryer_epa_claim_candidates"', dryer_block)
+        self.assertIn('run("g3_dryer_energy_star_assessment"', dryer_block)
+        self.assertNotIn("energyguide", dryer_block.lower())
 
 
 if __name__ == "__main__":
