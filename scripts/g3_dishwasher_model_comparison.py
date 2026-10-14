@@ -96,6 +96,7 @@ def build(package, out):
             "pdp_vs_epa_model": pdp_epa,
             "energyguide_vs_epa_model": label_epa,
             "matching_energyguide_patterns": [x for x in labels if matches_printed_model(x, sku, strip_terminal_aa=True)],
+            "energyguide_document_findings": item.get("energyguide_document_findings", []),
             "assessment": "NOT_EVALUATED",
         })
     comparisons = ("pdp_vs_energyguide_model", "pdp_vs_epa_model", "energyguide_vs_epa_model")
