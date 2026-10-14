@@ -47,6 +47,22 @@ class ExactSkuRetryTest(unittest.TestCase):
             self.assertEqual(calls, ["attempt-2", "attempt-3"])
             self.assertEqual(result[0]["status"], "FAILED")
 
+    def test_deterministic_failure_is_not_retried(self):
+        with tempfile.TemporaryDirectory() as temp:
+            calls = []
+
+            def collector(products, output):
+                calls.append(output.name)
+                return [{"exact_sku": "DW70H83YEURAA", "status": "FAILED"}]
+
+            result = retry_failed([{"exact_sku": "DW70H83YEURAA"}], Path(temp),
+                                  [{"exact_sku": "DW70H83YEURAA", "status": "FAILED",
+                                    "retryable": False,
+                                    "failure_class": "BRIDGE_SCHEMA_DRIFT_WITHOUT_RENDERED_FALLBACK"}],
+                                  collector, sleep=lambda _: None)
+            self.assertEqual(calls, [])
+            self.assertEqual(result[0]["status"], "FAILED")
+
     def test_retry_cannot_substitute_another_sku(self):
         with tempfile.TemporaryDirectory() as temp:
             def collector(products, output):

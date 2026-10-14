@@ -218,6 +218,16 @@ DOM_SNAPSHOT = r"""() => {
     .filter(visible).map(e => ({tag:e.tagName, text:(e.innerText || '').trim().replace(/\s+/g,' ').slice(0,800),
       cells:Array.from(e.children).filter(visible).map(x => (x.innerText || '').trim().replace(/\s+/g,' ').slice(0,300)).filter(Boolean)}))
     .filter(x => energy.test(x.text)).slice(0,40) : [];
+  const energyGuide = /energy\s*guide/i;
+  const energyGuideLinks = Array.from(document.querySelectorAll('a[href]')).map(a => {
+    const imgAlt = Array.from(a.querySelectorAll('img[alt]')).map(img => img.getAttribute('alt') || '').join(' ');
+    const label = [a.innerText || '', a.getAttribute('aria-label') || '', a.getAttribute('title') || '', imgAlt]
+      .join(' ').replace(/\s+/g, ' ').trim();
+    let href = null;
+    try { href = new URL(a.getAttribute('href'), document.baseURI).href; } catch {}
+    return {label_raw:label.slice(0,300), href};
+  }).filter(x => x.href && (energyGuide.test(x.label_raw) || /energyguide/i.test(x.href)))
+    .slice(0,20);
   const identifiedProductCount = products.filter(p => p.sku || p.mpn).length;
   // On configurator PDPs, a unique product identity plus a mounted details surface
   // is the supported primary surface even when the gallery component is absent.
@@ -229,6 +239,7 @@ DOM_SNAPSHOT = r"""() => {
     product_jsonld:products, jsonld_parse_errors:errors, energy_candidates:candidates,
     pdp_logo_selector_contract:'PDP_ENERGY_STAR_GALLERY_OR_CONFIGURATOR_V3', pdp_logo_selector:pdpLogoSelector,
     primary_logo_inspection:primaryLogoInspection, visible_spec_energy_star_rows:specRows,
+    energyguide_link_candidates:energyGuideLinks,
     spec_surface_inspection:specRoot && specRows.length ? 'SUPPORTED_VISIBLE_SPEC_TABLE_COMPLETE' : 'SPEC_TABLE_NOT_MOUNTED_OR_SCHEMA_UNSUPPORTED',
     observation_scope:'current mounted DOM; visible page candidates are not attributed to target SKU'};
 }"""

@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT / "src"), str(ROOT / "scripts")]
-from g3_dishwasher_collect import coverage, load_population, prepare_output, sku_directory_name, verify_identity  # noqa: E402
+from g3_dishwasher_collect import coverage, load_population, prepare_output, rendered_fallback_facts, sku_directory_name, verify_identity  # noqa: E402
 from source_contract import pdp_facts, project_bridge  # noqa: E402
 
 
@@ -59,6 +59,40 @@ class DishwasherCollectionTests(unittest.TestCase):
         self.assertEqual(facts["capacity_raw"][0]["value"], "16")
         with self.assertRaisesRegex(ValueError, "another exact SKU"):
             verify_identity(sku, "https://www.samsung.com/us/dishwashers/model-sku-other", snapshot, bridge)
+
+    def test_rendered_energyguide_link_is_a_bounded_bridge_fallback(self):
+        sku = "DW70H83YEURAA"
+        url = f"https://www.samsung.com/us/dishwashers/model-sku-{sku.lower()}"
+        snapshot = {
+            "jsonld_parse_errors": 0,
+            "product_jsonld": [{"sku": sku, "mpn": None}],
+            "energyguide_link_candidates": [
+                {"label_raw": "Energy Guide DOWNLOAD",
+                 "href": "https://images.samsung.com/is/content/samsung/example/energyguide.pdf"},
+                {"label_raw": "Energy Guide",
+                 "href": "https://images.samsung.com/is/content/samsung/example/energyguide.pdf"},
+            ],
+        }
+        facts = rendered_fallback_facts(sku, url, snapshot)
+        self.assertEqual(facts["exact_sku"], sku)
+        self.assertEqual(facts["document_collection_status"], "RENDERED_PDP_FALLBACK")
+        self.assertEqual(facts["energy_consumption_raw"], [])
+        self.assertEqual(facts["energyguide_documents"][0]["url"],
+                         "https://images.samsung.com/is/content/samsung/example/energyguide.pdf")
+
+    def test_rendered_fallback_rejects_untrusted_or_ambiguous_links(self):
+        sku = "DW70H83YEURAA"
+        url = f"https://www.samsung.com/us/dishwashers/model-sku-{sku.lower()}"
+        base = {"jsonld_parse_errors": 0, "product_jsonld": [{"sku": sku, "mpn": None}]}
+        with self.assertRaisesRegex(ValueError, "no Samsung-hosted"):
+            rendered_fallback_facts(sku, url, {**base, "energyguide_link_candidates": [
+                {"label_raw": "Energy Guide", "href": "https://example.com/energyguide.pdf"}
+            ]})
+        with self.assertRaisesRegex(ValueError, "multiple distinct"):
+            rendered_fallback_facts(sku, url, {**base, "energyguide_link_candidates": [
+                {"label_raw": "Energy Guide", "href": "https://images.samsung.com/a.pdf"},
+                {"label_raw": "Energy Guide", "href": "https://images.samsung.com/b.pdf"},
+            ]})
 
     def test_explicit_annual_consumption_field_is_collected(self):
         sku = "DW90F89P0USRAA"
