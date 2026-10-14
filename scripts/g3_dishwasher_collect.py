@@ -91,7 +91,7 @@ def load_population(recon_root: str | Path, source_run_id: str) -> tuple[list[di
                        "pf_page_count": len(pages), "pf_page_hashes": [pages_by_offset[i][1] for i in ordered]}
 
 
-def verify_identity(sku: str, final_url: str, snapshot: dict[str, Any], bridge: dict[str, Any]) -> dict[str, Any]:
+def verify_page_identity(sku: str, final_url: str, snapshot: dict[str, Any]) -> None:
     parts = urlsplit(final_url)
     slug = re.escape(sku.lower().replace("/", "-"))
     if parts.scheme != "https" or parts.hostname != "www.samsung.com" or "/us/" not in parts.path or not re.search(r"-sku-" + slug + r"/?$", parts.path.lower()):
@@ -105,7 +105,65 @@ def verify_identity(sku: str, final_url: str, snapshot: dict[str, Any], bridge: 
         identities = [declaration[key] for key in ("sku", "mpn") if declaration.get(key)]
         if not identities or any(value != sku for value in identities):
             raise ValueError("Dishwasher PDP JSON-LD does not match exact SKU")
+
+
+def verify_identity(sku: str, final_url: str, snapshot: dict[str, Any], bridge: dict[str, Any]) -> dict[str, Any]:
+    verify_page_identity(sku, final_url, snapshot)
     return pdp_facts(bridge, sku, family="dishwasher")
+
+
+def rendered_fallback_facts(sku: str, final_url: str, snapshot: dict[str, Any]) -> dict[str, Any]:
+    """Use the exact PDP's rendered Energy Guide link only when bridge projection is unavailable."""
+    verify_page_identity(sku, final_url, snapshot)
+    candidates = snapshot.get("energyguide_link_candidates")
+    if not isinstance(candidates, list):
+        raise ValueError("Rendered Energy Guide link observation is unavailable")
+    by_url: dict[str, dict[str, Any]] = {}
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            continue
+        url = candidate.get("href")
+        if not isinstance(url, str):
+            continue
+        parts = urlsplit(url)
+        host = (parts.hostname or "").lower()
+        if parts.scheme != "https" or not (host == "samsung.com" or host.endswith(".samsung.com")):
+            continue
+        by_url.setdefault(url, candidate)
+    if not by_url:
+        raise ValueError("Exact PDP has no Samsung-hosted rendered Energy Guide link")
+    if len(by_url) != 1:
+        raise ValueError("Exact PDP exposes multiple distinct rendered Energy Guide links")
+    url, candidate = next(iter(by_url.items()))
+    synthetic = {
+        "Specs": [{"modelCode": sku, "fullSpecs": []}],
+        "Support": [{"modelCode": sku, "supports": [{
+            "name": "Energy Guide",
+            "type": "PDF" if urlsplit(url).path.lower().endswith(".pdf") else None,
+            "url": url,
+        }]}],
+    }
+    facts = pdp_facts(synthetic, sku, family="dishwasher")
+    facts["document_collection_status"] = "RENDERED_PDP_FALLBACK"
+    facts["document_source_provenance"] = {
+        "source_kind": "RENDERED_PDP_ENERGYGUIDE_LINK",
+        "label_raw": candidate.get("label_raw"),
+        "pdp_url": safe_url(final_url),
+    }
+    return facts
+
+
+def bridge_schema_observation(payload: Any) -> dict[str, Any]:
+    """Bounded diagnostics for schema drift; never persist the unprojected bridge payload."""
+    if not isinstance(payload, dict):
+        return {"root_type": type(payload).__name__, "top_level_keys": []}
+    return {
+        "root_type": "dict",
+        "top_level_keys": sorted(str(key) for key in payload)[:40],
+        "Specs_type": type(payload.get("Specs")).__name__,
+        "Support_type": type(payload.get("Support")).__name__,
+        "RelatedModels_type": type(payload.get("RelatedModels")).__name__,
+    }
 
 
 def prepare_output(output: str | Path) -> Path:
@@ -149,7 +207,13 @@ def collect(products: list[dict[str, Any]], output: str | Path) -> list[dict[str
                         raise ValueError("Dishwasher bridge response limit exceeded")
                     if response.status != 200 or "json" not in response.headers.get("content-type", "").lower():
                         raise ValueError("Dishwasher bridge response is unavailable or not JSON")
-                    projected = project_bridge(response.json())
+                    payload = response.json()
+                    try:
+                        projected = project_bridge(payload)
+                    except Exception as error:
+                        entry["error_class"] = type(error).__name__
+                        entry["schema_observation"] = bridge_schema_observation(payload)
+                        return
                     raw = (json.dumps(projected, sort_keys=True, indent=2) + "\n").encode()
                     path = folder / f"bridge-{len(record['bridge_responses'])}.json"
                     path.write_bytes(raw)
@@ -201,18 +265,42 @@ def collect(products: list[dict[str, Any]], output: str | Path) -> list[dict[str
                     except ValueError:
                         continue
                     candidates.append((entry, facts))
-                if not candidates:
-                    raise ValueError("No same-SKU URL, JSON-LD, Specs and Support evidence")
-                if len({item[0]["sha256"] for item in candidates}) != 1:
-                    raise ValueError("Dishwasher bridge changed during same-PDP collection")
-                bridge_entry, facts = candidates[0]
+                identity_contract = "FINAL_URL_AND_CURRENT_JSONLD_AND_EXACT_SPECS_SUPPORT"
+                source_fallback = None
+                if candidates:
+                    if len({item[0]["sha256"] for item in candidates}) != 1:
+                        raise ValueError("Dishwasher bridge changed during same-PDP collection")
+                    bridge_entry, facts = candidates[0]
+                else:
+                    try:
+                        facts = rendered_fallback_facts(sku, page.url, snapshot)
+                    except ValueError as fallback_error:
+                        deterministic_schema_drift = any(
+                            entry.get("status") == 200 and entry.get("schema_observation")
+                            for entry in record["bridge_responses"]
+                        )
+                        if deterministic_schema_drift:
+                            record["failure_class"] = "BRIDGE_SCHEMA_DRIFT_WITHOUT_RENDERED_FALLBACK"
+                            record["retryable"] = False
+                        raise ValueError(
+                            "No same-SKU bridge or rendered Energy Guide fallback evidence: "
+                            + str(fallback_error)
+                        )
+                    bridge_entry = {
+                        "source_kind": "RENDERED_PDP_ENERGYGUIDE_LINK_FALLBACK",
+                        "url": safe_url(page.url),
+                    }
+                    identity_contract = "FINAL_URL_AND_CURRENT_JSONLD_AND_RENDERED_ENERGYGUIDE_FALLBACK"
+                    source_fallback = "RENDERED_PDP_ENERGYGUIDE_LINK"
                 listing_raw = product.get("source_claim_listing_raw")
                 if not isinstance(listing_raw, dict):
                     raise ValueError("Dishwasher PF claim declaration is unavailable")
                 claim_sources = claim_facts(snapshot, sku, listing_raw, facts)
                 record.update(status="VERIFIED_EXACT_IDENTITY", bridge=bridge_entry, pdp_facts_raw=facts,
                               energy_star_claim_sources_raw=claim_sources,
-                              identity_contract="FINAL_URL_AND_CURRENT_JSONLD_AND_EXACT_SPECS_SUPPORT")
+                              identity_contract=identity_contract)
+                if source_fallback:
+                    record["source_fallback"] = source_fallback
             except Exception as error:
                 record["error"] = str(error).splitlines()[0][:300]
             finally:
