@@ -35,12 +35,33 @@ class DishwasherEnergyGuideCollectionTests(unittest.TestCase):
         self.assertEqual(len(result["records"]), 2)
         self.assertEqual(result["records"][0]["retrieval"]["sha256"], hashlib.sha256(data).hexdigest())
 
-    def test_invalid_pdf_is_recorded_as_a_failure(self):
+    def test_invalid_declared_pdf_is_an_unreadable_document_finding(self):
         declaration = {"exact_sku": "DW90F89P0USRAA", "source_document_index": 0, "name_raw": "Energy Guide", "type_raw": "PDF", "url": "https://images.samsung.test/guide.pdf"}
+        body = b"<html>blocked</html>"
         with tempfile.TemporaryDirectory() as directory:
             result = collect_documents([declaration], directory, "Mozilla Chrome/140.0.0.0",
-                                       fetch=lambda url, ua: (b"<html>blocked</html>", url, "text/html", 200))
+                                       fetch=lambda url, ua: (body, url, "text/html", 200))
+        retrieval = result["records"][0]["retrieval"]
+        self.assertEqual(result["failed_url_count"], 0)
+        self.assertEqual(result["unreadable_url_count"], 1)
+        self.assertEqual(retrieval["status"], "DECLARED_DOCUMENT_UNREADABLE")
+        self.assertEqual(retrieval["severity"], "HIGH")
+        self.assertEqual(retrieval["issue_code"], "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE")
+        self.assertEqual(retrieval["http_status"], 200)
+        self.assertEqual(retrieval["content_type"], "text/html")
+        self.assertEqual(retrieval["byte_count"], len(body))
+        self.assertEqual(retrieval["body_prefix_hex"], body.hex())
+
+    def test_transport_error_remains_a_pipeline_failure(self):
+        declaration = {"exact_sku": "DW90F89P0USRAA", "source_document_index": 0, "name_raw": "Energy Guide", "type_raw": "PDF", "url": "https://images.samsung.test/guide.pdf"}
+
+        def fail(url, ua):
+            raise TimeoutError("timed out")
+
+        with tempfile.TemporaryDirectory() as directory:
+            result = collect_documents([declaration], directory, "Mozilla Chrome/140.0.0.0", fetch=fail)
         self.assertEqual(result["failed_url_count"], 1)
+        self.assertEqual(result["unreadable_url_count"], 0)
         self.assertEqual(result["records"][0]["retrieval"]["status"], "FAILED")
 
     def test_rejects_incomplete_collection_artifact(self):
