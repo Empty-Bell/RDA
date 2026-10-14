@@ -4,6 +4,12 @@ from pathlib import Path
 RANK={"LOW":1,"MEDIUM":2,"HIGH":3}
 def load(p): return json.loads(Path(p).read_bytes())
 
+def document_findings(row):
+ return [x for x in row.get('energyguide_document_findings',[]) if isinstance(x,dict) and x.get('issue_code') and x.get('severity')]
+
+def has_unreadable_document_finding(row):
+ return any(x.get('issue_code')=='ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE' for x in document_findings(row))
+
 def readiness(energy, numeric, model):
  """Block final verdicts until each source control is complete and bound."""
  sources={"energy_star":energy,"numeric":numeric,"model":model}
@@ -26,11 +32,14 @@ def readiness(energy, numeric, model):
  if len(indices)!=3 or set(indices['energy_star'])!=set(indices['numeric']) or set(indices['energy_star'])!=set(indices['model']):
   gaps.append({'code':'CONTROL_SKU_COVERAGE_DIFFERS'})
  for sku,row in sorted(indices.get('numeric',{}).items()):
-  if row.get('energyguide_annual_energy',{}).get('state')!='VALUE':
-   gaps.append({'code':'US_ENERGYGUIDE_ANNUAL_UNRESOLVED','exact_sku':sku})
-  if row.get('pdp_vs_energyguide_energy')=='NOT_COMPARABLE' and row.get('pdp_annual_energy',{}).get('state')=='VALUE':
-   gaps.append({'code':'PDP_LABEL_NUMERIC_UNRESOLVED','exact_sku':sku})
+  if not has_unreadable_document_finding(row):
+   if row.get('energyguide_annual_energy',{}).get('state')!='VALUE':
+    gaps.append({'code':'US_ENERGYGUIDE_ANNUAL_UNRESOLVED','exact_sku':sku})
+   if row.get('pdp_vs_energyguide_energy')=='NOT_COMPARABLE' and row.get('pdp_annual_energy',{}).get('state')=='VALUE':
+    gaps.append({'code':'PDP_LABEL_NUMERIC_UNRESOLVED','exact_sku':sku})
  for sku,row in sorted(indices.get('model',{}).items()):
+  if has_unreadable_document_finding(row):
+   continue
   if row.get('pdp_vs_energyguide_model')=='DIFFERENT' and row.get('energyguide_model_pattern_source')!='HUMAN_VISUAL_REVIEW':
    gaps.append({'code':'RAW_OCR_MODEL_MISMATCH_UNREVIEWED','exact_sku':sku})
   if row.get('pdp_vs_energyguide_model')=='DIFFERENT' and row.get('energyguide_model_pattern_source')=='HUMAN_VISUAL_REVIEW':
@@ -59,6 +68,12 @@ def build(energy,numeric,model,out):
  rows=[]; all_findings=[]
  for sku in sorted(e):
   es,nu,mo=e[sku],n[sku],m[sku]; f=[]
+  numeric_document_findings=document_findings(nu)
+  model_document_findings=document_findings(mo)
+  if {(x.get('severity'),x.get('issue_code')) for x in numeric_document_findings} != {(x.get('severity'),x.get('issue_code')) for x in model_document_findings}:
+   raise ValueError('Dishwasher document findings differ across comparison controls')
+  for finding in numeric_document_findings:
+   f.append({'control':'ENERGYGUIDE_ACCESS','severity':finding['severity'],'issue_code':finding['issue_code']})
   if es.get('severity'): f.append({'control':'ENERGY_STAR_PUBLICATION','severity':es['severity'],'issue_code':es['issue_code']})
   # A mismatch requires the PDP to disagree with every listed EnergyGuide
   # pattern. One matching label pattern is sufficient for model identity.
@@ -71,7 +86,7 @@ def build(energy,numeric,model,out):
   row={'exact_sku':sku,'display_outcome':outcome,'controls':{'energy_star_publication':{'outcome':es['outcome']},'energyguide_numeric':{'outcome':outcome,'comparisons':{k:nu[k] for k in ('pdp_vs_energyguide_energy','energyguide_vs_epa_energy')}},'energyguide_model':{'outcome':outcome,'comparisons':{k:mo[k] for k in ('pdp_vs_energyguide_model','pdp_vs_epa_model','energyguide_vs_epa_model')}}},'findings':f,'overall_product_compliance':'NOT_EVALUATED'}
   rows.append(row); all_findings += [{'exact_sku':sku,**x} for x in f]
  counts=Counter(x['display_outcome'] for x in rows)
- report={'contract':'G3_DISHWASHER_FINAL_ASSESSMENT_V1','status':'PASS','assessment_enabled':True,'sku_count':len(rows),'finding_count':len(all_findings),'affected_sku_count':len({x['exact_sku'] for x in all_findings}),'counts':{key:counts.get(key,0) for key in ('HIGH','MEDIUM','LOW','PASS')},'findings':all_findings,'rows':rows,'decision_rule':'Confirmed model mismatch or EPA Current absence HIGH; PDP annual missing LOW; confirmed annual mismatch MEDIUM; all other states PASS','overall_product_compliance':'NOT_EVALUATED'}
+ report={'contract':'G3_DISHWASHER_FINAL_ASSESSMENT_V1','status':'PASS','assessment_enabled':True,'sku_count':len(rows),'finding_count':len(all_findings),'affected_sku_count':len({x['exact_sku'] for x in all_findings}),'counts':{key:counts.get(key,0) for key in ('HIGH','MEDIUM','LOW','PASS')},'findings':all_findings,'rows':rows,'decision_rule':'Unreadable declared EnergyGuide, confirmed model mismatch or EPA Current absence HIGH; PDP annual missing LOW; confirmed annual mismatch MEDIUM; all other states PASS','overall_product_compliance':'NOT_EVALUATED'}
  md=['# G3 Dishwasher final assessment','',f"SKUs: **{len(rows)}** | HIGH: **{report['counts']['HIGH']}** | MEDIUM: **{report['counts']['MEDIUM']}** | LOW: **{report['counts']['LOW']}** | PASS: **{report['counts']['PASS']}**",'', '| Exact SKU | Result | PDP / Label model | PDP / EPA model | Label / EPA model | PDP / Label energy | Label / EPA energy | Findings |','|---|---|---|---|---|---|---|---|']
  details=[]
  for sku,row in zip(sorted(e),rows):

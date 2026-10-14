@@ -34,14 +34,22 @@ def build(pdp_root, observation_root, epa_root, match_root, out, model_review):
     results = {x["exact_sku"]: x for x in [load(p) for p in Path(pdp_root).glob("pdp/*/result.json")]}
     obs = load(Path(observation_root)/"sku-document-index.json")
     o_by_sku = {}
-    for x in obs.get("sku_documents", []): o_by_sku.setdefault(x["exact_sku"], []).append(x)
+    for x in obs.get("sku_documents", []):
+        o_by_sku.setdefault(x["exact_sku"], []).append(x)
+    unreadable_by_sku = {}
+    for x in obs.get("unreadable_documents", []):
+        unreadable_by_sku.setdefault(x["exact_sku"], []).append(x)
     epa = load(Path(epa_root)/"samsung-current-rows.json")
     match = load(Path(match_root)/"match-report.json")
     if match.get("source_observation_sha256") != hashlib.sha256((Path(observation_root)/"sku-document-index.json").read_bytes()).hexdigest():
         raise ValueError("Source match and EnergyGuide observations are from different artifacts")
     if match.get("source_epa_sha256") != hashlib.sha256((Path(epa_root)/"samsung-current-rows.json").read_bytes()).hexdigest():
         raise ValueError("Source match and EPA rows are from different artifacts")
-    if set(products) != {x["exact_sku"] for x in obs.get("sku_documents",[])}:
+    observed_skus = (
+        {x["exact_sku"] for x in obs.get("sku_documents", [])}
+        | {x["exact_sku"] for x in obs.get("unreadable_documents", [])}
+    )
+    if set(products) != observed_skus:
         raise ValueError("Collection and EnergyGuide observation SKU populations differ")
     visual_patterns = reviewed_label_values(model_review)
     m_by_sku = {x["exact_sku"]:x for x in match.get("rows", [])}
@@ -66,7 +74,19 @@ def build(pdp_root, observation_root, epa_root, match_root, out, model_review):
                                       "source":"HUMAN_VISUAL_REVIEW"} for value in review["visible_model_patterns"]]
         m=m_by_sku.get(sku,{})
         epa_rows=[epa_by_id[str(x)] for x in m.get("candidate_pd_ids",[]) if str(x) in epa_by_id]
-        rows.append({"exact_sku":sku,"pdp_energy_raw":facts.get("energy_consumption_raw",[]),"energyguide_energy_candidates_raw":candidates,"energyguide_energy_visual_reviewed":reviewed_energy,"energyguide_model_candidates_raw":model_candidates,"energyguide_model_patterns_visual_reviewed":reviewed_patterns,"epa_candidates_raw":epa_rows,"epa_match_status":m.get("match_status","NOT_OBSERVED"),"comparison_status":"REVIEW_REQUIRED","assessment":"NOT_EVALUATED"})
+        rows.append({
+            "exact_sku": sku,
+            "pdp_energy_raw": facts.get("energy_consumption_raw", []),
+            "energyguide_energy_candidates_raw": candidates,
+            "energyguide_energy_visual_reviewed": reviewed_energy,
+            "energyguide_model_candidates_raw": model_candidates,
+            "energyguide_model_patterns_visual_reviewed": reviewed_patterns,
+            "energyguide_document_findings": unreadable_by_sku.get(sku, []),
+            "epa_candidates_raw": epa_rows,
+            "epa_match_status": m.get("match_status", "NOT_OBSERVED"),
+            "comparison_status": "REVIEW_REQUIRED",
+            "assessment": "NOT_EVALUATED",
+        })
     report={"contract":"G3_DISHWASHER_COMPARISON_PACKAGE_V1","created_at":datetime.now(timezone.utc).isoformat(),"source_bundle_fingerprint":source_fingerprint(Path(pdp_root)/"products.json",Path(match_root)/"match-report.json"),"scope":"Same-SKU source observation package only; no field selection, tolerance, finding, or compliance assessment","status":"PASS","sku_count":len(rows),"rows":rows}
     Path(out).mkdir(parents=True,exist_ok=True); Path(out,"comparison-package.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps({"status":"PASS","sku_count":len(rows)},sort_keys=True))

@@ -55,7 +55,10 @@ def build(observation_root, epa_root, out, pdp_root=None):
             unsupported_pattern_rows.append(reference)
         else:
             literal_rows.setdefault(normalize_identifier(model), []).append(reference)
-    skus = sorted({x["exact_sku"] for x in obs.get("sku_documents", [])})
+    skus = sorted(
+        {x["exact_sku"] for x in obs.get("sku_documents", [])}
+        | {x["exact_sku"] for x in obs.get("unreadable_documents", [])}
+    )
     pdp_by_sku = {}
     if pdp_root is not None:
         for path in Path(pdp_root).glob("pdp/*/result.json"):

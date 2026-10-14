@@ -23,25 +23,40 @@ def _json(path: Path) -> Any:
     return json.loads(path.read_bytes())
 
 
-def verified_pdf_population(root: str | Path, retrieval_run_id: str, allow_nasca_drm: bool = False) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
-    """Verify a complete retrieval artifact and index one copy per PDF hash."""
+def verified_pdf_population(
+    root: str | Path,
+    retrieval_run_id: str,
+    allow_nasca_drm: bool = False,
+    allow_declared_unreadable: bool = False,
+) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
+    """Verify a complete retrieval artifact and index one copy per readable PDF hash."""
     base = Path(root)
     report = _json(base / "energyguide-summary.json")
-    allowed_statuses = ("PASS", "PARTIAL") if allow_nasca_drm else ("PASS",)
+    allow_partial = allow_nasca_drm or allow_declared_unreadable
+    allowed_statuses = ("PASS", "PARTIAL") if allow_partial else ("PASS",)
     if report.get("status") not in allowed_statuses or str(report.get("retrieval_run_id")) != str(retrieval_run_id):
         raise ValueError("EnergyGuide artifact is not the requested successful or allowed partial run")
-    nasca_unreadable = []
-    if allow_nasca_drm:
-        for item in report.get("url_observations", []):
-            prefix = item.get("body_prefix_hex")
-            try:
-                is_nasca = item.get("status") == "FAILED" and isinstance(prefix, str) and bytes.fromhex(prefix).startswith(b"<## NASCA DRM FILE - VER1.00")
-            except ValueError:
-                is_nasca = False
-            if is_nasca:
-                nasca_unreadable.append(item)
-    if report.get("failed_url_count") != len(nasca_unreadable):
-        raise ValueError("EnergyGuide artifact includes failed URLs other than explicitly allowed NASCA DRM")
+
+    unreadable_observations = []
+    legacy_nasca = []
+    for item in report.get("url_observations", []):
+        if item.get("status") == "DECLARED_DOCUMENT_UNREADABLE" and allow_declared_unreadable:
+            unreadable_observations.append(item)
+            continue
+        prefix = item.get("body_prefix_hex")
+        try:
+            is_nasca = item.get("status") == "FAILED" and isinstance(prefix, str) and bytes.fromhex(prefix).startswith(b"<## NASCA DRM FILE - VER1.00")
+        except ValueError:
+            is_nasca = False
+        if is_nasca and allow_nasca_drm:
+            legacy_nasca.append(item)
+            unreadable_observations.append(item)
+
+    allowed_failed = len(legacy_nasca)
+    if report.get("failed_url_count") != allowed_failed:
+        raise ValueError("EnergyGuide artifact includes transport failures that are not allowed document findings")
+    if report.get("status") == "PARTIAL" and not unreadable_observations:
+        raise ValueError("Partial EnergyGuide artifact has no explicit unreadable document evidence")
     by_hash: dict[str, dict[str, Any]] = {}
     by_url = {item.get("url"): item for item in report.get("url_observations", [])}
     if len(by_url) != report.get("url_count"):
@@ -54,7 +69,7 @@ def verified_pdf_population(root: str | Path, retrieval_run_id: str, allow_nasca
         observation = by_url.get(url)
         if not isinstance(sku, str) or not isinstance(retrieval, dict) or not observation:
             raise ValueError("EnergyGuide document record lacks exact SKU or retrieval provenance")
-        if observation.get("status") == "FAILED" and observation in nasca_unreadable:
+        if observation in unreadable_observations:
             continue
         if observation.get("status") != "RETRIEVED_VALID_PDF" or retrieval.get("sha256") != observation.get("sha256"):
             raise ValueError("EnergyGuide SKU document is not linked to a retrieved PDF hash")
@@ -79,18 +94,33 @@ def verified_pdf_population(root: str | Path, retrieval_run_id: str, allow_nasca
     if len(by_hash) != report.get("pdf_hash_count"):
         raise ValueError("Unique PDF hash count differs from the retrieval source summary")
     unreadable_documents = []
-    if nasca_unreadable:
-        unreadable_urls = {item.get("url"): item for item in nasca_unreadable}
+    if unreadable_observations:
+        unreadable_urls = {item.get("url"): item for item in unreadable_observations}
         for record in report.get("records", []):
             item = unreadable_urls.get(record.get("url"))
             if item:
-                unreadable_documents.append({"exact_sku": record.get("exact_sku"),
-                                             "source_document_index": record.get("source_document_index"),
-                                             "url": safe_url(record.get("url")),
-                                             "state": "NOT_ACCESSIBLE",
-                                             "severity": "HIGH",
-                                             "issue_code": "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
-                                             "reason": "SAMSUNG_NASCA_SERVER_DRM"})
+                reason = item.get("reason")
+                if not reason:
+                    prefix = item.get("body_prefix_hex")
+                    try:
+                        if isinstance(prefix, str) and bytes.fromhex(prefix).startswith(b"<## NASCA DRM FILE - VER1.00"):
+                            reason = "SAMSUNG_NASCA_SERVER_DRM"
+                    except ValueError:
+                        pass
+                unreadable_documents.append({
+                    "exact_sku": record.get("exact_sku"),
+                    "source_document_index": record.get("source_document_index"),
+                    "url": safe_url(record.get("url")),
+                    "state": "NOT_ACCESSIBLE",
+                    "severity": item.get("severity") or "HIGH",
+                    "issue_code": item.get("issue_code") or "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
+                    "reason": reason or "DECLARED_ENERGYGUIDE_RESPONSE_IS_NOT_A_PDF",
+                    "http_status": item.get("http_status"),
+                    "content_type": item.get("content_type"),
+                    "byte_count": item.get("byte_count"),
+                    "body_sha256": item.get("body_sha256"),
+                    "body_prefix_hex": item.get("body_prefix_hex"),
+                })
     return by_hash, {"retrieval_run_id": str(retrieval_run_id), "sku_document_count": len(sku_documents),
                      "unique_pdf_count": len(by_hash), "sku_documents": sku_documents,
                      "unreadable_documents": unreadable_documents}
@@ -203,7 +233,11 @@ def main() -> int:
     parser.add_argument("--retrieval-run-id", required=True)
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
-    pdfs, source = verified_pdf_population(args.retrieval_root, args.retrieval_run_id)
+    pdfs, source = verified_pdf_population(
+        args.retrieval_root,
+        args.retrieval_run_id,
+        allow_declared_unreadable=True,
+    )
     from rapidocr import RapidOCR
     engine = RapidOCR(params={"EngineConfig.onnxruntime.intra_op_num_threads": 1,
                               "EngineConfig.onnxruntime.inter_op_num_threads": 1})
