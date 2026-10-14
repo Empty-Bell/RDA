@@ -45,7 +45,23 @@ def decision(run, jobs, max_attempts):
             return "unknown_family_job"
         if failed - family_failures - {integrate}:
             return "non_source_failure"
-        return "retry_family_source_failure"
+        transient_exact = {
+            "Bootstrap locked browser, PDF and OCR runtime",
+            "Preserve this family's raw sources and assessment",
+        }
+        transient_prefixes = ("Run actions/checkout@", "Run actions/setup-python@")
+        for job in jobs:
+            if job.get("name") not in family_failures:
+                continue
+            failed_steps = [step.get("name") for step in job.get("steps", [])
+                            if step.get("conclusion") == "failure"]
+            if not failed_steps:
+                return "family_failure_requires_review"
+            if any(step not in transient_exact and not any(
+                    str(step).startswith(prefix) for prefix in transient_prefixes)
+                    for step in failed_steps):
+                return "family_failure_requires_review"
+        return "retry_family_runtime_or_artifact_failure"
     if failed == {integrate}:
         job = next(job for job in jobs if job.get("name") == integrate)
         failed_steps = {step.get("name") for step in job.get("steps", [])
