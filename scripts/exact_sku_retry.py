@@ -19,7 +19,8 @@ def retry_failed(products, destination, results, collector, *, sleep=time.sleep)
     if len(results) != len(products) or {row.get("exact_sku") for row in results} != set(by_sku):
         raise ValueError("Initial collection does not cover the exact-SKU population")
     for attempt in (2, 3):
-        failed = [row for row in results if row.get("status") == "FAILED"]
+        failed = [row for row in results
+                  if row.get("status") == "FAILED" and row.get("retryable", True) is not False]
         if not failed:
             break
         sleep(2 ** (attempt - 2))
