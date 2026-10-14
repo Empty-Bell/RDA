@@ -7,6 +7,7 @@ on:
       - 'requirements-*.lock'
       - 'scripts/**'
       - 'tests/**'
+      - 'checks/**'
 permissions:
   contents: read
 concurrency:
@@ -34,4 +35,12 @@ jobs:
       - name: Run unit and contract tests
         run: |
           python -m unittest discover -s tests -t . -v
-          python -m unittest checks.g3.test_dishwasher_collect -v
+          python -m unittest \
+            checks.g3.test_dishwasher_collect \
+            checks.g3.test_dishwasher_energyguide_collect \
+            checks.g3.test_dishwasher_energyguide_observe \
+            checks.g3.test_dishwasher_unreadable_population \
+            checks.g3.test_dishwasher_numeric_comparison \
+            checks.g3.test_dishwasher_model_comparison \
+            checks.g3.test_dishwasher_assessment_readiness \
+            -v
