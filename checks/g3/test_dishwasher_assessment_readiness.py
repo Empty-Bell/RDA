@@ -49,6 +49,39 @@ class DishwasherReadinessTests(unittest.TestCase):
         model["records"][0].update(normalized_pdp_model="DW80CG5450SR",pdp_vs_energyguide_model="DIFFERENT",energyguide_model_patterns_visual_reviewed=["DW80CG54******"])
         self.assertIn("MODEL_PREFIX_COMPARISON_STALE",{gap["code"] for gap in readiness(energy,numeric,model)["gaps"]})
 
+    def test_unreadable_declared_energyguide_is_assessed_as_high_not_pipeline_block(self):
+        energy, numeric, model = self.sources()
+        finding = {
+            "severity": "HIGH",
+            "issue_code": "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
+            "reason": "DECLARED_ENERGYGUIDE_RESPONSE_IS_NOT_A_PDF",
+        }
+        numeric["rows"][0].update(
+            energyguide_annual_energy={"state": "NOT_OBSERVED"},
+            pdp_vs_energyguide_energy="NOT_COMPARABLE",
+            energyguide_vs_epa_energy="NOT_COMPARABLE",
+            energyguide_document_findings=[finding],
+        )
+        model["records"][0].update(
+            pdp_vs_energyguide_model="NOT_COMPARABLE",
+            pdp_vs_epa_model="EQUAL",
+            energyguide_vs_epa_model="NOT_COMPARABLE",
+            energyguide_document_findings=[finding],
+        )
+        self.assertEqual(readiness(energy, numeric, model)["status"], "READY_FOR_ASSESSMENT")
+        with tempfile.TemporaryDirectory() as temp:
+            paths = [Path(temp) / name for name in ("energy.json", "numeric.json", "model.json")]
+            for path, data in zip(paths, (energy, numeric, model)):
+                path.write_text(json.dumps(data))
+            build(*paths, Path(temp) / "out")
+            report = json.loads((Path(temp) / "out" / "assessment.json").read_text())
+        self.assertEqual(report["counts"]["HIGH"], 1)
+        self.assertEqual(report["rows"][0]["display_outcome"], "HIGH")
+        self.assertEqual(
+            report["findings"][0]["issue_code"],
+            "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE",
+        )
+
     def test_missing_pdp_gets_low_only_with_label_epa_agreement(self):
         energy,numeric,model=self.sources()
         numeric["rows"][0].update(pdp_annual_energy={"state":"NOT_OBSERVED"},energyguide_vs_epa_energy="NOT_COMPARABLE")
