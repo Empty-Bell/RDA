@@ -32,4 +32,6 @@ jobs:
           python -m pip install --index-url https://pypi.org/simple --no-cache-dir --require-hashes --no-deps --no-build-isolation -r requirements-probe.lock
           python -m pip check
       - name: Run unit and contract tests
-        run: python -m unittest discover -s tests -t . -v
+        run: |
+          python -m unittest discover -s tests -t . -v
+          python -m unittest checks.g3.test_dishwasher_collect -v
