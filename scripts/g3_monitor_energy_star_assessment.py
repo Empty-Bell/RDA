@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 
-from epa_only_rules import epa_registration_state, publication_assessment, publication_points, claim_points, route_loss_fields
+from epa_only_rules import epa_registration_state, publication_assessment, publication_points
 
 SOURCE_CONTRACT = "G3_MONITOR_EPA_SOURCE_CANDIDATES_V1"
 CONTRACT = "G3_MONITOR_ENERGY_STAR_ASSESSMENT_V1"
@@ -31,7 +31,7 @@ def assess_record(row):
             raise ValueError("Monitor candidate has an unapproved or undocumented match rule")
         monitor_candidates.append(candidate)
     registration, market_states = epa_registration_state(monitor_candidates, [])
-    points = claim_points(claim)
+    points = publication_points(claim)
     points["spec_certification"] = {
         "state": "NOT_APPLICABLE",
         "inspection": "MONITOR_FAMILY_SPECS_HAS_NO_ENERGY_STAR_CERTIFICATION_FIELD",
@@ -53,7 +53,6 @@ def assess_record(row):
         "findings": findings,
         "overall_product_compliance": "NOT_EVALUATED",
         "legal_applicability": "NOT_EVALUATED",
-        **route_loss_fields(claim),
     }
 
 

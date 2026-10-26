@@ -312,22 +312,6 @@ Tablet and Computer and replaces the MEDIUM outcome for `stockFlag` N in the
 so such cases keep the finding. The collector does not yet capture the card's CTA
 text; `stockFlag` is the operative condition. No issue code is added.
 
-Extension to other product families (user-approved 2026-10-26). The same treatment
-applies wherever an out-of-stock SKU's requested PDP URL repeatedly fails to reach its
-own PDP, whether it lands on another model's PDP or on a non-PDP page such as the family
-hub. Confirmation needs the initial capture and both fresh retries to end on the same
-Samsung US https page with HTTP 200 (not the requested SKU page, not an error page) and
-the PLP `stockFlag` to be exactly `N`. It is implemented for Range, Cooktop, Hood,
-Monitor and Dryer (`PDP_REDIRECT_CONFIRMED`, claim field `pdp_route_loss_raw`, shared
-rules in `pdp_route.py` and `epa_only_rules.py`) and the hub case was added to Tablet and
-Computer. An in-stock or stock-unknown SKU whose PDP route is lost is still a collection
-failure (Tablet and Computer keep their MEDIUM finding for settled wrong-model cases). A
-confirmed result for such a SKU, or one without three consistent observations, is
-rejected as an error. Refrigerator, Dishwasher, Washer and TV are not covered yet: their
-EnergyGuide and numeric controls depend on PDP evidence and need their own decision on
-how those controls are recorded when the PDP is unreachable, so their collectors still
-fail closed.
-
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |

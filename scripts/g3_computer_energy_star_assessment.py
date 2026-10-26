@@ -9,10 +9,14 @@ import re
 from pathlib import Path
 
 from epa_only_rules import epa_registration_state, publication_assessment, publication_points
-from pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
 
 SOURCE_CONTRACT = "G3_COMPUTER_EPA_SOURCE_CANDIDATES_V1"
 CONTRACT = "G3_COMPUTER_ENERGY_STAR_ASSESSMENT_V1"
+OUT_OF_STOCK_PDP_INSPECTION = "PDP_NOT_REACHABLE_FROM_PLP_WHILE_STOCK_FLAG_N"
+OUT_OF_STOCK_ROUTE_OBSERVATION = {
+    "basis": "PLP_STOCK_FLAG_N_REQUESTED_PDP_URL_RESOLVES_TO_ANOTHER_EXACT_MODEL",
+    "finding": "NONE",
+    "note": "The PLP card offers no PDP route while stockFlag is N; the redirect is preserved as evidence only."}
 
 
 def computer_registration(candidates):

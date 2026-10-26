@@ -31,16 +31,15 @@ def failed(final=FINAL, sku="sm-x820nzaexar", status=200, samples=4):
 
 
 PRODUCT = {"exact_sku": SKU, "source_claim_listing_raw": LISTING, "listing": {"pdp_url": REQUESTED}}
-IN_STOCK = {**PRODUCT, "source_claim_listing_raw": {**LISTING, "stockFlag": "Y"}}
 
 
 class RetryTests(unittest.TestCase):
-    def run_retry(self, first, later, in_stock=True):
+    def run_retry(self, first, later):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             (root / "pdp" / SKU).mkdir(parents=True)
             with patch.object(collect, "collect", side_effect=[[row] for row in later]):
-                rows = collect.retry_failed([IN_STOCK if in_stock else PRODUCT], [first], root)
+                rows = collect.retry_failed([PRODUCT], [first], root)
             return rows[0], json.loads((root / "pdp" / SKU / "result.json").read_text()) \
                 if (root / "pdp" / SKU / "result.json").exists() else None
 
@@ -49,7 +48,7 @@ class RetryTests(unittest.TestCase):
         self.assertEqual(row["status"], "PDP_REDIRECT_CONFIRMED")
         self.assertEqual(len(row["redirect_observations"]), 3)
         self.assertEqual(row["redirect_destination_sku"], "sm-x820nzaexar")
-        self.assertEqual(row["source_claim_listing_raw"], IN_STOCK["source_claim_listing_raw"])
+        self.assertEqual(row["source_claim_listing_raw"], LISTING)
         self.assertEqual(written["status"], "PDP_REDIRECT_CONFIRMED")
 
     def test_controls_hydrating_during_loading_do_not_unsettle_a_stable_destination(self):
@@ -76,35 +75,6 @@ class RetryTests(unittest.TestCase):
                 row, _ = self.run_retry(bad, [dict(bad), dict(bad)])
                 self.assertEqual(row["status"], "FAILED")
                 self.assertEqual({d["not_confirmed_because"] for d in row["attempt_diagnostics"]}, {reason})
-
-    def test_out_of_stock_sku_landing_on_a_hub_is_confirmed_without_a_continue_control(self):
-        hub = "https://www.samsung.com/us/tablets/galaxy-tab-s10/"
-        timeout = {"exact_sku": SKU, "status": "FAILED", "requested_url": REQUESTED, "final_url": hub,
-                   "http_status": 200, "failure_class": "SOURCE_COLLECTION_FAILED",
-                   "error": "Locator.wait_for: Timeout 30000ms exceeded."}
-        stocked = lambda flag: {**PRODUCT, "source_claim_listing_raw": {**LISTING, "stockFlag": flag}}
-        for flag, status in (("N", "PDP_REDIRECT_CONFIRMED"), ("Y", "FAILED")):
-            with self.subTest(stock=flag), tempfile.TemporaryDirectory() as temp:
-                root = Path(temp)
-                (root / "pdp" / SKU).mkdir(parents=True)
-                with patch.object(collect, "collect", side_effect=[[dict(timeout)], [dict(timeout)]]):
-                    rows = collect.retry_failed([stocked(flag)], [dict(timeout)], root)
-                self.assertEqual(rows[0]["status"], status)
-                if status == "PDP_REDIRECT_CONFIRMED":
-                    self.assertEqual(rows[0]["route_loss_kind"], "NON_PDP_PAGE")
-                    self.assertEqual(len(rows[0]["redirect_observations"]), 3)
-
-    def test_out_of_stock_hub_fallback_is_vetoed_by_a_control_naming_the_requested_sku(self):
-        hub = "https://www.samsung.com/us/tablets/galaxy-tab-s10/"
-        named = {"exact_sku": SKU, "status": "FAILED", "requested_url": REQUESTED, "final_url": hub,
-                 "http_status": 200, "failure_class": "SOURCE_COLLECTION_FAILED", "error": "Timeout",
-                 "selection_observed_raw": {"selected_controls": [{"label": "5G", "sku": SKU.lower()}]}}
-        with tempfile.TemporaryDirectory() as temp:
-            root = Path(temp)
-            (root / "pdp" / SKU).mkdir(parents=True)
-            with patch.object(collect, "collect", side_effect=[[dict(named)], [dict(named)]]):
-                rows = collect.retry_failed([PRODUCT], [dict(named)], root)
-            self.assertEqual(rows[0]["status"], "FAILED")
 
     def test_unstable_or_inconsistent_attempts_stay_source_failures(self):
         other = "https://www.samsung.com/us/tablets/buy/galaxy-tab-a9-sku-sm-x110nzaaxar/"

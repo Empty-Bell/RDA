@@ -12,7 +12,6 @@ from urllib.parse import parse_qs, quote, urlencode, urlsplit
 from claim_recon import DOM_SNAPSHOT, claim_facts
 from source_contract import computer_selection, pdp_facts, pf_population, project_computer_specs
 from browser_runtime import desktop_context
-from pdp_route import confirm_route_loss
 from runner_probe import safe_url
 from plp_population import rendered_card_skus
 
@@ -268,36 +267,6 @@ def collect(products, output):
     return results
 
 
-def strict_redirect_terminal(row, observations, product, retries):
-    """Terminal record when every attempt settled on the same different exact-SKU PDP, else None."""
-    sku = product["exact_sku"]
-    final_urls = {item.get("final_url") for item in observations}
-    requested = product["listing"]["pdp_url"]
-    if (len(final_urls) != 1 or None in final_urls
-            or any(item.get("failure_class") != "SELECTED_SKU_DIFFERS_FROM_REQUESTED"
-                   for item in observations)):
-        return None
-    if any(item.get("initial_http_status") != 200 or not settled_identity(
-            item.get("identity_observations", []),
-            (item.get("selected_configuration_raw") or {}).get("continue_sku") or "")
-           for item in observations):
-        return None
-    final_url = next(iter(final_urls))
-    final_path = urlsplit(final_url)
-    if (final_url == requested or final_path.scheme != "https"
-            or final_path.hostname != "www.samsung.com"
-            or not re.search(r"-sku-[a-z0-9/-]+/?$", final_path.path.lower())):
-        return None
-    return {**row, "status": "PDP_REDIRECT_CONFIRMED",
-            "root_cause": "UNDETERMINED",
-            "observation_scope": "Repeated routing observed; option unavailability not established",
-            "source_claim_listing_raw": product["source_claim_listing_raw"],
-            "redirect_observations": [{"requested_url": item.get("requested_url"),
-                                       "final_url": item.get("final_url"),
-                                       "selected_configuration_raw": item.get("selected_configuration_raw")}
-                                      for item in observations]}
-
-
 def retry_failed(products, results, output, *, retries=2):
     """Retry only failed exact SKUs in fresh browser contexts, preserving attempts."""
     destination = Path(output)
@@ -328,12 +297,31 @@ def retry_failed(products, results, output, *, retries=2):
         observations = attempts[sku]
         if row["status"] != "FAILED" or len(observations) != retries + 1:
             continue
-        # The strict wrong-model confirmation keeps its own settled-identity checks; another Samsung US
-        # page (a hub, say) counts only through the shared check, and only for an out-of-stock SKU.
-        terminal = (strict_redirect_terminal(row, observations, by_sku[sku], retries)
-                    or confirm_route_loss(observations, by_sku[sku]))
-        if terminal is None:
+        final_urls = {item.get("final_url") for item in observations}
+        requested = by_sku[sku]["listing"]["pdp_url"]
+        if (len(final_urls) != 1 or None in final_urls
+                or any(item.get("failure_class") != "SELECTED_SKU_DIFFERS_FROM_REQUESTED"
+                       for item in observations)):
             continue
+        if any(item.get("initial_http_status") != 200 or not settled_identity(
+                item.get("identity_observations", []),
+                (item.get("selected_configuration_raw") or {}).get("continue_sku") or "")
+               for item in observations):
+            continue
+        final_url = next(iter(final_urls))
+        final_path = urlsplit(final_url)
+        if (final_url == requested or final_path.scheme != "https"
+                or final_path.hostname != "www.samsung.com"
+                or not re.search(r"-sku-[a-z0-9/-]+/?$", final_path.path.lower())):
+            continue
+        terminal = {**row, "status": "PDP_REDIRECT_CONFIRMED",
+                    "root_cause": "UNDETERMINED",
+                    "observation_scope": "Repeated routing observed; option unavailability not established",
+                    "source_claim_listing_raw": by_sku[sku]["source_claim_listing_raw"],
+                    "redirect_observations": [{"requested_url": item.get("requested_url"),
+                                               "final_url": item.get("final_url"),
+                                               "selected_configuration_raw": item.get("selected_configuration_raw")}
+                                              for item in observations]}
         (destination / "pdp" / quote(sku, safe="") / "result.json").write_text(
             json.dumps(terminal, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
         current[sku] = terminal

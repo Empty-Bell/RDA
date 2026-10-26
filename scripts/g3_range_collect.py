@@ -10,8 +10,6 @@ import shutil
 from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
-from exact_sku_retry import apply_route_loss_confirmation
-from pdp_route import print_unconfirmed
 from plp_population import rendered_card_skus, select_listed_products
 from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
@@ -218,21 +216,20 @@ def coverage(products, results):
     if len(population) != len(products) or len(sku_list) != len(set(sku_list)) or not set(sku_list) <= population:
         raise ValueError("Range PDP result identities are duplicate or outside population")
     by_sku = {result["exact_sku"]: result.get("status") for result in results}
-    if any(status not in ("VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED", "FAILED") for status in by_sku.values()):
+    if any(status not in ("VERIFIED_EXACT_IDENTITY", "FAILED") for status in by_sku.values()):
         raise ValueError("Range PDP result status is invalid")
     result_by_sku = {result["exact_sku"]: result for result in results}
     rows = [{"exact_sku": sku, "status": by_sku.get(sku, "NOT_ATTEMPTED"),
              **({"error": result_by_sku[sku].get("error")} if by_sku.get(sku) == "FAILED" else {})}
             for sku in sorted(population)]
     counts = {state: sum(row["status"] == state for row in rows)
-              for state in ("VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED", "FAILED", "NOT_ATTEMPTED")}
+              for state in ("VERIFIED_EXACT_IDENTITY", "FAILED", "NOT_ATTEMPTED")}
     return {"population_count": len(population), "attempted_count": len(results), "counts": counts, "rows": rows}
 
 
-def retry_failed(products, destination, results, collector=collect, *, confirm_route_loss=False):
+def retry_failed(products, destination, results, collector=collect):
     """Retry transient PDP failures without weakening exact-SKU identity."""
     by_sku = {product["exact_sku"]: product for product in products}
-    attempts = {row["exact_sku"]: [row] for row in results}
     for attempt in (2, 3):
         failed = [row for row in results if row["status"] == "FAILED"]
         if not failed:
@@ -242,8 +239,6 @@ def retry_failed(products, destination, results, collector=collect, *, confirm_r
         updates = {row["exact_sku"]: row for row in retried}
         if len(updates) != len(retried) or set(updates) != {row["exact_sku"] for row in failed}:
             raise ValueError("Range retry returned a different exact-SKU population")
-        for sku, row in updates.items():
-            attempts[sku].append(row)
         for index, prior in enumerate(results):
             candidate = updates.get(prior["exact_sku"])
             if not candidate or candidate["status"] != "VERIFIED_EXACT_IDENTITY":
@@ -256,8 +251,6 @@ def retry_failed(products, destination, results, collector=collect, *, confirm_r
             shutil.copytree(retry_root / "pdp" / sku_path, first)
             candidate["collection_attempt"] = attempt
             results[index] = candidate
-    if confirm_route_loss:
-        apply_route_loss_confirmation(by_sku, destination, results, attempts)
     return results
 
 
@@ -272,8 +265,7 @@ def main():
     destination.mkdir(parents=True, exist_ok=True)
     (destination / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (destination / "products.json").write_text(json.dumps(products, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    results = retry_failed(products, destination, collect(products, destination), confirm_route_loss=True)
-    print_unconfirmed(results)
+    results = retry_failed(products, destination, collect(products, destination))
     rows = coverage(products, results)
     status = "PASS" if rows["counts"]["FAILED"] == 0 and rows["counts"]["NOT_ATTEMPTED"] == 0 else "FAILED"
     report = {"contract": CONTRACT, "source_run_id": str(args.source_run_id),

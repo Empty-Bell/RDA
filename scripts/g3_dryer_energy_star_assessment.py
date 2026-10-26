@@ -8,11 +8,9 @@ import os
 from pathlib import Path
 
 try:
-    from .epa_only_rules import (claim_points, epa_registration_state, publication_assessment,
-                                 publication_points, route_loss_fields)
+    from .epa_only_rules import epa_registration_state, publication_assessment, publication_points
 except ImportError:  # direct `python scripts/...py` execution on Actions
-    from epa_only_rules import (claim_points, epa_registration_state, publication_assessment,
-                                publication_points, route_loss_fields)
+    from epa_only_rules import epa_registration_state, publication_assessment, publication_points
 
 
 CONTRACT = "G3_DRYER_ENERGY_STAR_ASSESSMENT_V1"
@@ -43,7 +41,7 @@ def build(candidate_path, output):
         if not isinstance(dryer, list) or not isinstance(combo, list):
             raise ValueError("EPA model candidate arrays are missing")
         registration, market_states = epa_registration_state(dryer, combo)
-        points = claim_points(claim)
+        points = publication_points(claim)
         outcome, row_findings = publication_assessment(registration, points)
         record = {
             "exact_sku": row["exact_sku"],
@@ -57,7 +55,6 @@ def build(candidate_path, output):
             "display_outcome": "PASS" if outcome == "NO_FINDING" else outcome,
             "findings": row_findings,
             "overall_product_compliance": "NOT_EVALUATED",
-            **route_loss_fields(claim),
         }
         records.append(record)
         findings.extend({"exact_sku": row["exact_sku"], **finding} for finding in row_findings)

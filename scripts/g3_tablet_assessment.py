@@ -10,13 +10,17 @@ from pathlib import Path
 import re
 
 from epa_only_rules import us_market_state
-from pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
 
 
 MODEL = re.compile(r"SM-[A-Z0-9]+\Z")
 MODEL_TOKEN = re.compile(r"(?<![A-Z0-9])SM-[A-Z0-9]+(?![A-Z0-9])")
 TRUE = {"y", "yes", "true", "1"}
 FALSE = {"n", "no", "false", "0"}
+OUT_OF_STOCK_PDP_INSPECTION = "PDP_NOT_REACHABLE_FROM_PLP_WHILE_STOCK_FLAG_N"
+OUT_OF_STOCK_ROUTE_OBSERVATION = {
+    "basis": "PLP_STOCK_FLAG_N_REQUESTED_PDP_URL_RESOLVES_TO_ANOTHER_EXACT_MODEL",
+    "finding": "NONE",
+    "note": "The PLP card offers no PDP route while stockFlag is N; the redirect is preserved as evidence only."}
 
 
 def read(path):
