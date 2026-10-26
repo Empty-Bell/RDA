@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 from browser_runtime import desktop_context
@@ -17,6 +18,8 @@ CONTRACT = "G3_TABLET_EXACT_SKU_PDP_V1"
 SCOPE = "tablet source contracts only"
 PLP_URL = "https://www.samsung.com/us/tablets/all-tablets/"
 SHARD_COUNT = 4
+RESOLVED_STATUSES = {"VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED"}
+CONTINUE_MISMATCH_ERROR = "Visible Tablet Continue control does not corroborate the exact SKU"
 BUSINESS_FALLBACK_SKUS = {
     "SM-X238UZAAXAA": "Unlocked",
     "SM-X238UZAAXAU": "T-Mobile",
@@ -123,10 +126,20 @@ def _selected_sku(selection, target):
     controls = selection.get("selected_controls")
     if (not selection.get("continue_visible")
             or str(selection.get("continue_sku") or "").upper() != target.upper()):
-        raise ValueError("Visible Tablet Continue control does not corroborate the exact SKU")
+        raise ValueError(CONTINUE_MISMATCH_ERROR)
     return {"exact_sku": target,
         "identity_basis": "exact-SKU PDP URL and visible Continue control data-modelcode; selected controls retained as raw context; no purchase made",
         "selected_controls_raw": controls if isinstance(controls, list) else []}
+
+
+def _identity_samples(page, count=4):
+    """Sample the settled destination one second apart; a redirect must not be a transient state."""
+    samples = []
+    for index in range(count):
+        samples.append({"url": safe_url(page.url), "selection": _observe_selection(page)})
+        if index < count - 1:
+            page.wait_for_timeout(1000)
+    return samples
 
 
 def _observe_selection(page):
@@ -273,12 +286,15 @@ def collect(products, output):
             except Exception as error:
                 # Preserve the page's actual destination and model control for diagnosis;
                 # do not weaken the exact-SKU gate when Samsung serves another variant.
+                record["error"] = str(error).splitlines()[0][:300]
+                record["failure_class"] = ("SELECTED_SKU_DIFFERS_FROM_REQUESTED"
+                    if record["error"] == CONTINUE_MISMATCH_ERROR else "SOURCE_COLLECTION_FAILED")
                 try:
                     record.update(final_url=safe_url(page.url),
-                        selection_observed_raw=_observe_selection(page))
+                        selection_observed_raw=_observe_selection(page),
+                        identity_observations=_identity_samples(page))
                 except Exception:
                     pass
-                record["error"] = str(error).splitlines()[0][:300]
             finally:
                 page.close()
                 (folder / "result.json").write_text(json.dumps(record, ensure_ascii=False,
@@ -289,6 +305,68 @@ def collect(products, output):
     return results
 
 
+def _redirect_destination(row, target):
+    """Return (final_url, destination_sku) when one attempt settled on another exact-SKU PDP."""
+    samples = row.get("identity_observations") or []
+    if (row.get("failure_class") != "SELECTED_SKU_DIFFERS_FROM_REQUESTED"
+            or row.get("http_status") != 200 or row.get("fallback_source")
+            or len(samples) < 4 or any(sample != samples[0] for sample in samples)
+            or samples[0].get("url") != row.get("final_url")):
+        return None
+    selection = samples[0].get("selection") or {}
+    seen = str(selection.get("continue_sku") or "").lower()
+    final = urlsplit(row["final_url"])
+    if (not selection.get("continue_visible") or not seen or seen == target.lower()
+            or final.scheme != "https" or final.hostname != "www.samsung.com" or "/us/" not in final.path
+            or not final.path.lower().rstrip("/").endswith("-sku-" + seen.replace("/", "-"))):
+        return None
+    return row["final_url"], seen
+
+
+def retry_failed(products, results, output, *, retries=2):
+    """Retry failed exact SKUs in fresh browsers; confirm only a repeated, settled wrong-model PDP."""
+    destination = Path(output)
+    by_sku = {row["exact_sku"]: row for row in products}
+    current = {row["exact_sku"]: row for row in results}
+    attempts = {row["exact_sku"]: [row] for row in results}
+    for attempt in range(1, retries + 1):
+        failed = [by_sku[sku] for sku, row in current.items() if row["status"] == "FAILED"]
+        if not failed:
+            break
+        retry_root = destination / f"retry-{attempt}"
+        for row in collect(failed, retry_root):
+            sku = row["exact_sku"]
+            attempts[sku].append(row)
+            if row["status"] != "VERIFIED_EXACT_IDENTITY":
+                continue
+            original = destination / "pdp" / quote(sku, safe="")
+            recovered = retry_root / "pdp" / quote(sku, safe="")
+            # Preserve the first failed attempt before promoting a recovered capture.
+            shutil.copytree(original, destination / "initial-attempt" / "pdp" / quote(sku, safe=""))
+            for captured_file in recovered.iterdir():
+                if captured_file.is_file():
+                    shutil.copy2(captured_file, original / captured_file.name)
+            current[sku] = row
+    for sku, row in current.items():
+        observations = attempts[sku]
+        if row["status"] != "FAILED" or len(observations) != retries + 1:
+            continue
+        destinations = [_redirect_destination(item, sku) for item in observations]
+        if None in destinations or len(set(destinations)) != 1:
+            continue
+        terminal = {**row, "status": "PDP_REDIRECT_CONFIRMED", "root_cause": "UNDETERMINED",
+            "observation_scope": "Repeated routing observed; option unavailability not established",
+            "redirect_destination_sku": destinations[0][1],
+            "source_claim_listing_raw": by_sku[sku]["source_claim_listing_raw"],
+            "redirect_observations": [{"requested_url": item.get("requested_url"),
+                "final_url": item.get("final_url"),
+                "selection_observed_raw": item.get("selection_observed_raw")} for item in observations]}
+        (destination / "pdp" / quote(sku, safe="") / "result.json").write_text(
+            json.dumps(terminal, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+        current[sku] = terminal
+    return [current[row["exact_sku"]] for row in results]
+
+
 def build_shard(recon_root, source_run_id, shard_index, shard_count, output):
     if shard_count != SHARD_COUNT or not 0 <= shard_index < shard_count:
         raise ValueError(f"Tablet collection requires one of {SHARD_COUNT} deterministic shards")
@@ -297,7 +375,7 @@ def build_shard(recon_root, source_run_id, shard_index, shard_count, output):
     out = Path(output); out.mkdir(parents=True, exist_ok=True)
     (out / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (out / "products.json").write_text(json.dumps(selected, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    results = collect(selected, out)
+    results = retry_failed(selected, collect(selected, out), out)
     statuses = {row["exact_sku"]: row["status"] for row in results}
     if len(statuses) != len(selected) or set(statuses) != {row["exact_sku"] for row in selected}:
         raise ValueError("Tablet shard results do not exactly cover assigned SKUs")
@@ -307,14 +385,14 @@ def build_shard(recon_root, source_run_id, shard_index, shard_count, output):
         "all_population_skus": sorted(row["exact_sku"] for row in products),
         "assigned_skus": sorted(statuses),
         "coverage_counts": {state: sum(value == state for value in statuses.values())
-            for state in ("VERIFIED_EXACT_IDENTITY", "FAILED")},
-        "rows": results, "status": "PASS" if all(value == "VERIFIED_EXACT_IDENTITY" for value in statuses.values()) else "FAILED"}
+            for state in ("VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED", "FAILED")},
+        "rows": results, "status": "PASS" if all(value in RESOLVED_STATUSES for value in statuses.values()) else "FAILED"}
     (out / "shard-summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({key: summary[key] for key in ("status", "source_run_id", "shard_index", "shard_count", "population_count", "coverage_counts")}, sort_keys=True), flush=True)
     failures = [{"exact_sku": row["exact_sku"], "error": row.get("error", "unspecified failure"),
         "final_url": row.get("final_url"), "http_status": row.get("http_status"),
         "selection_observed_raw": row.get("selection_observed_raw")}
-        for row in results if row["status"] != "VERIFIED_EXACT_IDENTITY"]
+        for row in results if row["status"] not in RESOLVED_STATUSES]
     if failures:
         print(json.dumps({"tablet_collection_failures": failures}, ensure_ascii=False, sort_keys=True), flush=True)
     return 0 if summary["status"] == "PASS" else 1

@@ -156,6 +156,18 @@ def load_collection(root, expected_run_id):
         for result_path in sorted((shard / "pdp").glob("*/result.json")):
             result = _read_json(result_path)
             sku = result.get("exact_sku")
+            if result.get("status") == "PDP_REDIRECT_CONFIRMED":
+                observations = result.get("redirect_observations")
+                if (sku not in expected or sku in records or not isinstance(observations, list)
+                        or len(observations) != 3 or not result.get("requested_url") or not result.get("final_url")
+                        or any(item.get("final_url") != result.get("final_url")
+                               or item.get("requested_url") != result.get("requested_url") for item in observations)):
+                    raise ValueError("Tablet redirect finding lacks three consistent observations")
+                records[sku] = result
+                claims[sku] = {"exact_sku": sku, "plp_energy_star_flag_raw":
+                    (result.get("source_claim_listing_raw") or {}).get("energyStarFlg")}
+                facts[sku] = {}
+                continue
             selection = result.get("selection_identity")
             visible = result.get("selection_observed_raw")
             final_url = urlsplit(str(result.get("final_url") or ""))
@@ -235,6 +247,10 @@ def build_candidates(skus, products, records, claims, facts, epa_rows, source_ru
         rows_by_sku.append({"exact_sku": sku,
             "source_listing_raw": products[sku].get("source_claim_listing_raw"),
             "selected_configuration_raw": records[sku].get("selected_configuration_raw"),
+            "pdp_identity_failure": ({key: records[sku].get(key) for key in
+                    ("requested_url", "final_url", "redirect_observations")}
+                | {"plp_stock_flag_raw": (products[sku].get("source_claim_listing_raw") or {}).get("stockFlag")}
+                if records[sku].get("status") == "PDP_REDIRECT_CONFIRMED" else None),
             "pdp_product_facts_raw": facts[sku],
             "energy_star_claim_sources_raw": claims[sku],
             "epa_computer_model_pattern_candidates": candidates,

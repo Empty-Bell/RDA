@@ -102,6 +102,10 @@ def pf_page(data):
             'page_groups': len(groups), 'records': records}
 
 
+class SpecsSupportIdentityError(ValueError):
+    """The PDP bridge data has no single Specs/Support record for the requested exact SKU."""
+
+
 def pdp_facts(data, target, family='refrigerator'):
     names = {
         'refrigerator': ('Energy Consumption', 'Total Capacity (cu. ft.)'),
@@ -126,7 +130,7 @@ def pdp_facts(data, target, family='refrigerator'):
     support = [x for x in data.get('Support', []) if x.get('modelCode') == target]
     if len(specs) != 1 or (not specs_only and len(support) != 1):
         observed = sorted({str(x.get('modelCode')) for x in data['Specs'] + data.get('Support', [])})
-        raise ValueError(f'Target exact SKU missing or duplicated in Specs/Support '
+        raise SpecsSupportIdentityError(f'Target exact SKU missing or duplicated in Specs/Support '
                          f'(target={target}, specs={len(specs)}, support={len(support)}, observed={observed[:6]})')
     if not isinstance(specs[0].get('fullSpecs'), list) or (not specs_only and not isinstance(support[0].get('supports'), list)):
         raise ValueError('Missing specification/document collection')

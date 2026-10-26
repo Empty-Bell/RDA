@@ -5,13 +5,14 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, parse_qs, urlencode
 
 from runner_probe import safe_url, sanitize
-from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason
+from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason, SpecsSupportIdentityError
 from browser_runtime import desktop_context
 from claim_recon import project_claim_records, project_nested_claim_fields, project_inline_product_claims, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
 from energyguide_fields import label_candidates, annual_layout_candidates
@@ -53,6 +54,45 @@ FAMILIES = {
 }
 FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
           'ecomFlag', 'stockFlag', 'energyStarFlg', 'globalFeaturedSortOrder', 'chips')
+
+
+MONITOR_SAMPLE_LIMIT = 6
+
+
+def plp_exposure(observation, product):
+    """Whether a PF product was rendered on the PLP, from the saved population observation."""
+    try:
+        code, group = product['modelCode'], product['group_id']
+        tiles = observation['rendered_tiles']
+        return {'rendered_card': any(tile.get('sku') == code for tile in tiles),
+                'group_has_rendered_card': group in observation['rendered_tile_groups'],
+                'rendered_modelcode_elements': sum(item.get('sku') == code for item in observation['rendered_candidates'])}
+    except (KeyError, TypeError, AttributeError):
+        return 'UNKNOWN'
+
+
+def first_identifiable_sample(candidates, run_pdp, describe, preserve, limit=MONITOR_SAMPLE_LIMIT):
+    """Run the PDP contract on the first candidate whose bridge data names its exact SKU.
+
+    Only a Specs/Support identity-shape failure advances to the next candidate; every
+    skipped candidate keeps its raw evidence and is reported, never silently dropped.
+    Any other failure, or exhausting the bound, remains a failure.
+    """
+    skipped = []
+    for index, product in enumerate(candidates[:limit]):
+        try:
+            result = run_pdp(product if index else None)
+        except SpecsSupportIdentityError as error:
+            record = {'sku': product['modelCode'], 'group_id': product.get('group_id'),
+                      'model_name': product.get('modelName'), 'pdp_url': product.get('pdpURL'),
+                      'ecom_flag': product.get('ecomFlag'), 'stock_flag': product.get('stockFlag'),
+                      'error': str(error), 'plp_exposure': describe(product)}
+            record['preserved'] = preserve(index, product)
+            skipped.append(record)
+            print('monitor_sample_skipped: ' + json.dumps(record, ensure_ascii=False, sort_keys=True), flush=True)
+            continue
+        return {**result, 'skipped_samples': skipped}
+    raise ValueError(f'No Monitor PLP sample exposed one Specs and one Support record for its exact SKU; skipped={skipped}')
 
 
 def save(name, data):
@@ -477,7 +517,35 @@ def main():
             return {'target_sku': target, 'url': safe_url(page.url), 'json_endpoints': len(pdp_json),
                     'energyguide_link_count': len(documents), 'energyguide_pdf_valid': True}
 
-        check('pdp_identity_and_documents', pdp)
+        def monitor_pdp():
+            candidates, seen = [], set()
+            for data, _, _ in captured_pf:
+                for item in data['searchResults']:
+                    if item['group_id'] not in seen:
+                        seen.add(item['group_id'])
+                        candidates.append(item)
+
+            def describe(product):
+                try:
+                    observation = json.loads((OUT / 'population-observation.json').read_text(encoding='utf-8'))
+                except (OSError, ValueError):
+                    return 'UNKNOWN'
+                return plp_exposure(observation, product)
+
+            def preserve(index, product):
+                folder = OUT / 'skipped-samples' / f"{index}-{product['modelCode']}"
+                folder.mkdir(parents=True, exist_ok=True)
+                names = ['pdp-observation.json', 'fixtures/public-claim-snapshot.json'] + [x['fixture'] for x in pdp_json]
+                for name in names:
+                    if (OUT / name).exists():
+                        shutil.copy2(OUT / name, folder / Path(name).name)
+                pdp_json.clear()
+                return str(folder.relative_to(OUT))
+
+            return first_identifiable_sample(candidates, lambda product: pdp(product) if product else pdp(),
+                                             describe, preserve)
+
+        check('pdp_identity_and_documents', monitor_pdp if family == 'monitor' else pdp)
 
         if config.get('recon_domain') != 'EPA_ONLY':
             def label_fields():
