@@ -37,6 +37,11 @@ URLs. Its PDP logo, Specs certification and EPA registration are not evaluated a
 the destination model's evidence is never borrowed. Unsettled, inconsistent, non-200,
 or differently-routed attempts remain collection failures.
 
+When the PLP `stockFlag` of that SKU is `N` (its card offers `Notify me`, not a PDP
+route), the redirect is evidence only: no `PDP_LINK_WRONG_MODEL`, PDP logo and Specs
+certification are NOT_APPLICABLE, and the PLP logo is assessed against current EPA
+registration by the PLP model name (DECISIONS.md, 2026-10-26).
+
 Reuse the hosted-verified Computer selected-SKU/visible Continue control and observed
 ecom-data group provenance contract; do not click purchase controls. Request Specs
 through the observed public pattern and select exactly one matching modelCode in

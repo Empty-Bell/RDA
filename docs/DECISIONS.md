@@ -294,6 +294,24 @@ group id, PDP URL and rendered-card observation in the Monitor population record
 and the source-recon check lists them. No issue code is added and no bundle is
 graded; Monitor-only, not extended to other families.
 
+Out-of-stock PDP redirects (user-approved 2026-10-26, after live PLP inspection).
+On the live Tablet PLP the `SM-X828UZAAATT` card shows `Notify me` (a stock-alert
+popup) instead of `Buy`, and its card and image links (`/us/tablets/galaxy-tab-s10/`)
+lead to the family hub, not to any PDP. The `pf_search` `pdpURL` that redirects to
+another model is therefore not a route a consumer can take from the PLP. When a
+redirect is confirmed (initial capture plus both fresh retries) and the PLP
+`stockFlag` is exactly `N`, it is preserved as evidence (`pdp_identity_failure`,
+`pdp_route_observation`) with no finding. The PLP-level control is assessed (PLP
+logo against current EPA registration by the PLP model name) and the PDP logo and
+Specs certification points are NOT_APPLICABLE (inspection
+`PDP_NOT_REACHABLE_FROM_PLP_WHILE_STOCK_FLAG_N`). A confirmed redirect with
+`stockFlag` `Y` or missing remains MEDIUM `PDP_LINK_WRONG_MODEL`. This applies to
+Tablet and Computer and replaces the MEDIUM outcome for `stockFlag` N in the
+2026-10-01 Computer rule. The earlier Computer case `NP740VJG-KG2US` carried
+`stockFlag` `Y` and reached another model's buy page, which stock does not explain,
+so such cases keep the finding. The collector does not yet capture the card's CTA
+text; `stockFlag` is the operative condition. No issue code is added.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |
