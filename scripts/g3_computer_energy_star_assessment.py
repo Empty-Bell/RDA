@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 
 from epa_only_rules import epa_registration_state, publication_assessment, publication_points
-from pdp_route import route_loss_outcome, route_loss_points
+from pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
 
 SOURCE_CONTRACT = "G3_COMPUTER_EPA_SOURCE_CANDIDATES_V1"
 CONTRACT = "G3_COMPUTER_ENERGY_STAR_ASSESSMENT_V1"
@@ -47,19 +47,23 @@ def assess_record(row):
         plp_raw = claim.get("plp_energy_star_flag_raw")
         plp_state = "PRESENT" if plp_raw == "Y" else "ABSENT" if plp_raw == "N" else "UNKNOWN"
         if redirect.get("plp_stock_flag_raw") == "N":
-            # stockFlag N: the PLP card offers no PDP route. Where the redirect landed decides the
-            # outcome and nothing else about this SKU is repeated (DECISIONS.md, 2026-10-26).
-            outcome, findings, observation = route_loss_outcome(redirect)
+            # stockFlag N: the PLP card offers no route to the PDP, so the redirect is evidence only
+            # and the PLP-level control is assessed against the current EPA registration.
+            not_reachable = {"state": "NOT_APPLICABLE", "inspection": OUT_OF_STOCK_PDP_INSPECTION}
+            points = {"plp_logo": {"state": plp_state, "raw_value": plp_raw},
+                      "pdp_logo": dict(not_reachable), "spec_certification": dict(not_reachable)}
+            outcome, findings = publication_assessment(
+                registration, {"plp_logo": points["plp_logo"]})
             return {
                 "exact_sku": sku,
                 "selected_configuration_raw": row.get("selected_configuration_raw"),
                 "pdp_product_facts_raw": {}, "pdp_identity_failure": redirect,
-                "pdp_route_observation": observation,
-                "epa_current_registration": {"state": "NOT_EVALUATED",
+                "pdp_route_observation": OUT_OF_STOCK_ROUTE_OBSERVATION,
+                "epa_current_registration": {"state": registration,
                     "computer_model_pattern_candidates": candidates,
                     "candidate_market_states": market_states},
-                "energy_star_publication": {"outcome": "NOT_EVALUATED", "points": route_loss_points(claim)},
-                "display_outcome": outcome,
+                "energy_star_publication": {"outcome": outcome, "points": points},
+                "display_outcome": "PASS" if outcome == "NO_FINDING" else outcome,
                 "findings": findings,
                 "overall_product_compliance": "NOT_EVALUATED",
                 "legal_applicability": "NOT_EVALUATED",

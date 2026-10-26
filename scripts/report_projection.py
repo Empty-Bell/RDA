@@ -34,20 +34,8 @@ ACTION = {
     "ENERGYGUIDE_DOCUMENT_MISSING_CANDIDATE": ("Add or reconnect the EnergyGuide document for this SKU.", "해당 SKU의 EnergyGuide 문서를 연결하거나 링크를 수정하세요."),
     "ENERGYGUIDE_FILE_NOT_READABLE_CANDIDATE": ("Replace the unreadable EnergyGuide PDF or repair its link.", "열 수 없는 EnergyGuide PDF를 교체하거나 링크를 수정하세요."),
     "MODEL_IDENTITY_MISMATCH": ("Check every printed label model against the PDP SKU and correct the label link if needed.", "라벨에 적힌 모든 모델과 PDP SKU를 대조하고 잘못 연결된 라벨을 수정하세요."),
-    "PDP_REDIRECT_TO_UNLISTED_PDP": ("Check why this option's PDP URL redirects to a PDP that is not exposed on the PLP, and correct the link or the listing.", "이 옵션의 PDP 주소가 PLP에 노출되지 않은 PDP로 이동하는 원인을 확인하고 링크나 노출을 바로잡으세요."),
     "PDP_LINK_WRONG_MODEL": ("Check this option's stock status and restore navigation to its exact-SKU PDP.", "이 옵션의 재고 상태를 확인하고 해당 SKU의 PDP로 이동하도록 수정하세요."),
 }
-
-
-ROUTE_NOTES_KO = (
-    (r"The requested PDP redirected to (\S+), which is audited on its own route; this SKU's PDP controls are not repeated\.",
-     r"요청한 PDP가 \1(으)로 이동했으며, 해당 모델은 자기 경로로 점검되므로 이 SKU의 PDP 통제는 반복하지 않았습니다."),
-    (r"The requested PDP redirected to a page that is not a product page; no PDP is left to audit\.",
-     "요청한 PDP가 상품 페이지가 아닌 곳으로 이동해 점검할 PDP가 없습니다."),
-    (r"The requested PDP redirected to a PDP that is not exposed on the PLP\.",
-     "요청한 PDP가 PLP에 노출되지 않은 PDP로 이동했습니다."),
-    (r"\[Note\]", "[참고]"), (r"requested PDP=", "요청 PDP="), (r"redirected to=", "이동 대상="),
-)
 
 
 def korean_description(description):
@@ -71,8 +59,6 @@ def korean_description(description):
     )
     for original, translated in replacements:
         description = description.replace(original, translated)
-    for pattern, translated in ROUTE_NOTES_KO:
-        description = re.sub(pattern, translated, description)
     return description
 
 
@@ -159,7 +145,7 @@ def describe(issue_codes, values, model_assessment=None, redirect=None):
         if model_assessment:
             line += f"; model comparison={model_assessment}"
         lines.append(line)
-    if {"PDP_LINK_WRONG_MODEL", "PDP_REDIRECT_TO_UNLISTED_PDP"}.intersection(issue_codes) and redirect:
+    if "PDP_LINK_WRONG_MODEL" in issue_codes and redirect:
         lines.append(f"PLP SKU={shown(values['SKU'])}; PLP stock flag={shown(redirect.get('plp_stock_flag_raw'))}; requested PDP={shown(redirect.get('requested_url'))}; redirected to={shown(redirect.get('final_url'))}")
     if "ANNUAL_ENERGY_MISMATCH" in issue_codes:
         lines.append("Annual kWh: PDP={}; EnergyGuide={}; EPA={}".format(
@@ -280,8 +266,4 @@ def projection(record, detail, position):
     }
     values["Description"] = describe(issue_codes, values, model_assessment,
                                       assessment.get("pdp_identity_failure"))
-    observation, redirect = assessment.get("pdp_route_observation"), assessment.get("pdp_identity_failure") or {}
-    if isinstance(observation, dict) and not issue_codes:
-        values["Description"] += (f"\n[Note] {observation.get('note')}\n  requested PDP={redirect.get('requested_url')}; "
-                                  f"redirected to={redirect.get('final_url')}")
     return values

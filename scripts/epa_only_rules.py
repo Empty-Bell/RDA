@@ -3,9 +3,9 @@
 import re
 
 try:
-    from .pdp_route import route_loss_outcome, route_loss_points
+    from .pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
 except ImportError:  # direct `python scripts/...py` execution on Actions
-    from pdp_route import route_loss_outcome, route_loss_points
+    from pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
 
 
 TRUE_VALUES = {"yes", "y", "true", "1"}
@@ -122,22 +122,22 @@ def publication_points(claim):
     }
 
 
-def route_loss_record(sku, claim):
-    """Assessment record for a confirmed out-of-stock PDP route loss, else None.
-
-    Where the redirect landed decides the outcome (see pdp_route): no PDP control of this SKU is
-    repeated, the PLP flag is kept as observed, and the redirect is recorded with the result.
-    """
+def claim_points(claim):
+    """publication_points(claim); a confirmed out-of-stock PDP route loss assesses the PLP point only."""
     loss = claim.get("pdp_route_loss_raw") if isinstance(claim, dict) else None
     if not isinstance(loss, dict):
-        return None
-    outcome, findings, observation = route_loss_outcome(loss)
-    return {"exact_sku": sku, "pdp_product_facts_raw": {},
-            "epa_current_registration": {"state": "NOT_EVALUATED", "candidate_market_states": []},
-            "energy_star_publication": {"outcome": "NOT_EVALUATED", "points": route_loss_points(claim)},
-            "display_outcome": outcome, "findings": findings,
-            "overall_product_compliance": "NOT_EVALUATED", "legal_applicability": "NOT_EVALUATED",
-            "pdp_identity_failure": loss, "pdp_route_observation": observation}
+        return publication_points(claim)
+    raw = claim.get("plp_energy_star_flag_raw")
+    unreachable = {"state": "NOT_APPLICABLE", "inspection": OUT_OF_STOCK_PDP_INSPECTION}
+    return {"plp_logo": {"state": flag_state(raw), "raw_value": raw},
+            "pdp_logo": dict(unreachable), "spec_certification": dict(unreachable)}
+
+
+def route_loss_fields(claim):
+    """Evidence fields for an assessment record whose PDP route loss was confirmed."""
+    loss = claim.get("pdp_route_loss_raw") if isinstance(claim, dict) else None
+    return ({"pdp_identity_failure": loss, "pdp_route_observation": OUT_OF_STOCK_ROUTE_OBSERVATION}
+            if isinstance(loss, dict) else {})
 
 
 def publication_assessment(epa_registration, points):

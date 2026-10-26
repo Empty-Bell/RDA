@@ -12,7 +12,6 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
-from pdp_route import classify_destination
 from source_contract import epa_contract, pdp_facts, project_computer_specs
 
 DATASET = "rxdj-2c88"
@@ -251,8 +250,7 @@ def build_candidates(skus, products, records, claims, facts, epa_rows, source_ru
             "selected_configuration_raw": records[sku].get("selected_configuration_raw"),
             "pdp_identity_failure": ({key: records[sku].get(key) for key in
                     ("requested_url", "final_url", "redirect_observations")}
-                | {"plp_stock_flag_raw": (products[sku].get("source_claim_listing_raw") or {}).get("stockFlag"),
-                   "destination": classify_destination(records[sku].get("final_url"), skus)}
+                | {"plp_stock_flag_raw": (products[sku].get("source_claim_listing_raw") or {}).get("stockFlag")}
                 if records[sku].get("status") == "PDP_REDIRECT_CONFIRMED" else None),
             "pdp_product_facts_raw": facts[sku],
             "energy_star_claim_sources_raw": claims[sku],

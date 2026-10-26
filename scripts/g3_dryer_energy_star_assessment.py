@@ -8,11 +8,11 @@ import os
 from pathlib import Path
 
 try:
-    from .epa_only_rules import (epa_registration_state, publication_assessment,
-                                 publication_points, route_loss_record)
+    from .epa_only_rules import (claim_points, epa_registration_state, publication_assessment,
+                                 publication_points, route_loss_fields)
 except ImportError:  # direct `python scripts/...py` execution on Actions
-    from epa_only_rules import (epa_registration_state, publication_assessment,
-                                publication_points, route_loss_record)
+    from epa_only_rules import (claim_points, epa_registration_state, publication_assessment,
+                                publication_points, route_loss_fields)
 
 
 CONTRACT = "G3_DRYER_ENERGY_STAR_ASSESSMENT_V1"
@@ -38,17 +38,12 @@ def build(candidate_path, output):
         claim = row.get("energy_star_claim_sources_raw")
         if not isinstance(claim, dict) or claim.get("exact_sku") != row["exact_sku"]:
             raise ValueError("Dryer publication evidence lacks exact-SKU provenance")
-        lost = route_loss_record(row["exact_sku"], claim)
-        if lost is not None:
-            records.append(lost)
-            findings.extend({"exact_sku": row["exact_sku"], **finding} for finding in lost["findings"])
-            continue
         dryer = row.get("dryer_epa_model_pattern_candidates")
         combo = row.get("combo_epa_model_pattern_candidates")
         if not isinstance(dryer, list) or not isinstance(combo, list):
             raise ValueError("EPA model candidate arrays are missing")
         registration, market_states = epa_registration_state(dryer, combo)
-        points = publication_points(claim)
+        points = claim_points(claim)
         outcome, row_findings = publication_assessment(registration, points)
         record = {
             "exact_sku": row["exact_sku"],
@@ -62,6 +57,7 @@ def build(candidate_path, output):
             "display_outcome": "PASS" if outcome == "NO_FINDING" else outcome,
             "findings": row_findings,
             "overall_product_compliance": "NOT_EVALUATED",
+            **route_loss_fields(claim),
         }
         records.append(record)
         findings.extend({"exact_sku": row["exact_sku"], **finding} for finding in row_findings)
