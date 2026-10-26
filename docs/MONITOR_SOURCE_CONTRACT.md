@@ -14,6 +14,12 @@ Static search HTML contains unmounted placeholder tiles and no-results text;
 neither establishes live population. Accept browser-observed pf_search terminal pages
 only after unique API groups reconcile with rendered product card groups.
 
+Bundle entries: a PF entry whose code is `F-<digits>` and whose PDP path ends
+`-bundle-sku-<same code>` is a two-monitor bundle without a single-model Specs record.
+It is excluded from the audited population (DECISIONS.md, 2026-10-26) and recorded in
+`population.excluded_bundle_entries` with its listing fields and rendered-card
+observation. Component monitors are audited through their own cards.
+
 EPA qbg3-d468 is ENERGY STAR Certified Displays. Preserve display_type (Product Type),
 screen_size_inches, on_mode_power_watts, sleep_mode_power_watts, off_mode_power_watts,
 monitor_total_energy and date_certified. Metadata names monitor_total_energy as

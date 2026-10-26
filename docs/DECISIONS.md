@@ -278,6 +278,20 @@ consumer-visible product (kept and reported) or a non-product bundle/internal
 entry (excluded from population) is decided only after the exposure evidence is
 read; until then Monitor collection continues to fail closed on it.
 
+Monitor bundle entries (user-approved 2026-10-26, from hosted source-recon run
+40271248146). The PLP now renders two-monitor bundle cards (e.g. `F-1212121212461`,
+`F-1212121212456`, each PDP path ending `-bundle-sku-f-<digits>`) whose bridge data
+has one Support record and no Specs record. Such an entry has no single model to
+which EPA registration or Specs publication rules apply, so it is excluded from the
+Monitor audit population; its component monitors are audited through their own
+cards. The exclusion needs both observations: code `F-<digits>` and a PDP path
+ending `-bundle-sku-<same code>`. Prefix-only or URL-word-only matches are not
+excluded and still fail closed. Each excluded entry keeps its PF listing fields,
+group id, PDP URL and rendered-card observation in the Monitor population record
+(`excluded_bundle_entries`, basis `MONITOR_BUNDLE_ENTRY_HAS_NO_SINGLE_MODEL_SPECS`)
+and the source-recon check lists them. No issue code is added and no bundle is
+graded; Monitor-only, not extended to other families.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |

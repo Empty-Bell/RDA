@@ -7,9 +7,11 @@ Manual dispatch after moving the weekly schedule to Sunday 03:13 KST
 `SM-X828UZAAATT` repeatedly routes to `SM-X820NZAEXAR`, and the first Monitor PF
 entry `F-1212121212461` has one Support but no Specs record. Approved handling
 is in DECISIONS.md (2026-10-26): Tablet reuses `PDP_LINK_WRONG_MODEL` at MEDIUM;
-Monitor recon skips only identity-shape failures, preserves and logs them. The
-Monitor population decision for `F-` entries waits for the logged PLP exposure.
-Pending hosted verification; do not declare either gate accepted yet.
+Monitor recon skips only identity-shape failures, preserves and logs them. Hosted
+run 40271248146 showed the `F-` entries are rendered two-monitor bundle cards
+(Support record only), so the user approved excluding them from the Monitor
+population with their evidence recorded. Pending hosted verification; do not
+declare either gate accepted yet.
 
 ## Scheduled automation trial — 2026-10-03
 

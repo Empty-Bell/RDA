@@ -9,7 +9,7 @@ import re
 from urllib.parse import quote, urljoin, urlsplit
 
 from regaudit.population import canonicalize_products
-from plp_population import rendered_card_skus, select_listed_products
+from plp_population import rendered_card_skus, select_listed_products, split_monitor_bundles
 from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
@@ -88,14 +88,17 @@ def load_population(recon_root, source_run_id):
                     "variant_attributes": {"state": "NOT_OBSERVED", "value": None, "error": None},
                 }]})
     canonical = canonicalize_products(products)
-    canonical = select_listed_products(canonical, rendered_card_skus(root, population), population["unique_exact_skus"])
     for product in canonical:
         product["source_claim_listing_raw"] = listing_by_sku[product["exact_sku"]]
+    canonical, cards, expected, bundles = split_monitor_bundles(
+        canonical, rendered_card_skus(root, population), population["unique_exact_skus"])
+    canonical = select_listed_products(canonical, cards, expected)
     if not canonical:
         raise ValueError("Monitor rendered PLP population is empty")
     return canonical, {"source_run_id": str(source_run_id), "total_groups": population["total_groups"],
                        "unique_exact_skus": len(canonical), "pf_variant_count": population["unique_exact_skus"],
                        "population_basis": "RENDERED_PLP_CARDS_AND_GROUP_OPTIONS", "pf_page_count": len(pages),
+                       "excluded_bundle_entries": bundles,
                        "pf_page_hashes": [pages_by_offset[offset][1] for offset in offsets]}
 
 

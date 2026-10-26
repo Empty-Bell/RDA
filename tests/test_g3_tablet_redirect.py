@@ -60,10 +60,19 @@ class RetryTests(unittest.TestCase):
             "destination is the requested sku": [failed(), failed(REQUESTED, SKU.lower())],
             "continue sku not the url sku": [failed(), failed(sku="sm-x999nzaaxar")],
         }
+        reasons = {"different destination": "DESTINATIONS_DIFFER_ACROSS_ATTEMPTS",
+                   "http error": "HTTP_STATUS_OR_FALLBACK:503",
+                   "unsettled samples": "SAMPLES_MISSING:3",
+                   "other failure class": "FAILURE_CLASS:SOURCE_COLLECTION_FAILED",
+                   "destination is the requested sku": "CONTINUE_SKU_IS_REQUESTED_SKU",
+                   "continue sku not the url sku": "DESTINATION_URL_SKU_DIFFERS_FROM_CONTINUE_SKU"}
         for name, later in cases.items():
             with self.subTest(name):
                 row, _ = self.run_retry(failed(), later)
                 self.assertEqual(row["status"], "FAILED")
+                found = {item["not_confirmed_because"] for item in row["attempt_diagnostics"]}
+                self.assertIn(reasons[name], found)
+                self.assertEqual(len(row["attempt_diagnostics"]), 3)
 
     def test_recovery_on_retry_keeps_initial_attempt_and_is_not_a_finding(self):
         with tempfile.TemporaryDirectory() as temp:
