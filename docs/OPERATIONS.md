@@ -69,7 +69,11 @@ schema; a current registration does not require an identical printed PDP SKU.
 
 ## Schedule
 
-The workflow runs weekly Monday 09:13 KST (Monday 00:13 UTC) using the same
+GitHub starts scheduled runs on a best-effort basis; Oct 5, 12 and 19 started 4-5.5 hours after
+the Monday 00:13 UTC cron. The cron was moved to Sunday 03:13 KST on 2026-10-26
+so a delayed start still lands before Monday business hours.
+
+The workflow runs weekly Sunday 03:13 KST (Saturday 18:13 UTC) using the same
 source, dashboard and public Pages gates as manual dispatch. It was activated
 after three consecutive distinct complete successful runs following the
 failed Range source run: 36461106905, 36465858969 and 36470031260. A failed
