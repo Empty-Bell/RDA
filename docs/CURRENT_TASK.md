@@ -1,5 +1,16 @@
 # Current task continuation — 2026-09-24
 
+## Hosted run 40250950861 failures — 2026-10-26
+
+Manual dispatch after moving the weekly schedule to Sunday 03:13 KST
+(`13 18 * * 6`) failed on two source facts, not on the schedule: Tablet
+`SM-X828UZAAATT` repeatedly routes to `SM-X820NZAEXAR`, and the first Monitor PF
+entry `F-1212121212461` has one Support but no Specs record. Approved handling
+is in DECISIONS.md (2026-10-26): Tablet reuses `PDP_LINK_WRONG_MODEL` at MEDIUM;
+Monitor recon skips only identity-shape failures, preserves and logs them. The
+Monitor population decision for `F-` entries waits for the logged PLP exposure.
+Pending hosted verification; do not declare either gate accepted yet.
+
 ## Scheduled automation trial — 2026-10-03
 
 Verified October 4 at 00:54 KST: scheduled run

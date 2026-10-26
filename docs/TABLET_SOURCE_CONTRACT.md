@@ -30,6 +30,13 @@ listed model from becoming an extra audited product. A listed card SKU remains i
 scope even if its PDP redirects; exact PDP identity must still pass before its
 assessment can be evaluated.
 
+A rendered-card SKU whose requested PDP resolves to the same different exact model
+in the initial capture and both fresh retries (see DECISIONS.md, 2026-10-26) is a
+`PDP_REDIRECT_CONFIRMED` result and a MEDIUM `PDP_LINK_WRONG_MODEL` finding with both
+URLs. Its PDP logo, Specs certification and EPA registration are not evaluated and
+the destination model's evidence is never borrowed. Unsettled, inconsistent, non-200,
+or differently-routed attempts remain collection failures.
+
 Reuse the hosted-verified Computer selected-SKU/visible Continue control and observed
 ecom-data group provenance contract; do not click purchase controls. Request Specs
 through the observed public pattern and select exactly one matching modelCode in

@@ -38,8 +38,8 @@ def build(docs, assessment_path, source_path, collection_root):
             or len(added) != len(removed) or len(a) != assessment["sku_count"]
             or sum(assessment["counts"].values()) != len(a)):
         raise ValueError("Tablet source or Pages population differs")
-    if any(c[sku].get("status") != "VERIFIED_EXACT_IDENTITY" for sku in a):
-        raise ValueError("Tablet PLP SKU lacks exact PDP identity")
+    if any(c[sku].get("status") not in {"VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED"} for sku in a):
+        raise ValueError("Tablet PLP SKU lacks exact PDP identity or a confirmed redirect finding")
     for sku in removed:
         snapshot["records"].remove(old_by_sku[sku])
     for sku in sorted(added):
@@ -75,7 +75,8 @@ def build(docs, assessment_path, source_path, collection_root):
                       run_url=f"https://github.com/Empty-Bell/RDA/actions/runs/{run_id}",
                       epa_registration=current["epa_current_registration"],
                       points={key: value["state"] for key, value in points.items()},
-                      pdp_url=collection.get("final_url"),
+                      pdp_url=(collection.get("requested_url") if collection.get("status") == "PDP_REDIRECT_CONFIRMED"
+                               else collection.get("final_url")),
                       model_name=current["plp_model_raw"],
                       collection_status=collection.get("status"),
                       spec_rows=len(candidate.get("pdp_product_facts_raw", {}).get("spec_fields_raw", [])),
@@ -86,6 +87,8 @@ def build(docs, assessment_path, source_path, collection_root):
                                      pdp_logo_badges=points["pdp_logo"].get("attributed_badges_raw", []),
                                      plp_logo=points["plp_logo"]["state"],
                                      plp_logo_raw=candidate["energy_star_claim_sources_raw"].get("plp_energy_star_flag_raw"),
+                                     pdp_redirect_final_url=(current.get("pdp_identity_failure") or {}).get("final_url"),
+                                     pdp_redirect_plp_stock_flag=(current.get("pdp_identity_failure") or {}).get("plp_stock_flag_raw"),
                                      pdp_model=sku, pdp_title=current["plp_model_raw"],
                                      pdp_capacity=" · ".join(f"{row.get('name')}: {row.get('value')}" for row in capacity_rows) or None,
                                      epa_model=" · ".join(str(row.get("model_number", "")) for row in current["epa_current_matches_raw"]) or None)
@@ -105,7 +108,8 @@ def build(docs, assessment_path, source_path, collection_root):
                   collection_run_id=str(assessment["collection_run_id"]),
                   collection_run_url=f"https://github.com/Empty-Bell/RDA/actions/runs/{assessment['collection_run_id']}",
                   grade_state="assessed",
-                  note="렌더링된 US PLP 11개 전부 최종 판정. EPA Current 모델명·추가 모델 토큰의 정확 일치와 PLP/PDP 로고를 대조; 11 PASS.")
+                  note="렌더링된 US PLP 전 모델 최종 판정. EPA Current 모델명·추가 모델 토큰의 정확 일치와 PLP/PDP 로고를 대조. 반복 확인된 PDP 오라우팅은 PDP_LINK_WRONG_MODEL로 보고하고 해당 모델의 PDP 근거는 UNKNOWN으로 둠; "
+                       + ", ".join(f"{level} {assessment['counts'][level]}" for level in ("PASS", "HIGH", "MEDIUM", "LOW")) + ".")
     snapshot["built_at"] = datetime.now(timezone.utc).isoformat()
     snapshot["source_note"] = "All 11 families have source-bound accepted control artifacts; collection source runs differ and are not one unified audit source run."
     comparison = snapshot.get("run_comparison") or {}

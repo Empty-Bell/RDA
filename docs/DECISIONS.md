@@ -256,6 +256,28 @@ both URLs. PDP logos and Specs from the redirected model are UNKNOWN for the
 requested SKU and must not be borrowed. Other PDP failures remain source
 failures eligible for bounded retry.
 
+Tablet PDP redirect and Monitor sample selection (user-approved 2026-10-26,
+after hosted run 40250950861). (1) The Computer rule above applies to Tablet:
+a PLP-listed Tablet SKU whose requested PDP repeatedly resolves to the same
+different exact model across the initial capture and both fresh retries (HTTP
+200, four settled one-second samples per attempt, visible Continue SKU equal to
+the destination URL's SKU) stays in scope with existing code
+`PDP_LINK_WRONG_MODEL`. Severity is MEDIUM, matching the in-force Computer
+implementation and the 2026-10-01 routing diagnosis (a link/availability
+discrepancy, not evidence of ENERGY STAR registration failure); the "HIGH" in the
+paragraph above is superseded for both families. PLP logo is preserved; PDP logo,
+Specs certification and EPA registration are UNKNOWN/NOT_EVALUATED for the
+requested SKU, and nothing from the destination model is borrowed. Any other
+Tablet PDP failure remains a source failure. (2) Monitor source reconnaissance
+may advance past a PLP sample only when its bridge data lacks a single Specs and
+Support record for its own exact SKU (`SpecsSupportIdentityError`); the skipped
+sample's raw evidence is preserved and its PLP exposure (rendered card / group)
+is logged. This is diagnostic sampling only: it does not remove any SKU from the
+audit population. Whether a non-model PLP entry such as `F-1212121212461` is a
+consumer-visible product (kept and reported) or a non-product bundle/internal
+entry (excluded from population) is decided only after the exposure evidence is
+read; until then Monitor collection continues to fail closed on it.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |

@@ -88,6 +88,25 @@ def build(candidate_path, epa_root, out):
     for source in sorted(source_rows, key=lambda row: row["exact_sku"]):
         sku = source["exact_sku"]
         claim = source.get("energy_star_claim_sources_raw") or {}
+        redirect = source.get("pdp_identity_failure")
+        if isinstance(redirect, dict):
+            # A repeated wrong-model PDP is evidence about the link, not about this SKU's
+            # registration or logos: nothing from the redirected model is borrowed.
+            if claim.get("exact_sku") != sku or not redirect.get("requested_url") or not redirect.get("final_url"):
+                raise ValueError("Tablet PDP redirect finding lacks exact-SKU provenance or source URLs")
+            plp_raw = claim.get("plp_energy_star_flag_raw")
+            records.append({"exact_sku": sku, "grade": "MEDIUM",
+                "findings": [{"control": "PDP_IDENTITY", "severity": "MEDIUM",
+                              "issue_code": "PDP_LINK_WRONG_MODEL"}],
+                "pdp_model_raw": sku, "plp_model_raw": None,
+                "pdp_identity_failure": redirect,
+                "epa_current_registration": "NOT_EVALUATED", "epa_current_matches_raw": [],
+                "publication_points": {
+                    "plp_logo": {"state": flag(plp_raw), "raw_value": plp_raw},
+                    "pdp_logo": {"state": "UNKNOWN", "inspection": "WRONG_MODEL_PDP"},
+                    "spec_certification": {"state": "UNKNOWN", "inspection": "WRONG_MODEL_PDP"}},
+                "overall_product_compliance": "NOT_EVALUATED"})
+            continue
         model = claim.get("listing_title_raw")
         if claim.get("exact_sku") != sku or not isinstance(model, str) or not MODEL.fullmatch(model):
             gaps.append({"exact_sku": sku, "reason": "EXPLICIT_PLP_MODEL_IDENTITY_UNAVAILABLE"})
