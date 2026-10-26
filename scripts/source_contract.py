@@ -125,7 +125,9 @@ def pdp_facts(data, target, family='refrigerator'):
     specs = [x for x in data['Specs'] if x.get('modelCode') == target]
     support = [x for x in data.get('Support', []) if x.get('modelCode') == target]
     if len(specs) != 1 or (not specs_only and len(support) != 1):
-        raise ValueError('Target exact SKU missing or duplicated in Specs/Support')
+        observed = sorted({str(x.get('modelCode')) for x in data['Specs'] + data.get('Support', [])})
+        raise ValueError(f'Target exact SKU missing or duplicated in Specs/Support '
+                         f'(target={target}, specs={len(specs)}, support={len(support)}, observed={observed[:6]})')
     if not isinstance(specs[0].get('fullSpecs'), list) or (not specs_only and not isinstance(support[0].get('supports'), list)):
         raise ValueError('Missing specification/document collection')
     fields = []
