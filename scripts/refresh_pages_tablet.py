@@ -18,6 +18,12 @@ def read(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+def collected_results(collection_root):
+    """Canonical per-SKU PDP results; retry attempts and archived first attempts are evidence, not results."""
+    return [read(path) for path in sorted(Path(collection_root).rglob("pdp/*/result.json"))
+            if not any(part.startswith("retry-") or part == "initial-attempt" for part in path.parts)]
+
+
 def build(docs, assessment_path, source_path, collection_root):
     docs = Path(docs)
     assessment, source = read(assessment_path), read(source_path)
@@ -29,7 +35,7 @@ def build(docs, assessment_path, source_path, collection_root):
         raise ValueError("Tablet assessment is not bound to complete EPA candidates")
     a = {row["exact_sku"]: row for row in assessment["records"]}
     s = {row["exact_sku"]: row for row in source["records"]}
-    collected = [read(path) for path in Path(collection_root).rglob("pdp/*/result.json")]
+    collected = collected_results(collection_root)
     c = {row["exact_sku"]: row for row in collected}
     records = [row for row in snapshot["records"] if row["family"] == FAMILY]
     old_by_sku = {row["model"]: row for row in records}

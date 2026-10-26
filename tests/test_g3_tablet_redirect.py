@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import g3_tablet_assessment as assessment
 import g3_tablet_collect as collect
 import g3_tablet_epa_candidates as candidates
+import refresh_pages_tablet
 
 SKU = "SM-X828UZAAATT"
 REQUESTED = "https://www.samsung.com/us/tablets/galaxy-tab-s10/buy/galaxy-tab-s10-ultra-sku-sm-x828uzaaatt/"
@@ -161,6 +162,23 @@ class CandidateTests(unittest.TestCase):
             self.shard(Path(temp), failed())
             with self.assertRaises(ValueError):
                 candidates.load_collection(temp, "7")
+
+
+class PagesCollectionTests(unittest.TestCase):
+    def test_retry_and_archived_attempts_are_not_counted_as_results(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "shard-2"
+            for where, status in (("pdp", "PDP_REDIRECT_CONFIRMED"), ("retry-1/pdp", "FAILED"),
+                                  ("retry-2/pdp", "FAILED"), ("initial-attempt/pdp", "FAILED")):
+                folder = root / where / SKU
+                folder.mkdir(parents=True)
+                (folder / "result.json").write_text(json.dumps({"exact_sku": SKU, "status": status}))
+            other = Path(temp) / "shard-0" / "pdp" / "SM-X110NZAAXAR"
+            other.mkdir(parents=True)
+            (other / "result.json").write_text(json.dumps({"exact_sku": "SM-X110NZAAXAR", "status": "VERIFIED_EXACT_IDENTITY"}))
+            rows = refresh_pages_tablet.collected_results(temp)
+            self.assertEqual(sorted((row["exact_sku"], row["status"]) for row in rows),
+                             [("SM-X110NZAAXAR", "VERIFIED_EXACT_IDENTITY"), (SKU, "PDP_REDIRECT_CONFIRMED")])
 
 
 class AssessmentTests(unittest.TestCase):
