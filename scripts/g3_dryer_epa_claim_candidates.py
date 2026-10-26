@@ -48,7 +48,7 @@ def load_collection(root, run_id):
     for result_path, row in zip(sorted(root.glob("pdp/*/result.json")), results):
         sku = row["exact_sku"]
         if row.get("status") == ROUTE_LOSS_CONFIRMED:
-            claims[sku] = redirect_claim(row, sku)
+            claims[sku] = redirect_claim(row, sku, product_skus)
             continue
         claim = row.get("energy_star_claim_sources_raw")
         if not isinstance(claim, dict) or claim.get("exact_sku") != sku:

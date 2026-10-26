@@ -58,17 +58,47 @@ class RouteLossTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertIsNone(pdp_route.confirm_route_loss(attempts, item))
 
+    def test_destination_is_classified_against_the_audited_population(self):
+        other_sku = "NS63CB755DSGBB"
+        classify = pdp_route.classify_destination
+        self.assertEqual(classify(OTHER, [SKU, other_sku]), {"kind": "POPULATION_MEMBER", "sku": other_sku, "final_url": OTHER})
+        self.assertEqual(classify(OTHER, [SKU])["kind"], "UNLISTED_PDP")
+        self.assertEqual(classify(HUB, [SKU, other_sku])["kind"], "NON_PDP_PAGE")
+        slashed = "https://www.samsung.com/us/x/y-sku-np740vjg-ka1us/"
+        self.assertEqual(classify(slashed, ["NP740VJG-KA1US"])["sku"], "NP740VJG-KA1US")
+
+    def test_outcome_follows_where_the_redirect_landed(self):
+        for kind, expected in (("POPULATION_MEMBER", ("PASS", [])), ("NON_PDP_PAGE", ("PASS", [])),
+                               ("UNLISTED_PDP", ("LOW", [{"control": "PDP_ROUTE", "severity": "LOW",
+                                                          "issue_code": "PDP_REDIRECT_TO_UNLISTED_PDP"}]))):
+            with self.subTest(kind):
+                outcome, findings, observation = pdp_route.route_loss_outcome(
+                    {"destination": {"kind": kind, "sku": "AB-1", "final_url": "u"}})
+                self.assertEqual((outcome, findings), expected)
+                self.assertEqual(observation["finding"], findings[0]["issue_code"] if findings else "NONE")
+        with self.assertRaises(ValueError):
+            pdp_route.route_loss_outcome({"destination": {"kind": "SOMETHING_ELSE"}})
+        with self.assertRaises(ValueError):
+            pdp_route.route_loss_outcome({})
+
+    def test_points_keep_the_plp_flag_as_observed_and_mark_pdp_not_applicable(self):
+        points = pdp_route.route_loss_points({"plp_energy_star_flag_raw": "Y"})
+        self.assertEqual((points["plp_logo"]["state"], points["pdp_logo"]["state"], points["spec_certification"]["state"]),
+                         ("PRESENT", "NOT_APPLICABLE", "NOT_APPLICABLE"))
+        self.assertEqual(pdp_route.route_loss_points({"plp_energy_star_flag_raw": None})["plp_logo"]["state"], "UNKNOWN")
+
     def test_redirect_claim_carries_plp_facts_and_rejects_in_stock_results(self):
         terminal = pdp_route.confirm_route_loss([attempt(), attempt(), attempt()], product("N", "Y"))
-        claim = pdp_route.redirect_claim(terminal, SKU)
+        claim = pdp_route.redirect_claim(terminal, SKU, [SKU])
         self.assertEqual((claim["exact_sku"], claim["plp_energy_star_flag_raw"]), (SKU, "Y"))
         self.assertEqual(claim["pdp_route_loss_raw"]["plp_stock_flag_raw"], "N")
+        self.assertEqual(claim["pdp_route_loss_raw"]["destination"]["kind"], "NON_PDP_PAGE")
         self.assertNotIn("pdp_facts_raw", claim)
         in_stock = {**terminal, "source_claim_listing_raw": {"stockFlag": "Y"}}
         with self.assertRaises(ValueError):
-            pdp_route.redirect_claim(in_stock, SKU)
+            pdp_route.redirect_claim(in_stock, SKU, [SKU])
         with self.assertRaises(ValueError):
-            pdp_route.redirect_claim({**terminal, "redirect_observations": terminal["redirect_observations"][:2]}, SKU)
+            pdp_route.redirect_claim({**terminal, "redirect_observations": terminal["redirect_observations"][:2]}, SKU, [SKU])
 
 
 class SharedRetryTests(unittest.TestCase):
@@ -127,18 +157,32 @@ FAMILY_MODULES = {
 }
 
 
+OTHER_SKU = "NS63CB755DSGBB"
+
+
+def terminal_row(sku, final, stock="N", flag="N", other=None):
+    requested = f"https://www.samsung.com/us/home-appliance/x/y-sku-{sku.lower()}/"
+    item = {"exact_sku": sku, "source_claim_listing_raw": {"stockFlag": stock, "energyStarFlg": flag, "modelCode": sku}}
+    row = attempt(final=final, requested=requested)
+    row["exact_sku"] = sku
+    return pdp_route.confirm_route_loss([row, dict(row), dict(row)], item) or {
+        **row, "status": "PDP_REDIRECT_CONFIRMED", "redirect_observations": [row] * 3,
+        "source_claim_listing_raw": item["source_claim_listing_raw"]}
+
+
 class FamilyPipelineTests(unittest.TestCase):
-    def write_sources(self, root, candidates, plp_flag, stock="N"):
+    """Every EPA-only family settles a confirmed route loss by where the redirect landed."""
+
+    def write_sources(self, root, candidates, rows):
         collection = root / "collection"
-        (collection / "pdp" / SKU).mkdir(parents=True)
+        (collection / "pdp").mkdir(parents=True)
         (collection / "collection-summary.json").write_text(json.dumps({
             "status": "PASS", "contract": candidates.COLLECTION_CONTRACT, "collection_run_id": "123",
-            "coverage": {"population_count": 1}}))
-        (collection / "products.json").write_text(json.dumps([{"exact_sku": SKU}]))
-        terminal = pdp_route.confirm_route_loss([attempt(), attempt(), attempt()], product(stock, plp_flag)) \
-            or {**attempt(), "status": "PDP_REDIRECT_CONFIRMED", "redirect_observations": [attempt()] * 3,
-                "source_claim_listing_raw": product(stock, plp_flag)["source_claim_listing_raw"]}
-        (collection / "pdp" / SKU / "result.json").write_text(json.dumps(terminal))
+            "coverage": {"population_count": len(rows)}}))
+        (collection / "products.json").write_text(json.dumps([{"exact_sku": row["exact_sku"]} for row in rows]))
+        for row in rows:
+            (collection / "pdp" / row["exact_sku"]).mkdir()
+            (collection / "pdp" / row["exact_sku"] / "result.json").write_text(json.dumps(row))
         epa = root / "epa"
         epa.mkdir()
         raw = b"[]"
@@ -148,59 +192,82 @@ class FamilyPipelineTests(unittest.TestCase):
             "capture_run_id": "9", "row_count": 0, "rows_sha256": hashlib.sha256(raw).hexdigest()}))
         return collection, epa
 
-    def assess(self, family, plp_flag, stock="N"):
+    def assess_all(self, family, rows):
         candidates = importlib.import_module(FAMILY_MODULES[family][0])
         assessor = importlib.import_module(FAMILY_MODULES[family][1])
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
-            collection, epa = self.write_sources(root, candidates, plp_flag, stock)
+            collection, epa = self.write_sources(root, candidates, rows)
             candidates.build(collection, "123", epa, "9", root / "candidates")
             report = json.loads(next((root / "candidates").glob("*-source-candidates.json")).read_text())
-            return assessor.assess_record(report["records"][0])
+            return {record["exact_sku"]: assessor.assess_record(record) for record in report["records"]}
 
-    def test_out_of_stock_route_loss_is_evidence_only_and_the_plp_point_is_assessed(self):
+    def test_redirect_into_the_population_passes_with_the_redirect_noted(self):
+        member_url = f"https://www.samsung.com/us/home-appliance/x/z-sku-{OTHER_SKU.lower()}/"
+        rows = [terminal_row(SKU, member_url), terminal_row(OTHER_SKU, HUB)]
         for family in FAMILY_MODULES:
             with self.subTest(family=family):
-                passing = self.assess(family, "N")
-                self.assertEqual((passing["display_outcome"], passing["findings"]), ("PASS", []))
-                self.assertEqual(passing["pdp_route_observation"]["finding"], "NONE")
-                self.assertEqual(passing["pdp_identity_failure"]["plp_stock_flag_raw"], "N")
-                points = passing["energy_star_publication"]["points"]
-                self.assertEqual((points["plp_logo"]["state"], points["pdp_logo"]["state"],
-                                  points["spec_certification"]["state"]), ("ABSENT", "NOT_APPLICABLE", "NOT_APPLICABLE"))
-                # PLP point present while no current EPA registration exists is still a HIGH finding
-                self.assertEqual(self.assess(family, "Y")["display_outcome"], "HIGH")
+                result = self.assess_all(family, rows)[SKU]
+                self.assertEqual((result["display_outcome"], result["findings"]), ("PASS", []))
+                self.assertEqual(result["pdp_identity_failure"]["destination"], {"kind": "POPULATION_MEMBER", "sku": OTHER_SKU, "final_url": member_url})
+                self.assertIn(OTHER_SKU, result["pdp_route_observation"]["note"])
+                points = result["energy_star_publication"]["points"]
+                self.assertEqual((points["pdp_logo"]["state"], points["spec_certification"]["state"]), ("NOT_APPLICABLE", "NOT_APPLICABLE"))
+                self.assertEqual(result["epa_current_registration"]["state"], "NOT_EVALUATED")
+
+    def test_redirect_to_a_non_product_page_passes_and_to_an_unlisted_pdp_is_low(self):
+        unlisted = "https://www.samsung.com/us/home-appliance/x/q-sku-zz999unlisted/"
+        rows = [terminal_row(SKU, HUB), terminal_row(OTHER_SKU, unlisted)]
+        for family in FAMILY_MODULES:
+            with self.subTest(family=family):
+                results = self.assess_all(family, rows)
+                self.assertEqual((results[SKU]["display_outcome"], results[SKU]["findings"]), ("PASS", []))
+                low = results[OTHER_SKU]
+                self.assertEqual(low["display_outcome"], "LOW")
+                self.assertEqual([f["issue_code"] for f in low["findings"]], ["PDP_REDIRECT_TO_UNLISTED_PDP"])
+                self.assertEqual(low["pdp_route_observation"]["finding"], "PDP_REDIRECT_TO_UNLISTED_PDP")
+
+    def test_the_plp_flag_is_not_compared_with_epa_for_a_route_loss_sku(self):
+        for family in FAMILY_MODULES:
+            with self.subTest(family=family):
+                result = self.assess_all(family, [terminal_row(SKU, HUB, flag="Y")])[SKU]
+                self.assertEqual((result["display_outcome"], result["findings"]), ("PASS", []))
+                self.assertEqual(result["energy_star_publication"]["points"]["plp_logo"]["state"], "PRESENT")
 
     def test_a_confirmed_result_for_an_in_stock_sku_is_rejected(self):
+        bad = terminal_row(SKU, HUB)
+        bad["source_claim_listing_raw"] = {**bad["source_claim_listing_raw"], "stockFlag": "Y"}
         for family in FAMILY_MODULES:
             with self.subTest(family=family), self.assertRaises(ValueError):
-                self.assess(family, "N", stock="Y")
+                self.assess_all(family, [bad])
 
-    def test_dryer_collection_accepts_the_confirmed_result_and_assesses_the_plp_point(self):
+    def test_dryer_collection_accepts_the_confirmed_result_and_settles_it_by_destination(self):
         candidates = importlib.import_module("g3_dryer_epa_claim_candidates")
         assessor = importlib.import_module("g3_dryer_energy_star_assessment")
+        unlisted = "https://www.samsung.com/us/home-appliance/x/q-sku-zz999unlisted/"
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             collection = root / "collection"
-            (collection / "pdp" / SKU).mkdir(parents=True)
+            (collection / "pdp").mkdir(parents=True)
+            rows = [terminal_row(SKU, HUB), terminal_row(OTHER_SKU, unlisted)]
             (collection / "collection-summary.json").write_text(json.dumps({
                 "status": "PASS", "contract": "G3_DRYER_EXACT_SKU_PDP_V1", "collection_run_id": "123",
-                "coverage": {"population_count": 1}}))
-            (collection / "products.json").write_text(json.dumps([{"exact_sku": SKU}]))
-            terminal = pdp_route.confirm_route_loss([attempt(), attempt(), attempt()], product("N", "N"))
-            (collection / "pdp" / SKU / "result.json").write_text(json.dumps(terminal))
+                "coverage": {"population_count": 2}}))
+            (collection / "products.json").write_text(json.dumps([{"exact_sku": row["exact_sku"]} for row in rows]))
+            for row in rows:
+                (collection / "pdp" / row["exact_sku"]).mkdir()
+                (collection / "pdp" / row["exact_sku"] / "result.json").write_text(json.dumps(row))
             claims, _ = candidates.load_collection(collection, "123")
             (root / "rows.json").write_text(json.dumps({
                 "contract": "G3_DRYER_EPA_CLAIM_CANDIDATES_V1", "status": "SOURCE_CANDIDATES_READY",
-                "source_validation": "PASS", "population_count": 1,
-                "rows": [{"exact_sku": SKU, "energy_star_claim_sources_raw": claims[SKU],
-                          "dryer_epa_model_pattern_candidates": [], "combo_epa_model_pattern_candidates": []}]}))
+                "source_validation": "PASS", "population_count": 2,
+                "rows": [{"exact_sku": row["exact_sku"], "energy_star_claim_sources_raw": claims[row["exact_sku"]],
+                          "dryer_epa_model_pattern_candidates": [], "combo_epa_model_pattern_candidates": []} for row in rows]}))
             assessor.build(root / "rows.json", root / "out")
-            result = json.loads(next((root / "out").glob("*.json")).read_text())
-            record = result["records"][0]
-            self.assertEqual((record["display_outcome"], record["findings"]), ("PASS", []))
-            self.assertEqual(record["pdp_identity_failure"]["plp_stock_flag_raw"], "N")
-            self.assertEqual(record["energy_star_publication"]["points"]["pdp_logo"]["state"], "NOT_APPLICABLE")
+            records = {r["exact_sku"]: r for r in json.loads(next((root / "out").glob("*.json")).read_text())["records"]}
+            self.assertEqual((records[SKU]["display_outcome"], records[SKU]["findings"]), ("PASS", []))
+            self.assertEqual(records[OTHER_SKU]["display_outcome"], "LOW")
+            self.assertEqual(records[SKU]["energy_star_publication"]["points"]["pdp_logo"]["state"], "NOT_APPLICABLE")
 
 
 if __name__ == "__main__":

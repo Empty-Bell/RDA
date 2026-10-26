@@ -44,14 +44,13 @@ class ComputerRedirectPipelineTests(unittest.TestCase):
         self.assertEqual(assessment["findings"][0]["issue_code"], "PDP_LINK_WRONG_MODEL")
         self.assertEqual(assessment["pdp_identity_failure"]["plp_stock_flag_raw"], "Y")
 
-    def test_out_of_stock_confirmed_redirect_is_evidence_only_and_plp_is_assessed(self):
+    def test_out_of_stock_confirmed_redirect_to_a_pdp_not_on_the_plp_is_low(self):
         assessment = self.run_pipeline("N")
-        self.assertNotIn("PDP_LINK_WRONG_MODEL", [item["issue_code"] for item in assessment["findings"]])
+        self.assertEqual((assessment["display_outcome"], assessment["findings"]), ("LOW", [
+            {"control": "PDP_ROUTE", "severity": "LOW", "issue_code": "PDP_REDIRECT_TO_UNLISTED_PDP"}]))
         self.assertEqual(assessment["pdp_identity_failure"]["plp_stock_flag_raw"], "N")
-        self.assertEqual(assessment["pdp_route_observation"]["finding"], "NONE")
-        points = assessment["energy_star_publication"]["points"]
-        self.assertEqual((points["plp_logo"]["state"], points["pdp_logo"]["state"],
-                          points["spec_certification"]["state"]), ("PRESENT", "NOT_APPLICABLE", "NOT_APPLICABLE"))
+        self.assertEqual(assessment["pdp_identity_failure"]["destination"]["kind"], "UNLISTED_PDP")
+        self.assertEqual(assessment["pdp_route_observation"]["finding"], "PDP_REDIRECT_TO_UNLISTED_PDP")
 
 
 if __name__ == "__main__":

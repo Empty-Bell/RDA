@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 
-from epa_only_rules import epa_registration_state, publication_assessment, publication_points, claim_points, route_loss_fields
+from epa_only_rules import epa_registration_state, publication_assessment, publication_points, route_loss_record
 
 SOURCE_CONTRACT = "G3_HOOD_EPA_SOURCE_CANDIDATES_V1"
 CONTRACT = "G3_HOOD_ENERGY_STAR_ASSESSMENT_V1"
@@ -18,10 +18,13 @@ def assess_record(row):
     candidates = row.get("epa_ventilating_fan_pattern_candidates")
     if not isinstance(sku, str) or not sku or not isinstance(claim, dict) or claim.get("exact_sku") != sku:
         raise ValueError("Hood claim evidence lacks exact-SKU provenance")
+    lost = route_loss_record(sku, claim)
+    if lost is not None:
+        return lost
     if not isinstance(candidates, list):
         raise ValueError("Hood EPA candidate list is missing")
     registration, market_states = epa_registration_state(candidates, [])
-    points = claim_points(claim)
+    points = publication_points(claim)
     outcome, findings = publication_assessment(registration, points)
     return {
         "exact_sku": sku,
@@ -34,7 +37,6 @@ def assess_record(row):
         "findings": findings,
         "overall_product_compliance": "NOT_EVALUATED",
         "legal_applicability": "NOT_EVALUATED",
-        **route_loss_fields(claim),
     }
 
 

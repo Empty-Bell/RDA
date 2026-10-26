@@ -177,6 +177,7 @@ class CandidateTests(unittest.TestCase):
             failure = report["records"][0]["pdp_identity_failure"]
             self.assertEqual((failure["requested_url"], failure["final_url"], failure["plp_stock_flag_raw"]),
                              (REQUESTED, FINAL, "N"))
+            self.assertEqual(failure["destination"]["kind"], "UNLISTED_PDP")
 
     def test_redirect_needs_three_consistent_observations(self):
         for mutate in (lambda r: r["redirect_observations"].pop(),
@@ -230,10 +231,11 @@ class AssessmentTests(unittest.TestCase):
             code = assessment.build(root / "candidates.json", epa, root / "out")
             return code, json.loads((root / "out" / "assessment.json").read_text())
 
-    def redirected(self, stock, plp_flag="Y", title="SM-X828U"):
+    def redirected(self, stock, destination=None, plp_flag="Y"):
+        destination = destination or {"kind": "POPULATION_MEMBER", "sku": "SM-X820NZAEXAR", "final_url": FINAL}
         failure = {"requested_url": REQUESTED, "final_url": FINAL, "plp_stock_flag_raw": stock,
-                   "redirect_observations": []}
-        claim = {"exact_sku": SKU, "plp_energy_star_flag_raw": plp_flag, "listing_title_raw": title}
+                   "redirect_observations": [], "destination": destination}
+        claim = {"exact_sku": SKU, "plp_energy_star_flag_raw": plp_flag, "listing_title_raw": "SM-X828U"}
         return failure, {"exact_sku": SKU, "pdp_identity_failure": failure, "energy_star_claim_sources_raw": claim}
 
     def test_in_stock_redirect_is_medium_wrong_model_with_unknown_pdp_evidence(self):
@@ -252,34 +254,40 @@ class AssessmentTests(unittest.TestCase):
                 self.assertEqual((points["plp_logo"]["state"], points["pdp_logo"]["state"],
                                   points["spec_certification"]["state"]), ("PRESENT", "UNKNOWN", "UNKNOWN"))
 
-    def test_out_of_stock_redirect_is_an_observation_and_plp_controls_are_assessed(self):
-        failure, record = self.redirected("N", plp_flag="N")
+    def test_out_of_stock_redirect_into_the_population_passes_with_the_redirect_noted(self):
+        failure, record = self.redirected("N", plp_flag="Y")
         code, result = self.build(record)
         self.assertEqual((code, result["status"], result["readiness_gaps"]), (0, "PASS", []))
         self.assertEqual(result["counts"], {"PASS": 1, "HIGH": 0, "MEDIUM": 0, "LOW": 0})
         row = result["records"][0]
         self.assertEqual((row["grade"], row["findings"]), ("PASS", []))
-        self.assertEqual(row["plp_model_raw"], "SM-X828U")
         self.assertEqual(row["pdp_identity_failure"], failure)
+        self.assertIn("SM-X820NZAEXAR", row["pdp_route_observation"]["note"])
         self.assertEqual(row["pdp_route_observation"]["finding"], "NONE")
+        self.assertEqual(row["epa_current_registration"], "NOT_EVALUATED")
         points = row["publication_points"]
         self.assertEqual((points["plp_logo"]["state"], points["pdp_logo"]["state"],
-                          points["spec_certification"]["state"]), ("ABSENT", "NOT_APPLICABLE", "NOT_APPLICABLE"))
+                          points["spec_certification"]["state"]), ("PRESENT", "NOT_APPLICABLE", "NOT_APPLICABLE"))
 
-    def test_out_of_stock_redirect_still_reports_a_plp_level_conflict_with_epa(self):
-        epa_row = {"model_number": "SM-X828U", "type": "Slate/Tablet", "markets": "United States, Canada"}
-        _, record = self.redirected("N", plp_flag="N")
-        code, result = self.build(record, [epa_row])
-        self.assertEqual((code, result["status"]), (0, "PASS"))
-        row = result["records"][0]
-        self.assertEqual((row["grade"], row["epa_current_registration"]), ("LOW", "PRESENT"))
-        self.assertEqual([item["issue_code"] for item in row["findings"]], ["SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT"])
-
-    def test_out_of_stock_redirect_without_plp_model_identity_blocks(self):
-        _, record = self.redirected("N", title=None)
+    def test_out_of_stock_redirect_to_a_non_product_page_passes(self):
+        _, record = self.redirected("N", {"kind": "NON_PDP_PAGE", "final_url": "https://www.samsung.com/us/tablets/"})
         code, result = self.build(record)
-        self.assertEqual((code, result["status"]), (1, "BLOCKED"))
-        self.assertEqual(result["readiness_gaps"][0]["reason"], "EXPLICIT_PLP_MODEL_IDENTITY_UNAVAILABLE")
+        self.assertEqual((code, result["records"][0]["grade"], result["records"][0]["findings"]), (0, "PASS", []))
+
+    def test_out_of_stock_redirect_to_a_pdp_not_on_the_plp_is_low(self):
+        _, record = self.redirected("N", {"kind": "UNLISTED_PDP", "sku_slug": "sm-x999", "final_url": FINAL})
+        code, result = self.build(record)
+        self.assertEqual((code, result["status"], result["counts"]), (0, "PASS", {"PASS": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 1}))
+        row = result["records"][0]
+        self.assertEqual(row["findings"], [{"control": "PDP_ROUTE", "severity": "LOW",
+                                            "issue_code": "PDP_REDIRECT_TO_UNLISTED_PDP"}])
+        self.assertEqual(row["pdp_route_observation"]["finding"], "PDP_REDIRECT_TO_UNLISTED_PDP")
+
+    def test_out_of_stock_redirect_with_an_unclassified_destination_is_an_error(self):
+        _, record = self.redirected("N")
+        del record["pdp_identity_failure"]["destination"]
+        with self.assertRaises(ValueError):
+            self.build(record)
 
     def test_redirect_without_urls_is_an_error_not_a_pass(self):
         for stock in ("N", "Y"):

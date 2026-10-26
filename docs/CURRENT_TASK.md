@@ -18,9 +18,10 @@ Tablet hub, so a redirect on a `stockFlag` N SKU is evidence only (Tablet and
 Computer); `stockFlag` Y or missing keeps MEDIUM `PDP_LINK_WRONG_MODEL`. Hosted
 verification pending.
 
-Extension (2026-10-26): the same evidence-only treatment, including a hub destination, is
-implemented for Range, Cooktop, Hood, Monitor and Dryer and added to Tablet and Computer
-(`scripts/pdp_route.py`). Refrigerator, Dishwasher, Washer and TV remain fail-closed until
+Settlement (2026-10-26): an out-of-stock SKU whose PDP route is lost passes when the redirect
+lands on a population PDP or a non-product page, and is LOW `PDP_REDIRECT_TO_UNLISTED_PDP` when
+it lands on a PDP not exposed on the PLP. Implemented for Range, Cooktop, Hood, Monitor and
+Dryer and added to Tablet and Computer (`scripts/pdp_route.py`). Refrigerator, Dishwasher, Washer and TV remain fail-closed until
 their EnergyGuide and numeric controls have an approved treatment for an unreachable PDP.
 
 ## Scheduled automation trial — 2026-10-03

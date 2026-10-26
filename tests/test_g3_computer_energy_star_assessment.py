@@ -28,7 +28,10 @@ class ComputerRegistrationScopeTests(unittest.TestCase):
         self.assertEqual(result["findings"][0]["issue_code"], "PDP_LINK_WRONG_MODEL")
         self.assertEqual(result["energy_star_publication"]["points"]["pdp_logo"]["state"], "UNKNOWN")
 
-    def redirect_row(self, stock, plp="Y", candidates=()):
+    def redirect_row(self, stock, kind="POPULATION_MEMBER", plp="Y", candidates=()):
+        destination = {"kind": kind, "final_url": "https://www.samsung.com/us/computers/book-sku-np960ujh-xg2us/"}
+        if kind == "POPULATION_MEMBER":
+            destination["sku"] = "NP960UJH-XG2US"
         return {
             "exact_sku": "NP740VJG-KA1US",
             "energy_star_claim_sources_raw": {"exact_sku": "NP740VJG-KA1US", "plp_energy_star_flag_raw": plp},
@@ -36,23 +39,28 @@ class ComputerRegistrationScopeTests(unittest.TestCase):
             "pdp_identity_failure": {
                 "requested_url": "https://www.samsung.com/us/computers/book-sku-np740vjg-ka1us",
                 "final_url": "https://www.samsung.com/us/computers/book-sku-np960ujh-xg2us/",
-                "plp_stock_flag_raw": stock,
+                "plp_stock_flag_raw": stock, "destination": destination,
             },
         }
 
-    def test_out_of_stock_redirect_is_evidence_only_and_plp_logo_is_assessed(self):
-        registered = [candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")]
-        passing = assess_record(self.redirect_row("N", plp="Y", candidates=registered))
-        self.assertEqual((passing["display_outcome"], passing["findings"]), ("PASS", []))
-        self.assertEqual(passing["pdp_route_observation"]["finding"], "NONE")
-        points = passing["energy_star_publication"]["points"]
+    def test_out_of_stock_redirect_is_settled_by_where_it_landed(self):
+        member = assess_record(self.redirect_row("N", "POPULATION_MEMBER", plp="N"))
+        self.assertEqual((member["display_outcome"], member["findings"]), ("PASS", []))
+        self.assertIn("NP960UJH-XG2US", member["pdp_route_observation"]["note"])
+        points = member["energy_star_publication"]["points"]
         self.assertEqual((points["pdp_logo"]["state"], points["spec_certification"]["state"]),
                          ("NOT_APPLICABLE", "NOT_APPLICABLE"))
-        conflict = assess_record(self.redirect_row("N", plp="N", candidates=registered))
-        self.assertEqual((conflict["display_outcome"], [f["severity"] for f in conflict["findings"]]),
-                         ("LOW", ["LOW"]))
-        unregistered = assess_record(self.redirect_row("N", plp="Y"))
-        self.assertEqual(unregistered["display_outcome"], "HIGH")
+        self.assertEqual(member["epa_current_registration"]["state"], "NOT_EVALUATED")
+        hub = assess_record(self.redirect_row("N", "NON_PDP_PAGE"))
+        self.assertEqual((hub["display_outcome"], hub["findings"]), ("PASS", []))
+        unlisted = assess_record(self.redirect_row("N", "UNLISTED_PDP"))
+        self.assertEqual(unlisted["display_outcome"], "LOW")
+        self.assertEqual([f["issue_code"] for f in unlisted["findings"]], ["PDP_REDIRECT_TO_UNLISTED_PDP"])
+
+    def test_plp_logo_is_not_compared_with_epa_for_a_route_loss_sku(self):
+        result = assess_record(self.redirect_row("N", "POPULATION_MEMBER", plp="Y"))
+        self.assertEqual((result["display_outcome"], result["findings"]), ("PASS", []))
+        self.assertEqual(result["energy_star_publication"]["points"]["plp_logo"]["state"], "PRESENT")
 
     def test_redirect_of_an_in_stock_or_stock_unknown_sku_stays_a_medium_finding(self):
         for stock in ("Y", None):

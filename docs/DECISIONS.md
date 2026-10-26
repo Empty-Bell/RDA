@@ -328,6 +328,25 @@ EnergyGuide and numeric controls depend on PDP evidence and need their own decis
 how those controls are recorded when the PDP is unreachable, so their collectors still
 fail closed.
 
+Redirect settlement by destination (user-approved 2026-10-26; supersedes the PLP-level
+assessment described in the two paragraphs above for a confirmed route loss). When a SKU
+is confirmed out of stock (PLP `stockFlag` N) and its requested PDP URL repeatedly lands
+elsewhere, the result depends on where it lands. (1) On a PDP that is itself in the audited
+population: that model is audited on its own route, so this SKU records the redirect and
+passes, relying on that audit; its own PLP flag is not compared with EPA. (2) On a page
+that is not a product page (the family hub): no PDP is left to audit, so it passes with the
+redirect noted. The collector never rewrites a hub into a /buy page; every destination seen so
+far was another /buy PDP, so this case is a safeguard. (3) On a PDP that is not exposed on
+the PLP: it is a LOW finding, a "PLP-unexposed redirect", recorded as
+`PDP_REDIRECT_TO_UNLISTED_PDP` (control `PDP_ROUTE`) with the redirect noted; the new PDP is
+not collected or assessed for now. The user approved the classification and LOW severity; the
+code name was chosen by the assistant and can be renamed. In every case the PDP logo and
+Specs points are NOT_APPLICABLE and the redirect, destination and note stay in the record
+(`pdp_identity_failure`, `pdp_route_observation`). An in-stock or stock-unknown SKU keeps its
+earlier treatment (Tablet and Computer MEDIUM `PDP_LINK_WRONG_MODEL`; other families fail
+closed). Observed cases: Tablet `SM-X828UZAAATT` landed on `SM-X820NZAEXAR` and Computer
+`NP740VJG-KA1US`/`KG2US` on `NP960UJH-XG2US`, all population members.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |

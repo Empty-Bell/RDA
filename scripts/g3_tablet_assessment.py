@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 
 from epa_only_rules import us_market_state
-from pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
+from pdp_route import route_loss_outcome, route_loss_points
 
 
 MODEL = re.compile(r"SM-[A-Z0-9]+\Z")
@@ -94,7 +94,18 @@ def build(candidate_path, epa_root, out):
         if isinstance(redirect, dict):
             if claim.get("exact_sku") != sku or not redirect.get("requested_url") or not redirect.get("final_url"):
                 raise ValueError("Tablet PDP redirect finding lacks exact-SKU provenance or source URLs")
-        if isinstance(redirect, dict) and not out_of_stock_route:
+        if out_of_stock_route:
+            # stockFlag N: the PLP card offers no PDP route. Where the redirect landed decides the
+            # outcome and nothing else about this SKU is repeated (DECISIONS.md, 2026-10-26).
+            outcome, findings, observation = route_loss_outcome(redirect)
+            records.append({"exact_sku": sku, "grade": outcome, "findings": findings,
+                "pdp_model_raw": sku, "plp_model_raw": claim.get("listing_title_raw"),
+                "pdp_identity_failure": redirect, "pdp_route_observation": observation,
+                "epa_current_registration": "NOT_EVALUATED", "epa_current_matches_raw": [],
+                "publication_points": route_loss_points(claim),
+                "overall_product_compliance": "NOT_EVALUATED"})
+            continue
+        if isinstance(redirect, dict):
             # A repeated wrong-model PDP of an in-stock (or stock-unknown) SKU is evidence about the link,
             # not about this SKU's registration or logos: nothing from the redirected model is borrowed.
             plp_raw = claim.get("plp_energy_star_flag_raw")
@@ -117,15 +128,7 @@ def build(candidate_path, epa_root, out):
         matches = [row for row in rows if model and model in model_tokens(row)
                    and str(row.get("type", "")).strip().casefold() == "slate/tablet"
                    and us_market_state(row.get("markets")) == "US"]
-        if out_of_stock_route:
-            # stockFlag N: the PLP card offers no route to the PDP (Notify me), so the requested PDP
-            # URL is recorded as an observation only and the PLP-level controls are assessed.
-            plp_raw = claim.get("plp_energy_star_flag_raw")
-            not_reachable = {"state": "NOT_APPLICABLE", "inspection": OUT_OF_STOCK_PDP_INSPECTION}
-            points = {"plp_logo": {"state": flag(plp_raw), "raw_value": plp_raw},
-                      "pdp_logo": dict(not_reachable), "spec_certification": dict(not_reachable)}
-        else:
-            points = publication_points(source)
+        points = publication_points(source)
         states = [value["state"] for value in points.values() if value["state"] != "NOT_APPLICABLE"]
         registration = "PRESENT" if matches else "ABSENT"
         findings = []
@@ -140,8 +143,6 @@ def build(candidate_path, epa_root, out):
         grade = "HIGH" if any(row["severity"] == "HIGH" for row in findings) else "LOW" if findings else "PASS"
         records.append({"exact_sku": sku, "grade": grade, "findings": findings,
                         "pdp_model_raw": sku, "plp_model_raw": model,
-                        **({"pdp_identity_failure": redirect, "pdp_route_observation": OUT_OF_STOCK_ROUTE_OBSERVATION}
-                           if out_of_stock_route else {}),
                         "epa_current_registration": registration,
                         "epa_current_matches_raw": matches,
                         "publication_points": points,

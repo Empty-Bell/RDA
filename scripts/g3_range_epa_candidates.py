@@ -41,7 +41,7 @@ def load_collection(root, run_id):
         row = read_json(path)
         sku = row.get("exact_sku")
         if row.get("status") == ROUTE_LOSS_CONFIRMED and sku in set(product_skus) and sku not in claims:
-            claims[sku], facts_by_sku[sku] = redirect_claim(row, sku), {}
+            claims[sku], facts_by_sku[sku] = redirect_claim(row, sku, product_skus), {}
             continue
         if sku not in set(product_skus) or row.get("status") != "VERIFIED_EXACT_IDENTITY":
             raise ValueError("Range PDP result is failed, duplicate, or outside population")
