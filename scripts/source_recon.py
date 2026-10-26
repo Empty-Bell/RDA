@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlsplit, parse_qs, urlencode
 
 from runner_probe import safe_url, sanitize
+from plp_population import is_monitor_bundle_entry
 from source_contract import pf_page, pf_population, pdp_facts, project_bridge, project_computer_specs, computer_selection, epa_contract, energyguide_ocr_reason, SpecsSupportIdentityError
 from browser_runtime import desktop_context
 from claim_recon import project_claim_records, project_nested_claim_fields, project_inline_product_claims, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
@@ -81,7 +82,7 @@ def first_identifiable_sample(candidates, run_pdp, describe, preserve, limit=MON
     skipped = []
     for index, product in enumerate(candidates[:limit]):
         try:
-            result = run_pdp(product if index else None)
+            result = run_pdp(product)
         except SpecsSupportIdentityError as error:
             record = {'sku': product['modelCode'], 'group_id': product.get('group_id'),
                       'model_name': product.get('modelName'), 'pdp_url': product.get('pdpURL'),
@@ -542,8 +543,14 @@ def main():
                 pdp_json.clear()
                 return str(folder.relative_to(OUT))
 
-            return first_identifiable_sample(candidates, lambda product: pdp(product) if product else pdp(),
-                                             describe, preserve)
+            bundles = [item for item in candidates if is_monitor_bundle_entry(item['modelCode'], item.get('pdpURL'))]
+            candidates = [item for item in candidates if item not in bundles]
+            result = first_identifiable_sample(candidates, pdp,
+                                               describe, preserve)
+            print(f'monitor_bundle_entries_excluded_from_sampling: {len(bundles)}', flush=True)
+            return {**result, 'excluded_bundle_entries': [
+                {'sku': item['modelCode'], 'group_id': item.get('group_id'), 'pdp_url': item.get('pdpURL')}
+                for item in bundles]}
 
         check('pdp_identity_and_documents', monitor_pdp if family == 'monitor' else pdp)
 

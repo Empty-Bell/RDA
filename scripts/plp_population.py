@@ -1,6 +1,8 @@
 """Bind an audit population to exact model codes on rendered PLP cards."""
 import json
+import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 def rendered_card_skus(recon_root, pf_population):
@@ -51,3 +53,35 @@ def select_listed_products(products, cards, expected_count):
             or not cards or not set(cards) <= set(by_sku)):
         raise ValueError("PLP group options or rendered cards have incomplete exact-SKU coverage")
     return products
+
+
+BUNDLE_SKU = re.compile(r"F-\d+\Z")
+BUNDLE_EXCLUSION_BASIS = "MONITOR_BUNDLE_ENTRY_HAS_NO_SINGLE_MODEL_SPECS"
+
+
+def is_monitor_bundle_entry(sku, pdp_url):
+    """An observed Monitor PLP bundle: an F-<digits> code whose PDP path names it a bundle.
+
+    Both observations are required; neither a code prefix nor a URL word alone qualifies.
+    """
+    path = urlsplit(str(pdp_url or "")).path.lower().rstrip("/")
+    return bool(BUNDLE_SKU.fullmatch(str(sku))) and path.endswith("-bundle-sku-" + str(sku).lower())
+
+
+def split_monitor_bundles(products, cards, expected_count):
+    """Remove Monitor bundle entries from the audited population, keeping their evidence.
+
+    Returns (products, cards, expected_count, excluded) for select_listed_products.
+    """
+    excluded = []
+    for product in products:
+        listing = product["listings"][0]
+        if is_monitor_bundle_entry(product["exact_sku"], listing.get("pdp_url")):
+            excluded.append({"exact_sku": product["exact_sku"], "exclusion_basis": BUNDLE_EXCLUSION_BASIS,
+                "source_family_id": listing.get("source_family_id"), "pdp_url": listing.get("pdp_url"),
+                "source_claim_listing_raw": product.get("source_claim_listing_raw"),
+                "rendered_plp_card": cards.get(product["exact_sku"])})
+    gone = {row["exact_sku"] for row in excluded}
+    return ([p for p in products if p["exact_sku"] not in gone],
+            {sku: card for sku, card in cards.items() if sku not in gone},
+            expected_count - len(gone), excluded)
