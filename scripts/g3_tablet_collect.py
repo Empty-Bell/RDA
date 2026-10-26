@@ -305,22 +305,31 @@ def collect(products, output):
     return results
 
 
-def _redirect_destination(row, target):
-    """Return (final_url, destination_sku) when one attempt settled on another exact-SKU PDP."""
+def _redirect_check(row, target):
+    """Return ((final_url, destination_sku), None) for a settled wrong-model attempt, else (None, reason)."""
     samples = row.get("identity_observations") or []
-    if (row.get("failure_class") != "SELECTED_SKU_DIFFERS_FROM_REQUESTED"
-            or row.get("http_status") != 200 or row.get("fallback_source")
-            or len(samples) < 4 or any(sample != samples[0] for sample in samples)
-            or samples[0].get("url") != row.get("final_url")):
-        return None
+    if row.get("failure_class") != "SELECTED_SKU_DIFFERS_FROM_REQUESTED":
+        return None, f"FAILURE_CLASS:{row.get('failure_class')}"
+    if row.get("http_status") != 200 or row.get("fallback_source"):
+        return None, f"HTTP_STATUS_OR_FALLBACK:{row.get('http_status')}"
+    if len(samples) < 4:
+        return None, f"SAMPLES_MISSING:{len(samples)}"
+    if any(sample != samples[0] for sample in samples):
+        return None, "SAMPLES_UNSETTLED"
+    if samples[0].get("url") != row.get("final_url"):
+        return None, "SAMPLE_URL_DIFFERS_FROM_FINAL_URL"
     selection = samples[0].get("selection") or {}
     seen = str(selection.get("continue_sku") or "").lower()
     final = urlsplit(row["final_url"])
-    if (not selection.get("continue_visible") or not seen or seen == target.lower()
-            or final.scheme != "https" or final.hostname != "www.samsung.com" or "/us/" not in final.path
-            or not final.path.lower().rstrip("/").endswith("-sku-" + seen.replace("/", "-"))):
-        return None
-    return row["final_url"], seen
+    if not selection.get("continue_visible") or not seen:
+        return None, "CONTINUE_CONTROL_NOT_VISIBLE"
+    if seen == target.lower():
+        return None, "CONTINUE_SKU_IS_REQUESTED_SKU"
+    if final.scheme != "https" or final.hostname != "www.samsung.com" or "/us/" not in final.path:
+        return None, "DESTINATION_URL_NOT_SAMSUNG_US_HTTPS"
+    if not final.path.lower().rstrip("/").endswith("-sku-" + seen.replace("/", "-")):
+        return None, "DESTINATION_URL_SKU_DIFFERS_FROM_CONTINUE_SKU"
+    return (row["final_url"], seen), None
 
 
 def retry_failed(products, results, output, *, retries=2):
@@ -351,8 +360,16 @@ def retry_failed(products, results, output, *, retries=2):
         observations = attempts[sku]
         if row["status"] != "FAILED" or len(observations) != retries + 1:
             continue
-        destinations = [_redirect_destination(item, sku) for item in observations]
+        checks = [_redirect_check(item, sku) for item in observations]
+        destinations = [destination for destination, _ in checks]
         if None in destinations or len(set(destinations)) != 1:
+            # Keep the attempt evidence readable in hosted logs; the failure itself stays a failure.
+            row["attempt_diagnostics"] = [{"attempt": index, "status": item.get("status"),
+                "failure_class": item.get("failure_class"), "error": item.get("error"),
+                "http_status": item.get("http_status"), "final_url": item.get("final_url"),
+                "continue_sku": (item.get("selection_observed_raw") or {}).get("continue_sku"),
+                "not_confirmed_because": reason or "DESTINATIONS_DIFFER_ACROSS_ATTEMPTS"}
+                for index, (item, (_, reason)) in enumerate(zip(observations, checks))]
             continue
         terminal = {**row, "status": "PDP_REDIRECT_CONFIRMED", "root_cause": "UNDETERMINED",
             "observation_scope": "Repeated routing observed; option unavailability not established",
@@ -391,7 +408,8 @@ def build_shard(recon_root, source_run_id, shard_index, shard_count, output):
     print(json.dumps({key: summary[key] for key in ("status", "source_run_id", "shard_index", "shard_count", "population_count", "coverage_counts")}, sort_keys=True), flush=True)
     failures = [{"exact_sku": row["exact_sku"], "error": row.get("error", "unspecified failure"),
         "final_url": row.get("final_url"), "http_status": row.get("http_status"),
-        "selection_observed_raw": row.get("selection_observed_raw")}
+        "selection_observed_raw": row.get("selection_observed_raw"),
+        "attempt_diagnostics": row.get("attempt_diagnostics")}
         for row in results if row["status"] not in RESOLVED_STATUSES]
     if failures:
         print(json.dumps({"tablet_collection_failures": failures}, ensure_ascii=False, sort_keys=True), flush=True)
