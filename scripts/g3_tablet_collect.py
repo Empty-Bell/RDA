@@ -305,6 +305,11 @@ def collect(products, output):
     return results
 
 
+def _sample_identity(sample):
+    selection = sample.get("selection") or {}
+    return sample.get("url"), selection.get("continue_sku"), selection.get("continue_visible")
+
+
 def _redirect_check(row, target):
     """Return ((final_url, destination_sku), None) for a settled wrong-model attempt, else (None, reason)."""
     samples = row.get("identity_observations") or []
@@ -314,7 +319,9 @@ def _redirect_check(row, target):
         return None, f"HTTP_STATUS_OR_FALLBACK:{row.get('http_status')}"
     if len(samples) < 4:
         return None, f"SAMPLES_MISSING:{len(samples)}"
-    if any(sample != samples[0] for sample in samples):
+    # Selected controls hydrate while the page loads and are only raw context; the destination's
+    # identity (URL, Continue SKU, visibility) is what must hold still across the samples.
+    if len({_sample_identity(sample) for sample in samples}) != 1:
         return None, "SAMPLES_UNSETTLED"
     if samples[0].get("url") != row.get("final_url"):
         return None, "SAMPLE_URL_DIFFERS_FROM_FINAL_URL"
@@ -325,6 +332,9 @@ def _redirect_check(row, target):
         return None, "CONTINUE_CONTROL_NOT_VISIBLE"
     if seen == target.lower():
         return None, "CONTINUE_SKU_IS_REQUESTED_SKU"
+    if any(str(control.get("sku") or "").lower() == target.lower()
+           for control in samples[-1]["selection"].get("selected_controls") or [] if isinstance(control, dict)):
+        return None, "SELECTED_CONTROL_IS_REQUESTED_SKU"
     if final.scheme != "https" or final.hostname != "www.samsung.com" or "/us/" not in final.path:
         return None, "DESTINATION_URL_NOT_SAMSUNG_US_HTTPS"
     if not final.path.lower().rstrip("/").endswith("-sku-" + seen.replace("/", "-")):

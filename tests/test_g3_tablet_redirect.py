@@ -50,6 +50,31 @@ class RetryTests(unittest.TestCase):
         self.assertEqual(row["source_claim_listing_raw"], LISTING)
         self.assertEqual(written["status"], "PDP_REDIRECT_CONFIRMED")
 
+    def test_controls_hydrating_during_loading_do_not_unsettle_a_stable_destination(self):
+        grown = [{"url": FINAL, "selection": {**selection(), "selected_controls": controls}}
+                 for controls in ([], [{"label": "Galaxy Tab S10+", "sku": "sm-x820nzaexar"}],
+                                  [{"label": "Galaxy Tab S10+", "sku": "sm-x820nzaexar"},
+                                   {"label": "512GB", "sku": "sm-x820nzaexar"}],
+                                  [{"label": "Galaxy Tab S10+", "sku": "sm-x820nzaexar"},
+                                   {"label": "512GB", "sku": "sm-x820nzaexar"}])]
+        row = {**failed(), "identity_observations": grown}
+        confirmed, _ = self.run_retry(row, [dict(row), dict(row)])
+        self.assertEqual(confirmed["status"], "PDP_REDIRECT_CONFIRMED")
+
+    def test_identity_moving_or_contradicted_by_controls_is_not_confirmed(self):
+        moving = failed()
+        moving["identity_observations"] = [moving["identity_observations"][0]] * 3 + [
+            {"url": FINAL, "selection": selection("sm-x999nzaaxar")}]
+        contradicted = failed()
+        contradicted["identity_observations"] = [{"url": FINAL, "selection": {**selection(),
+            "selected_controls": [{"label": "512GB", "sku": SKU.lower()}]}}] * 4
+        for name, bad, reason in (("moving", moving, "SAMPLES_UNSETTLED"),
+                                  ("contradicted", contradicted, "SELECTED_CONTROL_IS_REQUESTED_SKU")):
+            with self.subTest(name):
+                row, _ = self.run_retry(bad, [dict(bad), dict(bad)])
+                self.assertEqual(row["status"], "FAILED")
+                self.assertEqual({d["not_confirmed_because"] for d in row["attempt_diagnostics"]}, {reason})
+
     def test_unstable_or_inconsistent_attempts_stay_source_failures(self):
         other = "https://www.samsung.com/us/tablets/buy/galaxy-tab-a9-sku-sm-x110nzaaxar/"
         cases = {
