@@ -260,8 +260,10 @@ Tablet PDP redirect and Monitor sample selection (user-approved 2026-10-26,
 after hosted run 40250950861). (1) The Computer rule above applies to Tablet:
 a PLP-listed Tablet SKU whose requested PDP repeatedly resolves to the same
 different exact model across the initial capture and both fresh retries (HTTP
-200, four settled one-second samples per attempt, visible Continue SKU equal to
-the destination URL's SKU) stays in scope with existing code
+200, four one-second samples per attempt with identical URL, Continue SKU and
+visibility, visible Continue SKU equal to the destination URL's SKU; selected
+controls hydrate while the page loads and are kept only as raw context, but one
+naming the requested SKU contradicts the finding) stays in scope with existing code
 `PDP_LINK_WRONG_MODEL`. Severity is MEDIUM, matching the in-force Computer
 implementation and the 2026-10-01 routing diagnosis (a link/availability
 discrepancy, not evidence of ENERGY STAR registration failure); the "HIGH" in the
