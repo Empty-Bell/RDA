@@ -15,6 +15,7 @@ from runner_probe import safe_url
 from browser_runtime import desktop_context
 from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
 from exact_sku_retry import retry_failed
+from pdp_route import print_unconfirmed
 
 
 PLP_URL = "https://www.samsung.com/us/cooking-appliances/cooktops/"
@@ -216,14 +217,14 @@ def coverage(products, results):
     if len(population) != len(products) or len(sku_list) != len(set(sku_list)) or not set(sku_list) <= population:
         raise ValueError("Cooktop PDP result identities are duplicate or outside population")
     by_sku = {result["exact_sku"]: result.get("status") for result in results}
-    if any(status not in ("VERIFIED_EXACT_IDENTITY", "FAILED") for status in by_sku.values()):
+    if any(status not in ("VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED", "FAILED") for status in by_sku.values()):
         raise ValueError("Cooktop PDP result status is invalid")
     result_by_sku = {result["exact_sku"]: result for result in results}
     rows = [{"exact_sku": sku, "status": by_sku.get(sku, "NOT_ATTEMPTED"),
              **({"error": result_by_sku[sku].get("error")} if by_sku.get(sku) == "FAILED" else {})}
             for sku in sorted(population)]
     counts = {state: sum(row["status"] == state for row in rows)
-              for state in ("VERIFIED_EXACT_IDENTITY", "FAILED", "NOT_ATTEMPTED")}
+              for state in ("VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED", "FAILED", "NOT_ATTEMPTED")}
     return {"population_count": len(population), "attempted_count": len(results), "counts": counts, "rows": rows}
 
 
@@ -238,7 +239,10 @@ def main():
     destination.mkdir(parents=True, exist_ok=True)
     (destination / "population.json").write_text(json.dumps(population, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (destination / "products.json").write_text(json.dumps(products, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    rows = coverage(products, retry_failed(products, destination, collect(products, destination), collect))
+    results = retry_failed(products, destination, collect(products, destination), collect,
+                           confirm_route_loss=True)
+    rows = coverage(products, results)
+    print_unconfirmed(results)
     status = "PASS" if rows["counts"]["FAILED"] == 0 and rows["counts"]["NOT_ATTEMPTED"] == 0 else "FAILED"
     report = {"contract": CONTRACT, "source_run_id": str(args.source_run_id),
               "collection_run_id": os.getenv("GITHUB_RUN_ID"), "git_sha": os.getenv("GITHUB_SHA"),

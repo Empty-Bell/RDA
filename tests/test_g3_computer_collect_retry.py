@@ -33,6 +33,22 @@ class ComputerCollectRetryTest(unittest.TestCase):
             self.assertEqual(json.loads((folder / "result.json").read_text())["status"],
                              "PDP_REDIRECT_CONFIRMED")
 
+    def test_out_of_stock_sku_landing_on_a_hub_is_confirmed_only_when_stock_flag_is_n(self):
+        sku = "NP740VJG-KA1US"
+        requested = "https://www.samsung.com/us/computers/book-sku-np740vjg-ka1us"
+        hub = "https://www.samsung.com/us/computers/galaxy-book/"
+        failure = {"exact_sku": sku, "status": "FAILED", "requested_url": requested, "final_url": hub,
+                   "initial_http_status": 200, "http_status": 200, "failure_class": "SOURCE_COLLECTION_FAILED"}
+        for flag, status in (("N", "PDP_REDIRECT_CONFIRMED"), ("Y", "FAILED")):
+            product = {"exact_sku": sku, "listing": {"pdp_url": requested},
+                       "source_claim_listing_raw": {"energyStarFlg": "Y", "stockFlag": flag}}
+            with self.subTest(stock=flag), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                (root / "pdp" / sku).mkdir(parents=True)
+                with patch.object(computer, "collect", side_effect=[[dict(failure)], [dict(failure)]]):
+                    rows = computer.retry_failed([product], [dict(failure)], root)
+                self.assertEqual(rows[0]["status"], status)
+
     def test_unsettled_identity_is_not_accepted(self):
         sku = "NP740VJG-KG2US"
         selection = {"selected_controls": [{"sku": sku}],

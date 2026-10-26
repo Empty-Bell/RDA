@@ -10,6 +10,7 @@ import shutil
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 from browser_runtime import desktop_context
+from pdp_route import confirm_route_loss
 from claim_recon import DOM_SNAPSHOT, claim_facts
 from runner_probe import safe_url
 from source_contract import pdp_facts, pf_population, project_computer_specs
@@ -310,6 +311,15 @@ def _sample_identity(sample):
     return sample.get("url"), selection.get("continue_sku"), selection.get("continue_visible")
 
 
+def _names_requested_sku(row, target):
+    """A selected control naming the requested SKU contradicts a lost route."""
+    samples = row.get("identity_observations") or []
+    controls = [control for sample in samples for control in (sample.get("selection") or {}).get("selected_controls") or []]
+    controls += (row.get("selection_observed_raw") or {}).get("selected_controls") or []
+    return any(isinstance(control, dict) and str(control.get("sku") or "").lower() == target.lower()
+               for control in controls)
+
+
 def _redirect_check(row, target):
     """Return ((final_url, destination_sku), None) for a settled wrong-model attempt, else (None, reason)."""
     samples = row.get("identity_observations") or []
@@ -373,21 +383,26 @@ def retry_failed(products, results, output, *, retries=2):
         checks = [_redirect_check(item, sku) for item in observations]
         destinations = [destination for destination, _ in checks]
         if None in destinations or len(set(destinations)) != 1:
-            # Keep the attempt evidence readable in hosted logs; the failure itself stays a failure.
-            row["attempt_diagnostics"] = [{"attempt": index, "status": item.get("status"),
-                "failure_class": item.get("failure_class"), "error": item.get("error"),
-                "http_status": item.get("http_status"), "final_url": item.get("final_url"),
-                "continue_sku": (item.get("selection_observed_raw") or {}).get("continue_sku"),
-                "not_confirmed_because": reason or "DESTINATIONS_DIFFER_ACROSS_ATTEMPTS"}
-                for index, (item, (_, reason)) in enumerate(zip(observations, checks))]
-            continue
-        terminal = {**row, "status": "PDP_REDIRECT_CONFIRMED", "root_cause": "UNDETERMINED",
-            "observation_scope": "Repeated routing observed; option unavailability not established",
-            "redirect_destination_sku": destinations[0][1],
-            "source_claim_listing_raw": by_sku[sku]["source_claim_listing_raw"],
-            "redirect_observations": [{"requested_url": item.get("requested_url"),
-                "final_url": item.get("final_url"),
-                "selection_observed_raw": item.get("selection_observed_raw")} for item in observations]}
+            # Another Samsung US page (a hub, say) with no Continue control still counts when the
+            # SKU is out of stock on the PLP; any other failure keeps its readable attempt evidence.
+            terminal = (None if any(_names_requested_sku(item, sku) for item in observations)
+                        else confirm_route_loss(observations, by_sku[sku]))
+            if terminal is None:
+                row["attempt_diagnostics"] = [{"attempt": index, "status": item.get("status"),
+                    "failure_class": item.get("failure_class"), "error": item.get("error"),
+                    "http_status": item.get("http_status"), "final_url": item.get("final_url"),
+                    "continue_sku": (item.get("selection_observed_raw") or {}).get("continue_sku"),
+                    "not_confirmed_because": reason or "DESTINATIONS_DIFFER_ACROSS_ATTEMPTS"}
+                    for index, (item, (_, reason)) in enumerate(zip(observations, checks))]
+                continue
+        else:
+            terminal = {**row, "status": "PDP_REDIRECT_CONFIRMED", "root_cause": "UNDETERMINED",
+                "observation_scope": "Repeated routing observed; option unavailability not established",
+                "redirect_destination_sku": destinations[0][1],
+                "source_claim_listing_raw": by_sku[sku]["source_claim_listing_raw"],
+                "redirect_observations": [{"requested_url": item.get("requested_url"),
+                    "final_url": item.get("final_url"),
+                    "selection_observed_raw": item.get("selection_observed_raw")} for item in observations]}
         (destination / "pdp" / quote(sku, safe="") / "result.json").write_text(
             json.dumps(terminal, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
         current[sku] = terminal

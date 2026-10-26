@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 
 from epa_only_rules import model_pattern_candidate
+from pdp_route import CONFIRMED as ROUTE_LOSS_CONFIRMED, redirect_claim
 
 COLLECTION_CONTRACT = "G3_COOKTOP_EXACT_SKU_PDP_V1"
 EPA_CONTRACT = "G3_COOKTOP_EPA_CURRENT_SOURCE_V1"
@@ -39,6 +40,9 @@ def load_collection(root, run_id):
     for path in paths:
         row = read_json(path)
         sku = row.get("exact_sku")
+        if row.get("status") == ROUTE_LOSS_CONFIRMED and sku in set(product_skus) and sku not in claims:
+            claims[sku], facts_by_sku[sku] = redirect_claim(row, sku), {}
+            continue
         if sku not in set(product_skus) or row.get("status") != "VERIFIED_EXACT_IDENTITY":
             raise ValueError("Cooktop PDP result is failed, duplicate, or outside population")
         claim = row.get("energy_star_claim_sources_raw")

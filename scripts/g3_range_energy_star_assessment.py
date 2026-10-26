@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 
-from epa_only_rules import epa_registration_state, publication_assessment, publication_points
+from epa_only_rules import epa_registration_state, publication_assessment, publication_points, claim_points, route_loss_fields
 
 SOURCE_CONTRACT = "G3_RANGE_EPA_SOURCE_CANDIDATES_V1"
 CONTRACT = "G3_RANGE_ENERGY_STAR_ASSESSMENT_V1"
@@ -21,7 +21,7 @@ def assess_record(row):
     if not isinstance(candidates, list):
         raise ValueError("Range EPA candidate list is missing")
     registration, market_states = epa_registration_state(candidates, [])
-    points = publication_points(claim)
+    points = claim_points(claim)
     outcome, findings = publication_assessment(registration, points)
     return {
         "exact_sku": sku,
@@ -34,6 +34,7 @@ def assess_record(row):
         "findings": findings,
         "overall_product_compliance": "NOT_EVALUATED",
         "legal_applicability": "NOT_EVALUATED",
+        **route_loss_fields(claim),
     }
 
 

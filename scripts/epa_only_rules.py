@@ -2,6 +2,11 @@
 
 import re
 
+try:
+    from .pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
+except ImportError:  # direct `python scripts/...py` execution on Actions
+    from pdp_route import OUT_OF_STOCK_PDP_INSPECTION, OUT_OF_STOCK_ROUTE_OBSERVATION
+
 
 TRUE_VALUES = {"yes", "y", "true", "1"}
 FALSE_VALUES = {"no", "n", "false", "0"}
@@ -115,6 +120,24 @@ def publication_points(claim):
         "spec_certification": {"state": spec_state, "inspection": spec_inspection,
                                "visible_rows_raw": visible_specs or []},
     }
+
+
+def claim_points(claim):
+    """publication_points(claim); a confirmed out-of-stock PDP route loss assesses the PLP point only."""
+    loss = claim.get("pdp_route_loss_raw") if isinstance(claim, dict) else None
+    if not isinstance(loss, dict):
+        return publication_points(claim)
+    raw = claim.get("plp_energy_star_flag_raw")
+    unreachable = {"state": "NOT_APPLICABLE", "inspection": OUT_OF_STOCK_PDP_INSPECTION}
+    return {"plp_logo": {"state": flag_state(raw), "raw_value": raw},
+            "pdp_logo": dict(unreachable), "spec_certification": dict(unreachable)}
+
+
+def route_loss_fields(claim):
+    """Evidence fields for an assessment record whose PDP route loss was confirmed."""
+    loss = claim.get("pdp_route_loss_raw") if isinstance(claim, dict) else None
+    return ({"pdp_identity_failure": loss, "pdp_route_observation": OUT_OF_STOCK_ROUTE_OBSERVATION}
+            if isinstance(loss, dict) else {})
 
 
 def publication_assessment(epa_registration, points):

@@ -9,8 +9,10 @@ from pathlib import Path
 
 try:
     from .epa_only_rules import model_pattern_candidate
+    from .pdp_route import CONFIRMED as ROUTE_LOSS_CONFIRMED, redirect_claim
 except ImportError:  # direct `python scripts/...py` execution on Actions
     from epa_only_rules import model_pattern_candidate
+    from pdp_route import CONFIRMED as ROUTE_LOSS_CONFIRMED, redirect_claim
 
 CONTRACT = "G3_DRYER_EPA_CLAIM_CANDIDATES_V1"
 DATASETS = {"dryer": "t9u7-4d2j", "combo": "9jai-gs6t"}
@@ -40,11 +42,14 @@ def load_collection(root, run_id):
     if (not isinstance(expected, int) or len(products) != expected or len(results) != expected
             or len(set(product_skus)) != expected or set(product_skus) != set(result_skus)):
         raise ValueError("Dryer PDP collection does not cover one exact result per population SKU")
-    if any(row.get("status") != "VERIFIED_EXACT_IDENTITY" for row in results):
+    if any(row.get("status") not in ("VERIFIED_EXACT_IDENTITY", ROUTE_LOSS_CONFIRMED) for row in results):
         raise ValueError("Dryer PDP collection includes a failed or unattempted SKU")
     claims = {}
     for result_path, row in zip(sorted(root.glob("pdp/*/result.json")), results):
         sku = row["exact_sku"]
+        if row.get("status") == ROUTE_LOSS_CONFIRMED:
+            claims[sku] = redirect_claim(row, sku)
+            continue
         claim = row.get("energy_star_claim_sources_raw")
         if not isinstance(claim, dict) or claim.get("exact_sku") != sku:
             raise ValueError("Dryer claim observations lack exact-SKU provenance")
