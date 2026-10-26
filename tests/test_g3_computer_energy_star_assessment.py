@@ -28,6 +28,40 @@ class ComputerRegistrationScopeTests(unittest.TestCase):
         self.assertEqual(result["findings"][0]["issue_code"], "PDP_LINK_WRONG_MODEL")
         self.assertEqual(result["energy_star_publication"]["points"]["pdp_logo"]["state"], "UNKNOWN")
 
+    def redirect_row(self, stock, plp="Y", candidates=()):
+        return {
+            "exact_sku": "NP740VJG-KA1US",
+            "energy_star_claim_sources_raw": {"exact_sku": "NP740VJG-KA1US", "plp_energy_star_flag_raw": plp},
+            "epa_computer_model_pattern_candidates": list(candidates),
+            "pdp_identity_failure": {
+                "requested_url": "https://www.samsung.com/us/computers/book-sku-np740vjg-ka1us",
+                "final_url": "https://www.samsung.com/us/computers/book-sku-np960ujh-xg2us/",
+                "plp_stock_flag_raw": stock,
+            },
+        }
+
+    def test_out_of_stock_redirect_is_evidence_only_and_plp_logo_is_assessed(self):
+        registered = [candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")]
+        passing = assess_record(self.redirect_row("N", plp="Y", candidates=registered))
+        self.assertEqual((passing["display_outcome"], passing["findings"]), ("PASS", []))
+        self.assertEqual(passing["pdp_route_observation"]["finding"], "NONE")
+        points = passing["energy_star_publication"]["points"]
+        self.assertEqual((points["pdp_logo"]["state"], points["spec_certification"]["state"]),
+                         ("NOT_APPLICABLE", "NOT_APPLICABLE"))
+        conflict = assess_record(self.redirect_row("N", plp="N", candidates=registered))
+        self.assertEqual((conflict["display_outcome"], [f["severity"] for f in conflict["findings"]]),
+                         ("LOW", ["LOW"]))
+        unregistered = assess_record(self.redirect_row("N", plp="Y"))
+        self.assertEqual(unregistered["display_outcome"], "HIGH")
+
+    def test_redirect_of_an_in_stock_or_stock_unknown_sku_stays_a_medium_finding(self):
+        for stock in ("Y", None):
+            with self.subTest(stock=stock):
+                result = assess_record(self.redirect_row(stock))
+                self.assertEqual(result["display_outcome"], "MEDIUM")
+                self.assertEqual(result["findings"][0]["issue_code"], "PDP_LINK_WRONG_MODEL")
+                self.assertEqual(result["energy_star_publication"]["points"]["pdp_logo"]["state"], "UNKNOWN")
+
     def test_base_model_prefix_confirms_registration_per_approved_rule(self):
         state, markets = computer_registration([
             candidate("EPA_BASE_MODEL_PREFIX_HYPHEN_SUFFIX")

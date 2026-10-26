@@ -13,6 +13,11 @@ run 40271248146 showed the `F-` entries are rendered two-monitor bundle cards
 population with their evidence recorded. Pending hosted verification; do not
 declare either gate accepted yet.
 
+Live PLP check (user, 2026-10-26): the X828 card shows `Notify me` and links to the
+Tablet hub, so a redirect on a `stockFlag` N SKU is evidence only (Tablet and
+Computer); `stockFlag` Y or missing keeps MEDIUM `PDP_LINK_WRONG_MODEL`. Hosted
+verification pending.
+
 ## Scheduled automation trial — 2026-10-03
 
 Verified October 4 at 00:54 KST: scheduled run

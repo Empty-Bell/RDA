@@ -164,8 +164,9 @@ def load_collection(root, expected_run_id):
                                or item.get("requested_url") != result.get("requested_url") for item in observations)):
                     raise ValueError("Tablet redirect finding lacks three consistent observations")
                 records[sku] = result
-                claims[sku] = {"exact_sku": sku, "plp_energy_star_flag_raw":
-                    (result.get("source_claim_listing_raw") or {}).get("energyStarFlg")}
+                listing = result.get("source_claim_listing_raw") or {}
+                claims[sku] = {"exact_sku": sku, "plp_energy_star_flag_raw": listing.get("energyStarFlg"),
+                    "listing_title_raw": listing.get("modelName")}
                 facts[sku] = {}
                 continue
             selection = result.get("selection_identity")

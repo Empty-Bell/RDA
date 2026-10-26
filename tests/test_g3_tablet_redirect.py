@@ -140,7 +140,8 @@ class CandidateTests(unittest.TestCase):
             skus, products, records, claims, facts, _ = candidates.load_collection(temp, "7")
             self.assertEqual(skus, [SKU])
             self.assertEqual(facts[SKU], {})
-            self.assertEqual(claims[SKU], {"exact_sku": SKU, "plp_energy_star_flag_raw": "Y"})
+            self.assertEqual(claims[SKU], {"exact_sku": SKU, "plp_energy_star_flag_raw": "Y",
+                                           "listing_title_raw": None})
             report = candidates.build_candidates(skus, products, records, claims, facts, [], "5",
                 {"capture_run_id": "9"}, Path(temp) / "out")
             failure = report["records"][0]["pdp_identity_failure"]
@@ -182,43 +183,79 @@ class PagesCollectionTests(unittest.TestCase):
 
 
 class AssessmentTests(unittest.TestCase):
-    def build(self, record):
+    def build(self, record, epa_rows=()):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             epa = root / "epa"
             epa.mkdir()
-            raw = b"[]"
+            raw = json.dumps(list(epa_rows)).encode()
             (epa / "samsung-current-rows.json").write_bytes(raw)
             (epa / "capture-summary.json").write_text(json.dumps({
-                "status": "PASS", "dataset_id": "rxdj-2c88", "capture_run_id": "9", "row_count": 0,
+                "status": "PASS", "dataset_id": "rxdj-2c88", "capture_run_id": "9", "row_count": len(epa_rows),
                 "rows_sha256": hashlib.sha256(raw).hexdigest()}))
             (root / "candidates.json").write_text(json.dumps({
                 "contract": "G3_TABLET_EPA_SOURCE_CANDIDATES_V1", "status": "SOURCE_CANDIDATES_READY",
                 "source_validation": "PASS", "dataset_id": "rxdj-2c88", "epa_capture_run_id": "9",
-                "epa_samsung_row_count": 0, "population_count": 1, "records": [record]}))
+                "epa_samsung_row_count": len(epa_rows), "population_count": 1, "records": [record]}))
             code = assessment.build(root / "candidates.json", epa, root / "out")
             return code, json.loads((root / "out" / "assessment.json").read_text())
 
-    def test_repeated_redirect_is_medium_wrong_model_with_unknown_pdp_evidence(self):
-        failure = {"requested_url": REQUESTED, "final_url": FINAL, "plp_stock_flag_raw": "N",
+    def redirected(self, stock, plp_flag="Y", title="SM-X828U"):
+        failure = {"requested_url": REQUESTED, "final_url": FINAL, "plp_stock_flag_raw": stock,
                    "redirect_observations": []}
-        code, result = self.build({"exact_sku": SKU, "pdp_identity_failure": failure,
-            "energy_star_claim_sources_raw": {"exact_sku": SKU, "plp_energy_star_flag_raw": "Y"}})
+        claim = {"exact_sku": SKU, "plp_energy_star_flag_raw": plp_flag, "listing_title_raw": title}
+        return failure, {"exact_sku": SKU, "pdp_identity_failure": failure, "energy_star_claim_sources_raw": claim}
+
+    def test_in_stock_redirect_is_medium_wrong_model_with_unknown_pdp_evidence(self):
+        for stock in ("Y", None):
+            with self.subTest(stock=stock):
+                failure, record = self.redirected(stock)
+                code, result = self.build(record)
+                self.assertEqual((code, result["status"], result["readiness_gaps"]), (0, "PASS", []))
+                self.assertEqual(result["counts"], {"PASS": 0, "HIGH": 0, "MEDIUM": 1, "LOW": 0})
+                row = result["records"][0]
+                self.assertEqual(row["findings"], [{"control": "PDP_IDENTITY", "severity": "MEDIUM",
+                                                    "issue_code": "PDP_LINK_WRONG_MODEL"}])
+                self.assertEqual(row["pdp_identity_failure"], failure)
+                self.assertEqual(row["epa_current_registration"], "NOT_EVALUATED")
+                points = row["publication_points"]
+                self.assertEqual((points["plp_logo"]["state"], points["pdp_logo"]["state"],
+                                  points["spec_certification"]["state"]), ("PRESENT", "UNKNOWN", "UNKNOWN"))
+
+    def test_out_of_stock_redirect_is_an_observation_and_plp_controls_are_assessed(self):
+        failure, record = self.redirected("N", plp_flag="N")
+        code, result = self.build(record)
         self.assertEqual((code, result["status"], result["readiness_gaps"]), (0, "PASS", []))
-        self.assertEqual(result["counts"], {"PASS": 0, "HIGH": 0, "MEDIUM": 1, "LOW": 0})
+        self.assertEqual(result["counts"], {"PASS": 1, "HIGH": 0, "MEDIUM": 0, "LOW": 0})
         row = result["records"][0]
-        self.assertEqual(row["findings"], [{"control": "PDP_IDENTITY", "severity": "MEDIUM",
-                                            "issue_code": "PDP_LINK_WRONG_MODEL"}])
+        self.assertEqual((row["grade"], row["findings"]), ("PASS", []))
+        self.assertEqual(row["plp_model_raw"], "SM-X828U")
         self.assertEqual(row["pdp_identity_failure"], failure)
-        self.assertEqual(row["epa_current_registration"], "NOT_EVALUATED")
+        self.assertEqual(row["pdp_route_observation"]["finding"], "NONE")
         points = row["publication_points"]
         self.assertEqual((points["plp_logo"]["state"], points["pdp_logo"]["state"],
-                          points["spec_certification"]["state"]), ("PRESENT", "UNKNOWN", "UNKNOWN"))
+                          points["spec_certification"]["state"]), ("ABSENT", "NOT_APPLICABLE", "NOT_APPLICABLE"))
+
+    def test_out_of_stock_redirect_still_reports_a_plp_level_conflict_with_epa(self):
+        epa_row = {"model_number": "SM-X828U", "type": "Slate/Tablet", "markets": "United States, Canada"}
+        _, record = self.redirected("N", plp_flag="N")
+        code, result = self.build(record, [epa_row])
+        self.assertEqual((code, result["status"]), (0, "PASS"))
+        row = result["records"][0]
+        self.assertEqual((row["grade"], row["epa_current_registration"]), ("LOW", "PRESENT"))
+        self.assertEqual([item["issue_code"] for item in row["findings"]], ["SAMSUNG_ENERGY_STAR_SOURCE_CONFLICT"])
+
+    def test_out_of_stock_redirect_without_plp_model_identity_blocks(self):
+        _, record = self.redirected("N", title=None)
+        code, result = self.build(record)
+        self.assertEqual((code, result["status"]), (1, "BLOCKED"))
+        self.assertEqual(result["readiness_gaps"][0]["reason"], "EXPLICIT_PLP_MODEL_IDENTITY_UNAVAILABLE")
 
     def test_redirect_without_urls_is_an_error_not_a_pass(self):
-        with self.assertRaises(ValueError):
-            self.build({"exact_sku": SKU, "pdp_identity_failure": {"requested_url": REQUESTED},
-                "energy_star_claim_sources_raw": {"exact_sku": SKU}})
+        for stock in ("N", "Y"):
+            with self.subTest(stock=stock), self.assertRaises(ValueError):
+                self.build({"exact_sku": SKU, "pdp_identity_failure": {"requested_url": REQUESTED, "plp_stock_flag_raw": stock},
+                    "energy_star_claim_sources_raw": {"exact_sku": SKU}})
 
     def test_non_redirect_record_without_model_identity_still_blocks(self):
         code, result = self.build({"exact_sku": SKU,
