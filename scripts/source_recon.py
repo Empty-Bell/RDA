@@ -120,7 +120,8 @@ def main():
         except Exception as exc:
             report['checks'].append({'name': name, 'status': 'FAIL', 'error': str(exc).splitlines()[0][:250]})
         save('recon.json', report)
-        print(f"{name}: {report['checks'][-1]['status']}", flush=True)
+        last = report['checks'][-1]
+        print(f"{name}: {last['status']}" + (f" - {last['error']}" if last['status'] == 'FAIL' else ''), flush=True)
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
