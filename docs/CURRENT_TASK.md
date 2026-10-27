@@ -8,8 +8,14 @@ PLP pagination. Implemented on branch: deferred final retries, pagination
 re-capture, source/control step split with one delayed automatic source re-run,
 branch rehearsal without publication, bounded SKU quarantine (UNVERIFIED, never
 PASS; refrigerator excluded) and failure annotations. Pending: hosted branch
-rehearsal with `quarantine_drill`, then a normal main run. Do not declare the
-controls accepted before hosted evidence.
+rehearsal with `quarantine_drill`, then a normal main run.
+
+Hosted evidence: branch rehearsal run 40432263769 (#46, drill) passed all 11
+families, integration, Pages build and smoke with 10 drill SKUs quarantined and
+no publication. Main run 40447242044 (#47) passed on attempt 1 and published:
+571 graded models, no unverified SKU, header GitHub Run #47. R1 deferred
+retries and R2 automatic source re-run were not triggered (no source failure)
+and remain unexercised on live failures.
 
 ## Hosted run 40250950861 failures — 2026-10-26
 
