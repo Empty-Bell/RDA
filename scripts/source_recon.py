@@ -17,6 +17,7 @@ from source_contract import pf_page, pf_population, pdp_facts, project_bridge, p
 from browser_runtime import desktop_context
 from claim_recon import project_claim_records, project_nested_claim_fields, project_inline_product_claims, claim_facts, DOM_SNAPSHOT, PLP_SNAPSHOT
 from energyguide_fields import label_candidates, annual_layout_candidates
+from source_retry_policy import pause_before_final_retry
 
 OUT = Path('runtime/source-recon')
 FAMILIES = {
@@ -58,6 +59,7 @@ FIELDS = ('modelCode', 'modelName', 'id', 'group_id', 'pdpURL', 'consumerUrl',
 
 
 MONITOR_SAMPLE_LIMIT = 6
+PAGINATION_ATTEMPTS = 3
 
 
 def plp_exposure(observation, product):
@@ -208,7 +210,8 @@ def main():
                     data = response.json()
                     payload = response.request.post_data_json
                     projected = project_pf(data)
-                    name = f'fixtures/pf-{len(captured_pf)}.json'
+                    name = f'fixtures/pf-{pf_serial[0]}.json'
+                    pf_serial[0] += 1
                     digest = save(name, projected)
                     row = {'url': safe_url(url), 'method': response.request.method,
                            'status': response.status, 'request_body': payload,
@@ -238,6 +241,7 @@ def main():
                 except Exception:
                     pass
 
+        pf_serial = [0]
         page.on('response', observe)
 
         def plp():
@@ -348,7 +352,41 @@ def main():
                     'rendered_representative_link_count': len(supported_reps),
                     'rendered_tile_count': len(tiles), 'strict_tile_count_gate': 'PASS'}
 
-        check('pagination_observation', pagination)
+        def recapture_plp(attempt, error):
+            # Keep the failed capture as raw evidence, outside the population inputs.
+            superseded = [row for row in report['observations']
+                          if str(row.get('fixture', '')).startswith('fixtures/pf-')]
+            report['observations'] = [row for row in report['observations'] if row not in superseded]
+            report.setdefault('superseded_pf_captures', []).append(
+                {'attempt': attempt, 'error': error, 'observations': superseded})
+            save('recon.json', report)
+            if attempt == PAGINATION_ATTEMPTS - 1:
+                pause_before_final_retry(f'{family}-plp-pagination')
+            captured_pf.clear()
+            context.clear_cookies()
+            for load in range(3):
+                page.goto(config['plp'], wait_until='domcontentloaded', timeout=60000)
+                page.wait_for_timeout(8000)
+                if captured_pf:
+                    return
+                page.wait_for_timeout(3000 * (2 ** load))
+            raise ValueError('pf_search response was not captured on PLP re-capture')
+
+        def consistent_pagination():
+            errors = []
+            for attempt in range(1, PAGINATION_ATTEMPTS + 1):
+                try:
+                    result = pagination()
+                    return {**result, 'capture_attempt': attempt, 'superseded_capture_errors': errors}
+                except Exception as exc:
+                    error = str(exc).splitlines()[0][:250] if str(exc) else type(exc).__name__
+                    errors.append(error)
+                    print(json.dumps({'pagination_capture_failed': attempt, 'error': error}), flush=True)
+                    if attempt == PAGINATION_ATTEMPTS:
+                        raise
+                    recapture_plp(attempt, error)
+
+        check('pagination_observation', consistent_pagination)
 
         def pdp(sample_product=None):
             if sample_product is not None:

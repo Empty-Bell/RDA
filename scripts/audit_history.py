@@ -101,6 +101,10 @@ def advance(history, snapshot, source_run_id, ruleset, *, failed=False):
             result["failed_runs"].append({"run_id": run_id, "status": "FAILED"})
         return result, {name: [] for name in ("new", "resolved", "recurred", "pending_confirmation")}
     models, current, snapshot_digest = snapshot_facts(snapshot)
+    # Quarantined SKUs were not observed: neither presence nor absence is evidence.
+    unverified = {(row["family"], row["model"]) for row in snapshot.get("unverified_records") or []}
+    if unverified & set(models):
+        raise ValueError("History snapshot grades an unverified exact SKU")
     observed_at = snapshot.get("built_at")
     try:
         datetime.fromisoformat(observed_at.replace("Z", "+00:00"))
@@ -115,7 +119,9 @@ def advance(history, snapshot, source_run_id, ruleset, *, failed=False):
         raise ValueError("Validated history must advance by dashboard run number")
     prior_ruleset = result["validated_runs"][-1]["ruleset"] if result["validated_runs"] else ruleset
     comparable = prior_ruleset == ruleset
-    previous_models = {tuple(row) for row in result["validated_runs"][-1]["population"]} if result["validated_runs"] else set()
+    previous_models = ({tuple(row) for row in result["validated_runs"][-1]["population"]}
+                       | {tuple(row) for row in result["validated_runs"][-1].get("unverified", [])}
+                       if result["validated_runs"] else set())
     finding_rows = {_issue_key(row): row for row in result["findings"]}
     if len(finding_rows) != len(result["findings"]):
         raise ValueError("Stored history contains duplicate finding identities")
@@ -143,7 +149,9 @@ def advance(history, snapshot, source_run_id, ruleset, *, failed=False):
     for key, row in finding_rows.items():
         if key in current or row["state"] == "RESOLVED":
             continue
-        if (row["family"], row["model"]) not in models:
+        if (row["family"], row["model"]) in unverified:
+            row["last_observation"] = "UNVERIFIED"
+        elif (row["family"], row["model"]) not in models:
             row["last_observation"] = "OUT_OF_SCOPE"
             row["confirmation_candidate"] = None
         elif not comparable:
@@ -160,12 +168,14 @@ def advance(history, snapshot, source_run_id, ruleset, *, failed=False):
             transitions["pending_confirmation"].append(key)
     result["findings"] = [finding_rows[key] for key in sorted(finding_rows)]
     population = [list(key) for key in sorted(models)]
+    observed_scope = set(models) | unverified
     result["validated_runs"].append({"run_id": run_id, "run_number": snapshot["run_number"],
                                      "observed_at": observed_at, "ruleset": ruleset,
                                      "snapshot_digest": snapshot_digest, "model_count": len(models),
                                      "population": population,
-                                     "scope_added": [list(key) for key in sorted(set(models) - previous_models)],
-                                     "scope_removed": [list(key) for key in sorted(previous_models - set(models))]})
+                                     "scope_added": [list(key) for key in sorted(observed_scope - previous_models)],
+                                     "scope_removed": [list(key) for key in sorted(previous_models - observed_scope)],
+                                     **({"unverified": [list(key) for key in sorted(unverified)]} if unverified else {})})
     for kind, keys in transitions.items():
         for key in keys:
             result["events"].append({"run_id": run_id, "observed_at": observed_at,

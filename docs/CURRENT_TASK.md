@@ -1,5 +1,16 @@
 # Current task continuation — 2026-09-24
 
+
+## Run stability controls R1-R5 — 2026-10-27
+
+User approved R1-R5 (see DECISIONS 2026-10-27) after run 45 failed on refrigerator
+PLP pagination. Implemented on branch: deferred final retries, pagination
+re-capture, source/control step split with one delayed automatic source re-run,
+branch rehearsal without publication, bounded SKU quarantine (UNVERIFIED, never
+PASS; refrigerator excluded) and failure annotations. Pending: hosted branch
+rehearsal with `quarantine_drill`, then a normal main run. Do not declare the
+controls accepted before hosted evidence.
+
 ## Hosted run 40250950861 failures — 2026-10-26
 
 Manual dispatch after moving the weekly schedule to Sunday 03:13 KST

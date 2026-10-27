@@ -14,6 +14,7 @@ from source_contract import computer_selection, pdp_facts, pf_population, projec
 from browser_runtime import desktop_context
 from runner_probe import safe_url
 from plp_population import rendered_card_skus
+from source_retry_policy import pause_before_final_retry
 
 CONTRACT = "G3_COMPUTER_EXACT_SKU_PDP_V1"
 PLP_URLS = {
@@ -277,6 +278,8 @@ def retry_failed(products, results, output, *, retries=2):
         failed = [by_sku[sku] for sku, row in current.items() if row["status"] == "FAILED"]
         if not failed:
             break
+        if attempt == retries:
+            pause_before_final_retry("computer-pdp")
         retry_root = destination / f"retry-{attempt}"
         attempted = collect(failed, retry_root)
         for row in attempted:

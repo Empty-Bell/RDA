@@ -7,6 +7,7 @@ from pathlib import Path
 import shutil
 
 from g3_tv_collect import collect, coverage, load_population
+from source_retry_policy import pause_before_final_retry
 
 
 def shard_for(sku, count):
@@ -35,6 +36,8 @@ def main():
         failed = [result for result in results if result["status"] == "FAILED"]
         if not failed:
             break
+        if attempt == 3:
+            pause_before_final_retry("tv-pdp")
         retry_root = out / "retries" / f"attempt-{attempt}"
         retried = collect([by_sku[result["exact_sku"]] for result in failed], retry_root)
         updated = {result["exact_sku"]: result for result in retried}

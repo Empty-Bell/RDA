@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit, parse_qs
 from source_contract import pdp_facts, project_bridge
+from source_retry_policy import pause_before_final_retry
 from browser_runtime import desktop_context
 from claim_recon import DOM_SNAPSHOT
 from runner_probe import safe_url
@@ -188,7 +189,10 @@ def retry_failed_samples(products, results, retry_root, collector=collect_sample
         failed = [row for row in results if row.get("status") == "FAILED"]
         if not failed:
             break
-        sleep(2 ** (attempt - 2))
+        if attempt == 3:
+            pause_before_final_retry("refrigerator-pdp", sleep) or sleep(2)
+        else:
+            sleep(1)
         expected = {row["exact_sku"] for row in failed}
         retried = collector([by_sku[sku] for sku in sorted(expected)], Path(retry_root) / f"attempt-{attempt}")
         updates = {row.get("exact_sku"): row for row in retried}

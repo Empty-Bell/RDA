@@ -15,6 +15,8 @@ import subprocess
 import sys
 import zipfile
 
+from sku_quarantine import QuarantineRefused, quarantine_shards, quarantine_single
+
 
 FAMILIES = (
     "refrigerator", "dishwasher", "washer", "tv", "range", "cooktop",
@@ -28,6 +30,14 @@ def run(*args):
     command = [sys.executable, "scripts/" + args[0] + ".py", *map(str, args[1:])]
     print("RUN", " ".join(command), flush=True)
     subprocess.run(command, check=True)
+
+
+def run_collector(*args):
+    """Run a collector whose FAILED exit still leaves a reviewable summary."""
+    try:
+        run(*args)
+    except subprocess.CalledProcessError as error:
+        print(f"COLLECTOR_EXIT {error.returncode}: {args[0]}", flush=True)
 
 
 def read(path):
@@ -72,7 +82,8 @@ def source_and_collection(family, run_id, root):
         checkpoint = read(sources[0])
         if checkpoint.get("status") != "PASS" or str(checkpoint.get("github_run_id")) != run_id:
             raise ValueError("Refrigerator full collection did not pass")
-        return sources[0].parent
+        # The accepted G2 refrigerator gate keeps its full-population identity rule.
+        return sources[0].parent, []
 
     source_families = ("computer", "chromebook") if family == "computer" else (family,)
     for name in source_families:
@@ -94,22 +105,25 @@ def source_and_collection(family, run_id, root):
                 ) for index in range(shard_count)]
                 for future in futures:
                     future.result()
-            run("g3_tv_aggregate_shards", "--recon-root", source,
-                "--source-run-id", run_id, "--shards-root", collection,
-                "--out", root / "combined")
+            run_collector("g3_tv_aggregate_shards", "--recon-root", source,
+                          "--source-run-id", run_id, "--shards-root", collection,
+                          "--out", root / "combined")
+            unverified = quarantine_single(root / "combined", root / "quarantine")
             single_summary(root / "combined", run_id)
-            return root / "combined"
+            return root / "combined", unverified
         for index in range(shard_count):
             target = collection / f"shard-{index}"
             if family == "computer":
-                run("g3_computer_collect", "--computer-recon", source,
+                run_collector("g3_computer_collect", "--computer-recon", source,
                     "--chromebook-recon", "runtime/source-recon/chromebook",
                     "--source-run-id", run_id, "--shard-index", index,
                     "--shard-count", shard_count, "--out", target)
             elif family == "tablet":
-                run("g3_tablet_collect", "--recon-root", source,
+                run_collector("g3_tablet_collect", "--recon-root", source,
                     "--source-run-id", run_id, "--shard-index", index,
                     "--shard-count", shard_count, "--out", target)
+        unverified = quarantine_shards(collection, root / "quarantine", (
+            "VERIFIED_EXACT_IDENTITY", "PDP_REDIRECT_CONFIRMED", "FAILED"))
         summaries = [read(path) for path in sorted(collection.glob("shard-*/shard-summary.json"))]
         if len(summaries) != shard_count or any(item.get("status") != "PASS" for item in summaries):
             raise ValueError(f"Incomplete {family} exact-SKU shards")
@@ -119,12 +133,13 @@ def source_and_collection(family, run_id, root):
                 or any(set(item.get("all_population_skus", [])) != expected for item in summaries)
                 or any(str(item.get("source_run_id")) != run_id for item in summaries)):
             raise ValueError(f"{family} shard population or source identity differs")
-        return collection
+        return collection, unverified
 
-    run("g3_" + family + "_collect", "--recon-root", source,
-        "--source-run-id", run_id, "--out", collection)
+    run_collector("g3_" + family + "_collect", "--recon-root", source,
+                  "--source-run-id", run_id, "--out", collection)
+    unverified = quarantine_single(collection, root / "quarantine")
     single_summary(collection, run_id)
-    return collection
+    return collection, unverified
 
 
 def assess_epa(family, run_id, root, collection):
@@ -208,7 +223,49 @@ def assess_dishwasher(run_id, root, collection):
     return root / "assessment/assessment.json"
 
 
-def main(family, out):
+def failure_digest(family, root):
+    """Print every unresolved exact-SKU failure so logs alone explain a stop."""
+    lines, seen = [], set()
+    for path in sorted(Path(root).rglob("result.json")):
+        if any(part.startswith(("retry", "initial-attempt")) for part in path.parts):
+            continue
+        try:
+            row = read(path)
+        except (OSError, ValueError):
+            continue
+        sku = row.get("exact_sku")
+        if row.get("status") != "FAILED" or not sku or sku in seen:
+            continue
+        seen.add(sku)
+        listing = row.get("source_claim_listing_raw") or {}
+        lines.append(f"{sku} | {row.get('error')} | {row.get('requested_url')} -> {row.get('final_url')}"
+                     f" | stockFlag={listing.get('stockFlag') if isinstance(listing, dict) else None}")
+    for line in lines[:20]:
+        print(f"::error title=RDA {family} source failure::{line}", flush=True)
+    summary = os.getenv("GITHUB_STEP_SUMMARY")
+    if summary and lines:
+        with Path(summary).open("a", encoding="utf-8") as stream:
+            stream.write(f"### {family} unresolved exact-SKU failures\n\n")
+            stream.writelines(f"- `{line}`\n" for line in lines)
+
+
+def collect_phase(family, run_id, root):
+    try:
+        collection, unverified = source_and_collection(family, run_id, root)
+    except Exception as error:
+        failure_digest(family, root)
+        if isinstance(error, QuarantineRefused):
+            print(f"::error title=RDA {family} quarantine refused::{error}", flush=True)
+        raise
+    for entry in unverified:
+        print(f"::warning title=RDA {family} unverified SKU::{entry['exact_sku']} | {entry.get('error')}"
+              f" | {entry.get('requested_url')} -> {entry.get('final_url')}", flush=True)
+    state = {"family": family, "run_id": run_id, "collection": str(collection), "unverified": unverified}
+    (root / "collection-state.json").write_text(
+        json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def main(family, out, phase="all"):
     if family not in FAMILIES:
         raise ValueError(f"Unknown family: {family}")
     run_id = os.getenv("GITHUB_RUN_ID", "").strip()
@@ -216,7 +273,14 @@ def main(family, out):
         raise ValueError("This entrypoint requires a hosted GitHub Actions run ID")
     root = Path(out) / family
     root.mkdir(parents=True, exist_ok=True)
-    collection = source_and_collection(family, run_id, root)
+    if phase in {"all", "collect"}:
+        collect_phase(family, run_id, root)
+    if phase == "collect":
+        return
+    state = read(root / "collection-state.json")
+    if state.get("family") != family or str(state.get("run_id")) != run_id:
+        raise ValueError(f"{family} collection state belongs to another run")
+    collection, unverified = Path(state["collection"]), state["unverified"]
     if family == "refrigerator":
         assessment = assess_refrigerator(root, collection)
     elif family in {"washer", "tv"}:
@@ -235,6 +299,8 @@ def main(family, out):
     if (len(set(skus)) != len(skus) or any(not sku for sku in skus)
             or any(grade not in GRADES for grade in grades)):
         raise ValueError(f"{family} has duplicate or unclassified models")
+    if {entry["exact_sku"] for entry in unverified} & set(skus):
+        raise ValueError(f"{family} graded an exact SKU that was quarantined as unverified")
     counts = Counter(grades)
     reported = result.get("counts") or {}
     if any(reported.get(level, 0) != counts[level] for level in GRADES):
@@ -247,7 +313,8 @@ def main(family, out):
                 "assessment_status": result.get("status"),
                 "source_run_ids": result.get("source_run_ids"),
                 "sku_count": result.get("sku_count"),
-                "counts": {level: counts[level] for level in GRADES}}
+                "counts": {level: counts[level] for level in GRADES},
+                "unverified": unverified}
     (root / "unified-family-manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(manifest, ensure_ascii=False), flush=True)
@@ -257,5 +324,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--family", choices=FAMILIES, required=True)
     parser.add_argument("--out", default="runtime/unified")
+    parser.add_argument("--phase", choices=("all", "collect", "assess"), default="all")
     args = parser.parse_args()
-    main(args.family, args.out)
+    main(args.family, args.out, args.phase)

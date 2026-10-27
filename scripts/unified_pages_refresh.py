@@ -80,6 +80,26 @@ def source_pdp_results(source, slug, desired):
     return results
 
 
+def unverified_records(source, run_id, before):
+    """Collect quarantined exact SKUs; they are shown, never graded or resolved."""
+    previous = {(row["family"], row["model"]): row for row in before["records"]}
+    rows = []
+    for family, slug in SLUGS.items():
+        manifest = read(source / slug / "unified-family-manifest.json")
+        if str(manifest.get("run_id")) != run_id:
+            raise ValueError(f"{family} unverified list does not belong to the unified run")
+        for entry in manifest.get("unverified") or []:
+            prior = previous.get((family, entry["exact_sku"]))
+            rows.append({"family": family, "model": entry["exact_sku"], "status": "UNVERIFIED",
+                         "reason": entry.get("error"), "requested_url": entry.get("requested_url"),
+                         "final_url": entry.get("final_url"), "plp_stock_flag_raw": entry.get("plp_stock_flag_raw"),
+                         "drill": bool(entry.get("drill")), "run_id": run_id,
+                         "previous_grade": prior.get("grade") if prior else None,
+                         "previous_built_at": before.get("built_at") if prior else None,
+                         "previous_github_run_number": before.get("github_run_number") if prior else None})
+    return sorted(rows, key=lambda row: (row["family"], row["model"]))
+
+
 def reconcile_plp_population(docs, source, gate):
     """Stage the current source population before the family refreshers run."""
     snapshot_path = docs / "model-data.json"
@@ -175,6 +195,7 @@ def build(docs_source, artifact_root, unified_report, out, attempt, github_run_n
     shutil.copytree(docs_source, docs)
     before = read(docs / "model-data.json")
     source = artifact_root / "unified"
+    unverified = unverified_records(source, run_id, before)
     reconcile_plp_population(docs, source, gate)
     g2 = source / "refrigerator"
     refresh_refrigerator(docs, g2 / "assessment/reassessment.json", g2 / "g2-control-source.zip")
@@ -229,6 +250,11 @@ def build(docs_source, artifact_root, unified_report, out, attempt, github_run_n
                     writer.writerow([record["family"], record["model"], record["grade"], section, path, field])
                     field_count += 1
     after["field_count"] = field_count
+    after["unverified_records"] = unverified
+    after["quarantine_drill"] = any(row["drill"] for row in unverified)
+    if {(row["family"], row["model"]) for row in after["records"]} & {
+            (row["family"], row["model"]) for row in unverified}:
+        raise ValueError("An unverified exact SKU is also published with a grade")
     report_rows = []
     for position, record in enumerate(after["records"], 1):
         detail = read(docs / record["evidence_url"].removeprefix("./"))
@@ -279,6 +305,8 @@ def build(docs_source, artifact_root, unified_report, out, attempt, github_run_n
         prior_history, after, run_id, ruleset)
     write(docs / "history.json", history)
     lifecycle = model_transitions(finding_transitions, before, after)
+    unverified_keys = {(row["family"], row["model"]) for row in unverified}
+    previously_unverified = {(row["family"], row["model"]) for row in before.get("unverified_records") or []}
     after["run_comparison"] = {
         "available": True, "current_run": after["run_number"],
         "previous_run": before["run_number"], "previous_built_at": before["built_at"],
@@ -289,8 +317,10 @@ def build(docs_source, artifact_root, unified_report, out, attempt, github_run_n
         "resolved": lifecycle["resolved"], "recurred": lifecycle["recurred"],
         "pending_confirmation": lifecycle["pending_confirmation"],
         "changed": changed,
-        "scope_added": [{"family": f, "model": m} for f, m in sorted(current.keys() - prior.keys())],
-        "scope_removed": [{"family": f, "model": m} for f, m in sorted(prior.keys() - current.keys())],
+        "unverified": [{"family": row["family"], "model": row["model"],
+                        "previous_grade": row["previous_grade"]} for row in unverified],
+        "scope_added": [{"family": f, "model": m} for f, m in sorted(current.keys() - prior.keys() - previously_unverified)],
+        "scope_removed": [{"family": f, "model": m} for f, m in sorted(prior.keys() - current.keys() - unverified_keys)],
     }
     for family in after["families"]:
         family["run_number"] = after["github_run_number"]

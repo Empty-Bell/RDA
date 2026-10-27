@@ -15,6 +15,7 @@ from source_contract import pf_population, pdp_facts, project_bridge
 from runner_probe import safe_url
 from browser_runtime import desktop_context
 from claim_recon import DOM_SNAPSHOT, claim_facts, project_inline_product_claims
+from source_retry_policy import pause_before_final_retry
 
 
 PLP_URL = "https://www.samsung.com/us/cooking-appliances/ranges/"
@@ -234,6 +235,8 @@ def retry_failed(products, destination, results, collector=collect):
         failed = [row for row in results if row["status"] == "FAILED"]
         if not failed:
             break
+        if attempt == 3:
+            pause_before_final_retry("range-pdp")
         retry_root = destination / "retries" / f"attempt-{attempt}"
         retried = collector([by_sku[row["exact_sku"]] for row in failed], retry_root)
         updates = {row["exact_sku"]: row for row in retried}
