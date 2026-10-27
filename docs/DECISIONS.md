@@ -312,6 +312,27 @@ Tablet and Computer and replaces the MEDIUM outcome for `stockFlag` N in the
 so such cases keep the finding. The collector does not yet capture the card's CTA
 text; `stockFlag` is the operative condition. No issue code is added.
 
+Run stability controls (user-approved 2026-10-27, after runs 34-45 failed mostly
+on transient public-source reads). R1: the final retry of a failed exact SKU and
+of PLP pagination waits `RDA_DEFERRED_RETRY_SECONDS` (600 in hosted family jobs);
+pagination is re-captured up to three times, each failed capture kept under
+`superseded_pf_captures`. R2: the family job is split into "Acquire current public
+sources" and "Apply approved family controls"; a failure only in the source step
+of a main run gets one automatic re-run after a 20-minute cooldown, a repeat
+failure is reviewed. R3: branch runs are rehearsals and never persist or deploy;
+`quarantine_drill` (refused on main) quarantines one verified SKU per family to
+exercise R4. R4: after all retries, an exact SKU whose PDP identity is still not
+verified is UNVERIFIED: moved out of the graded collection with its raw capture
+under `quarantine/`, shown on the dashboard as "검증 불가" with the last confirmed
+grade as reference only, excluded from grade counts, and recorded in history as
+`last_observation: UNVERIFIED` (never resolved). The allowance is at most two
+SKUs and at most 5% of the family population, rounded up (so one SKU for
+families of 20 or fewer); more failures, or any unattempted SKU, fail the family.
+The 5% rounding is an implementation interpretation of the approved "2개 이하이면서
+5% 이하". Refrigerator (accepted G2 gate) keeps its full-population identity rule
+and is not quarantined. R5: unresolved exact-SKU failures are printed as job
+annotations and step summary. No grade, issue code or assessment rule changes.
+
 | ID | Gap | Proposed direction | Due |
 |---|---|---|---|
 | D01 | §10·12: kWh 비교는 요구하지만 차이의 허용오차·단위·이슈 코드가 없음 | 제품군별 측정량·단위·기간·시험기준의 비교 가능성을 먼저 정의. 차이 기록과 finding 발행을 분리. 신규 코드/심각도는 명시적 승인 대상 | Phase 2 규칙 전 |

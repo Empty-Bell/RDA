@@ -38,3 +38,4 @@
 
 .scope-copy{margin:0 20px 18px;padding:12px 14px;border:1px solid #e8edf3;border-radius:9px;background:#f7f9fc;color:#667382;font-size:10px;line-height:1.7}
 .source-disclosure .method-copy{padding-bottom:10px}
+.unverified-panel{margin-top:10px;border:1px solid #e4c48a;background:#fff9ec;border-radius:13px;padding:14px 18px}.unverified-head{display:grid;gap:3px}.unverified-head strong{color:#8a5a00;font-size:14px}.unverified-head span{font-size:12px;color:#6c5a33}.unverified-drill{margin:8px 0 0;font-size:12px;font-weight:700;color:#7a3d00}.unverified-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}.unverified-list li{display:grid;gap:2px;border-top:1px solid #f0dfbd;padding-top:8px}.unverified-list span{font-size:12px;color:#4a4f57;overflow-wrap:anywhere}.unverified-list small{font-size:11px;color:#7c8590}

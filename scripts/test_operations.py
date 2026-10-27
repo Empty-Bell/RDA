@@ -75,7 +75,7 @@ class OperationsTest(unittest.TestCase):
                                               ("monitor", "EPA timeout", "assess_epa")):
             with self.subTest(failure=failure), tempfile.TemporaryDirectory() as temp:
                 with patch.dict("os.environ", {"GITHUB_RUN_ID": "123"}), patch(
-                        "unified_family_run.source_and_collection", return_value=Path(temp)), patch(
+                        "unified_family_run.source_and_collection", return_value=(Path(temp), [])), patch(
                         "unified_family_run." + failed_stage, side_effect=RuntimeError(failure)):
                     with self.assertRaisesRegex(RuntimeError, failure):
                         run_family(family, Path(temp))

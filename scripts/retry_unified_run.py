@@ -6,9 +6,11 @@ Schema, grade and report-code failures remain visible failures for review.
 import argparse
 import json
 import os
+import time
 from urllib.request import Request, urlopen
 
 
+SOURCE_STEP = "Acquire current public sources"
 FAMILIES = {
     "refrigerator", "dishwasher", "washer", "tv", "range", "cooktop",
     "dryer", "hood", "monitor", "computer", "tablet",
@@ -50,6 +52,7 @@ def decision(run, jobs, max_attempts):
             "Preserve this family's raw sources and assessment",
         }
         transient_prefixes = ("Run actions/checkout@", "Run actions/setup-python@")
+        source_failure = False
         for job in jobs:
             if job.get("name") not in family_failures:
                 continue
@@ -57,10 +60,17 @@ def decision(run, jobs, max_attempts):
                             if step.get("conclusion") == "failure"]
             if not failed_steps:
                 return "family_failure_requires_review"
-            if any(step not in transient_exact and not any(
-                    str(step).startswith(prefix) for prefix in transient_prefixes)
-                    for step in failed_steps):
-                return "family_failure_requires_review"
+            for step in failed_steps:
+                if step == SOURCE_STEP:
+                    source_failure = True
+                elif step not in transient_exact and not any(
+                        str(step).startswith(prefix) for prefix in transient_prefixes):
+                    return "family_failure_requires_review"
+        if source_failure:
+            # Live sources get one delayed re-collection; a repeat failure is reviewed.
+            if run.get("run_attempt", max_attempts) > 1:
+                return "source_failure_repeated_requires_review"
+            return "retry_source_after_cooldown"
         return "retry_family_runtime_or_artifact_failure"
     if failed == {integrate}:
         job = next(job for job in jobs if job.get("name") == integrate)
@@ -94,6 +104,7 @@ def main():
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--source-cooldown-seconds", type=int, default=1200)
     args = parser.parse_args()
     token = os.environ.get("GITHUB_TOKEN", "")
     if not token:
@@ -110,6 +121,9 @@ def main():
         page += 1
     reason = decision(run, jobs, args.max_attempts)
     result = {"run_id": args.run_id, "run_attempt": run.get("run_attempt"), "decision": reason}
+    if reason == "retry_source_after_cooldown" and not args.dry_run:
+        print(json.dumps({"source_cooldown_seconds": args.source_cooldown_seconds}), flush=True)
+        time.sleep(args.source_cooldown_seconds)
     if reason.startswith("retry_") and not args.dry_run:
         result["response_status"] = api(base + "/rerun-failed-jobs", token, method="POST")
     print(json.dumps(result, sort_keys=True), flush=True)

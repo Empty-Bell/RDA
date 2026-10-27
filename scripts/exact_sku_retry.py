@@ -10,6 +10,8 @@ import shutil
 import time
 from urllib.parse import quote
 
+from source_retry_policy import pause_before_final_retry
+
 
 def retry_failed(products, destination, results, collector, *, sleep=time.sleep):
     destination = Path(destination)
@@ -23,7 +25,10 @@ def retry_failed(products, destination, results, collector, *, sleep=time.sleep)
                   if row.get("status") == "FAILED" and row.get("retryable", True) is not False]
         if not failed:
             break
-        sleep(2 ** (attempt - 2))
+        if attempt == 3:
+            pause_before_final_retry("exact-sku", sleep) or sleep(2)
+        else:
+            sleep(1)
         retry_root = destination / "retries" / f"attempt-{attempt}"
         expected = {row["exact_sku"] for row in failed}
         retried = collector([by_sku[sku] for sku in sorted(expected)], retry_root)

@@ -13,6 +13,7 @@ from browser_runtime import desktop_context
 from claim_recon import DOM_SNAPSHOT, claim_facts
 from runner_probe import safe_url
 from source_contract import pdp_facts, pf_population, project_computer_specs
+from source_retry_policy import pause_before_final_retry
 
 CONTRACT = "G3_TABLET_EXACT_SKU_PDP_V1"
 SCOPE = "tablet source contracts only"
@@ -352,6 +353,8 @@ def retry_failed(products, results, output, *, retries=2):
         failed = [by_sku[sku] for sku, row in current.items() if row["status"] == "FAILED"]
         if not failed:
             break
+        if attempt == retries:
+            pause_before_final_retry("tablet-pdp")
         retry_root = destination / f"retry-{attempt}"
         for row in collect(failed, retry_root):
             sku = row["exact_sku"]

@@ -22,7 +22,7 @@ def read(path):
 
 def build(root, run_id, output):
     root, output = Path(root), Path(output)
-    errors, families, all_skus = [], [], set()
+    errors, families, all_skus, drills = [], [], set(), []
     for family in FAMILIES:
         manifest_path = root / "unified" / family / "unified-family-manifest.json"
         if not manifest_path.is_file():
@@ -69,7 +69,16 @@ def build(root, run_id, output):
             if (len(checkpoints) != 1 or read(checkpoints[0]).get("status") != "PASS"
                     or str(read(checkpoints[0]).get("github_run_id")) != run_id):
                 errors.append("REFRIGERATOR_SOURCE_CHECKPOINT_MISSING")
+        unverified = manifest.get("unverified") or []
+        if (not isinstance(unverified, list)
+                or any(not isinstance(entry, dict) or entry.get("status") != "UNVERIFIED"
+                       or entry.get("exact_sku") in skus for entry in unverified)
+                or (unverified and family == "refrigerator")):
+            errors.append(f"UNVERIFIED_SKU_RECORD_INVALID:{family}")
+        if any(entry.get("drill") for entry in unverified if isinstance(entry, dict)):
+            drills.append(family)
         families.append({"family": family, "sku_count": len(rows),
+                         "unverified": unverified,
                          "counts": {level: counts[level] for level in GRADES},
                          "assessment_contract": report.get("contract"),
                          "assessment_sha256": digest})
@@ -85,6 +94,8 @@ def build(root, run_id, output):
                            "grade_counts": group(G3)},
               "g4_scope": {"families": 7, "model_count": sum(row["sku_count"] for row in families if row["family"] not in G3),
                            "grade_counts": group(set(FAMILIES) - G3)},
+              "unverified_count": sum(len(row["unverified"]) for row in families),
+              "quarantine_drill_families": drills,
               "families": families, "integrity_errors": errors,
               "dashboard_publication": "NOT_EVALUATED",
               "overall_product_compliance": "NOT_EVALUATED"}

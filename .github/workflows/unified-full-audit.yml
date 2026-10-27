@@ -2,6 +2,11 @@ name: Unified 11-family full audit
 
 on:
   workflow_dispatch:
+    inputs:
+      quarantine_drill:
+        description: Rehearsal only (never on main) - quarantine one verified SKU per family to exercise the unverified path
+        type: boolean
+        default: false
   schedule:
     - cron: '13 18 * * 6'
 
@@ -29,7 +34,7 @@ jobs:
       - name: Check report projection against every published model schema
         run: python scripts/report_projection_preflight.py --docs docs
       - name: Check bounded retry and projection contracts
-        run: python -m unittest scripts.test_g3_computer_collect tests.test_exact_sku_retry tests.test_g2_pdp_retry tests.test_g3_computer_collect_retry tests.test_g3_computer_energy_star_assessment tests.test_g3_computer_redirect_pipeline tests.test_report_projection_contract tests.test_washer_contract tests.test_dishwasher_spec_applicability tests.test_dashboard_integration_gate tests.test_retry_unified_run tests.test_unified_artifact_merge tests.test_select_unified_artifact tests.test_plp_population_options tests.test_unified_population_guard tests.test_grade_policy_idempotence tests.test_epa_family_model_match tests.test_energyguide_model_identity tests.test_tv_additional_model tests.test_g3_tablet_redirect tests.test_monitor_sample_selection checks.g2.test_population checks.g3.test_tv_collect_population checks.g3.test_dishwasher_source_match checks.g3.test_dishwasher_numeric_comparison checks.g3.test_dishwasher_collect -v
+        run: python -m unittest scripts.test_g3_computer_collect tests.test_exact_sku_retry tests.test_g2_pdp_retry tests.test_g3_computer_collect_retry tests.test_g3_computer_energy_star_assessment tests.test_g3_computer_redirect_pipeline tests.test_report_projection_contract tests.test_washer_contract tests.test_dishwasher_spec_applicability tests.test_dashboard_integration_gate tests.test_retry_unified_run tests.test_unified_artifact_merge tests.test_select_unified_artifact tests.test_plp_population_options tests.test_unified_population_guard tests.test_grade_policy_idempotence tests.test_epa_family_model_match tests.test_energyguide_model_identity tests.test_tv_additional_model tests.test_g3_tablet_redirect tests.test_monitor_sample_selection tests.test_sku_quarantine tests.test_source_retry_policy checks.g2.test_population checks.g3.test_tv_collect_population checks.g3.test_dishwasher_source_match checks.g3.test_dishwasher_numeric_comparison checks.g3.test_dishwasher_collect -v
 
   family:
     name: Acquire and assess ${{ matrix.family }}
@@ -43,6 +48,8 @@ jobs:
     env:
       PYTHONUNBUFFERED: '1'
       PYTHONPATH: 'src:scripts'
+      RDA_DEFERRED_RETRY_SECONDS: '600'
+      RDA_QUARANTINE_DRILL: ${{ inputs.quarantine_drill && '1' || '' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -54,8 +61,10 @@ jobs:
         run: |
           mkdir -p runtime
           bash scripts/bootstrap.sh
-      - name: Acquire current sources and apply approved family controls
-        run: python scripts/unified_family_run.py --family '${{ matrix.family }}'
+      - name: Acquire current public sources
+        run: python scripts/unified_family_run.py --family '${{ matrix.family }}' --phase collect
+      - name: Apply approved family controls
+        run: python scripts/unified_family_run.py --family '${{ matrix.family }}' --phase assess
       - name: Summarize computer exact-SKU source failures
         if: ${{ failure() && matrix.family == 'computer' }}
         shell: bash
@@ -183,6 +192,7 @@ jobs:
           retention-days: 90
           if-no-files-found: error
       - name: Upload exact validated Pages artifact
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/upload-pages-artifact@v4
         with:
           path: runtime/validated-site/docs/
@@ -190,6 +200,8 @@ jobs:
   persist:
     name: Save the validated snapshot and guard publication order
     needs: build
+    # Branch runs are rehearsals: everything up to the validated site, never publication.
+    if: ${{ github.ref == 'refs/heads/main' && !inputs.quarantine_drill }}
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:

@@ -27,6 +27,22 @@ class HistoryLifecycleTest(unittest.TestCase):
             source.write_bytes(b"a = 1\r\nb = 2\r\n")
             self.assertEqual(rule_fingerprint(temp), unix)
 
+    def test_unverified_model_is_neither_present_nor_resolved(self):
+        history, _ = advance(empty(), snapshot(1, [("M1", "LABEL_MISSING"), ("M2", None)]), "run-1", "rules-a")
+        current = snapshot(2, [("M2", None)])
+        current["unverified_records"] = [{"family": "TV", "model": "M1"}]
+        history, changes = advance(history, current, "run-2", "rules-a")
+        self.assertFalse(changes["resolved"] or changes["pending_confirmation"])
+        self.assertEqual(history["findings"][0]["state"], "NEW")
+        self.assertEqual(history["findings"][0]["last_observation"], "UNVERIFIED")
+        self.assertEqual(history["validated_runs"][-1]["scope_removed"], [])
+        history, _ = advance(history, snapshot(3, [("M1", "LABEL_MISSING"), ("M2", None)]), "run-3", "rules-a")
+        self.assertEqual(history["validated_runs"][-1]["scope_added"], [])
+        graded = snapshot(4, [("M1", None)])
+        graded["unverified_records"] = [{"family": "TV", "model": "M1"}]
+        with self.assertRaises(ValueError):
+            advance(history, graded, "run-4", "rules-a")
+
     def test_independent_confirmation_and_reopening(self):
         history, first = advance(empty(), snapshot(1, [("M1", "LABEL_MISSING")]), "run-1", "rules-a")
         self.assertEqual(len(first["new"]), 1)

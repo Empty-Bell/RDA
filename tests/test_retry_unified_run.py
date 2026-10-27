@@ -19,9 +19,24 @@ class RetryUnifiedRunTest(unittest.TestCase):
 
     def test_family_collection_or_parser_failure_requires_review(self):
         jobs = [{"name": "Acquire and assess dishwasher", "conclusion": "failure",
-                 "steps": [{"name": "Acquire current sources and apply approved family controls",
+                 "steps": [{"name": "Apply approved family controls",
                             "conclusion": "failure"}]},
                 {"name": "Verify one source run and 11 graded populations", "conclusion": "failure"}]
+        self.assertEqual(decision(RUN, jobs, 3), "family_failure_requires_review")
+
+    def test_live_source_failure_gets_one_delayed_retry(self):
+        jobs = [{"name": "Acquire and assess refrigerator", "conclusion": "failure",
+                 "steps": [{"name": "Acquire current public sources", "conclusion": "failure"}]},
+                {"name": "Verify one source run and 11 graded populations", "conclusion": "failure"}]
+        self.assertEqual(decision(RUN, jobs, 3), "retry_source_after_cooldown")
+        self.assertEqual(decision({**RUN, "run_attempt": 2}, jobs, 3),
+                         "source_failure_repeated_requires_review")
+
+    def test_source_and_control_failures_together_require_review(self):
+        jobs = [{"name": "Acquire and assess tv", "conclusion": "failure",
+                 "steps": [{"name": "Acquire current public sources", "conclusion": "failure"}]},
+                {"name": "Acquire and assess range", "conclusion": "failure",
+                 "steps": [{"name": "Apply approved family controls", "conclusion": "failure"}]}]
         self.assertEqual(decision(RUN, jobs, 3), "family_failure_requires_review")
 
     def test_build_bug_is_not_retried(self):
