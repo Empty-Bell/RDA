@@ -49,6 +49,13 @@ def check(base, run_id, browser_check=True):
             page.locator("#run-number").wait_for(timeout=20000)
             if str(model.get("github_run_number", model["run_number"])) not in page.locator("#run-number").inner_text():
                 raise ValueError(f"{mode}: displayed run number differs")
+            unverified = model.get("unverified_records") or []
+            panel = page.locator("#unverified")
+            if unverified and (not panel.is_visible()
+                               or page.locator("#unverified .unverified-list li").count() != len(unverified)):
+                raise ValueError(f"{mode}: unverified exact SKUs are not listed")
+            if not unverified and panel.is_visible():
+                raise ValueError(f"{mode}: unverified panel shown without unverified SKUs")
             actionable = sum(row["grade"] != "PASS" for row in model["records"])
             if actionable and page.locator("#queue-list .queue-item").count() == 0:
                 raise ValueError(f"{mode}: action queue did not render")
