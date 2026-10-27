@@ -47,7 +47,7 @@ def check(base, run_id, browser_check=True):
             page.on("console", lambda message: failures.append(message.text) if message.type == "error" else None)
             page.goto(base + "?run=" + run_id + "#queue", wait_until="networkidle", timeout=60000)
             page.locator("#run-number").wait_for(timeout=20000)
-            if str(model["run_number"]) not in page.locator("#run-number").inner_text():
+            if str(model.get("github_run_number", model["run_number"])) not in page.locator("#run-number").inner_text():
                 raise ValueError(f"{mode}: displayed run number differs")
             actionable = sum(row["grade"] != "PASS" for row in model["records"])
             if actionable and page.locator("#queue-list .queue-item").count() == 0:

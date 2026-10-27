@@ -161,7 +161,7 @@ def reconcile_plp_population(docs, source, gate):
     write(snapshot_path, snapshot)
 
 
-def build(docs_source, artifact_root, unified_report, out, attempt):
+def build(docs_source, artifact_root, unified_report, out, attempt, github_run_number):
     docs_source, artifact_root, out = map(Path, (docs_source, artifact_root, out))
     gate = read(unified_report)
     run_id = str(gate.get("run_id", ""))
@@ -263,19 +263,28 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
                     "previous_grade": old["grade"], "grade": row["grade"]}
             changed.append(item)
     after["run_number"] = before["run_number"] + 1
+    # Internal history sequence stays monotonic; the dashboard displays GitHub's own number.
+    after["github_run_number"] = int(github_run_number)
+    after["github_run_attempt"] = int(attempt)
+    prior_history = read(docs_source / "history.json")
+    ruleset = rule_fingerprint(Path(__file__).resolve().parents[1])
+    ruleset_changed = bool(prior_history["validated_runs"]
+                           and prior_history["validated_runs"][-1]["ruleset"] != ruleset)
     after["built_at"] = datetime.now(timezone.utc).isoformat()
     after["source_note"] = (
         f"All 11 families were freshly collected and assessed from unified GitHub Actions run {run_id}. "
         "Each exact SKU has one PASS/HIGH/MEDIUM/LOW control grade; whole-product legal compliance is not evaluated."
     )
     history, finding_transitions = advance_history(
-        read(docs_source / "history.json"), after, run_id,
-        rule_fingerprint(Path(__file__).resolve().parents[1]))
+        prior_history, after, run_id, ruleset)
     write(docs / "history.json", history)
     lifecycle = model_transitions(finding_transitions, before, after)
     after["run_comparison"] = {
         "available": True, "current_run": after["run_number"],
         "previous_run": before["run_number"], "previous_built_at": before["built_at"],
+        "current_github_run_number": after["github_run_number"],
+        "previous_github_run_number": before.get("github_run_number"),
+        "ruleset_changed": ruleset_changed,
         "source_runs_changed": True, "new": lifecycle["new"],
         "resolved": lifecycle["resolved"], "recurred": lifecycle["recurred"],
         "pending_confirmation": lifecycle["pending_confirmation"],
@@ -284,6 +293,7 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
         "scope_removed": [{"family": f, "model": m} for f, m in sorted(prior.keys() - current.keys())],
     }
     for family in after["families"]:
+        family["run_number"] = after["github_run_number"]
         family["note"] = f"통합 실행 {run_id}의 현재 원본과 승인된 판정 규칙을 적용했습니다."
     (docs / "model-data.json").write_text(
         json.dumps(after, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
@@ -323,13 +333,14 @@ def build(docs_source, artifact_root, unified_report, out, attempt):
         raise ValueError("Unified Pages snapshot lacks a family artifact")
     print(json.dumps({"status": "PASS", "run_id": run_id,
                       "dashboard_run_number": after["run_number"],
+                      "github_run_number": after["github_run_number"],
                       "model_count": len(after["records"]),
                       "changed": len(changed)}, ensure_ascii=False), flush=True)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ("docs", "artifacts-root", "unified-report", "out", "attempt"):
+    for name in ("docs", "artifacts-root", "unified-report", "out", "attempt", "github-run-number"):
         parser.add_argument("--" + name, required=True)
     args = parser.parse_args()
-    build(args.docs, args.artifacts_root, args.unified_report, args.out, args.attempt)
+    build(args.docs, args.artifacts_root, args.unified_report, args.out, args.attempt, args.github_run_number)

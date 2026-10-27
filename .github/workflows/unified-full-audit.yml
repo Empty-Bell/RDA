@@ -163,7 +163,7 @@ jobs:
         run: |
           python scripts/test_audit_history.py
           python scripts/test_operations.py > runtime/operations-test.log
-          python scripts/unified_pages_refresh.py --docs docs --artifacts-root runtime --unified-report runtime/unified-gate/unified-report.json --out runtime/validated-site --attempt '${{ github.run_attempt }}'
+          python scripts/unified_pages_refresh.py --docs docs --artifacts-root runtime --unified-report runtime/unified-gate/unified-report.json --out runtime/validated-site --attempt '${{ github.run_attempt }}' --github-run-number '${{ github.run_number }}'
           python scripts/publication_bundle.py create --docs runtime/validated-site/docs --run-id '${{ github.run_id }}' --source-sha '${{ github.sha }}'
           python scripts/publication_bundle.py verify --docs runtime/validated-site/docs --run-id '${{ github.run_id }}' --source-sha '${{ github.sha }}'
           test "$(du -sb runtime/validated-site/docs | cut -f1)" -le 1073741824
